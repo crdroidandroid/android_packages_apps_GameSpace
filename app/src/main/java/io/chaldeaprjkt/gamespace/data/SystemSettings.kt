@@ -91,5 +91,16 @@ class SystemSettings @Inject constructor(
             gameModeUtils.setupBatteryMode(games.isNotEmpty())
         }
 
+    var adbEnabled
+        get() = Settings.Global.getInt(
+            resolver, Settings.Global.ADB_ENABLED, 0
+        ) == 1
+        set(it) {
+            Settings.Global.putInt(
+                resolver, Settings.Global.ADB_ENABLED,
+                it.toInt()
+            )
+        }
+
     private fun Boolean.toInt() = if (this) 1 else 0
 }

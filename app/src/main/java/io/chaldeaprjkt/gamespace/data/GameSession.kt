@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2021 Chaldeaprjkt
+ *               2022 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -59,6 +60,7 @@ class GameSession @Inject constructor(
             headsUp = systemSettings.headsUp,
             threeScreenshot = systemSettings.threeScreenshot,
             ringerMode = audioManager.ringerModeInternal,
+            adbEnabled = systemSettings.adbEnabled,
         )
         if (appSettings.noHeadsUp) {
             systemSettings.headsUp = false
@@ -68,6 +70,9 @@ class GameSession @Inject constructor(
         }
         if (appSettings.noThreeScreenshot) {
             systemSettings.threeScreenshot = false
+        }
+        if (appSettings.noAdbEnabled) {
+            systemSettings.adbEnabled = false
         }
         audioManager.ringerModeInternal = appSettings.ringerMode
     }
@@ -82,6 +87,9 @@ class GameSession @Inject constructor(
         }
         if (appSettings.noThreeScreenshot) {
             orig.threeScreenshot?.let { systemSettings.threeScreenshot = it }
+        }
+        if (appSettings.noAdbEnabled) {
+            orig.adbEnabled?.let { systemSettings.adbEnabled = it }
         }
         audioManager.ringerModeInternal = orig.ringerMode
         state = null

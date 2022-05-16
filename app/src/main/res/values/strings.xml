@@ -66,4 +66,7 @@
     <string name="custom_seekbar_default_value_is_set">Default value is set</string>
 
     <string name="gamespace_menu_opacity_title">Overlay menu opacity level</string>
+
+    <string name="adb_disabled_summary">Temporary disable USB ADB debugging while in-game</string>
+    <string name="adb_disabled_title">Disable USB debugging</string>
 </resources>
