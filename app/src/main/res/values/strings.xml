@@ -23,6 +23,7 @@
     <string name="auto_brightness_disabled_summary">Keep brightness settled while in-game</string>
     <string name="heads_up_disabled_title">Disable heads up</string>
     <string name="heads_up_disabled_summary">Disallow pop up notifications while in-game</string>
+    <string name="in_game_preferences_title">In-game options</string>
     <string name="game_list_title">Library</string>
     <string name="game_remove_message">Are you sure you want to remove %1$s from your library?</string>
     <string name="app_search_title">Search</string>
