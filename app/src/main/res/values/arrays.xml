@@ -15,6 +15,20 @@
   -->
 
 <resources>
+
+    <string-array name="game_mode_names" translatable="false">
+        <item>@string/game_mode_unsupported</item>
+        <item>@string/game_mode_standard</item>
+        <item>@string/game_mode_performance</item>
+        <item>@string/game_mode_battery</item>
+    </string-array>
+
+    <string-array name="ringer_mode_entries" translatable="false">
+        <item>@string/ringer_mode_silent</item>
+        <item>@string/ringer_mode_vibrate</item>
+        <item>@string/ringer_mode_normal</item>
+    </string-array>
+
     <string-array name="ringer_mode_values" translatable="false">
         <item>0</item> <!-- SILENT  -->
         <item>1</item> <!-- VIBRATE -->
@@ -25,5 +39,11 @@
         <item>1</item> <!-- Standard    -->
         <item>2</item> <!-- Performance -->
         <item>3</item> <!-- Battery     -->
+    </string-array>
+
+    <string-array name="per_app_preferred_mode_entries" translatable="false">
+        <item>@string/game_mode_standard</item>
+        <item>@string/game_mode_performance</item>
+        <item>@string/game_mode_battery</item>
     </string-array>
 </resources>
