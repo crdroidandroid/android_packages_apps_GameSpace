@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2021 Chaldeaprjkt
+ *               2022 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -277,6 +278,7 @@ class GameBarService : Hilt_GameBarService() {
         rootPanelView = LayoutInflater.from(this)
             .inflate(R.layout.window_panel, FrameLayout(this), false) as LinearLayout
         panelView = rootPanelView.findViewById(R.id.panel_view)
+        panelView.alpha = appSettings.menuOpacity / 100f
         rootPanelView.setOnClickListener {
             showPanel = false
         }
