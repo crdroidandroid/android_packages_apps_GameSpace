@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2021 Chaldeaprjkt
+ * Copyright (C) 2022 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,7 +20,6 @@ import android.os.Bundle
 import android.util.Log
 import com.android.settingslib.collapsingtoolbar.CollapsingToolbarBaseActivity
 import dagger.hilt.android.AndroidEntryPoint
-import io.chaldeaprjkt.gamespace.utils.assertStarterOrigin
 
 @AndroidEntryPoint(CollapsingToolbarBaseActivity::class)
 class PerAppSettingsActivity : Hilt_PerAppSettingsActivity() {
