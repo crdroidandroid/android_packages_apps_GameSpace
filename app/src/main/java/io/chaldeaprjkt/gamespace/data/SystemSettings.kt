@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2021 Chaldeaprjkt
+ *               2022 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -67,22 +68,6 @@ class SystemSettings @Inject constructor(
             Settings.System.putIntForUser(
                 resolver, Settings.System.THREE_FINGER_GESTURE,
                 it.toInt(), UserHandle.USER_CURRENT
-            )
-        }
-
-    var suppressFullscreenIntent
-        get() = Settings.System.getIntForUser(
-            resolver,
-            Settings.System.GAMESPACE_SUPPRESS_FULLSCREEN_INTENT,
-            0,
-            UserHandle.USER_CURRENT
-        ) == 1
-        set(it) {
-            Settings.System.putIntForUser(
-                resolver,
-                Settings.System.GAMESPACE_SUPPRESS_FULLSCREEN_INTENT,
-                it.toInt(),
-                UserHandle.USER_CURRENT
             )
         }
 
