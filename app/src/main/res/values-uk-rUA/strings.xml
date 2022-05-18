@@ -48,17 +48,17 @@
     <string name="suppress_fullscreen_intent_title">Блокувати повноекранні сповіщення</string>
     <string name="suppress_fullscreen_intent_summary">Запобігає появі повноекранних сповіщень, таких як вхідні дзвінки, під час гри</string>
     <string name="per_app_title">Налаштувати гру</string>
-    <string name="per_app_mode_title">Preferred mode</string>
-    <string name="per_app_angle_title">Use ANGLE (experimental)</string>
-    <string name="per_app_angle_summary">Using ANGLE renderer instead of native GLES drivers.\nWARNING!! May breaks game graphics, use with caution!</string>
-    <string name="cant_find_angle_pkg">ANGLE is not available on your system</string>
-    <string name="per_app_unregister">Remove %1$s from library</string>
+    <string name="per_app_mode_title">Переважний режим</string>
+    <string name="per_app_angle_title">Використовувати ANGLE (експериментально)</string>
+    <string name="per_app_angle_summary">Використовуючи візуалізатор ANGLE замість нативних драйверів GLES.\nУВАГА!! Може порушувати графіку гри, використовуйте з обережністю!</string>
+    <string name="cant_find_angle_pkg">ANGLE недоступний у вашій системі</string>
+    <string name="per_app_unregister">Видалити %1$s з бібліотеки</string>
     <!-- Custom seekbar -->
     <string name="custom_seekbar_value">Значення: <xliff:g id="v">%s</xliff:g></string>
     <string name="custom_seekbar_default_value">за замовчуванням</string>
     <string name="custom_seekbar_default_value_to_set">Значення за замовчуванням: <xliff:g id="v">%s</xliff:g>\nДовге натискання для встановлення</string>
     <string name="custom_seekbar_default_value_is_set">Значення за замовчуванням встановлено</string>
-    <string name="gamespace_menu_opacity_title">Overlay menu opacity level</string>
-    <string name="adb_disabled_summary">Temporary disable USB ADB debugging while in-game</string>
-    <string name="adb_disabled_title">Disable USB debugging</string>
+    <string name="gamespace_menu_opacity_title">Рівень непрозорості меню ігрового режиму</string>
+    <string name="adb_disabled_summary">Тимчасово вимкнути налагодження USB USB під час гри</string>
+    <string name="adb_disabled_title">Вимкнути налагодження USB</string>
 </resources>
