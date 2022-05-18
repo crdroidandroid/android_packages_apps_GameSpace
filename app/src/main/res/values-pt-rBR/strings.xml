@@ -38,7 +38,7 @@
     <string name="game_mode_performance">Desempenho</string>
     <string name="game_mode_battery">Bateria</string>
     <string name="heads_up_title">Notificações flutuantes</string>
-    <string name="fps_Info_title">Info de FPS</string>
+    <string name="fps_Info_title">Informações de FPS</string>
     <string name="stay_awake_title">Permanecer ativo</string>
     <string name="stay_awake_summary">Mantenha a tela ligada quando estiver no jogo</string>
     <string name="ringer_mode_title">Modo de toque</string>
