@@ -59,6 +59,6 @@
     <string name="custom_seekbar_default_value_to_set">Wartość domyślna: <xliff:g id="v">%s</xliff:g>\nPrzytrzymaj dłużej by ustawić</string>
     <string name="custom_seekbar_default_value_is_set">Wartość domyślna jest ustawiona</string>
     <string name="gamespace_menu_opacity_title">Overlay menu opacity level</string>
-    <string name="adb_disabled_summary">Temporary disable USB ADB debugging while in-game</string>
-    <string name="adb_disabled_title">Disable USB debugging</string>
+    <string name="adb_disabled_summary">Tymczasowe wyłączenie debugowania USB ADB podczas gry</string>
+    <string name="adb_disabled_title">Wyłącz debugowanie USB</string>
 </resources>
