@@ -16,14 +16,14 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="settings_title">Espacio de juego</string>
-    <string name="settings_summary">Administra tu configuración de juego</string>
+    <string name="settings_title">Espacio de juegos</string>
+    <string name="settings_summary">Administra tu configuración de juegos</string>
     <string name="app_selector_label">Elige tu juego</string>
     <string name="auto_brightness_disabled_title">Desactivar brillo automático</string>
     <string name="auto_brightness_disabled_summary">Mantener el brillo establecido durante el juego</string>
     <string name="heads_up_disabled_title">Desactivar notificaciones flotantes</string>
     <string name="heads_up_disabled_summary">No permitir notificaciones emergentes durante el juego</string>
-    <string name="in_game_preferences_title">Opciones de juego</string>
+    <string name="in_game_preferences_title">Opciones en el juego</string>
     <string name="game_list_title">Biblioteca</string>
     <string name="game_remove_message">¿Está seguro que desea eliminar %1$s de su biblioteca?</string>
     <string name="app_search_title">Buscar</string>
