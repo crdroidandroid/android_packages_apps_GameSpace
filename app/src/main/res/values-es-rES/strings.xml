@@ -16,50 +16,50 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="settings_title">Game space</string>
-    <string name="settings_summary">Manage your gaming setup</string>
-    <string name="app_selector_label">Pick your game</string>
-    <string name="auto_brightness_disabled_title">Disable auto-brightness</string>
-    <string name="auto_brightness_disabled_summary">Keep brightness settled while in-game</string>
-    <string name="heads_up_disabled_title">Disable heads up</string>
-    <string name="heads_up_disabled_summary">Disallow pop up notifications while in-game</string>
-    <string name="in_game_preferences_title">In-game options</string>
-    <string name="game_list_title">Library</string>
-    <string name="game_remove_message">Are you sure you want to remove %1$s from your library?</string>
-    <string name="app_search_title">Search</string>
-    <string name="three_screenshot_disabled_summary">Temporary disable three-fingers-swipe screenshot gesture while in-game</string>
-    <string name="three_screenshot_disabled_title">Disable swipe to screenshot</string>
-    <string name="state_enabled">enabled</string>
-    <string name="state_disabled">disabled</string>
+    <string name="settings_title">Espacio de juego</string>
+    <string name="settings_summary">Administra tu configuración de juego</string>
+    <string name="app_selector_label">Elige tu juego</string>
+    <string name="auto_brightness_disabled_title">Desactivar brillo automático</string>
+    <string name="auto_brightness_disabled_summary">Mantener el brillo establecido durante el juego</string>
+    <string name="heads_up_disabled_title">Desactivar notificaciones flotantes</string>
+    <string name="heads_up_disabled_summary">No permitir notificaciones emergentes durante el juego</string>
+    <string name="in_game_preferences_title">Opciones de juego</string>
+    <string name="game_list_title">Biblioteca</string>
+    <string name="game_remove_message">¿Está seguro que desea eliminar %1$s de su biblioteca?</string>
+    <string name="app_search_title">Buscar</string>
+    <string name="three_screenshot_disabled_summary">Deshabilita temporalmente el gesto de captura de pantalla con tres dedos durante el juego</string>
+    <string name="three_screenshot_disabled_title">Desactivar deslizar para captura de pantalla</string>
+    <string name="state_enabled">activado</string>
+    <string name="state_disabled">desactivado</string>
     <!-- Game Mode -->
-    <string name="game_mode_title">Mode</string>
-    <string name="game_mode_unsupported">Unsupported</string>
-    <string name="game_mode_standard">Standard</string>
-    <string name="game_mode_performance">Performance</string>
-    <string name="game_mode_battery">Battery</string>
-    <string name="heads_up_title">Heads up</string>
-    <string name="fps_Info_title">FPS info</string>
-    <string name="stay_awake_title">Stay awake</string>
-    <string name="stay_awake_summary">Keep screen awake while in the game</string>
-    <string name="ringer_mode_title">Ringer mode</string>
-    <string name="ringer_mode_silent">Silent</string>
-    <string name="ringer_mode_vibrate">Vibrate</string>
+    <string name="game_mode_title">Modo</string>
+    <string name="game_mode_unsupported">No soportado</string>
+    <string name="game_mode_standard">Estándar</string>
+    <string name="game_mode_performance">Rendimiento</string>
+    <string name="game_mode_battery">Batería</string>
+    <string name="heads_up_title">Notificaciones flotantes</string>
+    <string name="fps_Info_title">Información de FPS</string>
+    <string name="stay_awake_title">Permanecer encendido</string>
+    <string name="stay_awake_summary">Mantener la pantalla encendida durante el juego</string>
+    <string name="ringer_mode_title">Modo de llamada</string>
+    <string name="ringer_mode_silent">Silencioso</string>
+    <string name="ringer_mode_vibrate">Vibrar</string>
     <string name="ringer_mode_normal">Normal</string>
-    <string name="suppress_fullscreen_intent_title">Block fullscreen event</string>
-    <string name="suppress_fullscreen_intent_summary">Prevent fullscreen events like incoming calls from appearing while in-game</string>
-    <string name="per_app_title">Configure game</string>
-    <string name="per_app_mode_title">Preferred mode</string>
-    <string name="per_app_angle_title">Use ANGLE (experimental)</string>
-    <string name="per_app_angle_summary">Using ANGLE renderer instead of native GLES drivers.\nWARNING!! May breaks game graphics, use with caution!</string>
-    <string name="cant_find_angle_pkg">ANGLE is not available on your system</string>
-    <string name="per_app_unregister">Remove %1$s from library</string>
+    <string name="suppress_fullscreen_intent_title">Bloquear evento en pantalla completa</string>
+    <string name="suppress_fullscreen_intent_summary">Evitar que eventos de pantalla completa como llamadas entrantes aparezcan en el juego</string>
+    <string name="per_app_title">Configurar juego</string>
+    <string name="per_app_mode_title">Modo preferido</string>
+    <string name="per_app_angle_title">Usar ANGLE (experimental)</string>
+    <string name="per_app_angle_summary">Utilizar renderizado ANGLE en lugar de controladores GLES nativos.\n¡¡¡ADVERTENCIA! Puede romper gráficos de juegos, ¡Úsalo con cuidado!</string>
+    <string name="cant_find_angle_pkg">ANGLE no está disponible en su sistema</string>
+    <string name="per_app_unregister">Eliminar %1$s de la biblioteca</string>
     <!-- Custom seekbar -->
     <string name="custom_seekbar_value">Valor: <xliff:g id="v">%s</xliff:g></string>
     <string name="custom_seekbar_default_value">predeterminado</string>
     <string name="custom_seekbar_default_value_to_set">Valor predeterminado: <xliff:g id="v">%s</xliff:g>\n
 Mantén presionado para establecer</string>
     <string name="custom_seekbar_default_value_is_set">Valor predeterminado establecido</string>
-    <string name="gamespace_menu_opacity_title">Overlay menu opacity level</string>
-    <string name="adb_disabled_summary">Temporary disable USB ADB debugging while in-game</string>
-    <string name="adb_disabled_title">Disable USB debugging</string>
+    <string name="gamespace_menu_opacity_title">Nivel de opacidad del menú de superposición</string>
+    <string name="adb_disabled_summary">Inhabilita temporalmente la depuración USB ADB durante el juego</string>
+    <string name="adb_disabled_title">Desactivar depuración USB</string>
 </resources>
