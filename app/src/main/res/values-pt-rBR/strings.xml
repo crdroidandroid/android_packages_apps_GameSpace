@@ -16,10 +16,10 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="settings_title">Game space</string>
-    <string name="settings_summary">Manage your gaming setup</string>
-    <string name="app_selector_label">Pick your game</string>
-    <string name="auto_brightness_disabled_title">Disable auto-brightness</string>
+    <string name="settings_title">Configurações</string>
+    <string name="settings_summary">Sumário_configurações</string>
+    <string name="app_selector_label">Seletor de Aplicativos</string>
+    <string name="auto_brightness_disabled_title">Brilho automático desativado</string>
     <string name="auto_brightness_disabled_summary">Keep brightness settled while in-game</string>
     <string name="heads_up_disabled_title">Disable heads up</string>
     <string name="heads_up_disabled_summary">Disallow pop up notifications while in-game</string>
