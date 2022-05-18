@@ -41,16 +41,16 @@
     <string name="fps_Info_title">Información de FPS</string>
     <string name="stay_awake_title">Permanecer encendido</string>
     <string name="stay_awake_summary">Mantener la pantalla encendida durante el juego</string>
-    <string name="ringer_mode_title">Modo de llamada</string>
-    <string name="ringer_mode_silent">Silencioso</string>
+    <string name="ringer_mode_title">Modo de timbre</string>
+    <string name="ringer_mode_silent">Silencio</string>
     <string name="ringer_mode_vibrate">Vibrar</string>
     <string name="ringer_mode_normal">Normal</string>
-    <string name="suppress_fullscreen_intent_title">Bloquear evento en pantalla completa</string>
+    <string name="suppress_fullscreen_intent_title">Bloquear eventos en pantalla completa</string>
     <string name="suppress_fullscreen_intent_summary">Evitar que eventos de pantalla completa como llamadas entrantes aparezcan en el juego</string>
     <string name="per_app_title">Configurar juego</string>
     <string name="per_app_mode_title">Modo preferido</string>
-    <string name="per_app_angle_title">Usar ANGLE (experimental)</string>
-    <string name="per_app_angle_summary">Utilizar renderizado ANGLE en lugar de controladores GLES nativos.\n¡¡¡ADVERTENCIA! Puede romper gráficos de juegos, ¡Úsalo con cuidado!</string>
+    <string name="per_app_angle_title">Usar nueva interfaz de usuario (experimental)</string>
+    <string name="per_app_angle_summary">Utilizar renderizado ANGLE en lugar de controladores GLES nativos. \n¡ADVERTENCIA! Puede romper los gráficos de juegos, ¡Úsalo con cuidado!</string>
     <string name="cant_find_angle_pkg">ANGLE no está disponible en su sistema</string>
     <string name="per_app_unregister">Eliminar %1$s de la biblioteca</string>
     <!-- Custom seekbar -->
