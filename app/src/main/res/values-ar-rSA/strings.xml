@@ -20,7 +20,7 @@
     <string name="settings_summary">إدارة إعدادات ألعابك</string>
     <string name="app_selector_label">إختر لعبتك</string>
     <string name="auto_brightness_disabled_title">تعطيل السطوع التلقائي</string>
-    <string name="auto_brightness_disabled_summary">إيقاف السطوع التلقائي أثناء اللعب</string>
+    <string name="auto_brightness_disabled_summary">حافظ على السطوع ثابتًا أثناء اللعب</string>
     <string name="heads_up_disabled_title">تعطيل الإشعارات المنبثقة</string>
     <string name="heads_up_disabled_summary">عدم السماح بالإشعارات المنبثقة أثناء اللعب</string>
     <string name="in_game_preferences_title">خيارات داخل اللعبة</string>
