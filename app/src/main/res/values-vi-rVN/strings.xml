@@ -45,20 +45,20 @@
     <string name="ringer_mode_silent">Im lặng</string>
     <string name="ringer_mode_vibrate">Rung</string>
     <string name="ringer_mode_normal">Bình thường</string>
-    <string name="suppress_fullscreen_intent_title">Block fullscreen event</string>
-    <string name="suppress_fullscreen_intent_summary">Prevent fullscreen events like incoming calls from appearing while in-game</string>
-    <string name="per_app_title">Configure game</string>
-    <string name="per_app_mode_title">Preferred mode</string>
-    <string name="per_app_angle_title">Use ANGLE (experimental)</string>
-    <string name="per_app_angle_summary">Using ANGLE renderer instead of native GLES drivers.\nWARNING!! May breaks game graphics, use with caution!</string>
-    <string name="cant_find_angle_pkg">ANGLE is not available on your system</string>
-    <string name="per_app_unregister">Remove %1$s from library</string>
+    <string name="suppress_fullscreen_intent_title">Chặn sự kiện toàn màn hình</string>
+    <string name="suppress_fullscreen_intent_summary">Ngăn các sự kiện toàn màn hình như cuộc gọi đến xuất hiện khi ở trong trò chơi</string>
+    <string name="per_app_title">Định cấu hình trò chơi</string>
+    <string name="per_app_mode_title">Chế độ ưu tiên</string>
+    <string name="per_app_angle_title">Sử dụng ANGLE (thử nghiệm)</string>
+    <string name="per_app_angle_summary">Sử dụng trình kết xuất ANGLE thay vì trình điều khiển GLES gốc.\nCẢNH BÁO!! Có thể phá vỡ đồ họa trò chơi, hãy sử dụng một cách thận trọng!</string>
+    <string name="cant_find_angle_pkg">ANGLE không có sẵn trên hệ thống của bạn</string>
+    <string name="per_app_unregister">Xóa %1$s khỏi thư viện</string>
     <!-- Custom seekbar -->
     <string name="custom_seekbar_value">Giá trị: <xliff:g id="v">%s</xliff:g></string>
     <string name="custom_seekbar_default_value">mặc định</string>
     <string name="custom_seekbar_default_value_to_set">Giá trị mặc định: <xliff:g id="v">%s</xliff:g>\nNhấn giữ lâu để thiết lập</string>
     <string name="custom_seekbar_default_value_is_set">Đã đặt giá trị mặc định</string>
-    <string name="gamespace_menu_opacity_title">Overlay menu opacity level</string>
-    <string name="adb_disabled_summary">Temporary disable USB ADB debugging while in-game</string>
-    <string name="adb_disabled_title">Disable USB debugging</string>
+    <string name="gamespace_menu_opacity_title">Mức độ mờ của menu</string>
+    <string name="adb_disabled_summary">Tạm thời vô hiệu hóa gỡ lỗi USB ADB khi ở trong trò chơi</string>
+    <string name="adb_disabled_title">Vô hiệu hóa gỡ lỗi USB</string>
 </resources>
