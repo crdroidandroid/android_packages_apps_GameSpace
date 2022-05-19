@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2021 Chaldeaprjkt
+                   2022 crDroid Android Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="settings_title">Ігровий простір</string>
+    <string name="settings_summary">Керування налаштуваннями гри</string>
+    <string name="app_selector_label">Виберіть свою гру</string>
+    <string name="auto_brightness_disabled_title">Вимкнути автояскравість</string>
+    <string name="auto_brightness_disabled_summary">Не змінювати яскравість під час гри</string>
+    <string name="heads_up_disabled_title">Вимкнути спливаючі сповіщення</string>
+    <string name="heads_up_disabled_summary">Заборонити спливаючі сповіщення під час гри</string>
+    <string name="in_game_preferences_title">Налаштування гри</string>
+    <string name="game_list_title">Бібліотека</string>
+    <string name="game_remove_message">Ви впевнені, що хочете видалити %1$s зі своєї бібліотеки?</string>
+    <string name="app_search_title">Пошук</string>
+    <string name="three_screenshot_disabled_summary">Тимчасово вимкнути жест трьома пальцями для скриншоту під час гри</string>
+    <string name="three_screenshot_disabled_title">Вимкнути свайп для знімка екрану</string>
+    <string name="state_enabled">увімкнено</string>
+    <string name="state_disabled">вимкнуто</string>
+    <!-- Game Mode -->
+    <string name="game_mode_title">Режим</string>
+    <string name="game_mode_unsupported">Не підтримується</string>
+    <string name="game_mode_standard">Стандартний</string>
+    <string name="game_mode_performance">Продуктивний</string>
+    <string name="game_mode_battery">Батарея</string>
+    <string name="heads_up_title">Спливаючі сповіщення</string>
+    <string name="fps_Info_title">Інформація про FPS</string>
+    <string name="stay_awake_title">Залишати активним</string>
+    <string name="stay_awake_summary">Залишати екран увімкненим під час гри</string>
+    <string name="ringer_mode_title">Режим дзвінка</string>
+    <string name="ringer_mode_silent">Беззвучний</string>
+    <string name="ringer_mode_vibrate">Вібрація</string>
+    <string name="ringer_mode_normal">Звичайний</string>
+    <string name="suppress_fullscreen_intent_title">Блокувати повноекранні сповіщення</string>
+    <string name="suppress_fullscreen_intent_summary">Запобігає появі повноекранних сповіщень, таких як вхідні дзвінки, під час гри</string>
+    <string name="per_app_title">Налаштувати гру</string>
+    <string name="per_app_mode_title">Переважний режим</string>
+    <string name="per_app_angle_title">Використовувати ANGLE (експериментально)</string>
+    <string name="per_app_angle_summary">Використовуючи візуалізатор ANGLE замість нативних драйверів GLES.\nУВАГА!! Може порушувати графіку гри, використовуйте з обережністю!</string>
+    <string name="cant_find_angle_pkg">ANGLE недоступний у вашій системі</string>
+    <string name="per_app_unregister">Видалити %1$s з бібліотеки</string>
+    <!-- Custom seekbar -->
+    <string name="custom_seekbar_value">Значення: <xliff:g id="v">%s</xliff:g></string>
+    <string name="custom_seekbar_default_value">за замовчуванням</string>
+    <string name="custom_seekbar_default_value_to_set">Значення за замовчуванням: <xliff:g id="v">%s</xliff:g>\nДовге натискання для встановлення</string>
+    <string name="custom_seekbar_default_value_is_set">Значення за замовчуванням встановлено</string>
+    <string name="gamespace_menu_opacity_title">Рівень непрозорості меню ігрового режиму</string>
+    <string name="adb_disabled_summary">Тимчасово вимкнути налагодження USB USB під час гри</string>
+    <string name="adb_disabled_title">Вимкнути налагодження USB</string>
+</resources>

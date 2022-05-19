@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2021 Chaldeaprjkt
+                   2022 crDroid Android Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="settings_title">Spel ruimte</string>
+    <string name="settings_summary">Beheer uw gaming-instellingen</string>
+    <string name="app_selector_label">Kies je spel</string>
+    <string name="auto_brightness_disabled_title">Automatische helderheid uitschakelen</string>
+    <string name="auto_brightness_disabled_summary">Houd helderheid aan tijdens in-game</string>
+    <string name="heads_up_disabled_title">Deactiveer heads up</string>
+    <string name="heads_up_disabled_summary">Zet pop-up meldingen uit terwijl je in-game bent</string>
+    <string name="in_game_preferences_title">In-game opties</string>
+    <string name="game_list_title">Bibliotheek</string>
+    <string name="game_remove_message">Weet je zeker dat je %1$s uit je bibliotheek wilt verwijderen?</string>
+    <string name="app_search_title">Zoeken</string>
+    <string name="three_screenshot_disabled_summary">Tijdelijk drie-vingers veeg schermafbeelding uitschakelen terwijl in-game</string>
+    <string name="three_screenshot_disabled_title">Veeg naar schermafbeelding uitschakelen</string>
+    <string name="state_enabled">ingeschakeld</string>
+    <string name="state_disabled">uitgeschakeld</string>
+    <!-- Game Mode -->
+    <string name="game_mode_title">Modus</string>
+    <string name="game_mode_unsupported">Niet ondersteund</string>
+    <string name="game_mode_standard">Standaard</string>
+    <string name="game_mode_performance">Prestatie</string>
+    <string name="game_mode_battery">Batterij</string>
+    <string name="heads_up_title">Heads up</string>
+    <string name="fps_Info_title">FPS info</string>
+    <string name="stay_awake_title">Blijf aan</string>
+    <string name="stay_awake_summary">Houd scherm aan tijdens het spel</string>
+    <string name="ringer_mode_title">Beltoonmodus</string>
+    <string name="ringer_mode_silent">Stil</string>
+    <string name="ringer_mode_vibrate">Vibreren</string>
+    <string name="ringer_mode_normal">Normaal</string>
+    <string name="suppress_fullscreen_intent_title">Blokkeer volledig scherm event</string>
+    <string name="suppress_fullscreen_intent_summary">Voorkom dat volledig scherm events zoals inkomende oproepen worden weergegeven tijdens in-game</string>
+    <string name="per_app_title">Spel configureren</string>
+    <string name="per_app_mode_title">Voorkeursmodus</string>
+    <string name="per_app_angle_title">Gebruik ANGLE (experimenteel)</string>
+    <string name="per_app_angle_summary">Gebruik ANGLE renderer in plaats van oorspronkelijke GLES drivers.\nWAARSCHUWING!! Kan spel afbeeldingen breken, gebruik met voorzichtigheid!</string>
+    <string name="cant_find_angle_pkg">ANGLE is niet beschikbaar op uw systeem</string>
+    <string name="per_app_unregister">Verwijder %1$s uit bibliotheek</string>
+    <!-- Custom seekbar -->
+    <string name="custom_seekbar_value">Waarde: <xliff:g id="v">%s</xliff:g></string>
+    <string name="custom_seekbar_default_value">standaard</string>
+    <string name="custom_seekbar_default_value_to_set">Standaard waarde: <xliff:g id="v">%s</xliff:g>\nLang indrukken om in te stellen</string>
+    <string name="custom_seekbar_default_value_is_set">Standaard waarde is ingesteld</string>
+    <string name="gamespace_menu_opacity_title">Transparantieniveau van overlappingsmenu</string>
+    <string name="adb_disabled_summary">Tijdelijke uitschakelen USB ADB foutopsporing tijdens in-game</string>
+    <string name="adb_disabled_title">Usb-foutopsporing uitschakelen</string>
+</resources>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2021 Chaldeaprjkt
+                   2022 crDroid Android Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="settings_title">Herní prostor</string>
+    <string name="settings_summary">Spravovat herního nastavení</string>
+    <string name="app_selector_label">Výběr hry</string>
+    <string name="auto_brightness_disabled_title">Zakázat automatický jas</string>
+    <string name="auto_brightness_disabled_summary">Zachovat nastavení jasu ve hře</string>
+    <string name="heads_up_disabled_title">Zakázat plovoucí upozornění</string>
+    <string name="heads_up_disabled_summary">Zakázat vyskakování oznámení během hry</string>
+    <string name="in_game_preferences_title">Možnosti ve hře</string>
+    <string name="game_list_title">Knihovna</string>
+    <string name="game_remove_message">Opravdu chcete odstranit %1$s z vaší knihovny?</string>
+    <string name="app_search_title">Hledat</string>
+    <string name="three_screenshot_disabled_summary">Dočasné vypnutí gesta screenshot třemi prsty během hry</string>
+    <string name="three_screenshot_disabled_title">Zakázat přejetí pro snímek obrazovky</string>
+    <string name="state_enabled">povoleno</string>
+    <string name="state_disabled">zakázáno</string>
+    <!-- Game Mode -->
+    <string name="game_mode_title">Režim</string>
+    <string name="game_mode_unsupported">Nepodporováno</string>
+    <string name="game_mode_standard">Standardní</string>
+    <string name="game_mode_performance">Výkon</string>
+    <string name="game_mode_battery">Baterie</string>
+    <string name="heads_up_title">Plovoucí oznámení</string>
+    <string name="fps_Info_title">Informace o FPS</string>
+    <string name="stay_awake_title">Nevypínat obrazovku</string>
+    <string name="stay_awake_summary">Udržet obrazovku vzhůru během hry</string>
+    <string name="ringer_mode_title">Režim vyzvánění</string>
+    <string name="ringer_mode_silent">Tichý</string>
+    <string name="ringer_mode_vibrate">Vibrace</string>
+    <string name="ringer_mode_normal">Normální</string>
+    <string name="suppress_fullscreen_intent_title">Blokovat událost na celou obrazovku</string>
+    <string name="suppress_fullscreen_intent_summary">Zabránit zobrazení příchozích hovorů v režimu celé obrazovky během hry</string>
+    <string name="per_app_title">Konfigurace hry</string>
+    <string name="per_app_mode_title">Preferovaný režim</string>
+    <string name="per_app_angle_title">Použít ANGLE (experimentální)</string>
+    <string name="per_app_angle_summary">Používá ANGLE renderer místo nativních ovladačů GLA.\nVAROVÁNÍ!! Může se rozbít herní grafiku, používejte opatrně!</string>
+    <string name="cant_find_angle_pkg">ANGLE není k dispozici ve vašem systému</string>
+    <string name="per_app_unregister">Odebrat %1$s z knihovny</string>
+    <!-- Custom seekbar -->
+    <string name="custom_seekbar_value">Hodnota: <xliff:g id="v">%s</xliff:g></string>
+    <string name="custom_seekbar_default_value">výchozí hodnota</string>
+    <string name="custom_seekbar_default_value_to_set">Výchozí hodnota: <xliff:g id="v">%s</xliff:g>\nDlouze klepněte pro její nastavení</string>
+    <string name="custom_seekbar_default_value_is_set">Výchozí hodnota je nastavena</string>
+    <string name="gamespace_menu_opacity_title">Úroveň průhlednosti překrytí menu</string>
+    <string name="adb_disabled_summary">Dočasné vypnutí ladění USB ADB během hry</string>
+    <string name="adb_disabled_title">Zakázat ladění USB</string>
+</resources>
