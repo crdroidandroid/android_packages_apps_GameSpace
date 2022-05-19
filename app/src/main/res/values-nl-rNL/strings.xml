@@ -16,18 +16,18 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="settings_title">Game space</string>
-    <string name="settings_summary">Manage your gaming setup</string>
-    <string name="app_selector_label">Pick your game</string>
-    <string name="auto_brightness_disabled_title">Disable auto-brightness</string>
-    <string name="auto_brightness_disabled_summary">Keep brightness settled while in-game</string>
-    <string name="heads_up_disabled_title">Disable heads up</string>
-    <string name="heads_up_disabled_summary">Disallow pop up notifications while in-game</string>
-    <string name="in_game_preferences_title">In-game options</string>
-    <string name="game_list_title">Library</string>
-    <string name="game_remove_message">Are you sure you want to remove %1$s from your library?</string>
-    <string name="app_search_title">Search</string>
-    <string name="three_screenshot_disabled_summary">Temporary disable three-fingers-swipe screenshot gesture while in-game</string>
+    <string name="settings_title">Spel ruimte</string>
+    <string name="settings_summary">Beheer uw gaming-instellingen</string>
+    <string name="app_selector_label">Kies je spel</string>
+    <string name="auto_brightness_disabled_title">Automatische helderheid uitschakelen</string>
+    <string name="auto_brightness_disabled_summary">Houd helderheid aan tijdens in-game</string>
+    <string name="heads_up_disabled_title">Deactiveer heads up</string>
+    <string name="heads_up_disabled_summary">Zet pop-up meldingen uit terwijl je in-game bent</string>
+    <string name="in_game_preferences_title">In-game opties</string>
+    <string name="game_list_title">Bibliotheek</string>
+    <string name="game_remove_message">Weet je zeker dat je %1$s uit je bibliotheek wilt verwijderen?</string>
+    <string name="app_search_title">Zoeken</string>
+    <string name="three_screenshot_disabled_summary">Tijdelijk drie-vingers veeg schermafbeelding uitschakelen terwijl in-game</string>
     <string name="three_screenshot_disabled_title">Disable swipe to screenshot</string>
     <string name="state_enabled">enabled</string>
     <string name="state_disabled">disabled</string>
