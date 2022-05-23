@@ -24,10 +24,10 @@
     <string name="heads_up_disabled_title">Desativar notificações flutuantes</string>
     <string name="heads_up_disabled_summary">Desativar notificações flutuantes enquanto estiver a jogar</string>
     <string name="in_game_preferences_title">Opções do jogo</string>
-    <string name="game_list_title">Lista de jogos</string>
+    <string name="game_list_title">Biblioteca de jogos</string>
     <string name="game_remove_message">Tem certeza de que deseja remover %1$s da sua biblioteca?</string>
     <string name="app_search_title">Procurar</string>
-    <string name="three_screenshot_disabled_summary">Temporary disable three-fingers-swipe screenshot gesture while in-game</string>
+    <string name="three_screenshot_disabled_summary">Desativar temporariamente o gesto de deslizar três dedos para capturar ecrã enquanto estiver a jogar</string>
     <string name="three_screenshot_disabled_title">Desativar deslizar para capturar ecrã</string>
     <string name="state_enabled">ativado</string>
     <string name="state_disabled">desativado</string>
@@ -37,7 +37,7 @@
     <string name="game_mode_standard">Padrão</string>
     <string name="game_mode_performance">Desempenho</string>
     <string name="game_mode_battery">Bateria</string>
-    <string name="heads_up_title">Heads up</string>
+    <string name="heads_up_title">Notificações flutuantes</string>
     <string name="fps_Info_title">Info. de FPS</string>
     <string name="stay_awake_title">Manter ativo</string>
     <string name="stay_awake_summary">Manter o ecrã ligado durante o jogo</string>
@@ -49,9 +49,9 @@
     <string name="suppress_fullscreen_intent_summary">Impedir que eventos em ecrã inteiro, como receber chamadas, ocorram durante o jogo</string>
     <string name="per_app_title">Configurar jogo</string>
     <string name="per_app_mode_title">Modo preferido</string>
-    <string name="per_app_angle_title">Use ANGLE (experimental)</string>
-    <string name="per_app_angle_summary">Using ANGLE renderer instead of native GLES drivers.\nWARNING!! May breaks game graphics, use with caution!</string>
-    <string name="cant_find_angle_pkg">ANGLE is not available on your system</string>
+    <string name="per_app_angle_title">Usar ANGLE (experimental)</string>
+    <string name="per_app_angle_summary">A usar o renderizador ANGLE em vez de controladores GLES nativos.\nAVISO!! Pode quebrar os gráficos do jogo, use com cuidado!</string>
+    <string name="cant_find_angle_pkg">ANGLE não está disponível no seu sistema</string>
     <string name="per_app_unregister">Remover %1$s da biblioteca</string>
     <!-- Custom seekbar -->
     <string name="custom_seekbar_value">Valor: <xliff:g id="value">%s</xliff:g></string>
