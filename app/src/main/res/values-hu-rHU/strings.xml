@@ -16,17 +16,17 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="settings_title">Game space</string>
+    <string name="settings_title">Játéktér</string>
     <string name="settings_summary">Manage your gaming setup</string>
-    <string name="app_selector_label">Pick your game</string>
-    <string name="auto_brightness_disabled_title">Disable auto-brightness</string>
-    <string name="auto_brightness_disabled_summary">Keep brightness settled while in-game</string>
-    <string name="heads_up_disabled_title">Disable heads up</string>
-    <string name="heads_up_disabled_summary">Disallow pop up notifications while in-game</string>
-    <string name="in_game_preferences_title">In-game options</string>
-    <string name="game_list_title">Library</string>
+    <string name="app_selector_label">Válaszd ki a játékod</string>
+    <string name="auto_brightness_disabled_title">Az automatikus fényerőszabályzás tiltása</string>
+    <string name="auto_brightness_disabled_summary">Tartsa a beállított fényerőt játék közben</string>
+    <string name="heads_up_disabled_title">Felugró értesítés kikapcsolása</string>
+    <string name="heads_up_disabled_summary">A felugró értesítések letiltása játék közben</string>
+    <string name="in_game_preferences_title">Játékon belüli lehetőségek</string>
+    <string name="game_list_title">Könyvtár</string>
     <string name="game_remove_message">Are you sure you want to remove %1$s from your library?</string>
-    <string name="app_search_title">Search</string>
+    <string name="app_search_title">Keresés</string>
     <string name="three_screenshot_disabled_summary">Temporary disable three-fingers-swipe screenshot gesture while in-game</string>
     <string name="three_screenshot_disabled_title">Disable swipe to screenshot</string>
     <string name="state_enabled">enabled</string>
@@ -52,7 +52,7 @@
     <string name="per_app_angle_title">Use ANGLE (experimental)</string>
     <string name="per_app_angle_summary">Using ANGLE renderer instead of native GLES drivers.\nWARNING!! May breaks game graphics, use with caution!</string>
     <string name="cant_find_angle_pkg">ANGLE is not available on your system</string>
-    <string name="per_app_unregister">Remove %1$s from library</string>
+    <string name="per_app_unregister">Eltávólítás a könyvtárból</string>
     <!-- Custom seekbar -->
     <string name="custom_seekbar_value">Value: <xliff:g id="v">%s</xliff:g></string>
     <string name="custom_seekbar_default_value">alapértelmezés szerint</string>
