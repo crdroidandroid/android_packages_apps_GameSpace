@@ -41,24 +41,24 @@
     <string name="fps_Info_title">Wskaźnik FPS</string>
     <string name="stay_awake_title">Pozostaw włączony ekran</string>
     <string name="stay_awake_summary">Nie wyłączaj ekranu podczas gry</string>
-    <string name="ringer_mode_title">Ringer mode</string>
+    <string name="ringer_mode_title">Tryb dzwonka</string>
     <string name="ringer_mode_silent">Tryb cichy</string>
     <string name="ringer_mode_vibrate">Wibracje</string>
     <string name="ringer_mode_normal">Normalny</string>
-    <string name="suppress_fullscreen_intent_title">Block fullscreen event</string>
-    <string name="suppress_fullscreen_intent_summary">Prevent fullscreen events like incoming calls from appearing while in-game</string>
+    <string name="suppress_fullscreen_intent_title">Zablokuj wydarzenie na pełnym ekranie</string>
+    <string name="suppress_fullscreen_intent_summary">Zapobiegaj pojawianiu się wydarzeń na pełnym ekranie, takich jak połączenia przychodzące podczas grania</string>
     <string name="per_app_title">Skonfiguruj grę</string>
     <string name="per_app_mode_title">Preferowany tryb</string>
-    <string name="per_app_angle_title">Use ANGLE (experimental)</string>
-    <string name="per_app_angle_summary">Using ANGLE renderer instead of native GLES drivers.\nWARNING!! May breaks game graphics, use with caution!</string>
-    <string name="cant_find_angle_pkg">ANGLE is not available on your system</string>
-    <string name="per_app_unregister">Remove %1$s from library</string>
+    <string name="per_app_angle_title">Użyj ANGLE (eksperymentalne)</string>
+    <string name="per_app_angle_summary">Używaj renderowania ANGLE zamiast natywnych sterowników GLES.\nOSTRZEŻENIE!! Może uszkodzić grafikę gry, używaj z ostrożnością!</string>
+    <string name="cant_find_angle_pkg">ANGLE nie jest dostępne w Twoim systemie</string>
+    <string name="per_app_unregister">Usuń %1$s z biblioteki</string>
     <!-- Custom seekbar -->
     <string name="custom_seekbar_value">Wartość: <xliff:g id="v">%s</xliff:g></string>
     <string name="custom_seekbar_default_value">domyślnie</string>
     <string name="custom_seekbar_default_value_to_set">Wartość domyślna: <xliff:g id="v">%s</xliff:g>\nPrzytrzymaj dłużej by ustawić</string>
     <string name="custom_seekbar_default_value_is_set">Wartość domyślna jest ustawiona</string>
-    <string name="gamespace_menu_opacity_title">Overlay menu opacity level</string>
+    <string name="gamespace_menu_opacity_title">Poziom przezroczystości nakładki menu</string>
     <string name="adb_disabled_summary">Tymczasowe wyłączenie debugowania USB ADB podczas gry</string>
     <string name="adb_disabled_title">Wyłącz debugowanie USB</string>
 </resources>
