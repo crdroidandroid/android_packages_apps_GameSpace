@@ -20,14 +20,11 @@
     <string name="settings_summary">Διαχειριστείτε τις ρυθμίσεις παιχνιδιών σας</string>
     <string name="app_selector_label">Διάλεξε το παιχνίδι σου</string>
     <string name="auto_brightness_disabled_title">Απενεργοποίηση αυτόματης φωτεινότητας</string>
-    <string name="auto_brightness_disabled_summary">Διατηρήστε σταθερή τη φωτεινότητα ενώ βρίσκεστε στο παιχνίδι</string>
-    <string name="heads_up_disabled_title">Απενεργοποίηση αναδυόμενων ειδοποιήσεων</string>
-    <string name="heads_up_disabled_summary">Απαγόρευση αναδυόμενων ειδοποιήσεων ενώ βρίσκεστε στο παιχνίδι</string>
+    <string name="heads_up_disabled_title">Disable heads up notifications</string>
     <string name="in_game_preferences_title">Επιλογές εντός του παιχνιδιού</string>
     <string name="game_list_title">Βιβλιοθήκη</string>
     <string name="game_remove_message">Είστε βέβαιοι ότι θέλετε να αφαιρέσετε το %1$s από τη βιβλιοθήκη σας;</string>
     <string name="app_search_title">Αναζήτηση</string>
-    <string name="three_screenshot_disabled_summary">Προσωρινή απενεργοποίηση της χειρονομίας στιγμιότυπου οθόνης τριών δακτύλων κατά τη διάρκεια του παιχνιδιού</string>
     <string name="three_screenshot_disabled_title">Απενεργοποίηση συρσίματος για στιγμιότυπο οθόνης</string>
     <string name="state_enabled">ενεργό</string>
     <string name="state_disabled">ανενεργό</string>
@@ -40,13 +37,13 @@
     <string name="heads_up_title">Αναδυόμενες ειδοποιήσεις</string>
     <string name="fps_Info_title">Πληροφορίες FPS</string>
     <string name="stay_awake_title">Παραμονή σε λειτουργία</string>
-    <string name="stay_awake_summary">Κρατήστε την οθόνη ενεργή όσο βρίσκεστε στο παιχνίδι</string>
+    <string name="lock_gesture_title">Lock gesture</string>
     <string name="ringer_mode_title">Λειτουργία κουδουνίσματος</string>
     <string name="ringer_mode_silent">Αθόρυβο</string>
     <string name="ringer_mode_vibrate">Δόνηση</string>
     <string name="ringer_mode_normal">Κανονικό</string>
     <string name="suppress_fullscreen_intent_title">Αποκλεισμός συμβάντος πλήρους οθόνης</string>
-    <string name="suppress_fullscreen_intent_summary">Αποτροπή εμφάνισης συμβάντων πλήρους οθόνης όπως οι εισερχόμενες κλήσεις κατά τη διάρκεια του παιχνιδιού</string>
+    <string name="suppress_fullscreen_intent_summary">Prevent fullscreen events like incoming calls from appearing</string>
     <string name="per_app_title">Διαμόρφωση παιχνιδιού</string>
     <string name="per_app_mode_title">Προτιμώμενη λειτουργία</string>
     <string name="per_app_angle_title">Χρήση ANGLE (πειραματικό)</string>
@@ -59,6 +56,5 @@
     <string name="custom_seekbar_default_value_to_set">Προεπιλεγμένη τιμή: <xliff:g id="v">%s</xliff:g>\nΠατήστε παρατεταμένα για να ορίσετε</string>
     <string name="custom_seekbar_default_value_is_set">Η προεπιλεγμένη τιμή έχει οριστεί</string>
     <string name="gamespace_menu_opacity_title">Επίπεδο αδιαφάνειας μενού επικάλυψης</string>
-    <string name="adb_disabled_summary">Προσωρινή απενεργοποίηση εντοπισμού σφαλμάτων ADB USB κατά τη διάρκεια του παιχνιδιού</string>
     <string name="adb_disabled_title">Απενεργοποίηση εντοπισμού σφαλμάτων USB</string>
 </resources>
