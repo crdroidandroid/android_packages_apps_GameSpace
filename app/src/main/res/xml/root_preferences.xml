@@ -27,10 +27,6 @@
         android:key="in_game_preferences"
         android:title="@string/in_game_preferences_title">
 
-        <SwitchPreference
-            android:key="gamespace_heads_up_disabled"
-            android:title="@string/heads_up_disabled_title" />
-
         <ListPreference
             android:defaultValue="0"
             android:entries="@array/ringer_mode_entries"
@@ -45,6 +41,15 @@
             android:title="@string/suppress_fullscreen_intent_title" />
 
         <SwitchPreference
+            android:defaultValue="false"
+            android:key="gamespace_stay_awake"
+            android:title="@string/stay_awake_title" />
+
+        <SwitchPreference
+            android:key="gamespace_heads_up_disabled"
+            android:title="@string/heads_up_disabled_title" />
+
+        <SwitchPreference
             android:key="gamespace_auto_brightness_disabled"
             android:title="@string/auto_brightness_disabled_title" />
 
@@ -55,8 +60,8 @@
 
         <SwitchPreference
             android:defaultValue="false"
-            android:key="gamespace_stay_awake"
-            android:title="@string/stay_awake_title" />
+            android:key="gamespace_adb_disabled"
+            android:title="@string/adb_disabled_title" />
 
         <com.crdroid.settings.preferences.CustomSeekBarPreference
             android:key="gamespace_menu_opacity"
@@ -65,11 +70,6 @@
             android:max="100"
             app:min="0"
             app:units="%" />
-
-        <SwitchPreference
-            android:defaultValue="false"
-            android:key="gamespace_adb_disabled"
-            android:title="@string/adb_disabled_title" />
 
     </PreferenceCategory>
 
