@@ -39,6 +39,7 @@
     <string name="heads_up_title">Heads up</string>
     <string name="fps_Info_title">FPS info</string>
     <string name="stay_awake_title">Stay awake</string>
+    <string name="lock_gesture_title">Lock gesture</string>
 
     <string name="ringer_mode_title">Ringer mode</string>
     <string name="ringer_mode_silent">Silent</string>

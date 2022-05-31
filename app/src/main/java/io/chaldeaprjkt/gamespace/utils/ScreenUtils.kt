@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2021 Chaldeaprjkt
+ *               2022 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,8 +26,12 @@ import android.os.Handler
 import android.os.IBinder
 import android.os.Looper
 import android.os.PowerManager
+import android.os.RemoteException
+import android.os.ServiceManager
 import android.os.UserHandle
+import android.util.Log
 import android.view.WindowManager
+import com.android.internal.statusbar.IStatusBarService
 import com.android.internal.util.ScreenshotHelper
 import com.android.systemui.screenrecord.IRemoteRecording
 import javax.inject.Inject
@@ -57,6 +62,11 @@ class ScreenUtils @Inject constructor(private val context: Context) {
 
     val recorder: IRemoteRecording? get() = remoteRecording
 
+    private var isGestureLocked = false
+    private val statusBarService = IStatusBarService.Stub.asInterface(
+        ServiceManager.getService(Context.STATUS_BAR_SERVICE)
+    )
+
     fun bind() {
         isRecorderBound = context.bindServiceAsUser(Intent().apply {
             component = ComponentName(
@@ -78,6 +88,12 @@ class ScreenUtils @Inject constructor(private val context: Context) {
             context.unbindService(recorderConnection)
         }
         remoteRecording = null
+        try {
+            statusBarService.setBlockedGesturalNavigation(false)
+            isGestureLocked = false
+        } catch (e: RemoteException) {
+            Log.e("GameSpace:ScreenUtils", "Failed to toggle gesture off")
+        }
     }
 
     fun takeScreenshot(onComplete: ((Uri?) -> Unit)? = null) {
@@ -97,6 +113,18 @@ class ScreenUtils @Inject constructor(private val context: Context) {
                 wakelock?.takeIf { !it.isHeld }?.acquire()
             } else {
                 wakelock?.takeIf { it.isHeld }?.release()
+            }
+        }
+
+    var lockGesture = false
+        get() = isGestureLocked
+        set(enable) {
+            try {
+                statusBarService.setBlockedGesturalNavigation(enable)
+                field = enable
+                isGestureLocked = enable
+            } catch (e: RemoteException) {
+                Log.e("GameSpace:ScreenUtils", "Failed to toggle gesture")
             }
         }
 }
