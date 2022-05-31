@@ -20,14 +20,11 @@
     <string name="settings_summary">إدارة إعدادات ألعابك</string>
     <string name="app_selector_label">إختر لعبتك</string>
     <string name="auto_brightness_disabled_title">تعطيل السطوع التلقائي</string>
-    <string name="auto_brightness_disabled_summary">حافظ على السطوع ثابتًا أثناء اللعب</string>
-    <string name="heads_up_disabled_title">تعطيل الإشعارات المنبثقة</string>
-    <string name="heads_up_disabled_summary">عدم السماح بالإشعارات المنبثقة أثناء اللعب</string>
+    <string name="heads_up_disabled_title">Disable heads up notifications</string>
     <string name="in_game_preferences_title">خيارات داخل اللعبة</string>
     <string name="game_list_title">المكتبة</string>
     <string name="game_remove_message">هل ترغب حقًا في إزالة «%1$s» من مكتبتك؟</string>
     <string name="app_search_title">بحث</string>
-    <string name="three_screenshot_disabled_summary">تعطيل مؤقت لإيماءة لقطة الشاشة بثلاثة أصابع أثناء اللعب</string>
     <string name="three_screenshot_disabled_title">تعطيل السحب لأخذ لقطة الشاشة</string>
     <string name="state_enabled">مفعل</string>
     <string name="state_disabled">معطل</string>
@@ -40,13 +37,13 @@
     <string name="heads_up_title">الإشعارات المنبثقة</string>
     <string name="fps_Info_title">عداد معدل الإطارات</string>
     <string name="stay_awake_title">البقاء في الوضع النشط</string>
-    <string name="stay_awake_summary">إبقاء الشاشة مضاءة أثناء اللعب</string>
+    <string name="lock_gesture_title">Lock gesture</string>
     <string name="ringer_mode_title">وضع الرنين</string>
     <string name="ringer_mode_silent">صامت</string>
     <string name="ringer_mode_vibrate">إهتزاز</string>
     <string name="ringer_mode_normal">عادي</string>
     <string name="suppress_fullscreen_intent_title">منع أحداث الشاشة الكاملة</string>
-    <string name="suppress_fullscreen_intent_summary">منع أحداث ملء الشاشة مثل المكالمات الواردة من الظهور أثناء اللعب</string>
+    <string name="suppress_fullscreen_intent_summary">Prevent fullscreen events like incoming calls from appearing</string>
     <string name="per_app_title">ضبط اللعبة</string>
     <string name="per_app_mode_title">الوضع المفضل</string>
     <string name="per_app_angle_title">استخدام واجهة المستخدم الجديدة (التجريبية)</string>
@@ -59,6 +56,5 @@
     <string name="custom_seekbar_default_value_to_set">القيمة الافتراضية: <xliff:g id="v">%s</xliff:g>\n أنقر مطولاً للتعيين</string>
     <string name="custom_seekbar_default_value_is_set">تم تعيين القيمة الافتراضية</string>
     <string name="gamespace_menu_opacity_title">مستوى شفافية القائمة العائمة</string>
-    <string name="adb_disabled_summary">تعطيل مؤقت لوضع تصحيح أخطاء USB أثناء اللعب</string>
     <string name="adb_disabled_title">تعطيل تصحيح أخطاء USB</string>
 </resources>
