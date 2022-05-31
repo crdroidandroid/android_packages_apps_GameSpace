@@ -29,7 +29,6 @@
 
         <SwitchPreference
             android:key="gamespace_heads_up_disabled"
-            android:summary="@string/heads_up_disabled_summary"
             android:title="@string/heads_up_disabled_title" />
 
         <ListPreference
@@ -47,19 +46,16 @@
 
         <SwitchPreference
             android:key="gamespace_auto_brightness_disabled"
-            android:summary="@string/auto_brightness_disabled_summary"
             android:title="@string/auto_brightness_disabled_title" />
 
         <SwitchPreference
             android:defaultValue="false"
             android:key="gamespace_tfgesture_disabled"
-            android:summary="@string/three_screenshot_disabled_summary"
             android:title="@string/three_screenshot_disabled_title" />
 
         <SwitchPreference
             android:defaultValue="false"
             android:key="gamespace_stay_awake"
-            android:summary="@string/stay_awake_summary"
             android:title="@string/stay_awake_title" />
 
         <com.crdroid.settings.preferences.CustomSeekBarPreference
@@ -73,7 +69,6 @@
         <SwitchPreference
             android:defaultValue="false"
             android:key="gamespace_adb_disabled"
-            android:summary="@string/adb_disabled_summary"
             android:title="@string/adb_disabled_title" />
 
     </PreferenceCategory>
