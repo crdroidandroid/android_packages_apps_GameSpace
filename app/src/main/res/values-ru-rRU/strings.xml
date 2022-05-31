@@ -20,14 +20,11 @@
     <string name="settings_summary">Настройка игровых возможностей</string>
     <string name="app_selector_label">Выберите свою игру</string>
     <string name="auto_brightness_disabled_title">Отключить автоматическую яркость</string>
-    <string name="auto_brightness_disabled_summary">Не менять яркость во время игры</string>
-    <string name="heads_up_disabled_title">Отключить всплывающие уведомления</string>
-    <string name="heads_up_disabled_summary">Запретить всплывающие уведомления во время игры</string>
+    <string name="heads_up_disabled_title">Disable heads up notifications</string>
     <string name="in_game_preferences_title">Настройки игры</string>
     <string name="game_list_title">Библиотека</string>
     <string name="game_remove_message">Вы уверены, что хотите удалить %1$s из своей библиотеки?</string>
     <string name="app_search_title">Поиск</string>
-    <string name="three_screenshot_disabled_summary">Временно отключить свайп тремя пальцами для скриншота время игры</string>
     <string name="three_screenshot_disabled_title">Отключить свайп для скриншота</string>
     <string name="state_enabled">включено</string>
     <string name="state_disabled">отключено</string>
@@ -40,13 +37,13 @@
     <string name="heads_up_title">Всплывающие уведомления</string>
     <string name="fps_Info_title">Информация о FPS</string>
     <string name="stay_awake_title">Не отключать экран</string>
-    <string name="stay_awake_summary">Не отключать экран, пока вы в игре</string>
+    <string name="lock_gesture_title">Lock gesture</string>
     <string name="ringer_mode_title">Режим звонка в игре</string>
     <string name="ringer_mode_silent">Беззвучный</string>
     <string name="ringer_mode_vibrate">Вибрация</string>
     <string name="ringer_mode_normal">Обычный</string>
     <string name="suppress_fullscreen_intent_title">Блокировать полноэкранные уведомления</string>
-    <string name="suppress_fullscreen_intent_summary">Предотвращать появление полноэкранных уведомлений, таких как входящие вызовы, во время игры</string>
+    <string name="suppress_fullscreen_intent_summary">Prevent fullscreen events like incoming calls from appearing</string>
     <string name="per_app_title">Настроить игру</string>
     <string name="per_app_mode_title">Предпочтительный режим</string>
     <string name="per_app_angle_title">Использовать ANGLE (эксперементально)</string>
@@ -59,6 +56,5 @@
     <string name="custom_seekbar_default_value_to_set">Значение по умолчанию: <xliff:g id="v">%s</xliff:g>\nУдерживайте для установки</string>
     <string name="custom_seekbar_default_value_is_set">Значение по умолчанию установлено</string>
     <string name="gamespace_menu_opacity_title">Уровень прозрачности меню игрового режима</string>
-    <string name="adb_disabled_summary">Временно отключить отладку USB ADB во время игры</string>
     <string name="adb_disabled_title">Отключить отладку по USB</string>
 </resources>
