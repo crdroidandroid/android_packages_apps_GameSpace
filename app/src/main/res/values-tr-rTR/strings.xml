@@ -20,7 +20,7 @@
     <string name="settings_summary">Oyun kurulumunuzu yönetin</string>
     <string name="app_selector_label">Oyununu seç</string>
     <string name="auto_brightness_disabled_title">Otomatik parlaklığı devre dışı bırak</string>
-    <string name="heads_up_disabled_title">Disable heads up notifications</string>
+    <string name="heads_up_disabled_title">Uyarı bildirimlerini devre dışı bırak</string>
     <string name="in_game_preferences_title">Oyun içi seçenekleri</string>
     <string name="game_list_title">Arşiv</string>
     <string name="game_remove_message">%1$s arşivden kaldırmak istediğinizden emin misiniz?</string>
@@ -37,13 +37,13 @@
     <string name="heads_up_title">Bildirim pencereleri</string>
     <string name="fps_Info_title">FPS bilgisi</string>
     <string name="stay_awake_title">Uyanık kal</string>
-    <string name="lock_gesture_title">Lock gesture</string>
+    <string name="lock_gesture_title">Hareketi kilitle</string>
     <string name="ringer_mode_title">Zil sesi modu</string>
     <string name="ringer_mode_silent">Sessiz</string>
     <string name="ringer_mode_vibrate">Titreşim</string>
     <string name="ringer_mode_normal">Normal</string>
     <string name="suppress_fullscreen_intent_title">Tam ekran etkinliğini engelle</string>
-    <string name="suppress_fullscreen_intent_summary">Prevent fullscreen events like incoming calls from appearing</string>
+    <string name="suppress_fullscreen_intent_summary">Oyun içindeyken gelen aramalar gibi tam ekran etkinliklerinin görünmesini engelleyin</string>
     <string name="per_app_title">Oyunu yapılandır</string>
     <string name="per_app_mode_title">Tercih edilen mod</string>
     <string name="per_app_angle_title">ANGLE kullan (deneysel)</string>
