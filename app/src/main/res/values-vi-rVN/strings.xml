@@ -37,13 +37,13 @@
     <string name="heads_up_title">Thông báo nổi</string>
     <string name="fps_Info_title">Thông tin FPS</string>
     <string name="stay_awake_title">Không khóa màn hình</string>
-    <string name="lock_gesture_title">Lock gesture</string>
+    <string name="lock_gesture_title">Cử chỉ vuốt sang trái</string>
     <string name="ringer_mode_title">Chế độ chuông</string>
     <string name="ringer_mode_silent">Im lặng</string>
     <string name="ringer_mode_vibrate">Rung</string>
     <string name="ringer_mode_normal">Bình thường</string>
     <string name="suppress_fullscreen_intent_title">Chặn sự kiện toàn màn hình</string>
-    <string name="suppress_fullscreen_intent_summary">Prevent fullscreen events like incoming calls from appearing</string>
+    <string name="suppress_fullscreen_intent_summary">Ngăn các sự kiện toàn màn hình như cuộc gọi đến xuất hiện khi ở trong trò chơi</string>
     <string name="per_app_title">Định cấu hình trò chơi</string>
     <string name="per_app_mode_title">Chế độ ưu tiên</string>
     <string name="per_app_angle_title">Sử dụng ANGLE (thử nghiệm)</string>
