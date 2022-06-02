@@ -29,7 +29,7 @@
     <string name="state_enabled">已启用</string>
     <string name="state_disabled">已禁用</string>
     <!-- Game Mode -->
-    <string name="game_mode_title">模式</string>
+    <string name="game_mode_title">游戏模式</string>
     <string name="game_mode_unsupported">不支持</string>
     <string name="game_mode_standard">标准</string>
     <string name="game_mode_performance">性能</string>
@@ -48,7 +48,7 @@
     <string name="per_app_mode_title">首选模式</string>
     <string name="per_app_angle_title">使用 ANGLE 渲染器 (实验性)</string>
     <string name="per_app_angle_summary">使用 ANGLE 渲染器而不是本机的 GLES 驱动器。\n警告!! 可能会破坏游戏图形, 请谨慎使用!</string>
-    <string name="cant_find_angle_pkg">ANGLE 在您的系统上不可用</string>
+    <string name="cant_find_angle_pkg">ANGLE 渲染器在当前系统中不可用</string>
     <string name="per_app_unregister">从游戏列表中移除 %1$s</string>
     <!-- Custom seekbar -->
     <string name="custom_seekbar_value">值: <xliff:g id="v">%s</xliff:g></string>
