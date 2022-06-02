@@ -28,7 +28,7 @@
         android:title="@string/in_game_preferences_title">
 
         <ListPreference
-            android:defaultValue="0"
+            android:defaultValue="3"
             android:entries="@array/ringer_mode_entries"
             android:entryValues="@array/ringer_mode_values"
             android:key="gamespace_ringer_mode"

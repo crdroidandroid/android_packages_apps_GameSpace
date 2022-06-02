@@ -45,6 +45,7 @@
     <string name="ringer_mode_silent">Silent</string>
     <string name="ringer_mode_vibrate">Vibrate</string>
     <string name="ringer_mode_normal">Normal</string>
+    <string name="ringer_mode_no_change">Do not change</string>
 
     <string name="suppress_fullscreen_intent_title">Block fullscreen event</string>
     <string name="suppress_fullscreen_intent_summary">Prevent fullscreen events like incoming calls from appearing</string>

@@ -27,12 +27,14 @@
         <item>@string/ringer_mode_silent</item>
         <item>@string/ringer_mode_vibrate</item>
         <item>@string/ringer_mode_normal</item>
+        <item>@string/ringer_mode_no_change</item>
     </string-array>
 
     <string-array name="ringer_mode_values" translatable="false">
         <item>0</item> <!-- SILENT  -->
         <item>1</item> <!-- VIBRATE -->
         <item>2</item> <!-- NORMAL  -->
+        <item>3</item> <!-- NO CHANGE  -->
     </string-array>
 
     <string-array name="per_app_preferred_mode_values" translatable="false">
