@@ -51,10 +51,6 @@
             android:title="@string/lock_gesture_title" />
 
         <SwitchPreference
-            android:key="gamespace_heads_up_disabled"
-            android:title="@string/heads_up_disabled_title" />
-
-        <SwitchPreference
             android:key="gamespace_auto_brightness_disabled"
             android:title="@string/auto_brightness_disabled_title" />
 
