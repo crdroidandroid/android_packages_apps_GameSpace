@@ -20,7 +20,7 @@
     <string name="settings_summary">管理您的游戏设置</string>
     <string name="app_selector_label">选择您的游戏</string>
     <string name="auto_brightness_disabled_title">禁用自动调节亮度</string>
-    <string name="heads_up_disabled_title">Disable heads up notifications</string>
+    <string name="heads_up_disabled_title">禁用浮动通知</string>
     <string name="in_game_preferences_title">游戏中选项</string>
     <string name="game_list_title">游戏列表</string>
     <string name="game_remove_message">您确定要将 %1$s 从您的游戏列表中移除吗？</string>
@@ -37,13 +37,13 @@
     <string name="heads_up_title">浮动通知</string>
     <string name="fps_Info_title">FPS 信息</string>
     <string name="stay_awake_title">保持唤醒</string>
-    <string name="lock_gesture_title">Lock gesture</string>
+    <string name="lock_gesture_title">锁定手势</string>
     <string name="ringer_mode_title">响铃模式</string>
     <string name="ringer_mode_silent">静音</string>
     <string name="ringer_mode_vibrate">振动</string>
     <string name="ringer_mode_normal">正常</string>
     <string name="suppress_fullscreen_intent_title">屏蔽全屏事件</string>
-    <string name="suppress_fullscreen_intent_summary">Prevent fullscreen events like incoming calls from appearing</string>
+    <string name="suppress_fullscreen_intent_summary">防止在游戏中出现来电等全屏事件</string>
     <string name="per_app_title">配置游戏</string>
     <string name="per_app_mode_title">首选模式</string>
     <string name="per_app_angle_title">使用 ANGLE 渲染器 (实验性)</string>
