@@ -37,13 +37,13 @@
     <string name="heads_up_title">Notificações flutuantes</string>
     <string name="fps_Info_title">Info. de FPS</string>
     <string name="stay_awake_title">Manter ativo</string>
-    <string name="lock_gesture_title">Lock gesture</string>
+    <string name="lock_gesture_title">Bloquear gestos</string>
     <string name="ringer_mode_title">Modo de toque</string>
     <string name="ringer_mode_silent">Silencioso</string>
     <string name="ringer_mode_vibrate">Vibrar</string>
     <string name="ringer_mode_normal">Normal</string>
     <string name="suppress_fullscreen_intent_title">Bloquear eventos em ecrã inteiro</string>
-    <string name="suppress_fullscreen_intent_summary">Prevent fullscreen events like incoming calls from appearing</string>
+    <string name="suppress_fullscreen_intent_summary">Impedir que ocorram eventos em ecrã inteiro, como receber chamadas</string>
     <string name="per_app_title">Configurar jogo</string>
     <string name="per_app_mode_title">Modo preferido</string>
     <string name="per_app_angle_title">Usar ANGLE (experimental)</string>
