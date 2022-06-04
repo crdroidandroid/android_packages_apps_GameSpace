@@ -20,14 +20,11 @@
     <string name="settings_summary">Quản lý thiết lập trò chơi của bạn</string>
     <string name="app_selector_label">Chọn trò chơi của bạn</string>
     <string name="auto_brightness_disabled_title">Vô hiệu hóa độ sáng tự động</string>
-    <string name="auto_brightness_disabled_summary">Giữ độ sáng ổn định khi ở trong trò chơi </string>
-    <string name="heads_up_disabled_title">Không cho phép cửa sổ nổi lên</string>
-    <string name="heads_up_disabled_summary">Không cho phép thông báo bật lên khi ở trong trò chơi</string>
+    <string name="heads_up_disabled_title">Tắt thông báo nổi</string>
     <string name="in_game_preferences_title">Tùy chọn trong trò chơi</string>
     <string name="game_list_title">Thư viện</string>
     <string name="game_remove_message">Yes?</string>
     <string name="app_search_title">Tìm kiếm</string>
-    <string name="three_screenshot_disabled_summary">Tạm thời vô hiệu hóa cử chỉ vuốt ảnh chụp màn hình bằng ba ngón tay khi ở trong trò chơi</string>
     <string name="three_screenshot_disabled_title">Tắt tính năng vuốt đến ảnh chụp màn hình</string>
     <string name="state_enabled">đã bật</string>
     <string name="state_disabled">đã tắt</string>
@@ -40,7 +37,7 @@
     <string name="heads_up_title">Thông báo nổi</string>
     <string name="fps_Info_title">Thông tin FPS</string>
     <string name="stay_awake_title">Không khóa màn hình</string>
-    <string name="stay_awake_summary">Giữ màn hình ở chế độ thức khi chơi trò chơi</string>
+    <string name="lock_gesture_title">Khóa cử chỉ</string>
     <string name="ringer_mode_title">Chế độ chuông</string>
     <string name="ringer_mode_silent">Im lặng</string>
     <string name="ringer_mode_vibrate">Rung</string>
@@ -59,6 +56,5 @@
     <string name="custom_seekbar_default_value_to_set">Giá trị mặc định: <xliff:g id="v">%s</xliff:g>\nNhấn giữ lâu để thiết lập</string>
     <string name="custom_seekbar_default_value_is_set">Đã đặt giá trị mặc định</string>
     <string name="gamespace_menu_opacity_title">Mức độ mờ của menu</string>
-    <string name="adb_disabled_summary">Tạm thời vô hiệu hóa gỡ lỗi USB ADB khi ở trong trò chơi</string>
     <string name="adb_disabled_title">Vô hiệu hóa gỡ lỗi USB</string>
 </resources>

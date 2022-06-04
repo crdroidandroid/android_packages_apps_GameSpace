@@ -20,14 +20,11 @@
     <string name="settings_summary">Spravovat herního nastavení</string>
     <string name="app_selector_label">Výběr hry</string>
     <string name="auto_brightness_disabled_title">Zakázat automatický jas</string>
-    <string name="auto_brightness_disabled_summary">Zachovat nastavení jasu ve hře</string>
-    <string name="heads_up_disabled_title">Zakázat plovoucí upozornění</string>
-    <string name="heads_up_disabled_summary">Zakázat vyskakování oznámení během hry</string>
+    <string name="heads_up_disabled_title">Disable heads up notifications</string>
     <string name="in_game_preferences_title">Možnosti ve hře</string>
     <string name="game_list_title">Knihovna</string>
     <string name="game_remove_message">Opravdu chcete odstranit %1$s z vaší knihovny?</string>
     <string name="app_search_title">Hledat</string>
-    <string name="three_screenshot_disabled_summary">Dočasné vypnutí gesta screenshot třemi prsty během hry</string>
     <string name="three_screenshot_disabled_title">Zakázat přejetí pro snímek obrazovky</string>
     <string name="state_enabled">povoleno</string>
     <string name="state_disabled">zakázáno</string>
@@ -40,13 +37,13 @@
     <string name="heads_up_title">Plovoucí oznámení</string>
     <string name="fps_Info_title">Informace o FPS</string>
     <string name="stay_awake_title">Nevypínat obrazovku</string>
-    <string name="stay_awake_summary">Udržet obrazovku vzhůru během hry</string>
+    <string name="lock_gesture_title">Lock gesture</string>
     <string name="ringer_mode_title">Režim vyzvánění</string>
     <string name="ringer_mode_silent">Tichý</string>
     <string name="ringer_mode_vibrate">Vibrace</string>
     <string name="ringer_mode_normal">Normální</string>
     <string name="suppress_fullscreen_intent_title">Blokovat událost na celou obrazovku</string>
-    <string name="suppress_fullscreen_intent_summary">Zabránit zobrazení příchozích hovorů v režimu celé obrazovky během hry</string>
+    <string name="suppress_fullscreen_intent_summary">Prevent fullscreen events like incoming calls from appearing</string>
     <string name="per_app_title">Konfigurace hry</string>
     <string name="per_app_mode_title">Preferovaný režim</string>
     <string name="per_app_angle_title">Použít ANGLE (experimentální)</string>
@@ -59,6 +56,5 @@
     <string name="custom_seekbar_default_value_to_set">Výchozí hodnota: <xliff:g id="v">%s</xliff:g>\nDlouze klepněte pro její nastavení</string>
     <string name="custom_seekbar_default_value_is_set">Výchozí hodnota je nastavena</string>
     <string name="gamespace_menu_opacity_title">Úroveň průhlednosti překrytí menu</string>
-    <string name="adb_disabled_summary">Dočasné vypnutí ladění USB ADB během hry</string>
     <string name="adb_disabled_title">Zakázat ladění USB</string>
 </resources>

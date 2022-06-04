@@ -20,14 +20,11 @@
     <string name="settings_summary">Administra tu configuración de juegos</string>
     <string name="app_selector_label">Elige tu juego</string>
     <string name="auto_brightness_disabled_title">Desactivar brillo automático</string>
-    <string name="auto_brightness_disabled_summary">Mantener el brillo establecido durante el juego</string>
-    <string name="heads_up_disabled_title">Desactivar notificaciones flotantes</string>
-    <string name="heads_up_disabled_summary">No permitir notificaciones emergentes durante el juego</string>
+    <string name="heads_up_disabled_title">Disable heads up notifications</string>
     <string name="in_game_preferences_title">Opciones en el juego</string>
     <string name="game_list_title">Biblioteca</string>
     <string name="game_remove_message">¿Está seguro que desea eliminar %1$s de su biblioteca?</string>
     <string name="app_search_title">Buscar</string>
-    <string name="three_screenshot_disabled_summary">Deshabilita temporalmente el gesto de captura de pantalla con tres dedos durante el juego</string>
     <string name="three_screenshot_disabled_title">Desactivar deslizar para captura de pantalla</string>
     <string name="state_enabled">activado</string>
     <string name="state_disabled">desactivado</string>
@@ -40,13 +37,13 @@
     <string name="heads_up_title">Notificaciones flotantes</string>
     <string name="fps_Info_title">Información de FPS</string>
     <string name="stay_awake_title">Permanecer encendido</string>
-    <string name="stay_awake_summary">Mantener la pantalla encendida durante el juego</string>
+    <string name="lock_gesture_title">Lock gesture</string>
     <string name="ringer_mode_title">Modo de timbre</string>
     <string name="ringer_mode_silent">Silencio</string>
     <string name="ringer_mode_vibrate">Vibrar</string>
     <string name="ringer_mode_normal">Normal</string>
     <string name="suppress_fullscreen_intent_title">Bloquear eventos en pantalla completa</string>
-    <string name="suppress_fullscreen_intent_summary">Evitar que eventos de pantalla completa como llamadas entrantes aparezcan en el juego</string>
+    <string name="suppress_fullscreen_intent_summary">Prevent fullscreen events like incoming calls from appearing</string>
     <string name="per_app_title">Configurar juego</string>
     <string name="per_app_mode_title">Modo preferido</string>
     <string name="per_app_angle_title">Usar nueva interfaz de usuario (experimental)</string>
@@ -60,6 +57,5 @@
 Mantén presionado para establecer</string>
     <string name="custom_seekbar_default_value_is_set">Valor predeterminado establecido</string>
     <string name="gamespace_menu_opacity_title">Nivel de opacidad del menú de superposición</string>
-    <string name="adb_disabled_summary">Inhabilita temporalmente la depuración USB ADB durante el juego</string>
     <string name="adb_disabled_title">Desactivar depuración USB</string>
 </resources>

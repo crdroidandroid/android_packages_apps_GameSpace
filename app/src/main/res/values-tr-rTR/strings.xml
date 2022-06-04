@@ -20,14 +20,11 @@
     <string name="settings_summary">Oyun kurulumunuzu yönetin</string>
     <string name="app_selector_label">Oyununu seç</string>
     <string name="auto_brightness_disabled_title">Otomatik parlaklığı devre dışı bırak</string>
-    <string name="auto_brightness_disabled_summary">Oyun içindeyken parlaklığı sabit tutun</string>
-    <string name="heads_up_disabled_title">Üst bildirimleri devre dışı bırak</string>
-    <string name="heads_up_disabled_summary">Oyun içindeyken açılır bildirimlere izin verme</string>
+    <string name="heads_up_disabled_title">Uyarı bildirimlerini devre dışı bırak</string>
     <string name="in_game_preferences_title">Oyun içi seçenekleri</string>
     <string name="game_list_title">Arşiv</string>
     <string name="game_remove_message">%1$s arşivden kaldırmak istediğinizden emin misiniz?</string>
     <string name="app_search_title">Ara</string>
-    <string name="three_screenshot_disabled_summary">Oyundayken üç parmakla kaydırarak ekran görüntüsü alma hareketini geçici olarak devre dışı bırak</string>
     <string name="three_screenshot_disabled_title">Üç parmak hareketini devre dışı bırak</string>
     <string name="state_enabled">etkin</string>
     <string name="state_disabled">devre dışı</string>
@@ -40,7 +37,7 @@
     <string name="heads_up_title">Bildirim pencereleri</string>
     <string name="fps_Info_title">FPS bilgisi</string>
     <string name="stay_awake_title">Uyanık kal</string>
-    <string name="stay_awake_summary">Oyundayken ekranı uyanık tutun</string>
+    <string name="lock_gesture_title">Hareketi kilitle</string>
     <string name="ringer_mode_title">Zil sesi modu</string>
     <string name="ringer_mode_silent">Sessiz</string>
     <string name="ringer_mode_vibrate">Titreşim</string>
@@ -59,6 +56,5 @@
     <string name="custom_seekbar_default_value_to_set">Varsayılan değer: <xliff:g id="v">%s</xliff:g>\nAyarlamak için uzun basın</string>
     <string name="custom_seekbar_default_value_is_set">Varsayılan değer ayarlandı</string>
     <string name="gamespace_menu_opacity_title">Arayüz menüsü şeffaflığı</string>
-    <string name="adb_disabled_summary">Oyun sırasında USB ADB hata ayıklamasını geçici olarak devre dışı bırakın</string>
     <string name="adb_disabled_title">USB hata ayıklamasını devre dışı bırak</string>
 </resources>
