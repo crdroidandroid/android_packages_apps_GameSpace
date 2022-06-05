@@ -44,7 +44,7 @@
     <string name="ringer_mode_normal">正常</string>
     <string name="suppress_fullscreen_intent_title">封鎖全螢幕活動</string>
     <string name="suppress_fullscreen_intent_summary">防止如電話等的應用程式彈出全螢幕畫面</string>
-    <string name="per_app_title">設定遊戲</string>
+    <string name="per_app_title">遊戲選項</string>
     <string name="per_app_mode_title">偏好模式</string>
     <string name="per_app_angle_title">使用 ANGLE （實驗性功能）</string>
     <string name="per_app_angle_summary">使用 ANGLE 渲染畫面而非原生的 GLES 驅動。\n警告！遊戲畫面可能出現破圖等現象，請謹慎使用。</string>
