@@ -79,6 +79,13 @@
                 </LinearLayout>
             </RelativeLayout>
 
+            <io.chaldeaprjkt.gamespace.widget.BatteryView
+                android:id="@+id/battery_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="4dp"
+                android:textSize="16sp" />
+
             <include layout="@layout/tiles" />
 
         </LinearLayout>
