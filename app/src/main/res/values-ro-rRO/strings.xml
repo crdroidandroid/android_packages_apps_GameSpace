@@ -20,7 +20,7 @@
     <string name="settings_summary">Gestionează-ți configurarea jocurilor</string>
     <string name="app_selector_label">Alege-ți numele</string>
     <string name="auto_brightness_disabled_title">Dezactivează luminozitatea automată</string>
-    <string name="heads_up_disabled_title">Disable heads up notifications</string>
+    <string name="heads_up_disabled_title">Dezactivează notificările de atenţionare</string>
     <string name="in_game_preferences_title">Opțiuni în joc</string>
     <string name="game_list_title">Bibliotecă</string>
     <string name="game_remove_message">Sunteți sigur că doriți să ștergeți %1$s din bibliotecă?</string>
@@ -37,13 +37,13 @@
     <string name="heads_up_title">Atenționări</string>
     <string name="fps_Info_title">Informații FPS</string>
     <string name="stay_awake_title">Menține ecranul activ</string>
-    <string name="lock_gesture_title">Lock gesture</string>
+    <string name="lock_gesture_title">Gest de blocare</string>
     <string name="ringer_mode_title">Mod sonerie</string>
     <string name="ringer_mode_silent">Silențios</string>
     <string name="ringer_mode_vibrate">Vibrații</string>
     <string name="ringer_mode_normal">Normal</string>
     <string name="suppress_fullscreen_intent_title">Blocare eveniment pe tot ecranul</string>
-    <string name="suppress_fullscreen_intent_summary">Prevent fullscreen events like incoming calls from appearing</string>
+    <string name="suppress_fullscreen_intent_summary">Împiedicați apariția evenimentelor de pe tot ecranul, cum ar fi apelurile primite</string>
     <string name="per_app_title">Configurare joc</string>
     <string name="per_app_mode_title">Mod preferat</string>
     <string name="per_app_angle_title">Utilizează ANGLE (experimental)</string>

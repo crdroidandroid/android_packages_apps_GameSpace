@@ -20,7 +20,7 @@
     <string name="settings_summary">Zarządzaj konfiguracją gier</string>
     <string name="app_selector_label">Wybierz swoją grę</string>
     <string name="auto_brightness_disabled_title">Wyłącz automatyczną jasność</string>
-    <string name="heads_up_disabled_title">Disable heads up notifications</string>
+    <string name="heads_up_disabled_title">Wyłącz wyskakujące powiadomienia</string>
     <string name="in_game_preferences_title">Opcje w grze</string>
     <string name="game_list_title">Biblioteka</string>
     <string name="game_remove_message">Czy na pewno chcesz usunąć %1$s z Twojej biblioteki?</string>
@@ -37,13 +37,13 @@
     <string name="heads_up_title">Wyskakujące powiadomienia</string>
     <string name="fps_Info_title">Wskaźnik FPS</string>
     <string name="stay_awake_title">Pozostaw włączony ekran</string>
-    <string name="lock_gesture_title">Lock gesture</string>
+    <string name="lock_gesture_title">Gest blokady</string>
     <string name="ringer_mode_title">Tryb dzwonka</string>
     <string name="ringer_mode_silent">Tryb cichy</string>
     <string name="ringer_mode_vibrate">Wibracje</string>
     <string name="ringer_mode_normal">Normalny</string>
     <string name="suppress_fullscreen_intent_title">Zablokuj wydarzenie na pełnym ekranie</string>
-    <string name="suppress_fullscreen_intent_summary">Prevent fullscreen events like incoming calls from appearing</string>
+    <string name="suppress_fullscreen_intent_summary">Zapobiegaj pojawianiu się wydarzeń na pełnym ekranie, takich jak połączenia przychodzące</string>
     <string name="per_app_title">Skonfiguruj grę</string>
     <string name="per_app_mode_title">Preferowany tryb</string>
     <string name="per_app_angle_title">Użyj ANGLE (eksperymentalne)</string>

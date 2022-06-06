@@ -29,32 +29,32 @@
     <string name="state_enabled">已啟用</string>
     <string name="state_disabled">已停用</string>
     <!-- Game Mode -->
-    <string name="game_mode_title">模式 </string>
-    <string name="game_mode_unsupported">Unsupported</string>
-    <string name="game_mode_standard">Standard</string>
-    <string name="game_mode_performance">Performance</string>
-    <string name="game_mode_battery">Battery</string>
-    <string name="heads_up_title">Heads up</string>
-    <string name="fps_Info_title">FPS info</string>
-    <string name="stay_awake_title">Stay awake</string>
-    <string name="lock_gesture_title">Lock gesture</string>
-    <string name="ringer_mode_title">Ringer mode</string>
-    <string name="ringer_mode_silent">Silent</string>
-    <string name="ringer_mode_vibrate">Vibrate</string>
-    <string name="ringer_mode_normal">Normal</string>
-    <string name="suppress_fullscreen_intent_title">Block fullscreen event</string>
-    <string name="suppress_fullscreen_intent_summary">Prevent fullscreen events like incoming calls from appearing</string>
-    <string name="per_app_title">Configure game</string>
-    <string name="per_app_mode_title">Preferred mode</string>
-    <string name="per_app_angle_title">Use ANGLE (experimental)</string>
-    <string name="per_app_angle_summary">Using ANGLE renderer instead of native GLES drivers.\nWARNING!! May breaks game graphics, use with caution!</string>
-    <string name="cant_find_angle_pkg">ANGLE is not available on your system</string>
-    <string name="per_app_unregister">Remove %1$s from library</string>
+    <string name="game_mode_title">模式</string>
+    <string name="game_mode_unsupported">不支援</string>
+    <string name="game_mode_standard">一般</string>
+    <string name="game_mode_performance">高效能</string>
+    <string name="game_mode_battery">省電</string>
+    <string name="heads_up_title">浮動通知</string>
+    <string name="fps_Info_title">幀數</string>
+    <string name="stay_awake_title">螢幕保持開啟</string>
+    <string name="lock_gesture_title">鎖定手勢</string>
+    <string name="ringer_mode_title">鈴聲模式</string>
+    <string name="ringer_mode_silent">靜音</string>
+    <string name="ringer_mode_vibrate">震動</string>
+    <string name="ringer_mode_normal">正常</string>
+    <string name="suppress_fullscreen_intent_title">封鎖全螢幕活動</string>
+    <string name="suppress_fullscreen_intent_summary">防止如電話等的應用程式彈出全螢幕畫面</string>
+    <string name="per_app_title">遊戲選項</string>
+    <string name="per_app_mode_title">偏好模式</string>
+    <string name="per_app_angle_title">使用 ANGLE （實驗性功能）</string>
+    <string name="per_app_angle_summary">使用 ANGLE 渲染畫面而非原生的 GLES 驅動。\n警告！遊戲畫面可能出現破圖等現象，請謹慎使用。</string>
+    <string name="cant_find_angle_pkg">您的系統不支援 ANGLE</string>
+    <string name="per_app_unregister">從遊戲庫中移除 %1$s</string>
     <!-- Custom seekbar -->
     <string name="custom_seekbar_value">數值： <xliff:g id="v">%s</xliff:g></string>
     <string name="custom_seekbar_default_value">預設</string>
     <string name="custom_seekbar_default_value_to_set">預設值：<xliff:g id="v">%s</xliff:g>\n長按以設定</string>
     <string name="custom_seekbar_default_value_is_set">已設定為預設值</string>
-    <string name="gamespace_menu_opacity_title">Overlay menu opacity level</string>
-    <string name="adb_disabled_title">Disable USB debugging</string>
+    <string name="gamespace_menu_opacity_title">不透明度</string>
+    <string name="adb_disabled_title">停用 USB 偵錯</string>
 </resources>
