@@ -62,7 +62,7 @@ class AppSettings @Inject constructor(private val context: Context) {
         set(value) = db.edit().putString(KEY_RINGER_MODE, value.toString()).apply()
 
     var menuOpacity: Int
-        get() = db.getInt(KEY_MENU_OPACITY, 75)
+        get() = db.getInt(KEY_MENU_OPACITY, 100)
         set(value) = db.edit().putInt(KEY_MENU_OPACITY, value).apply()
 
     var noAdbEnabled
