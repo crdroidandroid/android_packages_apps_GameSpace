@@ -57,4 +57,5 @@
     <string name="custom_seekbar_default_value_is_set">Valore predefinito impostato</string>
     <string name="gamespace_menu_opacity_title">Livello di opacità menù sovrapposizione</string>
     <string name="adb_disabled_title">Disabilita debug USB</string>
+    <string name="battery_format">Battery: <xliff:g id="percentage" example="100">%1$d%%</xliff:g></string>
 </resources>
