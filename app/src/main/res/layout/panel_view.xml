@@ -47,44 +47,44 @@
                     android:fontFamily="@*android:string/config_lightFontFamily"
                     android:gravity="start|center_vertical"
                     android:text="@string/settings_title"
-                    android:textSize="32sp" />
+                    android:textSize="30sp" />
 
-                <LinearLayout
+                <TextClock
+                    android:id="@+id/time_view"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="4dp"
                     android:layout_alignParentEnd="true" 
+                    android:fontFamily="@*android:string/config_lightFontFamily"
                     android:gravity="end|center_vertical"
-                    android:orientation="vertical">
-
-                    <TextClock
-                        android:id="@+id/time_view"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="4dp"
-                        android:lineSpacingMultiplier="0.7"
-                        android:format12Hour="h:mm"
-                        android:format24Hour="kk:mm"
-                        android:textSize="16sp" />
-
-                    <TextClock
-                        android:id="@+id/date_view"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="4dp"
-                        android:lineSpacingMultiplier="0.7"
-                        android:format12Hour="EEE, d MMM"
-                        android:format24Hour="EEE, d MMM"
-                        android:textSize="16sp" />
-
-                </LinearLayout>
+                    android:format12Hour="h:mm"
+                    android:format24Hour="kk:mm"
+                    android:textSize="30sp" />
             </RelativeLayout>
 
-            <io.chaldeaprjkt.gamespace.widget.BatteryView
-                android:id="@+id/battery_view"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="4dp"
-                android:textSize="16sp" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <io.chaldeaprjkt.gamespace.widget.BatteryView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="4dp"
+                    android:layout_alignParentStart="true" 
+                    android:gravity="start|center_vertical"
+                    android:textSize="16sp" />
+
+                <TextClock
+                    android:id="@+id/date_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="4dp"
+                    android:layout_alignParentEnd="true" 
+                    android:gravity="end|center_vertical"
+                    android:format12Hour="EEE, d MMM"
+                    android:format24Hour="EEE, d MMM"
+                    android:textSize="16sp" />
+            </RelativeLayout>
 
             <include layout="@layout/tiles" />
 
