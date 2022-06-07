@@ -57,4 +57,5 @@
     <string name="custom_seekbar_default_value_is_set">Valoarea implicită este setată</string>
     <string name="gamespace_menu_opacity_title">Opacitate pentru meniul suprapus</string>
     <string name="adb_disabled_title">Dezactivează depanarea USB</string>
+    <string name="battery_format">Battery: <xliff:g id="percentage" example="100">%1$d%%</xliff:g></string>
 </resources>
