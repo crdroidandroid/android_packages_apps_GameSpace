@@ -57,4 +57,5 @@
     <string name="custom_seekbar_default_value_is_set">O valor padrão está definido</string>
     <string name="gamespace_menu_opacity_title">Transparência do menu de sobreposição</string>
     <string name="adb_disabled_title">Desativar depuração USB</string>
+    <string name="battery_format">Battery: <xliff:g id="percentage" example="100">%1$d%%</xliff:g></string>
 </resources>
