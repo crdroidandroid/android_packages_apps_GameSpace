@@ -57,5 +57,5 @@
     <string name="custom_seekbar_default_value_is_set">Η προεπιλεγμένη τιμή έχει οριστεί</string>
     <string name="gamespace_menu_opacity_title">Επίπεδο αδιαφάνειας μενού επικάλυψης</string>
     <string name="adb_disabled_title">Απενεργοποίηση εντοπισμού σφαλμάτων USB</string>
-    <string name="battery_format">Battery: <xliff:g id="percentage" example="100">%1$d%%</xliff:g></string>
+    <string name="battery_format">Μπαταρία: <xliff:g id="percentage" example="100">%1$d%%</xliff:g></string>
 </resources>
