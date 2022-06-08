@@ -57,5 +57,5 @@
     <string name="custom_seekbar_default_value_is_set">恢复默认值</string>
     <string name="gamespace_menu_opacity_title">覆盖菜单不透明度级别</string>
     <string name="adb_disabled_title">禁用 USB 调试</string>
-    <string name="battery_format">Battery: <xliff:g id="percentage" example="100">%1$d%%</xliff:g></string>
+    <string name="battery_format">电量： <xliff:g id="percentage" example="100">%1$d%%</xliff:g></string>
 </resources>
