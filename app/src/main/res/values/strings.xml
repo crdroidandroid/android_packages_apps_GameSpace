@@ -83,4 +83,9 @@
     <string name="notification_danmaku">Danmaku</string>
     <string name="state_enabled">Enabled</string>
     <string name="state_disabled">Disabled</string>
+
+    <string name="in_game_calls_title">Call mode</string>
+    <string name="in_game_calls_no_action">No action</string>
+    <string name="in_game_calls_auto_answer">Auto answer</string>
+    <string name="in_game_calls_auto_reject">Auto reject</string>
 </resources>
