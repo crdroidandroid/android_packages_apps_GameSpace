@@ -53,6 +53,10 @@ class AppSettings @Inject constructor(private val context: Context) {
         get() = db.getBoolean(KEY_STAY_AWAKE, false)
         set(value) = db.edit().putBoolean(KEY_STAY_AWAKE, value).apply()
 
+    var notificationMode: Int
+        get() = db.getString(KEY_NOTIFICATION_MODE, "2").toInt()
+        set(value) = db.edit().putString(KEY_NOTIFICATION_MODE, value.toString()).apply()
+
     var ringerMode: Int
         get() = db.getString(KEY_RINGER_MODE, "3").toInt()
         set(value) = db.edit().putString(KEY_RINGER_MODE, value.toString()).apply()
@@ -73,6 +77,7 @@ class AppSettings @Inject constructor(private val context: Context) {
         const val KEY_AUTO_BRIGHTNESS_DISABLE = "gamespace_auto_brightness_disabled"
         const val KEY_3SCREENSHOT_DISABLE = "gamespace_tfgesture_disabled"
         const val KEY_STAY_AWAKE = "gamespace_stay_awake"
+        const val KEY_NOTIFICATION_MODE = "gamespace_notification_mode"
         const val KEY_RINGER_MODE = "gamespace_ringer_mode"
         const val KEY_MENU_OPACITY = "gamespace_menu_opacity"
         const val KEY_ADB_DISABLE = "gamespace_adb_disabled"

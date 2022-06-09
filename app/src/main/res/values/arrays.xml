@@ -48,4 +48,16 @@
         <item>@string/game_mode_performance</item>
         <item>@string/game_mode_battery</item>
     </string-array>
+
+    <string-array name="notification_mode_entries" translatable="false">
+        <item>@string/notification_mode_hide</item>
+        <item>@string/notification_mode_headsup</item>
+        <item>@string/notification_mode_reticker</item>
+    </string-array>
+
+    <string-array name="notification_mode_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
 </resources>
