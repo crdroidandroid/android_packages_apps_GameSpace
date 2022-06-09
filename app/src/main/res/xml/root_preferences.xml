@@ -43,6 +43,14 @@
             android:summary="%s"
             android:title="@string/ringer_mode_title" />
 
+        <ListPreference
+            android:defaultValue="0"
+            android:entries="@array/call_mode_entries"
+            android:entryValues="@array/call_mode_values"
+            android:key="gamespace_call_mode"
+            android:summary="%s"
+            android:title="@string/call_mode_title" />
+
         <com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="gamespace_suppress_fullscreen_intent"
             android:summary="@string/suppress_fullscreen_intent_summary"

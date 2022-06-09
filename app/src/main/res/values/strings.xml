@@ -45,6 +45,12 @@
     <string name="ringer_mode_normal">Normal</string>
     <string name="ringer_mode_no_change">Do not change</string>
 
+    <!-- Call Mode -->
+    <string name="call_mode_title">Call mode</string>
+    <string name="call_mode_no_action">No action</string>
+    <string name="call_mode_auto_answer">Auto answer</string>
+    <string name="call_mode_auto_reject">Auto reject</string>
+
     <!-- Game picker -->
     <string name="game_list_title">Library</string>
     <string name="game_list_add_title">Add</string>

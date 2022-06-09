@@ -62,4 +62,16 @@
         <item>2</item>
         <item>3</item>
     </string-array>
+
+    <string-array name="call_mode_entries" translatable="false">
+        <item>@string/call_mode_no_action</item>
+        <item>@string/call_mode_auto_answer</item>
+        <item>@string/call_mode_auto_reject</item>
+    </string-array>
+
+    <string-array name="call_mode_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
 </resources>
