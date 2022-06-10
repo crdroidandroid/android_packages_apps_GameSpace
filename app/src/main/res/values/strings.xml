@@ -67,4 +67,6 @@
     <string name="adb_disabled_title">Disable USB debugging</string>
 
     <string name="battery_format">Battery: <xliff:g id="percentage" example="100">%1$d%%</xliff:g></string>
+    <string name="memory_format">Memory: <xliff:g id="availmemory" example="1000">%1$d</xliff:g>\/<xliff:g id="totalmemory" example="5000">%2$d</xliff:g> MB</string>
+
 </resources>
