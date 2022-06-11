@@ -43,7 +43,7 @@
     <string name="ringer_mode_vibrate">Вібрація</string>
     <string name="ringer_mode_normal">Звичайний</string>
     <string name="suppress_fullscreen_intent_title">Блокувати повноекранні сповіщення</string>
-    <string name="suppress_fullscreen_intent_summary">Prevent fullscreen events like incoming calls from appearing</string>
+    <string name="suppress_fullscreen_intent_summary">Запобігти повноекранному режимі подій, наприклад, вхідні дзвінки</string>
     <string name="per_app_title">Налаштувати гру</string>
     <string name="per_app_mode_title">Переважний режим</string>
     <string name="per_app_angle_title">Використовувати ANGLE (експериментально)</string>
@@ -57,6 +57,6 @@
     <string name="custom_seekbar_default_value_is_set">Значення за замовчуванням встановлено</string>
     <string name="gamespace_menu_opacity_title">Рівень непрозорості меню ігрового режиму</string>
     <string name="adb_disabled_title">Вимкнути налагодження USB</string>
-    <string name="battery_format">Battery: <xliff:g id="percentage" example="100">%1$d%%</xliff:g></string>
-    <string name="memory_format">Memory: <xliff:g id="availmemory" example="1000">%1$d</xliff:g>\/<xliff:g id="totalmemory" example="5000">%2$d</xliff:g> MB</string>
+    <string name="battery_format">Акумулятор: <xliff:g id="percentage" example="100">%1$d%%</xliff:g></string>
+    <string name="memory_format">Пам\'ять: <xliff:g id="availmemory" example="1000">%1$d</xliff:g>\/<xliff:g id="totalmemory" example="5000">%2$d</xliff:g> МБ</string>
 </resources>
