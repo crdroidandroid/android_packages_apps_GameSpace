@@ -58,5 +58,5 @@
     <string name="gamespace_menu_opacity_title">오버레이 메뉴 투명도 레벨</string>
     <string name="adb_disabled_title">USB 디버깅 비활성화</string>
     <string name="battery_format">배터리: <xliff:g id="percentage" example="100">%1$d%%</xliff:g></string>
-    <string name="memory_format">Memory: <xliff:g id="availmemory" example="1000">%1$d</xliff:g>\/<xliff:g id="totalmemory" example="5000">%2$d</xliff:g> MB</string>
+    <string name="memory_format">메모리: <xliff:g id="availmemory" example="1000">%1$d</xliff:g>\/<xliff:g id="totalmemory" example="5000">%2$d</xliff:g> MB</string>
 </resources>
