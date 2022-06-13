@@ -16,45 +16,47 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="settings_title">Game space</string>
-    <string name="settings_summary">Manage your gaming setup</string>
-    <string name="app_selector_label">Pick your game</string>
-    <string name="auto_brightness_disabled_title">Disable auto-brightness</string>
-    <string name="heads_up_disabled_title">Disable heads up notifications</string>
-    <string name="in_game_preferences_title">In-game options</string>
-    <string name="game_list_title">Library</string>
-    <string name="game_remove_message">Are you sure you want to remove %1$s from your library?</string>
-    <string name="app_search_title">Search</string>
-    <string name="three_screenshot_disabled_title">Disable swipe to screenshot</string>
-    <string name="state_enabled">enabled</string>
-    <string name="state_disabled">disabled</string>
+    <string name="settings_title">게임 공간</string>
+    <string name="settings_summary">게이밍 설정을 관리하기</string>
+    <string name="app_selector_label">게임을 선택하기</string>
+    <string name="auto_brightness_disabled_title">자동 밝기조절 해제</string>
+    <string name="heads_up_disabled_title">헤드업 알림 해제</string>
+    <string name="in_game_preferences_title">인게임 옵션</string>
+    <string name="game_list_title">라이브러리</string>
+    <string name="game_remove_message">라이브러리에서 %1$s 을(를) 제거하시겠습니까?</string>
+    <string name="app_search_title">검색</string>
+    <string name="three_screenshot_disabled_title">스와이프로 스크린샷 찍기 해제</string>
+    <string name="state_enabled">활성화</string>
+    <string name="state_disabled">비활성화</string>
     <!-- Game Mode -->
-    <string name="game_mode_title">Mode</string>
-    <string name="game_mode_unsupported">Unsupported</string>
-    <string name="game_mode_standard">Standard</string>
-    <string name="game_mode_performance">Performance</string>
-    <string name="game_mode_battery">Battery</string>
-    <string name="heads_up_title">Heads up</string>
-    <string name="fps_Info_title">FPS info</string>
-    <string name="stay_awake_title">Stay awake</string>
-    <string name="lock_gesture_title">Lock gesture</string>
-    <string name="ringer_mode_title">Ringer mode</string>
-    <string name="ringer_mode_silent">Silent</string>
-    <string name="ringer_mode_vibrate">Vibrate</string>
-    <string name="ringer_mode_normal">Normal</string>
-    <string name="suppress_fullscreen_intent_title">Block fullscreen event</string>
-    <string name="suppress_fullscreen_intent_summary">Prevent fullscreen events like incoming calls from appearing</string>
-    <string name="per_app_title">Configure game</string>
-    <string name="per_app_mode_title">Preferred mode</string>
-    <string name="per_app_angle_title">Use ANGLE (experimental)</string>
-    <string name="per_app_angle_summary">Using ANGLE renderer instead of native GLES drivers.\nWARNING!! May breaks game graphics, use with caution!</string>
-    <string name="cant_find_angle_pkg">ANGLE is not available on your system</string>
-    <string name="per_app_unregister">Remove %1$s from library</string>
+    <string name="game_mode_title">모드</string>
+    <string name="game_mode_unsupported">미지원</string>
+    <string name="game_mode_standard">일반</string>
+    <string name="game_mode_performance">성능</string>
+    <string name="game_mode_battery">배터리</string>
+    <string name="heads_up_title">헤드업 알림</string>
+    <string name="fps_Info_title">FPS 정보</string>
+    <string name="stay_awake_title">화면 켜짐 상태 유지</string>
+    <string name="lock_gesture_title">잠금 제스처</string>
+    <string name="ringer_mode_title">벨소리 모드</string>
+    <string name="ringer_mode_silent">무음</string>
+    <string name="ringer_mode_vibrate">진동</string>
+    <string name="ringer_mode_normal">기본</string>
+    <string name="suppress_fullscreen_intent_title">전체화면 이벤트 막기</string>
+    <string name="suppress_fullscreen_intent_summary">전화를 수신할 때와 같은 전체화면 이벤트를 방지합니다</string>
+    <string name="per_app_title">게임 설정</string>
+    <string name="per_app_mode_title">선호 모드</string>
+    <string name="per_app_angle_title">ANGLE 사용 (실험적)</string>
+    <string name="per_app_angle_summary">기본 GLES 드라이버 대신 ANGLE 렌더러를 사용합니다.\n경고!! 게임 그래픽이 깨질 수 있으니 주의하여 사용하세요!</string>
+    <string name="cant_find_angle_pkg">ANGLE을 이 시스템에서 사용할 수 없습니다</string>
+    <string name="per_app_unregister">%1$s 을(를) 라이브러리에서 제거</string>
     <!-- Custom seekbar -->
     <string name="custom_seekbar_value">값: <xliff:g id="v">%s</xliff:g></string>
     <string name="custom_seekbar_default_value">기본값으로 설정</string>
     <string name="custom_seekbar_default_value_to_set">기본값: <xliff:g id="v">%s</xliff:g>\n길게 눌러서 설정</string>
     <string name="custom_seekbar_default_value_is_set">기본값으로 설정됨</string>
-    <string name="gamespace_menu_opacity_title">Overlay menu opacity level</string>
-    <string name="adb_disabled_title">Disable USB debugging</string>
+    <string name="gamespace_menu_opacity_title">오버레이 메뉴 투명도 레벨</string>
+    <string name="adb_disabled_title">USB 디버깅 비활성화</string>
+    <string name="battery_format">배터리: <xliff:g id="percentage" example="100">%1$d%%</xliff:g></string>
+    <string name="memory_format">메모리: <xliff:g id="availmemory" example="1000">%1$d</xliff:g>\/<xliff:g id="totalmemory" example="5000">%2$d</xliff:g> MB</string>
 </resources>
