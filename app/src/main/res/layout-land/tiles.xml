@@ -20,7 +20,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_marginTop="4dp"
-    android:columnCount="2"
+    android:columnCount="3"
     android:orientation="horizontal">
 
     <io.chaldeaprjkt.gamespace.widget.tiles.GameModeTile
