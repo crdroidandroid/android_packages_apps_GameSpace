@@ -26,8 +26,8 @@
     <string name="game_remove_message">Are you sure you want to remove %1$s from your library?</string>
     <string name="app_search_title">Keresés</string>
     <string name="three_screenshot_disabled_title">Disable swipe to screenshot</string>
-    <string name="state_enabled">enabled</string>
-    <string name="state_disabled">disabled</string>
+    <string name="state_enabled">engedélyezett</string>
+    <string name="state_disabled">letiltott</string>
     <!-- Game Mode -->
     <string name="game_mode_title">Mode</string>
     <string name="game_mode_unsupported">Unsupported</string>
@@ -39,9 +39,9 @@
     <string name="stay_awake_title">Stay awake</string>
     <string name="lock_gesture_title">Lock gesture</string>
     <string name="ringer_mode_title">Ringer mode</string>
-    <string name="ringer_mode_silent">Silent</string>
-    <string name="ringer_mode_vibrate">Vibrate</string>
-    <string name="ringer_mode_normal">Normal</string>
+    <string name="ringer_mode_silent">Néma</string>
+    <string name="ringer_mode_vibrate">Rezgő</string>
+    <string name="ringer_mode_normal">Normál</string>
     <string name="suppress_fullscreen_intent_title">Block fullscreen event</string>
     <string name="suppress_fullscreen_intent_summary">Prevent fullscreen events like incoming calls from appearing</string>
     <string name="per_app_title">Configure game</string>
