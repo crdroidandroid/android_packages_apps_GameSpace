@@ -50,6 +50,8 @@
     <string name="call_mode_no_action">No action</string>
     <string name="call_mode_auto_answer">Auto answer</string>
     <string name="call_mode_auto_reject">Auto reject</string>
+    <string name="call_mode_received_number">Received call from %1$s</string>
+    <string name="call_mode_rejected_number">Rejected call from %1$s</string>
 
     <!-- Game picker -->
     <string name="game_list_title">Library</string>
