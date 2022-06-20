@@ -25,17 +25,15 @@ import android.media.AudioDeviceInfo
 import android.media.AudioManager
 import android.media.AudioSystem
 import android.telecom.TelecomManager
-import android.telephony.TelephonyCallback
+import android.telephony.PhoneStateListener
 import android.telephony.TelephonyManager
 import android.util.Log
+import android.widget.Toast
 
 import androidx.core.app.ActivityCompat
 
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.android.scopes.ServiceScoped
-
-import java.util.concurrent.ExecutorService
-import java.util.concurrent.Executors
 
 import javax.inject.Inject
 
@@ -43,6 +41,7 @@ import io.chaldeaprjkt.gamespace.R
 import io.chaldeaprjkt.gamespace.data.AppSettings
 
 @ServiceScoped
+@Suppress("DEPRECATION")
 class CallListener @Inject constructor(
     @ApplicationContext private val context: Context,
     private val appSettings: AppSettings
@@ -54,20 +53,16 @@ class CallListener @Inject constructor(
 
     private val callsMode = appSettings.callsMode
 
-    private val telephonyCallback = Callback()
-
-    private var executor: ExecutorService? = null
+    private val phoneStateListener = Listener()
 
     private var callStatus: Int = TelephonyManager.CALL_STATE_OFFHOOK
 
     fun init() {
-        executor = Executors.newSingleThreadExecutor()
-        telephonyManager.registerTelephonyCallback(executor!!, telephonyCallback)
+        telephonyManager.listen(phoneStateListener, PhoneStateListener.LISTEN_CALL_STATE)
     }
 
     fun destory() {
-        telephonyManager.unregisterTelephonyCallback(telephonyCallback)
-        executor?.shutdownNow()
+        telephonyManager.listen(phoneStateListener, PhoneStateListener.LISTEN_NONE)
     }
 
     private fun isHeadsetPluggedIn(): Boolean {
@@ -92,20 +87,25 @@ class CallListener @Inject constructor(
         return true
     }
 
-    private inner class Callback : TelephonyCallback(), TelephonyCallback.CallStateListener {
+    private inner class Listener : PhoneStateListener() {
         private var previousState = TelephonyManager.CALL_STATE_IDLE
         private var previousAudioMode = audioManager.mode
 
-        override fun onCallStateChanged(state: Int) {
+        override fun onCallStateChanged(state: Int, incomingNumber: String) {
             if (callsMode == 0) return
             when (state) {
                 TelephonyManager.CALL_STATE_RINGING -> {
                     if (!checkPermission()) return
-                    @Suppress("DEPRECATION")
                     if (callsMode == 1) {
                         telecomManager.acceptRingingCall()
+                        Toast.makeText(context, context.getString(
+                                R.string.in_game_calls_received_number, incomingNumber),
+                                Toast.LENGTH_SHORT).show()
                     } else {
                         telecomManager.endCall()
+                        Toast.makeText(context, context.getString(
+                                R.string.in_game_calls_rejected_number, incomingNumber),
+                                Toast.LENGTH_SHORT).show()
                     }
                 }
                 TelephonyManager.CALL_STATE_OFFHOOK -> {
