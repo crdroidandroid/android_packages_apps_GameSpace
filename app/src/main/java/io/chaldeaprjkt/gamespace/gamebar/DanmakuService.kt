@@ -227,7 +227,7 @@ class DanmakuService @Inject constructor(
 
     private inner class Listener : NotificationListenerService() {
 
-        private val postedNotifications = mutableListOf<String>()
+        private val postedNotifications = mutableMapOf<String, Long>()
 
         override fun onNotificationPosted(sbn: StatusBarNotification) {
             if (appSettings.notificationMode != 3) return;
@@ -245,17 +245,21 @@ class DanmakuService @Inject constructor(
                 danmakuText += text
             }
 
-            if (danmakuText.isNotBlank() && !postedNotifications.contains(danmakuText)) {
+            val time = sbn.notification.`when`
+            if (danmakuText.isNotBlank() && !(
+                    postedNotifications.containsKey(danmakuText) &&
+                    postedNotifications[danmakuText] == time
+                )) {
                 showNotificationAsOverlay(danmakuText)
-                insertPostedNotification(danmakuText)
+                insertPostedNotification(danmakuText, time)
             }
         }
 
-        private fun insertPostedNotification(danmakuText: String) {
+        private fun insertPostedNotification(danmakuText: String, time: Long) {
             if (postedNotifications.size >= NOTIFICATIONS_MAX_CACHED) {
                 postedNotifications.clear()
             }
-            postedNotifications.add(danmakuText)
+            postedNotifications.put(danmakuText, time)
         }
     }
 
