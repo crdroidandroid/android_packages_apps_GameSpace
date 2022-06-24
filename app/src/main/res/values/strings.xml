@@ -16,7 +16,7 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="settings_title">Game space</string>
+    <string name="settings_title">Game Space</string>
     <string name="settings_summary">Manage your gaming setup</string>
     <string name="app_selector_label">Pick your game</string>
     <string name="auto_brightness_disabled_title">Disable auto-brightness</string>
@@ -67,6 +67,6 @@
     <string name="adb_disabled_title">Disable USB debugging</string>
 
     <string name="battery_format">Battery: <xliff:g id="percentage" example="100">%1$d%%</xliff:g></string>
-    <string name="memory_format">Memory: <xliff:g id="availmemory" example="1000">%1$d</xliff:g>\/<xliff:g id="totalmemory" example="5000">%2$d</xliff:g> MB</string>
+    <string name="memory_format">Memory available: <xliff:g id="availmemory" example="1000">%1$d</xliff:g>\/<xliff:g id="totalmemory" example="5000">%2$d</xliff:g> MB</string>
 
 </resources>
