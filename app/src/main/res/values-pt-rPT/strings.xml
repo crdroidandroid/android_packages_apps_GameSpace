@@ -52,7 +52,7 @@
     <string name="per_app_unregister">Remover %1$s da biblioteca</string>
     <!-- Custom seekbar -->
     <string name="custom_seekbar_value">Valor: <xliff:g id="value">%s</xliff:g></string>
-    <string name="custom_seekbar_default_value">Por padrão</string>
+    <string name="custom_seekbar_default_value">padrão</string>
     <string name="custom_seekbar_default_value_to_set">Valor padrão: <xliff:g id="v">%s</xliff:g>\nO Prima para definir</string>
     <string name="custom_seekbar_default_value_is_set">O valor padrão está definido</string>
     <string name="gamespace_menu_opacity_title">Transparência do menu de sobreposição</string>
