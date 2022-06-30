@@ -16,7 +16,7 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="settings_title">Game Space</string>
+    <string name="settings_title">Spazio di gioco </string>
     <string name="settings_summary">Gestisci la tua configurazione di gioco</string>
     <string name="app_selector_label">Scegli il tuo gioco</string>
     <string name="auto_brightness_disabled_title">Disabilita luminosità automatica</string>
