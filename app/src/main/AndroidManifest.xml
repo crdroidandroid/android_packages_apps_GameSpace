@@ -32,13 +32,19 @@
 
     <application
         android:name=".GameSpace"
+        android:icon="@drawable/ic_launcher"
         android:label="@string/settings_title"
         android:supportsRtl="true"
         android:theme="@style/GameSpaceTheme">
         <activity
             android:name=".settings.SettingsActivity"
             android:excludeFromRecents="true"
-            android:exported="true" />
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
         <activity
             android:name=".settings.PerAppSettingsActivity"
