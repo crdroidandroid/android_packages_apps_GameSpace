@@ -16,7 +16,7 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="settings_title">Game Space</string>
+    <string name="settings_title">遊戲空間</string>
     <string name="settings_summary">管理您的遊戲設定</string>
     <string name="app_selector_label">選擇遊戲</string>
     <string name="auto_brightness_disabled_title">停用自動亮度</string>
@@ -58,5 +58,5 @@
     <string name="gamespace_menu_opacity_title">不透明度</string>
     <string name="adb_disabled_title">停用 USB 偵錯</string>
     <string name="battery_format">電量： <xliff:g id="percentage" example="100">%1$d%%</xliff:g></string>
-    <string name="memory_format">Memory available: <xliff:g id="availmemory" example="1000">%1$d</xliff:g>\/<xliff:g id="totalmemory" example="5000">%2$d</xliff:g> MB</string>
+    <string name="memory_format">可用記憶體：&lt;xliff:g id="availmemory" example="1000"&gt;\/&lt;xliff:g id="totalmemory" example="5000"&gt; MB</string>
 </resources>
