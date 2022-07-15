@@ -58,5 +58,5 @@
     <string name="gamespace_menu_opacity_title">Livello di opacità menù sovrapposizione</string>
     <string name="adb_disabled_title">Disabilita debug USB</string>
     <string name="battery_format">Batteria: <xliff:g id="percentage" example="100">%1$d%%</xliff:g></string>
-    <string name="memory_format">Memory available: <xliff:g id="availmemory" example="1000">%1$d</xliff:g>\/<xliff:g id="totalmemory" example="5000">%2$d</xliff:g> MB</string>
+    <string name="memory_format">Memoria disponibile: <xliff:g id="availmemory" example="1000">%1$d</xliff:g>\/<xliff:g id="totalmemory" example="5000">%2$d</xliff:g> MB</string>
 </resources>
