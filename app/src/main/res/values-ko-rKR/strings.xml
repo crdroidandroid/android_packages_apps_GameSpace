@@ -42,6 +42,7 @@
     <string name="ringer_mode_silent">무음</string>
     <string name="ringer_mode_vibrate">진동</string>
     <string name="ringer_mode_normal">기본</string>
+    <string name="ringer_mode_no_change">Do not change</string>
     <string name="suppress_fullscreen_intent_title">전체화면 이벤트 막기</string>
     <string name="suppress_fullscreen_intent_summary">전화를 수신할 때와 같은 전체화면 이벤트를 방지합니다</string>
     <string name="per_app_title">게임 설정</string>
