@@ -42,6 +42,7 @@
     <string name="ringer_mode_silent">Stumm</string>
     <string name="ringer_mode_vibrate">Vibration</string>
     <string name="ringer_mode_normal">Normal</string>
+    <string name="ringer_mode_no_change">Do not change</string>
     <string name="suppress_fullscreen_intent_title">Vollbild-Ereignis blockieren</string>
     <string name="suppress_fullscreen_intent_summary">Deaktivieren von Vollbildbenachrichtigungen (z. B. eingehende Anrufe)</string>
     <string name="per_app_title">Spiel konfigurieren</string>
