@@ -231,7 +231,7 @@ class DanmakuService @Inject constructor(
 
         override fun onNotificationPosted(sbn: StatusBarNotification) {
             if (appSettings.notificationMode != 3) return;
-            if (!sbn.isClearable || sbn.isOngoing || sbn.getIsContentSecure()) return
+            if (!sbn.isClearable || sbn.isOngoing) return
             val extras = sbn.notification.extras
             var title = extras.getString(Notification.EXTRA_TITLE)
             if (title?.isNotBlank() != true) title = extras.getString(Notification.EXTRA_TITLE_BIG)
