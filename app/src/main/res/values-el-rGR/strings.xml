@@ -42,6 +42,7 @@
     <string name="ringer_mode_silent">Αθόρυβο</string>
     <string name="ringer_mode_vibrate">Δόνηση</string>
     <string name="ringer_mode_normal">Κανονικό</string>
+    <string name="ringer_mode_no_change">Do not change</string>
     <string name="suppress_fullscreen_intent_title">Αποκλεισμός συμβάντος πλήρους οθόνης</string>
     <string name="suppress_fullscreen_intent_summary">Αποτροπή εμφάνισης συμβάντων πλήρους οθόνης όπως οι εισερχόμενες κλήσεις</string>
     <string name="per_app_title">Διαμόρφωση παιχνιδιού</string>
