@@ -42,6 +42,7 @@
     <string name="ringer_mode_silent">Беззвучный</string>
     <string name="ringer_mode_vibrate">Вибрация</string>
     <string name="ringer_mode_normal">Обычный</string>
+    <string name="ringer_mode_no_change">Do not change</string>
     <string name="suppress_fullscreen_intent_title">Блокировать полноэкранные уведомления</string>
     <string name="suppress_fullscreen_intent_summary">Предотвращение появления полноэкранных событий, таких как входящие вызовы</string>
     <string name="per_app_title">Настроить игру</string>
