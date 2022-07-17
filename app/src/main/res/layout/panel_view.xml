@@ -40,6 +40,7 @@
                 android:layout_height="wrap_content">
 
                 <TextView
+                    android:id="@+id/title_view"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="4dp"
@@ -55,6 +56,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="4dp"
                     android:layout_alignParentEnd="true" 
+                    android:layout_toEndOf="@id/title_view"
                     android:fontFamily="@*android:string/config_lightFontFamily"
                     android:gravity="end|center_vertical"
                     android:format12Hour="h:mm"
@@ -67,6 +69,7 @@
                 android:layout_height="wrap_content">
 
                 <io.chaldeaprjkt.gamespace.widget.BatteryView
+                    android:id="@+id/battery_view"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="4dp"
@@ -80,6 +83,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="4dp"
                     android:layout_alignParentEnd="true" 
+                    android:layout_toEndOf="@id/battery_view"
                     android:gravity="end|center_vertical"
                     android:format12Hour="EEE, d MMM"
                     android:format24Hour="EEE, d MMM"
