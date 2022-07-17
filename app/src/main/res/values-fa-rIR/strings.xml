@@ -42,6 +42,7 @@
     <string name="ringer_mode_silent">سکوت</string>
     <string name="ringer_mode_vibrate">لرزش</string>
     <string name="ringer_mode_normal">معمولی</string>
+    <string name="ringer_mode_no_change">Do not change</string>
     <string name="suppress_fullscreen_intent_title">مسدود کردن رویداد تمام صفحه</string>
     <string name="suppress_fullscreen_intent_summary">از نمایش رویدادهای تمام صفحه مانند تماس های دریافتی جلوگیری کنید</string>
     <string name="per_app_title">پیکربندی بازی</string>
