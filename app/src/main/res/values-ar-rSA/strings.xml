@@ -42,6 +42,7 @@
     <string name="ringer_mode_silent">صامت</string>
     <string name="ringer_mode_vibrate">إهتزاز</string>
     <string name="ringer_mode_normal">عادي</string>
+    <string name="ringer_mode_no_change">Do not change</string>
     <string name="suppress_fullscreen_intent_title">منع أحداث الشاشة الكاملة</string>
     <string name="suppress_fullscreen_intent_summary">Prevent fullscreen events like incoming calls from appearing</string>
     <string name="per_app_title">ضبط اللعبة</string>
