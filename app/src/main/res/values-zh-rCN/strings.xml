@@ -18,46 +18,60 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="settings_title">游戏空间</string>
     <string name="settings_summary">管理您的游戏设置</string>
-    <string name="app_selector_label">选择您的游戏</string>
-    <string name="auto_brightness_disabled_title">禁用自动调节亮度</string>
-    <string name="heads_up_disabled_title">禁用浮动通知</string>
+    <!-- Game options -->
     <string name="in_game_preferences_title">游戏中选项</string>
-    <string name="game_list_title">游戏列表</string>
-    <string name="game_remove_message">您确定要将 %1$s 从您的游戏列表中移除吗？</string>
-    <string name="app_search_title">搜索</string>
-    <string name="three_screenshot_disabled_title">禁用滑动截屏</string>
-    <string name="state_enabled">已启用</string>
-    <string name="state_disabled">已禁用</string>
-    <!-- Game Mode -->
-    <string name="game_mode_title">游戏模式</string>
-    <string name="game_mode_unsupported">不支持</string>
-    <string name="game_mode_standard">标准</string>
-    <string name="game_mode_performance">性能</string>
-    <string name="game_mode_battery">省电</string>
-    <string name="heads_up_title">浮动通知</string>
-    <string name="fps_Info_title">FPS 信息</string>
+    <string name="suppress_fullscreen_intent_title">屏蔽全屏事件</string>
+    <string name="suppress_fullscreen_intent_summary">防止在游戏中出现来电等全屏事件</string>
     <string name="stay_awake_title">保持唤醒</string>
     <string name="lock_gesture_title">锁定手势</string>
+    <string name="auto_brightness_disabled_title">禁用自动调节亮度</string>
+    <string name="three_screenshot_disabled_title">禁用滑动截屏</string>
+    <string name="adb_disabled_title">禁用 USB 调试</string>
+    <string name="gamespace_menu_opacity_title">覆盖菜单不透明度级别</string>
+    <!-- Notification Mode -->
+    <string name="notification_mode_title">Notification mode</string>
+    <string name="notification_mode_hide">Do not show</string>
+    <string name="notification_mode_headsup">Show as Heads Up</string>
+    <string name="notification_mode_reticker">Show as reTicker</string>
+    <string name="notification_mode_danmaku">Show as Danmaku</string>
+    <!-- Ringer Mode -->
     <string name="ringer_mode_title">响铃模式</string>
     <string name="ringer_mode_silent">静音</string>
     <string name="ringer_mode_vibrate">振动</string>
     <string name="ringer_mode_normal">正常</string>
     <string name="ringer_mode_no_change">Do not change</string>
-    <string name="suppress_fullscreen_intent_title">屏蔽全屏事件</string>
-    <string name="suppress_fullscreen_intent_summary">防止在游戏中出现来电等全屏事件</string>
+    <!-- Game picker -->
+    <string name="game_list_title">游戏列表</string>
+    <string name="game_list_add_title">Add</string>
+    <string name="app_selector_label">选择您的游戏</string>
+    <string name="app_search_title">搜索</string>
+    <string name="game_remove_message">Are you sure you want to remove %1$s from your game list?</string>
+    <!-- Configure game -->
     <string name="per_app_title">配置游戏</string>
     <string name="per_app_mode_title">首选模式</string>
     <string name="per_app_angle_title">使用 ANGLE 渲染器 (实验性)</string>
     <string name="per_app_angle_summary">使用 ANGLE 渲染器而不是本机的 GLES 驱动器。\n警告!! 可能会破坏游戏图形, 请谨慎使用!</string>
     <string name="cant_find_angle_pkg">ANGLE 渲染器在当前系统中不可用</string>
     <string name="per_app_unregister">从游戏列表中移除 %1$s</string>
+    <string name="game_mode_unsupported">不支持</string>
+    <string name="game_mode_standard">标准</string>
+    <string name="game_mode_performance">性能</string>
+    <string name="game_mode_battery">省电</string>
     <!-- Custom seekbar -->
     <string name="custom_seekbar_value">值: <xliff:g id="v">%s</xliff:g></string>
     <string name="custom_seekbar_default_value">默认</string>
     <string name="custom_seekbar_default_value_to_set">默认值: <xliff:g id="v">%s</xliff:g>\n长按设置</string>
     <string name="custom_seekbar_default_value_is_set">恢复默认值</string>
-    <string name="gamespace_menu_opacity_title">覆盖菜单不透明度级别</string>
-    <string name="adb_disabled_title">禁用 USB 调试</string>
+    <!-- Game overlay -->
     <string name="battery_format">电量: <xliff:g id="percentage" example="100">%1$d%%</xliff:g></string>
     <string name="memory_format">内存空闲: <xliff:g id="availmemory" example="1000">%1$d</xliff:g>\/<xliff:g id="totalmemory" example="5000">%2$d</xliff:g> MB</string>
+    <!-- Tiles -->
+    <string name="game_mode_title">游戏模式</string>
+    <string name="fps_Info_title">FPS 信息</string>
+    <string name="notification_hide">Hide</string>
+    <string name="notification_headsup">Heads Up</string>
+    <string name="notification_reticker">reTicker</string>
+    <string name="notification_danmaku">Danmaku</string>
+    <string name="state_enabled">Enabled</string>
+    <string name="state_disabled">Disabled</string>
 </resources>
