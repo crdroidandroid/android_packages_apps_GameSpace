@@ -42,6 +42,7 @@
     <string name="ringer_mode_silent">Silențios</string>
     <string name="ringer_mode_vibrate">Vibrații</string>
     <string name="ringer_mode_normal">Normal</string>
+    <string name="ringer_mode_no_change">Do not change</string>
     <string name="suppress_fullscreen_intent_title">Blocare eveniment pe tot ecranul</string>
     <string name="suppress_fullscreen_intent_summary">Împiedicați apariția evenimentelor de pe tot ecranul, cum ar fi apelurile primite</string>
     <string name="per_app_title">Configurare joc</string>
