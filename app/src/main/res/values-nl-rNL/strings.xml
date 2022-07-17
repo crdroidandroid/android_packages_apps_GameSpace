@@ -42,6 +42,7 @@
     <string name="ringer_mode_silent">Stil</string>
     <string name="ringer_mode_vibrate">Vibreren</string>
     <string name="ringer_mode_normal">Normaal</string>
+    <string name="ringer_mode_no_change">Do not change</string>
     <string name="suppress_fullscreen_intent_title">Blokkeer volledig scherm event</string>
     <string name="suppress_fullscreen_intent_summary">Prevent fullscreen events like incoming calls from appearing</string>
     <string name="per_app_title">Spel configureren</string>
