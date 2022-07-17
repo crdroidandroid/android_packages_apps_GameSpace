@@ -18,46 +18,60 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="settings_title">Spazio di gioco </string>
     <string name="settings_summary">Gestisci la tua configurazione di gioco</string>
-    <string name="app_selector_label">Scegli il tuo gioco</string>
-    <string name="auto_brightness_disabled_title">Disabilita luminosità automatica</string>
-    <string name="heads_up_disabled_title">Disabilita le notifiche fluttuanti</string>
+    <!-- Game options -->
     <string name="in_game_preferences_title">Opzioni di gioco</string>
-    <string name="game_list_title">Libreria</string>
-    <string name="game_remove_message">Sei sicuro di voler rimuovere %1$s dalla tua libreria?</string>
-    <string name="app_search_title">Cerca</string>
-    <string name="three_screenshot_disabled_title">Disabilita lo scorrimento per screenshot</string>
-    <string name="state_enabled">abilita</string>
-    <string name="state_disabled">disabilitato</string>
-    <!-- Game Mode -->
-    <string name="game_mode_title">Modalità</string>
-    <string name="game_mode_unsupported">Non supportato</string>
-    <string name="game_mode_standard">Predefinito</string>
-    <string name="game_mode_performance">Prestazioni</string>
-    <string name="game_mode_battery">Batteria</string>
-    <string name="heads_up_title">Notifiche Fluttuanti</string>
-    <string name="fps_Info_title">Info FPS</string>
+    <string name="suppress_fullscreen_intent_title">Blocca evento a schermo intero</string>
+    <string name="suppress_fullscreen_intent_summary">Evitare la comparsa di eventi a schermo intero come le chiamate in arrivo</string>
     <string name="stay_awake_title">Resta attivo</string>
     <string name="lock_gesture_title">Blocca gesto</string>
+    <string name="auto_brightness_disabled_title">Disabilita luminosità automatica</string>
+    <string name="three_screenshot_disabled_title">Disabilita lo scorrimento per screenshot</string>
+    <string name="adb_disabled_title">Disabilita debug USB</string>
+    <string name="gamespace_menu_opacity_title">Livello di opacità menù sovrapposizione</string>
+    <!-- Notification Mode -->
+    <string name="notification_mode_title">Notification mode</string>
+    <string name="notification_mode_hide">Do not show</string>
+    <string name="notification_mode_headsup">Show as Heads Up</string>
+    <string name="notification_mode_reticker">Show as reTicker</string>
+    <string name="notification_mode_danmaku">Show as Danmaku</string>
+    <!-- Ringer Mode -->
     <string name="ringer_mode_title">Modalità suoneria</string>
     <string name="ringer_mode_silent">Silenzioso</string>
     <string name="ringer_mode_vibrate">Vibrazione</string>
     <string name="ringer_mode_normal">Normale</string>
     <string name="ringer_mode_no_change">Do not change</string>
-    <string name="suppress_fullscreen_intent_title">Blocca evento a schermo intero</string>
-    <string name="suppress_fullscreen_intent_summary">Evitare la comparsa di eventi a schermo intero come le chiamate in arrivo</string>
+    <!-- Game picker -->
+    <string name="game_list_title">Libreria</string>
+    <string name="game_list_add_title">Add</string>
+    <string name="app_selector_label">Scegli il tuo gioco</string>
+    <string name="app_search_title">Cerca</string>
+    <string name="game_remove_message">Are you sure you want to remove %1$s from your game list?</string>
+    <!-- Configure game -->
     <string name="per_app_title">Configura gioco</string>
     <string name="per_app_mode_title">Modalità preferita</string>
     <string name="per_app_angle_title">Usa nuova interfaccia (sperimentale)</string>
     <string name="per_app_angle_summary">Usando il renderer ANGLE invece dei driver nativi GLES.\nATTENZIONE!! Potrebbe rompere la grafica del gioco, usare con cautela!</string>
     <string name="cant_find_angle_pkg">ANGLE non è disponibile sul tuo sistema</string>
     <string name="per_app_unregister">Rimuovi %1$s dalla libreria</string>
+    <string name="game_mode_unsupported">Non supportato</string>
+    <string name="game_mode_standard">Predefinito</string>
+    <string name="game_mode_performance">Prestazioni</string>
+    <string name="game_mode_battery">Batteria</string>
     <!-- Custom seekbar -->
     <string name="custom_seekbar_value">Valore: <xliff:g id="v">%s</xliff:g></string>
     <string name="custom_seekbar_default_value">per impostazione predefinita</string>
     <string name="custom_seekbar_default_value_to_set">Valore predefinito: <xliff:g id="v">%s</xliff:g>\nTocca a lungo per impostare</string>
     <string name="custom_seekbar_default_value_is_set">Valore predefinito impostato</string>
-    <string name="gamespace_menu_opacity_title">Livello di opacità menù sovrapposizione</string>
-    <string name="adb_disabled_title">Disabilita debug USB</string>
+    <!-- Game overlay -->
     <string name="battery_format">Batteria: <xliff:g id="percentage" example="100">%1$d%%</xliff:g></string>
     <string name="memory_format">Memoria disponibile: <xliff:g id="availmemory" example="1000">%1$d</xliff:g>\/<xliff:g id="totalmemory" example="5000">%2$d</xliff:g> MB</string>
+    <!-- Tiles -->
+    <string name="game_mode_title">Modalità</string>
+    <string name="fps_Info_title">Info FPS</string>
+    <string name="notification_hide">Hide</string>
+    <string name="notification_headsup">Heads Up</string>
+    <string name="notification_reticker">reTicker</string>
+    <string name="notification_danmaku">Danmaku</string>
+    <string name="state_enabled">Enabled</string>
+    <string name="state_disabled">Disabled</string>
 </resources>
