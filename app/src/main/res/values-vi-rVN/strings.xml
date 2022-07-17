@@ -42,6 +42,7 @@
     <string name="ringer_mode_silent">Im lặng</string>
     <string name="ringer_mode_vibrate">Rung</string>
     <string name="ringer_mode_normal">Bình thường</string>
+    <string name="ringer_mode_no_change">Do not change</string>
     <string name="suppress_fullscreen_intent_title">Chặn sự kiện toàn màn hình</string>
     <string name="suppress_fullscreen_intent_summary">Ngăn các sự kiện toàn màn hình như cuộc gọi đến xuất hiện khi ở trong trò chơi</string>
     <string name="per_app_title">Định cấu hình trò chơi</string>
