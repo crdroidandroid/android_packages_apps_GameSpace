@@ -52,7 +52,7 @@ class AppListPreferences @JvmOverloads constructor(context: Context, attrs: Attr
 
     private val makeAddPref by lazy {
         Preference(context).apply {
-            title = "Add"
+            title = context.getString(R.string.game_list_add_title)
             key = KEY_ADD_GAME
             setIcon(R.drawable.ic_add)
             isPersistent = false

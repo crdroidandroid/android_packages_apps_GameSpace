@@ -16,44 +16,46 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
     <string name="settings_title">Game Space</string>
     <string name="settings_summary">Manage your gaming setup</string>
-    <string name="app_selector_label">Pick your game</string>
-    <string name="auto_brightness_disabled_title">Disable auto-brightness</string>
+
+    <!-- Game options -->
     <string name="in_game_preferences_title">In-game options</string>
-    <string name="game_list_title">Library</string>
-    <string name="game_remove_message">Are you sure you want to remove %1$s from your library?</string>
-    <string name="app_search_title">Search</string>
-    <string name="three_screenshot_disabled_title">Disable swipe to screenshot</string>
-    <string name="state_enabled">enabled</string>
-    <string name="state_disabled">disabled</string>
-
-    <!-- Game Mode -->
-    <string name="game_mode_title">Mode</string>
-    <string name="game_mode_unsupported">Unsupported</string>
-    <string name="game_mode_standard">Standard</string>
-    <string name="game_mode_performance">Performance</string>
-    <string name="game_mode_battery">Battery</string>
-
-    <string name="fps_Info_title">FPS info</string>
+    <string name="suppress_fullscreen_intent_title">Block fullscreen event</string>
+    <string name="suppress_fullscreen_intent_summary">Prevent fullscreen events like incoming calls from appearing</string>
     <string name="stay_awake_title">Stay awake</string>
     <string name="lock_gesture_title">Lock gesture</string>
+    <string name="auto_brightness_disabled_title">Disable auto-brightness</string>
+    <string name="three_screenshot_disabled_title">Disable swipe to screenshot</string>
+    <string name="adb_disabled_title">Disable USB debugging</string>
+    <string name="gamespace_menu_opacity_title">Overlay menu opacity level</string>
 
+    <!-- Ringer Mode -->
     <string name="ringer_mode_title">Ringer mode</string>
     <string name="ringer_mode_silent">Silent</string>
     <string name="ringer_mode_vibrate">Vibrate</string>
     <string name="ringer_mode_normal">Normal</string>
     <string name="ringer_mode_no_change">Do not change</string>
 
-    <string name="suppress_fullscreen_intent_title">Block fullscreen event</string>
-    <string name="suppress_fullscreen_intent_summary">Prevent fullscreen events like incoming calls from appearing</string>
+    <!-- Game picker -->
+    <string name="game_list_title">Library</string>
+    <string name="game_list_add_title">Add</string>
+    <string name="app_selector_label">Pick your game</string>
+    <string name="app_search_title">Search</string>
+    <string name="game_remove_message">Are you sure you want to remove %1$s from your game list?</string>
 
+    <!-- Configure game -->
     <string name="per_app_title">Configure game</string>
     <string name="per_app_mode_title">Preferred mode</string>
     <string name="per_app_angle_title">Use ANGLE (experimental)</string>
     <string name="per_app_angle_summary">Using ANGLE renderer instead of native GLES drivers.\nWARNING!! May breaks game graphics, use with caution!</string>
     <string name="cant_find_angle_pkg">ANGLE is not available on your system</string>
     <string name="per_app_unregister">Remove %1$s from library</string>
+    <string name="game_mode_unsupported">Unsupported</string>
+    <string name="game_mode_standard">Standard</string>
+    <string name="game_mode_performance">Performance</string>
+    <string name="game_mode_battery">Battery</string>
 
     <!-- Custom seekbar -->
     <string name="custom_seekbar_value">Value: <xliff:g id="v">%s</xliff:g></string>
@@ -61,11 +63,13 @@
     <string name="custom_seekbar_default_value_to_set">Default value: <xliff:g id="v">%s</xliff:g>\nLong tap to set</string>
     <string name="custom_seekbar_default_value_is_set">Default value is set</string>
 
-    <string name="gamespace_menu_opacity_title">Overlay menu opacity level</string>
-
-    <string name="adb_disabled_title">Disable USB debugging</string>
-
+    <!-- Game overlay -->
     <string name="battery_format">Battery: <xliff:g id="percentage" example="100">%1$d%%</xliff:g></string>
     <string name="memory_format">Memory available: <xliff:g id="availmemory" example="1000">%1$d</xliff:g>\/<xliff:g id="totalmemory" example="5000">%2$d</xliff:g> MB</string>
 
+    <!-- Tiles -->
+    <string name="game_mode_title">Mode</string>
+    <string name="fps_Info_title">FPS info</string>
+    <string name="state_enabled">enabled</string>
+    <string name="state_disabled">disabled</string>
 </resources>
