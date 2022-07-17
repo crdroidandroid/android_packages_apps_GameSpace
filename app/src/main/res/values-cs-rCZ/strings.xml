@@ -42,6 +42,7 @@
     <string name="ringer_mode_silent">Tichý</string>
     <string name="ringer_mode_vibrate">Vibrace</string>
     <string name="ringer_mode_normal">Normální</string>
+    <string name="ringer_mode_no_change">Do not change</string>
     <string name="suppress_fullscreen_intent_title">Blokovat událost na celou obrazovku</string>
     <string name="suppress_fullscreen_intent_summary">Zakázat zobrazení celoobrazovkových události, např. příchozí volání</string>
     <string name="per_app_title">Konfigurace hry</string>
