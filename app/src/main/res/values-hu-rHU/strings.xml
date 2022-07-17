@@ -42,6 +42,7 @@
     <string name="ringer_mode_silent">Néma</string>
     <string name="ringer_mode_vibrate">Rezgő</string>
     <string name="ringer_mode_normal">Normál</string>
+    <string name="ringer_mode_no_change">Do not change</string>
     <string name="suppress_fullscreen_intent_title">Block fullscreen event</string>
     <string name="suppress_fullscreen_intent_summary">Prevent fullscreen events like incoming calls from appearing</string>
     <string name="per_app_title">Configure game</string>
