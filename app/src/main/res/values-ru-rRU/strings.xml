@@ -18,46 +18,60 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="settings_title">Игровое Пространство</string>
     <string name="settings_summary">Настройка игровых возможностей</string>
-    <string name="app_selector_label">Выберите свою игру</string>
-    <string name="auto_brightness_disabled_title">Отключить автоматическую яркость</string>
-    <string name="heads_up_disabled_title">Отключить всплывающие уведомления</string>
+    <!-- Game options -->
     <string name="in_game_preferences_title">Настройки игры</string>
-    <string name="game_list_title">Библиотека</string>
-    <string name="game_remove_message">Вы уверены, что хотите удалить %1$s из своей библиотеки?</string>
-    <string name="app_search_title">Поиск</string>
-    <string name="three_screenshot_disabled_title">Отключить свайп для скриншота</string>
-    <string name="state_enabled">включено</string>
-    <string name="state_disabled">отключено</string>
-    <!-- Game Mode -->
-    <string name="game_mode_title">Режим</string>
-    <string name="game_mode_unsupported">Не поддерживается</string>
-    <string name="game_mode_standard">Стандартный</string>
-    <string name="game_mode_performance">Производительный</string>
-    <string name="game_mode_battery">Батарея</string>
-    <string name="heads_up_title">Всплывающие уведомления</string>
-    <string name="fps_Info_title">Информация о FPS</string>
+    <string name="suppress_fullscreen_intent_title">Блокировать полноэкранные уведомления</string>
+    <string name="suppress_fullscreen_intent_summary">Предотвращение появления полноэкранных событий, таких как входящие вызовы</string>
     <string name="stay_awake_title">Не отключать экран</string>
     <string name="lock_gesture_title">Блокировать жесты</string>
+    <string name="auto_brightness_disabled_title">Отключить автоматическую яркость</string>
+    <string name="three_screenshot_disabled_title">Отключить свайп для скриншота</string>
+    <string name="adb_disabled_title">Отключить отладку по USB</string>
+    <string name="gamespace_menu_opacity_title">Уровень прозрачности меню игрового режима</string>
+    <!-- Notification Mode -->
+    <string name="notification_mode_title">Notification mode</string>
+    <string name="notification_mode_hide">Do not show</string>
+    <string name="notification_mode_headsup">Show as Heads Up</string>
+    <string name="notification_mode_reticker">Show as reTicker</string>
+    <string name="notification_mode_danmaku">Show as Danmaku</string>
+    <!-- Ringer Mode -->
     <string name="ringer_mode_title">Режим звонка в игре</string>
     <string name="ringer_mode_silent">Беззвучный</string>
     <string name="ringer_mode_vibrate">Вибрация</string>
     <string name="ringer_mode_normal">Обычный</string>
     <string name="ringer_mode_no_change">Do not change</string>
-    <string name="suppress_fullscreen_intent_title">Блокировать полноэкранные уведомления</string>
-    <string name="suppress_fullscreen_intent_summary">Предотвращение появления полноэкранных событий, таких как входящие вызовы</string>
+    <!-- Game picker -->
+    <string name="game_list_title">Библиотека</string>
+    <string name="game_list_add_title">Add</string>
+    <string name="app_selector_label">Выберите свою игру</string>
+    <string name="app_search_title">Поиск</string>
+    <string name="game_remove_message">Are you sure you want to remove %1$s from your game list?</string>
+    <!-- Configure game -->
     <string name="per_app_title">Настроить игру</string>
     <string name="per_app_mode_title">Предпочтительный режим</string>
     <string name="per_app_angle_title">Использовать ANGLE (эксперементально)</string>
     <string name="per_app_angle_summary">Использование рендерера ANGLE вместо собственных драйверов GLES.\nВНИМАНИЕ!! Может ломать игровую графику, использовать с осторожностью!</string>
     <string name="cant_find_angle_pkg">ANGLE недоступен в вашей системе</string>
     <string name="per_app_unregister">Удалить %1$s из библиотеки</string>
+    <string name="game_mode_unsupported">Не поддерживается</string>
+    <string name="game_mode_standard">Стандартный</string>
+    <string name="game_mode_performance">Производительный</string>
+    <string name="game_mode_battery">Батарея</string>
     <!-- Custom seekbar -->
     <string name="custom_seekbar_value">Значение: <xliff:g id="v">%s</xliff:g></string>
     <string name="custom_seekbar_default_value">по умолчанию</string>
     <string name="custom_seekbar_default_value_to_set">Значение по умолчанию: <xliff:g id="v">%s</xliff:g>\nУдерживайте для установки</string>
     <string name="custom_seekbar_default_value_is_set">Значение по умолчанию установлено</string>
-    <string name="gamespace_menu_opacity_title">Уровень прозрачности меню игрового режима</string>
-    <string name="adb_disabled_title">Отключить отладку по USB</string>
+    <!-- Game overlay -->
     <string name="battery_format">Батарея: <xliff:g id="percentage" example="100">%1$d%%</xliff:g></string>
     <string name="memory_format">Доступная память: <xliff:g id="availmemory" example="1000">%1$d</xliff:g>\/<xliff:g id="totalmemory" example="5000">%2$d</xliff:g> MB</string>
+    <!-- Tiles -->
+    <string name="game_mode_title">Режим</string>
+    <string name="fps_Info_title">Информация о FPS</string>
+    <string name="notification_hide">Hide</string>
+    <string name="notification_headsup">Heads Up</string>
+    <string name="notification_reticker">reTicker</string>
+    <string name="notification_danmaku">Danmaku</string>
+    <string name="state_enabled">Enabled</string>
+    <string name="state_disabled">Disabled</string>
 </resources>
