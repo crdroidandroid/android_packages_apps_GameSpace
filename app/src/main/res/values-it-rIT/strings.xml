@@ -42,6 +42,7 @@
     <string name="ringer_mode_silent">Silenzioso</string>
     <string name="ringer_mode_vibrate">Vibrazione</string>
     <string name="ringer_mode_normal">Normale</string>
+    <string name="ringer_mode_no_change">Do not change</string>
     <string name="suppress_fullscreen_intent_title">Blocca evento a schermo intero</string>
     <string name="suppress_fullscreen_intent_summary">Evitare la comparsa di eventi a schermo intero come le chiamate in arrivo</string>
     <string name="per_app_title">Configura gioco</string>
