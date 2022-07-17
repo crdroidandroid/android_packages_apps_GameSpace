@@ -42,6 +42,7 @@
     <string name="ringer_mode_silent">静音</string>
     <string name="ringer_mode_vibrate">振动</string>
     <string name="ringer_mode_normal">正常</string>
+    <string name="ringer_mode_no_change">Do not change</string>
     <string name="suppress_fullscreen_intent_title">屏蔽全屏事件</string>
     <string name="suppress_fullscreen_intent_summary">防止在游戏中出现来电等全屏事件</string>
     <string name="per_app_title">配置游戏</string>
