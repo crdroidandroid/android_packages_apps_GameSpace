@@ -18,46 +18,60 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="settings_title">Oyun Alanı</string>
     <string name="settings_summary">Oyun kurulumunuzu yönetin</string>
-    <string name="app_selector_label">Oyununu seç</string>
-    <string name="auto_brightness_disabled_title">Otomatik parlaklığı devre dışı bırak</string>
-    <string name="heads_up_disabled_title">Uyarı bildirimlerini devre dışı bırak</string>
+    <!-- Game options -->
     <string name="in_game_preferences_title">Oyun içi seçenekleri</string>
-    <string name="game_list_title">Arşiv</string>
-    <string name="game_remove_message">%1$s arşivden kaldırmak istediğinizden emin misiniz?</string>
-    <string name="app_search_title">Ara</string>
-    <string name="three_screenshot_disabled_title">Üç parmak hareketini devre dışı bırak</string>
-    <string name="state_enabled">etkin</string>
-    <string name="state_disabled">devre dışı</string>
-    <!-- Game Mode -->
-    <string name="game_mode_title">Mod</string>
-    <string name="game_mode_unsupported">Desteklenmiyor</string>
-    <string name="game_mode_standard">Standart</string>
-    <string name="game_mode_performance">Performans</string>
-    <string name="game_mode_battery">Pil</string>
-    <string name="heads_up_title">Bildirim pencereleri</string>
-    <string name="fps_Info_title">FPS bilgisi</string>
+    <string name="suppress_fullscreen_intent_title">Tam ekran etkinliğini engelle</string>
+    <string name="suppress_fullscreen_intent_summary">Oyun içindeyken gelen aramalar gibi tam ekran etkinliklerinin görünmesini engelleyin</string>
     <string name="stay_awake_title">Uyanık kal</string>
     <string name="lock_gesture_title">Hareketi kilitle</string>
+    <string name="auto_brightness_disabled_title">Otomatik parlaklığı devre dışı bırak</string>
+    <string name="three_screenshot_disabled_title">Üç parmak hareketini devre dışı bırak</string>
+    <string name="adb_disabled_title">USB hata ayıklamasını devre dışı bırak</string>
+    <string name="gamespace_menu_opacity_title">Arayüz menüsü şeffaflığı</string>
+    <!-- Notification Mode -->
+    <string name="notification_mode_title">Notification mode</string>
+    <string name="notification_mode_hide">Do not show</string>
+    <string name="notification_mode_headsup">Show as Heads Up</string>
+    <string name="notification_mode_reticker">Show as reTicker</string>
+    <string name="notification_mode_danmaku">Show as Danmaku</string>
+    <!-- Ringer Mode -->
     <string name="ringer_mode_title">Zil sesi modu</string>
     <string name="ringer_mode_silent">Sessiz</string>
     <string name="ringer_mode_vibrate">Titreşim</string>
     <string name="ringer_mode_normal">Normal</string>
     <string name="ringer_mode_no_change">Do not change</string>
-    <string name="suppress_fullscreen_intent_title">Tam ekran etkinliğini engelle</string>
-    <string name="suppress_fullscreen_intent_summary">Oyun içindeyken gelen aramalar gibi tam ekran etkinliklerinin görünmesini engelleyin</string>
+    <!-- Game picker -->
+    <string name="game_list_title">Arşiv</string>
+    <string name="game_list_add_title">Add</string>
+    <string name="app_selector_label">Oyununu seç</string>
+    <string name="app_search_title">Ara</string>
+    <string name="game_remove_message">Are you sure you want to remove %1$s from your game list?</string>
+    <!-- Configure game -->
     <string name="per_app_title">Oyunu yapılandır</string>
     <string name="per_app_mode_title">Tercih edilen mod</string>
     <string name="per_app_angle_title">ANGLE kullan (deneysel)</string>
     <string name="per_app_angle_summary">Yerel GLES sürücüleri yerine ANGLE oluşturucu kullan.\nUYARI!! Oyun grafiklerini bozabilir, dikkatli kullanın!</string>
     <string name="cant_find_angle_pkg">ANGLE sisteminizde mevcut değil</string>
     <string name="per_app_unregister">%1$s arşivden kaldır</string>
+    <string name="game_mode_unsupported">Desteklenmiyor</string>
+    <string name="game_mode_standard">Standart</string>
+    <string name="game_mode_performance">Performans</string>
+    <string name="game_mode_battery">Pil</string>
     <!-- Custom seekbar -->
     <string name="custom_seekbar_value">Değer: <xliff:g id="v">%s</xliff:g></string>
     <string name="custom_seekbar_default_value">varsayılan</string>
     <string name="custom_seekbar_default_value_to_set">Varsayılan değer: <xliff:g id="v">%s</xliff:g>\nAyarlamak için uzun basın</string>
     <string name="custom_seekbar_default_value_is_set">Varsayılan değer ayarlandı</string>
-    <string name="gamespace_menu_opacity_title">Arayüz menüsü şeffaflığı</string>
-    <string name="adb_disabled_title">USB hata ayıklamasını devre dışı bırak</string>
+    <!-- Game overlay -->
     <string name="battery_format">Pil: <xliff:g id="percentage" example="100">%1$d%%</xliff:g></string>
     <string name="memory_format">Kullanılabilir bellek: <xliff:g id="availmemory" example="1000">%1$d</xliff:g>\/<xliff:g id="totalmemory" example="5000">%2$d</xliff:g> MB</string>
+    <!-- Tiles -->
+    <string name="game_mode_title">Mod</string>
+    <string name="fps_Info_title">FPS bilgisi</string>
+    <string name="notification_hide">Hide</string>
+    <string name="notification_headsup">Heads Up</string>
+    <string name="notification_reticker">reTicker</string>
+    <string name="notification_danmaku">Danmaku</string>
+    <string name="state_enabled">Enabled</string>
+    <string name="state_disabled">Disabled</string>
 </resources>
