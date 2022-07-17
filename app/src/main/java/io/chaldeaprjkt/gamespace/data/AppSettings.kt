@@ -58,7 +58,7 @@ class AppSettings @Inject constructor(private val context: Context) {
         set(value) = db.edit().putBoolean(KEY_STAY_AWAKE, value).apply()
 
     var ringerMode: Int
-        get() = db.getString(KEY_RINGER_MODE, "0").toInt()
+        get() = db.getString(KEY_RINGER_MODE, "3").toInt()
         set(value) = db.edit().putString(KEY_RINGER_MODE, value.toString()).apply()
 
     var menuOpacity: Int
