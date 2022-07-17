@@ -18,46 +18,60 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="settings_title">Herní prostor</string>
     <string name="settings_summary">Spravovat herního nastavení</string>
-    <string name="app_selector_label">Výběr hry</string>
-    <string name="auto_brightness_disabled_title">Zakázat automatický jas</string>
-    <string name="heads_up_disabled_title">Zakázat plovoucí oznámení</string>
+    <!-- Game options -->
     <string name="in_game_preferences_title">Možnosti ve hře</string>
-    <string name="game_list_title">Knihovna</string>
-    <string name="game_remove_message">Opravdu chcete odstranit %1$s z vaší knihovny?</string>
-    <string name="app_search_title">Hledat</string>
-    <string name="three_screenshot_disabled_title">Zakázat přejetí pro snímek obrazovky</string>
-    <string name="state_enabled">povoleno</string>
-    <string name="state_disabled">zakázáno</string>
-    <!-- Game Mode -->
-    <string name="game_mode_title">Režim</string>
-    <string name="game_mode_unsupported">Nepodporováno</string>
-    <string name="game_mode_standard">Standardní</string>
-    <string name="game_mode_performance">Výkon</string>
-    <string name="game_mode_battery">Baterie</string>
-    <string name="heads_up_title">Plovoucí oznámení</string>
-    <string name="fps_Info_title">Informace o FPS</string>
+    <string name="suppress_fullscreen_intent_title">Blokovat událost na celou obrazovku</string>
+    <string name="suppress_fullscreen_intent_summary">Zakázat zobrazení celoobrazovkových události, např. příchozí volání</string>
     <string name="stay_awake_title">Nevypínat obrazovku</string>
     <string name="lock_gesture_title">Zakázat gesta</string>
+    <string name="auto_brightness_disabled_title">Zakázat automatický jas</string>
+    <string name="three_screenshot_disabled_title">Zakázat přejetí pro snímek obrazovky</string>
+    <string name="adb_disabled_title">Zakázat ladění USB</string>
+    <string name="gamespace_menu_opacity_title">Úroveň průhlednosti překrytí menu</string>
+    <!-- Notification Mode -->
+    <string name="notification_mode_title">Notification mode</string>
+    <string name="notification_mode_hide">Do not show</string>
+    <string name="notification_mode_headsup">Show as Heads Up</string>
+    <string name="notification_mode_reticker">Show as reTicker</string>
+    <string name="notification_mode_danmaku">Show as Danmaku</string>
+    <!-- Ringer Mode -->
     <string name="ringer_mode_title">Režim vyzvánění</string>
     <string name="ringer_mode_silent">Tichý</string>
     <string name="ringer_mode_vibrate">Vibrace</string>
     <string name="ringer_mode_normal">Normální</string>
     <string name="ringer_mode_no_change">Do not change</string>
-    <string name="suppress_fullscreen_intent_title">Blokovat událost na celou obrazovku</string>
-    <string name="suppress_fullscreen_intent_summary">Zakázat zobrazení celoobrazovkových události, např. příchozí volání</string>
+    <!-- Game picker -->
+    <string name="game_list_title">Knihovna</string>
+    <string name="game_list_add_title">Add</string>
+    <string name="app_selector_label">Výběr hry</string>
+    <string name="app_search_title">Hledat</string>
+    <string name="game_remove_message">Are you sure you want to remove %1$s from your game list?</string>
+    <!-- Configure game -->
     <string name="per_app_title">Konfigurace hry</string>
     <string name="per_app_mode_title">Preferovaný režim</string>
     <string name="per_app_angle_title">Použít ANGLE (experimentální)</string>
     <string name="per_app_angle_summary">Používá ANGLE renderer místo nativních ovladačů GLA.\nVAROVÁNÍ!! Může se rozbít herní grafiku, používejte opatrně!</string>
     <string name="cant_find_angle_pkg">ANGLE není k dispozici ve vašem systému</string>
     <string name="per_app_unregister">Odebrat %1$s z knihovny</string>
+    <string name="game_mode_unsupported">Nepodporováno</string>
+    <string name="game_mode_standard">Standardní</string>
+    <string name="game_mode_performance">Výkon</string>
+    <string name="game_mode_battery">Baterie</string>
     <!-- Custom seekbar -->
     <string name="custom_seekbar_value">Hodnota: <xliff:g id="v">%s</xliff:g></string>
     <string name="custom_seekbar_default_value">výchozí hodnota</string>
     <string name="custom_seekbar_default_value_to_set">Výchozí hodnota: <xliff:g id="v">%s</xliff:g>\nDlouze klepněte pro její nastavení</string>
     <string name="custom_seekbar_default_value_is_set">Výchozí hodnota je nastavena</string>
-    <string name="gamespace_menu_opacity_title">Úroveň průhlednosti překrytí menu</string>
-    <string name="adb_disabled_title">Zakázat ladění USB</string>
+    <!-- Game overlay -->
     <string name="battery_format">Baterie: <xliff:g id="percentage" example="100">%1$d%%</xliff:g></string>
     <string name="memory_format">Dostupná paměť: <xliff:g id="availmemory" example="1000">%1$d</xliff:g>\/<xliff:g id="totalmemory" example="5000">%2$d</xliff:g> MB</string>
+    <!-- Tiles -->
+    <string name="game_mode_title">Režim</string>
+    <string name="fps_Info_title">Informace o FPS</string>
+    <string name="notification_hide">Hide</string>
+    <string name="notification_headsup">Heads Up</string>
+    <string name="notification_reticker">reTicker</string>
+    <string name="notification_danmaku">Danmaku</string>
+    <string name="state_enabled">Enabled</string>
+    <string name="state_disabled">Disabled</string>
 </resources>
