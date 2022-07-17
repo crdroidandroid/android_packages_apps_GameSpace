@@ -42,6 +42,7 @@
     <string name="ringer_mode_silent">Беззвучний</string>
     <string name="ringer_mode_vibrate">Вібрація</string>
     <string name="ringer_mode_normal">Звичайний</string>
+    <string name="ringer_mode_no_change">Do not change</string>
     <string name="suppress_fullscreen_intent_title">Блокувати повноекранні сповіщення</string>
     <string name="suppress_fullscreen_intent_summary">Запобігти появі повноекранних сповіщень, таких як вхідні дзвінки під час гри</string>
     <string name="per_app_title">Налаштувати гру</string>
