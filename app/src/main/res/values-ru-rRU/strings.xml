@@ -29,23 +29,23 @@
     <string name="adb_disabled_title">Отключить отладку по USB</string>
     <string name="gamespace_menu_opacity_title">Уровень прозрачности меню игрового режима</string>
     <!-- Notification Mode -->
-    <string name="notification_mode_title">Notification mode</string>
-    <string name="notification_mode_hide">Do not show</string>
-    <string name="notification_mode_headsup">Show as Heads Up</string>
-    <string name="notification_mode_reticker">Show as reTicker</string>
-    <string name="notification_mode_danmaku">Show as Danmaku</string>
+    <string name="notification_mode_title">Режим уведомлений</string>
+    <string name="notification_mode_hide">Не показывать</string>
+    <string name="notification_mode_headsup">Всплывающие уведомления</string>
+    <string name="notification_mode_reticker">Новый стиль уведомлений</string>
+    <string name="notification_mode_danmaku">Прозрачные без фона</string>
     <!-- Ringer Mode -->
     <string name="ringer_mode_title">Режим звонка в игре</string>
     <string name="ringer_mode_silent">Беззвучный</string>
     <string name="ringer_mode_vibrate">Вибрация</string>
     <string name="ringer_mode_normal">Обычный</string>
-    <string name="ringer_mode_no_change">Do not change</string>
+    <string name="ringer_mode_no_change">Не изменять</string>
     <!-- Game picker -->
     <string name="game_list_title">Библиотека</string>
-    <string name="game_list_add_title">Add</string>
+    <string name="game_list_add_title">Добавить</string>
     <string name="app_selector_label">Выберите свою игру</string>
     <string name="app_search_title">Поиск</string>
-    <string name="game_remove_message">Are you sure you want to remove %1$s from your game list?</string>
+    <string name="game_remove_message">Вы действительно хотите удалить %s из своего списка игр?</string>
     <!-- Configure game -->
     <string name="per_app_title">Настроить игру</string>
     <string name="per_app_mode_title">Предпочтительный режим</string>
@@ -68,10 +68,10 @@
     <!-- Tiles -->
     <string name="game_mode_title">Режим</string>
     <string name="fps_Info_title">Информация о FPS</string>
-    <string name="notification_hide">Hide</string>
-    <string name="notification_headsup">Heads Up</string>
-    <string name="notification_reticker">reTicker</string>
-    <string name="notification_danmaku">Danmaku</string>
-    <string name="state_enabled">Enabled</string>
-    <string name="state_disabled">Disabled</string>
+    <string name="notification_hide">Скрыть</string>
+    <string name="notification_headsup">Всплывающее уведомление</string>
+    <string name="notification_reticker">Новый стиль уведомлений</string>
+    <string name="notification_danmaku">Прозрачные без фона</string>
+    <string name="state_enabled">Включено</string>
+    <string name="state_disabled">Отключено</string>
 </resources>
