@@ -30,7 +30,7 @@
     <string name="gamespace_menu_opacity_title">オーバーレイメニューの不透明度</string>
     <!-- Notification Mode -->
     <string name="notification_mode_title">Notification mode</string>
-    <string name="notification_mode_hide">Do not show</string>
+    <string name="notification_mode_hide">表示しない</string>
     <string name="notification_mode_headsup">Show as Heads Up</string>
     <string name="notification_mode_reticker">Show as reTicker</string>
     <string name="notification_mode_danmaku">Show as Danmaku</string>
@@ -42,10 +42,10 @@
     <string name="ringer_mode_no_change">Do not change</string>
     <!-- Game picker -->
     <string name="game_list_title">ライブラリ</string>
-    <string name="game_list_add_title">Add</string>
+    <string name="game_list_add_title">追加</string>
     <string name="app_selector_label">ゲームを選択</string>
     <string name="app_search_title">検索</string>
-    <string name="game_remove_message">Are you sure you want to remove %1$s from your game list?</string>
+    <string name="game_remove_message">ゲームリストから%1$s を削除しますか？</string>
     <!-- Configure game -->
     <string name="per_app_title">ゲーム設定</string>
     <string name="per_app_mode_title">優先モード</string>
@@ -68,10 +68,10 @@
     <!-- Tiles -->
     <string name="game_mode_title">モード</string>
     <string name="fps_Info_title">FPS 情報</string>
-    <string name="notification_hide">Hide</string>
+    <string name="notification_hide">非表示にする</string>
     <string name="notification_headsup">Heads Up</string>
     <string name="notification_reticker">reTicker</string>
     <string name="notification_danmaku">Danmaku</string>
-    <string name="state_enabled">Enabled</string>
-    <string name="state_disabled">Disabled</string>
+    <string name="state_enabled">有効</string>
+    <string name="state_disabled">無効</string>
 </resources>
