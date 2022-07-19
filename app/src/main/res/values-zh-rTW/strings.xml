@@ -29,23 +29,23 @@
     <string name="adb_disabled_title">停用 USB 偵錯</string>
     <string name="gamespace_menu_opacity_title">不透明度</string>
     <!-- Notification Mode -->
-    <string name="notification_mode_title">Notification mode</string>
-    <string name="notification_mode_hide">Do not show</string>
-    <string name="notification_mode_headsup">Show as Heads Up</string>
-    <string name="notification_mode_reticker">Show as reTicker</string>
-    <string name="notification_mode_danmaku">Show as Danmaku</string>
+    <string name="notification_mode_title">通知模式</string>
+    <string name="notification_mode_hide">不顯示</string>
+    <string name="notification_mode_headsup">彈出式通知</string>
+    <string name="notification_mode_reticker">reTicker</string>
+    <string name="notification_mode_danmaku">彈幕式通知</string>
     <!-- Ringer Mode -->
     <string name="ringer_mode_title">鈴聲模式</string>
     <string name="ringer_mode_silent">靜音</string>
     <string name="ringer_mode_vibrate">震動</string>
     <string name="ringer_mode_normal">正常</string>
-    <string name="ringer_mode_no_change">Do not change</string>
+    <string name="ringer_mode_no_change">不變更</string>
     <!-- Game picker -->
     <string name="game_list_title">遊戲庫</string>
-    <string name="game_list_add_title">Add</string>
+    <string name="game_list_add_title">新增</string>
     <string name="app_selector_label">選擇遊戲</string>
     <string name="app_search_title">搜尋</string>
-    <string name="game_remove_message">Are you sure you want to remove %1$s from your game list?</string>
+    <string name="game_remove_message">您確定要將 %1$s 從遊戲庫移除嗎？</string>
     <!-- Configure game -->
     <string name="per_app_title">遊戲選項</string>
     <string name="per_app_mode_title">偏好模式</string>
@@ -68,10 +68,10 @@
     <!-- Tiles -->
     <string name="game_mode_title">模式</string>
     <string name="fps_Info_title">幀數</string>
-    <string name="notification_hide">Hide</string>
-    <string name="notification_headsup">Heads Up</string>
+    <string name="notification_hide">隱藏</string>
+    <string name="notification_headsup">彈出通知</string>
     <string name="notification_reticker">reTicker</string>
-    <string name="notification_danmaku">Danmaku</string>
-    <string name="state_enabled">Enabled</string>
-    <string name="state_disabled">Disabled</string>
+    <string name="notification_danmaku">彈幕式通知</string>
+    <string name="state_enabled">已啟用</string>
+    <string name="state_disabled">已停用</string>
 </resources>
