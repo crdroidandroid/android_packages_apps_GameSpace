@@ -18,45 +18,60 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="settings_title">ゲームスペース</string>
     <string name="settings_summary">ゲームの設定を管理</string>
-    <string name="app_selector_label">ゲームを選択</string>
-    <string name="auto_brightness_disabled_title">自動明るさ調節を無効化</string>
-    <string name="heads_up_disabled_title">Heads Up 通知を無効化</string>
+    <!-- Game options -->
     <string name="in_game_preferences_title">ゲーム内オプション</string>
-    <string name="game_list_title">ライブラリ</string>
-    <string name="game_remove_message">%1$s をライブラリから削除してもよろしいですか?</string>
-    <string name="app_search_title">検索</string>
-    <string name="three_screenshot_disabled_title">スワイプでのスクリーンショットを無効化</string>
-    <string name="state_enabled">有効</string>
-    <string name="state_disabled">無効</string>
-    <!-- Game Mode -->
-    <string name="game_mode_title">モード</string>
-    <string name="game_mode_unsupported">非対応</string>
-    <string name="game_mode_standard">標準</string>
-    <string name="game_mode_performance">パフォーマンス優先</string>
-    <string name="game_mode_battery">バッテリー優先</string>
-    <string name="heads_up_title">Heads Up通知</string>
-    <string name="fps_Info_title">FPS 情報</string>
+    <string name="suppress_fullscreen_intent_title">全画面表示イベントをブロック</string>
+    <string name="suppress_fullscreen_intent_summary">ゲーム中は着信通話のような全画面イベントが表示されないようにする</string>
     <string name="stay_awake_title">常に画面点灯</string>
     <string name="lock_gesture_title">ジェスチャーをロック</string>
+    <string name="auto_brightness_disabled_title">自動明るさ調節を無効化</string>
+    <string name="three_screenshot_disabled_title">スワイプでのスクリーンショットを無効化</string>
+    <string name="adb_disabled_title">USB デバッグを無効化</string>
+    <string name="gamespace_menu_opacity_title">オーバーレイメニューの不透明度</string>
+    <!-- Notification Mode -->
+    <string name="notification_mode_title">通知モード</string>
+    <string name="notification_mode_hide">表示しない</string>
+    <string name="notification_mode_headsup">ポップアップ表示する</string>
+    <string name="notification_mode_reticker">Show as reTicker</string>
+    <string name="notification_mode_danmaku">Show as Danmaku</string>
+    <!-- Ringer Mode -->
     <string name="ringer_mode_title">着信音モード</string>
     <string name="ringer_mode_silent">サイレント</string>
     <string name="ringer_mode_vibrate">バイブレーション</string>
     <string name="ringer_mode_normal">標準</string>
-    <string name="suppress_fullscreen_intent_title">全画面表示イベントをブロック</string>
-    <string name="suppress_fullscreen_intent_summary">ゲーム中は着信通話のような全画面イベントが表示されないようにする</string>
+    <string name="ringer_mode_no_change">変更しない</string>
+    <!-- Game picker -->
+    <string name="game_list_title">ライブラリ</string>
+    <string name="game_list_add_title">追加</string>
+    <string name="app_selector_label">ゲームを選択</string>
+    <string name="app_search_title">検索</string>
+    <string name="game_remove_message">ゲームリストから%1$s を削除しますか？</string>
+    <!-- Configure game -->
     <string name="per_app_title">ゲーム設定</string>
     <string name="per_app_mode_title">優先モード</string>
     <string name="per_app_angle_title">ANGLE を使用 (実験的)</string>
     <string name="per_app_angle_summary">ネイティブ GLES ドライバーの代わりに ANGLE レンダラーを使用します。\n警告! ゲームグラフィックが破損する可能性があります。注意して使用して下さい!</string>
     <string name="cant_find_angle_pkg">お使いのシステムでは ANGLE は利用できません</string>
     <string name="per_app_unregister">%1$s をライブラリから削除</string>
+    <string name="game_mode_unsupported">非対応</string>
+    <string name="game_mode_standard">標準</string>
+    <string name="game_mode_performance">パフォーマンス優先</string>
+    <string name="game_mode_battery">バッテリー優先</string>
     <!-- Custom seekbar -->
     <string name="custom_seekbar_value">値: <xliff:g id="v">%s</xliff:g></string>
     <string name="custom_seekbar_default_value">既定</string>
     <string name="custom_seekbar_default_value_to_set">既定値: <xliff:g id="v">%s</xliff:g>\n長押しで設定</string>
     <string name="custom_seekbar_default_value_is_set">既定値が設定されています</string>
-    <string name="gamespace_menu_opacity_title">オーバーレイメニューの不透明度</string>
-    <string name="adb_disabled_title">USB デバッグを無効化</string>
+    <!-- Game overlay -->
     <string name="battery_format">バッテリー: <xliff:g id="percentage" example="100">%1$d%%</xliff:g></string>
     <string name="memory_format">利用可能メモリ: <xliff:g id="availmemory" example="1000">%1$d</xliff:g>\/<xliff:g id="totalmemory" example="5000">%2$d</xliff:g> MB</string>
+    <!-- Tiles -->
+    <string name="game_mode_title">モード</string>
+    <string name="fps_Info_title">FPS 情報</string>
+    <string name="notification_hide">非表示にする</string>
+    <string name="notification_headsup">ポップアップ通知</string>
+    <string name="notification_reticker">reTicker</string>
+    <string name="notification_danmaku">Danmaku</string>
+    <string name="state_enabled">有効</string>
+    <string name="state_disabled">無効</string>
 </resources>

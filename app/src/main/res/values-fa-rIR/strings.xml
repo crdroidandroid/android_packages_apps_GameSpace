@@ -18,45 +18,60 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="settings_title">فضای بازی</string>
     <string name="settings_summary">تنظیمات بازی خود را مدیریت کنید</string>
-    <string name="app_selector_label">بازی خود را انتخاب کنید</string>
-    <string name="auto_brightness_disabled_title">غیرفعالسازی روشنایی خودکار</string>
-    <string name="heads_up_disabled_title">غیرفعالسازی اعلان های فوری</string>
+    <!-- Game options -->
     <string name="in_game_preferences_title">گزینه های درون بازی</string>
-    <string name="game_list_title">مجموعه</string>
-    <string name="game_remove_message">آیا مطمئن هستید که می خواهید %1$s را از مجموعه خود حذف کنید?</string>
-    <string name="app_search_title">جستجو</string>
-    <string name="three_screenshot_disabled_title">غیرفعالسازی گرفتن اسکرین شات با کشیدن انگشت</string>
-    <string name="state_enabled">فعال</string>
-    <string name="state_disabled">غیرفعال</string>
-    <!-- Game Mode -->
-    <string name="game_mode_title">حالت</string>
-    <string name="game_mode_unsupported">پشتیبانی نشده</string>
-    <string name="game_mode_standard">استاندارد</string>
-    <string name="game_mode_performance">کارایی</string>
-    <string name="game_mode_battery">باتری</string>
-    <string name="heads_up_title">اعلان فوری</string>
-    <string name="fps_Info_title">اطلاعات FPS</string>
+    <string name="suppress_fullscreen_intent_title">مسدود کردن رویداد تمام صفحه</string>
+    <string name="suppress_fullscreen_intent_summary">از نمایش رویدادهای تمام صفحه مانند تماس های دریافتی جلوگیری کنید</string>
     <string name="stay_awake_title">بیدار بمان</string>
     <string name="lock_gesture_title">قفل کردن ژست</string>
+    <string name="auto_brightness_disabled_title">غیرفعالسازی روشنایی خودکار</string>
+    <string name="three_screenshot_disabled_title">غیرفعالسازی گرفتن اسکرین شات با کشیدن انگشت</string>
+    <string name="adb_disabled_title">غیرفعال کردن اشکال زدایی USB</string>
+    <string name="gamespace_menu_opacity_title">سطح شفافیت منوی همپوشانی</string>
+    <!-- Notification Mode -->
+    <string name="notification_mode_title">Notification mode</string>
+    <string name="notification_mode_hide">Do not show</string>
+    <string name="notification_mode_headsup">Show as Heads Up</string>
+    <string name="notification_mode_reticker">Show as reTicker</string>
+    <string name="notification_mode_danmaku">Show as Danmaku</string>
+    <!-- Ringer Mode -->
     <string name="ringer_mode_title">حالت با صدا</string>
     <string name="ringer_mode_silent">سکوت</string>
     <string name="ringer_mode_vibrate">لرزش</string>
     <string name="ringer_mode_normal">معمولی</string>
-    <string name="suppress_fullscreen_intent_title">مسدود کردن رویداد تمام صفحه</string>
-    <string name="suppress_fullscreen_intent_summary">از نمایش رویدادهای تمام صفحه مانند تماس های دریافتی جلوگیری کنید</string>
+    <string name="ringer_mode_no_change">Do not change</string>
+    <!-- Game picker -->
+    <string name="game_list_title">مجموعه</string>
+    <string name="game_list_add_title">Add</string>
+    <string name="app_selector_label">بازی خود را انتخاب کنید</string>
+    <string name="app_search_title">جستجو</string>
+    <string name="game_remove_message">Are you sure you want to remove %1$s from your game list?</string>
+    <!-- Configure game -->
     <string name="per_app_title">پیکربندی بازی</string>
     <string name="per_app_mode_title">حالت ترجیحی</string>
     <string name="per_app_angle_title">استفاده از ANGLE (آزمایشی)</string>
     <string name="per_app_angle_summary">استفاده از رندر ANGLE به جای درایورهای GLES بومی، اگر دستگاه از آن پشتیبانی کند.\nهشدار!! ممکن است گرافیک بازی را خراب کند، با احتیاط استفاده کنید!</string>
     <string name="cant_find_angle_pkg">ANGLE در سیستم شما در دسترس نیست</string>
     <string name="per_app_unregister">%1$s را از مجموعه حذف کنید</string>
+    <string name="game_mode_unsupported">پشتیبانی نشده</string>
+    <string name="game_mode_standard">استاندارد</string>
+    <string name="game_mode_performance">کارایی</string>
+    <string name="game_mode_battery">باتری</string>
     <!-- Custom seekbar -->
     <string name="custom_seekbar_value">ارزش: <xliff:g id="v">%s</xliff:g></string>
     <string name="custom_seekbar_default_value">به طور پیش فرض</string>
     <string name="custom_seekbar_default_value_to_set">ارزش پیش‌فرض: <xliff:g id="v">%s</xliff:g>\n برای تنظیم نگه دارید</string>
     <string name="custom_seekbar_default_value_is_set">مقدار پیش‌فرض تعیین شده است</string>
-    <string name="gamespace_menu_opacity_title">سطح شفافیت منوی همپوشانی</string>
-    <string name="adb_disabled_title">غیرفعال کردن اشکال زدایی USB</string>
+    <!-- Game overlay -->
     <string name="battery_format">باتری: <xliff:g id="percentage" example="100">%1$d%%</xliff:g></string>
     <string name="memory_format">حافظه موجود است: <xliff:g id="availmemory" example="1000">%1$d</xliff:g>\/<xliff:g id="totalmemory" example="5000">%2$d</xliff:g> مگابایت</string>
+    <!-- Tiles -->
+    <string name="game_mode_title">حالت</string>
+    <string name="fps_Info_title">اطلاعات FPS</string>
+    <string name="notification_hide">Hide</string>
+    <string name="notification_headsup">Heads Up</string>
+    <string name="notification_reticker">reTicker</string>
+    <string name="notification_danmaku">Danmaku</string>
+    <string name="state_enabled">Enabled</string>
+    <string name="state_disabled">Disabled</string>
 </resources>
