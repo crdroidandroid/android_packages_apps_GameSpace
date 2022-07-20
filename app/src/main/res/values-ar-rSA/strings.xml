@@ -16,7 +16,7 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="settings_title">Game Space</string>
+    <string name="settings_title">وضع الألعاب</string>
     <string name="settings_summary">إدارة إعدادات ألعابك</string>
     <!-- Game options -->
     <string name="in_game_preferences_title">خيارات داخل اللعبة</string>
