@@ -29,23 +29,23 @@
     <string name="adb_disabled_title">USB 디버깅 비활성화</string>
     <string name="gamespace_menu_opacity_title">오버레이 메뉴 투명도 레벨</string>
     <!-- Notification Mode -->
-    <string name="notification_mode_title">Notification mode</string>
-    <string name="notification_mode_hide">Do not show</string>
-    <string name="notification_mode_headsup">Show as Heads Up</string>
-    <string name="notification_mode_reticker">Show as reTicker</string>
-    <string name="notification_mode_danmaku">Show as Danmaku</string>
+    <string name="notification_mode_title">알림 모드</string>
+    <string name="notification_mode_hide">표시 안 함</string>
+    <string name="notification_mode_headsup">헤드업으로 보기</string>
+    <string name="notification_mode_reticker">reTicker로 보기</string>
+    <string name="notification_mode_danmaku">Danmaku로 보기</string>
     <!-- Ringer Mode -->
     <string name="ringer_mode_title">벨소리 모드</string>
     <string name="ringer_mode_silent">무음</string>
     <string name="ringer_mode_vibrate">진동</string>
     <string name="ringer_mode_normal">기본</string>
-    <string name="ringer_mode_no_change">Do not change</string>
+    <string name="ringer_mode_no_change">변경 안함</string>
     <!-- Game picker -->
     <string name="game_list_title">라이브러리</string>
-    <string name="game_list_add_title">Add</string>
+    <string name="game_list_add_title">추가</string>
     <string name="app_selector_label">게임을 선택하기</string>
     <string name="app_search_title">검색</string>
-    <string name="game_remove_message">Are you sure you want to remove %1$s from your game list?</string>
+    <string name="game_remove_message">정말 게임리스트에서 %1$s을(를) 삭제하겠습니까?</string>
     <!-- Configure game -->
     <string name="per_app_title">게임 설정</string>
     <string name="per_app_mode_title">선호 모드</string>
@@ -68,10 +68,10 @@
     <!-- Tiles -->
     <string name="game_mode_title">모드</string>
     <string name="fps_Info_title">FPS 정보</string>
-    <string name="notification_hide">Hide</string>
-    <string name="notification_headsup">Heads Up</string>
+    <string name="notification_hide">숨기기</string>
+    <string name="notification_headsup">헤드업</string>
     <string name="notification_reticker">reTicker</string>
     <string name="notification_danmaku">Danmaku</string>
-    <string name="state_enabled">Enabled</string>
-    <string name="state_disabled">Disabled</string>
+    <string name="state_enabled">활성화됨</string>
+    <string name="state_disabled">사용 안 함</string>
 </resources>
