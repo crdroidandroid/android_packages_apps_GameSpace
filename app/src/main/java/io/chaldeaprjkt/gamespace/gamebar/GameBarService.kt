@@ -126,11 +126,14 @@ class GameBarService : Hilt_GameBarService() {
     private var showPanel: Boolean = false
         set(value) {
             field = value
-            if (value && !::rootPanelView.isInitialized || !rootPanelView.isAttachedToWindow) {
-                setupPanelView()
-                wm.addView(rootPanelView, panelLayoutParam)
-            } else if (!value && ::rootPanelView.isInitialized && rootPanelView.isAttachedToWindow) {
-                wm.removeView(rootPanelView)
+            if (value) {
+                if (!::rootPanelView.isInitialized) 
+                    setupPanelView()
+                if (!rootPanelView.isAttachedToWindow)
+                    wm.addView(rootPanelView, panelLayoutParam)
+            } else if (!value) {
+                if (::rootPanelView.isInitialized && rootPanelView.isAttachedToWindow)
+                    wm.removeView(rootPanelView)
             }
         }
 
