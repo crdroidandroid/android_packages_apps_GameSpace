@@ -16,7 +16,7 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="settings_title">Không gian game</string>
+    <string name="settings_title">Không gian trò chơi</string>
     <string name="settings_summary">Quản lý thiết lập trò chơi của bạn</string>
     <!-- Game options -->
     <string name="in_game_preferences_title">Tùy chọn trong trò chơi</string>
@@ -64,7 +64,7 @@
     <string name="custom_seekbar_default_value_is_set">Đã đặt giá trị mặc định</string>
     <!-- Game overlay -->
     <string name="battery_format">Pin: <xliff:g id="percentage" example="100">%1$d%%</xliff:g></string>
-    <string name="memory_format">Bộ nhớ khả dụng: <xliff:g id="availmemory" example="1000">%1$d</xliff:g>\/<xliff:g id="totalmemory" example="5000">%2$d</xliff:g> MB</string>
+    <string name="memory_format">Bộ nhớ có sẵn: <xliff:g id="availmemory" example="1000">%1$d</xliff:g>\/<xliff:g id="totalmemory" example="5000">%2$d</xliff:g> MB</string>
     <!-- Tiles -->
     <string name="game_mode_title">Chế độ</string>
     <string name="fps_Info_title">Thông tin FPS</string>
