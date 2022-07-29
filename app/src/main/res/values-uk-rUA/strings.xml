@@ -29,20 +29,20 @@
     <string name="adb_disabled_title">Вимкнути налагодження USB</string>
     <string name="gamespace_menu_opacity_title">Рівень непрозорості меню ігрового режиму</string>
     <!-- Notification Mode -->
-    <string name="notification_mode_title">Notification mode</string>
-    <string name="notification_mode_hide">Do not show</string>
-    <string name="notification_mode_headsup">Show as Heads Up</string>
-    <string name="notification_mode_reticker">Show as reTicker</string>
-    <string name="notification_mode_danmaku">Show as Danmaku</string>
+    <string name="notification_mode_title">Режим сповіщень</string>
+    <string name="notification_mode_hide">Не показувати</string>
+    <string name="notification_mode_headsup">Відображаюти як спливаючі сповіщення</string>
+    <string name="notification_mode_reticker">Показати як Ticker</string>
+    <string name="notification_mode_danmaku">Показати як Данмаку</string>
     <!-- Ringer Mode -->
     <string name="ringer_mode_title">Режим дзвінка</string>
     <string name="ringer_mode_silent">Беззвучний</string>
     <string name="ringer_mode_vibrate">Вібрація</string>
     <string name="ringer_mode_normal">Звичайний</string>
-    <string name="ringer_mode_no_change">Do not change</string>
+    <string name="ringer_mode_no_change">Не змінюйте</string>
     <!-- Game picker -->
     <string name="game_list_title">Бібліотека</string>
-    <string name="game_list_add_title">Add</string>
+    <string name="game_list_add_title">Додати</string>
     <string name="app_selector_label">Виберіть свою гру</string>
     <string name="app_search_title">Пошук</string>
     <string name="game_remove_message">Are you sure you want to remove %1$s from your game list?</string>
