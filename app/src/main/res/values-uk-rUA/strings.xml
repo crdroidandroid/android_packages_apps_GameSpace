@@ -32,14 +32,14 @@
     <string name="notification_mode_title">Режим сповіщень</string>
     <string name="notification_mode_hide">Не показувати</string>
     <string name="notification_mode_headsup">Відображаюти як спливаючі сповіщення</string>
-    <string name="notification_mode_reticker">Показати як Ticker</string>
+    <string name="notification_mode_reticker">Показати як в новому стилі спливаючих сповіщень</string>
     <string name="notification_mode_danmaku">Показати як Данмаку</string>
     <!-- Ringer Mode -->
     <string name="ringer_mode_title">Режим дзвінка</string>
     <string name="ringer_mode_silent">Беззвучний</string>
     <string name="ringer_mode_vibrate">Вібрація</string>
     <string name="ringer_mode_normal">Звичайний</string>
-    <string name="ringer_mode_no_change">Не змінюйте</string>
+    <string name="ringer_mode_no_change">Не змінювати</string>
     <!-- Game picker -->
     <string name="game_list_title">Бібліотека</string>
     <string name="game_list_add_title">Додати</string>
@@ -70,7 +70,7 @@
     <string name="fps_Info_title">Інформація про FPS</string>
     <string name="notification_hide">Приховати</string>
     <string name="notification_headsup">Спливаючі сповіщення</string>
-    <string name="notification_reticker">повторний тікер</string>
+    <string name="notification_reticker">Новий стиль спливаючих сповіщень</string>
     <string name="notification_danmaku">Данмаку</string>
     <string name="state_enabled">Увімкнено</string>
     <string name="state_disabled">Вимкнено</string>
