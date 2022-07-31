@@ -45,7 +45,7 @@
     <string name="game_list_add_title">Додати</string>
     <string name="app_selector_label">Виберіть свою гру</string>
     <string name="app_search_title">Пошук</string>
-    <string name="game_remove_message">Are you sure you want to remove %1$s from your game list?</string>
+    <string name="game_remove_message">Ви впевнені, що хочете видалити %1$s зі свого списку ігор?</string>
     <!-- Configure game -->
     <string name="per_app_title">Налаштувати гру</string>
     <string name="per_app_mode_title">Переважний режим</string>
@@ -68,10 +68,10 @@
     <!-- Tiles -->
     <string name="game_mode_title">Режим</string>
     <string name="fps_Info_title">Інформація про FPS</string>
-    <string name="notification_hide">Hide</string>
-    <string name="notification_headsup">Heads Up</string>
-    <string name="notification_reticker">reTicker</string>
-    <string name="notification_danmaku">Danmaku</string>
-    <string name="state_enabled">Enabled</string>
-    <string name="state_disabled">Disabled</string>
+    <string name="notification_hide">Приховати</string>
+    <string name="notification_headsup">Спливаючі сповіщення</string>
+    <string name="notification_reticker">повторний тікер</string>
+    <string name="notification_danmaku">Данмаку</string>
+    <string name="state_enabled">Увімкнено</string>
+    <string name="state_disabled">Вимкнено</string>
 </resources>
