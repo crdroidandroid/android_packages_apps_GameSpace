@@ -42,10 +42,10 @@
     <string name="ringer_mode_no_change">Do not change</string>
     <!-- Game picker -->
     <string name="game_list_title">Bibliothèque</string>
-    <string name="game_list_add_title">Add</string>
+    <string name="game_list_add_title">Ajouter</string>
     <string name="app_selector_label">Choisissez votre jeu</string>
     <string name="app_search_title">Rechercher</string>
-    <string name="game_remove_message">Are you sure you want to remove %1$s from your game list?</string>
+    <string name="game_remove_message">Êtes-vous sûr de vouloir retirer %1$s de votre bibliothèque ?</string>
     <!-- Configure game -->
     <string name="per_app_title">Configurer le jeu</string>
     <string name="per_app_mode_title">Mode préféré</string>
@@ -60,7 +60,7 @@
     <!-- Custom seekbar -->
     <string name="custom_seekbar_value">Valeur : <xliff:g id="v">%s</xliff:g></string>
     <string name="custom_seekbar_default_value">par défaut</string>
-    <string name="custom_seekbar_default_value_to_set">Valeur par défaut : <xliff:g id="v">%s</xliff:g>\nRester appuyer pour définir</string>
+    <string name="custom_seekbar_default_value_to_set">Valeur par défaut : <xliff:g id="v">%s</xliff:g>\nRester appuyé pour définir</string>
     <string name="custom_seekbar_default_value_is_set">Valeur par défaut définie</string>
     <!-- Game overlay -->
     <string name="battery_format">Batterie : <xliff:g id="percentage" example="100">%1$d%%</xliff:g></string>
@@ -68,7 +68,7 @@
     <!-- Tiles -->
     <string name="game_mode_title">Mode</string>
     <string name="fps_Info_title">Infos FPS</string>
-    <string name="notification_hide">Hide</string>
+    <string name="notification_hide">Masquer</string>
     <string name="notification_headsup">Heads Up</string>
     <string name="notification_reticker">reTicker</string>
     <string name="notification_danmaku">Danmaku</string>
