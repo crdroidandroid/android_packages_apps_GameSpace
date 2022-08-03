@@ -16,7 +16,7 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="settings_title">Espace de jeu</string>
+    <string name="settings_title">Espace jeu</string>
     <string name="settings_summary">Gérez votre configuration de jeu</string>
     <!-- Game options -->
     <string name="in_game_preferences_title">Options en jeu</string>
@@ -29,17 +29,17 @@
     <string name="adb_disabled_title">Désactiver le débogage USB</string>
     <string name="gamespace_menu_opacity_title">Niveau d\'opacité du menu de superposition</string>
     <!-- Notification Mode -->
-    <string name="notification_mode_title">Notification mode</string>
-    <string name="notification_mode_hide">Do not show</string>
-    <string name="notification_mode_headsup">Show as Heads Up</string>
-    <string name="notification_mode_reticker">Show as reTicker</string>
-    <string name="notification_mode_danmaku">Show as Danmaku</string>
+    <string name="notification_mode_title">Mode notification</string>
+    <string name="notification_mode_hide">Ne pas afficher</string>
+    <string name="notification_mode_headsup">Afficher en :notification flottante</string>
+    <string name="notification_mode_reticker">Afficher en :reTicker</string>
+    <string name="notification_mode_danmaku">Afficher en Danmaku</string>
     <!-- Ringer Mode -->
     <string name="ringer_mode_title">Mode sonnerie</string>
     <string name="ringer_mode_silent">Silencieux</string>
-    <string name="ringer_mode_vibrate">Vibrer</string>
+    <string name="ringer_mode_vibrate">Vibreur</string>
     <string name="ringer_mode_normal">Normal</string>
-    <string name="ringer_mode_no_change">Do not change</string>
+    <string name="ringer_mode_no_change">Ne pas changer</string>
     <!-- Game picker -->
     <string name="game_list_title">Bibliothèque</string>
     <string name="game_list_add_title">Ajouter</string>
