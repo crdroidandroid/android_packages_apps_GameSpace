@@ -45,7 +45,7 @@
     <string name="game_list_add_title">Dodaj</string>
     <string name="app_selector_label">Wybierz swoją grę</string>
     <string name="app_search_title">Szukaj</string>
-    <string name="game_remove_message">Czy na pewno chcesz usunąć %1$s z listy gry?</string>
+    <string name="game_remove_message">Czy na pewno chcesz usunąć %1$s z listy gier?</string>
     <!-- Configure game -->
     <string name="per_app_title">Skonfiguruj grę</string>
     <string name="per_app_mode_title">Preferowany tryb</string>

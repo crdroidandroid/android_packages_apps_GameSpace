@@ -32,7 +32,7 @@
     <string name="notification_mode_title">通知模式</string>
     <string name="notification_mode_hide">不显示</string>
     <string name="notification_mode_headsup">显示为浮动通知</string>
-    <string name="notification_mode_reticker">Show as reTicker</string>
+    <string name="notification_mode_reticker">以 reTicker 形式显示</string>
     <string name="notification_mode_danmaku">显示为弹幕通知</string>
     <!-- Ringer Mode -->
     <string name="ringer_mode_title">响铃模式</string>
