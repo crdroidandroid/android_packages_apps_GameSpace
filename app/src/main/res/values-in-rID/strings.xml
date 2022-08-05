@@ -29,7 +29,7 @@
     <string name="adb_disabled_title">Nonaktifkan USB debugging</string>
     <string name="gamespace_menu_opacity_title">Tingkat opasitas hamparan menu</string>
     <!-- Notification Mode -->
-    <string name="notification_mode_title">Mode pemberitahuan</string>
+    <string name="notification_mode_title">Mode notifikasi</string>
     <string name="notification_mode_hide">Jangan tampilkan</string>
     <string name="notification_mode_headsup">Muncul sebagai Notifikasi Mengambang</string>
     <string name="notification_mode_reticker">Muncul sebagai reTicker</string>
