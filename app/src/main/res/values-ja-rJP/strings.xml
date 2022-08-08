@@ -32,8 +32,8 @@
     <string name="notification_mode_title">通知モード</string>
     <string name="notification_mode_hide">表示しない</string>
     <string name="notification_mode_headsup">ポップアップ表示する</string>
-    <string name="notification_mode_reticker">Show as reTicker</string>
-    <string name="notification_mode_danmaku">Show as Danmaku</string>
+    <string name="notification_mode_reticker">reTicker として表示</string>
+    <string name="notification_mode_danmaku">Danmaku として表示</string>
     <!-- Ringer Mode -->
     <string name="ringer_mode_title">着信音モード</string>
     <string name="ringer_mode_silent">サイレント</string>
