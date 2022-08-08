@@ -68,7 +68,7 @@
     <!-- Tiles -->
     <string name="game_mode_title">Режим</string>
     <string name="fps_Info_title">Інформація про FPS</string>
-    <string name="notification_hide">Приховати</string>
+    <string name="notification_hide">Зховати</string>
     <string name="notification_headsup">Спливаючі сповіщення</string>
     <string name="notification_reticker">Новий стиль спливаючих сповіщень</string>
     <string name="notification_danmaku">Данмаку</string>
