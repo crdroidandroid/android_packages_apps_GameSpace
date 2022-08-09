@@ -29,23 +29,23 @@
     <string name="adb_disabled_title">Disabilita debug USB</string>
     <string name="gamespace_menu_opacity_title">Livello di opacità menù sovrapposizione</string>
     <!-- Notification Mode -->
-    <string name="notification_mode_title">Notification mode</string>
-    <string name="notification_mode_hide">Do not show</string>
+    <string name="notification_mode_title">Modalità notifica</string>
+    <string name="notification_mode_hide">Non visualizzare</string>
     <string name="notification_mode_headsup">Mostra come notifiche a comparsa</string>
-    <string name="notification_mode_reticker">Show as reTicker</string>
-    <string name="notification_mode_danmaku">Show as Danmaku</string>
+    <string name="notification_mode_reticker">Mostra come reTicker</string>
+    <string name="notification_mode_danmaku">Mostra come Danmaku</string>
     <!-- Ringer Mode -->
     <string name="ringer_mode_title">Modalità suoneria</string>
     <string name="ringer_mode_silent">Silenzioso</string>
     <string name="ringer_mode_vibrate">Vibrazione</string>
     <string name="ringer_mode_normal">Normale</string>
-    <string name="ringer_mode_no_change">Do not change</string>
+    <string name="ringer_mode_no_change">Non modificare</string>
     <!-- Game picker -->
     <string name="game_list_title">Libreria</string>
     <string name="game_list_add_title">Aggiungi</string>
     <string name="app_selector_label">Scegli il tuo gioco</string>
     <string name="app_search_title">Cerca</string>
-    <string name="game_remove_message">Are you sure you want to remove %1$s from your game list?</string>
+    <string name="game_remove_message">Sei sicuro di voler rimuovere %1$s dalla tua lista dei giochi?</string>
     <!-- Configure game -->
     <string name="per_app_title">Configura gioco</string>
     <string name="per_app_mode_title">Modalità preferita</string>
@@ -72,6 +72,6 @@
     <string name="notification_headsup">Notifiche a comparsa</string>
     <string name="notification_reticker">reTicker</string>
     <string name="notification_danmaku">Danmaku</string>
-    <string name="state_enabled">Enabled</string>
-    <string name="state_disabled">Disabled</string>
+    <string name="state_enabled">Abilitato</string>
+    <string name="state_disabled">Disabilitato</string>
 </resources>

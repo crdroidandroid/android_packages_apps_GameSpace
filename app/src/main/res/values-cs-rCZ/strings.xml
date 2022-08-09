@@ -29,23 +29,23 @@
     <string name="adb_disabled_title">Zakázat ladění USB</string>
     <string name="gamespace_menu_opacity_title">Úroveň průhlednosti překrytí menu</string>
     <!-- Notification Mode -->
-    <string name="notification_mode_title">Notification mode</string>
-    <string name="notification_mode_hide">Do not show</string>
-    <string name="notification_mode_headsup">Show as Heads Up</string>
-    <string name="notification_mode_reticker">Show as reTicker</string>
-    <string name="notification_mode_danmaku">Show as Danmaku</string>
+    <string name="notification_mode_title">Režim upozornění</string>
+    <string name="notification_mode_hide">Nezobrazovat</string>
+    <string name="notification_mode_headsup">Zobrazit jako plovoucí oznámení</string>
+    <string name="notification_mode_reticker">Zobrazit jako reTicker</string>
+    <string name="notification_mode_danmaku">Zobrazit jako Danmaku</string>
     <!-- Ringer Mode -->
     <string name="ringer_mode_title">Režim vyzvánění</string>
     <string name="ringer_mode_silent">Tichý</string>
     <string name="ringer_mode_vibrate">Vibrace</string>
     <string name="ringer_mode_normal">Normální</string>
-    <string name="ringer_mode_no_change">Do not change</string>
+    <string name="ringer_mode_no_change">Neměnit</string>
     <!-- Game picker -->
     <string name="game_list_title">Knihovna</string>
-    <string name="game_list_add_title">Add</string>
+    <string name="game_list_add_title">Přidat</string>
     <string name="app_selector_label">Výběr hry</string>
     <string name="app_search_title">Hledat</string>
-    <string name="game_remove_message">Are you sure you want to remove %1$s from your game list?</string>
+    <string name="game_remove_message">Opravdu chcete odstranit %1$s z vaší herní knihovny?</string>
     <!-- Configure game -->
     <string name="per_app_title">Konfigurace hry</string>
     <string name="per_app_mode_title">Preferovaný režim</string>
@@ -68,10 +68,10 @@
     <!-- Tiles -->
     <string name="game_mode_title">Režim</string>
     <string name="fps_Info_title">Informace o FPS</string>
-    <string name="notification_hide">Hide</string>
-    <string name="notification_headsup">Heads Up</string>
+    <string name="notification_hide">Skrýt</string>
+    <string name="notification_headsup">Plovoucí oznámení</string>
     <string name="notification_reticker">reTicker</string>
     <string name="notification_danmaku">Danmaku</string>
-    <string name="state_enabled">Enabled</string>
-    <string name="state_disabled">Disabled</string>
+    <string name="state_enabled">Povoleno</string>
+    <string name="state_disabled">Zakázáno</string>
 </resources>
