@@ -31,7 +31,7 @@
     <!-- Notification Mode -->
     <string name="notification_mode_title">Modo de notificación</string>
     <string name="notification_mode_hide">No mostrar</string>
-    <string name="notification_mode_headsup">Show as Heads Up</string>
+    <string name="notification_mode_headsup">Mostrar como notificaciones emergentes</string>
     <string name="notification_mode_reticker">Mostrar como reTicker</string>
     <string name="notification_mode_danmaku">Mostrar como Danmaku</string>
     <!-- Ringer Mode -->
