@@ -39,13 +39,13 @@
     <string name="ringer_mode_silent">Silencio</string>
     <string name="ringer_mode_vibrate">Vibrar</string>
     <string name="ringer_mode_normal">Normal</string>
-    <string name="ringer_mode_no_change">Do not change</string>
+    <string name="ringer_mode_no_change">No cambiar</string>
     <!-- Game picker -->
     <string name="game_list_title">Biblioteca</string>
     <string name="game_list_add_title">Añadir</string>
     <string name="app_selector_label">Elige tu juego</string>
     <string name="app_search_title">Buscar</string>
-    <string name="game_remove_message">Are you sure you want to remove %1$s from your game list?</string>
+    <string name="game_remove_message">¿Estás seguro de que quieres eliminar %1$s de tu biblioteca?</string>
     <!-- Configure game -->
     <string name="per_app_title">Configurar juego</string>
     <string name="per_app_mode_title">Modo preferido</string>
@@ -70,7 +70,7 @@ Mantén presionado para establecer</string>
     <string name="game_mode_title">Modo</string>
     <string name="fps_Info_title">Información de FPS</string>
     <string name="notification_hide">Ocultar</string>
-    <string name="notification_headsup">Heads Up</string>
+    <string name="notification_headsup">Notificaciones flotantes</string>
     <string name="notification_reticker">reTicker</string>
     <string name="notification_danmaku">Danmaku</string>
     <string name="state_enabled">Activado</string>
