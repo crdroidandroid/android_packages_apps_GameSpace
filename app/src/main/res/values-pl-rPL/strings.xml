@@ -33,7 +33,7 @@
     <string name="notification_mode_hide">Nie pokazuj</string>
     <string name="notification_mode_headsup">Wyświetl jako Heads-up</string>
     <string name="notification_mode_reticker">Pokaż jako reTicker</string>
-    <string name="notification_mode_danmaku">Pokaż pasek danmaku</string>
+    <string name="notification_mode_danmaku">Pokaż jako pasek danmaku</string>
     <!-- Ringer Mode -->
     <string name="ringer_mode_title">Tryb dzwonka</string>
     <string name="ringer_mode_silent">Tryb cichy</string>
