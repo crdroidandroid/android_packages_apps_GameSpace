@@ -16,7 +16,7 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="settings_title">Modo Gamer</string>
+    <string name="settings_title">Espaço de Jogos</string>
     <string name="settings_summary">Gerencie sua configuração de jogos</string>
     <!-- Game options -->
     <string name="in_game_preferences_title">Opções do jogo</string>
@@ -29,8 +29,8 @@
     <string name="adb_disabled_title">Desativar depuração USB</string>
     <string name="gamespace_menu_opacity_title">Nível de opacidade do menu de opções</string>
     <!-- Notification Mode -->
-    <string name="notification_mode_title">Modo das notificações</string>
-    <string name="notification_mode_hide">Não mostrar</string>
+    <string name="notification_mode_title">Estilo das notificações</string>
+    <string name="notification_mode_hide">Não exibir</string>
     <string name="notification_mode_headsup">Mostrar como notificação flutuante</string>
     <string name="notification_mode_reticker">Mostrar como reTicker</string>
     <string name="notification_mode_danmaku">Mostrar como Danmaku</string>
