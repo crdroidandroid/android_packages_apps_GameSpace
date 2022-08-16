@@ -33,7 +33,7 @@
     <string name="notification_mode_hide">اخفاء</string>
     <string name="notification_mode_headsup">إظهار كتنبيهات</string>
     <string name="notification_mode_reticker">إظهار كمؤشر</string>
-    <string name="notification_mode_danmaku">Show as Danmaku</string>
+    <string name="notification_mode_danmaku">إظهار ك Danmaku</string>
     <!-- Ringer Mode -->
     <string name="ringer_mode_title">وضع الرنين</string>
     <string name="ringer_mode_silent">صامت</string>
