@@ -29,7 +29,7 @@
     <string name="adb_disabled_title">Απενεργοποίηση εντοπισμού σφαλμάτων USB</string>
     <string name="gamespace_menu_opacity_title">Επίπεδο αδιαφάνειας μενού επικάλυψης</string>
     <!-- Notification Mode -->
-    <string name="notification_mode_title">Λειτουργία ειδοποιήσεων</string>
+    <string name="notification_mode_title">Ειδοποιήσεις</string>
     <string name="notification_mode_hide">Να μην εμφανίζεται</string>
     <string name="notification_mode_headsup">Εμφάνιση ως Αναδυόμενες ειδοποιήσεις</string>
     <string name="notification_mode_reticker">Εμφάνιση ως reTicker</string>
