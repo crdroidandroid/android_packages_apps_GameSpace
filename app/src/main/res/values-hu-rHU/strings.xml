@@ -20,17 +20,17 @@
     <string name="settings_summary">Játékbeállítások kezelése</string>
     <!-- Game options -->
     <string name="in_game_preferences_title">Játékon belüli lehetőségek</string>
-    <string name="suppress_fullscreen_intent_title">Teljes képernyő blokkolása</string>
-    <string name="suppress_fullscreen_intent_summary">A teljes képernyős módan a hívások megjelenítésének megakadályozása</string>
-    <string name="stay_awake_title">Maradjon ébren</string>
-    <string name="lock_gesture_title">Gesztusok lezárása</string>
+    <string name="suppress_fullscreen_intent_title">Teljes képernyős mód blokkolása</string>
+    <string name="suppress_fullscreen_intent_summary">Teljes képernyős események, mint például a bejövő hívás megjelenítésének megakadályozása</string>
+    <string name="stay_awake_title">Ne zárja le a képernyőt</string>
+    <string name="lock_gesture_title">Gesztusok gátlása</string>
     <string name="auto_brightness_disabled_title">Az automatikus fényerőszabályzás tiltása</string>
     <string name="three_screenshot_disabled_title">Képernyőfotóhoz való húzás letiltása</string>
-    <string name="adb_disabled_title">USB hibakeresés kikapcsolása</string>
+    <string name="adb_disabled_title">Az USB-hibakeresés tiltása</string>
     <string name="gamespace_menu_opacity_title">Átfedés menü átlátszósági szintje</string>
     <!-- Notification Mode -->
     <string name="notification_mode_title">Értesítési mód</string>
-    <string name="notification_mode_hide">Ne mutassa</string>
+    <string name="notification_mode_hide">Ne jelenjen meg</string>
     <string name="notification_mode_headsup">Felugró értesítés</string>
     <string name="notification_mode_reticker">Megjelenítés mint reTicker</string>
     <string name="notification_mode_danmaku">Mutasd mint Danmaku</string>
@@ -39,16 +39,16 @@
     <string name="ringer_mode_silent">Néma</string>
     <string name="ringer_mode_vibrate">Rezgő</string>
     <string name="ringer_mode_normal">Normál</string>
-    <string name="ringer_mode_no_change">Ne változtasd meg</string>
+    <string name="ringer_mode_no_change">Ne változtassa meg</string>
     <!-- Game picker -->
     <string name="game_list_title">Könyvtár</string>
     <string name="game_list_add_title">Hozzáad</string>
     <string name="app_selector_label">Válaszd ki a játékod</string>
     <string name="app_search_title">Keresés</string>
-    <string name="game_remove_message">Biztos vagy benne, hogy el akarod távolítani a %1$s-t a játéklistádról?</string>
+    <string name="game_remove_message">Biztos vagy benne, hogy el akarod távolítani a(z) %1$s-t a játéklistádról?</string>
     <!-- Configure game -->
-    <string name="per_app_title">Játék beállítása</string>
-    <string name="per_app_mode_title">Előnyös mód</string>
+    <string name="per_app_title">Játék konfigurálása</string>
+    <string name="per_app_mode_title">Preferált mód</string>
     <string name="per_app_angle_title">ANGLE használata (kísérleti)</string>
     <string name="per_app_angle_summary">ANGLE renderelő használata a natív GLES illesztőprogramok helyett.\nFIGYELEM!!! Megszakíthatja a játék grafikáját, óvatosan használd!</string>
     <string name="cant_find_angle_pkg">ANGLE nem elérhető ezen a rendszeren</string>
