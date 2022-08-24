@@ -50,7 +50,7 @@
     <string name="per_app_title">Játék konfigurálása</string>
     <string name="per_app_mode_title">Preferált mód</string>
     <string name="per_app_angle_title">ANGLE használata (kísérleti)</string>
-    <string name="per_app_angle_summary">ANGLE renderelő használata a natív GLES illesztőprogramok helyett.\nFIGYELEM!!! Megszakíthatja a játék grafikáját, óvatosan használd!</string>
+    <string name="per_app_angle_summary">ANGLE renderelő használata a natív GLES illesztőprogramok helyett.\nFIGYELEM!!! Elronthatja a játék grafikáját, óvatosan használd!</string>
     <string name="cant_find_angle_pkg">ANGLE nem elérhető ezen a rendszeren</string>
     <string name="per_app_unregister">Eltávólítás a könyvtárból</string>
     <string name="game_mode_unsupported">Nem támogatott</string>
@@ -63,7 +63,7 @@
     <string name="custom_seekbar_default_value_to_set">Alapértelmezett érték: <xliff:g id="v">%s</xliff:g>\nHosszú koppintás a beállításhoz</string>
     <string name="custom_seekbar_default_value_is_set">Az alapértelmezett érték beállítva</string>
     <!-- Game overlay -->
-    <string name="battery_format">Akkumlátor: <xliff:g id="percentage" example="100">%1$d%%</xliff:g></string>
+    <string name="battery_format">Akkumulátor: <xliff:g id="percentage" example="100">%1$d%%</xliff:g></string>
     <string name="memory_format">Elérhető memória: <xliff:g id="availmemory" example="1000">%1$d</xliff:g>\/<xliff:g id="totalmemory" example="5000">%2$d</xliff:g> MB</string>
     <!-- Tiles -->
     <string name="game_mode_title">Mód</string>
