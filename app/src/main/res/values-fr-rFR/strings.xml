@@ -72,6 +72,6 @@
     <string name="notification_headsup">Heads Up</string>
     <string name="notification_reticker">reTicker</string>
     <string name="notification_danmaku">Danmaku</string>
-    <string name="state_enabled">Enabled</string>
-    <string name="state_disabled">Disabled</string>
+    <string name="state_enabled">Activé</string>
+    <string name="state_disabled">Désactivé</string>
 </resources>
