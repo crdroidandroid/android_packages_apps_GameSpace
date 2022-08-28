@@ -4,9 +4,10 @@ import android.app.ActivityTaskManager
 import android.content.Context
 import android.util.AttributeSet
 import android.view.LayoutInflater
-import android.view.SurfaceControlFpsListener
+import android.view.WindowManager
 import android.widget.LinearLayout
 import android.widget.TextView
+import android.window.TaskFpsCallback
 import io.chaldeaprjkt.gamespace.R
 import io.chaldeaprjkt.gamespace.utils.di.ServiceViewEntryPoint
 import io.chaldeaprjkt.gamespace.utils.dp
@@ -30,13 +31,16 @@ class MenuSwitcher @JvmOverloads constructor(
     private val scope = CoroutineScope(Job() + Dispatchers.Main)
     private val taskManager by lazy { ActivityTaskManager.getService() }
 
-    private val surfaceListener = object : SurfaceControlFpsListener() {
+    private val taskFpsCallback = object : TaskFpsCallback() {
         override fun onFpsReported(fps: Float) {
             if (isAttachedToWindow) {
                 onFrameUpdated(fps)
             }
         }
     }
+
+    private val wm: WindowManager
+        get() = context.getSystemService(Context.WINDOW_SERVICE) as WindowManager
 
     private val content: TextView?
         get() = findViewById(R.id.menu_content)
@@ -72,9 +76,11 @@ class MenuSwitcher @JvmOverloads constructor(
 
     private fun updateFrameRateBinding() {
         if (showFps) {
-            taskManager?.focusedRootTaskInfo?.taskId?.let { surfaceListener.register(it) }
+            taskManager?.focusedRootTaskInfo?.taskId?.let {
+                wm.registerTaskFpsCallback(it, Runnable::run, taskFpsCallback)
+            }
         } else {
-            surfaceListener.unregister()
+            wm.unregisterTaskFpsCallback(taskFpsCallback)
         }
     }
 
@@ -86,6 +92,6 @@ class MenuSwitcher @JvmOverloads constructor(
 
     override fun onDetachedFromWindow() {
         super.onDetachedFromWindow()
-        surfaceListener.unregister()
+        wm.unregisterTaskFpsCallback(taskFpsCallback)
     }
 }
