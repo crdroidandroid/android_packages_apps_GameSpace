@@ -18,5 +18,6 @@
     <privapp-permissions package="io.chaldeaprjkt.gamespace">
         <permission name="android.permission.INTERACT_ACROSS_USERS"/>
         <permission name="android.permission.ACCESS_FPS_COUNTER"/>
+        <permission name="android.permission.MANAGE_GAME_MODE"/>
     </privapp-permissions>
 </permissions>
