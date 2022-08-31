@@ -31,7 +31,7 @@
     <!-- Notification Mode -->
     <string name="notification_mode_title">Режим уведомлений</string>
     <string name="notification_mode_hide">Не показывать</string>
-    <string name="notification_mode_headsup">Всплывающие уведомления</string>
+    <string name="notification_mode_headsup">Показывать в виде всплывающих уведомлений</string>
     <string name="notification_mode_reticker">Новый стиль уведомлений</string>
     <string name="notification_mode_danmaku">Прозрачные без фона</string>
     <!-- Ringer Mode -->
@@ -45,7 +45,7 @@
     <string name="game_list_add_title">Добавить</string>
     <string name="app_selector_label">Выберите свою игру</string>
     <string name="app_search_title">Поиск</string>
-    <string name="game_remove_message">Вы действительно хотите удалить %s из своего списка игр?</string>
+    <string name="game_remove_message">Вы действительно хотите удалить %1$s из своего списка игр?</string>
     <!-- Configure game -->
     <string name="per_app_title">Настроить игру</string>
     <string name="per_app_mode_title">Предпочтительный режим</string>
