@@ -52,7 +52,7 @@
     <string name="per_app_angle_title">ANGLE használata (kísérleti)</string>
     <string name="per_app_angle_summary">ANGLE renderelő használata a natív GLES illesztőprogramok helyett.\nFIGYELEM!!! Elronthatja a játék grafikáját, óvatosan használd!</string>
     <string name="cant_find_angle_pkg">ANGLE nem elérhető ezen a rendszeren</string>
-    <string name="per_app_unregister">Eltávólítás a könyvtárból</string>
+    <string name="per_app_unregister">%1$s eltávolítása a könyvtáradból</string>
     <string name="game_mode_unsupported">Nem támogatott</string>
     <string name="game_mode_standard">Általános</string>
     <string name="game_mode_performance">Teljesítmény</string>
