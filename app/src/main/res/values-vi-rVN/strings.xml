@@ -25,7 +25,7 @@
     <string name="stay_awake_title">Không khóa màn hình</string>
     <string name="lock_gesture_title">Khóa cử chỉ</string>
     <string name="auto_brightness_disabled_title">Vô hiệu hóa độ sáng tự động</string>
-    <string name="three_screenshot_disabled_title">Tắt tính năng vuốt đến ảnh chụp màn hình</string>
+    <string name="three_screenshot_disabled_title">Tắt tính năng vuốt 3 ngón để chụp ảnh màn hình</string>
     <string name="adb_disabled_title">Tắt gỡ lỗi USB</string>
     <string name="gamespace_menu_opacity_title">Độ mờ của menu</string>
     <!-- Notification Mode -->
