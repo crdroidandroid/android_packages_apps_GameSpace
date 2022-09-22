@@ -16,36 +16,36 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="settings_title">Game Space</string>
+    <string name="settings_title">Game ruimte</string>
     <string name="settings_summary">Beheer uw gaming-instellingen</string>
     <!-- Game options -->
     <string name="in_game_preferences_title">In-game opties</string>
     <string name="suppress_fullscreen_intent_title">Blokkeer volledig scherm event</string>
-    <string name="suppress_fullscreen_intent_summary">Prevent fullscreen events like incoming calls from appearing</string>
+    <string name="suppress_fullscreen_intent_summary">Voorkom dat volledig scherm events zoals inkomende oproepen worden weergegeven tijdens in-game</string>
     <string name="stay_awake_title">Blijf aan</string>
-    <string name="lock_gesture_title">Lock gesture</string>
+    <string name="lock_gesture_title">Vergrendel gebaar</string>
     <string name="auto_brightness_disabled_title">Automatische helderheid uitschakelen</string>
     <string name="three_screenshot_disabled_title">Veeg naar schermafbeelding uitschakelen</string>
     <string name="adb_disabled_title">Usb-foutopsporing uitschakelen</string>
     <string name="gamespace_menu_opacity_title">Transparantieniveau van overlappingsmenu</string>
     <!-- Notification Mode -->
-    <string name="notification_mode_title">Notification mode</string>
-    <string name="notification_mode_hide">Do not show</string>
-    <string name="notification_mode_headsup">Show as Heads Up</string>
-    <string name="notification_mode_reticker">Show as reTicker</string>
-    <string name="notification_mode_danmaku">Show as Danmaku</string>
+    <string name="notification_mode_title">Notificatie modus</string>
+    <string name="notification_mode_hide">Niet tonen</string>
+    <string name="notification_mode_headsup">Heads-up tonen</string>
+    <string name="notification_mode_reticker">Toon als reTicker</string>
+    <string name="notification_mode_danmaku">Weergeven als Danmaku</string>
     <!-- Ringer Mode -->
     <string name="ringer_mode_title">Beltoonmodus</string>
     <string name="ringer_mode_silent">Stil</string>
     <string name="ringer_mode_vibrate">Vibreren</string>
     <string name="ringer_mode_normal">Normaal</string>
-    <string name="ringer_mode_no_change">Do not change</string>
+    <string name="ringer_mode_no_change">Niet wijzigen</string>
     <!-- Game picker -->
     <string name="game_list_title">Bibliotheek</string>
-    <string name="game_list_add_title">Add</string>
+    <string name="game_list_add_title">Toevoegen</string>
     <string name="app_selector_label">Kies je spel</string>
     <string name="app_search_title">Zoeken</string>
-    <string name="game_remove_message">Are you sure you want to remove %1$s from your game list?</string>
+    <string name="game_remove_message">Weet je zeker dat je %1$s uit je bibliotheek wilt verwijderen?</string>
     <!-- Configure game -->
     <string name="per_app_title">Spel configureren</string>
     <string name="per_app_mode_title">Voorkeursmodus</string>
@@ -63,15 +63,15 @@
     <string name="custom_seekbar_default_value_to_set">Standaard waarde: <xliff:g id="v">%s</xliff:g>\nLang indrukken om in te stellen</string>
     <string name="custom_seekbar_default_value_is_set">Standaard waarde is ingesteld</string>
     <!-- Game overlay -->
-    <string name="battery_format">Battery: <xliff:g id="percentage" example="100">%1$d%%</xliff:g></string>
-    <string name="memory_format">Memory available: <xliff:g id="availmemory" example="1000">%1$d</xliff:g>\/<xliff:g id="totalmemory" example="5000">%2$d</xliff:g> MB</string>
+    <string name="battery_format">Batterij: <xliff:g id="percentage" example="100">%1$d%%</xliff:g></string>
+    <string name="memory_format">Geheugen beschikbaar: <xliff:g id="availmemory" example="1000">%1$d</xliff:g>\/<xliff:g id="totalmemory" example="5000">%2$d</xliff:g> MB</string>
     <!-- Tiles -->
     <string name="game_mode_title">Modus</string>
     <string name="fps_Info_title">FPS info</string>
-    <string name="notification_hide">Hide</string>
-    <string name="notification_headsup">Heads Up</string>
+    <string name="notification_hide">Verbergen</string>
+    <string name="notification_headsup">Pop-up</string>
     <string name="notification_reticker">reTicker</string>
-    <string name="notification_danmaku">Danmaku</string>
-    <string name="state_enabled">Enabled</string>
-    <string name="state_disabled">Disabled</string>
+    <string name="notification_danmaku">Denemarken</string>
+    <string name="state_enabled">Ingeschakeld</string>
+    <string name="state_disabled">Uitgechakeld</string>
 </resources>
