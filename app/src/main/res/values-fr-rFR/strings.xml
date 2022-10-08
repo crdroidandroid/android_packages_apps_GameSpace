@@ -31,8 +31,8 @@
     <!-- Notification Mode -->
     <string name="notification_mode_title">Mode notification</string>
     <string name="notification_mode_hide">Ne pas afficher</string>
-    <string name="notification_mode_headsup">Afficher en :notification flottante</string>
-    <string name="notification_mode_reticker">Afficher en :reTicker</string>
+    <string name="notification_mode_headsup">Afficher en notification flottante</string>
+    <string name="notification_mode_reticker">Afficher en reTicker</string>
     <string name="notification_mode_danmaku">Afficher en Danmaku</string>
     <!-- Ringer Mode -->
     <string name="ringer_mode_title">Mode sonnerie</string>
@@ -69,7 +69,7 @@
     <string name="game_mode_title">Mode</string>
     <string name="fps_Info_title">Infos FPS</string>
     <string name="notification_hide">Masquer</string>
-    <string name="notification_headsup">Heads Up</string>
+    <string name="notification_headsup">Notification flotante</string>
     <string name="notification_reticker">reTicker</string>
     <string name="notification_danmaku">Danmaku</string>
     <string name="state_enabled">Activé</string>
