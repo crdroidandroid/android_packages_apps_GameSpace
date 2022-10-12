@@ -27,6 +27,7 @@ android_app {
         "gson-prebuilt-jar",
         "hilt_android",
         "org.lineageos.platform.internal",
+        "LineagePreferenceLib",
     ],
     kotlincflags: [
         "-Xuse-experimental=kotlin.Experimental",
