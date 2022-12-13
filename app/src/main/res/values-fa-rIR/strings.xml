@@ -32,20 +32,20 @@
     <string name="notification_mode_title">حالت اعلان‌ها</string>
     <string name="notification_mode_hide">عدم نمایش</string>
     <string name="notification_mode_headsup">نمایش به عنوان هشدار</string>
-    <string name="notification_mode_reticker">Show as reTicker</string>
-    <string name="notification_mode_danmaku">Show as Danmaku</string>
+    <string name="notification_mode_reticker">نمایش به عنوان reTicker</string>
+    <string name="notification_mode_danmaku">نمایش به عنوان Danmaku</string>
     <!-- Ringer Mode -->
     <string name="ringer_mode_title">حالت با صدا</string>
     <string name="ringer_mode_silent">سکوت</string>
     <string name="ringer_mode_vibrate">لرزش</string>
     <string name="ringer_mode_normal">معمولی</string>
-    <string name="ringer_mode_no_change">Do not change</string>
+    <string name="ringer_mode_no_change">بدون تغییر</string>
     <!-- Game picker -->
     <string name="game_list_title">مجموعه</string>
-    <string name="game_list_add_title">Add</string>
+    <string name="game_list_add_title">افزودن</string>
     <string name="app_selector_label">بازی خود را انتخاب کنید</string>
     <string name="app_search_title">جستجو</string>
-    <string name="game_remove_message">Are you sure you want to remove %1$s from your game list?</string>
+    <string name="game_remove_message">آیا مطمئن هستید می‌خواهید %1$s را از فهرست بازی‌های خود حذف کنید؟</string>
     <!-- Configure game -->
     <string name="per_app_title">پیکربندی بازی</string>
     <string name="per_app_mode_title">حالت ترجیحی</string>
@@ -68,10 +68,10 @@
     <!-- Tiles -->
     <string name="game_mode_title">حالت</string>
     <string name="fps_Info_title">اطلاعات FPS</string>
-    <string name="notification_hide">Hide</string>
-    <string name="notification_headsup">Heads Up</string>
+    <string name="notification_hide">پنهان کردن</string>
+    <string name="notification_headsup">اعلان فوری</string>
     <string name="notification_reticker">reTicker</string>
     <string name="notification_danmaku">Danmaku</string>
-    <string name="state_enabled">Enabled</string>
-    <string name="state_disabled">Disabled</string>
+    <string name="state_enabled">فعال شد</string>
+    <string name="state_disabled">غیرفعال شد</string>
 </resources>
