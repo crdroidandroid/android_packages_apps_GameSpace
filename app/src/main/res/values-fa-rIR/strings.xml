@@ -29,9 +29,9 @@
     <string name="adb_disabled_title">غیرفعال کردن اشکال زدایی USB</string>
     <string name="gamespace_menu_opacity_title">سطح شفافیت منوی همپوشانی</string>
     <!-- Notification Mode -->
-    <string name="notification_mode_title">Notification mode</string>
-    <string name="notification_mode_hide">Do not show</string>
-    <string name="notification_mode_headsup">Show as Heads Up</string>
+    <string name="notification_mode_title">حالت اعلان‌ها</string>
+    <string name="notification_mode_hide">عدم نمایش</string>
+    <string name="notification_mode_headsup">نمایش به عنوان هشدار</string>
     <string name="notification_mode_reticker">Show as reTicker</string>
     <string name="notification_mode_danmaku">Show as Danmaku</string>
     <!-- Ringer Mode -->
