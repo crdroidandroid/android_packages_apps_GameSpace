@@ -100,8 +100,8 @@ class ScreenUtils @Inject constructor(private val context: Context) {
         val handler = Handler(Looper.getMainLooper())
         ScreenshotHelper(context).takeScreenshot(
             WindowManager.TAKE_SCREENSHOT_FULLSCREEN,
-            WindowManager.ScreenshotSource.SCREENSHOT_GLOBAL_ACTIONS, handler, 1000, null
-        )
+            WindowManager.ScreenshotSource.SCREENSHOT_GLOBAL_ACTIONS, handler
+        ) { handler.post { onComplete?.invoke(it) } }
     }
 
     var stayAwake = false
