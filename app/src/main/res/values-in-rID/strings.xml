@@ -74,4 +74,10 @@
     <string name="notification_danmaku">Danmaku</string>
     <string name="state_enabled">Diaktifkan</string>
     <string name="state_disabled">Dinonaktifkan</string>
+    <string name="in_game_calls_title">Mode panggilan</string>
+    <string name="in_game_calls_no_action">Tidak ada tindakan</string>
+    <string name="in_game_calls_auto_answer">Jawab otomatis</string>
+    <string name="in_game_calls_auto_reject">Tolak otomatis</string>
+    <string name="in_game_calls_received_number">Menerima panggilan dari %1$s</string>
+    <string name="in_game_calls_rejected_number">Menolak panggilan dari %1$s</string>
 </resources>

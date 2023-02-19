@@ -74,4 +74,10 @@
     <string name="notification_danmaku">Danmaku</string>
     <string name="state_enabled">Włączono</string>
     <string name="state_disabled">Wyłączono</string>
+    <string name="in_game_calls_title">Tryb połączeń</string>
+    <string name="in_game_calls_no_action">Brak akcji</string>
+    <string name="in_game_calls_auto_answer">Automatyczne odbieranie</string>
+    <string name="in_game_calls_auto_reject">Automatyczne odrzucanie</string>
+    <string name="in_game_calls_received_number">Odebrano połączenie od %1$s</string>
+    <string name="in_game_calls_rejected_number">Odrzucono połączenie od %1$s</string>
 </resources>
