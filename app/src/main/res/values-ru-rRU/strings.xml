@@ -74,10 +74,10 @@
     <string name="notification_danmaku">Прозрачные без фона</string>
     <string name="state_enabled">Включено</string>
     <string name="state_disabled">Отключено</string>
-    <string name="in_game_calls_title">Call mode</string>
-    <string name="in_game_calls_no_action">No action</string>
-    <string name="in_game_calls_auto_answer">Auto answer</string>
-    <string name="in_game_calls_auto_reject">Auto reject</string>
-    <string name="in_game_calls_received_number">Received call from %1$s</string>
-    <string name="in_game_calls_rejected_number">Rejected call from %1$s</string>
+    <string name="in_game_calls_title">Режим звонка</string>
+    <string name="in_game_calls_no_action">Нет действия</string>
+    <string name="in_game_calls_auto_answer">Автоответ</string>
+    <string name="in_game_calls_auto_reject">Автосброс</string>
+    <string name="in_game_calls_received_number">Поступил звонок от %1$s</string>
+    <string name="in_game_calls_rejected_number">Отклонён вызов от %1$s</string>
 </resources>
