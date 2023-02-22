@@ -75,10 +75,10 @@ Mantén presionado para establecer</string>
     <string name="notification_danmaku">Danmaku</string>
     <string name="state_enabled">Activado</string>
     <string name="state_disabled">Desactivado</string>
-    <string name="in_game_calls_title">Call mode</string>
-    <string name="in_game_calls_no_action">No action</string>
-    <string name="in_game_calls_auto_answer">Auto answer</string>
-    <string name="in_game_calls_auto_reject">Auto reject</string>
-    <string name="in_game_calls_received_number">Received call from %1$s</string>
-    <string name="in_game_calls_rejected_number">Rejected call from %1$s</string>
+    <string name="in_game_calls_title">Modo llamada</string>
+    <string name="in_game_calls_no_action">Sin acción</string>
+    <string name="in_game_calls_auto_answer">Respuesta automática</string>
+    <string name="in_game_calls_auto_reject">Rechazo automático</string>
+    <string name="in_game_calls_received_number">Llamada recibida de %1$s</string>
+    <string name="in_game_calls_rejected_number">Llamada rechazada de %1$s</string>
 </resources>
