@@ -74,10 +74,10 @@
     <string name="notification_danmaku">Danmaku</string>
     <string name="state_enabled">Activat</string>
     <string name="state_disabled">Dezactivat</string>
-    <string name="in_game_calls_title">Call mode</string>
-    <string name="in_game_calls_no_action">No action</string>
-    <string name="in_game_calls_auto_answer">Auto answer</string>
-    <string name="in_game_calls_auto_reject">Auto reject</string>
-    <string name="in_game_calls_received_number">Received call from %1$s</string>
-    <string name="in_game_calls_rejected_number">Rejected call from %1$s</string>
+    <string name="in_game_calls_title">Mod apel</string>
+    <string name="in_game_calls_no_action">Nicio acțiune</string>
+    <string name="in_game_calls_auto_answer">Răspuns automat</string>
+    <string name="in_game_calls_auto_reject">Respingere automată</string>
+    <string name="in_game_calls_received_number">Apel primit de la %1$s</string>
+    <string name="in_game_calls_rejected_number">Apel respins de la %1$s</string>
 </resources>
