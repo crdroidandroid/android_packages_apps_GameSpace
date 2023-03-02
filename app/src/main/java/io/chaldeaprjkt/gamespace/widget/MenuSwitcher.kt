@@ -47,7 +47,7 @@ class MenuSwitcher @JvmOverloads constructor(
 
     var showFps = false
         set(value) {
-            layoutParams.width = if (value) LayoutParams.WRAP_CONTENT else 36.dp
+            setMenuIcon(null)
             field = value
         }
 
@@ -84,8 +84,12 @@ class MenuSwitcher @JvmOverloads constructor(
         }
     }
 
-    private fun setMenuIcon(icon: Int = R.drawable.ic_close) {
-        val ic = if (showFps) null else resources.getDrawable(icon, context.theme)
+    private fun setMenuIcon(icon: Int?) {
+        when (icon) {
+            R.drawable.ic_close, R.drawable.ic_drag -> layoutParams.width = 36.dp
+            else -> layoutParams.width = LayoutParams.WRAP_CONTENT
+        }
+        val ic = icon?.takeIf { !showFps }?.let { resources.getDrawable(it, context.theme) }
         content?.textScaleX = if (showFps) 1f else 0f
         content?.setCompoundDrawablesRelativeWithIntrinsicBounds(null, ic, null, null)
     }

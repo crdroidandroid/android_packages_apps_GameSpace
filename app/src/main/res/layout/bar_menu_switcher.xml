@@ -12,7 +12,6 @@
         android:layout_gravity="center"
         android:drawableTop="@drawable/ic_arrow_left"
         android:minEms="3"
-        android:paddingHorizontal="8dp"
         android:textAlignment="center"
         android:textColor="@color/onBarBackground"
         android:textSize="13sp" />
