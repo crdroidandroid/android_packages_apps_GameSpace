@@ -225,14 +225,6 @@ class GameBarService : Hilt_GameBarService() {
         recorderButton()
     }
 
-    private fun onBarDragged(dragged: Boolean) {
-        menuSwitcher.isDragged = dragged
-        if (dragged) {
-            barView.translationX = 0f
-        }
-        updateBackground()
-    }
-
     private fun updateBackground() {
         val barDragged = !barExpanded && barView.translationX == 0f
         val collapsedAtStart = !barDragged && barLayoutParam.x < 0
@@ -269,16 +261,22 @@ class GameBarService : Hilt_GameBarService() {
             barLayoutParam.x = halfWidth
         }
 
-
         val safeArea = statusbarHeight + 4.dp
         val safeHeight = wm.maximumWindowMetrics.bounds.height() - safeArea
         barLayoutParam.y = barLayoutParam.y.coerceIn(safeArea, safeHeight)
 
         updateBackground()
         updateContainerGaps()
-        updateLayout()
         menuSwitcher.showFps = if (barExpanded) false else appSettings.showFps
         menuSwitcher.updateIconState(barExpanded, barLayoutParam.x)
+        try {
+            if (rootBarView.isAttachedToWindow) {
+                wm.removeView(rootBarView)
+            }
+            wm.addView(rootBarView, barLayoutParam)
+        } catch (_: IllegalStateException) {
+            wm.updateViewLayout(rootBarView, barLayoutParam)
+        }
     }
 
     private fun setupPanelView() {
@@ -326,14 +324,20 @@ class GameBarService : Hilt_GameBarService() {
         menuSwitcher.registerDraggableTouchListener(
             initPoint = { Point(barLayoutParam.x, barLayoutParam.y) },
             listener = { x, y ->
-                onBarDragged(true)
-                barLayoutParam.x = x
-                barLayoutParam.y = y
-                updateLayout()
+                if (!menuSwitcher.isDragged) {
+                    menuSwitcher.isDragged = true
+                    barView.translationX = 0f
+                }
+                updateLayout {
+                    it.x = x
+                    it.y = y
+                }
+                updateBackground()
             },
             onComplete = {
-                onBarDragged(false)
+                menuSwitcher.isDragged = false
                 dockCollapsedMenu()
+                updateBackground()
                 appSettings.x = barLayoutParam.x
                 appSettings.y = barLayoutParam.y
             }
