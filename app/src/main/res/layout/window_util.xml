@@ -15,7 +15,6 @@
   -->
 
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_gravity="center">
@@ -26,7 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_margin="10dp"
-        android:background="@drawable/bar_expanded"
+        android:background="@drawable/bar_normal"
         android:gravity="center_horizontal"
         android:orientation="vertical"
         android:paddingVertical="5dp"
@@ -44,7 +43,7 @@
             android:layout_marginTop="5dp"
             android:padding="8dp"
             android:scaleType="centerInside"
-            android:src="@drawable/ic_panel" />
+            android:src="@drawable/ic_gear" />
 
         <ImageButton
             android:id="@+id/action_screenshot"
