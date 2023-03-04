@@ -1,3 +1,6 @@
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
@@ -5,14 +8,14 @@ plugins {
 }
 
 android {
-    compileSdk 31
+    compileSdk 33
 
     defaultConfig {
         applicationId "io.chaldeaprjkt.gamespace"
-        minSdk 31
-        targetSdk 31
-        versionCode 99
-        versionName "0.1-beta"
+        minSdk 33
+        targetSdk 33
+        versionCode 100
+        versionName "0.2"
     }
     signingConfigs {
         platform {
@@ -34,54 +37,34 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+
+    tasks.withType(KotlinCompile).configureEach {
+        compilerOptions.jvmTarget = JvmTarget.JVM_1_8
     }
-    kotlinOptions {
-        jvmTarget = '1.8'
-    }
+
     sourceSets {
         main {
             aidl.srcDirs = ['src/main/java']
         }
     }
-    lintOptions {
-        disable 'ContentDescription'
-        disable 'QueryAllPackagesPermission'
-        disable 'ProtectedPermissions'
-        disable 'OldTargetApi'
-        disable 'UseCompatLoadingForDrawables'
-        disable 'UnsafeProtectedBroadcastReceiver'
-        disable 'AppCompatCustomView'
+    lint {
+        disable 'ContentDescription', 'QueryAllPackagesPermission', 'ProtectedPermissions', 'OldTargetApi', 'UseCompatLoadingForDrawables', 'UnsafeProtectedBroadcastReceiver', 'AppCompatCustomView'
     }
 }
 
-def androidPath = "${rootDir}/../../../"
-def frameworkClassesJar = "${androidPath}/out/target/common/obj/JAVA_LIBRARIES/framework_intermediates/classes.jar"
-
 dependencies {
-    kapt 'com.google.dagger:hilt-compiler:2.40.5'
+    compileOnly files(frameworkJar)
+    implementation project(path: ':SettingsLib')
 
-    compileOnly files(frameworkClassesJar)
-
-    implementation 'androidx.core:core-ktx:1.7.0'
-    implementation 'androidx.appcompat:appcompat:1.4.1'
-    implementation 'androidx.preference:preference-ktx:1.1.1'
-    implementation 'com.google.android.material:material:1.5.0'
-    implementation 'com.google.code.gson:gson:2.8.6'
-    implementation 'com.google.dagger:hilt-android:2.40.5'
-    implementation project(path: ':SettingsLibParts')
+    implementation 'androidx.core:core-ktx:1.9.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'androidx.preference:preference-ktx:1.2.0'
+    implementation 'com.google.android.material:material:1.8.0'
+    implementation 'com.google.code.gson:gson:2.10.1'
+    implementation 'com.google.dagger:hilt-android:2.45'
+    kapt 'com.google.dagger:hilt-compiler:2.45'
 }
 
 kapt {
     correctErrorTypes true
-}
-
-allprojects {
-    gradle.projectsEvaluated {
-        tasks.withType(JavaCompile) {
-            options.compilerArgs.add("-Xbootclasspath/p:$frameworkClassesJar")
-        }
-    }
 }
