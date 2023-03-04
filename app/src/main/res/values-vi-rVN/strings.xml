@@ -75,7 +75,7 @@
     <string name="state_enabled">Bật</string>
     <string name="state_disabled">Tắt</string>
     <string name="in_game_calls_title">Chế độ cuộc gọi</string>
-    <string name="in_game_calls_no_action">Không có hành động nào</string>
+    <string name="in_game_calls_no_action">Không làm gì</string>
     <string name="in_game_calls_auto_answer">Tự động trả lời</string>
     <string name="in_game_calls_auto_reject">Tự động từ chối</string>
     <string name="in_game_calls_received_number">Nhận cuộc gọi từ %1$s</string>
