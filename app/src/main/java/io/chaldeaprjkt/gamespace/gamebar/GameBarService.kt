@@ -53,8 +53,6 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 import javax.inject.Inject
-import kotlin.math.max
-import kotlin.math.min
 
 @AndroidEntryPoint(Service::class)
 class GameBarService : Hilt_GameBarService() {
@@ -274,7 +272,7 @@ class GameBarService : Hilt_GameBarService() {
 
         val safeArea = statusbarHeight + 4.dp
         val safeHeight = wm.maximumWindowMetrics.bounds.height() - safeArea
-        barLayoutParam.y = max(min(barLayoutParam.y, safeHeight), safeArea)
+        barLayoutParam.y = barLayoutParam.y.coerceIn(safeArea, safeHeight)
 
         updateBackground()
         updateContainerGaps()

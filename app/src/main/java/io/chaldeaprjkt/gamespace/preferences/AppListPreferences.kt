@@ -61,7 +61,8 @@ class AppListPreferences @JvmOverloads constructor(context: Context, attrs: Attr
     }
 
     private fun getAppInfo(packageName: String): ApplicationInfo? = try {
-        context.packageManager.getApplicationInfo(packageName, PackageManager.GET_META_DATA)
+        val flags = PackageManager.ApplicationInfoFlags.of(PackageManager.GET_META_DATA.toLong())
+        context.packageManager.getApplicationInfo(packageName, flags)
     } catch (e: PackageManager.NameNotFoundException) {
         null
     }

@@ -27,8 +27,10 @@ import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.SearchView
+import androidx.core.view.MenuProvider
 import androidx.core.view.ViewCompat
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Lifecycle
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.appbar.AppBarLayout
@@ -49,9 +51,17 @@ class AppSelectorFragment : Hilt_AppSelectorFragment(), SearchView.OnQueryTextLi
     private var appsAdapter: AppsAdapter? = null
     private var appBarLayout: AppBarLayout? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setHasOptionsMenu(true)
+    private val menuProvider = object : MenuProvider {
+        override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
+            menuInflater.inflate(R.menu.app_selector_menu, menu)
+            val searchMenuItem = menu.findItem(R.id.app_search_menu)
+            val searchView = searchMenuItem.actionView as? SearchView
+            searchView?.setOnQueryTextListener(this@AppSelectorFragment)
+            searchView?.queryHint = getString(R.string.app_search_title)
+            searchMenuItem.setOnActionExpandListener(this@AppSelectorFragment)
+        }
+
+        override fun onMenuItemSelected(menuItem: MenuItem) = false
     }
 
     override fun onCreateView(
@@ -66,25 +76,17 @@ class AppSelectorFragment : Hilt_AppSelectorFragment(), SearchView.OnQueryTextLi
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        activity?.addMenuProvider(menuProvider, viewLifecycleOwner, Lifecycle.State.RESUMED)
         view.findViewById<RecyclerView>(R.id.app_list)?.apply {
             setupAppListView(this)
         }
     }
 
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        super.onCreateOptionsMenu(menu, inflater)
-        inflater.inflate(R.menu.app_selector_menu, menu)
-        val searchMenuItem = menu.findItem(R.id.app_search_menu)
-        val searchView = searchMenuItem.actionView as SearchView
-        searchView.setOnQueryTextListener(this)
-        searchView.queryHint = getString(R.string.app_search_title)
-        searchMenuItem.setOnActionExpandListener(this)
-    }
-
     private fun setupAppListView(view: RecyclerView) {
         appListView = view
+        val flags = PackageManager.ApplicationInfoFlags.of(PackageManager.GET_META_DATA.toLong())
         val apps = view.context.packageManager
-            .getInstalledApplications(PackageManager.GET_META_DATA)
+            .getInstalledApplications(flags)
             .filter {
                 it.packageName != context?.packageName &&
                         it.flags and ApplicationInfo.FLAG_SYSTEM == 0 &&
@@ -110,13 +112,13 @@ class AppSelectorFragment : Hilt_AppSelectorFragment(), SearchView.OnQueryTextLi
         return false
     }
 
-    override fun onMenuItemActionExpand(item: MenuItem?): Boolean {
+    override fun onMenuItemActionExpand(item: MenuItem): Boolean {
         appBarLayout?.setExpanded(false, false)
         appListView?.let { ViewCompat.setNestedScrollingEnabled(it, false) }
         return true
     }
 
-    override fun onMenuItemActionCollapse(item: MenuItem?): Boolean {
+    override fun onMenuItemActionCollapse(item: MenuItem): Boolean {
         appBarLayout?.setExpanded(false, false)
         appListView?.let { ViewCompat.setNestedScrollingEnabled(it, true) }
         return true

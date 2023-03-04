@@ -19,6 +19,7 @@ package io.chaldeaprjkt.gamespace.gamebar
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.os.Handler
 import android.os.Looper
 import android.os.UserHandle
@@ -49,10 +50,11 @@ class GameBroadcastReceiver : BroadcastReceiver() {
             setPackage(null)
             component = null
         }
-        packageManager.queryBroadcastReceivers(intent, 0)
-            ?.mapNotNull { it.activityInfo?.packageName }
-            ?.filter { it != packageName }
-            ?.forEach {
+        val flags = PackageManager.ResolveInfoFlags.of(0)
+        packageManager.queryBroadcastReceivers(intent, flags)
+            .mapNotNull { it.activityInfo?.packageName }
+            .filter { it != packageName }
+            .forEach {
                 (intent.clone() as Intent).apply {
                     setPackage(it)
                     sendBroadcastAsUser(this, UserHandle.CURRENT,

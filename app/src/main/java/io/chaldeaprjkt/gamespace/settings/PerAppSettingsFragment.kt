@@ -17,6 +17,7 @@ package io.chaldeaprjkt.gamespace.settings
 
 import android.app.Activity
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.os.Bundle
 import android.view.View
 import androidx.preference.ListPreference
@@ -42,10 +43,10 @@ class PerAppSettingsFragment : Hilt_PerAppSettingsFragment(),
     lateinit var gameModeUtils: GameModeUtils
 
     private val currentGame by lazy {
-        context?.packageManager?.getApplicationInfo(
-            activity?.intent?.getStringExtra(PerAppSettingsActivity.EXTRA_PACKAGE),
-            0
-        )
+        activity?.intent?.getStringExtra(PerAppSettingsActivity.EXTRA_PACKAGE)?.let {
+            val flags = PackageManager.ApplicationInfoFlags.of(0)
+            context?.packageManager?.getApplicationInfo(it, flags)
+        }
     }
 
     private val currentConfig: UserGame?
@@ -64,15 +65,15 @@ class PerAppSettingsFragment : Hilt_PerAppSettingsFragment(),
         super.onViewCreated(view, savedInstanceState)
         findPreference<Preference>("headers")?.apply {
             layoutResource = R.layout.per_app_header
-            icon = currentGame?.loadIcon(context?.packageManager)
-            title = context?.packageManager?.let { currentGame?.loadLabel(it) }
+            icon = currentGame?.loadIcon(context.packageManager)
+            title = context.packageManager?.let { currentGame?.loadLabel(it) }
         }
         findPreference<ListPreference>(PREF_PREFERRED_MODE)?.apply {
             currentConfig?.mode?.let { value = it.toString() }
             onPreferenceChangeListener = this@PerAppSettingsFragment
         }
         findPreference<SwitchPreference>(PREF_USE_ANGLE)?.apply {
-            context?.resources?.getBoolean(R.bool.config_allow_per_app_angle_usage)?.let {
+            context.resources?.getBoolean(R.bool.config_allow_per_app_angle_usage)?.let {
                 isVisible = it
                 if (!it) return@apply
             }
@@ -89,7 +90,7 @@ class PerAppSettingsFragment : Hilt_PerAppSettingsFragment(),
         findPreference<Preference>(PREF_UNREGISTER)?.apply {
             summary = context.getString(
                 R.string.per_app_unregister,
-                currentGame?.loadLabel(context?.packageManager)
+                currentGame?.loadLabel(context.packageManager)
             )
             setOnPreferenceClickListener {
                 activity?.setResult(Activity.RESULT_OK, Intent().apply {
@@ -101,9 +102,9 @@ class PerAppSettingsFragment : Hilt_PerAppSettingsFragment(),
         }
     }
 
-    override fun onPreferenceChange(preference: Preference?, newValue: Any?): Boolean {
+    override fun onPreferenceChange(preference: Preference, newValue: Any?): Boolean {
         val gameInfo = currentGame ?: return false
-        when (preference?.key) {
+        when (preference.key) {
             PREF_PREFERRED_MODE -> {
                 val newMode = (newValue as String).toIntOrNull() ?: 1
                 gameModeUtils.setGameModeFor(gameInfo.packageName, settings, newMode)

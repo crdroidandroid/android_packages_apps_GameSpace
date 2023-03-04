@@ -24,8 +24,6 @@ import android.widget.LinearLayout
 import androidx.core.view.doOnLayout
 import io.chaldeaprjkt.gamespace.R
 import io.chaldeaprjkt.gamespace.utils.dp
-import kotlin.math.max
-import kotlin.math.min
 
 class PanelView @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null
@@ -53,8 +51,7 @@ class PanelView @JvmOverloads constructor(
             val safeArea = rootWindowInsets.getInsets(WindowInsets.Type.systemBars())
             val minY = safeArea.top + 16.dp
             val maxY = safeArea.top + (parent as View).height - safeArea.bottom - height - 16.dp
-            y = min(max(relativeY, minY), maxY).toFloat()
+            y = relativeY.coerceIn(minY, maxY).toFloat()
         }
     }
-
 }
