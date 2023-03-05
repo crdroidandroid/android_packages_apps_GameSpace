@@ -16,7 +16,7 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="settings_title">Ruang Permainan</string>
+    <string name="settings_title">Ruang Game</string>
     <string name="settings_summary">Kelola pengaturan game Anda</string>
     <!-- Game options -->
     <string name="in_game_preferences_title">Opsi dalam game</string>
