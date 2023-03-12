@@ -50,7 +50,7 @@
     <string name="per_app_title">Configura el joc</string>
     <string name="per_app_mode_title">Mode preferit</string>
     <string name="per_app_angle_title">Utilitza l\'ANGLE (experimental)</string>
-    <string name="per_app_angle_summary">Using ANGLE renderer instead of native GLES drivers.\nWARNING!! May breaks game graphics, use with caution!</string>
+    <string name="per_app_angle_summary">Utilitza el renderitzador ANGLE en lloc dels controladors natius GLES.\nATENCIÓ! Pot trenca els gràfics del joc, utilitzeu amb precaució!</string>
     <string name="cant_find_angle_pkg">ANGLE no està disponible en el sistema</string>
     <string name="per_app_unregister">Elimina %1$s de la biblioteca</string>
     <string name="game_mode_unsupported">No suportat</string>
@@ -74,10 +74,10 @@
     <string name="notification_danmaku">Danmaku</string>
     <string name="state_enabled">Activat</string>
     <string name="state_disabled">Desactivat</string>
-    <string name="in_game_calls_title">Call mode</string>
-    <string name="in_game_calls_no_action">No action</string>
-    <string name="in_game_calls_auto_answer">Auto answer</string>
-    <string name="in_game_calls_auto_reject">Auto reject</string>
-    <string name="in_game_calls_received_number">Received call from %1$s</string>
-    <string name="in_game_calls_rejected_number">Rejected call from %1$s</string>
+    <string name="in_game_calls_title">Mode de trucada</string>
+    <string name="in_game_calls_no_action">Sense acció</string>
+    <string name="in_game_calls_auto_answer">Resposta automàtica</string>
+    <string name="in_game_calls_auto_reject">Rebutja automàticament</string>
+    <string name="in_game_calls_received_number">S\'ha rebut una trucada de %1$s</string>
+    <string name="in_game_calls_rejected_number">S\'ha rebutjat una trucada de %1$s</string>
 </resources>
