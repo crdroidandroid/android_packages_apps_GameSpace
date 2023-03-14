@@ -76,7 +76,7 @@
     <string name="state_disabled">Deaktiviert</string>
     <string name="in_game_calls_title">Anruf-Modus</string>
     <string name="in_game_calls_no_action">Keine Aktion</string>
-    <string name="in_game_calls_auto_answer">Automatische Antwort</string>
+    <string name="in_game_calls_auto_answer">Automatisch ans Telefon gehen</string>
     <string name="in_game_calls_auto_reject">Automatisch ablehnen</string>
     <string name="in_game_calls_received_number">Empfangener Anruf von %1$s</string>
     <string name="in_game_calls_rejected_number">Abgelehnter Anruf von %1$s</string>
