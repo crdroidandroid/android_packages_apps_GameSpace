@@ -16,8 +16,8 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="settings_title">Game Space</string>
-    <string name="settings_summary">Manage your gaming setup</string>
+    <string name="settings_title">Herný priestor</string>
+    <string name="settings_summary">Správa herných nastavení</string>
     <!-- Game options -->
     <string name="in_game_preferences_title">In-game options</string>
     <string name="suppress_fullscreen_intent_title">Block fullscreen event</string>
