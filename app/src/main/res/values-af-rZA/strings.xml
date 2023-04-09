@@ -50,34 +50,34 @@
     <string name="per_app_title">Stel speletjie in</string>
     <string name="per_app_mode_title">Voorkeurmodus</string>
     <string name="per_app_angle_title">Gebruik ANGLE (eksperimenteel)</string>
-    <string name="per_app_angle_summary">Using ANGLE renderer instead of native GLES drivers.\nWARNING!! May breaks game graphics, use with caution!</string>
-    <string name="cant_find_angle_pkg">ANGLE is not available on your system</string>
-    <string name="per_app_unregister">Remove %1$s from library</string>
-    <string name="game_mode_unsupported">Unsupported</string>
-    <string name="game_mode_standard">Standard</string>
-    <string name="game_mode_performance">Performance</string>
+    <string name="per_app_angle_summary">Gebruik ANGLE weergawe in plaas van die inheemse GLES bestuurders.\nWAARSKUWING!!! Mag speletjie se grafika verbreek, gebruik versigtig!</string>
+    <string name="cant_find_angle_pkg">ANGLE is nie op jou stelsel beskikbaar nie</string>
+    <string name="per_app_unregister">Verwyder %1$s van biblioteek</string>
+    <string name="game_mode_unsupported">Ongesteun</string>
+    <string name="game_mode_standard">Standaard</string>
+    <string name="game_mode_performance">Werkverrigting</string>
     <string name="game_mode_battery">Battery</string>
     <!-- Custom seekbar -->
-    <string name="custom_seekbar_value">Value: <xliff:g id="v">%s</xliff:g></string>
-    <string name="custom_seekbar_default_value">by default</string>
-    <string name="custom_seekbar_default_value_to_set">Default value: <xliff:g id="v">%s</xliff:g>\nLong tap to set</string>
-    <string name="custom_seekbar_default_value_is_set">Default value is set</string>
+    <string name="custom_seekbar_value">Waarde <xliff:g id="v">%s</xliff:g></string>
+    <string name="custom_seekbar_default_value">by verstek</string>
+    <string name="custom_seekbar_default_value_to_set">Standaard waarde: <xliff:g id="v">%s</xliff:g>\nLang tik om te stel</string>
+    <string name="custom_seekbar_default_value_is_set">Standaard waarde is gestel</string>
     <!-- Game overlay -->
     <string name="battery_format">Battery: <xliff:g id="percentage" example="100">%1$d%%</xliff:g></string>
-    <string name="memory_format">Memory available: <xliff:g id="availmemory" example="1000">%1$d</xliff:g>\/<xliff:g id="totalmemory" example="5000">%2$d</xliff:g> MB</string>
+    <string name="memory_format">Geheue beskikbaar: <xliff:g id="availmemory" example="1000">%1$d</xliff:g>\/<xliff:g id="totalmemory" example="5000">%2$d</xliff:g> MB</string>
     <!-- Tiles -->
-    <string name="game_mode_title">Mode</string>
-    <string name="fps_Info_title">FPS info</string>
-    <string name="notification_hide">Hide</string>
-    <string name="notification_headsup">Heads Up</string>
-    <string name="notification_reticker">reTicker</string>
-    <string name="notification_danmaku">Danmaku</string>
-    <string name="state_enabled">Enabled</string>
-    <string name="state_disabled">Disabled</string>
-    <string name="in_game_calls_title">Call mode</string>
-    <string name="in_game_calls_no_action">No action</string>
-    <string name="in_game_calls_auto_answer">Auto answer</string>
-    <string name="in_game_calls_auto_reject">Auto reject</string>
-    <string name="in_game_calls_received_number">Received call from %1$s</string>
-    <string name="in_game_calls_rejected_number">Rejected call from %1$s</string>
+    <string name="game_mode_title">Modus</string>
+    <string name="fps_Info_title">FPS informasie</string>
+    <string name="notification_hide">Steek weg</string>
+    <string name="notification_headsup">\"Heads Up\"</string>
+    <string name="notification_reticker">\"reTicker\"</string>
+    <string name="notification_danmaku">\"Danmaku\"</string>
+    <string name="state_enabled">Geaktiveer</string>
+    <string name="state_disabled">Gedeaktiveer</string>
+    <string name="in_game_calls_title">Oproepmodus</string>
+    <string name="in_game_calls_no_action">Geen aksie</string>
+    <string name="in_game_calls_auto_answer">Outo-antwoord</string>
+    <string name="in_game_calls_auto_reject">Outo-verwerp</string>
+    <string name="in_game_calls_received_number">Oproep vanaf %1$s ontvang</string>
+    <string name="in_game_calls_rejected_number">Oproep vanaf %1$s verwerp</string>
 </resources>
