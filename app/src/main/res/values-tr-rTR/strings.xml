@@ -74,7 +74,7 @@
     <string name="notification_danmaku">Danmaku</string>
     <string name="state_enabled">Etkin</string>
     <string name="state_disabled">Devre dışı</string>
-    <string name="in_game_calls_title">Araç modu</string>
+    <string name="in_game_calls_title">Çağrı modu</string>
     <string name="in_game_calls_no_action">Eylem yok</string>
     <string name="in_game_calls_auto_answer">Otomatik cevaplama</string>
     <string name="in_game_calls_auto_reject">Otomatik reddet</string>
