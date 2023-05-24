@@ -16,12 +16,12 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="settings_title">Espace jeu</string>
+    <string name="settings_title">Espace Jeux</string>
     <string name="settings_summary">Gérez votre configuration de jeu</string>
     <!-- Game options -->
     <string name="in_game_preferences_title">Options en jeu</string>
-    <string name="suppress_fullscreen_intent_title">Bloquer les évènements en plein écran</string>
-    <string name="suppress_fullscreen_intent_summary">Empêcher les événements en plein écran comme les appels entrants d\'apparaître</string>
+    <string name="suppress_fullscreen_intent_title">Bloquer les évènements plein écran</string>
+    <string name="suppress_fullscreen_intent_summary">Empêcher les événements plein écran comme montrer les appels entrants</string>
     <string name="stay_awake_title">Rester éveillé</string>
     <string name="lock_gesture_title">Gestes de verrouillage</string>
     <string name="auto_brightness_disabled_title">Désactiver la luminosité automatique</string>
@@ -32,8 +32,8 @@
     <string name="notification_mode_title">Mode notification</string>
     <string name="notification_mode_hide">Ne pas afficher</string>
     <string name="notification_mode_headsup">Afficher en notification flottante</string>
-    <string name="notification_mode_reticker">Afficher en reTicker</string>
-    <string name="notification_mode_danmaku">Afficher en Danmaku</string>
+    <string name="notification_mode_reticker">Afficher comme reTicker</string>
+    <string name="notification_mode_danmaku">Afficher comme Danmaku</string>
     <!-- Ringer Mode -->
     <string name="ringer_mode_title">Mode sonnerie</string>
     <string name="ringer_mode_silent">Silencieux</string>
@@ -45,12 +45,12 @@
     <string name="game_list_add_title">Ajouter</string>
     <string name="app_selector_label">Choisissez votre jeu</string>
     <string name="app_search_title">Rechercher</string>
-    <string name="game_remove_message">Êtes-vous sûr de vouloir retirer %1$s de votre bibliothèque ?</string>
+    <string name="game_remove_message">Êtes-vous sûr de vouloir supprimer %1$s de votre bibliothèque ?</string>
     <!-- Configure game -->
     <string name="per_app_title">Configurer le jeu</string>
     <string name="per_app_mode_title">Mode préféré</string>
     <string name="per_app_angle_title">Utiliser ANGLE (expérimental)</string>
-    <string name="per_app_angle_summary">Utiliser le moteur de rendu ANGLE au lieu des pilotes GLES natifs.\nATTENTION!! Peut altérer le rendu graphique de jeu, utiliser avec précaution !</string>
+    <string name="per_app_angle_summary">Utiliser le moteur de rendu ANGLE au lieu des pilotes GLES natifs.\nATTENTION!! Peut casser le rendu graphique des jeux, à utiliser avec précaution !</string>
     <string name="cant_find_angle_pkg">ANGLE n\'est pas disponible pour votre système</string>
     <string name="per_app_unregister">Retirer %1$s de la bibliothèque</string>
     <string name="game_mode_unsupported">Non-supporté</string>
