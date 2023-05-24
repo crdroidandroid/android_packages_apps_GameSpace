@@ -33,7 +33,7 @@
     <string name="notification_mode_hide">Không hiển thị</string>
     <string name="notification_mode_headsup">Hiện thông báo nổi</string>
     <string name="notification_mode_reticker">Hiện kiểu reTicker</string>
-    <string name="notification_mode_danmaku">Hiện kiểu Danmaku</string>
+    <string name="notification_mode_danmaku">Thông báo nổi kiểu hiện đại</string>
     <!-- Ringer Mode -->
     <string name="ringer_mode_title">Chế độ chuông</string>
     <string name="ringer_mode_silent">Im lặng</string>
