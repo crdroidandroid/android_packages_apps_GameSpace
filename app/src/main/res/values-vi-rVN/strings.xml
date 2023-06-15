@@ -70,8 +70,8 @@
     <string name="fps_Info_title">Thông tin FPS</string>
     <string name="notification_hide">Ẩn</string>
     <string name="notification_headsup">Thông báo nổi</string>
-    <string name="notification_reticker">reTicker</string>
-    <string name="notification_danmaku">Danmaku</string>
+    <string name="notification_reticker">Kiểu mới</string>
+    <string name="notification_danmaku">Kiểu hiện đại</string>
     <string name="state_enabled">Bật</string>
     <string name="state_disabled">Tắt</string>
     <string name="in_game_calls_title">Chế độ cuộc gọi</string>
