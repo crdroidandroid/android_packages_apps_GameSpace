@@ -21,8 +21,8 @@
     <!-- Game options -->
     <string name="in_game_preferences_title">In-game opties</string>
     <string name="suppress_fullscreen_intent_title">Blokkeer volledig scherm event</string>
-    <string name="suppress_fullscreen_intent_summary">Voorkom dat volledig scherm events zoals inkomende oproepen worden weergegeven tijdens in-game</string>
-    <string name="stay_awake_title">Blijf aan</string>
+    <string name="suppress_fullscreen_intent_summary">Voorkom dat volledig scherm events zoals inkomende oproepen worden weergegeven</string>
+    <string name="stay_awake_title">Blijf wakker</string>
     <string name="lock_gesture_title">Vergrendel gebaar</string>
     <string name="auto_brightness_disabled_title">Automatische helderheid uitschakelen</string>
     <string name="three_screenshot_disabled_title">Veeg naar schermafbeelding uitschakelen</string>
@@ -37,7 +37,7 @@
     <!-- Ringer Mode -->
     <string name="ringer_mode_title">Beltoonmodus</string>
     <string name="ringer_mode_silent">Stil</string>
-    <string name="ringer_mode_vibrate">Vibreren</string>
+    <string name="ringer_mode_vibrate">Trillen</string>
     <string name="ringer_mode_normal">Normaal</string>
     <string name="ringer_mode_no_change">Niet wijzigen</string>
     <!-- Game picker -->
@@ -71,7 +71,7 @@
     <string name="notification_hide">Verbergen</string>
     <string name="notification_headsup">Pop-up</string>
     <string name="notification_reticker">reTicker</string>
-    <string name="notification_danmaku">Denemarken</string>
+    <string name="notification_danmaku">Danmaku</string>
     <string name="state_enabled">Ingeschakeld</string>
     <string name="state_disabled">Uitgechakeld</string>
     <string name="in_game_calls_title">Oproepmodus</string>
