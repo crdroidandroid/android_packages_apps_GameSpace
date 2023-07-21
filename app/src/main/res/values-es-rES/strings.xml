@@ -20,8 +20,8 @@
     <string name="settings_summary">Administra tu configuración de juegos</string>
     <!-- Game options -->
     <string name="in_game_preferences_title">Opciones en el juego</string>
-    <string name="suppress_fullscreen_intent_title">Bloquear eventos en pantalla completa</string>
-    <string name="suppress_fullscreen_intent_summary">Evitar la aparición de eventos en pantalla completa como llamadas entrantes</string>
+    <string name="suppress_fullscreen_intent_title">Bloquear eventos de pantalla completa</string>
+    <string name="suppress_fullscreen_intent_summary">Evitar que eventos de pantalla completa, como llamadas entrantes, aparezcan</string>
     <string name="stay_awake_title">Permanecer encendido</string>
     <string name="lock_gesture_title">Gesto de bloqueo</string>
     <string name="auto_brightness_disabled_title">Desactivar brillo automático</string>
