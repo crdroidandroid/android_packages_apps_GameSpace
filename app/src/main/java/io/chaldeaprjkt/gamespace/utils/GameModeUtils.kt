@@ -29,7 +29,12 @@ import io.chaldeaprjkt.gamespace.data.GameConfig
 import io.chaldeaprjkt.gamespace.data.GameConfig.Companion.asConfig
 import io.chaldeaprjkt.gamespace.data.SystemSettings
 import io.chaldeaprjkt.gamespace.data.UserGame
+import java.io.File
+import java.io.FileNotFoundException
+import java.io.FileOutputStream
+import java.io.IOException
 import javax.inject.Inject
+
 
 class GameModeUtils @Inject constructor(private val context: Context) {
 
@@ -94,6 +99,32 @@ class GameModeUtils @Inject constructor(private val context: Context) {
         DeviceConfig.getString(DeviceConfig.NAMESPACE_GAME_OVERLAY, it, null)
             ?.contains("useAngle=true")
     } ?: false
+
+    private fun isFileExists(filename: String?): Boolean {
+        return if (filename == null) {
+            false
+        } else File(filename).exists()
+    }
+
+    fun isFileWritable(filename: String?): Boolean {
+        return isFileExists(filename) && File(filename!!).canWrite()
+    }
+
+    fun writeValue(filename: String?, value: String) {
+        if (filename == null) {
+            return
+        }
+        try {
+            val fos = FileOutputStream(File(filename))
+            fos.write(value.toByteArray())
+            fos.flush()
+            fos.close()
+        } catch (e: FileNotFoundException) {
+            e.printStackTrace()
+        } catch (e: IOException) {
+            e.printStackTrace()
+        }
+    }
 
     companion object {
         const val defaultPreferredMode = GameManager.GAME_MODE_STANDARD
