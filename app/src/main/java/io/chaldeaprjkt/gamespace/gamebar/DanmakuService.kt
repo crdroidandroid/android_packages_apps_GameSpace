@@ -2,6 +2,7 @@
  * Copyright (C) 2020 The exTHmUI Open Source Project
  * Copyright (C) 2021 AOSP-Krypton Project
  * Copyright (C) 2022 Nameless-AOSP Project
+ * Copyright (C) 2023 the risingOS android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,12 +50,20 @@ import javax.inject.Inject
 
 import io.chaldeaprjkt.gamespace.R
 import io.chaldeaprjkt.gamespace.data.AppSettings
+import io.chaldeaprjkt.gamespace.gamebar.DanmakuServiceListener
+
+interface NotificationSettings {
+    val notificationMode: Int
+    fun showNotificationAsOverlay(danmakuText: String)
+}
 
 @ServiceScoped
 class DanmakuService @Inject constructor(
     @ApplicationContext private val context: Context,
     private val appSettings: AppSettings
-) {
+) : NotificationSettings {
+
+    private lateinit var notificationListener: DanmakuServiceListener
 
     private val notificationOverlay = TextView(context).apply {
         gravity = Gravity.CENTER
@@ -69,8 +78,6 @@ class DanmakuService @Inject constructor(
     private val handler = Handler(Looper.getMainLooper())
 
     private val notificationStack = LinkedList<String>()
-
-    private val notificationListener = Listener()
 
     private var layoutParams: LayoutParams = LayoutParams().apply {
         height = LayoutParams.WRAP_CONTENT
@@ -92,6 +99,8 @@ class DanmakuService @Inject constructor(
     private var overlayPositionAnimator: ValueAnimator? = null
 
     fun init() {
+        notificationListener = DanmakuServiceListener()
+        notificationListener.notificationSettings = this
         updateParams()
         registerListener()
     }
@@ -151,7 +160,7 @@ class DanmakuService @Inject constructor(
         return if (isPortrait) verticalOffsetPortrait else verticalOffsetLandscape
     }
 
-    private fun showNotificationAsOverlay(notification: String) {
+    override fun showNotificationAsOverlay(notification: String) {
         if (notificationOverlay.parent == null) {
             notificationOverlay.alpha = 0f
             notificationOverlay.text = notification
@@ -161,6 +170,9 @@ class DanmakuService @Inject constructor(
             notificationStack.add(notification)
         }
     }
+
+    override val notificationMode: Int
+        get() = appSettings.notificationMode
 
     private fun pushNotification() {
         val end = getOffsetForPosition().toFloat()
@@ -223,44 +235,6 @@ class DanmakuService @Inject constructor(
     private fun removeViewSafely() {
         if (notificationOverlay.parent != null)
             windowManager.removeViewImmediate(notificationOverlay)
-    }
-
-    private inner class Listener : NotificationListenerService() {
-
-        private val postedNotifications = mutableMapOf<String, Long>()
-
-        override fun onNotificationPosted(sbn: StatusBarNotification) {
-            if (appSettings.notificationMode != 3) return;
-            if (!sbn.isClearable || sbn.isOngoing || sbn.getIsContentSecure()) return
-            val extras = sbn.notification.extras
-            var title = extras.getString(Notification.EXTRA_TITLE)
-            if (title?.isNotBlank() != true) title = extras.getString(Notification.EXTRA_TITLE_BIG)
-
-            var danmakuText = ""
-            if (title?.isNotBlank() == true) {
-                danmakuText += "[$title] "
-            }
-            val text = extras.getString(Notification.EXTRA_TEXT)
-            if (text?.isNotBlank() == true) {
-                danmakuText += text
-            }
-
-            val time = sbn.notification.`when`
-            if (danmakuText.isNotBlank() && !(
-                    postedNotifications.containsKey(danmakuText) &&
-                    postedNotifications[danmakuText] == time
-                )) {
-                showNotificationAsOverlay(danmakuText)
-                insertPostedNotification(danmakuText, time)
-            }
-        }
-
-        private fun insertPostedNotification(danmakuText: String, time: Long) {
-            if (postedNotifications.size >= NOTIFICATIONS_MAX_CACHED) {
-                postedNotifications.clear()
-            }
-            postedNotifications.put(danmakuText, time)
-        }
     }
 
     companion object {
