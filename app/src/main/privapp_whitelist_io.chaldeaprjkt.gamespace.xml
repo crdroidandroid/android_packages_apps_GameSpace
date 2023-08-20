@@ -20,5 +20,6 @@
         <permission name="android.permission.INTERACT_ACROSS_USERS"/>
         <permission name="android.permission.ACCESS_FPS_COUNTER"/>
         <permission name="android.permission.MANAGE_GAME_MODE"/>
+        <permission name="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE" />
     </privapp-permissions>
 </permissions>
