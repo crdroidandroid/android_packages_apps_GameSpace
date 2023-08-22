@@ -1,6 +1,7 @@
 /*
  * Copyright (C) 2021 Chaldeaprjkt
  * Copyright (C) 2022 Nameless-AOSP
+ * Copyright (C) 2023 the risingOS Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,51 +26,29 @@ class NotificationTile @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null
 ) : BaseTile(context, attrs) {
 
-    private var activeMode = DANMAKU_MODE
+    private var activeMode = true
         set(value) {
             field = value
-            appSettings.notificationMode = value
-            when (value) {
-                NO_NOTIFICATION -> {
-                    systemSettings.headsUp = false
-                    systemSettings.reTicker = false
-                    summary?.text = context.getString(R.string.notification_hide)
-                }
-                HEADS_UP_MODE -> {
-                    systemSettings.headsUp = true
-                    systemSettings.reTicker = false
-                    summary?.text = context.getString(R.string.notification_headsup)
-                }
-                RETICKER_MODE -> {
-                    systemSettings.headsUp = true
-                    systemSettings.reTicker = true
-                    summary?.text = context.getString(R.string.notification_reticker)
-                }
-                DANMAKU_MODE -> {
-                    systemSettings.headsUp = false
-                    systemSettings.reTicker = false
-                    summary?.text = context.getString(R.string.notification_danmaku)
-                }
+            appSettings.danmakuNotification = value
+            summary?.text = if (value) {
+                systemSettings.headsup = false
+                context.getString(R.string.notification_danmaku)
+            } else {
+                systemSettings.headsup = true
+                context.getString(R.string.state_default)
             }
-            isSelected = value != NO_NOTIFICATION
+            isSelected = value
         }
 
     override fun onAttachedToWindow() {
         super.onAttachedToWindow()
         title?.text = context.getString(R.string.notification_mode_title)
-        activeMode = appSettings.notificationMode
+        activeMode = appSettings.danmakuNotification
         icon?.setImageResource(R.drawable.ic_action_heads_up)
     }
 
     override fun onClick(v: View?) {
         super.onClick(v)
-        activeMode = if (activeMode == DANMAKU_MODE) NO_NOTIFICATION else activeMode + 1
-    }
-
-    companion object {
-        private const val NO_NOTIFICATION = 0
-        private const val HEADS_UP_MODE = 1
-        private const val RETICKER_MODE = 2
-        private const val DANMAKU_MODE = 3
+        activeMode = !activeMode
     }
 }

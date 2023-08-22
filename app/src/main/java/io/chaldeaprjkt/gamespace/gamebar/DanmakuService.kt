@@ -52,8 +52,8 @@ import io.chaldeaprjkt.gamespace.R
 import io.chaldeaprjkt.gamespace.data.AppSettings
 import io.chaldeaprjkt.gamespace.gamebar.DanmakuServiceListener
 
-interface NotificationSettings {
-    val notificationMode: Int
+interface DanmakuServiceInterface {
+    val danmakuNotificationMode: Boolean
     fun showNotificationAsOverlay(danmakuText: String)
 }
 
@@ -61,7 +61,7 @@ interface NotificationSettings {
 class DanmakuService @Inject constructor(
     @ApplicationContext private val context: Context,
     private val appSettings: AppSettings
-) : NotificationSettings {
+) : DanmakuServiceInterface {
 
     private lateinit var notificationListener: DanmakuServiceListener
 
@@ -100,7 +100,7 @@ class DanmakuService @Inject constructor(
 
     fun init() {
         notificationListener = DanmakuServiceListener()
-        notificationListener.notificationSettings = this
+        notificationListener.danmakuServiceInterface = this
         updateParams()
         registerListener()
     }
@@ -171,8 +171,8 @@ class DanmakuService @Inject constructor(
         }
     }
 
-    override val notificationMode: Int
-        get() = appSettings.notificationMode
+    override val danmakuNotificationMode: Boolean
+        get() = appSettings.danmakuNotification
 
     private fun pushNotification() {
         val end = getOffsetForPosition().toFloat()
