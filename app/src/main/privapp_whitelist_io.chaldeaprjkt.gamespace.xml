@@ -21,5 +21,6 @@
         <permission name="android.permission.ACCESS_FPS_COUNTER"/>
         <permission name="android.permission.MANAGE_GAME_MODE"/>
         <permission name="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE" />
+        <permission name="android.permission.WRITE_SECURE_SETTINGS"/>
     </privapp-permissions>
 </permissions>

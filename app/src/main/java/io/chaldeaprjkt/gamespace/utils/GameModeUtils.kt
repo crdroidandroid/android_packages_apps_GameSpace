@@ -24,6 +24,7 @@ import android.os.IDeviceIdleController
 import android.os.RemoteException
 import android.os.ServiceManager
 import android.provider.DeviceConfig
+import android.provider.Settings
 import io.chaldeaprjkt.gamespace.R
 import io.chaldeaprjkt.gamespace.data.GameConfig
 import io.chaldeaprjkt.gamespace.data.GameConfig.Companion.asConfig
@@ -45,8 +46,14 @@ class GameModeUtils @Inject constructor(private val context: Context) {
     }
 
     fun setIntervention(packageName: String, modeData: List<GameConfig>? = null) {
-        DeviceConfig.setProperty(
-            DeviceConfig.NAMESPACE_GAME_OVERLAY, packageName, modeData?.asConfig(), false
+        // Separate key and value by ;; to identify them from
+        // com.android.server.app.GameManagerService for the device_config property.
+        // Example: com.libremobileos.game;;mode=2,downscaleFactor=0.7:mode=3,downscaleFactor=0.8
+        val configValue = "${packageName};;${modeData?.asConfig()}"
+        Settings.Secure.putString(
+                context.contentResolver,
+                Settings.Secure.GAME_OVERLAY,
+                configValue
         )
     }
 
