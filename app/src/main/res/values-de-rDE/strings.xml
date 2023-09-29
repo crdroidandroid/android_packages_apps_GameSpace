@@ -74,7 +74,7 @@
     <string name="notification_danmaku">Danmaku</string>
     <string name="state_enabled">Aktiviert</string>
     <string name="state_disabled">Deaktiviert</string>
-    <string name="state_default">Default</string>
+    <string name="state_default">Standard</string>
     <string name="in_game_calls_title">Anruf-Modus</string>
     <string name="in_game_calls_no_action">Keine Aktion</string>
     <string name="in_game_calls_auto_answer">Automatisch ans Telefon gehen</string>
@@ -82,6 +82,6 @@
     <string name="in_game_calls_received_number">Empfangener Anruf von %1$s</string>
     <string name="in_game_calls_rejected_number">Abgelehnter Anruf von %1$s</string>
     <!-- Danmaku Notification Mode -->
-    <string name="danmaku_notification_mode_title">Danmaku Notification mode</string>
-    <string name="danmaku_notification_mode_summary">Show notification as danmaku aka bullet comments while game is active</string>
+    <string name="danmaku_notification_mode_title">Benachrichtigungsmodus „Danmaku“</string>
+    <string name="danmaku_notification_mode_summary">Bei aktivem Spiel Benachrichtigungen als „Bullet-Kommentare“ aka „Danmaku“ anzeigen</string>
 </resources>
