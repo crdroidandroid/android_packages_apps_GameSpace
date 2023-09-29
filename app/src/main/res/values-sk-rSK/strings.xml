@@ -74,10 +74,14 @@
     <string name="notification_danmaku">Danmaku</string>
     <string name="state_enabled">Zapnuté</string>
     <string name="state_disabled">Zakázané</string>
+    <string name="state_default">Default</string>
     <string name="in_game_calls_title">Režim hovorov</string>
     <string name="in_game_calls_no_action">Žiadna akcia</string>
     <string name="in_game_calls_auto_answer">Automaticky prijať</string>
     <string name="in_game_calls_auto_reject">Automaticky odmietnuť</string>
     <string name="in_game_calls_received_number">Prijatý hovor od %1$s</string>
     <string name="in_game_calls_rejected_number">Odmietnutý hovor od %1$s</string>
+    <!-- Danmaku Notification Mode -->
+    <string name="danmaku_notification_mode_title">Danmaku Notification mode</string>
+    <string name="danmaku_notification_mode_summary">Show notification as danmaku aka bullet comments while game is active</string>
 </resources>
