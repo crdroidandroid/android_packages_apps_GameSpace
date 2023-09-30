@@ -74,7 +74,7 @@
     <string name="notification_danmaku">Danmaku</string>
     <string name="state_enabled">활성화됨</string>
     <string name="state_disabled">사용 안 함</string>
-    <string name="state_default">Default</string>
+    <string name="state_default">기본값</string>
     <string name="in_game_calls_title">전화 모드</string>
     <string name="in_game_calls_no_action">동작 없음</string>
     <string name="in_game_calls_auto_answer">자동 응답</string>
