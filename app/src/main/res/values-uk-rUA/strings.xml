@@ -74,10 +74,14 @@
     <string name="notification_danmaku">Данмаку</string>
     <string name="state_enabled">Увімкнено</string>
     <string name="state_disabled">Вимкнено</string>
+    <string name="state_default">За замовчанням</string>
     <string name="in_game_calls_title">Режим виклику</string>
     <string name="in_game_calls_no_action">Немає дій</string>
     <string name="in_game_calls_auto_answer">Автовідповідач</string>
     <string name="in_game_calls_auto_reject">Відхилити автоматично</string>
     <string name="in_game_calls_received_number">Отримано дзвінок від %1$s</string>
     <string name="in_game_calls_rejected_number">Пропущений дзвінок від %1$s</string>
+    <!-- Danmaku Notification Mode -->
+    <string name="danmaku_notification_mode_title">Режим сповіщень Danmaku</string>
+    <string name="danmaku_notification_mode_summary">Показувати сповіщення як Danmaku aka bullet коментарями під час гри активними</string>
 </resources>

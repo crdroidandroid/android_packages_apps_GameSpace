@@ -74,10 +74,14 @@
     <string name="notification_danmaku">Danmaku</string>
     <string name="state_enabled">Activé</string>
     <string name="state_disabled">Désactivé</string>
+    <string name="state_default">Default</string>
     <string name="in_game_calls_title">Mode d\'appels</string>
     <string name="in_game_calls_no_action">Pas d\'action</string>
     <string name="in_game_calls_auto_answer">Décrochage automatique</string>
     <string name="in_game_calls_auto_reject">Raccrochage automatique</string>
     <string name="in_game_calls_received_number">Appel reçu de %1$s</string>
     <string name="in_game_calls_rejected_number">Appel de %1$s rejeté</string>
+    <!-- Danmaku Notification Mode -->
+    <string name="danmaku_notification_mode_title">Danmaku Notification mode</string>
+    <string name="danmaku_notification_mode_summary">Show notification as danmaku aka bullet comments while game is active</string>
 </resources>

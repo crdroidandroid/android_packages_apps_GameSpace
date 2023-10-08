@@ -74,10 +74,14 @@
     <string name="notification_danmaku">弹幕</string>
     <string name="state_enabled">已启用</string>
     <string name="state_disabled">已禁用</string>
+    <string name="state_default">默认</string>
     <string name="in_game_calls_title">通话模式</string>
     <string name="in_game_calls_no_action">无操作</string>
     <string name="in_game_calls_auto_answer">自动接听</string>
     <string name="in_game_calls_auto_reject">自动挂断</string>
     <string name="in_game_calls_received_number">收到了来自 %1$s 的来电</string>
     <string name="in_game_calls_rejected_number">拒绝了来自 %1$s 的来电</string>
+    <!-- Danmaku Notification Mode -->
+    <string name="danmaku_notification_mode_title">弹幕通知模式</string>
+    <string name="danmaku_notification_mode_summary">当游戏处于活动状态时，以弹幕的形式显示通知消息。</string>
 </resources>

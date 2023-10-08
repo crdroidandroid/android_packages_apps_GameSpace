@@ -74,10 +74,14 @@
     <string name="notification_danmaku">Danmaku</string>
     <string name="state_enabled">Activat</string>
     <string name="state_disabled">Dezactivat</string>
+    <string name="state_default">Default</string>
     <string name="in_game_calls_title">Mod apel</string>
     <string name="in_game_calls_no_action">Nicio acțiune</string>
     <string name="in_game_calls_auto_answer">Răspuns automat</string>
     <string name="in_game_calls_auto_reject">Respingere automată</string>
     <string name="in_game_calls_received_number">Apel primit de la %1$s</string>
     <string name="in_game_calls_rejected_number">Apel respins de la %1$s</string>
+    <!-- Danmaku Notification Mode -->
+    <string name="danmaku_notification_mode_title">Danmaku Notification mode</string>
+    <string name="danmaku_notification_mode_summary">Show notification as danmaku aka bullet comments while game is active</string>
 </resources>
