@@ -75,7 +75,7 @@ Mantén presionado para establecer</string>
     <string name="notification_danmaku">Danmaku</string>
     <string name="state_enabled">Activado</string>
     <string name="state_disabled">Desactivado</string>
-    <string name="state_default">Default</string>
+    <string name="state_default">Predeterminado</string>
     <string name="in_game_calls_title">Modo de llamada</string>
     <string name="in_game_calls_no_action">Sin acción</string>
     <string name="in_game_calls_auto_answer">Respuesta automática</string>
