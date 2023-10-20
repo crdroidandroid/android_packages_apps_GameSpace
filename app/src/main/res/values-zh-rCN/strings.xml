@@ -83,5 +83,5 @@
     <string name="in_game_calls_rejected_number">拒绝了来自 %1$s 的来电</string>
     <!-- Danmaku Notification Mode -->
     <string name="danmaku_notification_mode_title">弹幕通知模式</string>
-    <string name="danmaku_notification_mode_summary">当游戏处于活动状态时，以弹幕的形式显示通知消息。</string>
+    <string name="danmaku_notification_mode_summary">游戏中以弹幕的形式显示通知</string>
 </resources>

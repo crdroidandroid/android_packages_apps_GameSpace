@@ -82,6 +82,6 @@
     <string name="in_game_calls_received_number">接聽 %1$s 的來電</string>
     <string name="in_game_calls_rejected_number">錯過 %1$s 的來電</string>
     <!-- Danmaku Notification Mode -->
-    <string name="danmaku_notification_mode_title">彈幕式通知模式</string>
-    <string name="danmaku_notification_mode_summary">當遊戲處於活動狀態時，以彈幕的形式顯示通知訊息。</string>
+    <string name="danmaku_notification_mode_title">彈幕通知模式</string>
+    <string name="danmaku_notification_mode_summary">遊戲中以彈幕形式顯示通知。</string>
 </resources>
