@@ -83,5 +83,5 @@
     <string name="in_game_calls_rejected_number">%1$s kullanıcısından gelen arama</string>
     <!-- Danmaku Notification Mode -->
     <string name="danmaku_notification_mode_title">Danmaku Bildirim modu</string>
-    <string name="danmaku_notification_mode_summary">Oyun aktifken bildirimleri danmaku -bullet comments olarak da bilinir- olarak göster</string>
+    <string name="danmaku_notification_mode_summary">Oyun aktifken danmaku aka bullet yorumları olarak bildirim göster</string>
 </resources>
