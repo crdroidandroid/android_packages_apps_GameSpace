@@ -74,14 +74,14 @@
     <string name="notification_danmaku">Danmaku</string>
     <string name="state_enabled">Povoleno</string>
     <string name="state_disabled">Zakázáno</string>
-    <string name="state_default">Default</string>
-    <string name="in_game_calls_title">Call mode</string>
-    <string name="in_game_calls_no_action">No action</string>
-    <string name="in_game_calls_auto_answer">Auto answer</string>
-    <string name="in_game_calls_auto_reject">Auto reject</string>
-    <string name="in_game_calls_received_number">Received call from %1$s</string>
-    <string name="in_game_calls_rejected_number">Rejected call from %1$s</string>
+    <string name="state_default">Výchozí</string>
+    <string name="in_game_calls_title">Režim volání</string>
+    <string name="in_game_calls_no_action">Žádná akce</string>
+    <string name="in_game_calls_auto_answer">Automatická odpověď</string>
+    <string name="in_game_calls_auto_reject">Automaticky odmítnout</string>
+    <string name="in_game_calls_received_number">Odmítnutý hovor od %1$s</string>
+    <string name="in_game_calls_rejected_number">Zamítnutý hovor z %1$s</string>
     <!-- Danmaku Notification Mode -->
-    <string name="danmaku_notification_mode_title">Danmaku Notification mode</string>
-    <string name="danmaku_notification_mode_summary">Show notification as danmaku aka bullet comments while game is active</string>
+    <string name="danmaku_notification_mode_title">Režim upozornění Danmaku</string>
+    <string name="danmaku_notification_mode_summary">Zobrazit oznámení jako odrážku pro danmaku akci, pokud je hra aktivní</string>
 </resources>
