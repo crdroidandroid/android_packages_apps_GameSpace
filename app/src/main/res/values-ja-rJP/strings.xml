@@ -74,7 +74,7 @@
     <string name="notification_danmaku">Danmaku</string>
     <string name="state_enabled">有効</string>
     <string name="state_disabled">無効</string>
-    <string name="state_default">Default</string>
+    <string name="state_default">デフォルト</string>
     <string name="in_game_calls_title">着信モード</string>
     <string name="in_game_calls_no_action">なし</string>
     <string name="in_game_calls_auto_answer">自動応答</string>
