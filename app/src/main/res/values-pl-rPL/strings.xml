@@ -55,7 +55,7 @@
     <string name="per_app_unregister">Usuń %1$s z biblioteki</string>
     <string name="game_mode_unsupported">Nieobsługiwane</string>
     <string name="game_mode_standard">Standardowy</string>
-    <string name="game_mode_performance">Wydajność</string>
+    <string name="game_mode_performance">Wydajny</string>
     <string name="game_mode_battery">Bateria</string>
     <!-- Custom seekbar -->
     <string name="custom_seekbar_value">Wartość: <xliff:g id="v">%s</xliff:g></string>
