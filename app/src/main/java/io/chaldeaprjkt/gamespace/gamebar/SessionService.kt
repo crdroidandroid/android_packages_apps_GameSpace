@@ -116,7 +116,7 @@ class SessionService : Hilt_SessionService() {
     override fun onBind(intent: Intent?): IBinder? = null
 
     override fun onDestroy() {
-        callListener.destory()
+        callListener.destroy()
 
         if (isBarConnected) {
             gameBar.onGameLeave()
