@@ -24,14 +24,14 @@
     <string name="suppress_fullscreen_intent_summary">Предотвращение появления полноэкранных событий, таких как входящие вызовы</string>
     <string name="stay_awake_title">Не отключать экран</string>
     <string name="lock_gesture_title">Блокировать жесты</string>
-    <string name="auto_brightness_disabled_title">Отключить автоматическую яркость</string>
-    <string name="three_screenshot_disabled_title">Отключить свайп для скриншота</string>
+    <string name="auto_brightness_disabled_title">Отключить автояркость</string>
+    <string name="three_screenshot_disabled_title">Отключить снимок экрана тремя пальцами</string>
     <string name="adb_disabled_title">Отключить отладку по USB</string>
     <string name="gamespace_menu_opacity_title">Уровень прозрачности меню игрового режима</string>
     <!-- Notification Mode -->
     <string name="notification_mode_title">Режим уведомлений</string>
     <string name="notification_mode_hide">Не показывать</string>
-    <string name="notification_mode_headsup">Показывать в виде всплывающих уведомлений</string>
+    <string name="notification_mode_headsup">Всплывающие уведомления</string>
     <string name="notification_mode_reticker">Новый стиль уведомлений</string>
     <string name="notification_mode_danmaku">Прозрачные без фона</string>
     <!-- Ringer Mode -->
@@ -43,14 +43,14 @@
     <!-- Game picker -->
     <string name="game_list_title">Библиотека</string>
     <string name="game_list_add_title">Добавить</string>
-    <string name="app_selector_label">Выберите свою игру</string>
+    <string name="app_selector_label">Выберите игру</string>
     <string name="app_search_title">Поиск</string>
     <string name="game_remove_message">Вы действительно хотите удалить %1$s из своего списка игр?</string>
     <!-- Configure game -->
     <string name="per_app_title">Настроить игру</string>
     <string name="per_app_mode_title">Предпочтительный режим</string>
     <string name="per_app_angle_title">Использовать ANGLE (эксперементально)</string>
-    <string name="per_app_angle_summary">Использование рендерера ANGLE вместо собственных драйверов GLES.\nВНИМАНИЕ!! Может ломать игровую графику, использовать с осторожностью!</string>
+    <string name="per_app_angle_summary">Использование отрисовку ANGLE вместо собственных драйверов GLES.\nВНИМАНИЕ!! Может ломать игровую графику, использовать с осторожностью!</string>
     <string name="cant_find_angle_pkg">ANGLE недоступен в вашей системе</string>
     <string name="per_app_unregister">Удалить %1$s из библиотеки</string>
     <string name="game_mode_unsupported">Не поддерживается</string>
@@ -67,7 +67,7 @@
     <string name="memory_format">Доступная память: <xliff:g id="availmemory" example="1000">%1$d</xliff:g>\/<xliff:g id="totalmemory" example="5000">%2$d</xliff:g> MB</string>
     <!-- Tiles -->
     <string name="game_mode_title">Режим</string>
-    <string name="fps_Info_title">Информация о FPS</string>
+    <string name="fps_Info_title">кадр/сек</string>
     <string name="notification_hide">Скрыть</string>
     <string name="notification_headsup">Всплывающее уведомление</string>
     <string name="notification_reticker">Новый стиль уведомлений</string>
@@ -75,13 +75,13 @@
     <string name="state_enabled">Включено</string>
     <string name="state_disabled">Отключено</string>
     <string name="state_default">По умолчанию</string>
-    <string name="in_game_calls_title">Режим звонка</string>
-    <string name="in_game_calls_no_action">Нет действия</string>
+    <string name="in_game_calls_title">Режим вызова</string>
+    <string name="in_game_calls_no_action">Без действий</string>
     <string name="in_game_calls_auto_answer">Автоответ</string>
     <string name="in_game_calls_auto_reject">Автосброс</string>
     <string name="in_game_calls_received_number">Поступил звонок от %1$s</string>
     <string name="in_game_calls_rejected_number">Отклонён вызов от %1$s</string>
     <!-- Danmaku Notification Mode -->
-    <string name="danmaku_notification_mode_title">Режим уведомления Danmaku</string>
-    <string name="danmaku_notification_mode_summary">Показывать уведомление в виде комментариев danmaku aka bullet, пока игра активна</string>
+    <string name="danmaku_notification_mode_title">Режим прозрачных уведомлений</string>
+    <string name="danmaku_notification_mode_summary">Показывать уведомление в виде прозрачных комментариев, пока игра активна</string>
 </resources>
