@@ -20,20 +20,20 @@
     <string name="settings_summary">Zarządzaj konfiguracją gier</string>
     <!-- Game options -->
     <string name="in_game_preferences_title">Opcje w grze</string>
-    <string name="suppress_fullscreen_intent_title">Zablokuj wydarzenie na pełnym ekranie</string>
+    <string name="suppress_fullscreen_intent_title">Zablokuj wydarzenia na pełnym ekranie</string>
     <string name="suppress_fullscreen_intent_summary">Zapobiegaj pojawianiu się wydarzeń na pełnym ekranie, takich jak połączenia przychodzące</string>
     <string name="stay_awake_title">Pozostaw włączony ekran</string>
     <string name="lock_gesture_title">Gest blokady</string>
     <string name="auto_brightness_disabled_title">Wyłącz automatyczną jasność</string>
-    <string name="three_screenshot_disabled_title">Wyłączenie funkcji przeciągnięcia palcem w celu wykonania zrzutu ekranu</string>
+    <string name="three_screenshot_disabled_title">Wyłącz funkcję przeciągnięcia palcem w celu wykonania zrzutu ekranu</string>
     <string name="adb_disabled_title">Wyłącz debugowanie USB</string>
     <string name="gamespace_menu_opacity_title">Poziom przezroczystości nakładki menu</string>
     <!-- Notification Mode -->
     <string name="notification_mode_title">Opcje powiadomień</string>
     <string name="notification_mode_hide">Nie pokazuj</string>
-    <string name="notification_mode_headsup">Wyświetl jako Heads-up</string>
+    <string name="notification_mode_headsup">Wyświetl jako wyskakujące powiadomienia</string>
     <string name="notification_mode_reticker">Pokaż jako reTicker</string>
-    <string name="notification_mode_danmaku">Pokaż jako pasek danmaku</string>
+    <string name="notification_mode_danmaku">Pokaż jako pasek Danmaku</string>
     <!-- Ringer Mode -->
     <string name="ringer_mode_title">Tryb dzwonka</string>
     <string name="ringer_mode_silent">Tryb cichy</string>
@@ -51,16 +51,16 @@
     <string name="per_app_mode_title">Preferowany tryb</string>
     <string name="per_app_angle_title">Użyj ANGLE (eksperymentalne)</string>
     <string name="per_app_angle_summary">Używaj renderowania ANGLE zamiast natywnych sterowników GLES.\nOSTRZEŻENIE!! Może uszkodzić grafikę gry, używaj z ostrożnością!</string>
-    <string name="cant_find_angle_pkg">ANGLE nie jest dostępne w Twoim systemie</string>
+    <string name="cant_find_angle_pkg">ANGLE nie jest dostępne w twoim systemie</string>
     <string name="per_app_unregister">Usuń %1$s z biblioteki</string>
     <string name="game_mode_unsupported">Nieobsługiwane</string>
     <string name="game_mode_standard">Standardowy</string>
-    <string name="game_mode_performance">Wydajność</string>
+    <string name="game_mode_performance">Wydajny</string>
     <string name="game_mode_battery">Bateria</string>
     <!-- Custom seekbar -->
     <string name="custom_seekbar_value">Wartość: <xliff:g id="v">%s</xliff:g></string>
     <string name="custom_seekbar_default_value">domyślnie</string>
-    <string name="custom_seekbar_default_value_to_set">Wartość domyślna: <xliff:g id="v">%s</xliff:g>\nPrzytrzymaj dłużej by ustawić</string>
+    <string name="custom_seekbar_default_value_to_set">Wartość domyślna: <xliff:g id="v">%s</xliff:g>\nPrzytrzymaj dłużej, aby ustawić</string>
     <string name="custom_seekbar_default_value_is_set">Wartość domyślna jest ustawiona</string>
     <!-- Game overlay -->
     <string name="battery_format">Bateria: <xliff:g id="percentage" example="100">%1$d%%</xliff:g></string>
@@ -69,7 +69,7 @@
     <string name="game_mode_title">Tryb</string>
     <string name="fps_Info_title">Wskaźnik FPS</string>
     <string name="notification_hide">Ukryj</string>
-    <string name="notification_headsup">Powiadomienia \"Heads up\"</string>
+    <string name="notification_headsup">Wyskakujące powiadomienia</string>
     <string name="notification_reticker">reTicker</string>
     <string name="notification_danmaku">Danmaku</string>
     <string name="state_enabled">Włączono</string>
