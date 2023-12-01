@@ -20,7 +20,7 @@
     <string name="settings_summary">Zarządzaj konfiguracją gier</string>
     <!-- Game options -->
     <string name="in_game_preferences_title">Opcje w grze</string>
-    <string name="suppress_fullscreen_intent_title">Zablokuj wydarzenie na pełnym ekranie</string>
+    <string name="suppress_fullscreen_intent_title">Zablokuj wydarzenia na pełnym ekranie</string>
     <string name="suppress_fullscreen_intent_summary">Zapobiegaj pojawianiu się wydarzeń na pełnym ekranie, takich jak połączenia przychodzące</string>
     <string name="stay_awake_title">Pozostaw włączony ekran</string>
     <string name="lock_gesture_title">Gest blokady</string>
