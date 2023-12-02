@@ -51,7 +51,11 @@ class PanelView @JvmOverloads constructor(
             val safeArea = rootWindowInsets.getInsets(WindowInsets.Type.systemBars())
             val minY = safeArea.top + 16.dp
             val maxY = safeArea.top + (parent as View).height - safeArea.bottom - height - 16.dp
-            y = relativeY.coerceIn(minY, maxY).toFloat()
+            if (minY > maxY) {
+                y = relativeY.coerceIn(maxY, minY).toFloat()
+            } else {
+                y = relativeY.coerceIn(minY, maxY).toFloat()
+            }
         }
     }
 }
