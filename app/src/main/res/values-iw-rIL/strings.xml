@@ -16,72 +16,72 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="settings_title">Game Space</string>
-    <string name="settings_summary">Manage your gaming setup</string>
+    <string name="settings_title">מרכז משחקים</string>
+    <string name="settings_summary">נהל את הגדרות המשחק שלך</string>
     <!-- Game options -->
-    <string name="in_game_preferences_title">In-game options</string>
-    <string name="suppress_fullscreen_intent_title">Block fullscreen event</string>
-    <string name="suppress_fullscreen_intent_summary">Prevent fullscreen events like incoming calls from appearing</string>
-    <string name="stay_awake_title">Stay awake</string>
-    <string name="lock_gesture_title">Lock gesture</string>
-    <string name="auto_brightness_disabled_title">Disable auto-brightness</string>
-    <string name="three_screenshot_disabled_title">Disable swipe to screenshot</string>
-    <string name="adb_disabled_title">Disable USB debugging</string>
+    <string name="in_game_preferences_title">הגדרות משחקים</string>
+    <string name="suppress_fullscreen_intent_title">חסום התראות קופצות במסך מלא</string>
+    <string name="suppress_fullscreen_intent_summary">חסום התראות קופצות במסך מלא כולל שיחות טלפון</string>
+    <string name="stay_awake_title">השאר פועל</string>
+    <string name="lock_gesture_title">נעל מחוות</string>
+    <string name="auto_brightness_disabled_title">בטל בהירות אוטומטית</string>
+    <string name="three_screenshot_disabled_title">בטל מחוות מסך מגע</string>
+    <string name="adb_disabled_title">למנוע איתור באגים</string>
     <string name="gamespace_menu_opacity_title">Overlay menu opacity level</string>
     <!-- Notification Mode -->
-    <string name="notification_mode_title">Notification mode</string>
-    <string name="notification_mode_hide">Do not show</string>
-    <string name="notification_mode_headsup">Show as Heads Up</string>
-    <string name="notification_mode_reticker">Show as reTicker</string>
-    <string name="notification_mode_danmaku">Show as Danmaku</string>
+    <string name="notification_mode_title">מצב התראה</string>
+    <string name="notification_mode_hide">אל תראה</string>
+    <string name="notification_mode_headsup">הצג כ Heads up</string>
+    <string name="notification_mode_reticker">הצג כ reTicker</string>
+    <string name="notification_mode_danmaku">הצג כ Danmaku</string>
     <!-- Ringer Mode -->
-    <string name="ringer_mode_title">Ringer mode</string>
-    <string name="ringer_mode_silent">Silent</string>
-    <string name="ringer_mode_vibrate">Vibrate</string>
-    <string name="ringer_mode_normal">Normal</string>
-    <string name="ringer_mode_no_change">Do not change</string>
+    <string name="ringer_mode_title">מצב צלצול</string>
+    <string name="ringer_mode_silent">שקט</string>
+    <string name="ringer_mode_vibrate">רטט</string>
+    <string name="ringer_mode_normal">רגיל</string>
+    <string name="ringer_mode_no_change">ללא שינוי</string>
     <!-- Game picker -->
-    <string name="game_list_title">Library</string>
-    <string name="game_list_add_title">Add</string>
-    <string name="app_selector_label">Pick your game</string>
-    <string name="app_search_title">Search</string>
-    <string name="game_remove_message">Are you sure you want to remove %1$s from your game list?</string>
+    <string name="game_list_title">ספריה</string>
+    <string name="game_list_add_title">הוסף</string>
+    <string name="app_selector_label">בחר משחק</string>
+    <string name="app_search_title">חיפוש</string>
+    <string name="game_remove_message">האם אתה בטוח שאתה רוצה להסיר את %1$s מרשימת המשחקים?</string>
     <!-- Configure game -->
-    <string name="per_app_title">Configure game</string>
-    <string name="per_app_mode_title">Preferred mode</string>
+    <string name="per_app_title">הגדרות משחק</string>
+    <string name="per_app_mode_title">מצב מועדף</string>
     <string name="per_app_angle_title">Use ANGLE (experimental)</string>
     <string name="per_app_angle_summary">Using ANGLE renderer instead of native GLES drivers.\nWARNING!! May breaks game graphics, use with caution!</string>
     <string name="cant_find_angle_pkg">ANGLE is not available on your system</string>
-    <string name="per_app_unregister">Remove %1$s from library</string>
-    <string name="game_mode_unsupported">Unsupported</string>
-    <string name="game_mode_standard">Standard</string>
-    <string name="game_mode_performance">Performance</string>
-    <string name="game_mode_battery">Battery</string>
+    <string name="per_app_unregister">הסר את %1$s מהספריה</string>
+    <string name="game_mode_unsupported">לא נתמך</string>
+    <string name="game_mode_standard">סטנדרטי</string>
+    <string name="game_mode_performance">ביצועים</string>
+    <string name="game_mode_battery">סוללה</string>
     <!-- Custom seekbar -->
-    <string name="custom_seekbar_value">Value: <xliff:g id="v">%s</xliff:g></string>
-    <string name="custom_seekbar_default_value">by default</string>
-    <string name="custom_seekbar_default_value_to_set">Default value: <xliff:g id="v">%s</xliff:g>\nLong tap to set</string>
-    <string name="custom_seekbar_default_value_is_set">Default value is set</string>
+    <string name="custom_seekbar_value">ערך: <xliff:g id="v">%s</xliff:g></string>
+    <string name="custom_seekbar_default_value">כברירת מחדל</string>
+    <string name="custom_seekbar_default_value_to_set">ברירת מחדל <xliff:g id="v">%s</xliff:g>\n. לחיצה ממושכת להגדרה</string>
+    <string name="custom_seekbar_default_value_is_set">ערך ברירת מחדל מוגדר</string>
     <!-- Game overlay -->
-    <string name="battery_format">Battery: <xliff:g id="percentage" example="100">%1$d%%</xliff:g></string>
-    <string name="memory_format">Memory available: <xliff:g id="availmemory" example="1000">%1$d</xliff:g>\/<xliff:g id="totalmemory" example="5000">%2$d</xliff:g> MB</string>
+    <string name="battery_format">סוללה: <xliff:g id="percentage" example="100">%1$d%%</xliff:g></string>
+    <string name="memory_format">זכרון זמין: <xliff:g id="availmemory" example="1000">%1$d</xliff:g><xliff:g id="totalmemory" example="5000">%2$d</xliff:g> MB</string>
     <!-- Tiles -->
-    <string name="game_mode_title">Mode</string>
-    <string name="fps_Info_title">FPS info</string>
-    <string name="notification_hide">Hide</string>
+    <string name="game_mode_title">מצב</string>
+    <string name="fps_Info_title">מידע על FPS</string>
+    <string name="notification_hide">הסתר</string>
     <string name="notification_headsup">Heads Up</string>
     <string name="notification_reticker">reTicker</string>
     <string name="notification_danmaku">Danmaku</string>
-    <string name="state_enabled">Enabled</string>
-    <string name="state_disabled">Disabled</string>
-    <string name="state_default">Default</string>
-    <string name="in_game_calls_title">Call mode</string>
-    <string name="in_game_calls_no_action">No action</string>
-    <string name="in_game_calls_auto_answer">Auto answer</string>
-    <string name="in_game_calls_auto_reject">Auto reject</string>
-    <string name="in_game_calls_received_number">Received call from %1$s</string>
-    <string name="in_game_calls_rejected_number">Rejected call from %1$s</string>
+    <string name="state_enabled">מופעל</string>
+    <string name="state_disabled">מושבת</string>
+    <string name="state_default">ברירת המחדל</string>
+    <string name="in_game_calls_title">מצב שיחות</string>
+    <string name="in_game_calls_no_action">ללא פעולה</string>
+    <string name="in_game_calls_auto_answer">מענה אוטומטי</string>
+    <string name="in_game_calls_auto_reject">דחיה אוטומטית של השיחה</string>
+    <string name="in_game_calls_received_number">קבל שיחות מ%1$s</string>
+    <string name="in_game_calls_rejected_number">דחה שיחות מ%1$s</string>
     <!-- Danmaku Notification Mode -->
-    <string name="danmaku_notification_mode_title">Danmaku Notification mode</string>
+    <string name="danmaku_notification_mode_title">מצב התראה Danmaku</string>
     <string name="danmaku_notification_mode_summary">Show notification as danmaku aka bullet comments while game is active</string>
 </resources>
