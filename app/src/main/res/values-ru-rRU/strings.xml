@@ -24,7 +24,7 @@
     <string name="suppress_fullscreen_intent_summary">Предотвращение появления полноэкранных событий, таких как входящие вызовы</string>
     <string name="stay_awake_title">Не отключать экран</string>
     <string name="lock_gesture_title">Блокировать жесты</string>
-    <string name="auto_brightness_disabled_title">Отключить автоматическую яркость</string>
+    <string name="auto_brightness_disabled_title">Отключить автояркость</string>
     <string name="three_screenshot_disabled_title">Отключить свайп для скриншота</string>
     <string name="adb_disabled_title">Отключить отладку по USB</string>
     <string name="gamespace_menu_opacity_title">Уровень прозрачности меню игрового режима</string>
