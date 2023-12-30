@@ -16,7 +16,7 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="settings_title">Игровое Пространство</string>
+    <string name="settings_title">Игровой режим</string>
     <string name="settings_summary">Настройка игровых возможностей</string>
     <!-- Game options -->
     <string name="in_game_preferences_title">Настройки игры</string>
