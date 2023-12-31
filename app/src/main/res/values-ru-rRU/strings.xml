@@ -16,7 +16,7 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="settings_title">Игровое Пространство</string>
+    <string name="settings_title">Поиграем?</string>
     <string name="settings_summary">Настройка игровых возможностей</string>
     <!-- Game options -->
     <string name="in_game_preferences_title">Настройки игры</string>
@@ -27,7 +27,7 @@
     <string name="auto_brightness_disabled_title">Отключить автояркость</string>
     <string name="three_screenshot_disabled_title">Отключить снимок экрана тремя пальцами</string>
     <string name="adb_disabled_title">Отключить отладку по USB</string>
-    <string name="gamespace_menu_opacity_title">Уровень прозрачности меню игрового режима</string>
+    <string name="gamespace_menu_opacity_title">Уровень прозрачности панели</string>
     <!-- Notification Mode -->
     <string name="notification_mode_title">Режим уведомлений</string>
     <string name="notification_mode_hide">Не показывать</string>
