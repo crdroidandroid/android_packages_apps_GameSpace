@@ -16,4 +16,5 @@
     <color name="barButtonBackground">#000000</color>
     <color name="barButtonRipple">@android:color/system_accent1_400</color>
     <color name="onBarBackground">#c0c0c0</color>
+    <color name="gamespace_background_color">#ffc000</color>
 </resources>
