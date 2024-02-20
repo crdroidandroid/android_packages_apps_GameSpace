@@ -17,39 +17,39 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="settings_title">Game Space</string>
-    <string name="settings_summary">Manage your gaming setup</string>
+    <string name="settings_summary">Hallitse peliasetuksiasi</string>
     <!-- Game options -->
-    <string name="in_game_preferences_title">In-game options</string>
-    <string name="suppress_fullscreen_intent_title">Block fullscreen event</string>
-    <string name="suppress_fullscreen_intent_summary">Prevent fullscreen events like incoming calls from appearing</string>
-    <string name="stay_awake_title">Stay awake</string>
-    <string name="lock_gesture_title">Lock gesture</string>
-    <string name="auto_brightness_disabled_title">Disable auto-brightness</string>
-    <string name="three_screenshot_disabled_title">Disable swipe to screenshot</string>
-    <string name="adb_disabled_title">Disable USB debugging</string>
-    <string name="gamespace_menu_opacity_title">Overlay menu opacity level</string>
+    <string name="in_game_preferences_title">Pelin sisäiset asetukset</string>
+    <string name="suppress_fullscreen_intent_title">Estä koko näytön tapahtuma</string>
+    <string name="suppress_fullscreen_intent_summary">Estää koko näytön tapahtumien, kuten saapuvien puhelujen näkymisen</string>
+    <string name="stay_awake_title">Pysy hereillä</string>
+    <string name="lock_gesture_title">Lukitusele</string>
+    <string name="auto_brightness_disabled_title">Poista automaattinen kirkkaus käytöstä</string>
+    <string name="three_screenshot_disabled_title">Poista kuvakaappausten pyyhkäisyele käytöstä</string>
+    <string name="adb_disabled_title">Poista USB-vianetsintä käytöstä</string>
+    <string name="gamespace_menu_opacity_title">Peittokuvavalikon läpinäkyvyystaso</string>
     <!-- Notification Mode -->
-    <string name="notification_mode_title">Notification mode</string>
-    <string name="notification_mode_hide">Do not show</string>
-    <string name="notification_mode_headsup">Show as Heads Up</string>
-    <string name="notification_mode_reticker">Show as reTicker</string>
-    <string name="notification_mode_danmaku">Show as Danmaku</string>
+    <string name="notification_mode_title">Ilmoitustila</string>
+    <string name="notification_mode_hide">Älä näytä</string>
+    <string name="notification_mode_headsup">Näytä Heads up</string>
+    <string name="notification_mode_reticker">Näytä reTickerinä</string>
+    <string name="notification_mode_danmaku">Näytä Danmaku</string>
     <!-- Ringer Mode -->
-    <string name="ringer_mode_title">Ringer mode</string>
-    <string name="ringer_mode_silent">Silent</string>
-    <string name="ringer_mode_vibrate">Vibrate</string>
-    <string name="ringer_mode_normal">Normal</string>
-    <string name="ringer_mode_no_change">Do not change</string>
+    <string name="ringer_mode_title">Soittotila</string>
+    <string name="ringer_mode_silent">Äänetön</string>
+    <string name="ringer_mode_vibrate">Värinä</string>
+    <string name="ringer_mode_normal">Normaali</string>
+    <string name="ringer_mode_no_change">Älä muuta</string>
     <!-- Game picker -->
-    <string name="game_list_title">Library</string>
-    <string name="game_list_add_title">Add</string>
-    <string name="app_selector_label">Pick your game</string>
-    <string name="app_search_title">Search</string>
-    <string name="game_remove_message">Are you sure you want to remove %1$s from your game list?</string>
+    <string name="game_list_title">Kokoelma</string>
+    <string name="game_list_add_title">Lisää</string>
+    <string name="app_selector_label">Valitse pelisi</string>
+    <string name="app_search_title">Etsi</string>
+    <string name="game_remove_message">Oletko varma, että haluat poistaa %1$s peliluettelostasi?</string>
     <!-- Configure game -->
-    <string name="per_app_title">Configure game</string>
-    <string name="per_app_mode_title">Preferred mode</string>
-    <string name="per_app_angle_title">Use ANGLE (experimental)</string>
+    <string name="per_app_title">Määritä peli</string>
+    <string name="per_app_mode_title">Ensisijainen tila</string>
+    <string name="per_app_angle_title">Käytä ANGLE (kokeellinen)</string>
     <string name="per_app_angle_summary">Using ANGLE renderer instead of native GLES drivers.\nWARNING!! May breaks game graphics, use with caution!</string>
     <string name="cant_find_angle_pkg">ANGLE is not available on your system</string>
     <string name="per_app_unregister">Remove %1$s from library</string>
