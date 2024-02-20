@@ -41,7 +41,7 @@
     <string name="ringer_mode_normal">Normaali</string>
     <string name="ringer_mode_no_change">Älä muuta</string>
     <!-- Game picker -->
-    <string name="game_list_title">Kokoelma</string>
+    <string name="game_list_title">Peliluettelo</string>
     <string name="game_list_add_title">Lisää</string>
     <string name="app_selector_label">Valitse pelisi</string>
     <string name="app_search_title">Etsi</string>
@@ -50,30 +50,30 @@
     <string name="per_app_title">Määritä peli</string>
     <string name="per_app_mode_title">Ensisijainen tila</string>
     <string name="per_app_angle_title">Käytä ANGLE (kokeellinen)</string>
-    <string name="per_app_angle_summary">Using ANGLE renderer instead of native GLES drivers.\nWARNING!! May breaks game graphics, use with caution!</string>
-    <string name="cant_find_angle_pkg">ANGLE is not available on your system</string>
-    <string name="per_app_unregister">Remove %1$s from library</string>
-    <string name="game_mode_unsupported">Unsupported</string>
-    <string name="game_mode_standard">Standard</string>
-    <string name="game_mode_performance">Performance</string>
-    <string name="game_mode_battery">Battery</string>
+    <string name="per_app_angle_summary">ANGLE-renderöijän käyttäminen natiivien GLES-ajurien sijaan.\nVAROITUS!!! Saattaa rikkoa pelin grafiikkaa, käytä varoen!</string>
+    <string name="cant_find_angle_pkg">ANGLE ei ole käytettävissä järjestelmässäsi</string>
+    <string name="per_app_unregister">Poista %1$s peliluettelosta</string>
+    <string name="game_mode_unsupported">Ei tuettu</string>
+    <string name="game_mode_standard">Vakio</string>
+    <string name="game_mode_performance">Suorituskyky</string>
+    <string name="game_mode_battery">Akku</string>
     <!-- Custom seekbar -->
-    <string name="custom_seekbar_value">Value: <xliff:g id="v">%s</xliff:g></string>
-    <string name="custom_seekbar_default_value">by default</string>
-    <string name="custom_seekbar_default_value_to_set">Default value: <xliff:g id="v">%s</xliff:g>\nLong tap to set</string>
-    <string name="custom_seekbar_default_value_is_set">Default value is set</string>
+    <string name="custom_seekbar_value">Arvo: <xliff:g id="v">%s</xliff:g></string>
+    <string name="custom_seekbar_default_value">oletuksena</string>
+    <string name="custom_seekbar_default_value_to_set">Oletusarvo: <xliff:g id="v">%s</xliff:g>\nAseta napauttamalla pitkään</string>
+    <string name="custom_seekbar_default_value_is_set">Oletusarvo asetettu</string>
     <!-- Game overlay -->
-    <string name="battery_format">Battery: <xliff:g id="percentage" example="100">%1$d%%</xliff:g></string>
-    <string name="memory_format">Memory available: <xliff:g id="availmemory" example="1000">%1$d</xliff:g>\/<xliff:g id="totalmemory" example="5000">%2$d</xliff:g> MB</string>
+    <string name="battery_format">Akku: <xliff:g id="percentage" example="100">%1$d%%</xliff:g></string>
+    <string name="memory_format">Käytettävissä oleva muisti: <xliff:g id="availmemory" example="1000">%1$d</xliff:g>\/<xliff:g id="totalmemory" example="5000">%2$d</xliff:g> MB</string>
     <!-- Tiles -->
-    <string name="game_mode_title">Mode</string>
-    <string name="fps_Info_title">FPS info</string>
-    <string name="notification_hide">Hide</string>
-    <string name="notification_headsup">Heads Up</string>
+    <string name="game_mode_title">Tila</string>
+    <string name="fps_Info_title">FPS-tiedot</string>
+    <string name="notification_hide">Piilota</string>
+    <string name="notification_headsup">Leijuvat ilmoitukset</string>
     <string name="notification_reticker">reTicker</string>
     <string name="notification_danmaku">Danmaku</string>
-    <string name="state_enabled">Enabled</string>
-    <string name="state_disabled">Disabled</string>
+    <string name="state_enabled">Käytössä</string>
+    <string name="state_disabled">Pois käytöstä</string>
     <string name="state_default">Default</string>
     <string name="in_game_calls_title">Call mode</string>
     <string name="in_game_calls_no_action">No action</string>
