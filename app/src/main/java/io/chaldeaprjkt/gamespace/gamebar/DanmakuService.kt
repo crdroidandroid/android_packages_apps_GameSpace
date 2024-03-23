@@ -3,6 +3,7 @@
  * Copyright (C) 2021 AOSP-Krypton Project
  * Copyright (C) 2022 Nameless-AOSP Project
  * Copyright (C) 2023 the risingOS android Project
+ * Copyright (C) 2022-2024 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -73,7 +74,7 @@ class DanmakuService @Inject constructor(
         isClickable = false
     }
 
-    private val windowManager: WindowManager = context.getSystemService(WindowManager::class.java)
+    private val windowManager: WindowManager = context.getSystemService(WindowManager::class.java)!!
 
     private val handler = Handler(Looper.getMainLooper())
 

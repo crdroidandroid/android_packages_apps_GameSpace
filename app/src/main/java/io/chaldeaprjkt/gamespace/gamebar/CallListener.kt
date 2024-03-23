@@ -2,6 +2,7 @@
  * Copyright (C) 2020 The exTHmUI Open Source Project
  * Copyright (C) 2021 AOSP-Krypton Project
  * Copyright (C) 2022 Nameless-AOSP Project
+ * Copyright (C) 2022-2024 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,9 +48,9 @@ class CallListener @Inject constructor(
     private val appSettings: AppSettings
 ) {
 
-    private val audioManager = context.getSystemService(AudioManager::class.java)
-    private val telephonyManager = context.getSystemService(TelephonyManager::class.java)
-    private val telecomManager = context.getSystemService(TelecomManager::class.java)
+    private val audioManager = context.getSystemService(AudioManager::class.java)!!
+    private val telephonyManager = context.getSystemService(TelephonyManager::class.java)!!
+    private val telecomManager = context.getSystemService(TelecomManager::class.java)!!
 
     private val callsMode = appSettings.callsMode
 
@@ -67,7 +68,7 @@ class CallListener @Inject constructor(
 
     private fun isHeadsetPluggedIn(): Boolean {
         val audioDeviceInfoArr: Array<AudioDeviceInfo> =
-            audioManager.getDevices(AudioManager.GET_DEVICES_OUTPUTS)
+            audioManager.getDevices(AudioManager.GET_DEVICES_OUTPUTS)!!
         return audioDeviceInfoArr.any {
             it.type == AudioDeviceInfo.TYPE_WIRED_HEADPHONES ||
                     it.type == AudioDeviceInfo.TYPE_WIRED_HEADSET ||

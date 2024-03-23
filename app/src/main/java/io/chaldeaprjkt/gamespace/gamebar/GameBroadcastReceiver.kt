@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 2021 Chaldeaprjkt
- *               2022 crDroid Android Project
+ * Copyright (C) 2022-2024 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,7 +36,7 @@ class GameBroadcastReceiver : BroadcastReceiver() {
 
     private fun Context.onGameStart(intent: Intent) {
         handler.post { resendBroadcast(intent) }
-        val app = intent.getStringExtra(SessionService.EXTRA_PACKAGE_NAME)
+        val app = intent.getStringExtra(SessionService.EXTRA_PACKAGE_NAME)!!
         SessionService.start(this, app)
     }
 
