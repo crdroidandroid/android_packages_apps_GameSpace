@@ -59,12 +59,12 @@ class AppSettings @Inject constructor(private val context: Context) {
         set(value) = db.edit().putBoolean(KEY_DANMAKU_NOTIFICATION_MODE, value).apply()
 
     var callsMode: Int
-        get() = db.getInt(KEY_CALLS_MODE, 0)
-        set(value) = db.edit().putInt(KEY_CALLS_MODE, value).apply()
+        get() = db.getString(KEY_CALLS_MODE, "0")?.toIntOrNull() ?: 0
+        set(value) = db.edit().putString(KEY_CALLS_MODE, value.toString()).apply()
 
     var ringerMode: Int
-        get() = db.getInt(KEY_RINGER_MODE, 3)
-        set(value) = db.edit().putInt(KEY_RINGER_MODE, value).apply()
+        get() = db.getString(KEY_RINGER_MODE, "3")?.toIntOrNull() ?: 3
+        set(value) = db.edit().putString(KEY_RINGER_MODE, value.toString()).apply()
 
     var menuOpacity: Int
         get() = db.getInt(KEY_MENU_OPACITY, 100)
