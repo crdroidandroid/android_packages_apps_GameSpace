@@ -23,7 +23,7 @@
     <string name="suppress_fullscreen_intent_title">Blocare eveniment pe tot ecranul</string>
     <string name="suppress_fullscreen_intent_summary">Împiedicați apariția evenimentelor de pe tot ecranul, cum ar fi apelurile primite</string>
     <string name="stay_awake_title">Menține ecranul activ</string>
-    <string name="lock_gesture_title">Gest de blocare</string>
+    <string name="lock_gesture_title">Blochează gesturile</string>
     <string name="auto_brightness_disabled_title">Dezactivează luminozitatea automată</string>
     <string name="three_screenshot_disabled_title">Dezactivează glisarea pentru captură de ecran</string>
     <string name="adb_disabled_title">Dezactivează depanarea USB</string>
@@ -31,7 +31,7 @@
     <!-- Notification Mode -->
     <string name="notification_mode_title">Modul notificare</string>
     <string name="notification_mode_hide">Nu se afișează</string>
-    <string name="notification_mode_headsup">Arată ca HeadsUp</string>
+    <string name="notification_mode_headsup">Arată ca atenționare</string>
     <string name="notification_mode_reticker">Arată ca reTicker</string>
     <string name="notification_mode_danmaku">Arată ca Danmaku</string>
     <!-- Ringer Mode -->
