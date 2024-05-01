@@ -155,6 +155,10 @@ class SessionService : Hilt_SessionService() {
     }
 
     private fun tryStartFromDeath(): Int {
+        if (isBarConnected) {
+            return START_NOT_STICKY
+        }
+
         val game = ActivityTaskManager.getService()
             ?.focusedRootTaskInfo
             ?.topActivity?.packageName
