@@ -82,6 +82,6 @@
     <string name="in_game_calls_received_number">%1$s からの着信を受信しました</string>
     <string name="in_game_calls_rejected_number">%1$s からの着信を拒否しました</string>
     <!-- Danmaku Notification Mode -->
-    <string name="danmaku_notification_mode_title">Danmaku Notification mode</string>
-    <string name="danmaku_notification_mode_summary">Show notification as danmaku aka bullet comments while game is active</string>
+    <string name="danmaku_notification_mode_title">弾幕通知モード</string>
+    <string name="danmaku_notification_mode_summary">ゲーム中に弾幕コメントとして通知を表示する</string>
 </resources>
