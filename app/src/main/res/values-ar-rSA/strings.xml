@@ -83,5 +83,5 @@
     <string name="in_game_calls_rejected_number">مكالمة مرفوضة منذ%1$s</string>
     <!-- Danmaku Notification Mode -->
     <string name="danmaku_notification_mode_title">Danmaku Notification mode</string>
-    <string name="danmaku_notification_mode_summary">Show notification as danmaku aka bullet comments while game is active</string>
+    <string name="danmaku_notification_mode_summary">إظهار تنبيه ك Danmaku كتعليقات سريعة عندما تكون اللعبة نشطة</string>
 </resources>
