@@ -19,17 +19,17 @@
     <string name="settings_title">Spil Rum</string>
     <string name="settings_summary">Administrer dit spilopsætning</string>
     <!-- Game options -->
-    <string name="in_game_preferences_title">In-game options</string>
-    <string name="suppress_fullscreen_intent_title">Block fullscreen event</string>
-    <string name="suppress_fullscreen_intent_summary">Prevent fullscreen events like incoming calls from appearing</string>
-    <string name="stay_awake_title">Stay awake</string>
-    <string name="lock_gesture_title">Lock gesture</string>
-    <string name="auto_brightness_disabled_title">Disable auto-brightness</string>
-    <string name="three_screenshot_disabled_title">Disable swipe to screenshot</string>
-    <string name="adb_disabled_title">Disable USB debugging</string>
-    <string name="gamespace_menu_opacity_title">Overlay menu opacity level</string>
+    <string name="in_game_preferences_title">Indstillinger for spil</string>
+    <string name="suppress_fullscreen_intent_title">Bloker begivenhed i fuldskærm</string>
+    <string name="suppress_fullscreen_intent_summary">Forhindr fuldskærms-begivenheder som indgående opkald i at blive vist</string>
+    <string name="stay_awake_title">Forbliv vågen</string>
+    <string name="lock_gesture_title">Lås gestus</string>
+    <string name="auto_brightness_disabled_title">Deaktivér auto-lysstyrke</string>
+    <string name="three_screenshot_disabled_title">Deaktiver stryg til skærmbillede</string>
+    <string name="adb_disabled_title">Deaktiver USB-fejlretning</string>
+    <string name="gamespace_menu_opacity_title">Overlay menu opacitet niveau</string>
     <!-- Notification Mode -->
-    <string name="notification_mode_title">Notification mode</string>
+    <string name="notification_mode_title">Meddelelsestilstand</string>
     <string name="notification_mode_hide">Vis ikke</string>
     <string name="notification_mode_headsup">Vis som Heads Up</string>
     <string name="notification_mode_reticker">Vis som reTicker</string>
@@ -74,14 +74,14 @@
     <string name="notification_danmaku">Danmaku</string>
     <string name="state_enabled">Aktiveret</string>
     <string name="state_disabled">Deaktiveret</string>
-    <string name="state_default">Default</string>
-    <string name="in_game_calls_title">Call mode</string>
-    <string name="in_game_calls_no_action">No action</string>
-    <string name="in_game_calls_auto_answer">Auto answer</string>
-    <string name="in_game_calls_auto_reject">Auto reject</string>
-    <string name="in_game_calls_received_number">Received call from %1$s</string>
-    <string name="in_game_calls_rejected_number">Rejected call from %1$s</string>
+    <string name="state_default">Standard</string>
+    <string name="in_game_calls_title">Opkaldstilstand</string>
+    <string name="in_game_calls_no_action">Ingen handling</string>
+    <string name="in_game_calls_auto_answer">Automatisk svar</string>
+    <string name="in_game_calls_auto_reject">Automatisk afvisning</string>
+    <string name="in_game_calls_received_number">Modtaget opkald fra %1$s</string>
+    <string name="in_game_calls_rejected_number">Afviste opkald fra %1$s</string>
     <!-- Danmaku Notification Mode -->
-    <string name="danmaku_notification_mode_title">Danmaku Notification mode</string>
+    <string name="danmaku_notification_mode_title">Danmaku-meddelelsestilstand</string>
     <string name="danmaku_notification_mode_summary">Show notification as danmaku aka bullet comments while game is active</string>
 </resources>
