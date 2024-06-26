@@ -19,17 +19,17 @@
     <string name="settings_title">Spil Rum</string>
     <string name="settings_summary">Administrer dit spilopsætning</string>
     <!-- Game options -->
-    <string name="in_game_preferences_title">Muligheder i spillet</string>
-    <string name="suppress_fullscreen_intent_title">Bloker fuldskærmsbegivenhed</string>
-    <string name="suppress_fullscreen_intent_summary">Undgå, at begivenheder i fuld skærm som indgående opkald vises</string>
-    <string name="stay_awake_title">Hold dig vågen</string>
+    <string name="in_game_preferences_title">Indstillinger for spil</string>
+    <string name="suppress_fullscreen_intent_title">Bloker begivenhed i fuldskærm</string>
+    <string name="suppress_fullscreen_intent_summary">Forhindr fuldskærms-begivenheder som indgående opkald i at blive vist</string>
+    <string name="stay_awake_title">Forbliv vågen</string>
     <string name="lock_gesture_title">Lås gestus</string>
-    <string name="auto_brightness_disabled_title">Deaktiver automatisk lysstyrke</string>
-    <string name="three_screenshot_disabled_title">Deaktiver swipe til skærmbillede</string>
+    <string name="auto_brightness_disabled_title">Deaktiver auto-lysstyrke</string>
+    <string name="three_screenshot_disabled_title">Deaktiver stryg til skærmbillede</string>
     <string name="adb_disabled_title">Deaktiver USB-fejlretning</string>
-    <string name="gamespace_menu_opacity_title">Overlay menu opacitetsniveau</string>
+    <string name="gamespace_menu_opacity_title">Overlay menu opacitet niveau</string>
     <!-- Notification Mode -->
-    <string name="notification_mode_title">Meddelelsestilstand</string>
+    <string name="notification_mode_title">Notifikations tilstand</string>
     <string name="notification_mode_hide">Vis ikke</string>
     <string name="notification_mode_headsup">Vis som Heads Up</string>
     <string name="notification_mode_reticker">Vis som reTicker</string>
@@ -53,27 +53,27 @@
     <string name="per_app_angle_summary">Brug ANGLE renderer i stedet for indfødte GLES drivere.\nADVARSEL!!! Kan ødelægge spilgrafik, brug med forsigtighed!</string>
     <string name="cant_find_angle_pkg">ANGLE er ikke tilgængelig på dit system</string>
     <string name="per_app_unregister">Fjern %1$s fra bibliotek</string>
-    <string name="game_mode_unsupported">Unsupported</string>
+    <string name="game_mode_unsupported">Uunderstøttet</string>
     <string name="game_mode_standard">Standard</string>
-    <string name="game_mode_performance">Performance</string>
-    <string name="game_mode_battery">Battery</string>
+    <string name="game_mode_performance">Ydeevne</string>
+    <string name="game_mode_battery">Batteri</string>
     <!-- Custom seekbar -->
-    <string name="custom_seekbar_value">Value: <xliff:g id="v">%s</xliff:g></string>
-    <string name="custom_seekbar_default_value">by default</string>
-    <string name="custom_seekbar_default_value_to_set">Default value: <xliff:g id="v">%s</xliff:g>\nLong tap to set</string>
-    <string name="custom_seekbar_default_value_is_set">Default value is set</string>
+    <string name="custom_seekbar_value">Værdi: <xliff:g id="v">%s</xliff:g></string>
+    <string name="custom_seekbar_default_value">som standard</string>
+    <string name="custom_seekbar_default_value_to_set">Standardværdi: <xliff:g id="v">%s</xliff:g>\nLangt tryk for at indstille</string>
+    <string name="custom_seekbar_default_value_is_set">Standard værdi er sat</string>
     <!-- Game overlay -->
-    <string name="battery_format">Battery: <xliff:g id="percentage" example="100">%1$d%%</xliff:g></string>
-    <string name="memory_format">Memory available: <xliff:g id="availmemory" example="1000">%1$d</xliff:g>\/<xliff:g id="totalmemory" example="5000">%2$d</xliff:g> MB</string>
+    <string name="battery_format">Batteri: <xliff:g id="percentage" example="100">%1$d%%</xliff:g></string>
+    <string name="memory_format">Tilgængelig hukommelse: <xliff:g id="availmemory" example="1000">%1$d</xliff:g>\/<xliff:g id="totalmemory" example="5000">%2$d</xliff:g> MB</string>
     <!-- Tiles -->
-    <string name="game_mode_title">Mode</string>
+    <string name="game_mode_title">Tilstand</string>
     <string name="fps_Info_title">FPS info</string>
-    <string name="notification_hide">Hide</string>
-    <string name="notification_headsup">Heads Up</string>
+    <string name="notification_hide">Skjul</string>
+    <string name="notification_headsup">Banner Opad</string>
     <string name="notification_reticker">reTicker</string>
     <string name="notification_danmaku">Danmaku</string>
-    <string name="state_enabled">Enabled</string>
-    <string name="state_disabled">Disabled</string>
+    <string name="state_enabled">Aktiveret</string>
+    <string name="state_disabled">Deaktiveret</string>
     <string name="state_default">Default</string>
     <string name="in_game_calls_title">Call mode</string>
     <string name="in_game_calls_no_action">No action</string>
