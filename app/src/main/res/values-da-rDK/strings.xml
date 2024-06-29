@@ -24,12 +24,12 @@
     <string name="suppress_fullscreen_intent_summary">Forhindr fuldskærms-begivenheder som indgående opkald i at blive vist</string>
     <string name="stay_awake_title">Forbliv vågen</string>
     <string name="lock_gesture_title">Lås gestus</string>
-    <string name="auto_brightness_disabled_title">Deaktivér auto-lysstyrke</string>
+    <string name="auto_brightness_disabled_title">Deaktiver auto-lysstyrke</string>
     <string name="three_screenshot_disabled_title">Deaktiver stryg til skærmbillede</string>
     <string name="adb_disabled_title">Deaktiver USB-fejlretning</string>
     <string name="gamespace_menu_opacity_title">Overlay menu opacitet niveau</string>
     <!-- Notification Mode -->
-    <string name="notification_mode_title">Meddelelsestilstand</string>
+    <string name="notification_mode_title">Notifikations tilstand</string>
     <string name="notification_mode_hide">Vis ikke</string>
     <string name="notification_mode_headsup">Vis som Heads Up</string>
     <string name="notification_mode_reticker">Vis som reTicker</string>
