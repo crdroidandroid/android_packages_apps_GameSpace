@@ -71,7 +71,7 @@
     <string name="notification_hide">Verbergen</string>
     <string name="notification_headsup">Pop-up</string>
     <string name="notification_reticker">reTicker</string>
-    <string name="notification_danmaku">Denemarken</string>
+    <string name="notification_danmaku">Danmaku</string>
     <string name="state_enabled">Ingeschakeld</string>
     <string name="state_disabled">Uitgechakeld</string>
     <string name="state_default">Standaard</string>
