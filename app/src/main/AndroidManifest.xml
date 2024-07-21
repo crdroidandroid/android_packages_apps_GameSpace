@@ -41,7 +41,8 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/settings_title"
         android:supportsRtl="true"
-        android:theme="@style/GameSpaceTheme">
+        android:theme="@style/GameSpaceTheme"
+        android:enableOnBackInvokedCallback="true">
         <activity
             android:name=".settings.SettingsActivity"
             android:excludeFromRecents="true"
