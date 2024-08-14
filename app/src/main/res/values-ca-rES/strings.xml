@@ -74,7 +74,7 @@
     <string name="notification_danmaku">Danmaku</string>
     <string name="state_enabled">Activat</string>
     <string name="state_disabled">Desactivat</string>
-    <string name="state_default">Default</string>
+    <string name="state_default">Per defecte</string>
     <string name="in_game_calls_title">Mode de trucada</string>
     <string name="in_game_calls_no_action">Sense acció</string>
     <string name="in_game_calls_auto_answer">Resposta automàtica</string>
@@ -82,6 +82,6 @@
     <string name="in_game_calls_received_number">S\'ha rebut una trucada de %1$s</string>
     <string name="in_game_calls_rejected_number">S\'ha rebutjat una trucada de %1$s</string>
     <!-- Danmaku Notification Mode -->
-    <string name="danmaku_notification_mode_title">Danmaku Notification mode</string>
+    <string name="danmaku_notification_mode_title">Mode de Notificació Danmaku</string>
     <string name="danmaku_notification_mode_summary">Show notification as danmaku aka bullet comments while game is active</string>
 </resources>
