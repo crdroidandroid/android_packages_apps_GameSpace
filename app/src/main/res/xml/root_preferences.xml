@@ -89,6 +89,11 @@
 
     </PreferenceCategory>
 
+    <io.chaldeaprjkt.gamespace.preferences.QuickStartAppPreference
+        android:key="quick_start_apps"
+        android:title="@string/quick_start_apps_title"
+        android:summary="@string/quick_start_apps_summary" />
+
     <io.chaldeaprjkt.gamespace.preferences.AppListPreferences
         android:key="gamespace_game_list"
         android:title="@string/game_list_title" />

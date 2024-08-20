@@ -16,6 +16,8 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="quick_start_apps_title">快速启动应用程序</string>
+    <string name="quick_start_apps_summary">选择要快速启动的应用</string>
     <string name="settings_title">游戏空间</string>
     <string name="settings_summary">管理您的游戏设置</string>
     <!-- Game options -->
