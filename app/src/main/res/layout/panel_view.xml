@@ -90,6 +90,41 @@
                     android:textSize="13sp" />
             </RelativeLayout>
 
+            <io.chaldeaprjkt.gamespace.widget.QuickStartAppView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="6dp">
+                <ImageView
+                    android:id="@+id/app_icon_1"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="4dp"
+                    android:src="@drawable/ic_add" />
+                <ImageView
+                    android:id="@+id/app_icon_2"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="4dp"
+                    android:src="@drawable/ic_add" />
+                <ImageView
+                    android:id="@+id/app_icon_3"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="4dp"
+                    android:src="@drawable/ic_add" />
+                <ImageView
+                    android:id="@+id/app_icon_4"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="4dp"
+                    android:src="@drawable/ic_add" />
+            </io.chaldeaprjkt.gamespace.widget.QuickStartAppView>
+
             <include layout="@layout/tiles" />
 
             <io.chaldeaprjkt.gamespace.widget.MemoryView
