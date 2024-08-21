@@ -25,7 +25,7 @@
     <string name="stay_awake_title">البقاء في الوضع النشط</string>
     <string name="lock_gesture_title">قفل الايماءات</string>
     <string name="auto_brightness_disabled_title">تعطيل السطوع التلقائي</string>
-    <string name="three_screenshot_disabled_title">تعطيل السحب لأخذ لقطة الشاشة</string>
+    <string name="three_screenshot_disabled_title">Disable three fingers swipe gesture</string>
     <string name="adb_disabled_title">تعطيل تصحيح أخطاء USB</string>
     <string name="gamespace_menu_opacity_title">مستوى شفافية القائمة العائمة</string>
     <!-- Notification Mode -->
