@@ -25,7 +25,7 @@
     <string name="stay_awake_title">Resta attivo</string>
     <string name="lock_gesture_title">Blocca gesto</string>
     <string name="auto_brightness_disabled_title">Disabilita luminosità automatica</string>
-    <string name="three_screenshot_disabled_title">Disabilita lo scorrimento per screenshot</string>
+    <string name="three_screenshot_disabled_title">Disable three fingers swipe gesture</string>
     <string name="adb_disabled_title">Disabilita debug USB</string>
     <string name="gamespace_menu_opacity_title">Livello di opacità menù sovrapposizione</string>
     <!-- Notification Mode -->
