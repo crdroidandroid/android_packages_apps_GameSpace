@@ -24,7 +24,7 @@ data class SessionState(
     var packageName: String,
     var autoBrightness: Boolean? = null,
     var headsup: Boolean? = null,
-    var threeScreenshot: Boolean? = null,
+    var threeScreenshot: Int = 12,
     var ringerMode: Int = AudioManager.RINGER_MODE_NORMAL,
     var adbEnabled: Boolean? = null,
 )

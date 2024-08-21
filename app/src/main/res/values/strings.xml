@@ -27,7 +27,7 @@
     <string name="stay_awake_title">Stay awake</string>
     <string name="lock_gesture_title">Lock gesture</string>
     <string name="auto_brightness_disabled_title">Disable auto-brightness</string>
-    <string name="three_screenshot_disabled_title">Disable swipe to screenshot</string>
+    <string name="three_screenshot_disabled_title">Disable three fingers swipe gesture</string>
     <string name="adb_disabled_title">Disable USB debugging</string>
     <string name="gamespace_menu_opacity_title">Overlay menu opacity level</string>
 
