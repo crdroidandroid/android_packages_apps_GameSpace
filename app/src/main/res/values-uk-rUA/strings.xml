@@ -25,7 +25,7 @@
     <string name="stay_awake_title">Залишати активним</string>
     <string name="lock_gesture_title">Жест блокування</string>
     <string name="auto_brightness_disabled_title">Вимкнути автояскравість</string>
-    <string name="three_screenshot_disabled_title">Вимкнути свайп для знімка екрану</string>
+    <string name="three_screenshot_disabled_title">Disable three fingers swipe gesture</string>
     <string name="adb_disabled_title">Вимкнути налагодження USB</string>
     <string name="gamespace_menu_opacity_title">Рівень непрозорості меню ігрового режиму</string>
     <!-- Notification Mode -->
