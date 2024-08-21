@@ -25,7 +25,7 @@
     <string name="stay_awake_title">Forbliv vågen</string>
     <string name="lock_gesture_title">Lås gestus</string>
     <string name="auto_brightness_disabled_title">Deaktiver auto-lysstyrke</string>
-    <string name="three_screenshot_disabled_title">Deaktiver stryg til skærmbillede</string>
+    <string name="three_screenshot_disabled_title">Disable three fingers swipe gesture</string>
     <string name="adb_disabled_title">Deaktiver USB-fejlretning</string>
     <string name="gamespace_menu_opacity_title">Overlay menu opacitet niveau</string>
     <!-- Notification Mode -->
