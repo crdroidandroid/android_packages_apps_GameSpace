@@ -25,7 +25,7 @@
     <string name="stay_awake_title">Mantén la pantalla encesa</string>
     <string name="lock_gesture_title">Gest de bloqueig</string>
     <string name="auto_brightness_disabled_title">Desactiva la brillantor automàtica</string>
-    <string name="three_screenshot_disabled_title">Desactiva el lliscament per a fer captures de pantalla</string>
+    <string name="three_screenshot_disabled_title">Disable three fingers swipe gesture</string>
     <string name="adb_disabled_title">Desactiva la depuració USB</string>
     <string name="gamespace_menu_opacity_title">Nivell d\'opacitat del menú flotant</string>
     <!-- Notification Mode -->
