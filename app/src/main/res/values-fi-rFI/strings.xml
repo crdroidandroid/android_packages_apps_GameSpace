@@ -25,7 +25,7 @@
     <string name="stay_awake_title">Pysy hereillä</string>
     <string name="lock_gesture_title">Lukitusele</string>
     <string name="auto_brightness_disabled_title">Poista automaattinen kirkkaus käytöstä</string>
-    <string name="three_screenshot_disabled_title">Poista kuvakaappausten pyyhkäisyele käytöstä</string>
+    <string name="three_screenshot_disabled_title">Disable three fingers swipe gesture</string>
     <string name="adb_disabled_title">Poista USB-vianetsintä käytöstä</string>
     <string name="gamespace_menu_opacity_title">Peittokuvavalikon läpinäkyvyystaso</string>
     <!-- Notification Mode -->
