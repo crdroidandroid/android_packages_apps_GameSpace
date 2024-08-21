@@ -25,7 +25,7 @@
     <string name="stay_awake_title">השאר פועל</string>
     <string name="lock_gesture_title">נעל מחוות</string>
     <string name="auto_brightness_disabled_title">בטל בהירות אוטומטית</string>
-    <string name="three_screenshot_disabled_title">בטל מחוות מסך מגע</string>
+    <string name="three_screenshot_disabled_title">Disable three fingers swipe gesture</string>
     <string name="adb_disabled_title">למנוע איתור באגים</string>
     <string name="gamespace_menu_opacity_title">Overlay menu opacity level</string>
     <!-- Notification Mode -->
