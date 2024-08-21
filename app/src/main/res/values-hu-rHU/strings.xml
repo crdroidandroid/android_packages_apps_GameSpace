@@ -25,7 +25,7 @@
     <string name="stay_awake_title">Ne zárja le a képernyőt</string>
     <string name="lock_gesture_title">Gesztusok gátlása</string>
     <string name="auto_brightness_disabled_title">Az automatikus fényerőszabályzás tiltása</string>
-    <string name="three_screenshot_disabled_title">Képernyőfotóhoz való húzás letiltása</string>
+    <string name="three_screenshot_disabled_title">Disable three fingers swipe gesture</string>
     <string name="adb_disabled_title">Az USB-hibakeresés tiltása</string>
     <string name="gamespace_menu_opacity_title">Átfedés menü átlátszósági szintje</string>
     <!-- Notification Mode -->
