@@ -25,7 +25,7 @@
     <string name="stay_awake_title">بیدار بمان</string>
     <string name="lock_gesture_title">قفل کردن ژست</string>
     <string name="auto_brightness_disabled_title">غیرفعالسازی روشنایی خودکار</string>
-    <string name="three_screenshot_disabled_title">غیرفعالسازی گرفتن اسکرین شات با کشیدن انگشت</string>
+    <string name="three_screenshot_disabled_title">Disable three fingers swipe gesture</string>
     <string name="adb_disabled_title">غیرفعال کردن اشکال زدایی USB</string>
     <string name="gamespace_menu_opacity_title">سطح شفافیت منوی همپوشانی</string>
     <!-- Notification Mode -->
