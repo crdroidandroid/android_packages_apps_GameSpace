@@ -25,7 +25,7 @@
     <string name="stay_awake_title">保持唤醒</string>
     <string name="lock_gesture_title">锁定手势</string>
     <string name="auto_brightness_disabled_title">禁用自动调节亮度</string>
-    <string name="three_screenshot_disabled_title">禁用滑动截屏</string>
+    <string name="three_screenshot_disabled_title">Disable three fingers swipe gesture</string>
     <string name="adb_disabled_title">禁用 USB 调试</string>
     <string name="gamespace_menu_opacity_title">覆盖菜单不透明度级别</string>
     <!-- Notification Mode -->
