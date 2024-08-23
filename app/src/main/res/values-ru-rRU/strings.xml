@@ -25,7 +25,7 @@
     <string name="stay_awake_title">Не отключать экран</string>
     <string name="lock_gesture_title">Блокировать жесты</string>
     <string name="auto_brightness_disabled_title">Отключить автояркость</string>
-    <string name="three_screenshot_disabled_title">Отключить снимок экрана тремя пальцами</string>
+    <string name="three_screenshot_disabled_title">Disable three fingers swipe gesture</string>
     <string name="adb_disabled_title">Отключить отладку по USB</string>
     <string name="gamespace_menu_opacity_title">Уровень прозрачности панели</string>
     <!-- Notification Mode -->

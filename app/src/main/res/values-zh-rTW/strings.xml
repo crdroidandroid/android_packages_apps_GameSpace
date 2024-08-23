@@ -25,7 +25,7 @@
     <string name="stay_awake_title">螢幕保持開啟</string>
     <string name="lock_gesture_title">鎖定手勢</string>
     <string name="auto_brightness_disabled_title">停用自動亮度</string>
-    <string name="three_screenshot_disabled_title">停用滑動截圖手勢</string>
+    <string name="three_screenshot_disabled_title">Disable three fingers swipe gesture</string>
     <string name="adb_disabled_title">停用 USB 偵錯</string>
     <string name="gamespace_menu_opacity_title">不透明度</string>
     <!-- Notification Mode -->

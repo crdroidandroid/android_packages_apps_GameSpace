@@ -25,7 +25,7 @@
     <string name="stay_awake_title">화면 켜짐 상태 유지</string>
     <string name="lock_gesture_title">잠금 제스처</string>
     <string name="auto_brightness_disabled_title">자동 밝기조절 해제</string>
-    <string name="three_screenshot_disabled_title">스와이프로 스크린샷 찍기 해제</string>
+    <string name="three_screenshot_disabled_title">Disable three fingers swipe gesture</string>
     <string name="adb_disabled_title">USB 디버깅 비활성화</string>
     <string name="gamespace_menu_opacity_title">오버레이 메뉴 투명도 레벨</string>
     <!-- Notification Mode -->

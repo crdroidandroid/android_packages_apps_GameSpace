@@ -25,7 +25,7 @@
     <string name="stay_awake_title">Blijf wakker</string>
     <string name="lock_gesture_title">Vergrendel gebaar</string>
     <string name="auto_brightness_disabled_title">Automatische helderheid uitschakelen</string>
-    <string name="three_screenshot_disabled_title">Veeg naar schermafbeelding uitschakelen</string>
+    <string name="three_screenshot_disabled_title">Disable three fingers swipe gesture</string>
     <string name="adb_disabled_title">Usb-foutopsporing uitschakelen</string>
     <string name="gamespace_menu_opacity_title">Transparantieniveau van overlappingsmenu</string>
     <!-- Notification Mode -->

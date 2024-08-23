@@ -25,7 +25,7 @@
     <string name="stay_awake_title">Menține ecranul activ</string>
     <string name="lock_gesture_title">Blochează gesturile</string>
     <string name="auto_brightness_disabled_title">Dezactivează luminozitatea automată</string>
-    <string name="three_screenshot_disabled_title">Dezactivează glisarea pentru captură de ecran</string>
+    <string name="three_screenshot_disabled_title">Disable three fingers swipe gesture</string>
     <string name="adb_disabled_title">Dezactivează depanarea USB</string>
     <string name="gamespace_menu_opacity_title">Opacitate pentru meniul suprapus</string>
     <!-- Notification Mode -->

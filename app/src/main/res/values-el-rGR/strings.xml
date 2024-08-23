@@ -25,7 +25,7 @@
     <string name="stay_awake_title">Παραμονή σε λειτουργία</string>
     <string name="lock_gesture_title">Χειρονομία κλειδώματος</string>
     <string name="auto_brightness_disabled_title">Απενεργοποίηση αυτόματης φωτεινότητας</string>
-    <string name="three_screenshot_disabled_title">Απενεργοποίηση συρσίματος για στιγμιότυπο οθόνης</string>
+    <string name="three_screenshot_disabled_title">Disable three fingers swipe gesture</string>
     <string name="adb_disabled_title">Απενεργοποίηση εντοπισμού σφαλμάτων USB</string>
     <string name="gamespace_menu_opacity_title">Επίπεδο αδιαφάνειας μενού επικάλυψης</string>
     <!-- Notification Mode -->

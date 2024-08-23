@@ -25,7 +25,7 @@
     <string name="stay_awake_title">Bly wakker</string>
     <string name="lock_gesture_title">Sluit gebaar</string>
     <string name="auto_brightness_disabled_title">Deaktiveer outo-helderheid</string>
-    <string name="three_screenshot_disabled_title">Deaktiveer \"Swipe to screenshot\"</string>
+    <string name="three_screenshot_disabled_title">Disable three fingers swipe gesture</string>
     <string name="adb_disabled_title">Deaktiveer \"USB debugging\"</string>
     <string name="gamespace_menu_opacity_title">Oorleg kieslys ondeursigtigheid vlak</string>
     <!-- Notification Mode -->

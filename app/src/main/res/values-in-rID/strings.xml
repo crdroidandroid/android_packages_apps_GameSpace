@@ -25,7 +25,7 @@
     <string name="stay_awake_title">Tetap terjaga</string>
     <string name="lock_gesture_title">Kunci gestur</string>
     <string name="auto_brightness_disabled_title">Nonaktifkan kecerahan otomatis</string>
-    <string name="three_screenshot_disabled_title">Nonaktifkan gesek ke tangkapan layar</string>
+    <string name="three_screenshot_disabled_title">Disable three fingers swipe gesture</string>
     <string name="adb_disabled_title">Nonaktifkan USB debugging</string>
     <string name="gamespace_menu_opacity_title">Tingkat opasitas hamparan menu</string>
     <!-- Notification Mode -->
