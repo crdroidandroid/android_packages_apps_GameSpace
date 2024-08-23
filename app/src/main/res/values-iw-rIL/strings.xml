@@ -16,17 +16,17 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="settings_title">Game Space</string>
-    <string name="settings_summary">Manage your gaming setup</string>
+    <string name="settings_title">מרכז משחקים</string>
+    <string name="settings_summary">נהל את הגדרות המשחק שלך</string>
     <!-- Game options -->
-    <string name="in_game_preferences_title">In-game options</string>
-    <string name="suppress_fullscreen_intent_title">Block fullscreen event</string>
-    <string name="suppress_fullscreen_intent_summary">Prevent fullscreen events like incoming calls from appearing</string>
-    <string name="stay_awake_title">Stay awake</string>
-    <string name="lock_gesture_title">Lock gesture</string>
-    <string name="auto_brightness_disabled_title">Disable auto-brightness</string>
-    <string name="three_screenshot_disabled_title">Disable swipe to screenshot</string>
-    <string name="adb_disabled_title">Disable USB debugging</string>
+    <string name="in_game_preferences_title">הגדרות משחקים</string>
+    <string name="suppress_fullscreen_intent_title">חסום התראות קופצות במסך מלא</string>
+    <string name="suppress_fullscreen_intent_summary">חסום התראות קופצות במסך מלא כמו שיחות טלפון</string>
+    <string name="stay_awake_title">השאר דולק</string>
+    <string name="lock_gesture_title">מחוות נעילה</string>
+    <string name="auto_brightness_disabled_title">בטל בהירות אוטומטית</string>
+    <string name="three_screenshot_disabled_title">בטל החלקה לתמונת מסך</string>
+    <string name="adb_disabled_title">ביטול יואסבי דיבאגגינג</string>
     <string name="gamespace_menu_opacity_title">Overlay menu opacity level</string>
     <!-- Notification Mode -->
     <string name="notification_mode_title">Notification mode</string>
