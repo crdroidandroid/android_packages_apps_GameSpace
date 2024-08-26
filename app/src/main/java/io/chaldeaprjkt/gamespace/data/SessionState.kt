@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 2021 Chaldeaprjkt
- *               2022 crDroid Android Project
+ *               2022-2024 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,7 @@ data class SessionState(
     var packageName: String,
     var autoBrightness: Boolean? = null,
     var headsup: Boolean? = null,
-    var threeScreenshot: Int = 12,
+    var threeScreenshot: Int = 0,
     var ringerMode: Int = AudioManager.RINGER_MODE_NORMAL,
     var adbEnabled: Boolean? = null,
 )
