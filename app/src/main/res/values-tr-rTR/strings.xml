@@ -25,7 +25,7 @@
     <string name="stay_awake_title">Uyanık kal</string>
     <string name="lock_gesture_title">Hareketi kilitle</string>
     <string name="auto_brightness_disabled_title">Otomatik parlaklığı devre dışı bırak</string>
-    <string name="three_screenshot_disabled_title">Disable three fingers swipe gesture</string>
+    <string name="three_screenshot_disabled_title">Üç parmakla kaydırma hareketini devre dışı bırak</string>
     <string name="adb_disabled_title">USB hata ayıklamasını devre dışı bırak</string>
     <string name="gamespace_menu_opacity_title">Arayüz menüsü şeffaflığı</string>
     <!-- Notification Mode -->

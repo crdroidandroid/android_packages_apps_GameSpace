@@ -25,7 +25,7 @@
     <string name="stay_awake_title">Pozostaw włączony ekran</string>
     <string name="lock_gesture_title">Gest blokady</string>
     <string name="auto_brightness_disabled_title">Wyłącz automatyczną jasność</string>
-    <string name="three_screenshot_disabled_title">Disable three fingers swipe gesture</string>
+    <string name="three_screenshot_disabled_title">Wyłącz gest przesuwania trzema palcami</string>
     <string name="adb_disabled_title">Wyłącz debugowanie USB</string>
     <string name="gamespace_menu_opacity_title">Poziom przezroczystości nakładki menu</string>
     <!-- Notification Mode -->

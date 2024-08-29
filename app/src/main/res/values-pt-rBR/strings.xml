@@ -25,7 +25,7 @@
     <string name="stay_awake_title">Permanecer ativo</string>
     <string name="lock_gesture_title">Bloquear gestos</string>
     <string name="auto_brightness_disabled_title">Desativar brilho automático</string>
-    <string name="three_screenshot_disabled_title">Disable three fingers swipe gesture</string>
+    <string name="three_screenshot_disabled_title">Desativar gesto de deslizar três dedos</string>
     <string name="adb_disabled_title">Desativar depuração USB</string>
     <string name="gamespace_menu_opacity_title">Nível de opacidade do menu de opções</string>
     <!-- Notification Mode -->
