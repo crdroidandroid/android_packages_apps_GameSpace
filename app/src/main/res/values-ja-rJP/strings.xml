@@ -25,7 +25,7 @@
     <string name="stay_awake_title">常に画面点灯</string>
     <string name="lock_gesture_title">ジェスチャーをロック</string>
     <string name="auto_brightness_disabled_title">自動明るさ調節を無効化</string>
-    <string name="three_screenshot_disabled_title">Disable three fingers swipe gesture</string>
+    <string name="three_screenshot_disabled_title">3本指スワイプジェスチャーを無効化</string>
     <string name="adb_disabled_title">USB デバッグを無効化</string>
     <string name="gamespace_menu_opacity_title">オーバーレイメニューの不透明度</string>
     <!-- Notification Mode -->
