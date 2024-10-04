@@ -25,7 +25,7 @@
     <string name="stay_awake_title">Display eingeschaltet lassen</string>
     <string name="lock_gesture_title">Gesten deaktivieren</string>
     <string name="auto_brightness_disabled_title">Auto-Helligkeit deaktivieren</string>
-    <string name="three_screenshot_disabled_title">Disable three fingers swipe gesture</string>
+    <string name="three_screenshot_disabled_title">Geste „Streichen mit drei Fingern“ deaktivieren</string>
     <string name="adb_disabled_title">USB-Debugging deaktivieren</string>
     <string name="gamespace_menu_opacity_title">Transparenz des Overlay-Menüs</string>
     <!-- Notification Mode -->
