@@ -25,7 +25,7 @@
     <string name="stay_awake_title">Nevypínat obrazovku</string>
     <string name="lock_gesture_title">Zakázat gesta</string>
     <string name="auto_brightness_disabled_title">Zakázat automatický jas</string>
-    <string name="three_screenshot_disabled_title">Disable three fingers swipe gesture</string>
+    <string name="three_screenshot_disabled_title">Zakázat gesto přejetím třemi prsty</string>
     <string name="adb_disabled_title">Zakázat ladění USB</string>
     <string name="gamespace_menu_opacity_title">Úroveň průhlednosti překrytí menu</string>
     <!-- Notification Mode -->
