@@ -25,7 +25,7 @@
     <string name="stay_awake_title">Rester éveillé</string>
     <string name="lock_gesture_title">Gestes de verrouillage</string>
     <string name="auto_brightness_disabled_title">Désactiver la luminosité automatique</string>
-    <string name="three_screenshot_disabled_title">Disable three fingers swipe gesture</string>
+    <string name="three_screenshot_disabled_title">Désactiver le geste de balayage à trois doigts</string>
     <string name="adb_disabled_title">Désactiver le débogage USB</string>
     <string name="gamespace_menu_opacity_title">Niveau d\'opacité du menu de superposition</string>
     <!-- Notification Mode -->
