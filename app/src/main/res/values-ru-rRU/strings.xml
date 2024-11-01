@@ -76,7 +76,7 @@
     <string name="state_disabled">Отключено</string>
     <string name="state_default">По умолчанию</string>
     <string name="in_game_calls_title">Режим вызова</string>
-    <string name="in_game_calls_no_action">Без действий</string>
+    <string name="in_game_calls_no_action">Без действия</string>
     <string name="in_game_calls_auto_answer">Автоответ</string>
     <string name="in_game_calls_auto_reject">Автосброс</string>
     <string name="in_game_calls_received_number">Поступил звонок от %1$s</string>
