@@ -20,9 +20,9 @@
     <string name="settings_summary">Настройка игровых возможностей</string>
     <!-- Game options -->
     <string name="in_game_preferences_title">Настройки игры</string>
-    <string name="suppress_fullscreen_intent_title">Блокировать полноэкранные уведомления</string>
+    <string name="suppress_fullscreen_intent_title">Блокировать полноэкранные события</string>
     <string name="suppress_fullscreen_intent_summary">Предотвращение появления полноэкранных событий, таких как входящие вызовы</string>
-    <string name="stay_awake_title">Не отключать экран</string>
+    <string name="stay_awake_title">Не засыпать</string>
     <string name="lock_gesture_title">Блокировать жесты</string>
     <string name="auto_brightness_disabled_title">Отключить автояркость</string>
     <string name="three_screenshot_disabled_title">Отключить жест тремя пальцами</string>
