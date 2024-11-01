@@ -16,6 +16,8 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="quick_start_apps_title">Quick Start Apps</string>
+    <string name="quick_start_apps_summary">Select apps to launch quickly</string>
     <string name="settings_title">Espaço de jogo</string>
     <string name="settings_summary">Gerir a sua configuração de jogos</string>
     <!-- Game options -->
