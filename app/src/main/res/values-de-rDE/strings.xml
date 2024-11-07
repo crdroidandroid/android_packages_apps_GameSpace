@@ -16,8 +16,8 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="quick_start_apps_title">Quick Start Apps</string>
-    <string name="quick_start_apps_summary">Wähle Apps für den Schnellstart</string>
+    <string name="quick_start_apps_title">Schnellstart-Apps</string>
+    <string name="quick_start_apps_summary">Apps für Schnellstart auswählen</string>
     <string name="settings_title">Spielmodus</string>
     <string name="settings_summary">Spieleinrichtung verwalten</string>
     <!-- Game options -->
