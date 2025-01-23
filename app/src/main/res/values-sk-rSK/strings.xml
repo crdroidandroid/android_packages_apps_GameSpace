@@ -16,8 +16,8 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="quick_start_apps_title">Quick Start Apps</string>
-    <string name="quick_start_apps_summary">Select apps to launch quickly</string>
+    <string name="quick_start_apps_title">Rýchly štart aplikácií</string>
+    <string name="quick_start_apps_summary">Vybrať aplikácie pre rýchly štart</string>
     <string name="settings_title">Herný priestor</string>
     <string name="settings_summary">Správa herných nastavení</string>
     <!-- Game options -->
@@ -27,7 +27,7 @@
     <string name="stay_awake_title">Nevypínať obrazovku</string>
     <string name="lock_gesture_title">Gesto uzamknutia</string>
     <string name="auto_brightness_disabled_title">Zakázať automatický jas</string>
-    <string name="three_screenshot_disabled_title">Disable three fingers swipe gesture</string>
+    <string name="three_screenshot_disabled_title">Vypnúť gesto prejdenia troma prstami</string>
     <string name="adb_disabled_title">Zakázať ladenie USB</string>
     <string name="gamespace_menu_opacity_title">Priehľadnosť vrstvy menu</string>
     <!-- Notification Mode -->
