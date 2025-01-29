@@ -24,6 +24,38 @@
         app:lottie_rawRes="@raw/game_settings_illustration" />
 
     <PreferenceCategory
+        android:key="game_optimization"
+        android:title="@string/game_optimization_title">
+
+        <SwitchPreferenceCompat
+            android:key="game_launch_boost"
+            android:title="@string/game_launch_boost_title"
+            android:summary="@string/game_launch_boost_summary"
+            android:defaultValue="true" />
+
+        <SwitchPreferenceCompat
+            android:key="game_memory_management"
+            android:title="@string/game_memory_management_title"
+            android:summary="@string/game_memory_management_summary"
+            android:defaultValue="false" />
+
+        <ListPreference
+            android:key="game_load_priority"
+            android:title="@string/game_load_priority_title"
+            android:summary="%s"
+            android:entries="@array/game_load_priority_entries"
+            android:entryValues="@array/game_load_priority_values"
+            android:defaultValue="balanced" />
+
+        <SwitchPreferenceCompat
+            android:key="game_cache_management"
+            android:title="@string/game_cache_management_title"
+            android:summary="@string/game_cache_management_summary"
+            android:defaultValue="true" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:key="in_game_preferences"
         android:title="@string/in_game_preferences_title">
 

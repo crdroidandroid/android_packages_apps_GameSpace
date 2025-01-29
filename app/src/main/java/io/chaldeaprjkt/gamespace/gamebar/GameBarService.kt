@@ -41,6 +41,7 @@ import com.android.systemui.screenrecord.IRecordingCallback
 import dagger.hilt.android.AndroidEntryPoint
 import io.chaldeaprjkt.gamespace.R
 import io.chaldeaprjkt.gamespace.data.AppSettings
+import io.chaldeaprjkt.gamespace.data.GameOptimizationManager
 import io.chaldeaprjkt.gamespace.settings.SettingsActivity
 import io.chaldeaprjkt.gamespace.utils.ScreenUtils
 import io.chaldeaprjkt.gamespace.utils.dp
@@ -60,6 +61,9 @@ class GameBarService : Hilt_GameBarService() {
 
     @Inject
     lateinit var danmakuService: DanmakuService
+
+    @Inject
+    lateinit var gameOptimization: GameOptimizationManager
 
     private val wm by lazy { getSystemService(WINDOW_SERVICE) as WindowManager }
     private val handler by lazy { Handler(Looper.getMainLooper()) }
@@ -174,6 +178,10 @@ class GameBarService : Hilt_GameBarService() {
         when (intent?.action) {
             ACTION_STOP -> onGameLeave()
             ACTION_START -> onGameStart()
+        }
+        intent?.getStringExtra("package")?.let { packageName ->
+            // Apply game optimizations when game starts
+            gameOptimization.optimizeGameLaunch(packageName)
         }
         return START_STICKY
     }
