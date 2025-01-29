@@ -20,22 +20,31 @@ import android.os.Bundle
 import android.view.View
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.preference.Preference
+import androidx.preference.SwitchPreferenceCompat
+import androidx.preference.ListPreference
 
 import com.android.settingslib.widget.SettingsBasePreferenceFragment
 
 import dagger.hilt.android.AndroidEntryPoint
 
 import io.chaldeaprjkt.gamespace.R
+import io.chaldeaprjkt.gamespace.data.GameOptimizationManager
 import io.chaldeaprjkt.gamespace.preferences.AppListPreferences
 import io.chaldeaprjkt.gamespace.preferences.QuickStartAppPreference
 import io.chaldeaprjkt.gamespace.preferences.QuickStartAppPreferenceDialogFragment
 import io.chaldeaprjkt.gamespace.preferences.appselector.AppSelectorActivity
 
+import javax.inject.Inject
+
 @AndroidEntryPoint(SettingsBasePreferenceFragment::class)
 class SettingsFragment : Hilt_SettingsFragment(),
-    QuickStartAppPreferenceDialogFragment.QuickStartAppListener {
+    QuickStartAppPreferenceDialogFragment.QuickStartAppListener,
+    Preference.OnPreferenceChangeListener {
 
     private var apps: AppListPreferences? = null
+
+    @Inject
+    lateinit var gameOptimization: GameOptimizationManager
 
     private val selectorResult =
         registerForActivityResult(
@@ -72,6 +81,22 @@ class SettingsFragment : Hilt_SettingsFragment(),
                 selectorResult.launch(Intent(context, AppSelectorActivity::class.java))
                 true
             }
+
+        // Game Optimization preferences
+        findPreference<SwitchPreferenceCompat>("game_memory_management")?.apply {
+            isChecked = gameOptimization.isMemoryManagementEnabled
+            onPreferenceChangeListener = this@SettingsFragment
+        }
+
+        findPreference<ListPreference>("game_load_priority")?.apply {
+            value = gameOptimization.loadPriority
+            onPreferenceChangeListener = this@SettingsFragment
+        }
+
+        findPreference<SwitchPreferenceCompat>("game_cache_management")?.apply {
+            isChecked = gameOptimization.isCacheManagementEnabled
+            onPreferenceChangeListener = this@SettingsFragment
+        }
     }
 
     override fun onResume() {
@@ -97,4 +122,22 @@ class SettingsFragment : Hilt_SettingsFragment(),
     }
 
     override fun saveQuickStartApps(apps: String) { /* no-op */ }
+
+    override fun onPreferenceChange(preference: Preference, newValue: Any?): Boolean {
+        when (preference.key) {
+            "game_memory_management" -> {
+                gameOptimization.isMemoryManagementEnabled = newValue as Boolean
+                return true
+            }
+            "game_load_priority" -> {
+                gameOptimization.loadPriority = newValue as String
+                return true
+            }
+            "game_cache_management" -> {
+                gameOptimization.isCacheManagementEnabled = newValue as Boolean
+                return true
+            }
+        }
+        return false
+    }
 }

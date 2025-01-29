@@ -25,11 +25,21 @@ import android.util.Log
 import com.android.internal.app.IGameSpaceCallback
 import com.android.internal.app.IGameSpaceService
 
-class GameSpaceService : Service() {
+import dagger.hilt.android.AndroidEntryPoint
+
+import io.chaldeaprjkt.gamespace.data.GameOptimizationManager
+
+import javax.inject.Inject
+
+@AndroidEntryPoint(Service::class)
+class GameSpaceService : Hilt_GameSpaceService() {
 
     private val TAG = "GameSpaceService"
-    
+
     private var gameSpaceService: IGameSpaceService? = null
+
+    @Inject
+    lateinit var gameOptimization: GameOptimizationManager
 
     private val callback = object : IGameSpaceCallback.Stub() {
         override fun onGameStart(packageName: String) {
@@ -38,6 +48,7 @@ class GameSpaceService : Service() {
             Process.setThreadPriority(Process.THREAD_PRIORITY_DISPLAY)
             Process.setThreadGroupAndCpuset(Process.myTid(), Process.THREAD_GROUP_SYSTEM)
             Process.setProcessGroup(Process.myPid(), Process.THREAD_GROUP_SYSTEM)
+            gameOptimization.optimizeGameLaunch(packageName)
         }
 
         override fun onGameLeave() {
