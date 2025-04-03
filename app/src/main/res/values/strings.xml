@@ -103,4 +103,8 @@
     <!-- Call overlay -->
     <string name="call_overlay_enabled_title">Call overlay</string>
     <string name="call_overlay_enabled_summary">Show minimal call overlay to answer/reject calls</string>
+
+    <!-- Bypass charging -->
+    <string name="bypass_charge_enabled_summary">Bypass charging</string>
+    <string name="bypass_charge_enabled_title">Enable bypass charging while playing games</string>
 </resources>

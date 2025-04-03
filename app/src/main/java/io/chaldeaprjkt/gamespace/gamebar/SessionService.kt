@@ -166,6 +166,7 @@ class SessionService : Hilt_SessionService() {
                 gameBar.onGameStart()
                 screenUtils.stayAwake = appSettings.stayAwake
                 screenUtils.lockGesture = appSettings.lockGesture
+                screenUtils.bypassCharge(true)
             } ?: run {
                 Log.e(TAG, "Command Intent is uninitialized. Stopping service.")
                 stopSelf()

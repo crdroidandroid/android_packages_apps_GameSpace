@@ -18,6 +18,7 @@
 package io.chaldeaprjkt.gamespace.settings
 
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.provider.Settings
 import android.view.View
@@ -59,32 +60,9 @@ class SettingsFragment : Hilt_SettingsFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        apps = findPreference(Settings.System.GAMESPACE_GAME_LIST)
-        apps?.onRegisteredAppClick {
-            perAppResult.launch(Intent(context, PerAppSettingsActivity::class.java).apply {
-                putExtra(PerAppSettingsActivity.EXTRA_PACKAGE, it)
-            })
+
+        val isGoogleDevice = Build.MANUFACTURER.equals("Google", ignoreCase = true)
+        val bypassChargePref = findPreference<Preference>("bypass_charge_enabled")
+        if (!isGoogleDevice && bypassChargePref != null) {
+            preferenceScreen.removePreference(bypassChargePref)
         }
-
-        findPreference<Preference>(AppListPreferences.KEY_ADD_GAME)
-            ?.setOnPreferenceClickListener {
-                selectorResult.launch(Intent(context, AppSelectorActivity::class.java))
-                return@setOnPreferenceClickListener true
-            }
-    }
-
-    override fun onResume() {
-        super.onResume()
-        apps?.updateAppList()
-    }
-
-    override fun onDisplayPreferenceDialog(preference: Preference) {
-        if (preference is QuickStartAppPreference) {
-            val dialogFragment = QuickStartAppPreferenceDialogFragment.newInstance(preference.key)
-            dialogFragment.setTargetFragment(this, 0)
-            dialogFragment.show(parentFragmentManager, "QuickStartAppPreferenceDialogFragment")
-        } else {
-            super.onDisplayPreferenceDialog(preference)
-        }
-    }
-}
