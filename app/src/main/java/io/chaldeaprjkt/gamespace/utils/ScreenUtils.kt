@@ -139,6 +139,11 @@ class ScreenUtils @Inject constructor(private val context: Context) {
         if (!autoBypassEnabled) return
 
         SystemProperties.set(
+            "persist.sys.battery_health_bypass_enabled",
+            if (enable) "true" else "false"
+        )
+
+        SystemProperties.set(
             "persist.sys.battery_health_limit_bypass_level",
             if (enable) getBatteryLevel().toString() else "80"
         )
