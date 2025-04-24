@@ -111,9 +111,12 @@ class SessionService : Hilt_SessionService() {
 
         when (intent?.action) {
             START -> startGameBar()
-            STOP -> stopSelf()
+            STOP -> {
+                stopSelf()
+                return START_NOT_STICKY
+            }
         }
-        return START_NOT_STICKY
+        return START_STICKY
     }
 
     private fun startGameBar() {
@@ -177,7 +180,7 @@ class SessionService : Hilt_SessionService() {
 
     private fun tryStartFromDeath(): Int {
         if (isBarConnected) {
-            return START_NOT_STICKY
+            return START_STICKY
         }
 
         val game = ActivityTaskManager.getService()
