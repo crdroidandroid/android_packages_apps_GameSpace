@@ -16,8 +16,8 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="quick_start_apps_title">Quick Start Apps</string>
-    <string name="quick_start_apps_summary">Select apps to launch quickly</string>
+    <string name="quick_start_apps_title">Програми швидкого старту</string>
+    <string name="quick_start_apps_summary">Виберіть програми для швидкого запуску</string>
     <string name="settings_title">Ігровий Простір</string>
     <string name="settings_summary">Керування налаштуваннями гри</string>
     <!-- Game options -->
@@ -27,7 +27,7 @@
     <string name="stay_awake_title">Залишати активним</string>
     <string name="lock_gesture_title">Жест блокування</string>
     <string name="auto_brightness_disabled_title">Вимкнути автояскравість</string>
-    <string name="three_screenshot_disabled_title">Disable three fingers swipe gesture</string>
+    <string name="three_screenshot_disabled_title">Вимкнути жест руху трьома пальцями</string>
     <string name="adb_disabled_title">Вимкнути налагодження USB</string>
     <string name="gamespace_menu_opacity_title">Рівень непрозорості меню ігрового режиму</string>
     <!-- Notification Mode -->
