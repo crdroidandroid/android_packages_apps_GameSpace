@@ -16,6 +16,8 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="quick_start_apps_title">Ứng dụng bắt đầu nhanh</string>
+    <string name="quick_start_apps_summary">Chọn ứng dụng để khởi chạy nhanh</string>
     <string name="settings_title">Không gian trò chơi</string>
     <string name="settings_summary">Quản lý thiết lập trò chơi của bạn</string>
     <!-- Game options -->
@@ -84,4 +86,5 @@
     <!-- Danmaku Notification Mode -->
     <string name="danmaku_notification_mode_title">Chế độ thông báo hiện đại</string>
     <string name="danmaku_notification_mode_summary">Hiển thị thông báo hiện đại hay còn gọi là nhận xét về dấu đầu dòng khi trò chơi đang hoạt động</string>
+    <string name="gamespace_running">Game Space is running</string>
 </resources>
