@@ -86,5 +86,5 @@
     <!-- Danmaku Notification Mode -->
     <string name="danmaku_notification_mode_title">彈幕通知模式</string>
     <string name="danmaku_notification_mode_summary">遊戲中以彈幕形式顯示通知。</string>
-    <string name="gamespace_running">Game Space is running</string>
+    <string name="gamespace_running">游戲空間正在運行</string>
 </resources>
