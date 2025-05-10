@@ -86,5 +86,5 @@
     <!-- Danmaku Notification Mode -->
     <string name="danmaku_notification_mode_title">Tryb powiadomień Danmaku</string>
     <string name="danmaku_notification_mode_summary">Wyświetlaj powiadomienie jako Danmaku w postaci wypunktowanych komentarzy, gdy gra jest aktywna</string>
-    <string name="gamespace_running">Game Space is running</string>
+    <string name="gamespace_running">Przestrzeń gier jest uruchomiona</string>
 </resources>
