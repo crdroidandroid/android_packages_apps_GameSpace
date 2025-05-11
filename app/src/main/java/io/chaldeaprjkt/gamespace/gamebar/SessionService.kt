@@ -63,6 +63,8 @@ class SessionService : Hilt_SessionService() {
 
     private val scope = CoroutineScope(Job() + Dispatchers.IO)
     private var isRunning = false
+    
+    private var tarketPkgName = ""
 
     private val gameBarConnection = object : ServiceConnection {
         override fun onServiceConnected(name: ComponentName?, service: IBinder?) {
@@ -160,6 +162,7 @@ class SessionService : Hilt_SessionService() {
                     stopSelf()
                     return
                 }
+                tarketPkgName = app
                 session.unregister()
                 session.register(app)
                 applyGameModeConfig(app)
@@ -183,16 +186,32 @@ class SessionService : Hilt_SessionService() {
             return START_STICKY
         }
 
-        val game = ActivityTaskManager.getService()
-            ?.focusedRootTaskInfo
-            ?.topActivity?.packageName
-            ?: return START_NOT_STICKY
-
-        if (!settings.userGames.any { it.packageName == game }) {
+        if (tarketPkgName.isBlank()) {
+            stopSelf()
             return START_NOT_STICKY
         }
 
-        commandIntent = Intent(START).putExtra(EXTRA_PACKAGE_NAME, game)
+        val focusedApp = ActivityTaskManager.getService()
+            ?.focusedRootTaskInfo
+            ?.topActivity
+            ?.packageName
+
+        if (focusedApp.isNullOrBlank()) {
+            stopSelf()
+            return START_NOT_STICKY
+        }
+
+        if (!settings.userGames.any { it.packageName == focusedApp }) {
+            stopSelf()
+            return START_NOT_STICKY
+        }
+
+        if (focusedApp != tarketPkgName) {
+            stopSelf()
+            return START_NOT_STICKY
+        }
+
+        commandIntent = Intent(START).putExtra(EXTRA_PACKAGE_NAME, tarketPkgName)
         startGameBar()
         return START_STICKY
     }
