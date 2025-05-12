@@ -86,5 +86,5 @@
     <!-- Danmaku Notification Mode -->
     <string name="danmaku_notification_mode_title">Режим прозрачных уведомлений</string>
     <string name="danmaku_notification_mode_summary">Показывать уведомление в виде прозрачных комментариев, пока игра активна</string>
-    <string name="gamespace_running">Game Space is running</string>
+    <string name="gamespace_running">Игровое пространство запущено</string>
 </resources>
