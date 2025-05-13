@@ -16,6 +16,8 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="quick_start_apps_title">快速启动应用程序</string>
+    <string name="quick_start_apps_summary">选择要快速启动的应用</string>
     <string name="settings_title">游戏空间</string>
     <string name="settings_summary">管理您的游戏设置</string>
     <!-- Game options -->
@@ -84,4 +86,5 @@
     <!-- Danmaku Notification Mode -->
     <string name="danmaku_notification_mode_title">弹幕通知模式</string>
     <string name="danmaku_notification_mode_summary">游戏中以弹幕的形式显示通知</string>
+    <string name="gamespace_running">游戏空间正在运行</string>
 </resources>
