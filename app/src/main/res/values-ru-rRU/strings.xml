@@ -16,6 +16,8 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="quick_start_apps_title">Быстрый запуск приложений</string>
+    <string name="quick_start_apps_summary">Выберите приложения для быстрого запуска</string>
     <string name="settings_title">Поиграем?</string>
     <string name="settings_summary">Настройка игровых возможностей</string>
     <!-- Game options -->
@@ -84,4 +86,5 @@
     <!-- Danmaku Notification Mode -->
     <string name="danmaku_notification_mode_title">Режим прозрачных уведомлений</string>
     <string name="danmaku_notification_mode_summary">Показывать уведомление в виде прозрачных комментариев, пока игра активна</string>
+    <string name="gamespace_running">Игровое пространство запущено</string>
 </resources>
