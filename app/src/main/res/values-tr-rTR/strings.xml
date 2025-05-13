@@ -16,6 +16,8 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="quick_start_apps_title">Hızlı Başlangıç Uygulamaları</string>
+    <string name="quick_start_apps_summary">Hızlı başlatmak için uygulamaları seçin</string>
     <string name="settings_title">Oyun Alanı</string>
     <string name="settings_summary">Oyun kurulumunuzu yönetin</string>
     <!-- Game options -->
@@ -84,4 +86,5 @@
     <!-- Danmaku Notification Mode -->
     <string name="danmaku_notification_mode_title">Danmaku Bildirim modu</string>
     <string name="danmaku_notification_mode_summary">Oyun aktifken danmaku bullet yorumları olarak bildirim göster</string>
+    <string name="gamespace_running">Oyun Alanı çalışıyor</string>
 </resources>
