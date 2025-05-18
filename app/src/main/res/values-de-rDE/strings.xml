@@ -86,5 +86,5 @@
     <!-- Danmaku Notification Mode -->
     <string name="danmaku_notification_mode_title">Benachrichtigungsmodus „Danmaku“</string>
     <string name="danmaku_notification_mode_summary">Bei aktivem Spiel Benachrichtigungen als „Bullet-Kommentare“ aka „Danmaku“ anzeigen</string>
-    <string name="gamespace_running">Game Space is running</string>
+    <string name="gamespace_running">Spielmodus läuft</string>
 </resources>
