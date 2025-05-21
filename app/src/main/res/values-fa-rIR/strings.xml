@@ -86,5 +86,5 @@
     <!-- Danmaku Notification Mode -->
     <string name="danmaku_notification_mode_title">حالت اعلان گلوله جهنمی</string>
     <string name="danmaku_notification_mode_summary">در حالی که بازی فعال است، اعلان را به حالت اعلان گلوله جهنمی نشان دهید</string>
-    <string name="gamespace_running">Game Space is running</string>
+    <string name="gamespace_running">فضای بازی در حال اجراست</string>
 </resources>
