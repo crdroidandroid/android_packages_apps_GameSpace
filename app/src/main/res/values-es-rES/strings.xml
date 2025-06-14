@@ -87,5 +87,5 @@ Mantén presionado para establecer</string>
     <!-- Danmaku Notification Mode -->
     <string name="danmaku_notification_mode_title">Modo notificación silenciosa</string>
     <string name="danmaku_notification_mode_summary">Mostrar notificación diseño circular mientras el juego está activo</string>
-    <string name="gamespace_running">Game Space is running</string>
+    <string name="gamespace_running">El espacio del juego se está ejecutando</string>
 </resources>
