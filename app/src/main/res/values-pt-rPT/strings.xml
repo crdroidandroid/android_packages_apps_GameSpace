@@ -16,8 +16,8 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="quick_start_apps_title">Quick Start Apps</string>
-    <string name="quick_start_apps_summary">Select apps to launch quickly</string>
+    <string name="quick_start_apps_title">Inicialização rápida de aplicativos</string>
+    <string name="quick_start_apps_summary">Selecione as apps para iniciar rapidamente</string>
     <string name="settings_title">Espaço de jogo</string>
     <string name="settings_summary">Gerir a sua configuração de jogos</string>
     <!-- Game options -->
@@ -27,7 +27,7 @@
     <string name="stay_awake_title">Manter ativo</string>
     <string name="lock_gesture_title">Bloquear gestos</string>
     <string name="auto_brightness_disabled_title">Desativar brilho automático</string>
-    <string name="three_screenshot_disabled_title">Disable three fingers swipe gesture</string>
+    <string name="three_screenshot_disabled_title">Desativar gesto de deslizar três dedos</string>
     <string name="adb_disabled_title">Desativar depuração USB</string>
     <string name="gamespace_menu_opacity_title">Transparência do menu de sobreposição</string>
     <!-- Notification Mode -->
@@ -86,5 +86,5 @@
     <!-- Danmaku Notification Mode -->
     <string name="danmaku_notification_mode_title">Modo de notificação Danmaku</string>
     <string name="danmaku_notification_mode_summary">Mostrar notificações enquanto o jogo estiver aberto</string>
-    <string name="gamespace_running">Game Space is running</string>
+    <string name="gamespace_running">Espaço de Jogo a ser executado</string>
 </resources>
