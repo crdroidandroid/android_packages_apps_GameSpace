@@ -75,7 +75,7 @@ class SystemSettings @Inject constructor(
     var userGames
         get() =
             Settings.System.getStringForUser(
-                resolver, Settings.System.GAMESPACE_GAME_LIST,
+                resolver, "gamespace_game_list",
                 UserHandle.USER_CURRENT
             )
                 ?.split(";")
@@ -84,7 +84,7 @@ class SystemSettings @Inject constructor(
         set(games) {
             Settings.System.putStringForUser(
                 resolver,
-                Settings.System.GAMESPACE_GAME_LIST,
+                "gamespace_game_list",
                 if (games.isEmpty()) "" else
                     games.joinToString(";") { it.toString() },
                 UserHandle.USER_CURRENT

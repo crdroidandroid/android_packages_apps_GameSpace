@@ -52,7 +52,7 @@ class GameModeUtils @Inject constructor(private val context: Context) {
         val configValue = "${packageName};;${modeData?.asConfig()}"
         Settings.Secure.putString(
                 context.contentResolver,
-                Settings.Secure.GAME_OVERLAY,
+                "game_overlay",
                 configValue
         )
     }
