@@ -1,6 +1,7 @@
 /*
  * Copyright (C) 2021 Chaldeaprjkt
  * Copyright (C) 2022-2024 crDroid Android Project
+ * Copyright (C) 2025 AxionOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,56 +20,73 @@ package io.chaldeaprjkt.gamespace.gamebar
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
-import android.content.pm.PackageManager
 import android.os.Handler
 import android.os.Looper
-import android.os.UserHandle
+import android.os.RemoteException
+import android.os.ServiceManager
+import android.util.Log
+import com.android.internal.app.IGameSpaceCallback
+import com.android.internal.app.IGameSpaceService
+import io.chaldeaprjkt.gamespace.gamebar.SessionService
 
 class GameBroadcastReceiver : BroadcastReceiver() {
 
-    private val handler by lazy { Handler(Looper.getMainLooper()) }
-
-    override fun onReceive(context: Context, intent: Intent) {
-        when (intent.action) {
-            GAME_START -> context.onGameStart(intent)
-            GAME_STOP -> context.onGameStop()
-        }
-    }
-
-    private fun Context.onGameStart(intent: Intent) {
-        val app = intent.getStringExtra(SessionService.EXTRA_PACKAGE_NAME) ?: return
-        handler.post {
-            resendBroadcast(intent)
-            SessionService.start(this, app)
-        }
-    }
-
-    private fun Context.onGameStop() {
-        handler.post {
-            resendBroadcast(Intent(GAME_STOP))
-            SessionService.stop(this)
-        }
-    }
-
-    private fun Context.resendBroadcast(prevIntent: Intent) {
-        val intent = (prevIntent.clone() as Intent).apply {
-            setPackage(null)
-            component = null
-        }
-        val flags = PackageManager.ResolveInfoFlags.of(0)
-        packageManager.queryBroadcastReceivers(intent, flags)
-            .mapNotNull { it.activityInfo?.packageName }
-            .filter { it != packageName }
-            .forEach {
-                (intent.clone() as Intent).apply {
-                    setPackage(it)
-                    sendBroadcastAsUser(this, UserHandle.CURRENT, android.Manifest.permission.MANAGE_GAME_MODE)
-                }
+    override fun onReceive(context: Context, intent: Intent?) {
+        if (intent?.action == Intent.ACTION_BOOT_COMPLETED) {
+            Log.d(TAG, "BOOT_COMPLETED received. Scheduling GameSpaceService registration.")
+            Handler(Looper.getMainLooper()).post {
+                GameSpaceRegistry(context.applicationContext).start()
             }
+        }
     }
 
     companion object {
-        const val GAME_START = "io.chaldeaprjkt.gamespace.action.GAME_START"
-        const val GAME_STOP = "io.chaldeaprjkt.gamespace.action.GAME_STOP"
+        private const val TAG = "GameBroadcastReceiver"
+    }
+
+    private class GameSpaceRegistry(private val context: Context) {
+        private val handler = Handler(Looper.getMainLooper())
+        private val retryDelayMs = 2000L
+        private var serviceRegistered = false
+
+        private val callback = object : IGameSpaceCallback.Stub() {
+            override fun shouldSuppressFullScreenIntent(suppress: Boolean) {}
+
+            override fun onGameStart(packageName: String) {
+                packageName?.let { SessionService.start(context, it) }
+            }
+
+            override fun onGameLeave() {
+                SessionService.stop(context)
+            }
+        }
+
+        fun start() {
+            tryRegister()
+        }
+
+        private fun tryRegister() {
+            val service = IGameSpaceService.Stub.asInterface(
+                ServiceManager.getService("game_space")
+            )
+            if (service != null) {
+                try {
+                    service.registerCallback(callback)
+                    serviceRegistered = true
+                    Log.i(TAG, "GameSpaceCallback successfully registered.")
+                } catch (e: RemoteException) {
+                    Log.e(TAG, "Failed to register GameSpaceCallback", e)
+                    serviceRegistered = false
+                    scheduleRetry()
+                }
+            } else {
+                scheduleRetry()
+            }
+        }
+
+        private fun scheduleRetry() {
+            if (serviceRegistered) return
+            handler.postDelayed({ tryRegister() }, retryDelayMs)
+        }
     }
 }

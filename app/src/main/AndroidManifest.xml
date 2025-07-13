@@ -77,16 +77,16 @@
                 <action android:name="android.service.notification.NotificationListenerService" />
             </intent-filter>
         </service>
-
-        <receiver
-            android:name=".gamebar.GameBroadcastReceiver"
-            android:exported="true"
-            android:permission="android.permission.MANAGE_GAME_MODE">
+        
+        <receiver android:name=".gamebar.GameBroadcastReceiver"
+                  android:enabled="true"
+                  android:exported="true"
+                  android:permission="android.permission.RECEIVE_BOOT_COMPLETED">
             <intent-filter>
-                <action android:name="io.chaldeaprjkt.gamespace.action.GAME_START" />
-                <action android:name="io.chaldeaprjkt.gamespace.action.GAME_STOP" />
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
+
     </application>
 
 </manifest>

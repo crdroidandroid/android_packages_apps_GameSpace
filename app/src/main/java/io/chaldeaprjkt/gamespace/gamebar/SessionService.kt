@@ -144,6 +144,7 @@ class SessionService : Hilt_SessionService() {
         screenUtils.unbind()
         callListener.destroy()
 
+        tarketPkgName = ""
         isRunning = false
         super.onDestroy()
     }
@@ -188,26 +189,7 @@ class SessionService : Hilt_SessionService() {
         }
 
         if (tarketPkgName.isBlank()) {
-            stopSelf()
-            return START_NOT_STICKY
-        }
-
-        val focusedApp = ActivityTaskManager.getService()
-            ?.focusedRootTaskInfo
-            ?.topActivity
-            ?.packageName
-
-        if (focusedApp.isNullOrBlank()) {
-            stopSelf()
-            return START_NOT_STICKY
-        }
-
-        if (!settings.userGames.any { it.packageName == focusedApp }) {
-            stopSelf()
-            return START_NOT_STICKY
-        }
-
-        if (focusedApp != tarketPkgName) {
+            Log.w(TAG, "Missing target package name. Cannot recover. Stopping.")
             stopSelf()
             return START_NOT_STICKY
         }
