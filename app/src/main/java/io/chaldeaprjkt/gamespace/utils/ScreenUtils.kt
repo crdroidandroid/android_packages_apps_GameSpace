@@ -114,8 +114,8 @@ class ScreenUtils @Inject constructor(private val context: Context) {
     var lockGesture = false
         get() = isGestureLocked
         set(enable) {
-            Settings.System.putInt(context.contentResolver,
-                    "lock_gesture_status", if (enable) 1 else 0)
+            Settings.Secure.putInt(context.contentResolver,
+                    "nt_game_mode_mistouch_prevention", if (enable) 1 else 0)
             field = enable
             isGestureLocked = enable
         }
