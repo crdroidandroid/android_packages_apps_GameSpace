@@ -16,8 +16,8 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="quick_start_apps_title">Iniciar Aplicativos rapidamente</string>
-    <string name="quick_start_apps_summary">Selecione os Aplicativos de Início Rápido</string>
+    <string name="quick_start_apps_title">Aplicativos de início rápido</string>
+    <string name="quick_start_apps_summary">Selecione Aplicativos para o Início Rápido</string>
     <string name="settings_title">Espaço de Jogos</string>
     <string name="settings_summary">Gerencie sua configuração de jogos</string>
     <!-- Game options -->
@@ -86,5 +86,5 @@
     <!-- Danmaku Notification Mode -->
     <string name="danmaku_notification_mode_title">Modo de notificação Danmaku</string>
     <string name="danmaku_notification_mode_summary">Mostrar notificações como balões de comentários durante o jogo</string>
-    <string name="gamespace_running">Game Space is running</string>
+    <string name="gamespace_running">Espaço de jogo em execução</string>
 </resources>
