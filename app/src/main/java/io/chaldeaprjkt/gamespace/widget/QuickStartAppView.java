@@ -95,6 +95,8 @@ public class QuickStartAppView extends LinearLayout {
         mContext.getContentResolver().registerContentObserver(
                 Settings.System.getUriFor("quick_start_apps"), true, mObserver);
         mPackageManager = mContext.getPackageManager();
+        mActivityOptions = ActivityOptions.makeBasic();
+        mActivityOptions.setLaunchWindowingMode(WindowConfiguration.WINDOWING_MODE_FREEFORM);
     }
 
     private void updateAppIcons() {
@@ -138,17 +140,33 @@ public class QuickStartAppView extends LinearLayout {
     }
 
     private void launchAppInFreeformMode(String packageName) {
+        ActivityManager am = (ActivityManager) mContext.getSystemService(Context.ACTIVITY_SERVICE);
+        // force stop the app before launching in freeform to avoid ui glitches - follows legacy freeform behaviour
+        if (am != null) {
+            am.forceStopPackage(packageName);
+        }
+        WindowManager windowManager = (WindowManager) mContext.getSystemService(Context.WINDOW_SERVICE);
+        Display display = windowManager.getDefaultDisplay();
+        Point screenSize = new Point();
+        display.getSize(screenSize);
+        Configuration configuration = mContext.getResources().getConfiguration();
+
+        int centerX = screenSize.x / 2;
+        int centerY = screenSize.y / 2;
+        int width = Math.min(screenSize.x, screenSize.y) * 1 / 2;
+        int height = Math.max(screenSize.x, screenSize.y) * 1 / 2;
+        Rect launchBounds = new Rect(centerX - width / 2, centerY - height / 2, centerX + width / 2, centerY + height / 2);
+        
+        mActivityOptions.setLaunchBounds(launchBounds);
+        mActivityOptions.setTaskAlwaysOnTop(true);
+        mActivityOptions.setSplashScreenStyle(SplashScreen.SPLASH_SCREEN_STYLE_ICON);
+        mActivityOptions.setPendingIntentBackgroundActivityStartMode(MODE_BACKGROUND_ACTIVITY_START_ALLOWED);
+        mActivityOptions.setPendingIntentBackgroundActivityLaunchAllowedByPermission(true);
+        
         try {
-            PackageManager packageManager = mContext.getPackageManager();
-            Intent launchIntent = packageManager.getLaunchIntentForPackage(packageName);
-            if (launchIntent != null) {
-                String activityName = launchIntent.getComponent().getClassName();
-                Intent freeformIntent = new Intent("com.libremobileos.freeform.START_FREEFORM")
-                        .setPackage("com.libremobileos.freeform")
-                        .putExtra("packageName", packageName)
-                        .putExtra("activityName", activityName)
-                        .putExtra("userId", UserHandle.myUserId());
-                mContext.sendBroadcast(freeformIntent);
+            Intent startAppIntent = mPackageManager.getLaunchIntentForPackage(packageName);
+            if (startAppIntent != null) {
+                mContext.startActivity(startAppIntent, mActivityOptions.toBundle());
             }
         } catch (Exception e) {}
     }
