@@ -43,6 +43,7 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 import android.window.SplashScreen;
 
 import androidx.annotation.Nullable;
@@ -59,6 +60,8 @@ import java.util.HashMap;
 import java.util.List;
 
 import io.chaldeaprjkt.gamespace.R;
+
+import com.android.internal.util.NTAppLockerHelper;
 
 public class QuickStartAppView extends LinearLayout {
     private RecyclerView recyclerView;
@@ -140,10 +143,14 @@ public class QuickStartAppView extends LinearLayout {
     }
 
     private void launchAppInFreeformMode(String packageName) {
-        ActivityManager am = (ActivityManager) mContext.getSystemService(Context.ACTIVITY_SERVICE);
-        // force stop the app before launching in freeform to avoid ui glitches - follows legacy freeform behaviour
-        if (am != null) {
-            am.forceStopPackage(packageName);
+        NTAppLockerHelper.get().init();
+        if (NTAppLockerHelper.get().isAppLocked(packageName)) {
+            Toast.makeText(
+                mContext,
+                mContext.getString(R.string.app_locked_message),
+                Toast.LENGTH_SHORT
+            ).show();
+            return;
         }
         WindowManager windowManager = (WindowManager) mContext.getSystemService(Context.WINDOW_SERVICE);
         Display display = windowManager.getDefaultDisplay();
