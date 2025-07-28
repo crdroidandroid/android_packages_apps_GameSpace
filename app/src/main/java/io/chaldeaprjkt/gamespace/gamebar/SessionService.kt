@@ -17,7 +17,6 @@
 package io.chaldeaprjkt.gamespace.gamebar
 
 import android.annotation.SuppressLint
-import android.app.ActivityTaskManager
 import android.app.GameManager
 import android.app.Service
 import android.content.ComponentName
@@ -35,36 +34,28 @@ import io.chaldeaprjkt.gamespace.data.SystemSettings
 import io.chaldeaprjkt.gamespace.utils.GameModeUtils
 import io.chaldeaprjkt.gamespace.utils.ScreenUtils
 import io.chaldeaprjkt.gamespace.utils.isServiceRunning
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.Job
-import kotlinx.coroutines.launch
+import kotlinx.coroutines.*
 import javax.inject.Inject
 
 @AndroidEntryPoint(Service::class)
 class SessionService : Hilt_SessionService() {
-    @Inject
-    lateinit var appSettings: AppSettings
+    @Inject lateinit var appSettings: AppSettings
+    @Inject lateinit var settings: SystemSettings
+    @Inject lateinit var session: GameSession
+    @Inject lateinit var screenUtils: ScreenUtils
+    @Inject lateinit var gameModeUtils: GameModeUtils
+    @Inject lateinit var callListener: CallListener
 
-    @Inject
-    lateinit var settings: SystemSettings
+    private val serviceJob = SupervisorJob()
+    private val scope = CoroutineScope(serviceJob + Dispatchers.Main)
 
-    @Inject
-    lateinit var session: GameSession
-
-    @Inject
-    lateinit var screenUtils: ScreenUtils
-
-    @Inject
-    lateinit var gameModeUtils: GameModeUtils
-
-    @Inject
-    lateinit var callListener: CallListener
-
-    private val scope = CoroutineScope(Job() + Dispatchers.IO)
     private var isRunning = false
-    
     private var tarketPkgName = ""
+
+    private lateinit var gameBar: GameBarService
+    private lateinit var gameManager: GameManager
+    private var isBarConnected = false
+    private var commandIntent: Intent? = null
 
     private val gameBarConnection = object : ServiceConnection {
         override fun onServiceConnected(name: ComponentName?, service: IBinder?) {
@@ -79,19 +70,16 @@ class SessionService : Hilt_SessionService() {
         }
     }
 
-    private lateinit var gameBar: GameBarService
-    private lateinit var gameManager: GameManager
-    private var isBarConnected = false
-    private var commandIntent: Intent? = null
-
     @SuppressLint("WrongConstant")
     override fun onCreate() {
         super.onCreate()
         isRunning = true
-        try {
-            screenUtils.bind()
-        } catch (e: RemoteException) {
-            Log.e(TAG, "Error binding ScreenUtils: $e")
+        scope.launch(Dispatchers.IO) {
+            try {
+                screenUtils.bind()
+            } catch (e: RemoteException) {
+                Log.e(TAG, "Error binding ScreenUtils: $e")
+            }
         }
         gameManager = getSystemService(Context.GAME_SERVICE) as GameManager
         gameModeUtils.bind(gameManager)
@@ -134,19 +122,25 @@ class SessionService : Hilt_SessionService() {
     override fun onBind(intent: Intent?): IBinder? = null
 
     override fun onDestroy() {
-        if (isBarConnected) {
-            gameBar.onGameLeave()
-            unbindService(gameBarConnection)
+        scope.launch(Dispatchers.IO) {
+            if (isBarConnected) {
+                withContext(Dispatchers.Main) {
+                    gameBar.onGameLeave()
+                    unbindService(gameBarConnection)
+                }
+            }
+            session.unregister()
+            gameModeUtils.unbind()
+            screenUtils.unbind()
+            callListener.destroy()
+
+            tarketPkgName = ""
+            isRunning = false
+            withContext(Dispatchers.Main) {
+                super@SessionService.onDestroy()
+            }
         }
-
-        session.unregister()
-        gameModeUtils.unbind()
-        screenUtils.unbind()
-        callListener.destroy()
-
-        tarketPkgName = ""
-        isRunning = false
-        super.onDestroy()
+        serviceJob.cancel()
     }
 
     private fun onGameBarReady() {
@@ -156,30 +150,36 @@ class SessionService : Hilt_SessionService() {
             return
         }
 
-        try {
-            commandIntent?.let { intent ->
+        scope.launch(Dispatchers.IO) {
+            try {
+                val intent = commandIntent ?: run {
+                    Log.e(TAG, "Command Intent is uninitialized. Stopping service.")
+                    stopSelf()
+                    return@launch
+                }
+
                 val app = intent.getStringExtra(EXTRA_PACKAGE_NAME) ?: run {
                     Log.e(TAG, "App package name missing in intent. Stopping service.")
                     stopSelf()
-                    return
+                    return@launch
                 }
+
                 tarketPkgName = app
                 session.unregister()
                 session.register(app)
                 applyGameModeConfig(app)
-                gameBar.onGameStart()
-                screenUtils.stayAwake = appSettings.stayAwake
-                screenUtils.lockGesture = appSettings.lockGesture
-                screenUtils.bypassCharge(true)
-            } ?: run {
-                Log.e(TAG, "Command Intent is uninitialized. Stopping service.")
+
+                withContext(Dispatchers.Main) {
+                    gameBar.onGameStart()
+                    screenUtils.stayAwake = appSettings.stayAwake
+                    screenUtils.lockGesture = appSettings.lockGesture
+                    screenUtils.bypassCharge(true)
+                    callListener.init()
+                }
+            } catch (e: Exception) {
+                Log.e(TAG, "Error during GameBar initialization: $e")
                 stopSelf()
             }
-
-            callListener.init()
-        } catch (e: Exception) {
-            Log.e(TAG, "Error during GameBar initialization: $e")
-            stopSelf()
         }
     }
 
@@ -187,13 +187,11 @@ class SessionService : Hilt_SessionService() {
         if (isBarConnected) {
             return START_STICKY
         }
-
         if (tarketPkgName.isBlank()) {
             Log.w(TAG, "Missing target package name. Cannot recover. Stopping.")
             stopSelf()
             return START_NOT_STICKY
         }
-
         commandIntent = Intent(START).putExtra(EXTRA_PACKAGE_NAME, tarketPkgName)
         startGameBar()
         return START_STICKY
@@ -203,10 +201,10 @@ class SessionService : Hilt_SessionService() {
         val preferred = settings.userGames.firstOrNull { it.packageName == app }
             ?.mode ?: GameModeUtils.defaultPreferredMode
         gameModeUtils.activeGame = settings.userGames.firstOrNull { it.packageName == app }
-        scope.launch {
+        scope.launch(Dispatchers.IO) {
             gameManager.getAvailableGameModes(app)
                 .takeIf { it.contains(preferred) }
-                ?.run { gameManager.setGameMode(app, preferred) }
+                ?.let { gameManager.setGameMode(app, preferred) }
         }
     }
 

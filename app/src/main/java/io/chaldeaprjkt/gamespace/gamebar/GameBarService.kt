@@ -43,7 +43,6 @@ import io.chaldeaprjkt.gamespace.utils.*
 import io.chaldeaprjkt.gamespace.widget.MenuSwitcher
 import io.chaldeaprjkt.gamespace.widget.PanelView
 import javax.inject.Inject
-import kotlin.reflect.KProperty0
 
 @AndroidEntryPoint(Service::class)
 class GameBarService : Hilt_GameBarService() {
@@ -115,17 +114,15 @@ class GameBarService : Hilt_GameBarService() {
                     setupPanelView()
                 }
                 if (!rootPanelView.isAttachedToWindow) {
-                    wm.addView(rootPanelView, panelLayoutParam)
+                    runCatching { wm.addView(rootPanelView, panelLayoutParam) }
                     rootPanelView.fadeIn()
                 }
             } else {
-                if (safeAttached(::rootPanelView.isInitialized, rootPanelView)) {
+                runCatching {
                     rootPanelView.fadeOut {
                         rootPanelView.visibility = View.INVISIBLE
                         handler.postDelayed({
-                            runCatching {
-                                wm.removeView(rootPanelView)
-                            }.onFailure { it.printStackTrace() }
+                            runCatching { wm.removeView(rootPanelView) }
                         }, 50)
                     }
                 }
@@ -219,17 +216,13 @@ class GameBarService : Hilt_GameBarService() {
 
         handler.post {
             if (!::rootBarView.isInitialized) return@post
-            if (safeAttached(::rootBarView.isInitialized, rootBarView)) {
-                isGameStarting = false
-                return@post
-            }
-
-            shouldClose = false
-            rootBarView.isVisible = false
-            rootBarView.alpha = 0f
-            wm.addView(rootBarView, barLayoutParam)
-            handler.postDelayed(firstPaint, 500)
-            startForegroundService()
+            runCatching {
+                wm.addView(rootBarView, barLayoutParam)
+                rootBarView.isVisible = false
+                rootBarView.alpha = 0f
+                handler.postDelayed(firstPaint, 500)
+                startForegroundService()
+            }.onFailure { it.printStackTrace() }
             isGameStarting = false
         }
     }
@@ -238,17 +231,8 @@ class GameBarService : Hilt_GameBarService() {
         shouldClose = true
         handler.removeCallbacksAndMessages(null)
 
-        runCatching {
-            if (safeAttached(::rootPanelView.isInitialized, rootPanelView)) {
-                wm.removeViewImmediate(rootPanelView)
-            }
-        }
-
-        runCatching {
-            if (safeAttached(::rootBarView.isInitialized, rootBarView)) {
-                wm.removeViewImmediate(rootBarView)
-            }
-        }
+        runCatching { wm.removeViewImmediate(rootPanelView) }
+        runCatching { wm.removeViewImmediate(rootBarView) }
 
         stopForeground(true)
         stopSelf()
@@ -256,9 +240,7 @@ class GameBarService : Hilt_GameBarService() {
 
     private fun updateLayout(update: WindowManager.LayoutParams.() -> Unit = {}) {
         barLayoutParam.update()
-        if (rootBarView.isAttachedToWindow) {
-            wm.updateViewLayout(rootBarView, barLayoutParam)
-        }
+        runCatching { wm.updateViewLayout(rootBarView, barLayoutParam) }
     }
 
     private fun initActions() {
@@ -319,9 +301,7 @@ class GameBarService : Hilt_GameBarService() {
         updateContainerGaps()
         menuSwitcher.showFps = if (barExpanded) false else appSettings.showFps
         menuSwitcher.updateIconState(barExpanded, barLayoutParam.x)
-        if (safeAttached(::rootBarView.isInitialized, rootBarView)) {
-            wm.updateViewLayout(rootBarView, barLayoutParam)
-        }
+        runCatching { wm.updateViewLayout(rootBarView, barLayoutParam) }
     }
 
     private fun setupPanelView() {
@@ -362,9 +342,7 @@ class GameBarService : Hilt_GameBarService() {
     }
 
     private fun menuSwitcherButton() {
-        menuSwitcher.setOnClickListener {
-            barExpanded = !barExpanded
-        }
+        menuSwitcher.setOnClickListener { barExpanded = !barExpanded }
 
         menuSwitcher.registerDraggableTouchListener(
             initPoint = { Point(barLayoutParam.x, barLayoutParam.y) },
@@ -432,6 +410,7 @@ class GameBarService : Hilt_GameBarService() {
     }
 
     fun View.fadeIn(duration: Long = 300L) {
+        animate().cancel()
         if (!isVisible || alpha < 1f) {
             alpha = 0f
             isVisible = true
@@ -440,18 +419,19 @@ class GameBarService : Hilt_GameBarService() {
     }
 
     fun View.fadeOut(duration: Long = 300L, endAction: () -> Unit = {}) {
+        animate().cancel()
         if (isVisible && alpha > 0f) {
-            animate().alpha(0f).setDuration(duration).withEndAction(endAction).start()
+            animate()
+                .alpha(0f)
+                .setDuration(duration)
+                .withEndAction {
+                    if (isAttachedToWindow) isVisible = false
+                    endAction()
+                }
+                .start()
         } else {
             endAction()
         }
-    }
-    
-    fun <T : View> safeAttached(initialized: Boolean, view: T): Boolean {
-        if (!initialized) {
-            return false
-        }
-        return view.isAttachedToWindow
     }
 
     companion object {
