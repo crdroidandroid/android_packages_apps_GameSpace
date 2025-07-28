@@ -168,7 +168,6 @@ public class QuickStartAppView extends LinearLayout {
         mActivityOptions.setTaskAlwaysOnTop(true);
         mActivityOptions.setSplashScreenStyle(SplashScreen.SPLASH_SCREEN_STYLE_ICON);
         mActivityOptions.setPendingIntentBackgroundActivityStartMode(MODE_BACKGROUND_ACTIVITY_START_ALLOWED);
-        mActivityOptions.setPendingIntentBackgroundActivityLaunchAllowedByPermission(true);
         
         try {
             Intent startAppIntent = mPackageManager.getLaunchIntentForPackage(packageName);
