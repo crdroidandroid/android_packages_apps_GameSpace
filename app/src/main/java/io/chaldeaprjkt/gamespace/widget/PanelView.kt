@@ -15,24 +15,24 @@
  */
 package io.chaldeaprjkt.gamespace.widget
 
-import android.animation.ValueAnimator
 import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
 import android.os.BatteryManager
 import android.util.AttributeSet
 import android.view.LayoutInflater
-import android.widget.TextView
-import android.view.animation.DecelerateInterpolator
-import android.view.View
 import android.view.ViewGroup
-import android.view.WindowInsets
+import android.view.animation.DecelerateInterpolator
 import android.widget.LinearLayout
-import androidx.core.view.doOnLayout
+import android.widget.TextView
 import io.chaldeaprjkt.gamespace.R
 import io.chaldeaprjkt.gamespace.utils.di.ServiceViewEntryPoint
-import io.chaldeaprjkt.gamespace.utils.dp
 import io.chaldeaprjkt.gamespace.utils.entryPointOf
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.cancel
+import kotlinx.coroutines.launch
 
 class PanelView @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null
@@ -40,37 +40,47 @@ class PanelView @JvmOverloads constructor(
 
     private val appSettings by lazy { context.entryPointOf<ServiceViewEntryPoint>().appSettings() }
 
+    private var uiScope: CoroutineScope? = null
+
     init {
         LayoutInflater.from(context).inflate(R.layout.panel_view, this, true)
         isClickable = true
         isFocusable = true
     }
-    
-    fun updateTranslationY() {
-        val targetMargin = appSettings.y
-        val params = layoutParams as ViewGroup.MarginLayoutParams
-        val animator = ValueAnimator.ofInt(params.topMargin, targetMargin)
-        animator.duration = 300L
-        animator.interpolator = DecelerateInterpolator()
-        animator.addUpdateListener { valueAnimator ->
-            params.topMargin = valueAnimator.animatedValue as Int
+
+    fun animatePanelView() {
+        uiScope?.launch {
+            val params = layoutParams as ViewGroup.MarginLayoutParams
+            params.topMargin = appSettings.y
             layoutParams = params
+            alpha = 0f
+            animate()
+                .alpha(1f)
+                .setDuration(300L)
+                .setInterpolator(DecelerateInterpolator())
+                .start()
         }
-        animator.start()
     }
 
     override fun onAttachedToWindow() {
         super.onAttachedToWindow()
-        updateTranslationY()
+        uiScope = CoroutineScope(Dispatchers.Main + Job())
+        animatePanelView()
         batteryTemperature()
+    }
+
+    override fun onDetachedFromWindow() {
+        super.onDetachedFromWindow()
+        uiScope?.cancel()
+        uiScope = null
     }
 
     private fun batteryTemperature() {
         val intent: Intent =
             context.registerReceiver(null, IntentFilter(Intent.ACTION_BATTERY_CHANGED))!!
-        val temp = intent.getIntExtra(BatteryManager.EXTRA_TEMPERATURE, 0).toInt() / 10
+        val temp = intent.getIntExtra(BatteryManager.EXTRA_TEMPERATURE, 0) / 10
         val degree = "\u2103"
-        val batteryTemp:TextView = requireViewById(R.id.batteryTemp)
+        val batteryTemp: TextView = requireViewById(R.id.batteryTemp)
         batteryTemp.text = "$temp$degree"
     }
 }
