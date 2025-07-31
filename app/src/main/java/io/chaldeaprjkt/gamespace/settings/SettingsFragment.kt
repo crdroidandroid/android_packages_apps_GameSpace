@@ -29,15 +29,19 @@ import androidx.preference.PreferenceCategory
 import androidx.preference.PreferenceFragmentCompat
 import dagger.hilt.android.AndroidEntryPoint
 import io.chaldeaprjkt.gamespace.R
+import io.chaldeaprjkt.gamespace.data.AppSettings
 import io.chaldeaprjkt.gamespace.preferences.AppListPreferences
 import io.chaldeaprjkt.gamespace.preferences.appselector.AppSelectorActivity
 import io.chaldeaprjkt.gamespace.preferences.QuickStartAppPreference
 import io.chaldeaprjkt.gamespace.preferences.QuickStartAppPreferenceDialogFragment
+import javax.inject.Inject
 
 @AndroidEntryPoint(PreferenceFragmentCompat::class)
 class SettingsFragment : Hilt_SettingsFragment() {
 
     private var apps: AppListPreferences? = null
+
+    @Inject lateinit var appSettings: AppSettings
 
     private val selectorResult =
         registerForActivityResult(
@@ -92,6 +96,14 @@ class SettingsFragment : Hilt_SettingsFragment() {
         if (preference is QuickStartAppPreference) {
             val dialogFragment = QuickStartAppPreferenceDialogFragment.newInstance(preference.key)
             dialogFragment.setTargetFragment(this, 0)
+            dialogFragment.setListener(object : QuickStartAppPreferenceDialogFragment.QuickStartAppListener {
+                override fun getSavedQuickStartApps(): String {
+                    return appSettings.quickStartApps ?: ""
+                }
+                override fun saveQuickStartApps(apps: String) {
+                    appSettings.quickStartApps = apps
+                }
+            })
             dialogFragment.show(parentFragmentManager, "QuickStartAppPreferenceDialogFragment")
         } else {
             super.onDisplayPreferenceDialog(preference)

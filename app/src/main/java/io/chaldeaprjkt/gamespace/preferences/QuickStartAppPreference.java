@@ -15,12 +15,12 @@
  */
 package io.chaldeaprjkt.gamespace.preferences;
 
-import android.content.Context;
-import android.content.pm.ApplicationInfo;
-import android.content.pm.PackageManager;
+import android.content.*;
+import android.content.pm.*;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import androidx.preference.DialogPreference;
+import androidx.preference.PreferenceManager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,25 +33,44 @@ public class QuickStartAppPreference extends DialogPreference {
 
     public QuickStartAppPreference(Context context, AttributeSet attrs) {
         super(context, attrs);
-        loadInstalledUserApps(context);
+    }
+
+    @Override
+    protected void onAttachedToHierarchy(PreferenceManager preferenceManager) {
+        super.onAttachedToHierarchy(preferenceManager);
+        loadInstalledUserApps(getContext());
     }
 
     private void loadInstalledUserApps(Context context) {
+        if (context == null) return;
+
         PackageManager pm = context.getPackageManager();
-        List<ApplicationInfo> apps = pm.getInstalledApplications(PackageManager.GET_META_DATA);
+        Intent intent = new Intent(Intent.ACTION_MAIN, null);
+        intent.addCategory(Intent.CATEGORY_LAUNCHER);
+
+        List<ResolveInfo> resolveInfos = pm.queryIntentActivities(intent, 0);
         List<String> packageNames = new ArrayList<>();
         List<String> names = new ArrayList<>();
         List<Drawable> icons = new ArrayList<>();
-        for (ApplicationInfo app : apps) {
-            if ((app.flags & ApplicationInfo.FLAG_SYSTEM) == 0) {
-                packageNames.add(app.packageName);
-                names.add(pm.getApplicationLabel(app).toString());
-                icons.add(pm.getApplicationIcon(app));
+
+        for (ResolveInfo resolveInfo : resolveInfos) {
+            ActivityInfo activityInfo = resolveInfo.activityInfo;
+            if (activityInfo != null) {
+                String packageName = activityInfo.packageName;
+                try {
+                    ApplicationInfo appInfo = pm.getApplicationInfo(packageName, 0);
+                    packageNames.add(packageName);
+                    names.add(pm.getApplicationLabel(appInfo).toString());
+                    icons.add(pm.getApplicationIcon(appInfo));
+                } catch (PackageManager.NameNotFoundException e) {
+                }
             }
         }
+
         appPackageNames = packageNames.toArray(new String[0]);
         appNames = names.toArray(new String[0]);
         appIcons = icons.toArray(new Drawable[0]);
+
         sortAppsAlphabetically();
     }
 

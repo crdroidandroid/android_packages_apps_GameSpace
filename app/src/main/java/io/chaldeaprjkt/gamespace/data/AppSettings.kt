@@ -19,6 +19,7 @@ package io.chaldeaprjkt.gamespace.data
 
 import android.app.Service
 import android.content.Context
+import android.provider.Settings
 import android.view.WindowManager
 import androidx.preference.PreferenceManager
 import io.chaldeaprjkt.gamespace.utils.dp
@@ -73,6 +74,22 @@ class AppSettings @Inject constructor(private val context: Context) {
     var lockGesture
         get() = db.getBoolean(KEY_LOCK_GESTURE, false)
         set(value) = db.edit().putBoolean(KEY_LOCK_GESTURE, value).apply()
+        
+    var tileOrder: List<String>
+        get() = db.getString(KEY_TILE_ORDER, null)?.split(",")?.filter { it.isNotBlank() } ?: emptyList()
+        set(value) = db.edit().putString(KEY_TILE_ORDER, value.joinToString(",")).apply()
+
+    var brightnessEnabled: Boolean
+        get() = db.getBoolean(KEY_BRIGHTNESS_ENABLED, true)
+        set(value) = db.edit().putBoolean(KEY_BRIGHTNESS_ENABLED, value).apply()
+
+    var fpsGraphEnabled: Boolean
+        get() = db.getBoolean(KEY_FPS_GRAPH_ENABLED, true)
+        set(value) = db.edit().putBoolean(KEY_FPS_GRAPH_ENABLED, value).apply()
+        
+    var quickStartApps: String
+        get() = db.getString(KEY_QUICK_START_APPS, "") ?: ""
+        set(value) = db.edit().putString(KEY_QUICK_START_APPS, value).apply()
 
     companion object {
         const val KEY_AUTO_BRIGHTNESS_DISABLE = "gamespace_auto_brightness_disabled"
@@ -83,5 +100,9 @@ class AppSettings @Inject constructor(private val context: Context) {
         const val KEY_RINGER_MODE = "gamespace_ringer_mode"
         const val KEY_LOCK_GESTURE = "gamespace_lock_gesture"
         const val KEY_MENU_OPACITY = "gamespace_menu_opacity"
+        const val KEY_TILE_ORDER = "tile_order"
+        const val KEY_BRIGHTNESS_ENABLED = "brightness_enabled"
+        const val KEY_FPS_GRAPH_ENABLED = "fps_graph_enabled"
+        const val KEY_QUICK_START_APPS = "quick_start_apps"
     }
 }

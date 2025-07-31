@@ -15,10 +15,14 @@
  */
 package io.chaldeaprjkt.gamespace.preferences;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.view.ContextThemeWrapper;
+import android.view.ViewGroup;
+import android.widget.ListView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.preference.PreferenceDialogFragmentCompat;
@@ -31,7 +35,18 @@ import io.chaldeaprjkt.gamespace.R;
 
 public class QuickStartAppPreferenceDialogFragment extends PreferenceDialogFragmentCompat {
 
+    public interface QuickStartAppListener {
+        String getSavedQuickStartApps();
+        void saveQuickStartApps(String apps);
+    }
+
     private Set<String> selectedPackages = new HashSet<>();
+
+    private QuickStartAppListener listener;
+
+    public void setListener(QuickStartAppListener listener) {
+        this.listener = listener;
+    }
 
     public static QuickStartAppPreferenceDialogFragment newInstance(String key) {
         final QuickStartAppPreferenceDialogFragment fragment = new QuickStartAppPreferenceDialogFragment();
@@ -42,63 +57,98 @@ public class QuickStartAppPreferenceDialogFragment extends PreferenceDialogFragm
     }
 
     @Override
+    public Dialog onCreateDialog(Bundle savedInstanceState) {
+        Context context = new ContextThemeWrapper(requireContext(), R.style.Theme_AlertDialog);
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        onPrepareDialogBuilder(builder);
+        Dialog dialog = builder.create();
+        return dialog;
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        Dialog dialog = getDialog();
+        if (dialog instanceof AlertDialog) {
+            ListView listView = ((AlertDialog) dialog).getListView();
+            if (listView != null) {
+                int paddingVertical = 64;
+                listView.setPadding(
+                    listView.getPaddingLeft(),
+                    paddingVertical,
+                    listView.getPaddingRight(),
+                    paddingVertical
+                );
+                listView.setClipToPadding(false);
+            }
+        }
+        if (dialog != null && dialog.getWindow() != null) {
+            int maxHeight = (int) (getResources().getDisplayMetrics().heightPixels * 0.6);
+            dialog.getWindow().getDecorView().post(() -> {
+                int currentHeight = dialog.getWindow().getDecorView().getHeight();
+                if (currentHeight > maxHeight) {
+                    dialog.getWindow().setLayout(
+                        ViewGroup.LayoutParams.MATCH_PARENT,
+                        maxHeight
+                    );
+                }
+            });
+        }
+    }
+
+    @Override
     protected void onPrepareDialogBuilder(@NonNull AlertDialog.Builder builder) {
-        super.onPrepareDialogBuilder(builder);
         QuickStartAppPreference preference = (QuickStartAppPreference) getPreference();
         Context context = getContext();
-        if (preference == null || context == null) {
+        if (preference == null || context == null || listener == null) {
             return;
         }
-        String savedApps = Settings.System.getString(context.getContentResolver(), "quick_start_apps");
+
+        String savedApps = listener.getSavedQuickStartApps();
         if (savedApps != null && !savedApps.isEmpty()) {
             String[] savedAppsArray = savedApps.split(",");
             for (String app : savedAppsArray) {
                 selectedPackages.add(app);
             }
         }
+
         boolean[] checkedItems = new boolean[preference.getAppNames().length];
         String[] appPackageNames = preference.getAppPackageNames();
+
         for (int i = 0; i < appPackageNames.length; i++) {
             checkedItems[i] = selectedPackages.contains(appPackageNames[i]);
         }
+
         builder.setTitle(R.string.quick_start_apps_title)
-                .setMultiChoiceItems(preference.getAppNames(), checkedItems, new DialogInterface.OnMultiChoiceClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which, boolean isChecked) {
-                        String selectedApp = appPackageNames[which];
-                        if (isChecked) {
-                            selectedPackages.add(selectedApp);
-                        } else {
-                            selectedPackages.remove(selectedApp);
-                        }
-                    }
-                })
-                .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        saveSelectedApps(context);
-                    }
-                })
-                .setNegativeButton(android.R.string.cancel, null);
+            .setMultiChoiceItems(preference.getAppNames(), checkedItems, (dialog, which, isChecked) -> {
+                String selectedApp = appPackageNames[which];
+                if (isChecked) {
+                    selectedPackages.add(selectedApp);
+                } else {
+                    selectedPackages.remove(selectedApp);
+                }
+            })
+            .setPositiveButton(android.R.string.ok, (dialog, which) -> saveSelectedApps())
+            .setNegativeButton(android.R.string.cancel, null);
     }
 
     @Override
     public void onDialogClosed(boolean positiveResult) {}
 
-    private void saveSelectedApps(Context context) {
+    private void saveSelectedApps() {
         String[] selectedArray = selectedPackages.toArray(new String[0]);
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < selectedArray.length; i++) {
             sb.append(selectedArray[i]);
-
             if (i < selectedArray.length - 1) {
                 sb.append(",");
             }
         }
-        Settings.System.putString(context.getContentResolver(), "quick_start_apps", sb.toString());
+        String result = sb.toString();
+        listener.saveQuickStartApps(result);
         QuickStartAppPreference preference = (QuickStartAppPreference) getPreference();
         if (preference != null) {
-            preference.saveValue(sb.toString());
+            preference.saveValue(result);
         }
     }
 }

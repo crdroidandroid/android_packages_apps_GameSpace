@@ -25,6 +25,9 @@ import dagger.hilt.components.SingletonComponent
 import io.chaldeaprjkt.gamespace.data.AppSettings
 import io.chaldeaprjkt.gamespace.data.GameSession
 import io.chaldeaprjkt.gamespace.data.SystemSettings
+import io.chaldeaprjkt.gamespace.gamebar.brightness.*
+import io.chaldeaprjkt.gamespace.gamebar.fps.FpsInteractor
+import io.chaldeaprjkt.gamespace.gamebar.tiles.TileRepository
 import io.chaldeaprjkt.gamespace.utils.GameModeUtils
 import io.chaldeaprjkt.gamespace.utils.ScreenUtils
 import javax.inject.Singleton
@@ -61,4 +64,29 @@ object MainModule {
         systemSettings: SystemSettings,
         gson: Gson
     ) = GameSession(context, appSettings, systemSettings, gson)
+    
+    @Provides
+    @Singleton
+    fun provideBrightnessRepository(@ApplicationContext context: Context): BrightnessRepository =
+        BrightnessRepository(context)
+
+    @Provides
+    @Singleton
+    fun provideBrightnessInteractor(
+        repository: BrightnessRepository
+    ): BrightnessInteractor = BrightnessInteractor(repository)
+
+    @Provides
+    @Singleton
+    fun provideFpsInteractor(@ApplicationContext context: Context): FpsInteractor =
+        FpsInteractor(context)
+        
+    @Provides
+    @Singleton
+    fun provideTileRepository(
+        @ApplicationContext context: Context,
+        appSettings: AppSettings,
+        systemSettings: SystemSettings,
+        screenUtils: ScreenUtils
+    ): TileRepository = TileRepository(context, appSettings, systemSettings, screenUtils)
 }
