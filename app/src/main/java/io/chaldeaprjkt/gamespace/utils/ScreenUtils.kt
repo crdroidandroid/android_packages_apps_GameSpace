@@ -84,8 +84,8 @@ class ScreenUtils @Inject constructor(private val context: Context) {
         }
         remoteRecording = null
         if (isGestureLocked) {
-            Settings.System.putInt(context.contentResolver,
-                    "lock_gesture_status", 0)
+            Settings.Secure.putInt(context.contentResolver,
+                    "nt_game_mode_mistouch_prevention", 0)
             isGestureLocked = false
         }
         bypassCharge(false)

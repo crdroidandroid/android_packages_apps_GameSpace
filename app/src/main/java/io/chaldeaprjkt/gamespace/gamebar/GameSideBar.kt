@@ -97,7 +97,7 @@ class GameSidebar(
                 brightnessInteractor.start()
                 addViewSafely(panelView, panelLayoutParam)
                 panelView.fadeIn()
-            } else {
+            } else if (::panelView.isInitialized) {
                 panelView.fadeOut {
                     brightnessInteractor.dispose()
                     fpsInteractor.dispose()
