@@ -1027,7 +1027,7 @@ fun QuickStartAppIcon(
 fun launchAppInFreeformMode(context: Context, packageName: String) {
     val packageManager = context.packageManager
     val windowManager = context.getSystemService(Context.WINDOW_SERVICE) as WindowManager
-    NTAppLockerHelper.get().init()
+    NTAppLockerHelper.init(context)
     if (NTAppLockerHelper.get().isAppLocked(packageName)) {
         Toast.makeText(
             context,
