@@ -34,6 +34,7 @@ import io.chaldeaprjkt.gamespace.data.AppSettings
 import io.chaldeaprjkt.gamespace.data.SystemSettings
 import io.chaldeaprjkt.gamespace.utils.ScreenUtils
 import io.chaldeaprjkt.gamespace.R
+import kotlinx.coroutines.*
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -42,6 +43,10 @@ interface TileAction {
     val label: String
     val icon: ImageVector
     val isEnabled: Boolean
+
+    @Composable
+    fun observeEnabled(): State<Boolean>
+
     fun toggle()
 }
 
@@ -55,16 +60,19 @@ class ToggleableTile(
     id: String,
     label: String,
     icon: ImageVector,
-    private val getter: () -> Boolean,
+    private val state: MutableState<Boolean>,
     private val setter: (Boolean) -> Unit
 ) : BaseTile(id, label, icon) {
-    private var _enabled by mutableStateOf(getter())
-    override val isEnabled: Boolean get() = _enabled
+
+    override val isEnabled: Boolean get() = state.value
+
+    @Composable
+    override fun observeEnabled(): State<Boolean> = state
 
     override fun toggle() {
-        val newValue = !getter()
+        val newValue = !state.value
         setter(newValue)
-        _enabled = newValue 
+        state.value = newValue
     }
 }
 
@@ -74,7 +82,12 @@ class FixedActionTile(
     icon: ImageVector,
     private val action: () -> Unit
 ) : BaseTile(id, label, icon) {
+
     override val isEnabled: Boolean = false
+
+    @Composable
+    override fun observeEnabled(): State<Boolean> = rememberUpdatedState(false)
+
     override fun toggle() = action()
 }
 
@@ -89,13 +102,42 @@ class TileRepository @Inject constructor(
     private val notificationManager = context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
     private val telephonyManager = context.getSystemService(Context.TELEPHONY_SERVICE) as? TelephonyManager
 
+    val wifiState = mutableStateOf(wifiManager.isWifiEnabled)
+    val btState = mutableStateOf(BluetoothAdapter.getDefaultAdapter()?.isEnabled == true)
+    val dndState = mutableStateOf(
+        notificationManager.currentInterruptionFilter == NotificationManager.INTERRUPTION_FILTER_NONE
+    )
+    val autoRotateState = mutableStateOf(
+        Settings.System.getInt(context.contentResolver, Settings.System.ACCELEROMETER_ROTATION, 1) == 1
+    )
+    val airplaneModeState = mutableStateOf(
+        Settings.Global.getInt(context.contentResolver, Settings.Global.AIRPLANE_MODE_ON, 0) == 1
+    )
+    val mobileDataState = mutableStateOf(telephonyManager?.isDataEnabled ?: false)
+
+    private val pollingScope = CoroutineScope(Dispatchers.Default + SupervisorJob())
+
+    init {
+        pollingScope.launch {
+            while (isActive) {
+                wifiState.value = wifiManager.isWifiEnabled
+                btState.value = BluetoothAdapter.getDefaultAdapter()?.isEnabled == true
+                dndState.value = notificationManager.currentInterruptionFilter == NotificationManager.INTERRUPTION_FILTER_NONE
+                autoRotateState.value = Settings.System.getInt(context.contentResolver, Settings.System.ACCELEROMETER_ROTATION, 1) == 1
+                airplaneModeState.value = Settings.Global.getInt(context.contentResolver, Settings.Global.AIRPLANE_MODE_ON, 0) == 1
+                mobileDataState.value = telephonyManager?.isDataEnabled ?: false
+                delay(1000L)
+            }
+        }
+    }
+
     private val defaultTiles: List<TileAction> = buildList {
         add(
             ToggleableTile(
                 id = "notification",
                 label = "Danmaku",
                 icon = Icons.Default.Notifications,
-                getter = { appSettings.danmakuNotification },
+                state = mutableStateOf(appSettings.danmakuNotification),
                 setter = {
                     appSettings.danmakuNotification = it
                     systemSettings.headsup = !it
@@ -108,7 +150,7 @@ class TileRepository @Inject constructor(
                 id = "stay_awake",
                 label = "Stay Awake",
                 icon = Icons.Default.Bedtime,
-                getter = { appSettings.stayAwake },
+                state = mutableStateOf(appSettings.stayAwake),
                 setter = {
                     appSettings.stayAwake = it
                     screenUtils.stayAwake = it
@@ -121,7 +163,7 @@ class TileRepository @Inject constructor(
                 id = "wifi",
                 label = "Wi-Fi",
                 icon = Icons.Default.Wifi,
-                getter = { wifiManager.isWifiEnabled },
+                state = wifiState,
                 setter = { wifiManager.isWifiEnabled = it }
             )
         )
@@ -131,9 +173,7 @@ class TileRepository @Inject constructor(
                 id = "dnd",
                 label = "DND",
                 icon = Icons.Default.DoNotDisturb,
-                getter = {
-                    notificationManager.currentInterruptionFilter == NotificationManager.INTERRUPTION_FILTER_NONE
-                },
+                state = dndState,
                 setter = { enabled ->
                     notificationManager.setInterruptionFilter(
                         if (enabled) NotificationManager.INTERRUPTION_FILTER_NONE
@@ -148,7 +188,7 @@ class TileRepository @Inject constructor(
                 id = "fps_info",
                 label = "FPS Info",
                 icon = Icons.Default.BarChart,
-                getter = { appSettings.showFps },
+                state = mutableStateOf(appSettings.showFps),
                 setter = { appSettings.showFps = it }
             )
         )
@@ -158,12 +198,7 @@ class TileRepository @Inject constructor(
                 id = "auto_rotate",
                 label = "Auto Rotate",
                 icon = Icons.Default.ScreenRotation,
-                getter = {
-                    Settings.System.getInt(
-                        context.contentResolver,
-                        Settings.System.ACCELEROMETER_ROTATION, 1
-                    ) == 1
-                },
+                state = autoRotateState,
                 setter = {
                     Settings.System.putInt(
                         context.contentResolver,
@@ -207,12 +242,7 @@ class TileRepository @Inject constructor(
                 id = "airplane_mode",
                 label = "Airplane Mode",
                 icon = Icons.Default.AirplanemodeActive,
-                getter = {
-                    Settings.Global.getInt(
-                        context.contentResolver,
-                        Settings.Global.AIRPLANE_MODE_ON, 0
-                    ) == 1
-                },
+                state = airplaneModeState,
                 setter = {
                     Settings.Global.putInt(
                         context.contentResolver,
@@ -231,10 +261,7 @@ class TileRepository @Inject constructor(
                 id = "bluetooth",
                 label = "Bluetooth",
                 icon = Icons.Default.Bluetooth,
-                getter = {
-                    val adapter = BluetoothAdapter.getDefaultAdapter()
-                    adapter != null && adapter.isEnabled
-                },
+                state = btState,
                 setter = {
                     val adapter = BluetoothAdapter.getDefaultAdapter()
                     if (adapter != null) {
@@ -244,23 +271,16 @@ class TileRepository @Inject constructor(
             )
         )
 
-        val telephonyManager = context.getSystemService(Context.TELEPHONY_SERVICE) as? TelephonyManager
         if (telephonyManager != null && telephonyManager.phoneType != TelephonyManager.PHONE_TYPE_NONE) {
             add(
                 ToggleableTile(
                     id = "mobile_data",
                     label = "Mobile Data",
                     icon = Icons.Default.DataUsage,
-                    getter = {
+                    state = mobileDataState,
+                    setter = {
                         try {
-                            telephonyManager.isDataEnabled
-                        } catch (e: Exception) {
-                            false
-                        }
-                    },
-                    setter = { enabled ->
-                        try {
-                            telephonyManager.setDataEnabled(enabled)
+                            telephonyManager.setDataEnabled(it)
                         } catch (e: Exception) {
                             e.printStackTrace()
                         }
@@ -271,7 +291,7 @@ class TileRepository @Inject constructor(
     }
 
     private val tileOrderKey = "tile_order"
-    
+
     private val _tileOrder = mutableStateListOf<String>().apply {
         addAll(loadTileOrder())
     }
@@ -284,7 +304,7 @@ class TileRepository @Inject constructor(
             defaultTiles.find { it.id == id }
         }
 
-   val isBrightnessVisible: MutableState<Boolean> = mutableStateOf(appSettings.brightnessEnabled)
+    val isBrightnessVisible: MutableState<Boolean> = mutableStateOf(appSettings.brightnessEnabled)
 
     fun setBrightnessEnabled(enabled: Boolean) {
         isBrightnessVisible.value = enabled

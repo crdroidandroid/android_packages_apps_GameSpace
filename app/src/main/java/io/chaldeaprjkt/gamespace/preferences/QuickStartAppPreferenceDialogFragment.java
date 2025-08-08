@@ -57,46 +57,6 @@ public class QuickStartAppPreferenceDialogFragment extends PreferenceDialogFragm
     }
 
     @Override
-    public Dialog onCreateDialog(Bundle savedInstanceState) {
-        Context context = new ContextThemeWrapper(requireContext(), R.style.Theme_AlertDialog);
-        AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        onPrepareDialogBuilder(builder);
-        Dialog dialog = builder.create();
-        return dialog;
-    }
-
-    @Override
-    public void onStart() {
-        super.onStart();
-        Dialog dialog = getDialog();
-        if (dialog instanceof AlertDialog) {
-            ListView listView = ((AlertDialog) dialog).getListView();
-            if (listView != null) {
-                int paddingVertical = 64;
-                listView.setPadding(
-                    listView.getPaddingLeft(),
-                    paddingVertical,
-                    listView.getPaddingRight(),
-                    paddingVertical
-                );
-                listView.setClipToPadding(false);
-            }
-        }
-        if (dialog != null && dialog.getWindow() != null) {
-            int maxHeight = (int) (getResources().getDisplayMetrics().heightPixels * 0.6);
-            dialog.getWindow().getDecorView().post(() -> {
-                int currentHeight = dialog.getWindow().getDecorView().getHeight();
-                if (currentHeight > maxHeight) {
-                    dialog.getWindow().setLayout(
-                        ViewGroup.LayoutParams.MATCH_PARENT,
-                        maxHeight
-                    );
-                }
-            });
-        }
-    }
-
-    @Override
     protected void onPrepareDialogBuilder(@NonNull AlertDialog.Builder builder) {
         QuickStartAppPreference preference = (QuickStartAppPreference) getPreference();
         Context context = getContext();

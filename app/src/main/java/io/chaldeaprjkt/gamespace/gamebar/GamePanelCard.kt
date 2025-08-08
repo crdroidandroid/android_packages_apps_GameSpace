@@ -626,7 +626,7 @@ fun TileItem(
 
 @Composable
 fun TileButton(tile: TileAction, modifier: Modifier = Modifier) {
-    val isEnabled = tile.isEnabled
+    val isEnabled by tile.observeEnabled()
     val bgColor = if (isEnabled) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.surface
     val fgColor = if (isEnabled) MaterialTheme.colorScheme.surface else MaterialTheme.colorScheme.primary
 
