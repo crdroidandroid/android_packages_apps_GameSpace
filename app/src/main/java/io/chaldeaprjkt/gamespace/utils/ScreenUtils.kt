@@ -61,6 +61,36 @@ class ScreenUtils @Inject constructor(private val context: Context) {
     val recorder: IRemoteRecording? get() = remoteRecording
 
     private var isGestureLocked = false
+    
+    val resolver get() = context.contentResolver
+    
+    val smartChargeByUser get() = Settings.System.getIntForUser(
+        resolver, "smart_charge_by_user", 0, UserHandle.USER_CURRENT
+    ) == 1
+
+    val bypassEnabled get() = Settings.System.getIntForUser(
+        resolver, "bypass_charge_enabled", 0, UserHandle.USER_CURRENT
+    ) == 1
+
+    val battLevel: Int
+        get() {
+            val batteryIntent = context.registerReceiver(
+                null, android.content.IntentFilter(Intent.ACTION_BATTERY_CHANGED)
+            )
+            return batteryIntent?.getIntExtra(android.os.BatteryManager.EXTRA_LEVEL, -1) ?: -1
+        }
+
+    var smartChargeLvl: Int
+        get() = SystemProperties.getInt("persist.sys.smart_charge_level", 100)
+        set(value) {
+            SystemProperties.set("persist.sys.smart_charge_level", value.toString())
+        }
+
+    var bypassActive: Boolean
+        get() = SystemProperties.getInt("persist.sys.gs_charge_bypass_active", 0) == 1
+        set(value) {
+            SystemProperties.set("persist.sys.gs_charge_bypass_active", if (value) "1" else "0")
+        }
 
     fun bind() {
         isRecorderBound = context.bindServiceAsUser(Intent().apply {
@@ -83,12 +113,8 @@ class ScreenUtils @Inject constructor(private val context: Context) {
             context.unbindService(recorderConnection)
         }
         remoteRecording = null
-        if (isGestureLocked) {
-            Settings.Secure.putInt(context.contentResolver,
-                    "nt_game_mode_mistouch_prevention", 0)
-            isGestureLocked = false
-        }
-        bypassCharge(false)
+        lockGesture = false
+        bypassCharge = false
     }
 
     fun takeScreenshot(onComplete: ((Uri?) -> Unit)? = null) {
@@ -119,43 +145,16 @@ class ScreenUtils @Inject constructor(private val context: Context) {
             field = enable
             isGestureLocked = enable
         }
-        
-    fun getBatteryLevel(): Int {
-        val batteryIntent = context.registerReceiver(null, android.content.IntentFilter(Intent.ACTION_BATTERY_CHANGED))
-        return batteryIntent?.getIntExtra(android.os.BatteryManager.EXTRA_LEVEL, -1) ?: -1
-    }
 
-    fun bypassCharge(enable: Boolean) {
-        val bypassEnabledByUser = Settings.System.getIntForUser(
-            context.contentResolver, "smart_charge_by_user", 0,
-            UserHandle.USER_CURRENT
-        ) == 1
-        val autoBypassEnabled = Settings.System.getIntForUser(
-            context.contentResolver, "bypass_charge_enabled", 0,
-            UserHandle.USER_CURRENT
-        ) == 1
-
-        if (!autoBypassEnabled) return
-
-        SystemProperties.set(
-            "persist.sys.battery_health_bypass_enabled",
-            if (enable) "true" else "false"
-        )
-
-        SystemProperties.set(
-            "persist.sys.battery_health_limit_bypass_level",
-            if (enable) getBatteryLevel().toString() else "80"
-        )
-        
-        if (bypassEnabledByUser) return
-
-        Settings.System.putIntForUser(
-            context.contentResolver,
-            "persist.sys.battery_health_limit_charge",
-            if (enable) 1 else 0,
-            UserHandle.USER_CURRENT
-        )
-        SystemProperties.set("persist.sys.battery_health_limit_charge", if (enable) "true" else "false")
-    }
-
+    var bypassCharge: Boolean
+        get() = bypassActive
+        set(enable) {
+            if (!bypassEnabled) return
+            bypassActive = enable
+            smartChargeLvl = when {
+                enable -> battLevel
+                smartChargeByUser -> 80
+                else -> 100
+            }
+        }
 }

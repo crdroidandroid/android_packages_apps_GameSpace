@@ -148,7 +148,7 @@ class SessionService : Hilt_SessionService() {
         gameBar.onGameStart()
         screenUtils.stayAwake = appSettings.stayAwake
         screenUtils.lockGesture = appSettings.lockGesture
-        screenUtils.bypassCharge(true)
+        screenUtils.bypassCharge = true
         callListener.init()
     }
 
