@@ -194,6 +194,13 @@ fun PanelContent(
     val tiles by remember { derivedStateOf { tileRepository.tiles } }
     var expanded by remember { mutableStateOf(false) }
 
+    LaunchedEffect(Unit) {
+        while (true) {
+            tileRepository.refreshStates()
+            delay(3000L)
+        }
+    }
+
     Column(
         modifier = modifier.padding(start = 4.dp, end = 4.dp, bottom = 0.dp),
         verticalArrangement = Arrangement.spacedBy(12.dp)

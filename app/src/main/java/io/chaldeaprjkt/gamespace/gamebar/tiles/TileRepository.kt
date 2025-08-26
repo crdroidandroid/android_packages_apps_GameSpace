@@ -115,20 +115,13 @@ class TileRepository @Inject constructor(
     )
     val mobileDataState = mutableStateOf(telephonyManager?.isDataEnabled ?: false)
 
-    private val pollingScope = CoroutineScope(Dispatchers.Default + SupervisorJob())
-
-    init {
-        pollingScope.launch {
-            while (isActive) {
-                wifiState.value = wifiManager.isWifiEnabled
-                btState.value = BluetoothAdapter.getDefaultAdapter()?.isEnabled == true
-                dndState.value = notificationManager.currentInterruptionFilter == NotificationManager.INTERRUPTION_FILTER_NONE
-                autoRotateState.value = Settings.System.getInt(context.contentResolver, Settings.System.ACCELEROMETER_ROTATION, 1) == 1
-                airplaneModeState.value = Settings.Global.getInt(context.contentResolver, Settings.Global.AIRPLANE_MODE_ON, 0) == 1
-                mobileDataState.value = telephonyManager?.isDataEnabled ?: false
-                delay(1000L)
-            }
-        }
+    fun refreshStates() {
+        wifiState.value = wifiManager.isWifiEnabled
+        btState.value = BluetoothAdapter.getDefaultAdapter()?.isEnabled == true
+        dndState.value = notificationManager.currentInterruptionFilter == NotificationManager.INTERRUPTION_FILTER_NONE
+        autoRotateState.value = Settings.System.getInt(context.contentResolver, Settings.System.ACCELEROMETER_ROTATION, 1) == 1
+        airplaneModeState.value = Settings.Global.getInt(context.contentResolver, Settings.Global.AIRPLANE_MODE_ON, 0) == 1
+        mobileDataState.value = telephonyManager?.isDataEnabled ?: false
     }
 
     private val defaultTiles: List<TileAction> = buildList {
