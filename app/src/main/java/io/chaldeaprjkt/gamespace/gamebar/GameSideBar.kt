@@ -346,12 +346,14 @@ class GameSidebar(
                 isVisible = false
                 return
             }
-
             recorder.addRecordingCallback(object : IRecordingCallback.Stub() {
-                override fun onRecordingStart() { handler.post { isSelected = true } }
-                override fun onRecordingEnd() { handler.post { isSelected = false } }
+                override fun onRecordingStart() {
+                    this@apply.post { isSelected = true }
+                }
+                override fun onRecordingEnd() {
+                    this@apply.post { isSelected = false }
+                }
             })
-
             setOnClickListener {
                 if (!recorder.isStarting) {
                     if (!recorder.isRecording) recorder.startRecording() else recorder.stopRecording()

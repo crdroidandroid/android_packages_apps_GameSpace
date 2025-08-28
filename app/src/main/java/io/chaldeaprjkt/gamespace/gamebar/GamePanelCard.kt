@@ -191,11 +191,11 @@ fun PanelContent(
     onEditClick: () -> Unit,
     modifier: Modifier = Modifier
 ) {
-    val tiles by remember { derivedStateOf { tileRepository.tiles } }
+    val tiles = tileRepository.tiles
     var expanded by remember { mutableStateOf(false) }
 
     LaunchedEffect(Unit) {
-        while (true) {
+        while (isActive) {
             tileRepository.refreshStates()
             delay(3000L)
         }
@@ -622,10 +622,10 @@ fun TileItem(
                 tint = MaterialTheme.colorScheme.onSurface
             )
             Text(
-                modifier = Modifier.basicMarquee(),
                 text = tile.label,
                 style = MaterialTheme.typography.bodyMedium,
-                maxLines = 1
+                maxLines = 1,
+                overflow = TextOverflow.Ellipsis
             )
         }
     }
@@ -657,7 +657,8 @@ fun TileButton(tile: TileAction, modifier: Modifier = Modifier) {
             fontSize = 12.sp,
             color = fgColor,
             maxLines = 1,
-            modifier = Modifier.weight(1f).basicMarquee()
+            modifier = Modifier.weight(1f),
+            overflow = TextOverflow.Ellipsis
         )
     }
 }
@@ -671,9 +672,8 @@ fun BrightnessSlider(interactor: BrightnessInteractor) {
     var sliderPosition by remember { mutableFloatStateOf(0.5f) }
     var isSyncingFromSystem by remember { mutableStateOf(false) }
 
-    LaunchedEffect(brightnessInfo) {
+    val targetSliderPosition = remember(brightnessInfo) {
         brightnessInfo?.let { info ->
-            isSyncingFromSystem = true
             val gamma = convertLinearToGammaFloat(
                 info.brightness,
                 info.brightnessMinimum,
@@ -684,8 +684,17 @@ fun BrightnessSlider(interactor: BrightnessInteractor) {
                 GAMMA_SPACE_MIN.toFloat(),
                 GAMMA_SPACE_MAX.toFloat()
             )
-            sliderPosition = percent.toFloat()
-            isSyncingFromSystem = false
+            percent.toFloat()
+        }
+    }
+
+    LaunchedEffect(targetSliderPosition) {
+        targetSliderPosition?.let { percent ->
+            if (sliderPosition != percent) {
+                isSyncingFromSystem = true
+                sliderPosition = percent
+                isSyncingFromSystem = false
+            }
         }
     }
 
@@ -704,11 +713,9 @@ fun BrightnessSlider(interactor: BrightnessInteractor) {
         )
 
         IconButton(
-            onClick = {
-                interactor.toggleAutoMode()
-            },
-            enabled = brightnessInfo != null && isAuto != null,
-            modifier = Modifier.padding(start = 8.dp, end = 0.dp)
+            onClick = { interactor.toggleAutoMode() },
+            enabled = brightnessInfo != null,
+            modifier = Modifier.padding(start = 8.dp)
         ) {
             Icon(
                 imageVector = if (isAuto == true) Icons.Default.BrightnessAuto else Icons.Default.BrightnessHigh,
@@ -767,53 +774,32 @@ fun FpsGraph(
             .height(50.dp)
             .fillMaxWidth()
     ) {
-        Canvas(
-            modifier = Modifier
-                .fillMaxSize()
-                .zIndex(0f)
-        ) {
-            if (fpsHistory.size < 2) return@Canvas
-            val samples = fpsHistory.takeLast(size.width.toInt())
-            val stepX = size.width / (samples.size - 1).coerceAtLeast(1)
-            listOf(
-                redThreshold to Color(0xFFD32F2F).copy(alpha = 0.25f),
-                orangeThreshold to Color(0xFFFFA000).copy(alpha = 0.25f)
-            ).forEach { (fps, color) ->
-                val y = size.height * (1f - (fps / clampedMaxFps).coerceIn(0f, 1f))
-                drawLine(
-                    color = color,
-                    start = Offset(0f, y),
-                    end = Offset(size.width, y),
-                    strokeWidth = 1.dp.toPx()
+        Canvas(modifier = Modifier.fillMaxSize()) {
+            if (fpsHistory.isEmpty()) return@Canvas
+
+            val barWidth = size.width / fpsHistory.size
+            val maxHeight = size.height
+
+            fpsHistory.forEachIndexed { i, fps ->
+                val barHeight = maxHeight * (fps / clampedMaxFps).coerceIn(0f, 1f)
+                drawRect(
+                    color = fpsColor.copy(alpha = 0.5f),
+                    topLeft = Offset(i * barWidth, maxHeight - barHeight),
+                    size = Size(barWidth, barHeight)
                 )
             }
             drawLine(
-                color = Color(0xFFD32F2F).copy(alpha = 0.5f),
+                color = Color.Gray.copy(alpha = 0.3f),
                 start = Offset(0f, size.height),
                 end = Offset(size.width, size.height),
                 strokeWidth = 1.dp.toPx()
             )
-            val linePath = Path()
-            samples.forEachIndexed { i, fps ->
-                val x = i * stepX
-                val y = size.height * (1f - (fps / clampedMaxFps).coerceIn(0f, 1f))
-                if (i == 0) {
-                    linePath.moveTo(x, y)
-                } else {
-                    linePath.lineTo(x, y)
-                }
-            }
-            drawPath(
-                path = linePath,
-                color = fpsColor.copy(alpha = 0.5f),
-                style = Stroke(width = 1.5.dp.toPx())
-            )
         }
+
         Row(
             modifier = Modifier
                 .align(Alignment.CenterStart)
-                .padding(start = 8.dp)
-                .zIndex(1f),
+                .padding(start = 8.dp),
             verticalAlignment = Alignment.CenterVertically
         ) {
             Text(
@@ -830,114 +816,45 @@ fun GameModeSelector(
     selectedMode: GameMode,
     onModeSelected: (GameMode) -> Unit
 ) {
-    val modes = GameMode.values().toList()
-    val listState = rememberLazyListState()
-    val coroutineScope = rememberCoroutineScope()
+    val modes = GameMode.values()
     val haptic = LocalHapticFeedback.current
-    var focusedIndex by remember { mutableIntStateOf(modes.indexOf(selectedMode)) }
 
-    LaunchedEffect(Unit) {
-        listState.scrollToItem(focusedIndex)
-    }
-
-    LaunchedEffect(listState) {
-        snapshotFlow { listState.isScrollInProgress }
-            .collect { isScrolling ->
-                if (!isScrolling) {
-                    val layoutInfo = listState.layoutInfo
-                    val center = layoutInfo.viewportEndOffset / 2
-                    val centered = layoutInfo.visibleItemsInfo.minByOrNull { item ->
-                        kotlin.math.abs((item.offset + item.size / 2) - center)
-                    }
-                    centered?.let {
-                        val index = it.index
-                        if (index != focusedIndex) {
-                            focusedIndex = index
-                            onModeSelected(modes[index])
-                            haptic.performHapticFeedback(HapticFeedbackType.TextHandleMove)
-                        }
-                        coroutineScope.launch {
-                            listState.animateScrollToItem(index)
-                        }
-                    }
-                }
-            }
-    }
-
-    Box(
+    Row(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(vertical = 8.dp)
+            .padding(vertical = 4.dp),
+        horizontalArrangement = Arrangement.spacedBy(8.dp),
+        verticalAlignment = Alignment.CenterVertically
     ) {
-        LazyRow(
-            state = listState,
-            modifier = Modifier.fillMaxWidth(),
-            contentPadding = PaddingValues(horizontal = 24.dp),
-            horizontalArrangement = Arrangement.spacedBy(16.dp)
-        ) {
-            itemsIndexed(modes) { index, mode ->
-                val isFocused = index == focusedIndex
-                val scale by animateFloatAsState(
-                    targetValue = if (isFocused) 1.1f else 1f,
-                    label = "scaleAnim"
-                )
-                val alpha by animateFloatAsState(
-                    targetValue = if (isFocused) 1f else 0.4f,
-                    label = "alphaAnim"
-                )
+        modes.forEach { mode ->
+            val isSelected = mode == selectedMode
 
-                val glowColor = when (mode) {
-                    GameMode.Performance -> Color(0xFFD32F2F).copy(alpha = 0.32f)
-                    GameMode.PowerSave -> Color(0xFF388E3C).copy(alpha = 0.18f)
-                    GameMode.Balanced -> Color(0xFFEF6C00).copy(alpha = 0.08f)
-                }
+            val color = when (mode) {
+                GameMode.Performance -> Color(0xFFD32F2F)
+                GameMode.PowerSave -> Color(0xFF388E3C)
+                GameMode.Balanced -> Color(0xFFEF6C00)
+            }
 
-                val backgroundColor = if (isFocused) glowColor else Color.Transparent
-                val textColor = MaterialTheme.colorScheme.onSurface.copy(alpha = if (isFocused) 1f else 0.6f)
-
-                Box(
-                    modifier = Modifier
-                        .graphicsLayer {
-                            scaleX = scale
-                            scaleY = scale
-                            this.alpha = alpha
-                        }
-                        .background(
-                            color = backgroundColor,
-                            shape = RoundedCornerShape(12.dp)
-                        )
-                        .clip(RoundedCornerShape(12.dp))
-                        .clickable {
-                            coroutineScope.launch {
-                                listState.animateScrollToItem(index)
-                            }
-                            focusedIndex = index
+            Box(
+                modifier = Modifier
+                    .weight(1f)
+                    .height(48.dp)
+                    .clip(RoundedCornerShape(12.dp))
+                    .background(color.copy(alpha = if (isSelected) 0.4f else 0.2f))
+                    .clickable {
+                        if (!isSelected) {
                             onModeSelected(mode)
                             haptic.performHapticFeedback(HapticFeedbackType.TextHandleMove)
                         }
-                        .padding(
-                            horizontal = 16.dp,
-                            vertical = 8.dp
-                        )
-                ) {
-                    Row(
-                        verticalAlignment = Alignment.CenterVertically,
-                        modifier = Modifier.align(Alignment.Center)
-                    ) {
-                        Icon(
-                            imageVector = mode.icon,
-                            contentDescription = mode.displayName,
-                            tint = textColor,
-                            modifier = Modifier.size(18.dp)
-                        )
-                        Spacer(Modifier.width(8.dp))
-                        Text(
-                            text = mode.displayName,
-                            color = textColor,
-                            style = MaterialTheme.typography.bodyLarge
-                        )
-                    }
-                }
+                    },
+                contentAlignment = Alignment.Center
+            ) {
+                Icon(
+                    imageVector = mode.icon,
+                    contentDescription = mode.displayName,
+                    tint = color.copy(alpha = if (isSelected) 1f else 0.4f),
+                    modifier = Modifier.size(24.dp)
+                )
             }
         }
     }

@@ -47,10 +47,6 @@ class GameBarService : Hilt_GameBarService() {
     @Inject lateinit var settings: SystemSettings
     @Inject lateinit var tileRepository: TileRepository
 
-    private val wm by lazy { getSystemService(WINDOW_SERVICE) as WindowManager }
-    private val handler by lazy { Handler(Looper.getMainLooper()) }
-    private val inflater by lazy { LayoutInflater.from(this) }
-
     private lateinit var sidebar: GameSidebar
 
     private val binder = GameBarBinder()
@@ -59,9 +55,9 @@ class GameBarService : Hilt_GameBarService() {
         super.onCreate()
         sidebar = GameSidebar(
             context = this,
-            wm = wm,
-            handler = handler,
-            inflater = inflater,
+            wm = getSystemService(WINDOW_SERVICE) as WindowManager,
+            handler = Handler(Looper.getMainLooper()),
+            inflater = LayoutInflater.from(this),
             appSettings = appSettings,
             screenUtils = screenUtils,
             danmakuService = danmakuService,

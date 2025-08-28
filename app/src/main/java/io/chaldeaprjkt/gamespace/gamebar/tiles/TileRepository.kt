@@ -115,15 +115,6 @@ class TileRepository @Inject constructor(
     )
     val mobileDataState = mutableStateOf(telephonyManager?.isDataEnabled ?: false)
 
-    fun refreshStates() {
-        wifiState.value = wifiManager.isWifiEnabled
-        btState.value = BluetoothAdapter.getDefaultAdapter()?.isEnabled == true
-        dndState.value = notificationManager.currentInterruptionFilter == NotificationManager.INTERRUPTION_FILTER_NONE
-        autoRotateState.value = Settings.System.getInt(context.contentResolver, Settings.System.ACCELEROMETER_ROTATION, 1) == 1
-        airplaneModeState.value = Settings.Global.getInt(context.contentResolver, Settings.Global.AIRPLANE_MODE_ON, 0) == 1
-        mobileDataState.value = telephonyManager?.isDataEnabled ?: false
-    }
-
     private val defaultTiles: List<TileAction> = buildList {
         add(
             ToggleableTile(
@@ -292,19 +283,38 @@ class TileRepository @Inject constructor(
     val allAvailableTiles: List<TileAction>
         get() = defaultTiles
 
-    val tiles: SnapshotStateList<TileAction>
-        get() = _tileOrder.mapNotNullTo(mutableStateListOf()) { id ->
-            defaultTiles.find { it.id == id }
-        }
+    private val _tiles = mutableStateListOf<TileAction>()
+    val tiles: SnapshotStateList<TileAction> get() = _tiles
 
     val isBrightnessVisible: MutableState<Boolean> = mutableStateOf(appSettings.brightnessEnabled)
+    
+    val isFpsGraphVisible: MutableState<Boolean> = mutableStateOf(appSettings.fpsGraphEnabled)
+
+    init {
+        _tiles.addAll(
+            _tileOrder.mapNotNull { id ->
+                defaultTiles.find { it.id == id }
+            }
+        )
+    }
+
+    fun refreshStates() {
+        wifiState.value = wifiManager.isWifiEnabled.takeIf { it != wifiState.value } ?: wifiState.value
+        btState.value = (BluetoothAdapter.getDefaultAdapter()?.isEnabled == true).takeIf { it != btState.value } ?: btState.value
+        dndState.value = (notificationManager.currentInterruptionFilter == NotificationManager.INTERRUPTION_FILTER_NONE)
+            .takeIf { it != dndState.value } ?: dndState.value
+        autoRotateState.value = (Settings.System.getInt(context.contentResolver, Settings.System.ACCELEROMETER_ROTATION, 1) == 1)
+            .takeIf { it != autoRotateState.value } ?: autoRotateState.value
+        airplaneModeState.value = (Settings.Global.getInt(context.contentResolver, Settings.Global.AIRPLANE_MODE_ON, 0) == 1)
+            .takeIf { it != airplaneModeState.value } ?: airplaneModeState.value
+        mobileDataState.value = (telephonyManager?.isDataEnabled ?: false)
+            .takeIf { it != mobileDataState.value } ?: mobileDataState.value
+    }
 
     fun setBrightnessEnabled(enabled: Boolean) {
         isBrightnessVisible.value = enabled
         appSettings.brightnessEnabled = enabled
     }
-
-    val isFpsGraphVisible: MutableState<Boolean> = mutableStateOf(appSettings.fpsGraphEnabled)
 
     fun setFpsGraphEnabled(enabled: Boolean) {
         isFpsGraphVisible.value = enabled
@@ -325,6 +335,10 @@ class TileRepository @Inject constructor(
     }
 
     fun updateTileSelection(selectedIds: List<String>) {
+        _tiles.clear()
+        _tiles.addAll(selectedIds.mapNotNull { id ->
+            defaultTiles.find { it.id == id }
+        })
         _tileOrder.clear()
         _tileOrder.addAll(selectedIds)
         saveTileOrder()
