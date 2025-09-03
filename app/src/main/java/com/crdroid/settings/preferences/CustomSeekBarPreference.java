@@ -115,6 +115,20 @@ public class CustomSeekBarPreference extends SliderPreference {
                 interval = attrs.getAttributeIntValue(ANDROIDNS, "interval", 0);
             }
             if (interval > 0) setSliderIncrement(interval);
+
+            // Guard against improper slider increment
+            int min = getMin();
+            int max = getMax();
+            int span = Math.max(0, max - min);
+
+            int step = getSliderIncrement();
+            if (step <= 0 || span == 0) {
+                setSliderIncrement(1); // Always use discrete steps for CustomSeekBarPreference
+            } else if ((span % step) != 0) {
+                int gcd = gcd(span, step);
+                if (gcd <= 0) gcd = 1;
+                setSliderIncrement(gcd);
+            }
         } catch (Throwable ignored) {
             // keep safe defaults
         } finally {
@@ -206,13 +220,15 @@ public class CustomSeekBarPreference extends SliderPreference {
         final Slider slider = (Slider) holder.findViewById(
                 com.android.settingslib.widget.preference.slider.R.id.slider);
 
+        int stepForClicks = Math.max(1, getSliderIncrement());
+
         if (minusFrame != null && minusIcon != null) {
             minusFrame.setVisibility(View.VISIBLE);
             minusIcon.setImageResource(R.drawable.ic_custom_seekbar_minus);
             minusFrame.setOnClickListener(v -> {
                 if (!isEnabled()) return;
                 int base = slider != null ? Math.round(slider.getValue()) : getValue();
-                int newVal = Math.max(getMin(), base - getSliderIncrement());
+                int newVal = Math.max(getMin(), base - stepForClicks);
                 if (newVal != getValue()) {
                     setValue(newVal);
                     updatePlusMinusEnabledStates(holder);
@@ -226,7 +242,7 @@ public class CustomSeekBarPreference extends SliderPreference {
             plusFrame.setOnClickListener(v -> {
                 if (!isEnabled()) return;
                 int base = slider != null ? Math.round(slider.getValue()) : getValue();
-                int newVal = Math.min(getMax(), base + getSliderIncrement());
+                int newVal = Math.min(getMax(), base + stepForClicks);
                 if (newVal != getValue()) {
                     setValue(newVal);
                     updatePlusMinusEnabledStates(holder);
@@ -263,6 +279,16 @@ public class CustomSeekBarPreference extends SliderPreference {
     public void onDependencyChanged(@NonNull Preference dependency, boolean disableDependent) {
         super.onDependencyChanged(dependency, disableDependent);
         notifyChanged();
+    }
+
+    private static int gcd(int a, int b) {
+        a = Math.abs(a); b = Math.abs(b);
+        if (a == 0) return b;
+        if (b == 0) return a;
+        while (b != 0) {
+            int t = b; b = a % b; a = t;
+        }
+        return a;
     }
 
     private void updatePlusMinusEnabledStates(PreferenceViewHolder holder) {
