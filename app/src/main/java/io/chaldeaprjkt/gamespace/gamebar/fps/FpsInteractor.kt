@@ -47,7 +47,7 @@ class FpsInteractor @Inject constructor(private val context: Context) {
         wm.defaultDisplay?.mode?.refreshRate ?: 60f
     }
 
-    private val historySize = 120
+    private val historySize = 100
     private val buffer = ArrayDeque<Float>(historySize)
 
     private val fpsFlow = MutableSharedFlow<Float>(extraBufferCapacity = 64)
@@ -61,7 +61,7 @@ class FpsInteractor @Inject constructor(private val context: Context) {
     init {
         coroutineScope.launch {
             fpsFlow
-                .sample(3000)
+                .sample(1000) 
                 .map { fps ->
                     val smoothed = (buffer.lastOrNull() ?: fps) * 0.75f + fps * 0.25f
                     if (buffer.size >= historySize) buffer.removeFirst()

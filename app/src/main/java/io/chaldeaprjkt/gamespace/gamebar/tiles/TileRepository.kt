@@ -105,7 +105,7 @@ class TileRepository @Inject constructor(
     val wifiState = mutableStateOf(wifiManager.isWifiEnabled)
     val btState = mutableStateOf(BluetoothAdapter.getDefaultAdapter()?.isEnabled == true)
     val dndState = mutableStateOf(
-        notificationManager.currentInterruptionFilter == NotificationManager.INTERRUPTION_FILTER_NONE
+        notificationManager.currentInterruptionFilter != NotificationManager.INTERRUPTION_FILTER_ALL
     )
     val autoRotateState = mutableStateOf(
         Settings.System.getInt(context.contentResolver, Settings.System.ACCELEROMETER_ROTATION, 1) == 1
@@ -114,6 +114,9 @@ class TileRepository @Inject constructor(
         Settings.Global.getInt(context.contentResolver, Settings.Global.AIRPLANE_MODE_ON, 0) == 1
     )
     val mobileDataState = mutableStateOf(telephonyManager?.isDataEnabled ?: false)
+    
+    private var lastRefreshTime = 0L
+    private val refreshDebounceMs = 1000L
 
     private val defaultTiles: List<TileAction> = buildList {
         add(
@@ -160,7 +163,7 @@ class TileRepository @Inject constructor(
                 state = dndState,
                 setter = { enabled ->
                     notificationManager.setInterruptionFilter(
-                        if (enabled) NotificationManager.INTERRUPTION_FILTER_NONE
+                        if (enabled) NotificationManager.INTERRUPTION_FILTER_PRIORITY
                         else NotificationManager.INTERRUPTION_FILTER_ALL
                     )
                 }
@@ -299,16 +302,39 @@ class TileRepository @Inject constructor(
     }
 
     fun refreshStates() {
-        wifiState.value = wifiManager.isWifiEnabled.takeIf { it != wifiState.value } ?: wifiState.value
-        btState.value = (BluetoothAdapter.getDefaultAdapter()?.isEnabled == true).takeIf { it != btState.value } ?: btState.value
-        dndState.value = (notificationManager.currentInterruptionFilter == NotificationManager.INTERRUPTION_FILTER_NONE)
-            .takeIf { it != dndState.value } ?: dndState.value
-        autoRotateState.value = (Settings.System.getInt(context.contentResolver, Settings.System.ACCELEROMETER_ROTATION, 1) == 1)
-            .takeIf { it != autoRotateState.value } ?: autoRotateState.value
-        airplaneModeState.value = (Settings.Global.getInt(context.contentResolver, Settings.Global.AIRPLANE_MODE_ON, 0) == 1)
-            .takeIf { it != airplaneModeState.value } ?: airplaneModeState.value
-        mobileDataState.value = (telephonyManager?.isDataEnabled ?: false)
-            .takeIf { it != mobileDataState.value } ?: mobileDataState.value
+        val currentTime = System.currentTimeMillis()
+        if (currentTime - lastRefreshTime < refreshDebounceMs) return
+        lastRefreshTime = currentTime
+        
+        val newWifiState = wifiManager.isWifiEnabled
+        if (newWifiState != wifiState.value) {
+            wifiState.value = newWifiState
+        }
+        
+        val newBtState = BluetoothAdapter.getDefaultAdapter()?.isEnabled == true
+        if (newBtState != btState.value) {
+            btState.value = newBtState
+        }
+        
+        val newDndState = notificationManager.currentInterruptionFilter != NotificationManager.INTERRUPTION_FILTER_ALL
+        if (newDndState != dndState.value) {
+            dndState.value = newDndState
+        }
+        
+        val newAutoRotateState = Settings.System.getInt(context.contentResolver, Settings.System.ACCELEROMETER_ROTATION, 1) == 1
+        if (newAutoRotateState != autoRotateState.value) {
+            autoRotateState.value = newAutoRotateState
+        }
+        
+        val newAirplaneModeState = Settings.Global.getInt(context.contentResolver, Settings.Global.AIRPLANE_MODE_ON, 0) == 1
+        if (newAirplaneModeState != airplaneModeState.value) {
+            airplaneModeState.value = newAirplaneModeState
+        }
+        
+        val newMobileDataState = telephonyManager?.isDataEnabled ?: false
+        if (newMobileDataState != mobileDataState.value) {
+            mobileDataState.value = newMobileDataState
+        }
     }
 
     fun setBrightnessEnabled(enabled: Boolean) {

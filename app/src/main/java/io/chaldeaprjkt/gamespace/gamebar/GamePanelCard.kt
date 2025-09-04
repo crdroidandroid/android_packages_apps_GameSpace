@@ -28,6 +28,7 @@ import android.provider.Settings
 import android.view.WindowManager
 import android.widget.Toast
 import com.android.settingslib.display.BrightnessUtils.*
+import androidx.collection.LruCache
 import androidx.core.graphics.drawable.*
 import androidx.compose.*
 import androidx.compose.animation.*
@@ -37,9 +38,9 @@ import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.*
-import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.grid.*
 import androidx.compose.foundation.*
+import androidx.compose.foundation.pager.*
 import androidx.compose.foundation.shape.*
 import androidx.compose.material3.*
 import androidx.compose.material.icons.Icons
@@ -77,6 +78,8 @@ import java.util.Date
 import java.util.Locale
 
 import com.android.internal.util.NTAppLockerHelper
+
+private val RoundedTileShape = RoundedCornerShape(100f)
 
 @Composable
 fun GamePanelCard(
@@ -183,6 +186,7 @@ fun GamePanelContent(
     }
 }
 
+@OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun PanelContent(
     interactor: BrightnessInteractor,
@@ -191,15 +195,27 @@ fun PanelContent(
     onEditClick: () -> Unit,
     modifier: Modifier = Modifier
 ) {
-    val tiles = tileRepository.tiles
-    var expanded by remember { mutableStateOf(false) }
-
-    LaunchedEffect(Unit) {
-        while (isActive) {
-            tileRepository.refreshStates()
-            delay(3000L)
+    DisposableEffect(Unit) {
+        val job = Job()
+        val scope = CoroutineScope(Dispatchers.Default + job)
+        val statesJob = scope.launch {
+            while (isActive) {
+                tileRepository.refreshStates()
+                delay(3000L)
+            }
+        }
+        onDispose {
+            statesJob.cancel()
+            job.cancel()
         }
     }
+
+    val tiles = tileRepository.tiles
+    val tilesPerPage = 4
+    val pages by remember {
+        derivedStateOf { tiles.chunked(tilesPerPage) }
+    }
+    val pagerState = rememberPagerState { pages.size }
 
     Column(
         modifier = modifier.padding(start = 4.dp, end = 4.dp, bottom = 0.dp),
@@ -217,45 +233,62 @@ fun PanelContent(
             }
         }
 
-        val visibleTiles = if (expanded) tiles else tiles.take(4)
-        Column(
-            verticalArrangement = Arrangement.spacedBy(12.dp),
-            modifier = Modifier.fillMaxWidth()
-        ) {
-            visibleTiles.chunked(2).forEach { rowTiles ->
-                Row(
-                    horizontalArrangement = Arrangement.spacedBy(12.dp),
-                    modifier = Modifier.fillMaxWidth()
-                ) {
-                    rowTiles.forEach { tile ->
-                        TileButton(
-                            tile = tile,
-                            modifier = Modifier
-                                .weight(1f)
-                                .height(56.dp)
-                                .clip(RoundedCornerShape(100f))
-                        )
-                    }
-                    if (rowTiles.size == 1) {
-                        Spacer(modifier = Modifier.weight(1f))
+        HorizontalPager(
+            state = pagerState,
+            modifier = Modifier.fillMaxWidth(),
+            key = { pageIndex -> "page_$pageIndex" }
+        ) { pageIndex ->
+            val pageTiles = pages[pageIndex]
+
+            Column(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 8.dp),
+                verticalArrangement = Arrangement.spacedBy(12.dp)
+            ) {
+                pageTiles.chunked(2).forEach { rowTiles ->
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.spacedBy(12.dp)
+                    ) {
+                        rowTiles.forEach { tile ->
+                            key(tile.id) {
+                                TileButton(
+                                    tile = tile,
+                                    modifier = Modifier
+                                        .weight(1f)
+                                        .height(56.dp)
+                                        .clip(RoundedTileShape)
+                                )
+                            }
+                        }
+                        if (rowTiles.size == 1) {
+                            Spacer(modifier = Modifier.weight(1f))
+                        }
                     }
                 }
             }
+        }
 
-            if (tiles.size > 4) {
-                Box(
-                    modifier = Modifier
-                        .align(Alignment.CenterHorizontally)
-                        .size(24.dp)
-                        .clickable { expanded = !expanded },
-                    contentAlignment = Alignment.Center
-                ) {
-                    Icon(
-                        imageVector = Icons.Default.ExpandMore,
-                        contentDescription = if (expanded) "Collapse" else "Expand",
+        if (pages.size > 1) {
+            Row(
+                modifier = Modifier
+                    .align(Alignment.CenterHorizontally)
+                    .padding(top = 8.dp),
+                horizontalArrangement = Arrangement.spacedBy(6.dp)
+            ) {
+                repeat(pages.size) { index ->
+                    val isSelected = index == pagerState.currentPage
+                    Box(
                         modifier = Modifier
-                            .size(24.dp)
-                            .rotate(if (expanded) 180f else 0f)
+                            .size(if (isSelected) 8.dp else 6.dp)
+                            .clip(CircleShape)
+                            .background(
+                                if (isSelected)
+                                    MaterialTheme.colorScheme.primary
+                                else
+                                    MaterialTheme.colorScheme.onSurface.copy(alpha = 0.3f)
+                            )
                     )
                 }
             }
@@ -558,9 +591,7 @@ fun TileGroup(
     tileHeight: Dp,
     tileCorner: Dp
 ) {
-    val transition = updateTransition(targetState = tiles, label = "TileGroupTransition")
-
-    transition.targetState.chunked(2).forEach { tilePair ->
+    tiles.chunked(2).forEach { tilePair ->
         Row(
             modifier = Modifier
                 .fillMaxWidth()
@@ -568,28 +599,20 @@ fun TileGroup(
             horizontalArrangement = Arrangement.spacedBy(12.dp)
         ) {
             tilePair.forEach { tile ->
-                AnimatedVisibility(
-                    visible = true,
-                    enter = scaleIn() + fadeIn(),
-                    exit = scaleOut() + fadeOut(),
+                TileItem(
+                    tile = tile,
+                    onClick = { onTileClick(tile) },
+                    tileHeight = tileHeight,
+                    tileCorner = tileCorner,
                     modifier = Modifier
                         .weight(1f)
                         .fillMaxHeight()
-                ) {
-                    TileItem(
-                        tile = tile,
-                        onClick = { onTileClick(tile) },
-                        tileHeight = tileHeight,
-                        tileCorner = tileCorner
-                    )
-                }
+                )
             }
-
             if (tilePair.size == 1) {
                 Spacer(modifier = Modifier.weight(1f))
             }
         }
-
         Spacer(modifier = Modifier.height(12.dp))
     }
 }
@@ -599,10 +622,11 @@ fun TileItem(
     tile: TileAction,
     onClick: () -> Unit,
     tileHeight: Dp,
-    tileCorner: Dp
+    tileCorner: Dp,
+    modifier: Modifier = Modifier
 ) {
     Surface(
-        modifier = Modifier
+        modifier = modifier
             .fillMaxSize()
             .clip(RoundedCornerShape(tileCorner))
             .clickable { onClick() },
@@ -640,7 +664,7 @@ fun TileButton(tile: TileAction, modifier: Modifier = Modifier) {
     Row(
         verticalAlignment = Alignment.CenterVertically,
         modifier = modifier
-            .clip(RoundedCornerShape(12.dp))
+            .clip(RoundedTileShape)
             .background(bgColor)
             .clickable { tile.toggle() }
             .padding(horizontal = 12.dp)
@@ -667,10 +691,9 @@ fun TileButton(tile: TileAction, modifier: Modifier = Modifier) {
 fun BrightnessSlider(interactor: BrightnessInteractor) {
     val brightnessInfo by interactor.brightnessInfo.collectAsState()
     val isAuto by interactor.isAuto.collectAsState()
-    val userHasInteracted by interactor.userHasInteracted.collectAsState()
 
     var sliderPosition by remember { mutableFloatStateOf(0.5f) }
-    var isSyncingFromSystem by remember { mutableStateOf(false) }
+    var userIsAdjusting by remember { mutableStateOf(false) }
 
     val targetSliderPosition = remember(brightnessInfo) {
         brightnessInfo?.let { info ->
@@ -679,33 +702,43 @@ fun BrightnessSlider(interactor: BrightnessInteractor) {
                 info.brightnessMinimum,
                 info.brightnessMaximum
             )
-            val percent = getPercentage(
+            getPercentage(
                 gamma.toDouble(),
                 GAMMA_SPACE_MIN.toFloat(),
                 GAMMA_SPACE_MAX.toFloat()
-            )
-            percent.toFloat()
-        }
+            ).toFloat()
+        } ?: 0.5f
     }
 
     LaunchedEffect(targetSliderPosition) {
-        targetSliderPosition?.let { percent ->
-            if (sliderPosition != percent) {
-                isSyncingFromSystem = true
-                sliderPosition = percent
-                isSyncingFromSystem = false
-            }
+        if (!userIsAdjusting) {
+            sliderPosition = targetSliderPosition
         }
+    }
+
+    LaunchedEffect(Unit) {
+        snapshotFlow { sliderPosition }
+            .distinctUntilChanged()
+            .collectLatest { value ->
+                if (userIsAdjusting) {
+                    interactor.onUserInteracted()
+                    interactor.setBrightness(value)
+                    delay(100)
+                }
+            }
     }
 
     Row {
         Slider(
             value = sliderPosition,
             onValueChange = { newValue ->
+                userIsAdjusting = true
                 sliderPosition = newValue
-                if (isSyncingFromSystem) return@Slider
                 interactor.onUserInteracted()
                 interactor.setBrightness(newValue)
+            },
+            onValueChangeFinished = {
+                userIsAdjusting = false
             },
             enabled = true,
             valueRange = 0f..1f,
@@ -754,58 +787,117 @@ fun FpsGraph(
     modifier: Modifier = Modifier,
     interactor: FpsInteractor
 ) {
-    val fpsHistory by interactor.fpsHistory.collectAsState()
+    val fpsHistory by interactor.fpsHistory.collectAsState(initial = emptyList())
     val maxFps by interactor.dynamicMaxFps.collectAsState()
-
-    val currentFps = fpsHistory.lastOrNull() ?: 0f
-    val clampedMaxFps = maxFps.takeIf { it > 0f } ?: 60f
-
-    val redThreshold = clampedMaxFps * 0.5f
-    val orangeThreshold = clampedMaxFps * 0.75f
-
-    val fpsColor = when {
-        currentFps >= clampedMaxFps * 0.9f -> Color(0xFF4CAF50)
-        currentFps >= orangeThreshold -> Color(0xFFFFA000)
-        else -> Color(0xFFD32F2F)
+    
+    val graphData = remember(fpsHistory, maxFps) {
+        if (fpsHistory.isNotEmpty()) {
+            val minFps = fpsHistory.minOrNull() ?: 0f
+            val avgFps = fpsHistory.average().toFloat()
+            val maxFpsSeen = fpsHistory.maxOrNull() ?: 0f
+            val clampedMaxFps = maxFps.takeIf { it > 0f } ?: 60f
+            val fpsColor = when {
+                avgFps >= clampedMaxFps * 0.9f -> Color(0xFF4CAF50)
+                avgFps >= clampedMaxFps * 0.75f -> Color(0xFFFFA000)
+                else -> Color(0xFFD32F2F)
+            }
+            Triple(Triple(minFps, avgFps, maxFpsSeen), clampedMaxFps, fpsColor)
+        } else {
+            Triple(Triple(0f, 0f, 0f), 60f, Color.Gray)
+        }
     }
-
+    
+    val normalizedPoints = remember(fpsHistory, graphData.second) {
+        val clampedMaxFps = graphData.second
+        fpsHistory.map { fps -> (fps / clampedMaxFps).coerceIn(0f, 1f) }
+    }
+    
     Box(
         modifier = modifier
             .height(50.dp)
             .fillMaxWidth()
     ) {
         Canvas(modifier = Modifier.fillMaxSize()) {
-            if (fpsHistory.isEmpty()) return@Canvas
-
-            val barWidth = size.width / fpsHistory.size
-            val maxHeight = size.height
-
-            fpsHistory.forEachIndexed { i, fps ->
-                val barHeight = maxHeight * (fps / clampedMaxFps).coerceIn(0f, 1f)
-                drawRect(
-                    color = fpsColor.copy(alpha = 0.5f),
-                    topLeft = Offset(i * barWidth, maxHeight - barHeight),
-                    size = Size(barWidth, barHeight)
+            if (normalizedPoints.isNotEmpty() && normalizedPoints.size > 1) {
+                val width = size.width
+                val height = size.height
+                val stepX = width / (normalizedPoints.size - 1)
+                
+                val path = Path().apply {
+                    moveTo(0f, height)
+                    
+                    lineTo(0f, height - (normalizedPoints[0] * height))
+                    
+                    for (i in 1 until normalizedPoints.size) {
+                        val currentX = i * stepX
+                        val currentY = height - (normalizedPoints[i] * height)
+                        
+                        if (i == 1) {
+                            lineTo(currentX, currentY)
+                        } else {
+                            val prevX = (i - 1) * stepX
+                            val prevY = height - (normalizedPoints[i - 1] * height)
+                            val controlX = (prevX + currentX) / 2f
+                            val controlY = (prevY + currentY) / 2f
+                            
+                            quadraticBezierTo(controlX, controlY, currentX, currentY)
+                        }
+                    }
+                    
+                    lineTo(width, height)
+                    close()
+                }
+                
+                val gradient = Brush.verticalGradient(
+                    colors = listOf(
+                        graphData.third.copy(alpha = 0.6f),
+                        graphData.third.copy(alpha = 0.1f)
+                    ),
+                    startY = 0f,
+                    endY = height
+                )
+                
+                drawPath(
+                    path = path,
+                    brush = gradient
+                )
+                
+                val linePath = Path().apply {
+                    moveTo(0f, height - (normalizedPoints[0] * height))
+                    for (i in 1 until normalizedPoints.size) {
+                        val currentX = i * stepX
+                        val currentY = height - (normalizedPoints[i] * height)
+                        if (i == 1) {
+                            lineTo(currentX, currentY)
+                        } else {
+                            val prevX = (i - 1) * stepX
+                            val prevY = height - (normalizedPoints[i - 1] * height)
+                            val controlX = (prevX + currentX) / 2f
+                            val controlY = (prevY + currentY) / 2f
+                            quadraticBezierTo(controlX, controlY, currentX, currentY)
+                        }
+                    }
+                }
+                
+                drawPath(
+                    path = linePath,
+                    color = graphData.third,
+                    style = Stroke(width = 2.dp.toPx(), cap = StrokeCap.Round, join = StrokeJoin.Round)
                 )
             }
-            drawLine(
-                color = Color.Gray.copy(alpha = 0.3f),
-                start = Offset(0f, size.height),
-                end = Offset(size.width, size.height),
-                strokeWidth = 1.dp.toPx()
-            )
         }
-
+        
         Row(
             modifier = Modifier
                 .align(Alignment.CenterStart)
                 .padding(start = 8.dp),
             verticalAlignment = Alignment.CenterVertically
         ) {
+            val (minFps, avgFps, maxFpsSeen) = graphData.first
             Text(
-                text = "${currentFps.toInt()} fps",
-                color = fpsColor,
-                style = MaterialTheme.typography.bodySmall.copy(fontSize = 20.sp)
+                text = "min ${minFps.toInt()} | avg ${avgFps.toInt()} | max ${maxFpsSeen.toInt()}",
+                color = graphData.third,
+                style = MaterialTheme.typography.bodySmall.copy(fontSize = 14.sp)
             )
         }
     }
@@ -895,26 +987,44 @@ fun QuickStartAppSidebar(apps: List<AppInfo>) {
 
 @Composable
 fun rememberCurrentTime(): String {
-    val timeFormat = remember { java.text.SimpleDateFormat("HH:mm", Locale.getDefault()) }
+    val timeFormat = remember { SimpleDateFormat("HH:mm", Locale.getDefault()) }
     val timeState = remember { mutableStateOf(timeFormat.format(Date())) }
-    LaunchedEffect(Unit) {
-        while (true) {
-            timeState.value = timeFormat.format(Date())
-            delay(60_000L)
+
+    DisposableEffect(Unit) {
+        val job = Job()
+        val scope = CoroutineScope(Dispatchers.Main.immediate + job)
+
+        scope.launch {
+            while (isActive) {
+                val now = Date()
+                val newTime = timeFormat.format(now)
+                if (newTime != timeState.value) {
+                    timeState.value = newTime
+                }
+                val millisUntilNextMinute = 60000L - (now.time % 60000L)
+                delay(millisUntilNextMinute)
+            }
+        }
+
+        onDispose {
+            job.cancel()
         }
     }
+
     return timeState.value
 }
 
-private val drawablePainterCache = mutableMapOf<Int, Painter>()
+private val drawablePainterCache = LruCache<Int, Painter>(100)
 
 @Composable
 fun rememberDrawablePainter(drawable: Drawable?): Painter {
-    return remember(drawable) {
+    return remember(drawable?.hashCode()) {
         drawable?.let {
             val key = it.hashCode()
-            drawablePainterCache.getOrPut(key) {
-                it.toPainter()
+            drawablePainterCache.get(key) ?: run {
+                val painter = it.toPainter()
+                drawablePainterCache.put(key, painter)
+                painter
             }
         } ?: ColorPainter(Color.Gray)
     }
@@ -985,35 +1095,58 @@ fun rememberBatteryInfo(): BatteryInfo {
     val context = LocalContext.current
     val batteryInfo = remember { mutableStateOf(BatteryInfo()) }
 
-    LaunchedEffect(Unit) {
-        val intentFilter = IntentFilter(Intent.ACTION_BATTERY_CHANGED)
+    DisposableEffect(context) {
+        val receiver = object : BroadcastReceiver() {
+            override fun onReceive(context: Context?, intent: Intent?) {
+                intent?.let {
+                    val level = it.getIntExtra(BatteryManager.EXTRA_LEVEL, -1)
+                    val scale = it.getIntExtra(BatteryManager.EXTRA_SCALE, -1)
+                    val percentage = if (level >= 0 && scale > 0) (level * 100 / scale) else -1
+                    
+                    val tempTenths = it.getIntExtra(BatteryManager.EXTRA_TEMPERATURE, 0)
+                    val tempCelsius = tempTenths / 10f
+                    
+                    batteryInfo.value = BatteryInfo(
+                        level = percentage,
+                        temperatureC = tempCelsius
+                    )
+                }
+            }
+        }
+        
+        val intentFilter = IntentFilter().apply {
+            addAction(Intent.ACTION_BATTERY_CHANGED)
+            addAction(Intent.ACTION_BATTERY_LOW)
+            addAction(Intent.ACTION_BATTERY_OKAY)
+        }
+        
+        context.registerReceiver(receiver, intentFilter)
+        
         val batteryStatus: Intent? = context.registerReceiver(null, intentFilter)
-
         batteryStatus?.let { intent ->
             val level = intent.getIntExtra(BatteryManager.EXTRA_LEVEL, -1)
             val scale = intent.getIntExtra(BatteryManager.EXTRA_SCALE, -1)
             val percentage = if (level >= 0 && scale > 0) (level * 100 / scale) else -1
-
             val tempTenths = intent.getIntExtra(BatteryManager.EXTRA_TEMPERATURE, 0)
             val tempCelsius = tempTenths / 10f
-
-            val status = intent.getIntExtra(BatteryManager.EXTRA_STATUS, -1)
-
+            
             batteryInfo.value = BatteryInfo(
                 level = percentage,
                 temperatureC = tempCelsius
             )
         }
+        
+        onDispose {
+            context.unregisterReceiver(receiver)
+        }
     }
-
+    
     return batteryInfo.value
 }
 
 private fun getPercentage(value: Double, min: Float, max: Float): Double {
     return ((value - min) / (max - min)).coerceIn(0.0, 1.0)
 }
-
-data class TileItem(val label: String, val icon: ImageVector)
 
 enum class GameMode(val displayName: String, val icon: ImageVector) {
     Balanced("Balanced", Icons.Default.BatteryStd),
