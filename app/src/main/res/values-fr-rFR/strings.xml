@@ -86,5 +86,5 @@
     <!-- Danmaku Notification Mode -->
     <string name="danmaku_notification_mode_title">Mode de notification Danmaku</string>
     <string name="danmaku_notification_mode_summary">Afficher une notification en tant que danmaku (les commentaires flottants) lorsque le jeu est actif</string>
-    <string name="gamespace_running">Game Space is running</string>
+    <string name="gamespace_running">Espace de Jeux en cours de fonctionnement</string>
 </resources>
