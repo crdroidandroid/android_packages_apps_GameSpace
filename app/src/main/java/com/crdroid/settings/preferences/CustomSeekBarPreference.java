@@ -229,10 +229,8 @@ public class CustomSeekBarPreference extends SliderPreference {
                 if (!isEnabled()) return;
                 int base = slider != null ? Math.round(slider.getValue()) : getValue();
                 int newVal = Math.max(getMin(), base - stepForClicks);
-                if (newVal != getValue()) {
-                    setValue(newVal);
-                    updatePlusMinusEnabledStates(holder);
-                }
+                applyUserValue(newVal, slider);
+                updatePlusMinusEnabledStates(holder);
             });
         }
 
@@ -243,10 +241,8 @@ public class CustomSeekBarPreference extends SliderPreference {
                 if (!isEnabled()) return;
                 int base = slider != null ? Math.round(slider.getValue()) : getValue();
                 int newVal = Math.min(getMax(), base + stepForClicks);
-                if (newVal != getValue()) {
-                    setValue(newVal);
-                    updatePlusMinusEnabledStates(holder);
-                }
+                applyUserValue(newVal, slider);
+                updatePlusMinusEnabledStates(holder);
             });
         }
 
@@ -268,7 +264,7 @@ public class CustomSeekBarPreference extends SliderPreference {
                 @Override
                 public void onStopTrackingTouch(@NonNull Slider s) {
                     mInUserDrag = false;
-                    updateSummaryNow();
+                    applyUserValue(Math.round(s.getValue()), s);
                     updatePlusMinusEnabledStates(holder);
                 }
             });
@@ -278,6 +274,17 @@ public class CustomSeekBarPreference extends SliderPreference {
     @Override
     public void onDependencyChanged(@NonNull Preference dependency, boolean disableDependent) {
         super.onDependencyChanged(dependency, disableDependent);
+        notifyChanged();
+    }
+
+    private void applyUserValue(int newVal, @Nullable Slider slider) {
+        if (newVal == getValue()) return;
+        if (!callChangeListener(newVal)) {
+            if (slider != null) slider.setValue(getValue());
+            return;
+        }
+        setValue(newVal);
+        updateSummaryNow();
         notifyChanged();
     }
 
@@ -357,8 +364,7 @@ public class CustomSeekBarPreference extends SliderPreference {
 
     private void performReset() {
         if (mDefaultValueExists) {
-            setValue(mDefaultValue);
-            notifyChanged();
+            applyUserValue(mDefaultValue, null);
         }
     }
 
