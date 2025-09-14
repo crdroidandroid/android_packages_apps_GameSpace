@@ -349,6 +349,7 @@ class GameBarService : Hilt_GameBarService() {
             rootPanelView.gravity = Gravity.END
             rootPanelView.setPaddingRelative(16, 16, barWidth, 16)
         }
+        panelView.relativeY = barView.locationOnScreen.last() - barView.height 
     }
 
     private fun takeShot() {
