@@ -86,5 +86,5 @@
     <!-- Danmaku Notification Mode -->
     <string name="danmaku_notification_mode_title">وضع إشعار Danmaku</string>
     <string name="danmaku_notification_mode_summary">إظهار تنبيه Danmaku كما هو معروف باِسم تعليقات سريعة عندما تكون اللعبة نشطة</string>
-    <string name="gamespace_running">Game Space is running</string>
+    <string name="gamespace_running"></string>
 </resources>
