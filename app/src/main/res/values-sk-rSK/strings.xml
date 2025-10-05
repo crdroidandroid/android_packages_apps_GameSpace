@@ -86,5 +86,5 @@
     <!-- Danmaku Notification Mode -->
     <string name="danmaku_notification_mode_title">Režim notifikácií Danmaku</string>
     <string name="danmaku_notification_mode_summary">Počas aktívnej hry zobraziť upozornenia ako danmaku alias odrážky</string>
-    <string name="gamespace_running">Game Space is running</string>
+    <string name="gamespace_running">Herný mód spustený</string>
 </resources>
