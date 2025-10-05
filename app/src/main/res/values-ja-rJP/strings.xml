@@ -86,5 +86,5 @@
     <!-- Danmaku Notification Mode -->
     <string name="danmaku_notification_mode_title">弾幕通知モード</string>
     <string name="danmaku_notification_mode_summary">ゲーム中に弾幕コメントとして通知を表示する</string>
-    <string name="gamespace_running">Game Space is running</string>
+    <string name="gamespace_running">ゲームスペースが実行中です</string>
 </resources>
