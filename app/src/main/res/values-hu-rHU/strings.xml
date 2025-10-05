@@ -86,5 +86,5 @@
     <!-- Danmaku Notification Mode -->
     <string name="danmaku_notification_mode_title">Danmaku Értesítő mód</string>
     <string name="danmaku_notification_mode_summary">Értesítések danmakuként mutatása, avagy kommentek kilövése játék mód közben</string>
-    <string name="gamespace_running">Game Space is running</string>
+    <string name="gamespace_running">A Játéktér fut</string>
 </resources>
