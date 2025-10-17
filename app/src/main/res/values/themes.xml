@@ -19,6 +19,9 @@
     <style name="GameSpaceTheme" parent="Theme.SubSettingsBase.Expressive">
         <!-- For AndroidX AlertDialog - legacy for expressive fix -->
         <item name="alertDialogTheme">@style/Theme.AlertDialog.SettingsLib</item>
+        <item name="preferenceTheme">@style/PreferenceTheme.SettingsLib</item>
+        <item name="android:switchStyle">@style/Switch.SettingsLib</item>
+        <item name="switchStyle">@style/SwitchCompat.SettingsLib</item>
     </style>
 
     <style name="GameSpaceTheme.GameBar" parent="GameSpaceTheme">
