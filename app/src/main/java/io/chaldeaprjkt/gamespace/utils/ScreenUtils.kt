@@ -25,6 +25,7 @@ import android.net.Uri
 import android.os.Handler
 import android.os.IBinder
 import android.os.Looper
+import  android.util.Log
 import android.os.PowerManager
 import android.os.SystemProperties
 import android.os.UserHandle
@@ -45,14 +46,13 @@ class ScreenUtils @Inject constructor(private val context: Context) {
     private var wakelock: PowerManager.WakeLock? = null
     private val recorderConnection = object : ServiceConnection {
         override fun onServiceConnected(name: ComponentName?, service: IBinder?) {
-            try {
+            runCatching {
                 remoteRecording = IRemoteRecording.Stub.asInterface(service)
-            } catch (e: Exception) {
-                e.printStackTrace()
-                exitProcess(1)
+            }.onFailure {
+                Log.e("ScreenUtils", "Failed to connect to recorder service", it)
+                remoteRecording = null
             }
         }
-
         override fun onServiceDisconnected(name: ComponentName?) {
             remoteRecording = null
         }
@@ -108,10 +108,26 @@ class ScreenUtils @Inject constructor(private val context: Context) {
     }
 
     fun unbind() {
-        wakelock?.takeIf { it.isHeld }?.release()
-        if (isRecorderBound) {
-            context.unbindService(recorderConnection)
+        runCatching {
+            wakelock?.takeIf { it.isHeld }?.release()
+        }.onFailure {
+            Log.w("ScreenUtils", "Failed to release wakelock: $it")
+        }.also {
+            wakelock = null
         }
+
+        if (isRecorderBound) {
+            runCatching {
+                context.unbindService(recorderConnection)
+            }.onFailure {
+                Log.w("ScreenUtils", "Recorder service not registered or already unbound: $it")
+            }.also {
+                isRecorderBound = false
+            }
+        } else {
+            isRecorderBound = false
+        }
+
         remoteRecording = null
         lockGesture = false
         bypassCharge = false

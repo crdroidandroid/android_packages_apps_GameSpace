@@ -58,10 +58,10 @@ class SessionService : Hilt_SessionService() {
     override fun onCreate() {
         super.onCreate()
         isRunning = true
-        try {
+        runCatching {
             screenUtils.bind()
-        } catch (e: RemoteException) {
-            Log.e(TAG, "Error binding ScreenUtils: $e")
+        }.onFailure {
+            Log.e(TAG, "Error binding ScreenUtils", it)
         }
         gameManager = getSystemService(Context.GAME_SERVICE) as GameManager
         gameModeUtils.bind(gameManager)
@@ -191,11 +191,11 @@ class SessionService : Hilt_SessionService() {
 
     private fun unbindGameBar() {
         if (isBarConnected && gameBarConnection != null) {
-            try {
+            runCatching {
                 unbindService(gameBarConnection!!)
-            } catch (e: IllegalArgumentException) {
-                Log.w(TAG, "GameBar already unbound or not bound: $e")
-            } finally {
+            }.onFailure {
+                Log.w(TAG, "GameBar already unbound or not bound", it)
+            }.also {
                 gameBarConnection = null
                 isBarConnected = false
             }
