@@ -23,35 +23,31 @@ import android.os.ServiceManager
 import android.util.Log
 import com.android.internal.app.IGameSpaceCallback
 import com.android.internal.app.IGameSpaceService
-import kotlinx.coroutines.*
 
 class GameSpaceService : Service() {
 
     private val TAG = "GameSpaceService"
-
-    private val retryDelayMs = 2000L
-    @Volatile private var serviceRegistered = false
+    
     private var gameSpaceService: IGameSpaceService? = null
-    private val serviceScope = CoroutineScope(SupervisorJob() + Dispatchers.IO)
 
     private val callback = object : IGameSpaceCallback.Stub() {
         override fun shouldSuppressFullScreenIntent(suppress: Boolean) {}
 
         override fun onGameStart(packageName: String) {
+            Log.d(TAG, "Game started: $packageName")
             SessionService.start(applicationContext, packageName)
         }
 
         override fun onGameLeave() {
-            serviceScope.launch {
-                SessionService.stop(applicationContext)
-            }
+            Log.d(TAG, "Game left")
+            SessionService.stop(applicationContext)
         }
     }
 
     override fun onCreate() {
         super.onCreate()
-        Log.d(TAG, "Service created, registering GameSpace callback...")
-        serviceScope.launch { tryRegister() }
+        Log.d(TAG, "Service created, registering callback...")
+        registerCallback()
     }
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
@@ -61,61 +57,43 @@ class GameSpaceService : Service() {
                     SessionService.start(applicationContext, it)
                 }
             }
-            "game_stop" -> {
-                SessionService.stop(applicationContext)
-            }
+            "game_stop" -> SessionService.stop(applicationContext)
         }
         return START_STICKY
     }
 
-    private suspend fun tryRegister() {
-        val service = withContext(Dispatchers.IO) {
-            IGameSpaceService.Stub.asInterface(ServiceManager.getService("game_space"))
-        }
-        gameSpaceService = service
+    private fun registerCallback() {
+        gameSpaceService = IGameSpaceService.Stub.asInterface(
+            ServiceManager.getService("game_space")
+        )
 
-        if (service != null) {
+        if (gameSpaceService != null) {
             try {
-                service.registerCallback(callback)
-                serviceRegistered = true
-                Log.i(TAG, "GameSpaceCallback registered successfully.")
+                gameSpaceService?.registerCallback(callback)
+                Log.i(TAG, "Callback registered successfully")
             } catch (e: RemoteException) {
                 Log.e(TAG, "Failed to register callback", e)
-                serviceRegistered = false
-                scheduleRetry()
             }
         } else {
-            scheduleRetry()
-        }
-    }
-
-    private fun scheduleRetry() {
-        if (serviceRegistered) return
-        serviceScope.launch {
-            delay(retryDelayMs)
-            tryRegister()
+            Log.e(TAG, "game_space service not available")
         }
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        serviceScope.launch {
-            unregisterCallback()
-        }
-        serviceScope.cancel()
+        unregisterCallback()
     }
 
-    private suspend fun unregisterCallback() {
-        if (serviceRegistered && gameSpaceService != null) {
+    private fun unregisterCallback() {
+        if (gameSpaceService != null) {
             try {
                 gameSpaceService?.unregisterCallback(callback)
-                Log.i(TAG, "GameSpaceCallback unregistered.")
+                Log.i(TAG, "Callback unregistered")
             } catch (e: RemoteException) {
                 Log.w(TAG, "Failed to unregister callback", e)
             }
+            gameSpaceService = null
         }
-        serviceRegistered = false
-        gameSpaceService = null
     }
 
     override fun onBind(intent: Intent?): IBinder? = null

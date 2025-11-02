@@ -31,9 +31,7 @@
     <uses-permission android:name="android.permission.ACCESS_FPS_COUNTER" />
     <uses-permission android:name="android.permission.ANSWER_PHONE_CALLS" />
     <uses-permission android:name="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE" />
-    <!-- Required to write Settings.Secure -->
     <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS" />
-    <!-- Required for Telephony callbacks -->
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" />
@@ -48,9 +46,11 @@
         android:name=".GameSpace"
         android:icon="@drawable/ic_launcher"
         android:label="@string/settings_title"
+        android:persistent="true"
         android:supportsRtl="true"
         android:theme="@style/GameSpaceTheme"
         android:enableOnBackInvokedCallback="true">
+        
         <activity
             android:name=".settings.SettingsActivity"
             android:excludeFromRecents="true"
@@ -73,16 +73,16 @@
             android:label="@string/app_selector_label" />
 
         <service
+            android:name=".gamebar.GameSpaceService"
+            android:exported="false" />
+
+        <service
             android:name=".gamebar.SessionService"
-            android:exported="false" />
+            android:exported="false"
+            android:configChanges="orientation|screenSize" />
 
         <service
-            android:name=".gamebar.GameBarService"
-            android:foregroundServiceType="specialUse"
-            android:exported="false" />
-
-        <service
-            android:name="io.chaldeaprjkt.gamespace.gamebar.DanmakuServiceListener"
+            android:name=".gamebar.DanmakuServiceListener"
             android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE"
             android:exported="true">
             <intent-filter>
@@ -90,9 +90,15 @@
             </intent-filter>
         </service>
 
-        <service
-            android:name=".gamebar.GameSpaceService"
-            android:exported="false" />
+        <receiver
+            android:name=".BootCompletedReceiver"
+            android:exported="true"
+            android:directBootAware="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.LOCKED_BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
 
     </application>
 

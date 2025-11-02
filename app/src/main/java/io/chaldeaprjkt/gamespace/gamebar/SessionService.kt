@@ -1,6 +1,7 @@
 /*
  * Copyright (C) 2021 Chaldeaprjkt
  * Copyright (C) 2022-2024 crDroid Android Project
+ * Copyright (C) 2025 AxionOS
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,18 +20,23 @@ package io.chaldeaprjkt.gamespace.gamebar
 import android.annotation.SuppressLint
 import android.app.GameManager
 import android.app.Service
-import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
-import android.content.ServiceConnection
+import android.content.res.Configuration
+import android.os.Handler
 import android.os.IBinder
-import android.os.RemoteException
+import android.os.Looper
 import android.os.UserHandle
 import android.util.Log
+import android.view.LayoutInflater
+import android.view.WindowManager
 import dagger.hilt.android.AndroidEntryPoint
 import io.chaldeaprjkt.gamespace.data.AppSettings
 import io.chaldeaprjkt.gamespace.data.GameSession
 import io.chaldeaprjkt.gamespace.data.SystemSettings
+import io.chaldeaprjkt.gamespace.gamebar.brightness.BrightnessInteractor
+import io.chaldeaprjkt.gamespace.gamebar.fps.FpsInteractor
+import io.chaldeaprjkt.gamespace.gamebar.tiles.TileRepository
 import io.chaldeaprjkt.gamespace.utils.GameModeUtils
 import io.chaldeaprjkt.gamespace.utils.ScreenUtils
 import io.chaldeaprjkt.gamespace.utils.isServiceRunning
@@ -44,188 +50,155 @@ class SessionService : Hilt_SessionService() {
     @Inject lateinit var screenUtils: ScreenUtils
     @Inject lateinit var gameModeUtils: GameModeUtils
     @Inject lateinit var callListener: CallListener
+    @Inject lateinit var danmakuService: DanmakuService
+    @Inject lateinit var brightnessInteractor: BrightnessInteractor
+    @Inject lateinit var fpsInteractor: FpsInteractor
+    @Inject lateinit var tileRepository: TileRepository
 
-    private var isRunning = false
-    private var tarketPkgName = ""
-
+    private var currentPackage: String? = null
     private lateinit var gameManager: GameManager
-    private lateinit var gameBar: GameBarService
-    private var isBarConnected = false
-    private var commandIntent: Intent? = null
-    private var gameBarConnection: ServiceConnection? = null
+    private lateinit var sidebar: GameSidebar
 
     @SuppressLint("WrongConstant")
     override fun onCreate() {
         super.onCreate()
-        isRunning = true
+        Log.d(TAG, "SessionService created")
+        
+        gameManager = getSystemService(Context.GAME_SERVICE) as GameManager
+        gameModeUtils.bind(gameManager)
+        
+        sidebar = GameSidebar(
+            context = this,
+            wm = getSystemService(WINDOW_SERVICE) as WindowManager,
+            handler = Handler(Looper.getMainLooper()),
+            inflater = LayoutInflater.from(this),
+            appSettings = appSettings,
+            screenUtils = screenUtils,
+            danmakuService = danmakuService,
+            brightnessInteractor = brightnessInteractor,
+            fpsInteractor = fpsInteractor,
+            gameModeUtils = gameModeUtils,
+            settings = settings,
+            tileRepository = tileRepository
+        )
+        sidebar.onCreate()
+        
         runCatching {
             screenUtils.bind()
         }.onFailure {
             Log.e(TAG, "Error binding ScreenUtils", it)
         }
-        gameManager = getSystemService(Context.GAME_SERVICE) as GameManager
-        gameModeUtils.bind(gameManager)
     }
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
-        if (!isRunning) {
-            Log.w(TAG, "Service is not properly initialized. Stopping.")
-            stopServiceCleanup()
-            return START_NOT_STICKY
-        }
-
-        intent?.let { commandIntent = it }
-        super.onStartCommand(intent, flags, startId)
-
-        if (intent == null && flags == 0 && startId > 1) {
-            stopServiceCleanup()
-            return tryStartFromDeath()
-        }
-
         when (intent?.action) {
-            START -> startGameBar()
-            STOP -> {
-                stopServiceCleanup()
-                return START_NOT_STICKY
+            ACTION_START -> {
+                val packageName = intent.getStringExtra(EXTRA_PACKAGE_NAME)
+                if (packageName != null) {
+                    startGameSession(packageName)
+                } else {
+                    Log.e(TAG, "No package name provided, stopping")
+                    stopSelf()
+                }
+            }
+            ACTION_STOP -> {
+                stopGameSession()
+                stopSelf()
             }
         }
-        return START_STICKY
+        return START_NOT_STICKY
     }
 
-    private fun startGameBar() {
-        if (isBarConnected) {
-            Log.i(TAG, "GameBar is already connected.")
-            return
-        }
-
-        val connection = object : ServiceConnection {
-            override fun onServiceConnected(name: ComponentName?, service: IBinder?) {
-                isBarConnected = true
-                gameBar = (service as GameBarService.GameBarBinder).getService()
-                onGameBarReady()
-            }
-
-            override fun onServiceDisconnected(name: ComponentName?) {
-                isBarConnected = false
-                gameBarConnection = null
-                stopServiceCleanup()
-            }
-        }
-
-        gameBarConnection = connection
-        val success = bindServiceAsUser(Intent(this, GameBarService::class.java), connection, Context.BIND_AUTO_CREATE, UserHandle.CURRENT)
-        if (!success) {
-            Log.e(TAG, "Failed to bind GameBarService")
-            gameBarConnection = null
-            stopServiceCleanup()
-        }
+    override fun onConfigurationChanged(newConfig: Configuration) {
+        super.onConfigurationChanged(newConfig)
+        sidebar.onConfigurationChanged(newConfig)
     }
 
-    private fun onGameBarReady() {
-        if (!isBarConnected) {
-            Log.w(TAG, "GameBar is not connected. Retrying connection.")
-            startGameBar()
+    private fun startGameSession(packageName: String) {
+        if (currentPackage == packageName) {
+            Log.d(TAG, "Session already active for $packageName")
             return
         }
-
-        val intent = commandIntent ?: run {
-            Log.e(TAG, "Command Intent is uninitialized. Stopping service.")
-            stopServiceCleanup()
-            return
+        
+        if (currentPackage != null) {
+            stopGameSession()
         }
-
-        val app = intent.getStringExtra(EXTRA_PACKAGE_NAME) ?: run {
-            Log.e(TAG, "App package name missing in intent. Stopping service.")
-            stopServiceCleanup()
-            return
-        }
-
-        tarketPkgName = app
+        
+        Log.i(TAG, "Starting game session for $packageName")
+        currentPackage = packageName
+        
         session.unregister()
-        session.register(app)
-        applyGameModeConfig(app)
-
-        gameBar.onGameStart()
+        session.register(packageName)
+        
+        applyGameModeConfig(packageName)
+        
+        sidebar.onGameStart()
+        
         screenUtils.stayAwake = appSettings.stayAwake
         screenUtils.lockGesture = appSettings.lockGesture
         screenUtils.bypassCharge = true
+        
         callListener.init()
     }
 
-    private fun tryStartFromDeath(): Int {
-        if (isBarConnected) return START_STICKY
-
-        if (tarketPkgName.isBlank()) {
-            Log.w(TAG, "Missing target package name. Cannot recover. Stopping.")
-            stopServiceCleanup()
-            return START_NOT_STICKY
-        }
-
-        commandIntent = Intent(START).putExtra(EXTRA_PACKAGE_NAME, tarketPkgName)
-        startGameBar()
-        return START_STICKY
+    private fun stopGameSession() {
+        Log.i(TAG, "Stopping game session")
+        
+        sidebar.onGameLeave()
+        session.unregister()
+        callListener.destroy()
+        screenUtils.unbind()
+        
+        currentPackage = null
     }
 
     private fun applyGameModeConfig(app: String) {
-        val preferred = settings.userGames.firstOrNull { it.packageName == app }?.mode
-            ?: GameModeUtils.defaultPreferredMode
-
-        gameModeUtils.activeGame = settings.userGames.firstOrNull { it.packageName == app }
-
+        val userGame = settings.userGames.firstOrNull { it.packageName == app }
+        val preferred = userGame?.mode ?: GameModeUtils.defaultPreferredMode
+        
+        gameModeUtils.activeGame = userGame
+        
         val availableModes = gameManager.getAvailableGameModes(app)
         if (availableModes.contains(preferred)) {
             gameManager.setGameMode(app, preferred)
         }
     }
 
-    private fun stopServiceCleanup() {
-        unbindGameBar()
-        session.unregister()
+    override fun onDestroy() {
+        Log.d(TAG, "SessionService destroyed")
+        stopGameSession()
         gameModeUtils.unbind()
-        screenUtils.unbind()
-        callListener.destroy()
-        tarketPkgName = ""
-        isRunning = false
-        stopSelf()
-    }
-
-    private fun unbindGameBar() {
-        if (isBarConnected && gameBarConnection != null) {
-            runCatching {
-                unbindService(gameBarConnection!!)
-            }.onFailure {
-                Log.w(TAG, "GameBar already unbound or not bound", it)
-            }.also {
-                gameBarConnection = null
-                isBarConnected = false
-            }
-        }
+        danmakuService.destroy()
+        super.onDestroy()
     }
 
     override fun onBind(intent: Intent?): IBinder? = null
 
-    override fun onDestroy() {
-        stopServiceCleanup()
-        super.onDestroy()
-    }
-
     companion object {
         const val TAG = "SessionService"
-        const val START = "game_start"
-        const val STOP = "game_stop"
+        const val ACTION_START = "game_start"
+        const val ACTION_STOP = "game_stop"
         const val EXTRA_PACKAGE_NAME = "package_name"
 
-        fun start(context: Context, app: String) = Intent(context, SessionService::class.java)
-            .apply {
-                action = START
-                putExtra(EXTRA_PACKAGE_NAME, app)
+        fun start(context: Context, app: String) {
+            if (!context.isServiceRunning(SessionService::class.java)) {
+                Intent(context, SessionService::class.java).apply {
+                    action = ACTION_START
+                    putExtra(EXTRA_PACKAGE_NAME, app)
+                }.let {
+                    context.startServiceAsUser(it, UserHandle.CURRENT)
+                }
             }
-            .takeIf { !context.isServiceRunning(SessionService::class.java) }
-            ?.run { context.startServiceAsUser(this, UserHandle.CURRENT) }
+        }
 
-        fun stop(context: Context) = Intent(context, SessionService::class.java)
-            .apply { action = STOP }
-            .takeIf { context.isServiceRunning(SessionService::class.java) }
-            ?.run { context.stopServiceAsUser(this, UserHandle.CURRENT) }
+        fun stop(context: Context) {
+            if (context.isServiceRunning(SessionService::class.java)) {
+                Intent(context, SessionService::class.java).apply {
+                    action = ACTION_STOP
+                }.let {
+                    context.startServiceAsUser(it, UserHandle.CURRENT)
+                }
+            }
+        }
     }
 }

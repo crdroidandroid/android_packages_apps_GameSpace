@@ -1,5 +1,4 @@
 /*
- * Copyright (C) 2021 Chaldeaprjkt
  * Copyright (C) 2025 AxionOS
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,31 +15,27 @@
  */
 package io.chaldeaprjkt.gamespace
 
-import android.app.Application
+import android.content.BroadcastReceiver
+import android.content.Context
 import android.content.Intent
 import android.os.UserHandle
 import android.util.Log
-import dagger.hilt.android.HiltAndroidApp
 import io.chaldeaprjkt.gamespace.gamebar.GameSpaceService
 
-@HiltAndroidApp(Application::class)
-class GameSpace : Hilt_GameSpace() {
+class BootCompletedReceiver : BroadcastReceiver() {
 
-    private val TAG = "GameSpace"
+    private val TAG = "BootCompletedReceiver"
 
-    override fun onCreate() {
-        super.onCreate()
-        Log.d(TAG, "Application created")
-        startGameSpaceService()
-    }
-
-    private fun startGameSpaceService() {
-        try {
-            val intent = Intent(this, GameSpaceService::class.java)
-            startServiceAsUser(intent, UserHandle.CURRENT)
-            Log.i(TAG, "GameSpaceService started")
-        } catch (e: Exception) {
-            Log.e(TAG, "Failed to start GameSpaceService", e)
+    override fun onReceive(context: Context, intent: Intent) {
+        if (intent.action == Intent.ACTION_BOOT_COMPLETED) {
+            Log.d(TAG, "Boot completed, starting GameSpaceService")
+            try {
+                val serviceIntent = Intent(context, GameSpaceService::class.java)
+                context.startServiceAsUser(serviceIntent, UserHandle.CURRENT)
+                Log.i(TAG, "GameSpaceService started after boot")
+            } catch (e: Exception) {
+                Log.e(TAG, "Failed to start GameSpaceService after boot", e)
+            }
         }
     }
 }
