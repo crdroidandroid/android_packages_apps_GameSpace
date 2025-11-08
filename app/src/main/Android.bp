@@ -32,6 +32,7 @@ android_app {
         "androidx.compose.animation_animation-core",
         "androidx.compose.animation_animation-graphics",
         "androidx.compose.foundation_foundation",
+        "androidx.lifecycle_lifecycle-viewmodel-compose",
         "androidx.compose.material3_material3",
         "androidx.compose.material3_material3-window-size-class",
         "androidx.compose.material_material-icons-core",

@@ -33,6 +33,7 @@ import android.provider.Settings
 import android.view.WindowManager
 import com.android.internal.util.ScreenshotHelper
 import com.android.systemui.screenrecord.IRemoteRecording
+import com.android.systemui.screenrecord.IRecordingCallback
 import javax.inject.Inject
 import kotlin.system.exitProcess
 
@@ -59,6 +60,14 @@ class ScreenUtils @Inject constructor(private val context: Context) {
     }
 
     val recorder: IRemoteRecording? get() = remoteRecording
+    
+    fun addRecordingCallback(callback: IRecordingCallback) {
+        remoteRecording?.addRecordingCallback(callback)
+    }
+    
+    fun removeRecordingCallback(callback: IRecordingCallback) {
+        remoteRecording?.removeRecordingCallback(callback)
+    }
 
     private var isGestureLocked = false
     

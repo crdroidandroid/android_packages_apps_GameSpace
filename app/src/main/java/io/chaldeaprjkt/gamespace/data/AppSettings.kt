@@ -19,12 +19,16 @@ package io.chaldeaprjkt.gamespace.data
 
 import android.app.Service
 import android.content.Context
+import android.content.SharedPreferences
 import android.provider.Settings
 import android.view.WindowManager
 import androidx.preference.PreferenceManager
 import io.chaldeaprjkt.gamespace.utils.dp
 import io.chaldeaprjkt.gamespace.utils.statusbarHeight
 import javax.inject.Inject
+import kotlinx.coroutines.channels.awaitClose
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.callbackFlow
 
 class AppSettings @Inject constructor(private val context: Context) {
 
@@ -91,6 +95,18 @@ class AppSettings @Inject constructor(private val context: Context) {
         get() = db.getString(KEY_QUICK_START_APPS, "") ?: ""
         set(value) = db.edit().putString(KEY_QUICK_START_APPS, value).apply()
 
+    fun collectFpsSetting(): Flow<Boolean> = callbackFlow {
+        trySend(db.getBoolean(KEY_SHOW_FPS, false))
+        val listener =
+            SharedPreferences.OnSharedPreferenceChangeListener { prefs, key ->
+                if (key == KEY_SHOW_FPS) {
+                    trySend(prefs.getBoolean(KEY_SHOW_FPS, false))
+                }
+            }
+        db.registerOnSharedPreferenceChangeListener(listener)
+        awaitClose { db.unregisterOnSharedPreferenceChangeListener(listener) }
+    }
+
     companion object {
         const val KEY_AUTO_BRIGHTNESS_DISABLE = "gamespace_auto_brightness_disabled"
         const val KEY_3SCREENSHOT_DISABLE = "gamespace_tfgesture_disabled"
@@ -104,5 +120,6 @@ class AppSettings @Inject constructor(private val context: Context) {
         const val KEY_BRIGHTNESS_ENABLED = "brightness_enabled"
         const val KEY_FPS_GRAPH_ENABLED = "fps_graph_enabled"
         const val KEY_QUICK_START_APPS = "quick_start_apps"
+        const val KEY_SHOW_FPS = "show_fps"
     }
 }
