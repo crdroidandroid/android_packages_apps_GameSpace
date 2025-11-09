@@ -25,8 +25,6 @@ import android.graphics.Point
 import android.view.View
 import android.view.WindowManager
 import dagger.hilt.EntryPoints
-import io.chaldeaprjkt.gamespace.gamebar.AppInfo
-import io.chaldeaprjkt.gamespace.data.AppSettings
 import io.chaldeaprjkt.gamespace.gamebar.DraggableTouchListener
 
 fun View.registerDraggableTouchListener(
@@ -37,12 +35,9 @@ fun View.registerDraggableTouchListener(
 
 val Context.statusbarHeight
     get() =
-        (resources.getIdentifier("status_bar_height", "dimen", "android")
+        resources.getIdentifier("status_bar_height", "dimen", "android")
             .takeIf { it > 0 }
-            ?.let { resources.getDimensionPixelSize(it) } ?: 24.dp) + 4.dp
-
-val Context.safeArea
-    get() = statusbarHeight + 50.dp
+            ?.let { resources.getDimensionPixelSize(it) } ?: 24.dp
 
 val Int.dp
     get() = (this * getSystem().displayMetrics.density).toInt()
@@ -58,24 +53,3 @@ fun Context.isServiceRunning(serviceClass: Class<*>): Boolean =
     (getSystemService(Context.ACTIVITY_SERVICE) as ActivityManager)
         .getRunningServices(Integer.MAX_VALUE)
         .any { it.service.className == serviceClass.name }
-        
-fun Context.getQuickStartApps(appSettings: AppSettings): List<AppInfo> {
-    val appList = mutableListOf<AppInfo>()
-    val pm = this.packageManager
-    if (!appSettings.quickStartApps.isNullOrEmpty()) {
-        appSettings.quickStartApps.split(",").forEach { pkg ->
-            try {
-                val info = pm.getApplicationInfo(pkg.trim(), 0)
-                appList.add(
-                    AppInfo(
-                        name = pm.getApplicationLabel(info).toString(),
-                        icon = pm.getApplicationIcon(info),
-                        packageName = pkg.trim()
-                    )
-                )
-            } catch (_: Exception) {
-            }
-        }
-    }
-    return appList
-}

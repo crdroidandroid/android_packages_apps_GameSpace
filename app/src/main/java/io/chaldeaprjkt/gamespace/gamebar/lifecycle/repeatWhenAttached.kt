@@ -19,7 +19,6 @@ import android.view.View
 import android.view.ViewTreeObserver
 import androidx.annotation.MainThread
 import androidx.lifecycle.*
-import androidx.lifecycle.viewmodel.CreationExtras
 import androidx.savedstate.*
 import kotlinx.coroutines.*
 import kotlin.coroutines.*
@@ -73,54 +72,33 @@ class ViewLifecycleOwner(private val view: View) : LifecycleOwner {
         ViewTreeObserver.OnWindowVisibilityChangeListener { updateState() }
     private val windowFocusListener =
         ViewTreeObserver.OnWindowFocusChangeListener { updateState() }
-
-    private val savedStateRegistryOwner = object : SavedStateRegistryOwner {
-        private val controller =
-            SavedStateRegistryController.create(this).apply { performRestore(null) }
-
-        override val savedStateRegistry = controller.savedStateRegistry
-        override val lifecycle: Lifecycle
-            get() = registry
-    }
-
-    private val viewModelStoreOwner = object :
-        ViewModelStoreOwner,
-        HasDefaultViewModelProviderFactory {
-
-        override val viewModelStore: ViewModelStore = ViewModelStore()
-
-        override val defaultViewModelProviderFactory: ViewModelProvider.Factory
-            get() = ViewModelProvider.NewInstanceFactory()
-
-        override val defaultViewModelCreationExtras: CreationExtras
-            get() = CreationExtras.Empty
-    }
+    private val savedStateRegistryOwner =
+        object : SavedStateRegistryOwner {
+            private val savedStateRegistryController =
+                SavedStateRegistryController.create(this).apply { performRestore(null) }
+            override val savedStateRegistry = savedStateRegistryController.savedStateRegistry
+            override val lifecycle: Lifecycle
+                get() = registry
+        }
 
     fun onCreate() {
         registry.currentState = Lifecycle.State.CREATED
         view.viewTreeObserver.addOnWindowVisibilityChangeListener(windowVisibleListener)
         view.viewTreeObserver.addOnWindowFocusChangeListener(windowFocusListener)
-
         view.setViewTreeLifecycleOwner(this)
         view.setViewTreeSavedStateRegistryOwner(savedStateRegistryOwner)
-        view.setViewTreeViewModelStoreOwner(viewModelStoreOwner)
-
         updateState()
     }
 
     fun onDestroy() {
         view.viewTreeObserver.removeOnWindowVisibilityChangeListener(windowVisibleListener)
         view.viewTreeObserver.removeOnWindowFocusChangeListener(windowFocusListener)
-
         view.setViewTreeLifecycleOwner(null)
         view.setViewTreeSavedStateRegistryOwner(null)
-        view.setViewTreeViewModelStoreOwner(null)
-
         registry.currentState = Lifecycle.State.DESTROYED
     }
 
-    override val lifecycle: Lifecycle
-        get() = registry
+    override val lifecycle: Lifecycle get() = registry
 
     private fun updateState() {
         registry.currentState = when {

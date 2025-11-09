@@ -28,6 +28,7 @@ import android.os.IBinder
 import android.os.Looper
 import android.os.UserHandle
 import android.util.Log
+import android.view.LayoutInflater
 import android.view.WindowManager
 import dagger.hilt.android.AndroidEntryPoint
 import io.chaldeaprjkt.gamespace.data.AppSettings
@@ -56,7 +57,7 @@ class SessionService : Hilt_SessionService() {
 
     private var currentPackage: String? = null
     private lateinit var gameManager: GameManager
-    private lateinit var sidebar: GameSideBar
+    private lateinit var sidebar: GameSidebar
 
     @SuppressLint("WrongConstant")
     override fun onCreate() {
@@ -66,17 +67,18 @@ class SessionService : Hilt_SessionService() {
         gameManager = getSystemService(Context.GAME_SERVICE) as GameManager
         gameModeUtils.bind(gameManager)
         
-        sidebar = GameSideBar(
+        sidebar = GameSidebar(
             context = this,
-            windowManager = getSystemService(WINDOW_SERVICE) as WindowManager,
+            wm = getSystemService(WINDOW_SERVICE) as WindowManager,
             handler = Handler(Looper.getMainLooper()),
+            inflater = LayoutInflater.from(this),
             appSettings = appSettings,
             screenUtils = screenUtils,
             danmakuService = danmakuService,
             brightnessInteractor = brightnessInteractor,
             fpsInteractor = fpsInteractor,
             gameModeUtils = gameModeUtils,
-            systemSettings = settings,
+            settings = settings,
             tileRepository = tileRepository
         )
         sidebar.onCreate()
