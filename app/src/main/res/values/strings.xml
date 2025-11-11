@@ -99,4 +99,8 @@
     <string name="danmaku_notification_mode_summary">Show notification as danmaku aka bullet comments while game is active</string>
     
     <string name="gamespace_running">Game Space is running</string>
+
+    <!-- Call overlay -->
+    <string name="call_overlay_enabled_title">Call overlay</string>
+    <string name="call_overlay_enabled_summary">Show minimal call overlay to answer/reject calls</string>
 </resources>
