@@ -18,6 +18,7 @@ package io.chaldeaprjkt.gamespace.gamebar
 import android.app.Service
 import android.content.Intent
 import android.os.IBinder
+import android.os.Process
 import android.os.RemoteException
 import android.os.ServiceManager
 import android.util.Log
@@ -36,11 +37,13 @@ class GameSpaceService : Service() {
         override fun onGameStart(packageName: String) {
             Log.d(TAG, "Game started: $packageName")
             SessionService.start(applicationContext, packageName)
+            Process.setThreadAffinity(Process.myPid(), 2)
         }
 
         override fun onGameLeave() {
             Log.d(TAG, "Game left")
             SessionService.stop(applicationContext)
+            Process.setThreadAffinity(Process.myPid(), 1)
         }
     }
 
@@ -48,6 +51,7 @@ class GameSpaceService : Service() {
         super.onCreate()
         Log.d(TAG, "Service created, registering callback...")
         registerCallback()
+        Process.setThreadAffinity(Process.myPid(), 1)
     }
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
