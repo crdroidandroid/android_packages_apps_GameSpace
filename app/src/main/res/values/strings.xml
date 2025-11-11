@@ -120,4 +120,7 @@
     
      <string name="gamespace_running">Game Space is running</string>
      <string name="app_locked_message">This app is locked. Please unlock it first.</string>
+     
+     <string name="call_overlay_enabled_title">Call overlay</string>
+     <string name="call_overlay_enabled_summary">Show minimal call overlay to answer/reject calls</string>
 </resources>

@@ -30,6 +30,12 @@
 
         <SwitchPreferenceCompat
             android:defaultValue="true"
+            android:key="call_overlay_enabled"
+            android:summary="@string/call_overlay_enabled_summary"
+            android:title="@string/call_overlay_enabled_title" />
+
+        <SwitchPreferenceCompat
+            android:defaultValue="true"
             android:key="gamespace_danmaku_notification_mode"
             android:summary="@string/danmaku_notification_mode_summary"
             android:title="@string/danmaku_notification_mode_title" />

@@ -91,6 +91,10 @@ class AppSettings @Inject constructor(private val context: Context) {
         get() = db.getString(KEY_QUICK_START_APPS, "") ?: ""
         set(value) = db.edit().putString(KEY_QUICK_START_APPS, value).apply()
 
+    var callOverlayEnabled
+        get() = db.getBoolean(KEY_CALL_OVERLAY_ENABLED, true)
+        set(point) = db.edit().putBoolean(KEY_CALL_OVERLAY_ENABLED, point).apply()
+
     companion object {
         const val KEY_AUTO_BRIGHTNESS_DISABLE = "gamespace_auto_brightness_disabled"
         const val KEY_3SCREENSHOT_DISABLE = "gamespace_tfgesture_disabled"
@@ -104,5 +108,6 @@ class AppSettings @Inject constructor(private val context: Context) {
         const val KEY_BRIGHTNESS_ENABLED = "brightness_enabled"
         const val KEY_FPS_GRAPH_ENABLED = "fps_graph_enabled"
         const val KEY_QUICK_START_APPS = "quick_start_apps"
+        const val KEY_CALL_OVERLAY_ENABLED = "call_overlay_enabled"
     }
 }
