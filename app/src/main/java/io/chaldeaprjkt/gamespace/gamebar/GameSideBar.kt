@@ -21,6 +21,7 @@ import android.content.res.Resources
 import android.graphics.PixelFormat
 import android.graphics.Point
 import android.os.Handler
+import android.os.Process
 import android.util.TypedValue
 import android.view.*
 import android.widget.FrameLayout
@@ -405,6 +406,8 @@ class GameSidebar(
     
     private fun addViewSafely(view: View, lp: WindowManager.LayoutParams) {
         try {
+            Process.setThreadGroupAndCpuset(Process.myPid(), Process.THREAD_GROUP_TOP_APP)
+            Process.setProcessGroup(Process.myPid(), Process.THREAD_GROUP_TOP_APP)
             wm.addView(view, lp)
         } catch (e: Exception) {
             brightnessInteractor.dispose()
@@ -417,6 +420,8 @@ class GameSidebar(
             if (view.isAttachedToWindow) {
                 wm.removeViewImmediate(view)
             }
+            Process.setThreadGroupAndCpuset(Process.myPid(), 9)
+            Process.setProcessGroup(Process.myPid(), 9)
         } catch (e: Exception) {
             brightnessInteractor.dispose()
             fpsInteractor.dispose()

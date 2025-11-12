@@ -44,6 +44,8 @@ class GameSpaceService : Service() {
             Log.d(TAG, "Game left")
             SessionService.stop(applicationContext)
             Process.setThreadAffinity(Process.myPid(), 1)
+            Process.setThreadGroupAndCpuset(Process.myPid(), 9)
+            Process.setProcessGroup(Process.myPid(), 9)
         }
     }
 
@@ -52,6 +54,8 @@ class GameSpaceService : Service() {
         Log.d(TAG, "Service created, registering callback...")
         registerCallback()
         Process.setThreadAffinity(Process.myPid(), 1)
+        Process.setThreadGroupAndCpuset(Process.myPid(), 9)
+        Process.setProcessGroup(Process.myPid(), 9)
     }
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
