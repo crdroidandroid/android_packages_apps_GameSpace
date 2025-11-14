@@ -60,6 +60,18 @@ class SystemSettings @Inject constructor(
             )
         }
 
+    var stayAwake
+        get() = Settings.System.getIntForUser(
+            resolver, "gamespace_stay_awake", 0,
+            UserHandle.USER_CURRENT
+        ) != 0
+        set(value) {
+            Settings.System.putIntForUser(
+                resolver, "gamespace_stay_awake",
+                if (value) 1 else 0, UserHandle.USER_CURRENT
+            )
+        }
+
     var threeScreenshot
         get() = Settings.Secure.getIntForUser(
             resolver, "nothing_three_finger_screenshot", 0,

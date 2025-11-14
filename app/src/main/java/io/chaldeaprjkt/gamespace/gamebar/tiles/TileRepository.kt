@@ -137,10 +137,10 @@ class TileRepository @Inject constructor(
                 id = "stay_awake",
                 label = "Stay Awake",
                 icon = Icons.Default.Bedtime,
-                state = mutableStateOf(appSettings.stayAwake),
+                state = mutableStateOf(systemSettings.stayAwake),
                 setter = {
-                    appSettings.stayAwake = it
-                    screenUtils.stayAwake = it
+                    systemSettings.stayAwake = it
+                    systemSettings.stayAwake = it
                 }
             )
         )

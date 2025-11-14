@@ -347,7 +347,7 @@ class GameSidebar(
                 isVisible = false
                 return
             }
-            recorder.addRecordingCallback(object : IRecordingCallback.Stub() {
+            screenUtils.addRecordingCallback(object : IRecordingCallback.Stub() {
                 override fun onRecordingStart() {
                     this@apply.post { isSelected = true }
                 }

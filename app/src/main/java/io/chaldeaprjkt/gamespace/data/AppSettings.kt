@@ -51,10 +51,6 @@ class AppSettings @Inject constructor(private val context: Context) {
         get() = db.getBoolean(KEY_3SCREENSHOT_DISABLE, false)
         set(it) = db.edit().putBoolean(KEY_3SCREENSHOT_DISABLE, it).apply()
 
-    var stayAwake
-        get() = db.getBoolean(KEY_STAY_AWAKE, false)
-        set(value) = db.edit().putBoolean(KEY_STAY_AWAKE, value).apply()
-
     var danmakuNotification
         get() = db.getBoolean(KEY_DANMAKU_NOTIFICATION_MODE, true)
         set(value) = db.edit().putBoolean(KEY_DANMAKU_NOTIFICATION_MODE, value).apply()
@@ -71,10 +67,6 @@ class AppSettings @Inject constructor(private val context: Context) {
         get() = db.getInt(KEY_MENU_OPACITY, 100)
         set(value) = db.edit().putInt(KEY_MENU_OPACITY, value).apply()
 
-    var lockGesture
-        get() = db.getBoolean(KEY_LOCK_GESTURE, false)
-        set(value) = db.edit().putBoolean(KEY_LOCK_GESTURE, value).apply()
-        
     var tileOrder: List<String>
         get() = db.getString(KEY_TILE_ORDER, null)?.split(",")?.filter { it.isNotBlank() } ?: emptyList()
         set(value) = db.edit().putString(KEY_TILE_ORDER, value.joinToString(",")).apply()

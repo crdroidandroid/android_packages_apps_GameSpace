@@ -79,13 +79,13 @@
             android:summary="@string/three_screenshot_disabled_summary"
             android:title="@string/three_screenshot_disabled_title" />
 
-        <SwitchPreferenceCompat
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:defaultValue="false"
             android:key="gamespace_stay_awake"
             android:summary="@string/stay_awake_summary"
             android:title="@string/stay_awake_title" />
 
-        <SwitchPreferenceCompat
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:defaultValue="false"
             android:key="gamespace_lock_gesture"
             android:title="@string/lock_gesture_title" />
