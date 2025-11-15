@@ -21,6 +21,7 @@ import android.bluetooth.BluetoothAdapter
 import android.content.Context
 import android.content.Intent
 import android.net.wifi.WifiManager
+import android.os.SystemProperties
 import android.provider.Settings
 import android.telephony.TelephonyManager
 import android.telephony.SubscriptionManager
@@ -114,6 +115,9 @@ class TileRepository @Inject constructor(
         Settings.Global.getInt(context.contentResolver, Settings.Global.AIRPLANE_MODE_ON, 0) == 1
     )
     val mobileDataState = mutableStateOf(telephonyManager?.isDataEnabled ?: false)
+    val touchBoostState = mutableStateOf(
+        SystemProperties.getInt("persist.sys.touchboost_enable", 0) == 1
+    )
     
     private var lastRefreshTime = 0L
     private val refreshDebounceMs = 1000L
@@ -275,6 +279,22 @@ class TileRepository @Inject constructor(
                 )
             )
         }
+        
+        if (SystemProperties.getBoolean("persist.sys.target_supports_touch_boost", false)) {
+            add(
+                ToggleableTile(
+                    id = "touch_boost",
+                    label = "Touch Boost",
+                    icon = Icons.Default.TouchApp,
+                    state = touchBoostState,
+                    setter = {
+                        val newVal = if (it) 1 else 0
+                        SystemProperties.set("persist.sys.touchboost_enable", "$newVal")
+                        touchBoostState.value = it
+                    }
+                )
+            )
+        }
     }
 
     private val tileOrderKey = "tile_order"
@@ -334,6 +354,13 @@ class TileRepository @Inject constructor(
         val newMobileDataState = telephonyManager?.isDataEnabled ?: false
         if (newMobileDataState != mobileDataState.value) {
             mobileDataState.value = newMobileDataState
+        }
+        
+        if (SystemProperties.getBoolean("persist.sys.target_supports_touch_boost", false)) {
+            val newTouchBoostState = SystemProperties.getInt("persist.sys.touchboost_enable", 0) == 1
+            if (newTouchBoostState != touchBoostState.value) {
+                touchBoostState.value = newTouchBoostState
+            }
         }
     }
 
