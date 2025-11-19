@@ -86,5 +86,5 @@
     <!-- Danmaku Notification Mode -->
     <string name="danmaku_notification_mode_title">Λειτουργία ειδοποιήσεων Danmaku</string>
     <string name="danmaku_notification_mode_summary">Εμφάνιση ειδοποίησης ως danmaku άλλως κουκκίδα σχόλια ενώ το παιχνίδι είναι ενεργό</string>
-    <string name="gamespace_running">Game Space is running</string>
+    <string name="gamespace_running">Ο Χώρος Παιχνιδιού εκτελείται</string>
 </resources>
