@@ -381,6 +381,11 @@ private fun TopRowHeader(
     onToggleExpand: () -> Unit,
     onEditClick: () -> Unit
 ) {
+    val rotateArrow by animateFloatAsState(
+        targetValue = if (headerExpanded) 180f else 0f,
+        animationSpec = tween(durationMillis = 250)
+    )
+
     Row(
         modifier = Modifier.fillMaxWidth(),
         verticalAlignment = Alignment.CenterVertically
@@ -408,8 +413,9 @@ private fun TopRowHeader(
             modifier = Modifier.size(36.dp)
         ) {
             Icon(
-                imageVector = if (headerExpanded) Icons.Default.ExpandLess else Icons.Default.ExpandMore,
-                contentDescription = if (headerExpanded) "Collapse" else "Expand"
+                imageVector = Icons.Default.ExpandMore,
+                contentDescription = if (headerExpanded) "Collapse" else "Expand",
+                modifier = Modifier.rotate(rotateArrow)
             )
         }
     }
