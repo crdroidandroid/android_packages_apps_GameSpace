@@ -18,6 +18,8 @@
  * limitations under the License.
  */
 
+@file:OptIn(ExperimentalMaterial3ExpressiveApi::class)
+
 package io.chaldeaprjkt.gamespace.gamebar
 
 import android.content.Context
@@ -204,7 +206,10 @@ class CallListener @Inject constructor(
                     setContent {
                         val isDark = isSystemInDarkTheme()
                         val scheme = if (isDark) dynamicDarkColorScheme(context) else dynamicLightColorScheme(context)
-                        MaterialTheme(colorScheme = scheme) {
+                        MaterialExpressiveTheme(
+                            colorScheme = scheme,
+                            motionScheme = MotionScheme.expressive(),
+                        ) {
                             CallOverlay(
                                 onAccept = {
                                     telecomManager.acceptRingingCall()
