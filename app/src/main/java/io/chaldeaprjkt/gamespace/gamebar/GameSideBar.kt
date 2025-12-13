@@ -13,6 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
+@file:OptIn(ExperimentalMaterial3ExpressiveApi::class)
+
 package io.chaldeaprjkt.gamespace.gamebar
 
 import android.content.*
@@ -263,7 +266,10 @@ class GameSidebar(
                         val colorScheme = if (isDark) dynamicDarkColorScheme(context) else dynamicLightColorScheme(context)
                         val panelOnLeft = barLayoutParam.x < halfWidth
                         val apps = remember { getQuickStartApps(context) }
-                        MaterialTheme(colorScheme = colorScheme) {
+                        MaterialExpressiveTheme(
+                            colorScheme = colorScheme,
+                            motionScheme = MotionScheme.expressive(),
+                        ) {
                             Box(
                                 modifier = Modifier
                                     .fillMaxWidth()
