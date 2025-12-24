@@ -16,20 +16,67 @@
  */
 package io.chaldeaprjkt.gamespace.settings
 
+import android.content.Intent
 import android.os.Bundle
-import com.android.settingslib.collapsingtoolbar.CollapsingToolbarBaseActivity
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
+import androidx.activity.enableEdgeToEdge
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.activity.viewModels
 import dagger.hilt.android.AndroidEntryPoint
+import io.chaldeaprjkt.gamespace.preferences.AppListPreferences
+import io.chaldeaprjkt.gamespace.preferences.appselector.AppSelectorActivity
+import io.chaldeaprjkt.gamespace.ui.screens.SettingsScreen
+import io.chaldeaprjkt.gamespace.ui.theme.GameSpaceTheme
+import io.chaldeaprjkt.gamespace.ui.viewmodel.SettingsViewModel
 
-@AndroidEntryPoint(CollapsingToolbarBaseActivity::class)
+@AndroidEntryPoint(ComponentActivity::class)
 class SettingsActivity : Hilt_SettingsActivity() {
+
+    private val viewModel: SettingsViewModel by viewModels()
+
+    private val selectorResult = registerForActivityResult(
+        ActivityResultContracts.StartActivityForResult()
+    ) { result ->
+        result.data?.getStringExtra(AppListPreferences.EXTRA_APP)?.let { packageName ->
+            viewModel.registerGame(packageName)
+        }
+    }
+
+    private val perAppResult = registerForActivityResult(
+        ActivityResultContracts.StartActivityForResult()
+    ) { result ->
+        result.data?.getStringExtra(PerAppSettingsFragment.PREF_UNREGISTER)?.let { packageName ->
+            viewModel.unregisterGame(packageName)
+        }
+        viewModel.loadRegisteredGames()
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        if (savedInstanceState == null) {
-            supportFragmentManager
-                .beginTransaction()
-                .replace(com.android.settingslib.collapsingtoolbar.R.id.content_frame, SettingsFragment())
-                .commit()
+        enableEdgeToEdge()
+
+        setContent {
+            GameSpaceTheme {
+                SettingsScreen(
+                    viewModel = viewModel,
+                    onAddGameClick = {
+                        selectorResult.launch(Intent(this, AppSelectorActivity::class.java))
+                    },
+                    onGameClick = { packageName ->
+                        perAppResult.launch(
+                            Intent(this, PerAppSettingsActivity::class.java).apply {
+                                putExtra(PerAppSettingsActivity.EXTRA_PACKAGE, packageName)
+                            }
+                        )
+                    }
+                )
+            }
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        viewModel.loadRegisteredGames()
     }
 }
