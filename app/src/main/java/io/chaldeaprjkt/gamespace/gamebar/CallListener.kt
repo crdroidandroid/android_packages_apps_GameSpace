@@ -47,6 +47,7 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Call
 import androidx.compose.material.icons.filled.Close
+import androidx.compose.material.icons.filled.KeyboardArrowDown
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -220,6 +221,7 @@ class CallListener @Inject constructor(
                                     telecomManager.endCall()
                                     dismissRingerOverlay()
                                 },
+                                onDismiss = { dismissRingerOverlay() },
                                 alignRight = sidebarX < 0,
                                 onDismissAnimation = { dismissRingerOverlay() },
                                 callerPhoto = callerPhoto
@@ -285,6 +287,7 @@ class CallListener @Inject constructor(
 fun CallOverlay(
     onAccept: () -> Unit,
     onReject: () -> Unit,
+    onDismiss: () -> Unit,
     alignRight: Boolean,
     onDismissAnimation: suspend () -> Unit,
     callerPhoto: ImageBitmap? = null
@@ -456,6 +459,25 @@ fun CallOverlay(
                         )
                     }
                 }
+            }
+
+            Box(
+                modifier = Modifier
+                    .size(32.dp)
+                    .clip(CircleShape)
+                    .background(MaterialTheme.colorScheme.surfaceContainerHigh)
+                    .clickable {
+                        isDismissing = true
+                        onDismiss()
+                    },
+                contentAlignment = Alignment.Center
+            ) {
+                Icon(
+                    imageVector = Icons.Filled.KeyboardArrowDown,
+                    contentDescription = "Dismiss",
+                    tint = MaterialTheme.colorScheme.onSurfaceVariant,
+                    modifier = Modifier.size(20.dp)
+                )
             }
         }
     }
