@@ -17,6 +17,7 @@
 package io.chaldeaprjkt.gamespace.gamebar
 
 import android.app.*
+import android.app.FreeformLauncher
 import android.content.*
 import android.content.res.Configuration
 import android.graphics.Point
@@ -76,8 +77,6 @@ import java.time.LocalTime
 import java.time.format.DateTimeFormatter
 import java.util.Date
 import java.util.Locale
-
-import com.android.internal.util.NTAppLockerHelper
 
 private val RoundedTileShape = RoundedCornerShape(100f)
 
@@ -1068,35 +1067,7 @@ fun QuickStartAppIcon(
 }
 
 fun launchAppInFreeformMode(context: Context, packageName: String) {
-    val packageManager = context.packageManager
-    val windowManager = context.getSystemService(Context.WINDOW_SERVICE) as WindowManager
-    NTAppLockerHelper.init(context)
-    if (NTAppLockerHelper.get().isAppLocked(packageName)) {
-        Toast.makeText(
-            context,
-            context.getString(R.string.app_locked_message),
-            Toast.LENGTH_SHORT
-        ).show()
-        return
-    }
-    val display = windowManager.defaultDisplay
-    val screenSize = Point()
-    display.getSize(screenSize)
-    val centerX = screenSize.x / 2
-    val centerY = screenSize.y / 2
-    val width = 500
-    val height = 500
-    val launchBounds = Rect(centerX - width / 2, centerY - height / 2, centerX + width / 2, centerY + height / 2)
-    val activityOptions = ActivityOptions.makeBasic().apply {
-        setLaunchWindowingMode(WindowConfiguration.WINDOWING_MODE_FREEFORM)
-        setLaunchBounds(launchBounds)
-    }
-    try {
-        val intent = packageManager.getLaunchIntentForPackage(packageName)
-        if (intent != null) {
-            context.startActivity(intent, activityOptions.toBundle())
-        }
-    } catch (e: Exception) {}
+    FreeformLauncher.launch(packageName)
 }
 
 @Composable
