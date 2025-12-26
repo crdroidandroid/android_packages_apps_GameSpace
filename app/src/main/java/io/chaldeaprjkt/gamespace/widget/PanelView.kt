@@ -23,6 +23,7 @@ import android.view.animation.DecelerateInterpolator
 import android.view.View
 import android.view.ViewGroup
 import android.view.WindowInsets
+import android.view.WindowManager
 import android.widget.LinearLayout
 import androidx.core.view.doOnLayout
 import io.chaldeaprjkt.gamespace.R
@@ -43,16 +44,27 @@ class PanelView @JvmOverloads constructor(
     }
     
     fun updateTranslationY() {
-        val targetMargin = appSettings.y
-        val params = layoutParams as ViewGroup.MarginLayoutParams
-        val animator = ValueAnimator.ofInt(params.topMargin, targetMargin)
-        animator.duration = 300L
-        animator.interpolator = DecelerateInterpolator()
-        animator.addUpdateListener { valueAnimator ->
-            params.topMargin = valueAnimator.animatedValue as Int
-            layoutParams = params
+        doOnLayout {
+            val wm = context.getSystemService(Context. WINDOW_SERVICE) as WindowManager
+            val screenHeight = wm.maximumWindowMetrics.bounds.height()
+            val panelHeight = measuredHeight
+            
+            val targetMargin = appSettings.y
+            val params = layoutParams as ViewGroup.MarginLayoutParams
+            
+            // Ensure the panel doesn't go off-screen
+            val maxMargin = screenHeight - panelHeight - 16.dp
+            val adjustedMargin = targetMargin.coerceIn(0, maxMargin)
+            
+            val animator = ValueAnimator.ofInt(params.topMargin, adjustedMargin)
+            animator.duration = 300L
+            animator.interpolator = DecelerateInterpolator()
+            animator.addUpdateListener { valueAnimator ->
+                params.topMargin = valueAnimator.animatedValue as Int
+                layoutParams = params
+            }
+            animator.start()
         }
-        animator.start()
     }
 
     override fun onAttachedToWindow() {
