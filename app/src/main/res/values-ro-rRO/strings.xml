@@ -87,4 +87,7 @@
     <string name="danmaku_notification_mode_title">Mod notificări Danmaku</string>
     <string name="danmaku_notification_mode_summary">Arată notificarea ca și comentariile de tip glonț aka glonț cât timp jocul este activ</string>
     <string name="gamespace_running">Spațiul de joc rulează</string>
+    <!-- Call overlay -->
+    <string name="call_overlay_enabled_title">Call overlay</string>
+    <string name="call_overlay_enabled_summary">Show minimal call overlay to answer/reject calls</string>
 </resources>
