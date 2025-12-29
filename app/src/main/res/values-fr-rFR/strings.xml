@@ -87,4 +87,7 @@
     <string name="danmaku_notification_mode_title">Mode de notification Danmaku</string>
     <string name="danmaku_notification_mode_summary">Afficher une notification en tant que danmaku (les commentaires flottants) lorsque le jeu est actif</string>
     <string name="gamespace_running">Espace de Jeux en cours de fonctionnement</string>
+    <!-- Call overlay -->
+    <string name="call_overlay_enabled_title">Call overlay</string>
+    <string name="call_overlay_enabled_summary">Show minimal call overlay to answer/reject calls</string>
 </resources>
