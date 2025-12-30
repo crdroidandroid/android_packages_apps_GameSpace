@@ -44,7 +44,7 @@
 
     <application
         android:name=".GameSpace"
-        android:icon="@drawable/ic_launcher"
+        android:icon="@mipmap/ic_launcher"
         android:label="@string/settings_title"
         android:persistent="true"
         android:supportsRtl="true"
