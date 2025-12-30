@@ -88,4 +88,7 @@ Mantén presionado para establecer</string>
     <string name="danmaku_notification_mode_title">Modo notificación silenciosa</string>
     <string name="danmaku_notification_mode_summary">Mostrar notificación diseño circular mientras el juego está activo</string>
     <string name="gamespace_running">El espacio del juego se está ejecutando</string>
+    <!-- Call overlay -->
+    <string name="call_overlay_enabled_title">Call overlay</string>
+    <string name="call_overlay_enabled_summary">Show minimal call overlay to answer/reject calls</string>
 </resources>

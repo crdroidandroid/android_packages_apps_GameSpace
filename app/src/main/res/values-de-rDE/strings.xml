@@ -87,4 +87,7 @@
     <string name="danmaku_notification_mode_title">Benachrichtigungsmodus „Danmaku“</string>
     <string name="danmaku_notification_mode_summary">Bei aktivem Spiel Benachrichtigungen als „Bullet-Kommentare“ aka „Danmaku“ anzeigen</string>
     <string name="gamespace_running">Spielmodus läuft</string>
+    <!-- Call overlay -->
+    <string name="call_overlay_enabled_title">Call overlay</string>
+    <string name="call_overlay_enabled_summary">Show minimal call overlay to answer/reject calls</string>
 </resources>

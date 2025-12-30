@@ -87,4 +87,7 @@
     <string name="danmaku_notification_mode_title">Λειτουργία ειδοποιήσεων Danmaku</string>
     <string name="danmaku_notification_mode_summary">Εμφάνιση ειδοποίησης ως danmaku άλλως κουκκίδα σχόλια ενώ το παιχνίδι είναι ενεργό</string>
     <string name="gamespace_running">Ο Χώρος Παιχνιδιού εκτελείται</string>
+    <!-- Call overlay -->
+    <string name="call_overlay_enabled_title">Call overlay</string>
+    <string name="call_overlay_enabled_summary">Show minimal call overlay to answer/reject calls</string>
 </resources>

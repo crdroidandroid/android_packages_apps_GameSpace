@@ -87,4 +87,7 @@
     <string name="danmaku_notification_mode_title">حالت اعلان گلوله جهنمی</string>
     <string name="danmaku_notification_mode_summary">در حالی که بازی فعال است، اعلان را به حالت اعلان گلوله جهنمی نشان دهید</string>
     <string name="gamespace_running">فضای بازی در حال اجراست</string>
+    <!-- Call overlay -->
+    <string name="call_overlay_enabled_title">Call overlay</string>
+    <string name="call_overlay_enabled_summary">Show minimal call overlay to answer/reject calls</string>
 </resources>

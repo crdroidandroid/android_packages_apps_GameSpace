@@ -87,4 +87,7 @@
     <string name="danmaku_notification_mode_title">탄막 알림 모드</string>
     <string name="danmaku_notification_mode_summary">게임 중일 때 알림을 탄막처럼 작게 표시</string>
     <string name="gamespace_running">Game Space is running</string>
+    <!-- Call overlay -->
+    <string name="call_overlay_enabled_title">Call overlay</string>
+    <string name="call_overlay_enabled_summary">Show minimal call overlay to answer/reject calls</string>
 </resources>

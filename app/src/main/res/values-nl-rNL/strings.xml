@@ -87,4 +87,7 @@
     <string name="danmaku_notification_mode_title">Danmaku meldingsmodus</string>
     <string name="danmaku_notification_mode_summary">Melding weergeven als danmaku aka bullet reacties wanneer het spel actief is</string>
     <string name="gamespace_running">Game Space is running</string>
+    <!-- Call overlay -->
+    <string name="call_overlay_enabled_title">Call overlay</string>
+    <string name="call_overlay_enabled_summary">Show minimal call overlay to answer/reject calls</string>
 </resources>

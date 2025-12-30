@@ -87,4 +87,7 @@
     <string name="danmaku_notification_mode_title">Danmaku Értesítő mód</string>
     <string name="danmaku_notification_mode_summary">Értesítések danmakuként mutatása, avagy kommentek kilövése játék mód közben</string>
     <string name="gamespace_running">A Játéktér fut</string>
+    <!-- Call overlay -->
+    <string name="call_overlay_enabled_title">Call overlay</string>
+    <string name="call_overlay_enabled_summary">Show minimal call overlay to answer/reject calls</string>
 </resources>

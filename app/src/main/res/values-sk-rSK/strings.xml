@@ -87,4 +87,7 @@
     <string name="danmaku_notification_mode_title">Režim notifikácií Danmaku</string>
     <string name="danmaku_notification_mode_summary">Počas aktívnej hry zobraziť upozornenia ako danmaku alias odrážky</string>
     <string name="gamespace_running">Herný mód spustený</string>
+    <!-- Call overlay -->
+    <string name="call_overlay_enabled_title">Call overlay</string>
+    <string name="call_overlay_enabled_summary">Show minimal call overlay to answer/reject calls</string>
 </resources>

@@ -87,4 +87,7 @@
     <string name="danmaku_notification_mode_title">彈幕通知模式</string>
     <string name="danmaku_notification_mode_summary">遊戲中以彈幕形式顯示通知。</string>
     <string name="gamespace_running">游戲空間正在運行</string>
+    <!-- Call overlay -->
+    <string name="call_overlay_enabled_title">Call overlay</string>
+    <string name="call_overlay_enabled_summary">Show minimal call overlay to answer/reject calls</string>
 </resources>

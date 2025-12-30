@@ -87,4 +87,7 @@
     <string name="danmaku_notification_mode_title">وضع إشعار Danmaku</string>
     <string name="danmaku_notification_mode_summary">إظهار تنبيه Danmaku كما هو معروف باِسم تعليقات سريعة عندما تكون اللعبة نشطة</string>
     <string name="gamespace_running"></string>
+    <!-- Call overlay -->
+    <string name="call_overlay_enabled_title">Call overlay</string>
+    <string name="call_overlay_enabled_summary">Show minimal call overlay to answer/reject calls</string>
 </resources>
