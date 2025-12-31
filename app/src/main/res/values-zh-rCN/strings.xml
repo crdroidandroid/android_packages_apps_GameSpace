@@ -88,6 +88,6 @@
     <string name="danmaku_notification_mode_summary">游戏中以弹幕的形式显示通知</string>
     <string name="gamespace_running">游戏空间正在运行</string>
     <!-- Call overlay -->
-    <string name="call_overlay_enabled_title">Call overlay</string>
-    <string name="call_overlay_enabled_summary">Show minimal call overlay to answer/reject calls</string>
+    <string name="call_overlay_enabled_title">电话叠加层</string>
+    <string name="call_overlay_enabled_summary">显示最小呼叫叠加层以接听/拒接电话</string>
 </resources>
