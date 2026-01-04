@@ -76,6 +76,7 @@ fun SettingsSwitch(
         modifier = modifier
             .fillMaxWidth()
             .padding(horizontal = 16.dp, vertical = 4.dp)
+            .clip(MaterialTheme.shapes.large)
             .clickable(
                 interactionSource = interactionSource,
                 indication = ripple(bounded = true),
@@ -271,6 +272,7 @@ fun SettingsDropdown(
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(horizontal = 16.dp, vertical = 4.dp)
+                .clip(MaterialTheme.shapes.large)
                 .clickable(
                     interactionSource = interactionSource,
                     indication = ripple(bounded = true),
@@ -368,6 +370,7 @@ fun SettingsClickable(
         modifier = modifier
             .fillMaxWidth()
             .padding(horizontal = 16.dp, vertical = 4.dp)
+            .clip(MaterialTheme.shapes.large)
             .clickable(
                 interactionSource = interactionSource,
                 indication = ripple(bounded = true),
@@ -448,6 +451,7 @@ fun GameCard(
     Card(
         modifier = modifier
             .fillMaxWidth()
+            .clip(MaterialTheme.shapes.large)
             .clickable(
                 interactionSource = interactionSource,
                 indication = ripple(bounded = true),
