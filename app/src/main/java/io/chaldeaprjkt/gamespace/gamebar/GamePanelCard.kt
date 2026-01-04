@@ -1,4 +1,3 @@
-@file:OptIn(ExperimentalAnimationApi::class)
 /*
  * Copyright (C) 2025 AxionOS
  *
@@ -14,6 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+@file:OptIn(ExperimentalMaterial3ExpressiveApi::class, ExperimentalAnimationApi::class, ExperimentalFoundationApi::class)
+
 package io.chaldeaprjkt.gamespace.gamebar
 
 import android.app.*
@@ -185,7 +186,6 @@ fun GamePanelContent(
     }
 }
 
-@OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun PanelContent(
     interactor: BrightnessInteractor,
@@ -321,7 +321,7 @@ fun HeaderInfoBar(
         modifier = modifier
             .fillMaxWidth()
             .animateContentSize(
-                animationSpec = tween(durationMillis = 150)
+                animationSpec = MaterialTheme.motionScheme.fastSpatialSpec()
             )
             .background(
                 color = MaterialTheme.colorScheme.surface,
@@ -353,8 +353,16 @@ fun HeaderInfoBar(
 
         AnimatedVisibility(
             visible = headerExpanded,
-            enter = fadeIn(animationSpec = tween(durationMillis = 150)),
-            exit = fadeOut(animationSpec = tween(durationMillis = 0))
+            enter = fadeIn(
+                animationSpec = MaterialTheme.motionScheme.fastEffectsSpec()
+            ) + expandVertically(
+                animationSpec = MaterialTheme.motionScheme.fastSpatialSpec()
+            ),
+            exit = fadeOut(
+                animationSpec = MaterialTheme.motionScheme.fastEffectsSpec()
+            ) + shrinkVertically(
+                animationSpec = MaterialTheme.motionScheme.fastSpatialSpec()
+            )
         ) {
             Column {
                 if (tileRepository.isFpsGraphVisible.value) {
@@ -385,7 +393,7 @@ private fun TopRowHeader(
 ) {
     val rotateArrow by animateFloatAsState(
         targetValue = if (headerExpanded) 180f else 0f,
-        animationSpec = tween(durationMillis = 250)
+        animationSpec = MaterialTheme.motionScheme.slowSpatialSpec()
     )
 
     Row(
