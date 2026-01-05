@@ -1,3 +1,5 @@
+@file:OptIn(ExperimentalMaterial3ExpressiveApi::class)
+
 package io.chaldeaprjkt.gamespace.ui.theme
 
 import android.app.Activity
@@ -93,8 +95,9 @@ fun GameSpaceTheme(
         }
     }
 
-    MaterialTheme(
+    MaterialExpressiveTheme(
         colorScheme = colorScheme,
+        motionScheme = MotionScheme.expressive(),
         typography = ExpressiveTypography,
         shapes = ExpressiveShapes,
         content = content
