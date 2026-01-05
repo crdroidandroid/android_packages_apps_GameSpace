@@ -45,7 +45,6 @@ android_app {
 
     kotlincflags: [
         "-Xjvm-default=all",
-        "-opt-in=kotlin.Experimental",
         "-opt-in=kotlin.ExperimentalStdlibApi",
         "-opt-in=kotlin.RequiresOptIn",
         "-P plugin:androidx.compose.compiler.plugins.kotlin:sourceInformation=true",
