@@ -47,7 +47,7 @@ android_app {
         "-Xjvm-default=all",
         "-opt-in=kotlin.Experimental",
         "-opt-in=kotlin.ExperimentalStdlibApi",
-        "-Xopt-in=kotlin.RequiresOptIn",
+        "-opt-in=kotlin.RequiresOptIn",
         "-P plugin:androidx.compose.compiler.plugins.kotlin:sourceInformation=true",
     ],
 
