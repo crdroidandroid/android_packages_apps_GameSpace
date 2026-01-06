@@ -88,6 +88,6 @@
     <string name="danmaku_notification_mode_summary">Oyun aktifken danmaku bullet yorumları olarak bildirim göster</string>
     <string name="gamespace_running">Oyun Alanı çalışıyor</string>
     <!-- Call overlay -->
-    <string name="call_overlay_enabled_title">Call overlay</string>
-    <string name="call_overlay_enabled_summary">Show minimal call overlay to answer/reject calls</string>
+    <string name="call_overlay_enabled_title">Arama penceresi</string>
+    <string name="call_overlay_enabled_summary">Aramaları yanıtlamak veya reddetmek için minimal arama arayüzünü göster</string>
 </resources>
