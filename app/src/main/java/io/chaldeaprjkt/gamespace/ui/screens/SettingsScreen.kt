@@ -1,5 +1,8 @@
+@file:OptIn(ExperimentalMaterial3ExpressiveApi::class, ExperimentalMaterial3Api::class)
+
 package io.chaldeaprjkt.gamespace.ui.screens
 
+import androidx.activity.compose.BackHandler
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -35,9 +38,14 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
+import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.rounded.VolumeUp
+import androidx.compose.material.icons.filled.Add
+import androidx.compose.material.icons.filled.AppRegistration
+import androidx.compose.material.icons.filled.Close
+import androidx.compose.material.icons.filled.SportsEsports
 import androidx.compose.material.icons.outlined.Add
 import androidx.compose.material.icons.rounded.Brightness6
 import androidx.compose.material.icons.rounded.Call
@@ -51,25 +59,35 @@ import androidx.compose.material.icons.rounded.Visibility
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Checkbox
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.ExperimentalMaterial3ExpressiveApi
 import androidx.compose.material3.FilledTonalIconButton
+import androidx.compose.material3.FloatingActionButtonMenu
+import androidx.compose.material3.FloatingActionButtonMenuItem
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButtonDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
+import androidx.compose.material3.ToggleFloatingActionButton
+import androidx.compose.material3.ToggleFloatingActionButtonDefaults.animateIcon
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
+import androidx.compose.material3.animateFloatingActionButton
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.derivedStateOf
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.focus.FocusRequester
+import androidx.compose.ui.focus.focusRequester
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Brush
@@ -80,9 +98,23 @@ import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.graphics.drawscope.rotate
 import androidx.compose.ui.graphics.painter.BitmapPainter
+import androidx.compose.ui.graphics.vector.rememberVectorPainter
+import androidx.compose.ui.input.key.Key
+import androidx.compose.ui.input.key.KeyEventType
+import androidx.compose.ui.input.key.isShiftPressed
+import androidx.compose.ui.input.key.key
+import androidx.compose.ui.input.key.onKeyEvent
+import androidx.compose.ui.input.key.type
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.semantics.CustomAccessibilityAction
+import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.customActions
+import androidx.compose.ui.semantics.isTraversalGroup
+import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.semantics.stateDescription
+import androidx.compose.ui.semantics.traversalIndex
 import androidx.compose.ui.unit.dp
 import androidx.core.graphics.drawable.toBitmap
 import io.chaldeaprjkt.gamespace.R
@@ -101,7 +133,6 @@ data class AppInfo(
     val icon: Drawable?
 )
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun SettingsScreen(
     viewModel: SettingsViewModel,
@@ -111,7 +142,36 @@ fun SettingsScreen(
 ) {
     val context = LocalContext.current
 
+    val listState = rememberLazyListState()
+    val fabVisible by remember {
+        derivedStateOf {
+            listState.firstVisibleItemIndex == 0 || listState.canScrollForward == false
+        }
+    }
+    val focusRequester = FocusRequester()
+
     var showQuickStartDialog by remember { mutableStateOf(false) }
+    var fabMenuExpanded by rememberSaveable { mutableStateOf(false) }
+
+    BackHandler(fabMenuExpanded) { fabMenuExpanded = false }
+
+    val fabItems = listOf(
+        Triple(
+            Icons.Filled.AppRegistration,
+            "Select apps to launch quickly"
+        ) {
+            showQuickStartDialog = true
+            fabMenuExpanded = false
+        },
+        Triple(
+            Icons.Filled.SportsEsports,
+            "Add game"
+        ) {
+            onAddGameClick()
+            fabMenuExpanded = false
+        }
+    )
+
     var installedApps by remember { mutableStateOf<List<AppInfo>>(emptyList()) }
 
     LaunchedEffect(Unit) {
@@ -159,13 +219,89 @@ fun SettingsScreen(
                 )
             )
         },
+        floatingActionButton = {
+            FloatingActionButtonMenu(
+                expanded = fabMenuExpanded,
+                button = {
+                    ToggleFloatingActionButton(
+                        modifier =
+                            Modifier.semantics {
+                                    traversalIndex = -1f
+                                    stateDescription =
+                                        if (fabMenuExpanded) "Expanded" else "Collapsed"
+                                    contentDescription = "Toggle menu"
+                                }
+                                .animateFloatingActionButton(
+                                    visible = fabVisible || fabMenuExpanded,
+                                    alignment = Alignment.BottomEnd,
+                                )
+                                .focusRequester(focusRequester),
+                        checked = fabMenuExpanded,
+                        onCheckedChange = { fabMenuExpanded = !fabMenuExpanded },
+                    ) {
+                        val imageVector by remember {
+                            derivedStateOf {
+                                if (checkedProgress > 0.5f) Icons.Filled.Close else Icons.Filled.Add
+                            }
+                        }
+                        Icon(
+                            painter = rememberVectorPainter(imageVector),
+                            contentDescription = null,
+                            modifier = Modifier.animateIcon({ checkedProgress }),
+                        )
+                    }
+                },
+            ) {
+                fabItems.forEachIndexed { i, item ->
+                    FloatingActionButtonMenuItem(
+                        modifier =
+                            Modifier.semantics {
+                                    isTraversalGroup = true
+                                    if (i == fabItems.size - 1) {
+                                        customActions =
+                                            listOf(
+                                                CustomAccessibilityAction(
+                                                    label = "Close menu",
+                                                    action = {
+                                                        fabMenuExpanded = false
+                                                        true
+                                                    },
+                                                )
+                                            )
+                                    }
+                                }
+                                .then(
+                                    if (i == 0) {
+                                        Modifier.onKeyEvent {
+                                            if (
+                                                it.type == KeyEventType.KeyDown &&
+                                                    (it.key == Key.DirectionUp ||
+                                                        (it.isShiftPressed && it.key == Key.Tab))
+                                            ) {
+                                                focusRequester.requestFocus()
+                                                return@onKeyEvent true
+                                            }
+                                            return@onKeyEvent false
+                                        }
+                                    } else {
+                                        Modifier
+                                    }
+                                ),
+                        onClick = item.third,
+                        icon = { Icon(item.first, contentDescription = null) },
+                        text = { Text(text = item.second) },
+                    )
+                }
+            }
+        },
         containerColor = MaterialTheme.colorScheme.surface
     ) { innerPadding ->
         LazyColumn(
+            state = listState,
             modifier = Modifier
                 .fillMaxSize()
                 .padding(innerPadding),
-            contentPadding = PaddingValues(bottom = 32.dp)
+            contentPadding = PaddingValues(bottom = 96.dp)
         ) {
             item {
                 GameIllustration()
@@ -248,21 +384,8 @@ fun SettingsScreen(
 
             item {
                 Spacer(modifier = Modifier.height(16.dp))
-                SettingsSection(title = "Quick Actions") {
-                    SettingsClickable(
-                        title = stringResource(R.string.quick_start_apps_title),
-                        summary = stringResource(R.string.quick_start_apps_summary),
-                        onClick = { showQuickStartDialog = true },
-                        icon = Icons.Rounded.RocketLaunch
-                    )
-                }
-            }
-
-            item {
-                Spacer(modifier = Modifier.height(16.dp))
                 GameLibrarySection(
                     registeredGames = viewModel.registeredGames,
-                    onAddGameClick = onAddGameClick,
                     onGameClick = onGameClick
                 )
             }
@@ -555,7 +678,6 @@ private fun GameIllustration(
 @Composable
 private fun GameLibrarySection(
     registeredGames: List<RegisteredGame>,
-    onAddGameClick: () -> Unit,
     onGameClick: (String) -> Unit,
     modifier: Modifier = Modifier
 ) {
@@ -572,21 +694,6 @@ private fun GameLibrarySection(
                 style = MaterialTheme.typography.titleMedium,
                 color = MaterialTheme.colorScheme.primary
             )
-            FilledTonalIconButton(
-                onClick = onAddGameClick,
-                modifier = Modifier.size(40.dp),
-                shape = MaterialTheme.shapes.medium,
-                colors = IconButtonDefaults.filledTonalIconButtonColors(
-                    containerColor = MaterialTheme.colorScheme.primaryContainer.copy(alpha = 0.5f)
-                )
-            ) {
-                Icon(
-                    imageVector = Icons.Outlined.Add,
-                    contentDescription = "Add game",
-                    modifier = Modifier.size(20.dp),
-                    tint = MaterialTheme.colorScheme.primary
-                )
-            }
         }
 
         if (registeredGames.isEmpty()) {
