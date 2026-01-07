@@ -102,6 +102,7 @@ import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.semantics.stateDescription
 import androidx.compose.ui.semantics.traversalIndex
 import androidx.compose.ui.unit.dp
+import androidx.core.graphics.createBitmap
 import androidx.core.graphics.drawable.toBitmap
 import io.chaldeaprjkt.gamespace.R
 import io.chaldeaprjkt.gamespace.ui.components.GameCard
@@ -718,7 +719,7 @@ private fun rememberDrawablePainter(drawable: Drawable?): BitmapPainter {
     return if (drawable != null) {
         BitmapPainter(drawable.toBitmap(96, 96).asImageBitmap())
     } else {
-        BitmapPainter(android.graphics.Bitmap.createBitmap(1, 1, android.graphics.Bitmap.Config.ARGB_8888).asImageBitmap())
+        BitmapPainter(createBitmap(1, 1).asImageBitmap())
     }
 }
 
