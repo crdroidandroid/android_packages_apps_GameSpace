@@ -131,7 +131,7 @@ fun SettingsScreen(
     val listState = rememberLazyListState()
     val fabVisible by remember {
         derivedStateOf {
-            listState.firstVisibleItemIndex == 0 || listState.canScrollForward == false
+            listState.firstVisibleItemIndex == 0 || !listState.canScrollForward
         }
     }
     val focusRequester = remember { FocusRequester() }
