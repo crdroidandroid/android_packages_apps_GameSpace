@@ -46,7 +46,7 @@ class SettingsActivity : Hilt_SettingsActivity() {
     private val perAppResult = registerForActivityResult(
         ActivityResultContracts.StartActivityForResult()
     ) { result ->
-        result.data?.getStringExtra(PerAppSettingsFragment.PREF_UNREGISTER)?.let { packageName ->
+        result.data?.getStringExtra(PerAppSettingsActivity.PREF_UNREGISTER)?.let { packageName ->
             viewModel.unregisterGame(packageName)
         }
         viewModel.loadRegisteredGames()

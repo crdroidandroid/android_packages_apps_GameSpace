@@ -26,7 +26,7 @@ import androidx.preference.PreferenceCategory
 import io.chaldeaprjkt.gamespace.R
 import io.chaldeaprjkt.gamespace.data.GameConfig
 import io.chaldeaprjkt.gamespace.data.UserGame
-import io.chaldeaprjkt.gamespace.settings.PerAppSettingsFragment
+import io.chaldeaprjkt.gamespace.settings.PerAppSettingsActivity
 import io.chaldeaprjkt.gamespace.utils.GameModeUtils.Companion.describeGameMode
 import io.chaldeaprjkt.gamespace.utils.di.ServiceViewEntryPoint
 import io.chaldeaprjkt.gamespace.utils.entryPointOf
@@ -125,7 +125,7 @@ class AppListPreferences @JvmOverloads constructor(context: Context, attrs: Attr
 
     fun usePerAppResult(result: ActivityResult?) {
         result?.takeIf { it.resultCode == Activity.RESULT_OK }
-            ?.data?.getStringExtra(PerAppSettingsFragment.PREF_UNREGISTER)
+            ?.data?.getStringExtra(PerAppSettingsActivity.PREF_UNREGISTER)
             ?.let { unregisterApp(it) }
     }
 
