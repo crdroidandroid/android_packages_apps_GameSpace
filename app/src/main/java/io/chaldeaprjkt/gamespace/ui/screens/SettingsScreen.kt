@@ -16,7 +16,6 @@ import androidx.compose.animation.core.rememberInfiniteTransition
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -28,7 +27,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.rememberLazyListState
@@ -46,7 +44,6 @@ import androidx.compose.material.icons.rounded.Opacity
 import androidx.compose.material.icons.rounded.PhoneInTalk
 import androidx.compose.material.icons.rounded.Visibility
 import androidx.compose.material3.AlertDialog
-import androidx.compose.material3.Checkbox
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.ExperimentalMaterial3ExpressiveApi
 import androidx.compose.material3.FloatingActionButtonMenu
@@ -56,6 +53,9 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
+import androidx.compose.material3.ToggleButton
+import androidx.compose.material3.ToggleButtonDefaults
+import androidx.compose.material3.ToggleButtonShapes
 import androidx.compose.material3.ToggleFloatingActionButton
 import androidx.compose.material3.ToggleFloatingActionButtonDefaults.animateIcon
 import androidx.compose.material3.TopAppBar
@@ -386,6 +386,12 @@ private fun QuickStartAppsDialog(
     onDismiss: () -> Unit,
     onConfirm: (Set<String>) -> Unit
 ) {
+    val toggleButtonShapes = ToggleButtonShapes(
+        shape = ToggleButtonDefaults.squareShape,
+        pressedShape = ToggleButtonDefaults.pressedShape,
+        checkedShape = ToggleButtonDefaults.roundShape,
+    )
+
     val selected = remember { mutableStateListOf<String>().apply { addAll(selectedApps) } }
 
     AlertDialog(
@@ -398,48 +404,43 @@ private fun QuickStartAppsDialog(
         },
         text = {
             LazyColumn(
-                modifier = Modifier.height(400.dp)
+                modifier = Modifier.height(400.dp),
+                verticalArrangement = Arrangement.spacedBy(8.dp)
             ) {
                 items(apps) { app ->
                     val isSelected = selected.contains(app.packageName)
-                    Row(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .clickable {
-                                if (isSelected) {
-                                    selected.remove(app.packageName)
-                                } else {
-                                    selected.add(app.packageName)
-                                }
+                    ToggleButton(
+                        checked = isSelected,
+                        onCheckedChange = { checked ->
+                            if (checked) {
+                                selected.add(app.packageName)
+                            } else {
+                                selected.remove(app.packageName)
                             }
-                            .padding(vertical = 8.dp),
-                        verticalAlignment = Alignment.CenterVertically
+                        },
+                        shapes = toggleButtonShapes,
+                        contentPadding = PaddingValues(16.dp)
                     ) {
-                        Checkbox(
-                            checked = isSelected,
-                            onCheckedChange = { checked ->
-                                if (checked) {
-                                    selected.add(app.packageName)
-                                } else {
-                                    selected.remove(app.packageName)
-                                }
+                        Row(
+                            modifier = Modifier.fillMaxWidth(),
+                            verticalAlignment = Alignment.CenterVertically,
+                            horizontalArrangement = Arrangement.spacedBy(16.dp)
+                        ) {
+                            if (app.icon != null) {
+                                Icon(
+                                    painter = BitmapPainter(
+                                        app.icon.toBitmap(48, 48).asImageBitmap()
+                                    ),
+                                    contentDescription = null,
+                                    modifier = Modifier.size(40.dp),
+                                    tint = Color.Unspecified
+                                )
                             }
-                        )
-                        Spacer(modifier = Modifier.width(12.dp))
-                        if (app.icon != null) {
-                            Icon(
-                                painter = BitmapPainter(app.icon.toBitmap(48, 48).asImageBitmap()),
-                                contentDescription = null,
-                                modifier = Modifier.size(40.dp),
-                                tint = Color.Unspecified
+                            Text(
+                                text = app.label,
+                                style = MaterialTheme.typography.bodyLarge,
                             )
-                            Spacer(modifier = Modifier.width(12.dp))
                         }
-                        Text(
-                            text = app.label,
-                            style = MaterialTheme.typography.bodyLarge,
-                            color = MaterialTheme.colorScheme.onSurface
-                        )
                     }
                 }
             }
