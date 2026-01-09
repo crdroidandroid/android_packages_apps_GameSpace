@@ -142,7 +142,7 @@ fun PerAppSettingsScreen(
                         },
                         checked = viewModel.useAngle,
                         onCheckedChange = { viewModel.updateUseAngle(it) },
-                        icon = Icons.Rounded.Games,
+                        icon = Icons.Rounded.ViewInAr,
                         enabled = viewModel.anglePackageAvailable
                     )
                 }
