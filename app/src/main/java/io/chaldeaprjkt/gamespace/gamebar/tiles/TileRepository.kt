@@ -24,17 +24,16 @@ import android.net.wifi.WifiManager
 import android.os.SystemProperties
 import android.provider.Settings
 import android.telephony.TelephonyManager
-import android.telephony.SubscriptionManager
 import android.widget.Toast
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.*
 import androidx.compose.runtime.*
 import androidx.compose.runtime.snapshots.*
 import androidx.compose.ui.graphics.vector.ImageVector
+import io.chaldeaprjkt.gamespace.R
 import io.chaldeaprjkt.gamespace.data.AppSettings
 import io.chaldeaprjkt.gamespace.data.SystemSettings
 import io.chaldeaprjkt.gamespace.utils.ScreenUtils
-import io.chaldeaprjkt.gamespace.R
 import kotlinx.coroutines.*
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -271,7 +270,10 @@ class TileRepository @Inject constructor(
                     state = mobileDataState,
                     setter = {
                         try {
-                            telephonyManager.setDataEnabled(it)
+                            telephonyManager.setDataEnabledForReason(
+                                TelephonyManager.DATA_ENABLED_REASON_USER,
+                                it
+                            )
                         } catch (e: Exception) {
                             e.printStackTrace()
                         }
