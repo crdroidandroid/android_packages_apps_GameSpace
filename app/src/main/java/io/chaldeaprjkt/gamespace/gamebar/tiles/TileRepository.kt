@@ -17,7 +17,7 @@ package io.chaldeaprjkt.gamespace.gamebar.tiles
 
 import android.app.ActivityManager
 import android.app.NotificationManager
-import android.bluetooth.BluetoothAdapter
+import android.bluetooth.BluetoothManager
 import android.content.Context
 import android.content.Intent
 import android.net.wifi.WifiManager
@@ -101,9 +101,10 @@ class TileRepository @Inject constructor(
     private val wifiManager = context.applicationContext.getSystemService(Context.WIFI_SERVICE) as WifiManager
     private val notificationManager = context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
     private val telephonyManager = context.getSystemService(Context.TELEPHONY_SERVICE) as? TelephonyManager
+    private val bluetoothManager = context.getSystemService(Context.BLUETOOTH_SERVICE) as? BluetoothManager
 
     val wifiState = mutableStateOf(wifiManager.isWifiEnabled)
-    val btState = mutableStateOf(BluetoothAdapter.getDefaultAdapter()?.isEnabled == true)
+    val btState = mutableStateOf(bluetoothManager?.adapter?.isEnabled == true)
     val dndState = mutableStateOf(
         notificationManager.currentInterruptionFilter != NotificationManager.INTERRUPTION_FILTER_ALL
     )
@@ -253,7 +254,7 @@ class TileRepository @Inject constructor(
                 icon = Icons.Default.Bluetooth,
                 state = btState,
                 setter = {
-                    val adapter = BluetoothAdapter.getDefaultAdapter()
+                    val adapter = bluetoothManager?.adapter
                     if (adapter != null) {
                         if (it) adapter.enable() else adapter.disable()
                     }
@@ -333,7 +334,7 @@ class TileRepository @Inject constructor(
             wifiState.value = newWifiState
         }
         
-        val newBtState = BluetoothAdapter.getDefaultAdapter()?.isEnabled == true
+        val newBtState = bluetoothManager?.adapter?.isEnabled == true
         if (newBtState != btState.value) {
             btState.value = newBtState
         }
