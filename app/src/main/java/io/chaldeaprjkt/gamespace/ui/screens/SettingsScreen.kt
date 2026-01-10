@@ -104,6 +104,7 @@ import androidx.compose.ui.semantics.traversalIndex
 import androidx.compose.ui.unit.dp
 import androidx.core.graphics.createBitmap
 import androidx.core.graphics.drawable.toBitmap
+import io.chaldeaprjkt.gamespace.utils.rememberDrawablePainter
 import io.chaldeaprjkt.gamespace.R
 import io.chaldeaprjkt.gamespace.ui.components.GameCard
 import io.chaldeaprjkt.gamespace.ui.components.SettingsDropdown
@@ -715,14 +716,6 @@ private fun GameLibrarySection(
     }
 }
 
-@Composable
-private fun rememberDrawablePainter(drawable: Drawable?): BitmapPainter {
-    return if (drawable != null) {
-        BitmapPainter(drawable.toBitmap(96, 96).asImageBitmap())
-    } else {
-        BitmapPainter(createBitmap(1, 1).asImageBitmap())
-    }
-}
 
 private fun getGameModeLabel(mode: Int): String {
     return when (mode) {
