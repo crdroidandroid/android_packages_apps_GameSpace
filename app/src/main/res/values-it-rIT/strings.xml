@@ -88,6 +88,6 @@
     <string name="danmaku_notification_mode_summary">Mostra la notifica come Danmaku, ovvero i commenti sui proiettili, mentre il gioco è attivo</string>
     <string name="gamespace_running">GameSpace è in esecuzione</string>
     <!-- Call overlay -->
-    <string name="call_overlay_enabled_title">Call overlay</string>
-    <string name="call_overlay_enabled_summary">Show minimal call overlay to answer/reject calls</string>
+    <string name="call_overlay_enabled_title">Overlay chiamata</string>
+    <string name="call_overlay_enabled_summary">Mostra la sovrapposizione minima delle chiamate per rispondere/rifiutare le chiamate</string>
 </resources>
