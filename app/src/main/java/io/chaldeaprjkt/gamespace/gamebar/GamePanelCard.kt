@@ -47,7 +47,9 @@ import androidx.compose.foundation.shape.*
 import androidx.compose.material3.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.rounded.ArrowBack
-import androidx.compose.material.icons.filled.*
+import androidx.compose.material.icons.filled.ElectricBolt
+import androidx.compose.material.icons.filled.EnergySavingsLeaf
+import androidx.compose.material.icons.filled.SportsEsports
 import androidx.compose.runtime.*
 import androidx.compose.ui.*
 import androidx.compose.ui.draw.*
@@ -59,6 +61,7 @@ import androidx.compose.ui.graphics.drawscope.*
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.layout.*
 import androidx.compose.ui.platform.*
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.*
 import androidx.compose.ui.text.style.*
 import androidx.compose.ui.unit.*
@@ -414,7 +417,7 @@ private fun TopRowHeader(
             modifier = Modifier.size(18.dp)
         ) {
             Icon(
-                imageVector = Icons.Default.Edit,
+                painter = painterResource(R.drawable.materialsymbols_ic_edit_rounded_filled),
                 contentDescription = "Edit Tiles"
             )
         }
@@ -424,7 +427,7 @@ private fun TopRowHeader(
             modifier = Modifier.size(36.dp)
         ) {
             Icon(
-                imageVector = Icons.Default.ExpandMore,
+                painter = painterResource(R.drawable.materialsymbols_ic_expand_more_rounded_filled),
                 contentDescription = if (headerExpanded) "Collapse" else "Expand",
                 modifier = Modifier.rotate(rotateArrow)
             )
@@ -444,7 +447,10 @@ private fun InfoRow(
         val temp = batteryInfo.temperatureC.toInt()
         BatteryIndicator(batteryLevel = batteryInfo.level)
         Spacer(modifier = Modifier.width(4.dp))
-        InfoItem(icon = Icons.Default.DeviceThermostat, value = "$temp")
+        InfoItem(
+            icon = painterResource(R.drawable.materialsymbols_ic_device_thermostat_rounded_filled),
+            value = "$temp"
+        )
         Spacer(modifier = Modifier.weight(1f))
         Text(
             text = currentMode.displayName,
@@ -456,7 +462,7 @@ private fun InfoRow(
 
 @Composable
 private fun InfoItem(
-    icon: ImageVector?,
+    icon: Any?,
     value: String,
     onClick: (() -> Unit)? = null
 ) {
@@ -465,11 +471,18 @@ private fun InfoItem(
         modifier = if (onClick != null) Modifier.clickable(onClick = onClick) else Modifier
     ) {
         if (icon != null) {
-            Icon(
-                imageVector = icon,
-                contentDescription = null,
-                modifier = Modifier.size(18.dp)
-            )
+            when (icon) {
+                is ImageVector -> Icon(
+                    imageVector = icon,
+                    contentDescription = null,
+                    modifier = Modifier.size(18.dp)
+                )
+                is Painter -> Icon(
+                    painter = icon,
+                    contentDescription = null,
+                    modifier = Modifier.size(18.dp)
+                )
+            }
             Spacer(modifier = Modifier.width(1.dp))
         }
         Text(
@@ -658,7 +671,7 @@ fun TileItem(
             horizontalArrangement = Arrangement.spacedBy(8.dp)
         ) {
             Icon(
-                tile.icon,
+                painter = painterResource(tile.icon),
                 contentDescription = tile.label,
                 tint = MaterialTheme.colorScheme.onSurface
             )
@@ -687,7 +700,7 @@ fun TileButton(tile: TileAction, modifier: Modifier = Modifier) {
             .padding(horizontal = 12.dp)
     ) {
         Icon(
-            imageVector = tile.icon,
+            painter = painterResource(tile.icon),
             contentDescription = tile.label,
             tint = fgColor,
             modifier = Modifier.size(24.dp)
@@ -768,7 +781,11 @@ fun BrightnessSlider(interactor: BrightnessInteractor) {
             modifier = Modifier.padding(start = 8.dp)
         ) {
             Icon(
-                imageVector = if (isAuto == true) Icons.Default.BrightnessAuto else Icons.Default.BrightnessHigh,
+                painter =
+                    if (isAuto == true)
+                        painterResource(R.drawable.materialsymbols_ic_brightness_auto_rounded_filled)
+                    else
+                        painterResource(R.drawable.materialsymbols_ic_brightness_7_rounded_filled),
                 contentDescription = null,
                 tint = MaterialTheme.colorScheme.primary,
                 modifier = Modifier.size(24.dp)
@@ -783,12 +800,12 @@ fun BatteryIndicator(
     modifier: Modifier = Modifier
 ) {
     val icon = when {
-        batteryLevel >= 90 -> Icons.Default.BatteryFull
-        batteryLevel >= 70 -> Icons.Default.Battery4Bar
-        batteryLevel >= 50 -> Icons.Default.Battery3Bar
-        batteryLevel >= 30 -> Icons.Default.Battery2Bar
-        batteryLevel >= 10 -> Icons.Default.Battery1Bar
-        else -> Icons.Default.Battery0Bar
+        batteryLevel >= 90 -> painterResource(R.drawable.materialsymbols_ic_battery_android_full_rounded_filled)
+        batteryLevel >= 70 -> painterResource(R.drawable.materialsymbols_ic_battery_android_4_rounded_filled)
+        batteryLevel >= 50 -> painterResource(R.drawable.materialsymbols_ic_battery_android_3_rounded_filled)
+        batteryLevel >= 30 -> painterResource(R.drawable.materialsymbols_ic_battery_android_2_rounded_filled)
+        batteryLevel >= 10 -> painterResource(R.drawable.materialsymbols_ic_battery_android_1_rounded_filled)
+        else -> painterResource(R.drawable.materialsymbols_ic_battery_android_0_rounded_filled)
     }
 
     val batteryText = "$batteryLevel%"
@@ -1138,9 +1155,9 @@ private fun getPercentage(value: Double, min: Float, max: Float): Double {
 }
 
 enum class GameMode(val displayName: String, val icon: ImageVector) {
-    Balanced("Balanced", Icons.Default.BatteryStd),
-    PowerSave("Power Save", Icons.Default.BatterySaver),
-    Performance("Performance", Icons.Default.Bolt)
+    Balanced("Balanced", Icons.Filled.SportsEsports),
+    PowerSave("Power Save", Icons.Filled.EnergySavingsLeaf),
+    Performance("Performance", Icons.Filled.ElectricBolt)
 }
 
 fun GameMode.toSystemGameMode(): Int = when (this) {

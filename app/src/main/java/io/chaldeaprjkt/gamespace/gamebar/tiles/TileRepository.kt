@@ -29,7 +29,6 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.*
 import androidx.compose.runtime.*
 import androidx.compose.runtime.snapshots.*
-import androidx.compose.ui.graphics.vector.ImageVector
 import io.chaldeaprjkt.gamespace.R
 import io.chaldeaprjkt.gamespace.data.AppSettings
 import io.chaldeaprjkt.gamespace.data.SystemSettings
@@ -41,7 +40,7 @@ import javax.inject.Singleton
 interface TileAction {
     val id: String
     val label: String
-    val icon: ImageVector
+    val icon: Int
     val isEnabled: Boolean
 
     @Composable
@@ -53,13 +52,13 @@ interface TileAction {
 abstract class BaseTile(
     override val id: String,
     override val label: String,
-    override val icon: ImageVector
+    override val icon: Int
 ) : TileAction
 
 class ToggleableTile(
     id: String,
     label: String,
-    icon: ImageVector,
+    icon: Int,
     private val state: MutableState<Boolean>,
     private val setter: (Boolean) -> Unit
 ) : BaseTile(id, label, icon) {
@@ -79,7 +78,7 @@ class ToggleableTile(
 class FixedActionTile(
     id: String,
     label: String,
-    icon: ImageVector,
+    icon: Int,
     private val action: () -> Unit
 ) : BaseTile(id, label, icon) {
 
@@ -127,7 +126,7 @@ class TileRepository @Inject constructor(
             ToggleableTile(
                 id = "notification",
                 label = "Danmaku",
-                icon = Icons.Default.Notifications,
+                icon = R.drawable.materialsymbols_ic_notifications_rounded_filled,
                 state = mutableStateOf(appSettings.danmakuNotification),
                 setter = {
                     appSettings.danmakuNotification = it
@@ -140,7 +139,7 @@ class TileRepository @Inject constructor(
             ToggleableTile(
                 id = "stay_awake",
                 label = "Stay Awake",
-                icon = Icons.Default.Bedtime,
+                icon = R.drawable.materialsymbols_ic_bedtime_rounded_filled,
                 state = mutableStateOf(systemSettings.stayAwake),
                 setter = { systemSettings.stayAwake = it }
             )
@@ -150,7 +149,7 @@ class TileRepository @Inject constructor(
             ToggleableTile(
                 id = "wifi",
                 label = "Wi-Fi",
-                icon = Icons.Default.Wifi,
+                icon = R.drawable.materialsymbols_ic_wifi_rounded_filled,
                 state = wifiState,
                 setter = { wifiManager.isWifiEnabled = it }
             )
@@ -160,7 +159,7 @@ class TileRepository @Inject constructor(
             ToggleableTile(
                 id = "dnd",
                 label = "DND",
-                icon = Icons.Default.DoNotDisturb,
+                icon = R.drawable.materialsymbols_ic_do_not_disturb_on_rounded_filled,
                 state = dndState,
                 setter = { enabled ->
                     notificationManager.setInterruptionFilter(
@@ -175,7 +174,7 @@ class TileRepository @Inject constructor(
             ToggleableTile(
                 id = "fps_info",
                 label = "FPS Info",
-                icon = Icons.Default.BarChart,
+                icon = R.drawable.materialsymbols_ic_bar_chart_rounded_filled,
                 state = mutableStateOf(appSettings.showFps),
                 setter = { appSettings.showFps = it }
             )
@@ -185,7 +184,7 @@ class TileRepository @Inject constructor(
             ToggleableTile(
                 id = "auto_rotate",
                 label = "Auto Rotate",
-                icon = Icons.Default.ScreenRotation,
+                icon = R.drawable.materialsymbols_ic_screen_rotation_up_rounded_filled,
                 state = autoRotateState,
                 setter = {
                     Settings.System.putInt(
@@ -201,7 +200,7 @@ class TileRepository @Inject constructor(
             FixedActionTile(
                 id = "boost_memory",
                 label = "Boost Memory",
-                icon = Icons.Default.Speed,
+                icon = R.drawable.materialsymbols_ic_speed_rounded_filled,
                 action = {
                     try {
                         ActivityManager.getService().releaseMemory(606, 60, false, false)
@@ -215,7 +214,7 @@ class TileRepository @Inject constructor(
             FixedActionTile(
                 id = "settings",
                 label = "Settings",
-                icon = Icons.Default.Settings,
+                icon = R.drawable.materialsymbols_ic_settings_rounded_filled,
                 action = {
                     val intent = Intent(Settings.ACTION_SETTINGS).apply {
                         flags = Intent.FLAG_ACTIVITY_NEW_TASK
@@ -229,7 +228,7 @@ class TileRepository @Inject constructor(
             ToggleableTile(
                 id = "airplane_mode",
                 label = "Airplane Mode",
-                icon = Icons.Default.AirplanemodeActive,
+                icon = R.drawable.materialsymbols_ic_flight_rounded_filled,
                 state = airplaneModeState,
                 setter = {
                     Settings.Global.putInt(
@@ -248,7 +247,7 @@ class TileRepository @Inject constructor(
             ToggleableTile(
                 id = "bluetooth",
                 label = "Bluetooth",
-                icon = Icons.Default.Bluetooth,
+                icon = R.drawable.materialsymbols_ic_bluetooth_rounded_filled,
                 state = btState,
                 setter = {
                     val adapter = bluetoothManager?.adapter
@@ -264,7 +263,7 @@ class TileRepository @Inject constructor(
                 ToggleableTile(
                     id = "mobile_data",
                     label = "Mobile Data",
-                    icon = Icons.Default.DataUsage,
+                    icon = R.drawable.materialsymbols_ic_android_cell_4_bar_rounded_filled,
                     state = mobileDataState,
                     setter = {
                         try {
@@ -285,7 +284,7 @@ class TileRepository @Inject constructor(
                 ToggleableTile(
                     id = "touch_boost",
                     label = "Touch Boost",
-                    icon = Icons.Default.TouchApp,
+                    icon = R.drawable.materialsymbols_ic_touch_app_rounded_filled,
                     state = touchBoostState,
                     setter = {
                         val newVal = if (it) 1 else 0

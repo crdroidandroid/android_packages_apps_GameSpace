@@ -31,18 +31,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.rounded.VolumeUp
-import androidx.compose.material.icons.filled.Add
-import androidx.compose.material.icons.filled.AppRegistration
-import androidx.compose.material.icons.filled.Close
-import androidx.compose.material.icons.filled.SportsEsports
-import androidx.compose.material.icons.rounded.Brightness6
-import androidx.compose.material.icons.rounded.Call
-import androidx.compose.material.icons.rounded.ChatBubble
-import androidx.compose.material.icons.rounded.Gesture
-import androidx.compose.material.icons.rounded.Opacity
-import androidx.compose.material.icons.rounded.PhoneInTalk
-import androidx.compose.material.icons.rounded.Visibility
+import androidx.compose.material.icons.filled.ChatBubble
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.ExperimentalMaterial3ExpressiveApi
@@ -85,6 +74,7 @@ import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.graphics.drawscope.rotate
 import androidx.compose.ui.graphics.painter.BitmapPainter
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.rememberVectorPainter
 import androidx.compose.ui.input.key.Key
 import androidx.compose.ui.input.key.KeyEventType
@@ -93,7 +83,9 @@ import androidx.compose.ui.input.key.key
 import androidx.compose.ui.input.key.onKeyEvent
 import androidx.compose.ui.input.key.type
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.semantics.CustomAccessibilityAction
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.customActions
@@ -142,16 +134,19 @@ fun SettingsScreen(
 
     BackHandler(fabMenuExpanded) { fabMenuExpanded = false }
 
+    val iconClose = ImageVector.vectorResource(R.drawable.materialsymbols_ic_close_rounded_filled)
+    val iconAdd = ImageVector.vectorResource(R.drawable.materialsymbols_ic_add_rounded_filled)
+
     val fabItems = listOf(
         Triple(
-            Icons.Filled.AppRegistration,
+            R.drawable.materialsymbols_ic_app_registration_rounded_filled,
             "Select apps to launch quickly"
         ) {
             showQuickStartDialog = true
             fabMenuExpanded = false
         },
         Triple(
-            Icons.Filled.SportsEsports,
+            R.drawable.materialsymbols_ic_sports_esports_rounded_filled,
             "Add game"
         ) {
             onAddGameClick()
@@ -228,7 +223,7 @@ fun SettingsScreen(
                     ) {
                         val imageVector by remember {
                             derivedStateOf {
-                                if (checkedProgress > 0.5f) Icons.Filled.Close else Icons.Filled.Add
+                                if (checkedProgress > 0.5f) iconClose else iconAdd
                             }
                         }
                         Icon(
@@ -275,7 +270,12 @@ fun SettingsScreen(
                                     }
                                 ),
                         onClick = item.third,
-                        icon = { Icon(item.first, contentDescription = null) },
+                        icon = {
+                            Icon(
+                                painter = painterResource(item.first),
+                                contentDescription = null
+                            )
+                        },
                         text = { Text(text = item.second) },
                     )
                 }
@@ -302,7 +302,7 @@ fun SettingsScreen(
                         summary = stringResource(R.string.call_overlay_enabled_summary),
                         checked = viewModel.callOverlayEnabled,
                         onCheckedChange = { viewModel.updateCallOverlay(it) },
-                        icon = Icons.Rounded.Call
+                        icon = painterResource(R.drawable.materialsymbols_ic_call_rounded_filled)
                     )
 
                     SettingsSwitch(
@@ -310,7 +310,7 @@ fun SettingsScreen(
                         summary = stringResource(R.string.danmaku_notification_mode_summary),
                         checked = viewModel.danmakuNotification,
                         onCheckedChange = { viewModel.updateDanmakuNotification(it) },
-                        icon = Icons.Rounded.ChatBubble
+                        icon = Icons.Filled.ChatBubble
                     )
 
                     SettingsDropdown(
@@ -318,7 +318,7 @@ fun SettingsScreen(
                         selectedValue = viewModel.callsMode.toString(),
                         options = callsModeOptions,
                         onValueChange = { viewModel.updateCallsMode(it.toIntOrNull() ?: 0) },
-                        icon = Icons.Rounded.PhoneInTalk
+                        icon = painterResource(R.drawable.materialsymbols_ic_phone_in_talk_rounded_filled)
                     )
 
                     SettingsDropdown(
@@ -326,7 +326,7 @@ fun SettingsScreen(
                         selectedValue = viewModel.ringerMode.toString(),
                         options = ringerModeOptions,
                         onValueChange = { viewModel.updateRingerMode(it.toIntOrNull() ?: 3) },
-                        icon = Icons.AutoMirrored.Rounded.VolumeUp
+                        icon = painterResource(R.drawable.materialsymbols_ic_volume_up_rounded_filled)
                     )
                 }
             }
@@ -339,7 +339,7 @@ fun SettingsScreen(
                         summary = stringResource(R.string.auto_brightness_disabled_summary),
                         checked = viewModel.noAutoBrightness,
                         onCheckedChange = { viewModel.updateNoAutoBrightness(it) },
-                        icon = Icons.Rounded.Brightness6
+                        icon = painterResource(R.drawable.materialsymbols_ic_brightness_6_rounded_filled)
                     )
 
                     SettingsSwitch(
@@ -347,7 +347,7 @@ fun SettingsScreen(
                         summary = stringResource(R.string.three_screenshot_disabled_summary),
                         checked = viewModel.noThreeScreenshot,
                         onCheckedChange = { viewModel.updateNoThreeScreenshot(it) },
-                        icon = Icons.Rounded.Gesture
+                        icon = painterResource(R.drawable.materialsymbols_ic_gesture_rounded_filled)
                     )
 
                     SettingsSwitch(
@@ -355,7 +355,7 @@ fun SettingsScreen(
                         summary = stringResource(R.string.stay_awake_summary),
                         checked = viewModel.stayAwake,
                         onCheckedChange = { viewModel.updateStayAwake(it) },
-                        icon = Icons.Rounded.Visibility
+                        icon = painterResource(R.drawable.materialsymbols_ic_visibility_rounded_filled)
                     )
 
                     SettingsSlider(
@@ -364,7 +364,7 @@ fun SettingsScreen(
                         onValueChange = { viewModel.updateMenuOpacity(it) },
                         valueRange = 0f..100f,
                         valueLabel = "${viewModel.menuOpacity.toInt()}%",
-                        icon = Icons.Rounded.Opacity
+                        icon = painterResource(R.drawable.materialsymbols_ic_opacity_rounded_filled)
                     )
                 }
             }

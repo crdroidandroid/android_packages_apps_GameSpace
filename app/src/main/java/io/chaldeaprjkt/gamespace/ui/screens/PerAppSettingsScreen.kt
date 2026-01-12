@@ -24,7 +24,6 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.rounded.ArrowBack
-import androidx.compose.material.icons.rounded.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -34,6 +33,7 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.graphics.painter.BitmapPainter
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
@@ -127,7 +127,7 @@ fun PerAppSettingsScreen(
                     selectedValue = viewModel.preferredMode.toString(),
                     options = viewModel.gameModeOptions.map { it.first.toString() to it.second },
                     onValueChange = { viewModel.updatePreferredMode(it.toIntOrNull() ?: 1) },
-                    icon = Icons.Rounded.Speed
+                    icon = painterResource(R.drawable.materialsymbols_ic_speed_rounded_filled)
                 )
             }
 
@@ -142,7 +142,7 @@ fun PerAppSettingsScreen(
                         },
                         checked = viewModel.useAngle,
                         onCheckedChange = { viewModel.updateUseAngle(it) },
-                        icon = Icons.Rounded.ViewInAr,
+                        icon = painterResource(R.drawable.materialsymbols_ic_view_in_ar_rounded_filled),
                         enabled = viewModel.anglePackageAvailable
                     )
                 }
@@ -154,7 +154,7 @@ fun PerAppSettingsScreen(
                 title = "Remove from library",
                 summary = stringResource(R.string.per_app_unregister, viewModel.gameLabel),
                 onClick = { showUnregisterDialog = true },
-                icon = Icons.Rounded.Delete
+                icon = painterResource(R.drawable.materialsymbols_ic_delete_rounded_filled),
             )
 
             Spacer(modifier = Modifier.height(96.dp))
@@ -204,7 +204,7 @@ private fun GameHeader(
                     )
                 } else {
                     Icon(
-                        imageVector = Icons.Rounded.SportsEsports,
+                        painter = painterResource(R.drawable.materialsymbols_ic_sports_esports_rounded_filled),
                         contentDescription = null,
                         modifier = Modifier.size(40.dp),
                         tint = MaterialTheme.colorScheme.primary
