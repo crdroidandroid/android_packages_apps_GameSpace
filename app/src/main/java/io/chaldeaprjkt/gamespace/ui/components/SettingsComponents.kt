@@ -88,7 +88,7 @@ fun SettingsSwitch(
                 onClick = { onCheckedChange(!checked) }
             ),
         colors = CardDefaults.cardColors(
-            containerColor = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.5f)
+            containerColor = MaterialTheme.colorScheme.surfaceBright
         ),
         shape = MaterialTheme.shapes.large
     ) {
@@ -135,7 +135,7 @@ fun SettingsSwitch(
                     Text(
                         text = summary,
                         style = MaterialTheme.typography.bodyMedium,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant.copy(
+                        color = MaterialTheme.colorScheme.onSurface.copy(
                             alpha = if (enabled) 0.8f else 0.4f
                         ),
                         maxLines = 2,
@@ -169,15 +169,7 @@ fun SettingsSwitch(
                             )
                         }
                     }
-                },
-                colors = SwitchDefaults.colors(
-                    checkedThumbColor = MaterialTheme.colorScheme.primary,
-                    checkedTrackColor = MaterialTheme.colorScheme.primaryContainer,
-                    checkedIconColor = MaterialTheme.colorScheme.onPrimary,
-                    uncheckedThumbColor = MaterialTheme.colorScheme.outline,
-                    uncheckedTrackColor = MaterialTheme.colorScheme.surfaceVariant,
-                    uncheckedIconColor = MaterialTheme.colorScheme.onSurfaceVariant
-                )
+                }
             )
         }
     }
@@ -199,7 +191,7 @@ fun SettingsSlider(
             .fillMaxWidth()
             .padding(horizontal = 16.dp, vertical = 4.dp),
         colors = CardDefaults.cardColors(
-            containerColor = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.5f)
+            containerColor = MaterialTheme.colorScheme.surfaceBright
         ),
         shape = MaterialTheme.shapes.large
     ) {
@@ -264,7 +256,7 @@ fun SettingsSlider(
                     colors = SliderDefaults.colors(
                         thumbColor = MaterialTheme.colorScheme.primary,
                         activeTrackColor = MaterialTheme.colorScheme.primary,
-                        inactiveTrackColor = MaterialTheme.colorScheme.surfaceVariant
+                        inactiveTrackColor = MaterialTheme.colorScheme.surfaceBright
                     )
                 )
             }
@@ -296,7 +288,7 @@ fun SettingsDropdown(
                     onClick = { expanded = true }
                 ),
             colors = CardDefaults.cardColors(
-                containerColor = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.5f)
+                containerColor = MaterialTheme.colorScheme.surfaceBright
             ),
             shape = MaterialTheme.shapes.large
         ) {
@@ -394,7 +386,7 @@ fun SettingsClickable(
                 onClick = onClick
             ),
         colors = CardDefaults.cardColors(
-            containerColor = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.5f)
+            containerColor = MaterialTheme.colorScheme.surfaceBright
         ),
         shape = MaterialTheme.shapes.large
     ) {
@@ -440,7 +432,7 @@ fun SettingsClickable(
                     Text(
                         text = summary,
                         style = MaterialTheme.typography.bodyMedium,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.8f),
+                        color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.8f),
                         maxLines = 2,
                         overflow = TextOverflow.Ellipsis
                     )
@@ -475,7 +467,7 @@ fun GameCard(
                 onClick = onClick
             ),
         colors = CardDefaults.cardColors(
-            containerColor = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.5f)
+            containerColor = MaterialTheme.colorScheme.surfaceBright
         ),
         shape = MaterialTheme.shapes.large
     ) {
@@ -515,7 +507,7 @@ fun GameCard(
                     Text(
                         text = subtitle,
                         style = MaterialTheme.typography.bodySmall,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.8f)
+                        color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.8f)
                     )
                 }
             }

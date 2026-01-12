@@ -281,7 +281,7 @@ fun SettingsScreen(
                 }
             }
         },
-        containerColor = MaterialTheme.colorScheme.surface
+        containerColor = MaterialTheme.colorScheme.surfaceContainer
     ) { innerPadding ->
         LazyColumn(
             state = listState,
