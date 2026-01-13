@@ -102,7 +102,7 @@ fun PerAppSettingsScreen(
                 )
             )
         },
-        containerColor = MaterialTheme.colorScheme.surface
+        containerColor = MaterialTheme.colorScheme.surfaceContainer
     ) { innerPadding ->
         Column(
             modifier = Modifier
