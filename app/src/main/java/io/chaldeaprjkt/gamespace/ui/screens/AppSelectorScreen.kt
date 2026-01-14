@@ -173,25 +173,27 @@ fun AppSelectorScreen(
                 inputField = inputField,
                 colors = appBarWithSearchColors.searchBarColors,
             ) {
-                LazyColumn(
-                    modifier = Modifier.fillMaxSize()
-                ) {
-                    items(apps) { app ->
-                        ListItem(
-                            headlineContent = { Text(app.label) },
-                            supportingContent = { Text(app.packageName) },
-                            leadingContent = {
-                                Image(
-                                    painter = rememberDrawablePainter(app.icon),
-                                    contentDescription = null,
-                                    modifier = Modifier.size(48.dp)
-                                )
-                            },
-                            colors = ListItemDefaults.colors(containerColor = Color.Transparent),
-                            modifier = Modifier.clickable {
-                                onAppSelected(app.packageName)
-                            }
-                        )
+                if (textFieldState.text.isNotEmpty()) {
+                    LazyColumn(
+                        modifier = Modifier.fillMaxSize()
+                    ) {
+                        items(apps) { app ->
+                            ListItem(
+                                headlineContent = { Text(app.label) },
+                                supportingContent = { Text(app.packageName) },
+                                leadingContent = {
+                                    Image(
+                                        painter = rememberDrawablePainter(app.icon),
+                                        contentDescription = null,
+                                        modifier = Modifier.size(48.dp)
+                                    )
+                                },
+                                colors = ListItemDefaults.colors(containerColor = Color.Transparent),
+                                modifier = Modifier.clickable {
+                                    onAppSelected(app.packageName)
+                                }
+                            )
+                        }
                     }
                 }
             }
