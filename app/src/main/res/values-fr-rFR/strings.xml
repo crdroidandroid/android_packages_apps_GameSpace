@@ -83,4 +83,57 @@
     <!-- Danmaku Notification Mode -->
     <string name="danmaku_notification_mode_title">Mode de notification Danmaku</string>
     <string name="danmaku_notification_mode_summary">Afficher une notification en tant que danmaku (les commentaires flottants) lorsque le jeu est actif</string>
+    
+    <!-- UI Strings -->
+    <string name="select_apps_to_launch">Sélectionnez les applications à lancer rapidement</string>
+    <string name="add_game">Ajouter un jeu</string>
+    <string name="expanded">Développé</string>
+    <string name="collapsed">Réduit</string>
+    <string name="toggle_menu">Basculer le menu</string>
+    <string name="close_menu">Fermer le menu</string>
+    <string name="notifications">Notifications</string>
+    <string name="display_gestures">Affichage et gestes</string>
+    <string name="no_games_added">Aucun jeu ajouté pour le moment</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Annuler</string>
+    <string name="remove">Supprimer</string>
+    <string name="back">Retour</string>
+    <string name="game_mode">Mode de jeu</string>
+    <string name="graphics">Graphiques</string>
+    <string name="remove_from_library">Retirer de la bibliothèque</string>
+    <string name="registered_game">Jeu enregistré</string>
+    <string name="game_space">Espace Jeux</string>
+    
+    <!-- Game Panel -->
+    <string name="save">Enregistrer</string>
+    <string name="panel_options">Options du panneau</string>
+    <string name="brightness_slider">Curseur de luminosité</string>
+    <string name="fps_graph">Graphique FPS</string>
+    <string name="selected_tiles">Tuiles sélectionnées</string>
+    <string name="available_tiles">Tuiles disponibles</string>
+    <string name="fps_stats">min %1$d | moy %2$d | max %3$d</string>
+    <string name="add">Ajouter</string>
+    
+    <!-- Tile Labels -->
+    <string name="tile_danmaku">Danmaku</string>
+    <string name="tile_stay_awake">Rester éveillé</string>
+    <string name="tile_wifi">Wi-Fi</string>
+    <string name="tile_dnd">Ne pas déranger</string>
+    <string name="tile_fps_info">Infos FPS</string>
+    <string name="tile_auto_rotate">Rotation automatique</string>
+    <string name="tile_boost_memory">Booster la mémoire</string>
+    <string name="tile_settings">Paramètres</string>
+    <string name="tile_airplane_mode">Mode avion</string>
+    <string name="tile_bluetooth">Bluetooth</string>
+    <string name="tile_mobile_data">Données mobiles</string>
+    <string name="tile_touch_boost">Boost tactile</string>
+    
+    <!-- Content Descriptions (Accessibility) -->
+    <string name="cd_reject">Rejeter</string>
+    <string name="cd_accept">Accepter</string>
+    <string name="cd_caller_photo">Photo de l\'appelant</string>
+    <string name="cd_dismiss">Ignorer</string>
+    <string name="cd_edit_tiles">Modifier les tuiles</string>
+    <string name="cd_collapse">Réduire</string>
+    <string name="cd_expand">Développer</string>
 </resources>

@@ -81,6 +81,59 @@
     <string name="in_game_calls_received_number">S\'ha rebut una trucada de %1$s</string>
     <string name="in_game_calls_rejected_number">S\'ha rebutjat una trucada de %1$s</string>
     <!-- Danmaku Notification Mode -->
-    <string name="danmaku_notification_mode_title">Danmaku Notification mode</string>
-    <string name="danmaku_notification_mode_summary">Show notification as danmaku aka bullet comments while game is active</string>
+    <string name="danmaku_notification_mode_title">Mode de notificació Danmaku</string>
+    <string name="danmaku_notification_mode_summary">Mostra les notificacions com a danmaku, és a dir, comentaris flotants mentre el joc està actiu</string>
+    
+    <!-- UI Strings -->
+    <string name="select_apps_to_launch">Seleccioneu les apps per a iniciar ràpidament</string>
+    <string name="add_game">Afegeix un joc</string>
+    <string name="expanded">Expandit</string>
+    <string name="collapsed">Comprimit</string>
+    <string name="toggle_menu">Commuta el menú</string>
+    <string name="close_menu">Tanca el menú</string>
+    <string name="notifications">Notificacions</string>
+    <string name="display_gestures">Pantalla i gestos</string>
+    <string name="no_games_added">Encara no s\'han afegit jocs</string>
+    <string name="ok">D\'acord</string>
+    <string name="cancel">Cancel·la</string>
+    <string name="remove">Elimina</string>
+    <string name="back">Enrere</string>
+    <string name="game_mode">Mode de joc</string>
+    <string name="graphics">Gràfics</string>
+    <string name="remove_from_library">Elimina de la biblioteca</string>
+    <string name="registered_game">Joc registrat</string>
+    <string name="game_space">Espai de Jocs</string>
+    
+    <!-- Game Panel -->
+    <string name="save">Desa</string>
+    <string name="panel_options">Opcions del tauler</string>
+    <string name="brightness_slider">Control de brillantor</string>
+    <string name="fps_graph">Gràfic d\'FPS</string>
+    <string name="selected_tiles">Rajoles seleccionades</string>
+    <string name="available_tiles">Rajoles disponibles</string>
+    <string name="fps_stats">mín %1$d | mitjana %2$d | màx %3$d</string>
+    <string name="add">Afegeix</string>
+    
+    <!-- Tile Labels -->
+    <string name="tile_danmaku">Danmaku</string>
+    <string name="tile_stay_awake">Mantén la pantalla encesa</string>
+    <string name="tile_wifi">Wi-Fi</string>
+    <string name="tile_dnd">No molesteu</string>
+    <string name="tile_fps_info">Informació dels FPS</string>
+    <string name="tile_auto_rotate">Rotació automàtica</string>
+    <string name="tile_boost_memory">Accelera la memòria</string>
+    <string name="tile_settings">Configuració</string>
+    <string name="tile_airplane_mode">Mode avió</string>
+    <string name="tile_bluetooth">Bluetooth</string>
+    <string name="tile_mobile_data">Dades mòbils</string>
+    <string name="tile_touch_boost">Acceleració tàctil</string>
+    
+    <!-- Content Descriptions (Accessibility) -->
+    <string name="cd_reject">Rebutja</string>
+    <string name="cd_accept">Accepta</string>
+    <string name="cd_caller_photo">Foto de qui truca</string>
+    <string name="cd_dismiss">Descarta</string>
+    <string name="cd_edit_tiles">Edita les rajoles</string>
+    <string name="cd_collapse">Comprimeix</string>
+    <string name="cd_expand">Expandeix</string>
 </resources>

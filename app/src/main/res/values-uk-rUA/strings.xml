@@ -83,4 +83,57 @@
     <!-- Danmaku Notification Mode -->
     <string name="danmaku_notification_mode_title">Режим сповіщень Danmaku</string>
     <string name="danmaku_notification_mode_summary">Показувати сповіщення як Danmaku aka bullet коментарями під час гри активними</string>
+    
+    <!-- UI Strings -->
+    <string name="select_apps_to_launch">Виберіть додатки для швидкого запуску</string>
+    <string name="add_game">Додати гру</string>
+    <string name="expanded">Розгорнуто</string>
+    <string name="collapsed">Згорнуто</string>
+    <string name="toggle_menu">Перемкнути меню</string>
+    <string name="close_menu">Закрити меню</string>
+    <string name="notifications">Сповіщення</string>
+    <string name="display_gestures">Дисплей та жести</string>
+    <string name="no_games_added">Ігри ще не додані</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Скасувати</string>
+    <string name="remove">Видалити</string>
+    <string name="back">Назад</string>
+    <string name="game_mode">Ігровий режим</string>
+    <string name="graphics">Графіка</string>
+    <string name="remove_from_library">Видалити з бібліотеки</string>
+    <string name="registered_game">Зареєстрована гра</string>
+    <string name="game_space">Ігровий Простір</string>
+    
+    <!-- Game Panel -->
+    <string name="save">Зберегти</string>
+    <string name="panel_options">Параметри панелі</string>
+    <string name="brightness_slider">Повзунок яскравості</string>
+    <string name="fps_graph">Графік FPS</string>
+    <string name="selected_tiles">Вибрані плитки</string>
+    <string name="available_tiles">Доступні плитки</string>
+    <string name="fps_stats">мін %1$d | сер %2$d | макс %3$d</string>
+    <string name="add">Додати</string>
+    
+    <!-- Tile Labels -->
+    <string name="tile_danmaku">Danmaku</string>
+    <string name="tile_stay_awake">Залишати активним</string>
+    <string name="tile_wifi">Wi-Fi</string>
+    <string name="tile_dnd">Не турбувати</string>
+    <string name="tile_fps_info">Інформація про FPS</string>
+    <string name="tile_auto_rotate">Автоповорот</string>
+    <string name="tile_boost_memory">Прискорення пам\'яті</string>
+    <string name="tile_settings">Налаштування</string>
+    <string name="tile_airplane_mode">Режим польоту</string>
+    <string name="tile_bluetooth">Bluetooth</string>
+    <string name="tile_mobile_data">Мобільні дані</string>
+    <string name="tile_touch_boost">Прискорення дотику</string>
+    
+    <!-- Content Descriptions (Accessibility) -->
+    <string name="cd_reject">Відхилити</string>
+    <string name="cd_accept">Прийняти</string>
+    <string name="cd_caller_photo">Фото абонента</string>
+    <string name="cd_dismiss">Закрити</string>
+    <string name="cd_edit_tiles">Редагувати плитки</string>
+    <string name="cd_collapse">Згорнути</string>
+    <string name="cd_expand">Розгорнути</string>
 </resources>

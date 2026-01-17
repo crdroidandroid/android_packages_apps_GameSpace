@@ -81,6 +81,59 @@
     <string name="in_game_calls_received_number">Received call from %1$s</string>
     <string name="in_game_calls_rejected_number">Rejected call from %1$s</string>
     <!-- Danmaku Notification Mode -->
-    <string name="danmaku_notification_mode_title">Danmaku Notification mode</string>
-    <string name="danmaku_notification_mode_summary">Show notification as danmaku aka bullet comments while game is active</string>
+    <string name="danmaku_notification_mode_title">Danmaku-ilmoitustila</string>
+    <string name="danmaku_notification_mode_summary">Näytä ilmoitus danmakuna eli luettikommentteina, kun peli on aktiivinen</string>
+    
+    <!-- UI Strings -->
+    <string name="select_apps_to_launch">Valitse sovellukset nopeaa käynnistystä varten</string>
+    <string name="add_game">Lisää peli</string>
+    <string name="expanded">Laajennettu</string>
+    <string name="collapsed">Kutistettu</string>
+    <string name="toggle_menu">Vaihda valikkoa</string>
+    <string name="close_menu">Sulje valikko</string>
+    <string name="notifications">Ilmoitukset</string>
+    <string name="display_gestures">Näyttö ja eleet</string>
+    <string name="no_games_added">Pelejä ei vielä lisätty</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Peruuta</string>
+    <string name="remove">Poista</string>
+    <string name="back">Takaisin</string>
+    <string name="game_mode">Pelitila</string>
+    <string name="graphics">Grafiikka</string>
+    <string name="remove_from_library">Poista kirjastosta</string>
+    <string name="registered_game">Rekisteröity peli</string>
+    <string name="game_space">Game Space</string>
+    
+    <!-- Game Panel -->
+    <string name="save">Tallenna</string>
+    <string name="panel_options">Paneelin asetukset</string>
+    <string name="brightness_slider">Kirkkauden liukusäädin</string>
+    <string name="fps_graph">FPS-kaavio</string>
+    <string name="selected_tiles">Valitut ruudut</string>
+    <string name="available_tiles">Käytettävissä olevat ruudut</string>
+    <string name="fps_stats">min %1$d | keskim %2$d | maks %3$d</string>
+    <string name="add">Lisää</string>
+    
+    <!-- Tile Labels -->
+    <string name="tile_danmaku">Danmaku</string>
+    <string name="tile_stay_awake">Pysy hereillä</string>
+    <string name="tile_wifi">Wi-Fi</string>
+    <string name="tile_dnd">Älä häiritse</string>
+    <string name="tile_fps_info">FPS-tiedot</string>
+    <string name="tile_auto_rotate">Automaattinen kierto</string>
+    <string name="tile_boost_memory">Muistin tehostus</string>
+    <string name="tile_settings">Asetukset</string>
+    <string name="tile_airplane_mode">Lentokonetila</string>
+    <string name="tile_bluetooth">Bluetooth</string>
+    <string name="tile_mobile_data">Mobiilidata</string>
+    <string name="tile_touch_boost">Kosketuksen tehostus</string>
+    
+    <!-- Content Descriptions (Accessibility) -->
+    <string name="cd_reject">Hylkää</string>
+    <string name="cd_accept">Hyväksy</string>
+    <string name="cd_caller_photo">Soittajan kuva</string>
+    <string name="cd_dismiss">Hylkää</string>
+    <string name="cd_edit_tiles">Muokkaa ruutuja</string>
+    <string name="cd_collapse">Kutista</string>
+    <string name="cd_expand">Laajenna</string>
 </resources>

@@ -83,4 +83,57 @@
     <!-- Danmaku Notification Mode -->
     <string name="danmaku_notification_mode_title">Λειτουργία ειδοποιήσεων Danmaku</string>
     <string name="danmaku_notification_mode_summary">Εμφάνιση ειδοποίησης ως danmaku άλλως κουκκίδα σχόλια ενώ το παιχνίδι είναι ενεργό</string>
+    
+    <!-- UI Strings -->
+    <string name="select_apps_to_launch">Επιλέξτε εφαρμογές για γρήγορη εκκίνηση</string>
+    <string name="add_game">Προσθήκη παιχνιδιού</string>
+    <string name="expanded">Αναπτυγμένο</string>
+    <string name="collapsed">Συμπτυγμένο</string>
+    <string name="toggle_menu">Εναλλαγή μενού</string>
+    <string name="close_menu">Κλείσιμο μενού</string>
+    <string name="notifications">Ειδοποιήσεις</string>
+    <string name="display_gestures">Οθόνη και χειρονομίες</string>
+    <string name="no_games_added">Δεν έχουν προστεθεί παιχνίδια ακόμη</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Ακύρωση</string>
+    <string name="remove">Αφαίρεση</string>
+    <string name="back">Πίσω</string>
+    <string name="game_mode">Λειτουργία παιχνιδιού</string>
+    <string name="graphics">Γραφικά</string>
+    <string name="remove_from_library">Αφαίρεση από τη βιβλιοθήκη</string>
+    <string name="registered_game">Καταχωρημένο παιχνίδι</string>
+    <string name="game_space">Χώρος Παιχνιδιού</string>
+    
+    <!-- Game Panel -->
+    <string name="save">Αποθήκευση</string>
+    <string name="panel_options">Επιλογές πίνακα</string>
+    <string name="brightness_slider">Ρυθμιστικό φωτεινότητας</string>
+    <string name="fps_graph">Γράφημα FPS</string>
+    <string name="selected_tiles">Επιλεγμένα πλακίδια</string>
+    <string name="available_tiles">Διαθέσιμα πλακίδια</string>
+    <string name="fps_stats">ελάχ %1$d | μέσος %2$d | μέγ %3$d</string>
+    <string name="add">Προσθήκη</string>
+    
+    <!-- Tile Labels -->
+    <string name="tile_danmaku">Danmaku</string>
+    <string name="tile_stay_awake">Παραμονή σε λειτουργία</string>
+    <string name="tile_wifi">Wi-Fi</string>
+    <string name="tile_dnd">Μην ενοχλείτε</string>
+    <string name="tile_fps_info">Πληροφορίες FPS</string>
+    <string name="tile_auto_rotate">Αυτόματη περιστροφή</string>
+    <string name="tile_boost_memory">Ενίσχυση μνήμης</string>
+    <string name="tile_settings">Ρυθμίσεις</string>
+    <string name="tile_airplane_mode">Λειτουργία πτήσης</string>
+    <string name="tile_bluetooth">Bluetooth</string>
+    <string name="tile_mobile_data">Δεδομένα κινητής</string>
+    <string name="tile_touch_boost">Ενίσχυση αφής</string>
+    
+    <!-- Content Descriptions (Accessibility) -->
+    <string name="cd_reject">Απόρριψη</string>
+    <string name="cd_accept">Αποδοχή</string>
+    <string name="cd_caller_photo">Φωτογραφία καλούντος</string>
+    <string name="cd_dismiss">Απόρριψη</string>
+    <string name="cd_edit_tiles">Επεξεργασία πλακιδίων</string>
+    <string name="cd_collapse">Σύμπτυξη</string>
+    <string name="cd_expand">Ανάπτυξη</string>
 </resources>

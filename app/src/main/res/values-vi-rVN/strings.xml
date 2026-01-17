@@ -83,4 +83,57 @@
     <!-- Danmaku Notification Mode -->
     <string name="danmaku_notification_mode_title">Chế độ thông báo hiện đại</string>
     <string name="danmaku_notification_mode_summary">Hiển thị thông báo hiện đại hay còn gọi là nhận xét về dấu đầu dòng khi trò chơi đang hoạt động</string>
+    
+    <!-- UI Strings -->
+    <string name="select_apps_to_launch">Chọn ứng dụng để khởi chạy nhanh</string>
+    <string name="add_game">Thêm trò chơi</string>
+    <string name="expanded">Đã mở rộng</string>
+    <string name="collapsed">Đã thu gọn</string>
+    <string name="toggle_menu">Chuyển đổi menu</string>
+    <string name="close_menu">Đóng menu</string>
+    <string name="notifications">Thông báo</string>
+    <string name="display_gestures">Hiển thị và cử chỉ</string>
+    <string name="no_games_added">Chưa có trò chơi nào được thêm</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Hủy</string>
+    <string name="remove">Xóa</string>
+    <string name="back">Quay lại</string>
+    <string name="game_mode">Chế độ trò chơi</string>
+    <string name="graphics">Đồ họa</string>
+    <string name="remove_from_library">Xóa khỏi thư viện</string>
+    <string name="registered_game">Trò chơi đã đăng ký</string>
+    <string name="game_space">Không gian trò chơi</string>
+    
+    <!-- Game Panel -->
+    <string name="save">Lưu</string>
+    <string name="panel_options">Tùy chọn bảng điều khiển</string>
+    <string name="brightness_slider">Thanh trượt độ sáng</string>
+    <string name="fps_graph">Biểu đồ FPS</string>
+    <string name="selected_tiles">Ô đã chọn</string>
+    <string name="available_tiles">Ô có sẵn</string>
+    <string name="fps_stats">tối thiểu %1$d | trung bình %2$d | tối đa %3$d</string>
+    <string name="add">Thêm</string>
+    
+    <!-- Tile Labels -->
+    <string name="tile_danmaku">Danmaku</string>
+    <string name="tile_stay_awake">Không khóa màn hình</string>
+    <string name="tile_wifi">Wi-Fi</string>
+    <string name="tile_dnd">Không làm phiền</string>
+    <string name="tile_fps_info">Thông tin FPS</string>
+    <string name="tile_auto_rotate">Xoay tự động</string>
+    <string name="tile_boost_memory">Tăng tốc bộ nhớ</string>
+    <string name="tile_settings">Cài đặt</string>
+    <string name="tile_airplane_mode">Chế độ máy bay</string>
+    <string name="tile_bluetooth">Bluetooth</string>
+    <string name="tile_mobile_data">Dữ liệu di động</string>
+    <string name="tile_touch_boost">Tăng tốc chạm</string>
+    
+    <!-- Content Descriptions (Accessibility) -->
+    <string name="cd_reject">Từ chối</string>
+    <string name="cd_accept">Chấp nhận</string>
+    <string name="cd_caller_photo">Ảnh người gọi</string>
+    <string name="cd_dismiss">Bỏ qua</string>
+    <string name="cd_edit_tiles">Chỉnh sửa ô</string>
+    <string name="cd_collapse">Thu gọn</string>
+    <string name="cd_expand">Mở rộng</string>
 </resources>

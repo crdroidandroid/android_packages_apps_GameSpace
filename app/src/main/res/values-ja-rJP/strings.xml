@@ -83,4 +83,57 @@
     <!-- Danmaku Notification Mode -->
     <string name="danmaku_notification_mode_title">弾幕通知モード</string>
     <string name="danmaku_notification_mode_summary">ゲーム中に弾幕コメントとして通知を表示する</string>
+    
+    <!-- UI Strings -->
+    <string name="select_apps_to_launch">すばやく起動するアプリを選択</string>
+    <string name="add_game">ゲームを追加</string>
+    <string name="expanded">展開</string>
+    <string name="collapsed">折りたたみ</string>
+    <string name="toggle_menu">メニュー切り替え</string>
+    <string name="close_menu">メニューを閉じる</string>
+    <string name="notifications">通知</string>
+    <string name="display_gestures">ディスプレイとジェスチャー</string>
+    <string name="no_games_added">まだゲームが追加されていません</string>
+    <string name="ok">OK</string>
+    <string name="cancel">キャンセル</string>
+    <string name="remove">削除</string>
+    <string name="back">戻る</string>
+    <string name="game_mode">ゲームモード</string>
+    <string name="graphics">グラフィック</string>
+    <string name="remove_from_library">ライブラリから削除</string>
+    <string name="registered_game">登録済みゲーム</string>
+    <string name="game_space">ゲームスペース</string>
+    
+    <!-- Game Panel -->
+    <string name="save">保存</string>
+    <string name="panel_options">パネルオプション</string>
+    <string name="brightness_slider">明るさスライダー</string>
+    <string name="fps_graph">FPSグラフ</string>
+    <string name="selected_tiles">選択したタイル</string>
+    <string name="available_tiles">使用可能なタイル</string>
+    <string name="fps_stats">最小 %1$d | 平均 %2$d | 最大 %3$d</string>
+    <string name="add">追加</string>
+    
+    <!-- Tile Labels -->
+    <string name="tile_danmaku">弾幕</string>
+    <string name="tile_stay_awake">常に画面点灯</string>
+    <string name="tile_wifi">Wi-Fi</string>
+    <string name="tile_dnd">おやすみモード</string>
+    <string name="tile_fps_info">FPS 情報</string>
+    <string name="tile_auto_rotate">自動回転</string>
+    <string name="tile_boost_memory">メモリブースト</string>
+    <string name="tile_settings">設定</string>
+    <string name="tile_airplane_mode">機内モード</string>
+    <string name="tile_bluetooth">Bluetooth</string>
+    <string name="tile_mobile_data">モバイルデータ</string>
+    <string name="tile_touch_boost">タッチブースト</string>
+    
+    <!-- Content Descriptions (Accessibility) -->
+    <string name="cd_reject">拒否</string>
+    <string name="cd_accept">応答</string>
+    <string name="cd_caller_photo">発信者の写真</string>
+    <string name="cd_dismiss">閉じる</string>
+    <string name="cd_edit_tiles">タイルを編集</string>
+    <string name="cd_collapse">折りたたむ</string>
+    <string name="cd_expand">展開する</string>
 </resources>

@@ -84,4 +84,57 @@ Mantén presionado para establecer</string>
     <!-- Danmaku Notification Mode -->
     <string name="danmaku_notification_mode_title">Modo notificación silenciosa</string>
     <string name="danmaku_notification_mode_summary">Mostrar notificación diseño circular mientras el juego está activo</string>
+    
+    <!-- UI Strings -->
+    <string name="select_apps_to_launch">Seleccionar aplicaciones para lanzar rápidamente</string>
+    <string name="add_game">Añadir juego</string>
+    <string name="expanded">Expandido</string>
+    <string name="collapsed">Contraído</string>
+    <string name="toggle_menu">Alternar menú</string>
+    <string name="close_menu">Cerrar menú</string>
+    <string name="notifications">Notificaciones</string>
+    <string name="display_gestures">Pantalla y gestos</string>
+    <string name="no_games_added">Aún no se han añadido juegos</string>
+    <string name="ok">Aceptar</string>
+    <string name="cancel">Cancelar</string>
+    <string name="remove">Eliminar</string>
+    <string name="back">Atrás</string>
+    <string name="game_mode">Modo de juego</string>
+    <string name="graphics">Gráficos</string>
+    <string name="remove_from_library">Eliminar de la biblioteca</string>
+    <string name="registered_game">Juego registrado</string>
+    <string name="game_space">Espacio de Juego</string>
+    
+    <!-- Game Panel -->
+    <string name="save">Guardar</string>
+    <string name="panel_options">Opciones del panel</string>
+    <string name="brightness_slider">Control de brillo</string>
+    <string name="fps_graph">Gráfico de FPS</string>
+    <string name="selected_tiles">Mosaicos seleccionados</string>
+    <string name="available_tiles">Mosaicos disponibles</string>
+    <string name="fps_stats">mín %1$d | promedio %2$d | máx %3$d</string>
+    <string name="add">Añadir</string>
+    
+    <!-- Tile Labels -->
+    <string name="tile_danmaku">Danmaku</string>
+    <string name="tile_stay_awake">Permanecer encendido</string>
+    <string name="tile_wifi">Wi-Fi</string>
+    <string name="tile_dnd">No molestar</string>
+    <string name="tile_fps_info">Información de FPS</string>
+    <string name="tile_auto_rotate">Rotación automática</string>
+    <string name="tile_boost_memory">Acelerar memoria</string>
+    <string name="tile_settings">Ajustes</string>
+    <string name="tile_airplane_mode">Modo avión</string>
+    <string name="tile_bluetooth">Bluetooth</string>
+    <string name="tile_mobile_data">Datos móviles</string>
+    <string name="tile_touch_boost">Aceleración táctil</string>
+    
+    <!-- Content Descriptions (Accessibility) -->
+    <string name="cd_reject">Rechazar</string>
+    <string name="cd_accept">Aceptar</string>
+    <string name="cd_caller_photo">Foto del llamante</string>
+    <string name="cd_dismiss">Descartar</string>
+    <string name="cd_edit_tiles">Editar mosaicos</string>
+    <string name="cd_collapse">Contraer</string>
+    <string name="cd_expand">Expandir</string>
 </resources>

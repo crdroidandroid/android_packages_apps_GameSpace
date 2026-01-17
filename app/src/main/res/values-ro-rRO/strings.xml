@@ -83,4 +83,57 @@
     <!-- Danmaku Notification Mode -->
     <string name="danmaku_notification_mode_title">Mod notificări Danmaku</string>
     <string name="danmaku_notification_mode_summary">Arată notificarea ca și comentariile de tip glonț aka glonț cât timp jocul este activ</string>
+    
+    <!-- UI Strings -->
+    <string name="select_apps_to_launch">Selectați aplicații pentru a lansa rapid</string>
+    <string name="add_game">Adaugă joc</string>
+    <string name="expanded">Extins</string>
+    <string name="collapsed">Restrâns</string>
+    <string name="toggle_menu">Comută meniul</string>
+    <string name="close_menu">Închide meniul</string>
+    <string name="notifications">Notificări</string>
+    <string name="display_gestures">Afișare și gesturi</string>
+    <string name="no_games_added">Nu au fost adăugate jocuri încă</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Anulează</string>
+    <string name="remove">Elimină</string>
+    <string name="back">Înapoi</string>
+    <string name="game_mode">Mod joc</string>
+    <string name="graphics">Grafică</string>
+    <string name="remove_from_library">Elimină din bibliotecă</string>
+    <string name="registered_game">Joc înregistrat</string>
+    <string name="game_space">Spațiu de jocuri</string>
+    
+    <!-- Game Panel -->
+    <string name="save">Salvează</string>
+    <string name="panel_options">Opțiuni panou</string>
+    <string name="brightness_slider">Control luminozitate</string>
+    <string name="fps_graph">Grafic FPS</string>
+    <string name="selected_tiles">Dale selectate</string>
+    <string name="available_tiles">Dale disponibile</string>
+    <string name="fps_stats">min %1$d | mediu %2$d | max %3$d</string>
+    <string name="add">Adaugă</string>
+    
+    <!-- Tile Labels -->
+    <string name="tile_danmaku">Danmaku</string>
+    <string name="tile_stay_awake">Menține ecranul activ</string>
+    <string name="tile_wifi">Wi-Fi</string>
+    <string name="tile_dnd">Nu deranja</string>
+    <string name="tile_fps_info">Informații FPS</string>
+    <string name="tile_auto_rotate">Rotație automată</string>
+    <string name="tile_boost_memory">Accelerare memorie</string>
+    <string name="tile_settings">Setări</string>
+    <string name="tile_airplane_mode">Mod avion</string>
+    <string name="tile_bluetooth">Bluetooth</string>
+    <string name="tile_mobile_data">Date mobile</string>
+    <string name="tile_touch_boost">Accelerare atingere</string>
+    
+    <!-- Content Descriptions (Accessibility) -->
+    <string name="cd_reject">Respinge</string>
+    <string name="cd_accept">Acceptă</string>
+    <string name="cd_caller_photo">Fotografie apelant</string>
+    <string name="cd_dismiss">Închide</string>
+    <string name="cd_edit_tiles">Editează dale</string>
+    <string name="cd_collapse">Restrânge</string>
+    <string name="cd_expand">Extinde</string>
 </resources>

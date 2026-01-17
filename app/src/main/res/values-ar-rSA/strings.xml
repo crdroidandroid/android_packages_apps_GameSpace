@@ -83,4 +83,57 @@
     <!-- Danmaku Notification Mode -->
     <string name="danmaku_notification_mode_title">وضع إشعار Danmaku</string>
     <string name="danmaku_notification_mode_summary">إظهار تنبيه Danmaku كما هو معروف باِسم تعليقات سريعة عندما تكون اللعبة نشطة</string>
+    
+    <!-- UI Strings -->
+    <string name="select_apps_to_launch">اختر التطبيقات للتشغيل السريع</string>
+    <string name="add_game">أضف لعبة</string>
+    <string name="expanded">موسع</string>
+    <string name="collapsed">مطوي</string>
+    <string name="toggle_menu">تبديل القائمة</string>
+    <string name="close_menu">إغلاق القائمة</string>
+    <string name="notifications">إشعارات</string>
+    <string name="display_gestures">العرض والإيماءات</string>
+    <string name="no_games_added">لم تتم إضافة أي ألعاب بعد</string>
+    <string name="ok">موافق</string>
+    <string name="cancel">إلغاء</string>
+    <string name="remove">إزالة</string>
+    <string name="back">رجوع</string>
+    <string name="game_mode">وضع اللعبة</string>
+    <string name="graphics">الرسومات</string>
+    <string name="remove_from_library">الإزالة من المكتبة</string>
+    <string name="registered_game">لعبة مسجلة</string>
+    <string name="game_space">وضع الألعاب</string>
+    
+    <!-- Game Panel -->
+    <string name="save">حفظ</string>
+    <string name="panel_options">خيارات اللوحة</string>
+    <string name="brightness_slider">شريط تمرير السطوع</string>
+    <string name="fps_graph">رسم بياني لـ FPS</string>
+    <string name="selected_tiles">البلاطات المحددة</string>
+    <string name="available_tiles">البلاطات المتاحة</string>
+    <string name="fps_stats">الحد الأدنى %1$d | المتوسط %2$d | الحد الأقصى %3$d</string>
+    <string name="add">إضافة</string>
+    
+    <!-- Tile Labels -->
+    <string name="tile_danmaku">Danmaku</string>
+    <string name="tile_stay_awake">البقاء في الوضع النشط</string>
+    <string name="tile_wifi">Wi-Fi</string>
+    <string name="tile_dnd">عدم الإزعاج</string>
+    <string name="tile_fps_info">عداد معدل الإطارات</string>
+    <string name="tile_auto_rotate">الدوران التلقائي</string>
+    <string name="tile_boost_memory">تسريع الذاكرة</string>
+    <string name="tile_settings">الإعدادات</string>
+    <string name="tile_airplane_mode">وضع الطيران</string>
+    <string name="tile_bluetooth">بلوتوث</string>
+    <string name="tile_mobile_data">بيانات الجوال</string>
+    <string name="tile_touch_boost">تسريع اللمس</string>
+    
+    <!-- Content Descriptions (Accessibility) -->
+    <string name="cd_reject">رفض</string>
+    <string name="cd_accept">قبول</string>
+    <string name="cd_caller_photo">صورة المتصل</string>
+    <string name="cd_dismiss">تجاهل</string>
+    <string name="cd_edit_tiles">تحرير البلاطات</string>
+    <string name="cd_collapse">طي</string>
+    <string name="cd_expand">توسيع</string>
 </resources>

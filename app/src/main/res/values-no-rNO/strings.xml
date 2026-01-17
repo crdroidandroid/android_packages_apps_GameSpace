@@ -81,6 +81,59 @@
     <string name="in_game_calls_received_number">Received call from %1$s</string>
     <string name="in_game_calls_rejected_number">Rejected call from %1$s</string>
     <!-- Danmaku Notification Mode -->
-    <string name="danmaku_notification_mode_title">Danmaku Notification mode</string>
-    <string name="danmaku_notification_mode_summary">Show notification as danmaku aka bullet comments while game is active</string>
+    <string name="danmaku_notification_mode_title">Danmaku-varslingsmodus</string>
+    <string name="danmaku_notification_mode_summary">Vis varsler som danmaku, også kjent som bullet-kommentarer, mens spillet er aktivt</string>
+    
+    <!-- UI Strings -->
+    <string name="select_apps_to_launch">Velg apper for rask start</string>
+    <string name="add_game">Legg til spill</string>
+    <string name="expanded">Utvidet</string>
+    <string name="collapsed">Sammenfoldet</string>
+    <string name="toggle_menu">Veksle meny</string>
+    <string name="close_menu">Lukk meny</string>
+    <string name="notifications">Varsler</string>
+    <string name="display_gestures">Skjerm og bevegelser</string>
+    <string name="no_games_added">Ingen spill lagt til ennå</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Avbryt</string>
+    <string name="remove">Fjern</string>
+    <string name="back">Tilbake</string>
+    <string name="game_mode">Spillmodus</string>
+    <string name="graphics">Grafikk</string>
+    <string name="remove_from_library">Fjern fra bibliotek</string>
+    <string name="registered_game">Registrert spill</string>
+    <string name="game_space">Game Space</string>
+    
+    <!-- Game Panel -->
+    <string name="save">Lagre</string>
+    <string name="panel_options">Panelalternativer</string>
+    <string name="brightness_slider">Lysstyrkeglidebryter</string>
+    <string name="fps_graph">FPS-graf</string>
+    <string name="selected_tiles">Valgte fliser</string>
+    <string name="available_tiles">Tilgjengelige fliser</string>
+    <string name="fps_stats">min %1$d | gnsn %2$d | maks %3$d</string>
+    <string name="add">Legg til</string>
+    
+    <!-- Tile Labels -->
+    <string name="tile_danmaku">Danmaku</string>
+    <string name="tile_stay_awake">Forbli våken</string>
+    <string name="tile_wifi">Wi-Fi</string>
+    <string name="tile_dnd">Ikke forstyrr</string>
+    <string name="tile_fps_info">FPS-info</string>
+    <string name="tile_auto_rotate">Automatisk rotasjon</string>
+    <string name="tile_boost_memory">Boost minne</string>
+    <string name="tile_settings">Innstillinger</string>
+    <string name="tile_airplane_mode">Flymodus</string>
+    <string name="tile_bluetooth">Bluetooth</string>
+    <string name="tile_mobile_data">Mobildata</string>
+    <string name="tile_touch_boost">Berøringsboost</string>
+    
+    <!-- Content Descriptions (Accessibility) -->
+    <string name="cd_reject">Avvis</string>
+    <string name="cd_accept">Godta</string>
+    <string name="cd_caller_photo">Oppringerfoto</string>
+    <string name="cd_dismiss">Avvis</string>
+    <string name="cd_edit_tiles">Rediger fliser</string>
+    <string name="cd_collapse">Sammenfoldre</string>
+    <string name="cd_expand">Utvid</string>
 </resources>

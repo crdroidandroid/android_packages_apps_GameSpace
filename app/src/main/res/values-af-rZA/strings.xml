@@ -81,6 +81,59 @@
     <string name="in_game_calls_received_number">Oproep vanaf %1$s ontvang</string>
     <string name="in_game_calls_rejected_number">Oproep vanaf %1$s verwerp</string>
     <!-- Danmaku Notification Mode -->
-    <string name="danmaku_notification_mode_title">Danmaku Notification mode</string>
-    <string name="danmaku_notification_mode_summary">Show notification as danmaku aka bullet comments while game is active</string>
+    <string name="danmaku_notification_mode_title">Danmaku-kennisgewingsmodus</string>
+    <string name="danmaku_notification_mode_summary">Wys kennisgewing as danmaku, ook bekend as koeëlkommentaar, terwyl die speletjie aktief is</string>
+    
+    <!-- UI Strings -->
+    <string name="select_apps_to_launch">Kies programme om vinnig te begin</string>
+    <string name="add_game">Voeg speletjie by</string>
+    <string name="expanded">Uitgevou</string>
+    <string name="collapsed">Togevou</string>
+    <string name="toggle_menu">Wissel kieslys</string>
+    <string name="close_menu">Sluit kieslys</string>
+    <string name="notifications">Kennisgewings</string>
+    <string name="display_gestures">Vertoon en gebare</string>
+    <string name="no_games_added">Nog geen speletjies bygevoeg nie</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Kanselleer</string>
+    <string name="remove">Verwyder</string>
+    <string name="back">Terug</string>
+    <string name="game_mode">Speletjiemodus</string>
+    <string name="graphics">Grafika</string>
+    <string name="remove_from_library">Verwyder uit biblioteek</string>
+    <string name="registered_game">Geregistreerde speletjie</string>
+    <string name="game_space">Game Space</string>
+    
+    <!-- Game Panel -->
+    <string name="save">Stoor</string>
+    <string name="panel_options">Paneelopstellings</string>
+    <string name="brightness_slider">Helderheidskyf</string>
+    <string name="fps_graph">FPS-grafiek</string>
+    <string name="selected_tiles">Gekose teëls</string>
+    <string name="available_tiles">Beskikbare teëls</string>
+    <string name="fps_stats">min %1$d | gem %2$d | maks %3$d</string>
+    <string name="add">Voeg by</string>
+    
+    <!-- Tile Labels -->
+    <string name="tile_danmaku">Danmaku</string>
+    <string name="tile_stay_awake">Bly wakker</string>
+    <string name="tile_wifi">Wi-Fi</string>
+    <string name="tile_dnd">Moenie steur nie</string>
+    <string name="tile_fps_info">FPS-informasie</string>
+    <string name="tile_auto_rotate">Outo-rotasie</string>
+    <string name="tile_boost_memory">Versnel geheue</string>
+    <string name="tile_settings">Instellings</string>
+    <string name="tile_airplane_mode">Vliegtuigmodus</string>
+    <string name="tile_bluetooth">Bluetooth</string>
+    <string name="tile_mobile_data">Mobiele data</string>
+    <string name="tile_touch_boost">Raakversnelling</string>
+    
+    <!-- Content Descriptions (Accessibility) -->
+    <string name="cd_reject">Verwerp</string>
+    <string name="cd_accept">Aanvaar</string>
+    <string name="cd_caller_photo">Oproeper foto</string>
+    <string name="cd_dismiss">Maak toe</string>
+    <string name="cd_edit_tiles">Redigeer teëls</string>
+    <string name="cd_collapse">Vou toe</string>
+    <string name="cd_expand">Vou uit</string>
 </resources>

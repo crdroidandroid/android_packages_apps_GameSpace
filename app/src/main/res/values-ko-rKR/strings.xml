@@ -83,4 +83,57 @@
     <!-- Danmaku Notification Mode -->
     <string name="danmaku_notification_mode_title">Danmaku 알림 모드</string>
     <string name="danmaku_notification_mode_summary">게임이 활성화 중일 때  bullet comments, 일명 danmaku로 알림 표시</string>
+    
+    <!-- UI Strings -->
+    <string name="select_apps_to_launch">빠른 실행을 위한 앱 선택</string>
+    <string name="add_game">게임 추가</string>
+    <string name="expanded">확장됨</string>
+    <string name="collapsed">축소됨</string>
+    <string name="toggle_menu">메뉴 전환</string>
+    <string name="close_menu">메뉴 닫기</string>
+    <string name="notifications">알림</string>
+    <string name="display_gestures">디스플레이 및 제스처</string>
+    <string name="no_games_added">아직 추가된 게임이 없습니다</string>
+    <string name="ok">확인</string>
+    <string name="cancel">취소</string>
+    <string name="remove">제거</string>
+    <string name="back">뒤로</string>
+    <string name="game_mode">게임 모드</string>
+    <string name="graphics">그래픽</string>
+    <string name="remove_from_library">라이브러리에서 제거</string>
+    <string name="registered_game">등록된 게임</string>
+    <string name="game_space">게임 공간</string>
+    
+    <!-- Game Panel -->
+    <string name="save">저장</string>
+    <string name="panel_options">패널 옵션</string>
+    <string name="brightness_slider">밝기 슬라이더</string>
+    <string name="fps_graph">FPS 그래프</string>
+    <string name="selected_tiles">선택된 타일</string>
+    <string name="available_tiles">사용 가능한 타일</string>
+    <string name="fps_stats">최소 %1$d | 평균 %2$d | 최대 %3$d</string>
+    <string name="add">추가</string>
+    
+    <!-- Tile Labels -->
+    <string name="tile_danmaku">Danmaku</string>
+    <string name="tile_stay_awake">화면 켜짐 상태 유지</string>
+    <string name="tile_wifi">Wi-Fi</string>
+    <string name="tile_dnd">방해 금지</string>
+    <string name="tile_fps_info">FPS 정보</string>
+    <string name="tile_auto_rotate">자동 회전</string>
+    <string name="tile_boost_memory">메모리 부스트</string>
+    <string name="tile_settings">설정</string>
+    <string name="tile_airplane_mode">비행기 모드</string>
+    <string name="tile_bluetooth">블루투스</string>
+    <string name="tile_mobile_data">모바일 데이터</string>
+    <string name="tile_touch_boost">터치 부스트</string>
+    
+    <!-- Content Descriptions (Accessibility) -->
+    <string name="cd_reject">거부</string>
+    <string name="cd_accept">수락</string>
+    <string name="cd_caller_photo">발신자 사진</string>
+    <string name="cd_dismiss">닫기</string>
+    <string name="cd_edit_tiles">타일 편집</string>
+    <string name="cd_collapse">축소</string>
+    <string name="cd_expand">확장</string>
 </resources>

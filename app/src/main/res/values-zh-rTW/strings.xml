@@ -83,4 +83,57 @@
     <!-- Danmaku Notification Mode -->
     <string name="danmaku_notification_mode_title">彈幕通知模式</string>
     <string name="danmaku_notification_mode_summary">遊戲中以彈幕形式顯示通知。</string>
+    
+    <!-- UI Strings -->
+    <string name="select_apps_to_launch">選擇要快速啟動的應用程式</string>
+    <string name="add_game">新增遊戲</string>
+    <string name="expanded">已展開</string>
+    <string name="collapsed">已收起</string>
+    <string name="toggle_menu">切換選單</string>
+    <string name="close_menu">關閉選單</string>
+    <string name="notifications">通知</string>
+    <string name="display_gestures">顯示與手勢</string>
+    <string name="no_games_added">尚未新增任何遊戲</string>
+    <string name="ok">確定</string>
+    <string name="cancel">取消</string>
+    <string name="remove">移除</string>
+    <string name="back">返回</string>
+    <string name="game_mode">遊戲模式</string>
+    <string name="graphics">圖形</string>
+    <string name="remove_from_library">從遊戲庫移除</string>
+    <string name="registered_game">已註冊的遊戲</string>
+    <string name="game_space">遊戲空間</string>
+    
+    <!-- Game Panel -->
+    <string name="save">儲存</string>
+    <string name="panel_options">面板選項</string>
+    <string name="brightness_slider">亮度滑桿</string>
+    <string name="fps_graph">FPS 圖表</string>
+    <string name="selected_tiles">已選擇的磚塊</string>
+    <string name="available_tiles">可用的磚塊</string>
+    <string name="fps_stats">最小 %1$d | 平均 %2$d | 最大 %3$d</string>
+    <string name="add">新增</string>
+    
+    <!-- Tile Labels -->
+    <string name="tile_danmaku">彈幕</string>
+    <string name="tile_stay_awake">螢幕保持開啟</string>
+    <string name="tile_wifi">Wi-Fi</string>
+    <string name="tile_dnd">勿擾</string>
+    <string name="tile_fps_info">幀數</string>
+    <string name="tile_auto_rotate">自動旋轉</string>
+    <string name="tile_boost_memory">記憶體加速</string>
+    <string name="tile_settings">設定</string>
+    <string name="tile_airplane_mode">飛航模式</string>
+    <string name="tile_bluetooth">藍牙</string>
+    <string name="tile_mobile_data">行動數據</string>
+    <string name="tile_touch_boost">觸控加速</string>
+    
+    <!-- Content Descriptions (Accessibility) -->
+    <string name="cd_reject">拒絕</string>
+    <string name="cd_accept">接受</string>
+    <string name="cd_caller_photo">來電者相片</string>
+    <string name="cd_dismiss">關閉</string>
+    <string name="cd_edit_tiles">編輯磚塊</string>
+    <string name="cd_collapse">收起</string>
+    <string name="cd_expand">展開</string>
 </resources>

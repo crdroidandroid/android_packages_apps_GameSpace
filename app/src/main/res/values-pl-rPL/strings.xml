@@ -83,4 +83,57 @@
     <!-- Danmaku Notification Mode -->
     <string name="danmaku_notification_mode_title">Tryb powiadomień Danmaku</string>
     <string name="danmaku_notification_mode_summary">Wyświetlaj powiadomienie jako danmaku w postaci wypunktowanych komentarzy, gdy gra jest aktywna</string>
+    
+    <!-- UI Strings -->
+    <string name="select_apps_to_launch">Wybierz aplikacje do szybkiego uruchamiania</string>
+    <string name="add_game">Dodaj grę</string>
+    <string name="expanded">Rozwinięte</string>
+    <string name="collapsed">Zwinięte</string>
+    <string name="toggle_menu">Przełącz menu</string>
+    <string name="close_menu">Zamknij menu</string>
+    <string name="notifications">Powiadomienia</string>
+    <string name="display_gestures">Wyświetlacz i gesty</string>
+    <string name="no_games_added">Nie dodano jeszcze żadnych gier</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Anuluj</string>
+    <string name="remove">Usuń</string>
+    <string name="back">Wstecz</string>
+    <string name="game_mode">Tryb gry</string>
+    <string name="graphics">Grafika</string>
+    <string name="remove_from_library">Usuń z biblioteki</string>
+    <string name="registered_game">Zarejestrowana gra</string>
+    <string name="game_space">Przestrzeń gier</string>
+    
+    <!-- Game Panel -->
+    <string name="save">Zapisz</string>
+    <string name="panel_options">Opcje panelu</string>
+    <string name="brightness_slider">Suwak jasności</string>
+    <string name="fps_graph">Wykres FPS</string>
+    <string name="selected_tiles">Wybrane kafelki</string>
+    <string name="available_tiles">Dostępne kafelki</string>
+    <string name="fps_stats">min %1$d | śr %2$d | maks %3$d</string>
+    <string name="add">Dodaj</string>
+    
+    <!-- Tile Labels -->
+    <string name="tile_danmaku">Danmaku</string>
+    <string name="tile_stay_awake">Pozostaw włączony ekran</string>
+    <string name="tile_wifi">Wi-Fi</string>
+    <string name="tile_dnd">Nie przeszkadzać</string>
+    <string name="tile_fps_info">Wskaźnik FPS</string>
+    <string name="tile_auto_rotate">Automatyczny obrót</string>
+    <string name="tile_boost_memory">Przyspieszenie pamięci</string>
+    <string name="tile_settings">Ustawienia</string>
+    <string name="tile_airplane_mode">Tryb samolotowy</string>
+    <string name="tile_bluetooth">Bluetooth</string>
+    <string name="tile_mobile_data">Dane komórkowe</string>
+    <string name="tile_touch_boost">Przyspieszenie dotyku</string>
+    
+    <!-- Content Descriptions (Accessibility) -->
+    <string name="cd_reject">Odrzuć</string>
+    <string name="cd_accept">Akceptuj</string>
+    <string name="cd_caller_photo">Zdjęcie dzwoniącego</string>
+    <string name="cd_dismiss">Odrzuć</string>
+    <string name="cd_edit_tiles">Edytuj kafelki</string>
+    <string name="cd_collapse">Zwiń</string>
+    <string name="cd_expand">Rozwiń</string>
 </resources>

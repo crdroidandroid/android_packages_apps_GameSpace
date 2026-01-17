@@ -81,6 +81,59 @@
     <string name="in_game_calls_received_number">تماس دریافت شده از %1$s</string>
     <string name="in_game_calls_rejected_number">تماس رد شده از %1$s</string>
     <!-- Danmaku Notification Mode -->
-    <string name="danmaku_notification_mode_title">Danmaku Notification mode</string>
-    <string name="danmaku_notification_mode_summary">Show notification as danmaku aka bullet comments while game is active</string>
+    <string name="danmaku_notification_mode_title">حالت اعلان Danmaku</string>
+    <string name="danmaku_notification_mode_summary">نمایش اعلان به عنوان danmaku یعنی نظرات گلوله‌ای در حین فعال بودن بازی</string>
+    
+    <!-- UI Strings -->
+    <string name="select_apps_to_launch">برنامه‌ها را برای راه‌اندازی سریع انتخاب کنید</string>
+    <string name="add_game">افزودن بازی</string>
+    <string name="expanded">گسترش یافته</string>
+    <string name="collapsed">جمع شده</string>
+    <string name="toggle_menu">تغییر وضعیت منو</string>
+    <string name="close_menu">بستن منو</string>
+    <string name="notifications">اعلان‌ها</string>
+    <string name="display_gestures">نمایش و حرکات</string>
+    <string name="no_games_added">هنوز بازی اضافه نشده است</string>
+    <string name="ok">تایید</string>
+    <string name="cancel">لغو</string>
+    <string name="remove">حذف</string>
+    <string name="back">بازگشت</string>
+    <string name="game_mode">حالت بازی</string>
+    <string name="graphics">گرافیک</string>
+    <string name="remove_from_library">حذف از مجموعه</string>
+    <string name="registered_game">بازی ثبت شده</string>
+    <string name="game_space">فضای بازی</string>
+    
+    <!-- Game Panel -->
+    <string name="save">ذخیره</string>
+    <string name="panel_options">گزینه‌های پنل</string>
+    <string name="brightness_slider">نوار لغزنده روشنایی</string>
+    <string name="fps_graph">نمودار FPS</string>
+    <string name="selected_tiles">کاشی‌های انتخاب شده</string>
+    <string name="available_tiles">کاشی‌های موجود</string>
+    <string name="fps_stats">حداقل %1$d | میانگین %2$d | حداکثر %3$d</string>
+    <string name="add">افزودن</string>
+    
+    <!-- Tile Labels -->
+    <string name="tile_danmaku">Danmaku</string>
+    <string name="tile_stay_awake">بیدار بمان</string>
+    <string name="tile_wifi">Wi-Fi</string>
+    <string name="tile_dnd">مزاحم نشوید</string>
+    <string name="tile_fps_info">اطلاعات FPS</string>
+    <string name="tile_auto_rotate">چرخش خودکار</string>
+    <string name="tile_boost_memory">تقویت حافظه</string>
+    <string name="tile_settings">تنظیمات</string>
+    <string name="tile_airplane_mode">حالت هواپیما</string>
+    <string name="tile_bluetooth">بلوتوث</string>
+    <string name="tile_mobile_data">داده موبایل</string>
+    <string name="tile_touch_boost">تقویت لمس</string>
+    
+    <!-- Content Descriptions (Accessibility) -->
+    <string name="cd_reject">رد کردن</string>
+    <string name="cd_accept">پذیرفتن</string>
+    <string name="cd_caller_photo">عکس تماس گیرنده</string>
+    <string name="cd_dismiss">نادیده گرفتن</string>
+    <string name="cd_edit_tiles">ویرایش کاشی‌ها</string>
+    <string name="cd_collapse">جمع کردن</string>
+    <string name="cd_expand">گسترش دادن</string>
 </resources>

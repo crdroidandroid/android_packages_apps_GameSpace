@@ -83,4 +83,57 @@
     <!-- Danmaku Notification Mode -->
     <string name="danmaku_notification_mode_title">Mode Pemberitahuan Danmaku</string>
     <string name="danmaku_notification_mode_summary">Tampilkan notifikasi sebagai danmaku alias komentar bullet saat permainan aktif</string>
+    
+    <!-- UI Strings -->
+    <string name="select_apps_to_launch">Pilih aplikasi untuk diluncurkan dengan cepat</string>
+    <string name="add_game">Tambah game</string>
+    <string name="expanded">Diperluas</string>
+    <string name="collapsed">Diciutkan</string>
+    <string name="toggle_menu">Alihkan menu</string>
+    <string name="close_menu">Tutup menu</string>
+    <string name="notifications">Notifikasi</string>
+    <string name="display_gestures">Tampilan dan gestur</string>
+    <string name="no_games_added">Belum ada game yang ditambahkan</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Batal</string>
+    <string name="remove">Hapus</string>
+    <string name="back">Kembali</string>
+    <string name="game_mode">Mode game</string>
+    <string name="graphics">Grafis</string>
+    <string name="remove_from_library">Hapus dari pustaka</string>
+    <string name="registered_game">Game terdaftar</string>
+    <string name="game_space">Ruang Game</string>
+    
+    <!-- Game Panel -->
+    <string name="save">Simpan</string>
+    <string name="panel_options">Opsi panel</string>
+    <string name="brightness_slider">Penggeser kecerahan</string>
+    <string name="fps_graph">Grafik FPS</string>
+    <string name="selected_tiles">Ubin yang dipilih</string>
+    <string name="available_tiles">Ubin yang tersedia</string>
+    <string name="fps_stats">min %1$d | rata %2$d | maks %3$d</string>
+    <string name="add">Tambah</string>
+    
+    <!-- Tile Labels -->
+    <string name="tile_danmaku">Danmaku</string>
+    <string name="tile_stay_awake">Tetap terjaga</string>
+    <string name="tile_wifi">Wi-Fi</string>
+    <string name="tile_dnd">Jangan ganggu</string>
+    <string name="tile_fps_info">Info FPS</string>
+    <string name="tile_auto_rotate">Rotasi otomatis</string>
+    <string name="tile_boost_memory">Tingkatkan memori</string>
+    <string name="tile_settings">Pengaturan</string>
+    <string name="tile_airplane_mode">Mode pesawat</string>
+    <string name="tile_bluetooth">Bluetooth</string>
+    <string name="tile_mobile_data">Data seluler</string>
+    <string name="tile_touch_boost">Peningkatan sentuh</string>
+    
+    <!-- Content Descriptions (Accessibility) -->
+    <string name="cd_reject">Tolak</string>
+    <string name="cd_accept">Terima</string>
+    <string name="cd_caller_photo">Foto pemanggil</string>
+    <string name="cd_dismiss">Tutup</string>
+    <string name="cd_edit_tiles">Edit ubin</string>
+    <string name="cd_collapse">Ciutkan</string>
+    <string name="cd_expand">Perluas</string>
 </resources>

@@ -81,6 +81,59 @@
     <string name="in_game_calls_received_number">Received call from %1$s</string>
     <string name="in_game_calls_rejected_number">Rejected call from %1$s</string>
     <!-- Danmaku Notification Mode -->
-    <string name="danmaku_notification_mode_title">Danmaku Notification mode</string>
-    <string name="danmaku_notification_mode_summary">Show notification as danmaku aka bullet comments while game is active</string>
+    <string name="danmaku_notification_mode_title">Danmaku режим обавештења</string>
+    <string name="danmaku_notification_mode_summary">Прикажи обавештења као danmaku, односно коментаре у облику метака док је игра активна</string>
+    
+    <!-- UI Strings -->
+    <string name="select_apps_to_launch">Изаберите апликације за брзо покретање</string>
+    <string name="add_game">Додај игру</string>
+    <string name="expanded">Проширено</string>
+    <string name="collapsed">Сакривено</string>
+    <string name="toggle_menu">Пребаци мени</string>
+    <string name="close_menu">Затвори мени</string>
+    <string name="notifications">Обавештења</string>
+    <string name="display_gestures">Екран и гестови</string>
+    <string name="no_games_added">Још нема додатих игара</string>
+    <string name="ok">У реду</string>
+    <string name="cancel">Откажи</string>
+    <string name="remove">Уклони</string>
+    <string name="back">Назад</string>
+    <string name="game_mode">Режим игре</string>
+    <string name="graphics">Графика</string>
+    <string name="remove_from_library">Уклони из библиотеке</string>
+    <string name="registered_game">Регистрована игра</string>
+    <string name="game_space">Game Space</string>
+    
+    <!-- Game Panel -->
+    <string name="save">Сачувај</string>
+    <string name="panel_options">Опције панела</string>
+    <string name="brightness_slider">Клизач осветљења</string>
+    <string name="fps_graph">FPS графикон</string>
+    <string name="selected_tiles">Изабране плочице</string>
+    <string name="available_tiles">Доступне плочице</string>
+    <string name="fps_stats">мин %1$d | просек %2$d | макс %3$d</string>
+    <string name="add">Додај</string>
+    
+    <!-- Tile Labels -->
+    <string name="tile_danmaku">Danmaku</string>
+    <string name="tile_stay_awake">Остани будан</string>
+    <string name="tile_wifi">Wi-Fi</string>
+    <string name="tile_dnd">Не узнемиравај</string>
+    <string name="tile_fps_info">FPS информације</string>
+    <string name="tile_auto_rotate">Аутоматска ротација</string>
+    <string name="tile_boost_memory">Убрзање меморије</string>
+    <string name="tile_settings">Подешавања</string>
+    <string name="tile_airplane_mode">Режим лета</string>
+    <string name="tile_bluetooth">Bluetooth</string>
+    <string name="tile_mobile_data">Мобилни подаци</string>
+    <string name="tile_touch_boost">Убрзање додира</string>
+    
+    <!-- Content Descriptions (Accessibility) -->
+    <string name="cd_reject">Одбиј</string>
+    <string name="cd_accept">Прихвати</string>
+    <string name="cd_caller_photo">Фотографија позиваоца</string>
+    <string name="cd_dismiss">Одбаци</string>
+    <string name="cd_edit_tiles">Уреди плочице</string>
+    <string name="cd_collapse">Сакриј</string>
+    <string name="cd_expand">Прошири</string>
 </resources>

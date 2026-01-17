@@ -83,4 +83,57 @@
     <!-- Danmaku Notification Mode -->
     <string name="danmaku_notification_mode_title">Danmaku Értesítő mód</string>
     <string name="danmaku_notification_mode_summary">Értesítések danmakuként mutatása, avagy kommentek kilövése játék mód közben</string>
+    
+    <!-- UI Strings -->
+    <string name="select_apps_to_launch">Válasszon alkalmazásokat a gyors indításhoz</string>
+    <string name="add_game">Játék hozzáadása</string>
+    <string name="expanded">Kibontva</string>
+    <string name="collapsed">Összecsukva</string>
+    <string name="toggle_menu">Menü váltása</string>
+    <string name="close_menu">Menü bezárása</string>
+    <string name="notifications">Értesítések</string>
+    <string name="display_gestures">Kijelző és mozdulatok</string>
+    <string name="no_games_added">Még nincsenek hozzáadott játékok</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Mégse</string>
+    <string name="remove">Eltávolítás</string>
+    <string name="back">Vissza</string>
+    <string name="game_mode">Játék mód</string>
+    <string name="graphics">Grafika</string>
+    <string name="remove_from_library">Eltávolítás a könyvtárból</string>
+    <string name="registered_game">Regisztrált játék</string>
+    <string name="game_space">Játéktér</string>
+    
+    <!-- Game Panel -->
+    <string name="save">Mentés</string>
+    <string name="panel_options">Panel beállítások</string>
+    <string name="brightness_slider">Fényerő csúszka</string>
+    <string name="fps_graph">FPS grafikon</string>
+    <string name="selected_tiles">Kiválasztott csempék</string>
+    <string name="available_tiles">Elérhető csempék</string>
+    <string name="fps_stats">min %1$d | átlag %2$d | max %3$d</string>
+    <string name="add">Hozzáadás</string>
+    
+    <!-- Tile Labels -->
+    <string name="tile_danmaku">Danmaku</string>
+    <string name="tile_stay_awake">Ne zárja le a képernyőt</string>
+    <string name="tile_wifi">Wi-Fi</string>
+    <string name="tile_dnd">Ne zavarjanak</string>
+    <string name="tile_fps_info">FPS-adatok</string>
+    <string name="tile_auto_rotate">Automatikus forgatás</string>
+    <string name="tile_boost_memory">Memória gyorsítás</string>
+    <string name="tile_settings">Beállítások</string>
+    <string name="tile_airplane_mode">Repülő mód</string>
+    <string name="tile_bluetooth">Bluetooth</string>
+    <string name="tile_mobile_data">Mobiladat</string>
+    <string name="tile_touch_boost">Érintés gyorsítás</string>
+    
+    <!-- Content Descriptions (Accessibility) -->
+    <string name="cd_reject">Elutasítás</string>
+    <string name="cd_accept">Elfogadás</string>
+    <string name="cd_caller_photo">Hívó fényképe</string>
+    <string name="cd_dismiss">Elvetés</string>
+    <string name="cd_edit_tiles">Csempék szerkesztése</string>
+    <string name="cd_collapse">Összecsukás</string>
+    <string name="cd_expand">Kibontás</string>
 </resources>
