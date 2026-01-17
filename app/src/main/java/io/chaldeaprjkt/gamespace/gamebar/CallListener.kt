@@ -57,6 +57,7 @@ import androidx.compose.ui.graphics.*
 import androidx.compose.ui.layout.*
 import androidx.compose.ui.platform.ComposeView
 import androidx.compose.ui.platform.ViewCompositionStrategy
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.repeatOnLifecycle
@@ -405,7 +406,7 @@ fun CallOverlay(
             ) {
                 Icon(
                     imageVector = Icons.Filled.Close,
-                    contentDescription = "Reject",
+                    contentDescription = stringResource(R.string.cd_reject),
                     tint = Color.White.copy(alpha = pulseAlpha),
                     modifier = Modifier.size(28.dp)
                 )
@@ -430,7 +431,7 @@ fun CallOverlay(
                 ) {
                     Icon(
                         imageVector = Icons.Filled.Call,
-                        contentDescription = "Accept",
+                        contentDescription = stringResource(R.string.cd_accept),
                         tint = Color.White.copy(alpha = pulseAlpha),
                         modifier = Modifier.size(28.dp)
                     )
@@ -451,7 +452,7 @@ fun CallOverlay(
                     ) {
                         Image(
                             bitmap = photo,
-                            contentDescription = "Caller photo",
+                            contentDescription = stringResource(R.string.cd_caller_photo),
                             contentScale = ContentScale.Crop,
                             modifier = Modifier
                                 .fillMaxSize()
@@ -474,7 +475,7 @@ fun CallOverlay(
             ) {
                 Icon(
                     imageVector = Icons.Filled.KeyboardArrowDown,
-                    contentDescription = "Dismiss",
+                    contentDescription = stringResource(R.string.cd_dismiss),
                     tint = MaterialTheme.colorScheme.onSurfaceVariant,
                     modifier = Modifier.size(20.dp)
                 )

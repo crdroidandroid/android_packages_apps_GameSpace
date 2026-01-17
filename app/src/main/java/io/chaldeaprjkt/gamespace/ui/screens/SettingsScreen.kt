@@ -140,14 +140,14 @@ fun SettingsScreen(
     val fabItems = listOf(
         Triple(
             R.drawable.materialsymbols_ic_app_registration_rounded_filled,
-            "Select apps to launch quickly"
+            stringResource(R.string.select_apps_to_launch)
         ) {
             showQuickStartDialog = true
             fabMenuExpanded = false
         },
         Triple(
             R.drawable.materialsymbols_ic_sports_esports_rounded_filled,
-            "Add game"
+            stringResource(R.string.add_game)
         ) {
             onAddGameClick()
             fabMenuExpanded = false
@@ -167,10 +167,10 @@ fun SettingsScreen(
     )
 
     val ringerModeOptions = listOf(
-        "0" to "Silent",
-        "1" to "Vibrate",
-        "2" to "Normal",
-        "3" to "Do not change"
+        "0" to stringResource(R.string.ringer_mode_silent),
+        "1" to stringResource(R.string.ringer_mode_vibrate),
+        "2" to stringResource(R.string.ringer_mode_normal),
+        "3" to stringResource(R.string.ringer_mode_no_change)
     )
 
     if (showQuickStartDialog) {
@@ -210,8 +210,8 @@ fun SettingsScreen(
                             Modifier.semantics {
                                     traversalIndex = -1f
                                     stateDescription =
-                                        if (fabMenuExpanded) "Expanded" else "Collapsed"
-                                    contentDescription = "Toggle menu"
+                                        if (fabMenuExpanded) context.getString(R.string.expanded) else context.getString(R.string.collapsed)
+                                    contentDescription = context.getString(R.string.toggle_menu)
                                 }
                                 .animateFloatingActionButton(
                                     visible = fabVisible || fabMenuExpanded,
@@ -243,7 +243,7 @@ fun SettingsScreen(
                                         customActions =
                                             listOf(
                                                 CustomAccessibilityAction(
-                                                    label = "Close menu",
+                                                    label = context.getString(R.string.close_menu),
                                                     action = {
                                                         fabMenuExpanded = false
                                                         true
@@ -296,7 +296,7 @@ fun SettingsScreen(
 
             item {
                 Spacer(modifier = Modifier.height(16.dp))
-                SettingsSection(title = "Notifications") {
+                SettingsSection(title = stringResource(R.string.notifications)) {
                     SettingsSwitch(
                         title = stringResource(R.string.call_overlay_enabled_title),
                         summary = stringResource(R.string.call_overlay_enabled_summary),
@@ -333,7 +333,7 @@ fun SettingsScreen(
 
             item {
                 Spacer(modifier = Modifier.height(16.dp))
-                SettingsSection(title = "Display & Gestures") {
+                SettingsSection(title = stringResource(R.string.display_gestures)) {
                     SettingsSwitch(
                         title = stringResource(R.string.auto_brightness_disabled_title),
                         summary = stringResource(R.string.auto_brightness_disabled_summary),
@@ -448,12 +448,12 @@ private fun QuickStartAppsDialog(
         },
         confirmButton = {
             TextButton(onClick = { onConfirm(selected.toSet()) }) {
-                Text("OK")
+                Text(stringResource(R.string.ok))
             }
         },
         dismissButton = {
             TextButton(onClick = onDismiss) {
-                Text("Cancel")
+                Text(stringResource(R.string.cancel))
             }
         }
     )
@@ -653,7 +653,7 @@ private fun GameIllustration(
         }
 
         Text(
-            text = "Game Space",
+            text = stringResource(R.string.game_space),
             style = MaterialTheme.typography.titleLarge,
             color = MaterialTheme.colorScheme.onPrimaryContainer,
             modifier = Modifier
@@ -692,7 +692,7 @@ private fun GameLibrarySection(
                 contentAlignment = Alignment.Center
             ) {
                 Text(
-                    text = "No games added yet",
+                    text = stringResource(R.string.no_games_added),
                     style = MaterialTheme.typography.bodyMedium,
                     color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.6f)
                 )
@@ -717,11 +717,12 @@ private fun GameLibrarySection(
 }
 
 
+@Composable
 private fun getGameModeLabel(mode: Int): String {
     return when (mode) {
-        1 -> "Standard"
-        2 -> "Performance"
-        3 -> "Battery"
-        else -> "Standard"
+        1 -> stringResource(R.string.game_mode_standard)
+        2 -> stringResource(R.string.game_mode_performance)
+        3 -> stringResource(R.string.game_mode_battery)
+        else -> stringResource(R.string.game_mode_standard)
     }
 }

@@ -125,7 +125,7 @@ class TileRepository @Inject constructor(
         add(
             ToggleableTile(
                 id = "notification",
-                label = "Danmaku",
+                label = context.getString(R.string.tile_danmaku),
                 icon = R.drawable.materialsymbols_ic_notifications_rounded_filled,
                 state = mutableStateOf(appSettings.danmakuNotification),
                 setter = {
@@ -138,7 +138,7 @@ class TileRepository @Inject constructor(
         add(
             ToggleableTile(
                 id = "stay_awake",
-                label = "Stay Awake",
+                label = context.getString(R.string.tile_stay_awake),
                 icon = R.drawable.materialsymbols_ic_bedtime_rounded_filled,
                 state = mutableStateOf(systemSettings.stayAwake),
                 setter = { systemSettings.stayAwake = it }
@@ -148,7 +148,7 @@ class TileRepository @Inject constructor(
         add(
             ToggleableTile(
                 id = "wifi",
-                label = "Wi-Fi",
+                label = context.getString(R.string.tile_wifi),
                 icon = R.drawable.materialsymbols_ic_wifi_rounded_filled,
                 state = wifiState,
                 setter = { wifiManager.isWifiEnabled = it }
@@ -158,7 +158,7 @@ class TileRepository @Inject constructor(
         add(
             ToggleableTile(
                 id = "dnd",
-                label = "DND",
+                label = context.getString(R.string.tile_dnd),
                 icon = R.drawable.materialsymbols_ic_do_not_disturb_on_rounded_filled,
                 state = dndState,
                 setter = { enabled ->
@@ -173,7 +173,7 @@ class TileRepository @Inject constructor(
         add(
             ToggleableTile(
                 id = "fps_info",
-                label = "FPS Info",
+                label = context.getString(R.string.tile_fps_info),
                 icon = R.drawable.materialsymbols_ic_bar_chart_rounded_filled,
                 state = mutableStateOf(appSettings.showFps),
                 setter = { appSettings.showFps = it }
@@ -183,7 +183,7 @@ class TileRepository @Inject constructor(
         add(
             ToggleableTile(
                 id = "auto_rotate",
-                label = "Auto Rotate",
+                label = context.getString(R.string.tile_auto_rotate),
                 icon = R.drawable.materialsymbols_ic_screen_rotation_up_rounded_filled,
                 state = autoRotateState,
                 setter = {
@@ -199,7 +199,7 @@ class TileRepository @Inject constructor(
         add(
             FixedActionTile(
                 id = "boost_memory",
-                label = "Boost Memory",
+                label = context.getString(R.string.tile_boost_memory),
                 icon = R.drawable.materialsymbols_ic_speed_rounded_filled,
                 action = {
                     try {
@@ -213,7 +213,7 @@ class TileRepository @Inject constructor(
         add(
             FixedActionTile(
                 id = "settings",
-                label = "Settings",
+                label = context.getString(R.string.tile_settings),
                 icon = R.drawable.materialsymbols_ic_settings_rounded_filled,
                 action = {
                     val intent = Intent(Settings.ACTION_SETTINGS).apply {
@@ -227,7 +227,7 @@ class TileRepository @Inject constructor(
         add(
             ToggleableTile(
                 id = "airplane_mode",
-                label = "Airplane Mode",
+                label = context.getString(R.string.tile_airplane_mode),
                 icon = R.drawable.materialsymbols_ic_flight_rounded_filled,
                 state = airplaneModeState,
                 setter = {
@@ -246,7 +246,7 @@ class TileRepository @Inject constructor(
         add(
             ToggleableTile(
                 id = "bluetooth",
-                label = "Bluetooth",
+                label = context.getString(R.string.tile_bluetooth),
                 icon = R.drawable.materialsymbols_ic_bluetooth_rounded_filled,
                 state = btState,
                 setter = {
@@ -262,7 +262,7 @@ class TileRepository @Inject constructor(
             add(
                 ToggleableTile(
                     id = "mobile_data",
-                    label = "Mobile Data",
+                    label = context.getString(R.string.tile_mobile_data),
                     icon = R.drawable.materialsymbols_ic_android_cell_4_bar_rounded_filled,
                     state = mobileDataState,
                     setter = {
@@ -283,7 +283,7 @@ class TileRepository @Inject constructor(
             add(
                 ToggleableTile(
                     id = "touch_boost",
-                    label = "Touch Boost",
+                    label = context.getString(R.string.tile_touch_boost),
                     icon = R.drawable.materialsymbols_ic_touch_app_rounded_filled,
                     state = touchBoostState,
                     setter = {

@@ -62,6 +62,7 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.layout.*
 import androidx.compose.ui.platform.*
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.*
 import androidx.compose.ui.text.style.*
 import androidx.compose.ui.unit.*
@@ -418,7 +419,7 @@ private fun TopRowHeader(
         ) {
             Icon(
                 painter = painterResource(R.drawable.materialsymbols_ic_edit_rounded_filled),
-                contentDescription = "Edit Tiles"
+                contentDescription = stringResource(R.string.cd_edit_tiles)
             )
         }
 
@@ -428,7 +429,7 @@ private fun TopRowHeader(
         ) {
             Icon(
                 painter = painterResource(R.drawable.materialsymbols_ic_expand_more_rounded_filled),
-                contentDescription = if (headerExpanded) "Collapse" else "Expand",
+                contentDescription = if (headerExpanded) stringResource(R.string.cd_collapse) else stringResource(R.string.cd_expand),
                 modifier = Modifier.rotate(rotateArrow)
             )
         }
@@ -518,7 +519,7 @@ fun TileEditPanel(
             IconButton(onClick = onClose) {
                 Icon(
                     imageVector = Icons.AutoMirrored.Rounded.ArrowBack,
-                    contentDescription = "Back"
+                    contentDescription = stringResource(R.string.back)
                 )
             }
             Spacer(modifier = Modifier.weight(1f))
@@ -528,7 +529,7 @@ fun TileEditPanel(
                     onClose()
                 }
             ) {
-                Text("Save")
+                Text(stringResource(R.string.save))
             }
         }
 
@@ -540,17 +541,17 @@ fun TileEditPanel(
                 .background(MaterialTheme.colorScheme.surfaceVariant, RoundedCornerShape(12.dp))
                 .padding(12.dp)
         ) {
-            Text("Panel Options", style = MaterialTheme.typography.titleMedium)
+            Text(stringResource(R.string.panel_options), style = MaterialTheme.typography.titleMedium)
             Spacer(modifier = Modifier.height(8.dp))
 
             SettingToggleRow(
-                title = "Brightness Slider",
+                title = stringResource(R.string.brightness_slider),
                 checked = tileRepository.isBrightnessVisible.value,
                 onCheckedChange = { tileRepository.setBrightnessEnabled(it) }
             )
 
             SettingToggleRow(
-                title = "FPS Graph",
+                title = stringResource(R.string.fps_graph),
                 checked = tileRepository.isFpsGraphVisible.value,
                 onCheckedChange = { tileRepository.setFpsGraphEnabled(it) }
             )
@@ -558,7 +559,7 @@ fun TileEditPanel(
         
         Spacer(modifier = Modifier.height(8.dp))
 
-        Text("Selected Tiles", style = MaterialTheme.typography.titleMedium)
+        Text(stringResource(R.string.selected_tiles), style = MaterialTheme.typography.titleMedium)
 
         Spacer(modifier = Modifier.height(8.dp))
 
@@ -573,7 +574,7 @@ fun TileEditPanel(
 
         Spacer(modifier = Modifier.height(24.dp))
 
-        Text("Available Tiles", style = MaterialTheme.typography.titleMedium)
+        Text(stringResource(R.string.available_tiles), style = MaterialTheme.typography.titleMedium)
         Spacer(modifier = Modifier.height(8.dp))
 
         TileGroup(
@@ -929,7 +930,7 @@ fun FpsGraph(
         ) {
             val (minFps, avgFps, maxFpsSeen) = graphData.first
             Text(
-                text = "min ${minFps.toInt()} | avg ${avgFps.toInt()} | max ${maxFpsSeen.toInt()}",
+                text = stringResource(R.string.fps_stats, minFps.toInt(), avgFps.toInt(), maxFpsSeen.toInt()),
                 color = graphData.third,
                 style = MaterialTheme.typography.bodySmall.copy(fontSize = 14.sp)
             )
