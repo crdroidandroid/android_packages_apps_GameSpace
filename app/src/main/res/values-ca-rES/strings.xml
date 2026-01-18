@@ -16,17 +16,27 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="memory_boost">Accelerar memòria</string>
+    <string name="memory_boost_summary">Optimitzar memòria</string>
+    <string name="boost_memory">Memòria accelerada</string>
+    <string name="quick_start_apps_title">Aplicacions d\'inici ràpid</string>
+    <string name="quick_start_apps_summary">Seleccioneu aplicacions per iniciar ràpidament</string>
     <string name="settings_title">Espai de Jocs</string>
     <string name="settings_summary">Gestiona la configuració de joc</string>
     <!-- Game options -->
     <string name="in_game_preferences_title">Opcions en el joc</string>
+    <string name="heads_up_disabled_summary">Desactiva les notificacions emergents durant el joc</string>
     <string name="suppress_fullscreen_intent_title">Bloqueja els esdeveniments a pantalla completa</string>
     <string name="suppress_fullscreen_intent_summary">Impedeix els esdeveniments a pantalla completa com trucades entrants</string>
     <string name="stay_awake_title">Mantén la pantalla encesa</string>
+    <string name="stay_awake_summary">Mantén la pantalla encesa durant el joc</string>
     <string name="lock_gesture_title">Gest de bloqueig</string>
     <string name="auto_brightness_disabled_title">Desactiva la brillantor automàtica</string>
     <string name="three_screenshot_disabled_title">Desactiva el lliscament per a fer captures de pantalla</string>
+    <string name="three_screenshot_disabled_summary">Desactiva temporalment el gest de lliscament amb tres dits durant el joc</string>
+    <string name="chaldea">chaldeaprjkt</string>
     <string name="adb_disabled_title">Desactiva la depuració USB</string>
+    <string name="adb_disabled_summary">Desactiva temporalment la depuració USB ADB durant el joc</string>
     <string name="gamespace_menu_opacity_title">Nivell d\'opacitat del menú flotant</string>
     <!-- Notification Mode -->
     <string name="notification_mode_title">Mode de notificació</string>
@@ -36,6 +46,12 @@
     <string name="notification_mode_danmaku">Mostra amb el Danmaku</string>
     <!-- Ringer Mode -->
     <string name="ringer_mode_title">Mode amb so</string>
+    <string-array name="ringer_mode_entries">
+        <item>Silenci</item>
+        <item>Vibració</item>
+        <item>Normal</item>
+        <item>No canviar</item>
+    </string-array>
     <string name="ringer_mode_silent">Silenci</string>
     <string name="ringer_mode_vibrate">Vibració</string>
     <string name="ringer_mode_normal">Normal</string>
@@ -49,14 +65,26 @@
     <!-- Configure game -->
     <string name="per_app_title">Configura el joc</string>
     <string name="per_app_mode_title">Mode preferit</string>
+    <string-array name="per_app_preferred_mode_entries">
+        <item>Estàndard</item>
+        <item>Rendiment</item>
+        <item>Bateria</item>
+    </string-array>
     <string name="per_app_angle_title">Utilitza l\'ANGLE (experimental)</string>
     <string name="per_app_angle_summary">Utilitza el renderitzador ANGLE en lloc dels controladors natius GLES.\nATENCIÓ! Pot trenca els gràfics del joc, utilitzeu amb precaució!</string>
     <string name="cant_find_angle_pkg">ANGLE no està disponible en el sistema</string>
     <string name="per_app_unregister">Elimina %1$s de la biblioteca</string>
+    <string name="ram_usage">Ús de RAM: </string>
     <string name="game_mode_unsupported">No suportat</string>
     <string name="game_mode_standard">Estàndard</string>
     <string name="game_mode_performance">De rendiment</string>
     <string name="game_mode_battery">Bateria</string>
+    <string-array name="game_mode_names">
+        <item>No compatible</item>
+        <item>Estàndard</item>
+        <item>Rendiment</item>
+        <item>Bateria</item>
+    </string-array>
     <!-- Custom seekbar -->
     <string name="custom_seekbar_value">Valor: <xliff:g id="v">%s</xliff:g></string>
     <string name="custom_seekbar_default_value">per defecte</string>
@@ -83,6 +111,13 @@
     <!-- Danmaku Notification Mode -->
     <string name="danmaku_notification_mode_title">Mode de notificació Danmaku</string>
     <string name="danmaku_notification_mode_summary">Mostra les notificacions com a danmaku, és a dir, comentaris flotants mentre el joc està actiu</string>
+    <string name="bypass_charge_enabled_summary">Desviació de càrrega</string>
+    <string name="bypass_charge_enabled_title">Activa la desviació de càrrega durant el joc</string>
+    <string name="gamespace_running">Espai de Jocs s\'està executant</string>
+    <string name="app_locked_message">Aquesta aplicació està bloquejada. Si us plau, desbloqueja-la primer.</string>
+    <string name="call_overlay_enabled_title">Superposició de trucada</string>
+    <string name="call_overlay_enabled_summary">Mostra una superposició mínima de trucada per respondre/rebutjar trucades</string>
+    <string name="auto_brightness_disabled_summary">Mantén la brillantor fixa durant el joc</string>
     
     <!-- UI Strings -->
     <string name="select_apps_to_launch">Seleccioneu les apps per a iniciar ràpidament</string>

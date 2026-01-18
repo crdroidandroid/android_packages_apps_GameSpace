@@ -16,17 +16,27 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="memory_boost">增強記憶體</string>
+    <string name="memory_boost_summary">優化記憶體</string>
+    <string name="boost_memory">記憶體已增強</string>
+    <string name="quick_start_apps_title">快速啟動應用程式</string>
+    <string name="quick_start_apps_summary">選擇要快速啟動的應用程式</string>
     <string name="settings_title">遊戲空間</string>
     <string name="settings_summary">管理您的遊戲設定</string>
     <!-- Game options -->
     <string name="in_game_preferences_title">遊戲中選項</string>
+    <string name="heads_up_disabled_summary">在遊戲期間禁用抬頭通知</string>
     <string name="suppress_fullscreen_intent_title">封鎖全螢幕活動</string>
     <string name="suppress_fullscreen_intent_summary">防止如電話等的應用程式彈出全螢幕畫面</string>
     <string name="stay_awake_title">螢幕保持開啟</string>
+    <string name="stay_awake_summary">在遊戲期間保持螢幕開啟</string>
     <string name="lock_gesture_title">鎖定手勢</string>
     <string name="auto_brightness_disabled_title">停用自動亮度</string>
     <string name="three_screenshot_disabled_title">停用滑動截圖手勢</string>
+    <string name="three_screenshot_disabled_summary">在遊戲期間暫時禁用三指滑動手勢</string>
+    <string name="chaldea">chaldeaprjkt</string>
     <string name="adb_disabled_title">停用 USB 偵錯</string>
+    <string name="adb_disabled_summary">在遊戲期間暫時禁用 USB ADB 偵錯</string>
     <string name="gamespace_menu_opacity_title">不透明度</string>
     <!-- Notification Mode -->
     <string name="notification_mode_title">通知模式</string>
@@ -36,6 +46,12 @@
     <string name="notification_mode_danmaku">彈幕式通知</string>
     <!-- Ringer Mode -->
     <string name="ringer_mode_title">鈴聲模式</string>
+    <string-array name="ringer_mode_entries">
+        <item>靜音</item>
+        <item>震動</item>
+        <item>一般</item>
+        <item>不變更</item>
+    </string-array>
     <string name="ringer_mode_silent">靜音</string>
     <string name="ringer_mode_vibrate">震動</string>
     <string name="ringer_mode_normal">正常</string>
@@ -49,14 +65,26 @@
     <!-- Configure game -->
     <string name="per_app_title">遊戲選項</string>
     <string name="per_app_mode_title">偏好模式</string>
+    <string-array name="per_app_preferred_mode_entries">
+        <item>標準</item>
+        <item>效能</item>
+        <item>省電</item>
+    </string-array>
     <string name="per_app_angle_title">使用 ANGLE （實驗性功能）</string>
     <string name="per_app_angle_summary">使用 ANGLE 渲染畫面而非原生的 GLES 驅動。\n警告！遊戲畫面可能出現破圖等現象，請謹慎使用。</string>
     <string name="cant_find_angle_pkg">您的系統不支援 ANGLE</string>
     <string name="per_app_unregister">從遊戲庫中移除 %1$s</string>
+    <string name="ram_usage">RAM 使用量：</string>
     <string name="game_mode_unsupported">不支援</string>
     <string name="game_mode_standard">一般</string>
     <string name="game_mode_performance">高效能</string>
     <string name="game_mode_battery">省電</string>
+    <string-array name="game_mode_names">
+        <item>不支援</item>
+        <item>標準</item>
+        <item>效能</item>
+        <item>省電</item>
+    </string-array>
     <!-- Custom seekbar -->
     <string name="custom_seekbar_value">數值： <xliff:g id="v">%s</xliff:g></string>
     <string name="custom_seekbar_default_value">預設</string>
@@ -83,6 +111,13 @@
     <!-- Danmaku Notification Mode -->
     <string name="danmaku_notification_mode_title">彈幕通知模式</string>
     <string name="danmaku_notification_mode_summary">遊戲中以彈幕形式顯示通知。</string>
+    <string name="bypass_charge_enabled_summary">繞過充電</string>
+    <string name="bypass_charge_enabled_title">啟用遊戲時繞過充電</string>
+    <string name="gamespace_running">遊戲空間運行中</string>
+    <string name="app_locked_message">此應用程式已鎖定。請先解鎖。</string>
+    <string name="call_overlay_enabled_title">來電覆蓋</string>
+    <string name="call_overlay_enabled_summary">顯示最小來電覆蓋以接聽/拒接來電</string>
+    <string name="auto_brightness_disabled_summary">在遊戲期間保持亮度固定</string>
     
     <!-- UI Strings -->
     <string name="select_apps_to_launch">選擇要快速啟動的應用程式</string>

@@ -16,17 +16,27 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="memory_boost">Boost hukommelse</string>
+    <string name="memory_boost_summary">Optimer hukommelse</string>
+    <string name="boost_memory">Hukommelse boostet</string>
+    <string name="quick_start_apps_title">Hurtigstart apps</string>
+    <string name="quick_start_apps_summary">Vælg apps til hurtig start</string>
     <string name="settings_title">Game Space</string>
     <string name="settings_summary">Manage your gaming setup</string>
     <!-- Game options -->
     <string name="in_game_preferences_title">In-game options</string>
+    <string name="heads_up_disabled_summary">Deaktiver heads-up notifikationer under spil</string>
     <string name="suppress_fullscreen_intent_title">Block fullscreen event</string>
     <string name="suppress_fullscreen_intent_summary">Prevent fullscreen events like incoming calls from appearing</string>
     <string name="stay_awake_title">Stay awake</string>
+    <string name="stay_awake_summary">Hold skærmen tændt under spillet</string>
     <string name="lock_gesture_title">Lock gesture</string>
     <string name="auto_brightness_disabled_title">Disable auto-brightness</string>
     <string name="three_screenshot_disabled_title">Disable swipe to screenshot</string>
+    <string name="three_screenshot_disabled_summary">Midlertidigt deaktiver tre-finger swipe gestus under spil</string>
+    <string name="chaldea">chaldeaprjkt</string>
     <string name="adb_disabled_title">Disable USB debugging</string>
+    <string name="adb_disabled_summary">Midlertidigt deaktiver USB ADB debugging under spil</string>
     <string name="gamespace_menu_opacity_title">Overlay menu opacity level</string>
     <!-- Notification Mode -->
     <string name="notification_mode_title">Notification mode</string>
@@ -36,6 +46,12 @@
     <string name="notification_mode_danmaku">Show as Danmaku</string>
     <!-- Ringer Mode -->
     <string name="ringer_mode_title">Ringer mode</string>
+    <string-array name="ringer_mode_entries">
+        <item>Silent</item>
+        <item>Vibration</item>
+        <item>Normal</item>
+        <item>Må ikke ændres</item>
+    </string-array>
     <string name="ringer_mode_silent">Silent</string>
     <string name="ringer_mode_vibrate">Vibrate</string>
     <string name="ringer_mode_normal">Normal</string>
@@ -49,14 +65,26 @@
     <!-- Configure game -->
     <string name="per_app_title">Configure game</string>
     <string name="per_app_mode_title">Preferred mode</string>
+    <string-array name="per_app_preferred_mode_entries">
+        <item>Standard</item>
+        <item>Ydeevne</item>
+        <item>Batteri</item>
+    </string-array>
     <string name="per_app_angle_title">Use ANGLE (experimental)</string>
     <string name="per_app_angle_summary">Using ANGLE renderer instead of native GLES drivers.\nWARNING!! May breaks game graphics, use with caution!</string>
     <string name="cant_find_angle_pkg">ANGLE is not available on your system</string>
     <string name="per_app_unregister">Remove %1$s from library</string>
+    <string name="ram_usage">RAM-forbrug: </string>
     <string name="game_mode_unsupported">Unsupported</string>
     <string name="game_mode_standard">Standard</string>
     <string name="game_mode_performance">Performance</string>
     <string name="game_mode_battery">Battery</string>
+    <string-array name="game_mode_names">
+        <item>Unsupported</item>
+        <item>Standard</item>
+        <item>Ydeevne</item>
+        <item>Batteri</item>
+    </string-array>
     <!-- Custom seekbar -->
     <string name="custom_seekbar_value">Value: <xliff:g id="v">%s</xliff:g></string>
     <string name="custom_seekbar_default_value">by default</string>
@@ -83,6 +111,13 @@
     <!-- Danmaku Notification Mode -->
     <string name="danmaku_notification_mode_title">Danmaku notifikationstilstand</string>
     <string name="danmaku_notification_mode_summary">Vis notifikationer som danmaku, også kendt som bullet-kommentarer, mens spillet er aktivt</string>
+    <string name="bypass_charge_enabled_summary">Omgå opladning</string>
+    <string name="bypass_charge_enabled_title">Aktiver omgåelse af opladning under spil</string>
+    <string name="gamespace_running">Game Space kører</string>
+    <string name="app_locked_message">Denne app er låst. Lås den op først.</string>
+    <string name="call_overlay_enabled_title">Opkalds-overlay</string>
+    <string name="call_overlay_enabled_summary">Vis minimal opkalds-overlay for at besvare/afvise opkald</string>
+    <string name="auto_brightness_disabled_summary">Hold lysstyrke fast under spil</string>
     
     <!-- UI Strings -->
     <string name="select_apps_to_launch">Vælg apps til hurtig start</string>

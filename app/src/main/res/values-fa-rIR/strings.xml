@@ -16,17 +16,27 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="memory_boost">تقویت حافظه</string>
+    <string name="memory_boost_summary">بهینه‌سازی حافظه</string>
+    <string name="boost_memory">حافظه تقویت شد</string>
+    <string name="quick_start_apps_title">برنامه‌های شروع سریع</string>
+    <string name="quick_start_apps_summary">برنامه‌های شروع سریع را انتخاب کنید</string>
     <string name="settings_title">فضای بازی</string>
     <string name="settings_summary">تنظیمات بازی خود را مدیریت کنید</string>
     <!-- Game options -->
     <string name="in_game_preferences_title">گزینه های درون بازی</string>
+    <string name="heads_up_disabled_summary">غیرفعال کردن اعلان‌های heads-up در حین بازی</string>
     <string name="suppress_fullscreen_intent_title">مسدود کردن رویداد تمام صفحه</string>
     <string name="suppress_fullscreen_intent_summary">از نمایش رویدادهای تمام صفحه مانند تماس های دریافتی جلوگیری کنید</string>
     <string name="stay_awake_title">بیدار بمان</string>
+    <string name="stay_awake_summary">صفحه را در حین بازی روشن نگه دارید</string>
     <string name="lock_gesture_title">قفل کردن ژست</string>
     <string name="auto_brightness_disabled_title">غیرفعالسازی روشنایی خودکار</string>
     <string name="three_screenshot_disabled_title">غیرفعالسازی گرفتن اسکرین شات با کشیدن انگشت</string>
+    <string name="three_screenshot_disabled_summary">موقتاً غیرفعال کردن حرکت سه انگشتی در حین بازی</string>
+    <string name="chaldea">chaldeaprjkt</string>
     <string name="adb_disabled_title">غیرفعال کردن اشکال زدایی USB</string>
+    <string name="adb_disabled_summary">موقتاً غیرفعال کردن اشکال‌زدایی USB ADB در حین بازی</string>
     <string name="gamespace_menu_opacity_title">سطح شفافیت منوی همپوشانی</string>
     <!-- Notification Mode -->
     <string name="notification_mode_title">حالت اعلان‌ها</string>
@@ -36,6 +46,12 @@
     <string name="notification_mode_danmaku">نمایش به صورت Danmaku</string>
     <!-- Ringer Mode -->
     <string name="ringer_mode_title">حالت با صدا</string>
+    <string-array name="ringer_mode_entries">
+        <item>سکوت</item>
+        <item>لرزش</item>
+        <item>معمولی</item>
+        <item>بدون تغییر</item>
+    </string-array>
     <string name="ringer_mode_silent">سکوت</string>
     <string name="ringer_mode_vibrate">لرزش</string>
     <string name="ringer_mode_normal">معمولی</string>
@@ -49,14 +65,26 @@
     <!-- Configure game -->
     <string name="per_app_title">پیکربندی بازی</string>
     <string name="per_app_mode_title">حالت ترجیحی</string>
+    <string-array name="per_app_preferred_mode_entries">
+        <item>استاندارد</item>
+        <item>عملکرد</item>
+        <item>باتری</item>
+    </string-array>
     <string name="per_app_angle_title">استفاده از ANGLE (آزمایشی)</string>
     <string name="per_app_angle_summary">استفاده از رندر ANGLE به جای درایورهای GLES بومی، اگر دستگاه از آن پشتیبانی کند.\nهشدار!! ممکن است گرافیک بازی را خراب کند، با احتیاط استفاده کنید!</string>
     <string name="cant_find_angle_pkg">ANGLE در سیستم شما در دسترس نیست</string>
     <string name="per_app_unregister">%1$s را از مجموعه حذف کنید</string>
+    <string name="ram_usage">مصرف RAM: </string>
     <string name="game_mode_unsupported">پشتیبانی نشده</string>
     <string name="game_mode_standard">استاندارد</string>
     <string name="game_mode_performance">کارایی</string>
     <string name="game_mode_battery">باتری</string>
+    <string-array name="game_mode_names">
+        <item>پشتیبانی نمی‌شود</item>
+        <item>استاندارد</item>
+        <item>عملکرد</item>
+        <item>باتری</item>
+    </string-array>
     <!-- Custom seekbar -->
     <string name="custom_seekbar_value">ارزش: <xliff:g id="v">%s</xliff:g></string>
     <string name="custom_seekbar_default_value">به طور پیش فرض</string>
@@ -83,6 +111,13 @@
     <!-- Danmaku Notification Mode -->
     <string name="danmaku_notification_mode_title">حالت اعلان Danmaku</string>
     <string name="danmaku_notification_mode_summary">نمایش اعلان به عنوان danmaku یعنی نظرات گلوله‌ای در حین فعال بودن بازی</string>
+    <string name="bypass_charge_enabled_summary">رد کردن شارژ</string>
+    <string name="bypass_charge_enabled_title">فعال کردن رد کردن شارژ هنگام بازی</string>
+    <string name="gamespace_running">فضای بازی در حال اجراست</string>
+    <string name="app_locked_message">این برنامه قفل است. لطفاً ابتدا آن را باز کنید.</string>
+    <string name="call_overlay_enabled_title">پوشش تماس</string>
+    <string name="call_overlay_enabled_summary">نمایش پوشش تماس حداقلی برای پاسخ/رد تماس‌ها</string>
+    <string name="auto_brightness_disabled_summary">نگه داشتن روشنایی ثابت در حین بازی</string>
     
     <!-- UI Strings -->
     <string name="select_apps_to_launch">برنامه‌ها را برای راه‌اندازی سریع انتخاب کنید</string>

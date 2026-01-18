@@ -16,17 +16,27 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="memory_boost">تسريع الذاكرة</string>
+    <string name="memory_boost_summary">تحسين الذاكرة</string>
+    <string name="boost_memory">تم تسريع الذاكرة</string>
+    <string name="quick_start_apps_title">تطبيقات البدء السريع</string>
+    <string name="quick_start_apps_summary">اختر التطبيقات للتشغيل السريع</string>
     <string name="settings_title">وضع الألعاب</string>
     <string name="settings_summary">إدارة إعدادات ألعابك</string>
     <!-- Game options -->
     <string name="in_game_preferences_title">خيارات داخل اللعبة</string>
+    <string name="heads_up_disabled_summary">تعطيل إشعارات التنبيه أثناء اللعب</string>
     <string name="suppress_fullscreen_intent_title">منع أحداث الشاشة الكاملة</string>
     <string name="suppress_fullscreen_intent_summary">منع أحداث ملء الشاشة مثل المكالمات الواردة من الظهور أثناء اللعب</string>
     <string name="stay_awake_title">البقاء في الوضع النشط</string>
+    <string name="stay_awake_summary">إبقاء الشاشة مضاءة أثناء اللعب</string>
     <string name="lock_gesture_title">قفل الايماءات</string>
     <string name="auto_brightness_disabled_title">تعطيل السطوع التلقائي</string>
     <string name="three_screenshot_disabled_title">تعطيل السحب لأخذ لقطة الشاشة</string>
+    <string name="three_screenshot_disabled_summary">تعطيل إيماءة السحب بثلاثة أصابع مؤقتًا أثناء اللعب</string>
+    <string name="chaldea">chaldeaprjkt</string>
     <string name="adb_disabled_title">تعطيل تصحيح أخطاء USB</string>
+    <string name="adb_disabled_summary">تعطيل تصحيح أخطاء USB ADB مؤقتًا أثناء اللعب</string>
     <string name="gamespace_menu_opacity_title">مستوى شفافية القائمة العائمة</string>
     <!-- Notification Mode -->
     <string name="notification_mode_title">وضع الإشعارات</string>
@@ -36,6 +46,12 @@
     <string name="notification_mode_danmaku">إظهار ك Danmaku</string>
     <!-- Ringer Mode -->
     <string name="ringer_mode_title">وضع الرنين</string>
+    <string-array name="ringer_mode_entries">
+        <item>صامت</item>
+        <item>إهتزاز</item>
+        <item>عادي</item>
+        <item>لا تقم بالتغيير</item>
+    </string-array>
     <string name="ringer_mode_silent">صامت</string>
     <string name="ringer_mode_vibrate">إهتزاز</string>
     <string name="ringer_mode_normal">عادي</string>
@@ -49,14 +65,26 @@
     <!-- Configure game -->
     <string name="per_app_title">ضبط اللعبة</string>
     <string name="per_app_mode_title">الوضع المفضل</string>
+    <string-array name="per_app_preferred_mode_entries">
+        <item>قياسي</item>
+        <item>نمط الاداء</item>
+        <item>توفير البطارية</item>
+    </string-array>
     <string name="per_app_angle_title">استخدام واجهة المستخدم الجديدة (التجريبية)</string>
     <string name="per_app_angle_summary">استخدام محرك ANGLE بدلاً من تعاريف GLES التقليدية. \n تحذير!! قد يعطل رسومات اللعبة، استخدم بحذر!</string>
     <string name="cant_find_angle_pkg">ANGLE غير متوفر على النظام الخاص بك</string>
     <string name="per_app_unregister">إزالة %1$s من المكتبة</string>
+    <string name="ram_usage">استخدام RAM: </string>
     <string name="game_mode_unsupported">غير مدعوم</string>
     <string name="game_mode_standard">قياسي</string>
     <string name="game_mode_performance">نمط الاداء</string>
     <string name="game_mode_battery">توفير البطارية</string>
+    <string-array name="game_mode_names">
+        <item>غير مدعوم</item>
+        <item>قياسي</item>
+        <item>نمط الاداء</item>
+        <item>توفير البطارية</item>
+    </string-array>
     <!-- Custom seekbar -->
     <string name="custom_seekbar_value">القيمة: <xliff:g id="v">%s</xliff:g></string>
     <string name="custom_seekbar_default_value">بشكل افتراضي</string>
@@ -83,6 +111,13 @@
     <!-- Danmaku Notification Mode -->
     <string name="danmaku_notification_mode_title">وضع إشعار Danmaku</string>
     <string name="danmaku_notification_mode_summary">إظهار تنبيه Danmaku كما هو معروف باِسم تعليقات سريعة عندما تكون اللعبة نشطة</string>
+    <string name="bypass_charge_enabled_summary">تجاوز الشحن</string>
+    <string name="bypass_charge_enabled_title">تفعيل تجاوز الشحن أثناء اللعب</string>
+    <string name="gamespace_running">وضع الألعاب قيد التشغيل</string>
+    <string name="app_locked_message">هذا التطبيق مقفل. يرجى فتحه أولاً.</string>
+    <string name="call_overlay_enabled_title">تراكب المكالمات</string>
+    <string name="call_overlay_enabled_summary">إظهار تراكب مكالمات بسيط للرد/رفض المكالمات</string>
+    <string name="auto_brightness_disabled_summary">الحفاظ على السطوع ثابتًا أثناء اللعب</string>
     
     <!-- UI Strings -->
     <string name="select_apps_to_launch">اختر التطبيقات للتشغيل السريع</string>

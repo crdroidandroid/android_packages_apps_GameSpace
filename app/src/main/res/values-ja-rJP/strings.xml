@@ -16,17 +16,27 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="memory_boost">メモリをブースト</string>
+    <string name="memory_boost_summary">メモリを最適化</string>
+    <string name="boost_memory">メモリをブーストしました</string>
+    <string name="quick_start_apps_title">クイック起動アプリ</string>
+    <string name="quick_start_apps_summary">素早く起動するアプリを選択</string>
     <string name="settings_title">ゲームスペース</string>
     <string name="settings_summary">ゲームの設定を管理</string>
     <!-- Game options -->
     <string name="in_game_preferences_title">ゲーム内オプション</string>
+    <string name="heads_up_disabled_summary">ゲーム中のヘッドアップ通知を無効にする</string>
     <string name="suppress_fullscreen_intent_title">全画面表示イベントをブロック</string>
     <string name="suppress_fullscreen_intent_summary">ゲーム中は着信通話のような全画面イベントが表示されないようにする</string>
     <string name="stay_awake_title">常に画面点灯</string>
+    <string name="stay_awake_summary">ゲーム中は画面を点灯したままにする</string>
     <string name="lock_gesture_title">ジェスチャーをロック</string>
     <string name="auto_brightness_disabled_title">自動明るさ調節を無効化</string>
     <string name="three_screenshot_disabled_title">スワイプでのスクリーンショットを無効化</string>
+    <string name="three_screenshot_disabled_summary">ゲーム中は3本指スワイプジェスチャーを一時的に無効にする</string>
+    <string name="chaldea">chaldeaprjkt</string>
     <string name="adb_disabled_title">USB デバッグを無効化</string>
+    <string name="adb_disabled_summary">ゲーム中はUSB ADBデバッグを一時的に無効にする</string>
     <string name="gamespace_menu_opacity_title">オーバーレイメニューの不透明度</string>
     <!-- Notification Mode -->
     <string name="notification_mode_title">通知モード</string>
@@ -36,6 +46,12 @@
     <string name="notification_mode_danmaku">Danmaku として表示</string>
     <!-- Ringer Mode -->
     <string name="ringer_mode_title">着信音モード</string>
+    <string-array name="ringer_mode_entries">
+        <item>サイレント</item>
+        <item>バイブレーション</item>
+        <item>標準</item>
+        <item>変更しない</item>
+    </string-array>
     <string name="ringer_mode_silent">サイレント</string>
     <string name="ringer_mode_vibrate">バイブレーション</string>
     <string name="ringer_mode_normal">標準</string>
@@ -49,14 +65,26 @@
     <!-- Configure game -->
     <string name="per_app_title">ゲーム設定</string>
     <string name="per_app_mode_title">優先モード</string>
+    <string-array name="per_app_preferred_mode_entries">
+        <item>標準</item>
+        <item>パフォーマンス優先</item>
+        <item>バッテリー優先</item>
+    </string-array>
     <string name="per_app_angle_title">ANGLE を使用 (実験的)</string>
     <string name="per_app_angle_summary">ネイティブ GLES ドライバーの代わりに ANGLE レンダラーを使用します。\n警告! ゲームグラフィックが破損する可能性があります。注意して使用して下さい!</string>
     <string name="cant_find_angle_pkg">お使いのシステムでは ANGLE は利用できません</string>
     <string name="per_app_unregister">%1$s をライブラリから削除</string>
+    <string name="ram_usage">RAM使用量: </string>
     <string name="game_mode_unsupported">非対応</string>
     <string name="game_mode_standard">標準</string>
     <string name="game_mode_performance">パフォーマンス優先</string>
     <string name="game_mode_battery">バッテリー優先</string>
+    <string-array name="game_mode_names">
+        <item>非対応</item>
+        <item>標準</item>
+        <item>パフォーマンス優先</item>
+        <item>バッテリー優先</item>
+    </string-array>
     <!-- Custom seekbar -->
     <string name="custom_seekbar_value">値: <xliff:g id="v">%s</xliff:g></string>
     <string name="custom_seekbar_default_value">既定</string>
@@ -83,6 +111,13 @@
     <!-- Danmaku Notification Mode -->
     <string name="danmaku_notification_mode_title">弾幕通知モード</string>
     <string name="danmaku_notification_mode_summary">ゲーム中に弾幕コメントとして通知を表示する</string>
+    <string name="bypass_charge_enabled_summary">充電バイパス</string>
+    <string name="bypass_charge_enabled_title">ゲーム中の充電バイパスを有効にする</string>
+    <string name="gamespace_running">ゲームスペースが実行中です</string>
+    <string name="app_locked_message">このアプリはロックされています。最初にロックを解除してください。</string>
+    <string name="call_overlay_enabled_title">通話オーバーレイ</string>
+    <string name="call_overlay_enabled_summary">通話に応答/拒否するための最小限の通話オーバーレイを表示</string>
+    <string name="auto_brightness_disabled_summary">ゲーム中は明るさを固定する</string>
     
     <!-- UI Strings -->
     <string name="select_apps_to_launch">すばやく起動するアプリを選択</string>

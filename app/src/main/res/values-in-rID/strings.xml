@@ -16,17 +16,27 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="memory_boost">Tingkatkan memori</string>
+    <string name="memory_boost_summary">Optimalkan memori</string>
+    <string name="boost_memory">Memori ditingkatkan</string>
+    <string name="quick_start_apps_title">Aplikasi Mulai Cepat</string>
+    <string name="quick_start_apps_summary">Pilih aplikasi untuk diluncurkan dengan cepat</string>
     <string name="settings_title">Ruang Game</string>
     <string name="settings_summary">Kelola pengaturan game Anda</string>
     <!-- Game options -->
     <string name="in_game_preferences_title">Opsi dalam game</string>
+    <string name="heads_up_disabled_summary">Nonaktifkan notifikasi heads-up saat bermain game</string>
     <string name="suppress_fullscreen_intent_title">Blokir acara layar penuh</string>
     <string name="suppress_fullscreen_intent_summary">Cegah acara layar penuh seperti panggilan masuk muncul saat dalam game</string>
     <string name="stay_awake_title">Tetap terjaga</string>
+    <string name="stay_awake_summary">Jaga layar tetap menyala saat bermain game</string>
     <string name="lock_gesture_title">Kunci gestur</string>
     <string name="auto_brightness_disabled_title">Nonaktifkan kecerahan otomatis</string>
     <string name="three_screenshot_disabled_title">Nonaktifkan gesek ke tangkapan layar</string>
+    <string name="three_screenshot_disabled_summary">Nonaktifkan sementara gerakan gesek tiga jari saat bermain game</string>
+    <string name="chaldea">chaldeaprjkt</string>
     <string name="adb_disabled_title">Nonaktifkan USB debugging</string>
+    <string name="adb_disabled_summary">Nonaktifkan sementara debug USB ADB saat bermain game</string>
     <string name="gamespace_menu_opacity_title">Tingkat opasitas hamparan menu</string>
     <!-- Notification Mode -->
     <string name="notification_mode_title">Mode notifikasi</string>
@@ -36,6 +46,12 @@
     <string name="notification_mode_danmaku">Muncul sebagai Danmaku</string>
     <!-- Ringer Mode -->
     <string name="ringer_mode_title">Mode dering</string>
+    <string-array name="ringer_mode_entries">
+        <item>Senyap</item>
+        <item>Getar</item>
+        <item>Normal</item>
+        <item>Jangan ubah</item>
+    </string-array>
     <string name="ringer_mode_silent">Senyap</string>
     <string name="ringer_mode_vibrate">Getar</string>
     <string name="ringer_mode_normal">Normal</string>
@@ -49,14 +65,26 @@
     <!-- Configure game -->
     <string name="per_app_title">Konfigurasi game</string>
     <string name="per_app_mode_title">Mode pilihan</string>
+    <string-array name="per_app_preferred_mode_entries">
+        <item>Standar</item>
+        <item>Performa</item>
+        <item>Baterai</item>
+    </string-array>
     <string name="per_app_angle_title">Gunakan ANGLE (eksperimental)</string>
     <string name="per_app_angle_summary">Menggunakan perender ANGLE sebagai ganti driver GLES asli.\nPERINGATAN! Dapat merusak grafik game, gunakan dengan hati-hati!</string>
     <string name="cant_find_angle_pkg">ANGLE tidak tersedia di sistem Anda</string>
     <string name="per_app_unregister">Hapus %1$s dari pustaka</string>
+    <string name="ram_usage">Penggunaan RAM: </string>
     <string name="game_mode_unsupported">Tidak didukung</string>
     <string name="game_mode_standard">Standar</string>
     <string name="game_mode_performance">Kinerja</string>
     <string name="game_mode_battery">Baterai</string>
+    <string-array name="game_mode_names">
+        <item>Tidak didukung</item>
+        <item>Standar</item>
+        <item>Performa</item>
+        <item>Baterai</item>
+    </string-array>
     <!-- Custom seekbar -->
     <string name="custom_seekbar_value">Nilai: <xliff:g id="v">%s</xliff:g></string>
     <string name="custom_seekbar_default_value">bawaan</string>
@@ -83,6 +111,13 @@
     <!-- Danmaku Notification Mode -->
     <string name="danmaku_notification_mode_title">Mode Pemberitahuan Danmaku</string>
     <string name="danmaku_notification_mode_summary">Tampilkan notifikasi sebagai danmaku alias komentar bullet saat permainan aktif</string>
+    <string name="bypass_charge_enabled_summary">Lewati pengisian</string>
+    <string name="bypass_charge_enabled_title">Aktifkan lewati pengisian saat bermain game</string>
+    <string name="gamespace_running">Ruang Game sedang berjalan</string>
+    <string name="app_locked_message">Aplikasi ini terkunci. Harap buka kunci terlebih dahulu.</string>
+    <string name="call_overlay_enabled_title">Overlay panggilan</string>
+    <string name="call_overlay_enabled_summary">Tampilkan overlay panggilan minimal untuk menjawab/menolak panggilan</string>
+    <string name="auto_brightness_disabled_summary">Jaga kecerahan tetap saat bermain game</string>
     
     <!-- UI Strings -->
     <string name="select_apps_to_launch">Pilih aplikasi untuk diluncurkan dengan cepat</string>

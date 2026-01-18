@@ -16,17 +16,27 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="memory_boost">Crește memoria</string>
+    <string name="memory_boost_summary">Optimizează memoria</string>
+    <string name="boost_memory">Memorie crescută</string>
+    <string name="quick_start_apps_title">Aplicații de pornire rapidă</string>
+    <string name="quick_start_apps_summary">Selectează aplicații pentru pornire rapidă</string>
     <string name="settings_title">Spațiu de jocuri</string>
     <string name="settings_summary">Gestionează-ți configurarea jocurilor</string>
     <!-- Game options -->
     <string name="in_game_preferences_title">Opțiuni în joc</string>
+    <string name="heads_up_disabled_summary">Dezactivează notificările heads-up în timpul jocului</string>
     <string name="suppress_fullscreen_intent_title">Blocare eveniment pe tot ecranul</string>
     <string name="suppress_fullscreen_intent_summary">Împiedicați apariția evenimentelor de pe tot ecranul, cum ar fi apelurile primite</string>
     <string name="stay_awake_title">Menține ecranul activ</string>
+    <string name="stay_awake_summary">Menține ecranul pornit în timpul jocului</string>
     <string name="lock_gesture_title">Blochează gesturile</string>
     <string name="auto_brightness_disabled_title">Dezactivează luminozitatea automată</string>
     <string name="three_screenshot_disabled_title">Dezactivează glisarea pentru captură de ecran</string>
+    <string name="three_screenshot_disabled_summary">Dezactivează temporar gestul de glisare cu trei degete în timpul jocului</string>
+    <string name="chaldea">chaldeaprjkt</string>
     <string name="adb_disabled_title">Dezactivează depanarea USB</string>
+    <string name="adb_disabled_summary">Dezactivează temporar depanarea USB ADB în timpul jocului</string>
     <string name="gamespace_menu_opacity_title">Opacitate pentru meniul suprapus</string>
     <!-- Notification Mode -->
     <string name="notification_mode_title">Modul notificare</string>
@@ -36,6 +46,12 @@
     <string name="notification_mode_danmaku">Arată ca Danmaku</string>
     <!-- Ringer Mode -->
     <string name="ringer_mode_title">Mod sonerie</string>
+    <string-array name="ringer_mode_entries">
+        <item>Silențios</item>
+        <item>Vibrație</item>
+        <item>Normal</item>
+        <item>Nu modifica</item>
+    </string-array>
     <string name="ringer_mode_silent">Silențios</string>
     <string name="ringer_mode_vibrate">Vibrații</string>
     <string name="ringer_mode_normal">Normal</string>
@@ -49,14 +65,26 @@
     <!-- Configure game -->
     <string name="per_app_title">Configurare joc</string>
     <string name="per_app_mode_title">Mod preferat</string>
+    <string-array name="per_app_preferred_mode_entries">
+        <item>Standard</item>
+        <item>Performanță</item>
+        <item>Baterie</item>
+    </string-array>
     <string name="per_app_angle_title">Utilizează ANGLE (experimental)</string>
     <string name="per_app_angle_summary">Folosind redare ANGLE în locul driverelor GLES nativi.\nATENȚIE!! Poate strica aspectul jocului, folosește cu prudență!</string>
     <string name="cant_find_angle_pkg">ANGLE nu este disponibil pe sistemul dumneavoastră</string>
     <string name="per_app_unregister">Elimină %1$s din bibliotecă</string>
+    <string name="ram_usage">Utilizare RAM: </string>
     <string name="game_mode_unsupported">Necompatibil</string>
     <string name="game_mode_standard">Standard</string>
     <string name="game_mode_performance">Performanță</string>
     <string name="game_mode_battery">Baterie</string>
+    <string-array name="game_mode_names">
+        <item>Nesuportat</item>
+        <item>Standard</item>
+        <item>Performanță</item>
+        <item>Baterie</item>
+    </string-array>
     <!-- Custom seekbar -->
     <string name="custom_seekbar_value">Valoare: <xliff:g id="v">%s</xliff:g></string>
     <string name="custom_seekbar_default_value">implicit</string>
@@ -83,6 +111,13 @@
     <!-- Danmaku Notification Mode -->
     <string name="danmaku_notification_mode_title">Mod notificări Danmaku</string>
     <string name="danmaku_notification_mode_summary">Arată notificarea ca și comentariile de tip glonț aka glonț cât timp jocul este activ</string>
+    <string name="bypass_charge_enabled_summary">Ocolește încărcarea</string>
+    <string name="bypass_charge_enabled_title">Activează ocolirea încărcării în timpul jocului</string>
+    <string name="gamespace_running">Spațiu de jocuri funcționează</string>
+    <string name="app_locked_message">Această aplicație este blocată. Deblocați-o mai întâi.</string>
+    <string name="call_overlay_enabled_title">Suprapunere apel</string>
+    <string name="call_overlay_enabled_summary">Afișează suprapunere minimă de apel pentru a răspunde/respinge apeluri</string>
+    <string name="auto_brightness_disabled_summary">Menține luminozitatea fixă în timpul jocului</string>
     
     <!-- UI Strings -->
     <string name="select_apps_to_launch">Selectați aplicații pentru a lansa rapid</string>

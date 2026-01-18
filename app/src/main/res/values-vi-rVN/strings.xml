@@ -16,17 +16,27 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="memory_boost">Tăng tốc bộ nhớ</string>
+    <string name="memory_boost_summary">Tối ưu hóa bộ nhớ</string>
+    <string name="boost_memory">Bộ nhớ đã được tăng tốc</string>
+    <string name="quick_start_apps_title">Ứng dụng khởi động nhanh</string>
+    <string name="quick_start_apps_summary">Chọn ứng dụng để khởi động nhanh</string>
     <string name="settings_title">Không gian trò chơi</string>
     <string name="settings_summary">Quản lý thiết lập trò chơi của bạn</string>
     <!-- Game options -->
     <string name="in_game_preferences_title">Tùy chọn trong trò chơi</string>
+    <string name="heads_up_disabled_summary">Tắt thông báo heads-up trong khi chơi game</string>
     <string name="suppress_fullscreen_intent_title">Chặn sự kiện toàn màn hình</string>
     <string name="suppress_fullscreen_intent_summary">Ngăn các sự kiện toàn màn hình như cuộc gọi đến xuất hiện khi ở trong trò chơi</string>
     <string name="stay_awake_title">Không khóa màn hình</string>
+    <string name="stay_awake_summary">Giữ màn hình bật trong khi chơi game</string>
     <string name="lock_gesture_title">Khóa cử chỉ</string>
     <string name="auto_brightness_disabled_title">Tắt độ sáng tự động</string>
     <string name="three_screenshot_disabled_title">Tắt tính năng chụp ảnh màn hình</string>
+    <string name="three_screenshot_disabled_summary">Tạm thời tắt cử chỉ vuốt ba ngón trong khi chơi game</string>
+    <string name="chaldea">chaldeaprjkt</string>
     <string name="adb_disabled_title">Tắt gỡ lỗi USB</string>
+    <string name="adb_disabled_summary">Tạm thời tắt gỡ lỗi USB ADB trong khi chơi game</string>
     <string name="gamespace_menu_opacity_title">Độ mờ bảng điều khiển nổi</string>
     <!-- Notification Mode -->
     <string name="notification_mode_title">Kiểu thông báo</string>
@@ -36,6 +46,12 @@
     <string name="notification_mode_danmaku">Thông báo nổi kiểu hiện đại</string>
     <!-- Ringer Mode -->
     <string name="ringer_mode_title">Chế độ chuông</string>
+    <string-array name="ringer_mode_entries">
+        <item>Im lặng</item>
+        <item>Rung</item>
+        <item>Bình thường</item>
+        <item>Không thay đổi</item>
+    </string-array>
     <string name="ringer_mode_silent">Im lặng</string>
     <string name="ringer_mode_vibrate">Rung</string>
     <string name="ringer_mode_normal">Bình thường</string>
@@ -49,14 +65,26 @@
     <!-- Configure game -->
     <string name="per_app_title">Định cấu hình trò chơi</string>
     <string name="per_app_mode_title">Chế độ ưu tiên</string>
+    <string-array name="per_app_preferred_mode_entries">
+        <item>Tiêu chuẩn</item>
+        <item>Hiệu suất</item>
+        <item>Pin</item>
+    </string-array>
     <string name="per_app_angle_title">Sử dụng ANGLE (thử nghiệm)</string>
     <string name="per_app_angle_summary">Sử dụng trình kết xuất ANGLE thay vì trình điều khiển GLES gốc.\nCẢNH BÁO!! Có thể phá vỡ đồ họa trò chơi, hãy sử dụng một cách thận trọng!</string>
     <string name="cant_find_angle_pkg">ANGLE không có sẵn trên hệ thống của bạn</string>
     <string name="per_app_unregister">Xóa %1$s khỏi thư viện</string>
+    <string name="ram_usage">Sử dụng RAM: </string>
     <string name="game_mode_unsupported">Không hỗ trợ</string>
     <string name="game_mode_standard">Tiêu chuẩn</string>
     <string name="game_mode_performance">Hiệu suất cao</string>
     <string name="game_mode_battery">Tiết kiệm pin</string>
+    <string-array name="game_mode_names">
+        <item>Không hỗ trợ</item>
+        <item>Tiêu chuẩn</item>
+        <item>Hiệu suất</item>
+        <item>Tiết kiệm pin</item>
+    </string-array>
     <!-- Custom seekbar -->
     <string name="custom_seekbar_value">Giá trị: <xliff:g id="v">%s</xliff:g></string>
     <string name="custom_seekbar_default_value">mặc định</string>
@@ -83,6 +111,13 @@
     <!-- Danmaku Notification Mode -->
     <string name="danmaku_notification_mode_title">Chế độ thông báo hiện đại</string>
     <string name="danmaku_notification_mode_summary">Hiển thị thông báo hiện đại hay còn gọi là nhận xét về dấu đầu dòng khi trò chơi đang hoạt động</string>
+    <string name="bypass_charge_enabled_summary">Bỏ qua sạc</string>
+    <string name="bypass_charge_enabled_title">Kích hoạt bỏ qua sạc khi chơi game</string>
+    <string name="gamespace_running">Không gian trò chơi đang chạy</string>
+    <string name="app_locked_message">Ứng dụng này đã bị khóa. Vui lòng mở khóa trước.</string>
+    <string name="call_overlay_enabled_title">Lớp phủ cuộc gọi</string>
+    <string name="call_overlay_enabled_summary">Hiển thị lớp phủ cuộc gọi tối thiểu để trả lời/từ chối cuộc gọi</string>
+    <string name="auto_brightness_disabled_summary">Giữ độ sáng cố định trong khi chơi game</string>
     
     <!-- UI Strings -->
     <string name="select_apps_to_launch">Chọn ứng dụng để khởi chạy nhanh</string>

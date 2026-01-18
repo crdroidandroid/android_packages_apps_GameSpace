@@ -16,17 +16,27 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="memory_boost">Memória növelése</string>
+    <string name="memory_boost_summary">Memória optimalizálása</string>
+    <string name="boost_memory">Memória megnövelve</string>
+    <string name="quick_start_apps_title">Gyorsindítás alkalmazások</string>
+    <string name="quick_start_apps_summary">Alkalmazások kiválasztása gyorsindításhoz</string>
     <string name="settings_title">Játéktér</string>
     <string name="settings_summary">Játékbeállítások kezelése</string>
     <!-- Game options -->
     <string name="in_game_preferences_title">Játékon belüli lehetőségek</string>
+    <string name="heads_up_disabled_summary">Heads-up értesítések letiltása játék közben</string>
     <string name="suppress_fullscreen_intent_title">Teljes képernyős mód blokkolása</string>
     <string name="suppress_fullscreen_intent_summary">Teljes képernyős események, mint például a bejövő hívás megjelenítésének megakadályozása</string>
     <string name="stay_awake_title">Ne zárja le a képernyőt</string>
+    <string name="stay_awake_summary">Képernyő bekapcsolva tartása játék közben</string>
     <string name="lock_gesture_title">Gesztusok gátlása</string>
     <string name="auto_brightness_disabled_title">Az automatikus fényerőszabályzás tiltása</string>
     <string name="three_screenshot_disabled_title">Képernyőfotóhoz való húzás letiltása</string>
+    <string name="three_screenshot_disabled_summary">Három ujjas csúsztatás ideiglenesen letiltása játék közben</string>
+    <string name="chaldea">chaldeaprjkt</string>
     <string name="adb_disabled_title">Az USB-hibakeresés tiltása</string>
+    <string name="adb_disabled_summary">USB ADB hibakeresés ideiglenesen letiltása játék közben</string>
     <string name="gamespace_menu_opacity_title">Átfedés menü átlátszósági szintje</string>
     <!-- Notification Mode -->
     <string name="notification_mode_title">Értesítési mód</string>
@@ -36,6 +46,12 @@
     <string name="notification_mode_danmaku">Mutasd mint Danmaku</string>
     <!-- Ringer Mode -->
     <string name="ringer_mode_title">Csengés mód</string>
+    <string-array name="ringer_mode_entries">
+        <item>Néma</item>
+        <item>Rezgő</item>
+        <item>Normál</item>
+        <item>Ne változtassa meg</item>
+    </string-array>
     <string name="ringer_mode_silent">Néma</string>
     <string name="ringer_mode_vibrate">Rezgő</string>
     <string name="ringer_mode_normal">Normál</string>
@@ -49,14 +65,26 @@
     <!-- Configure game -->
     <string name="per_app_title">Játék konfigurálása</string>
     <string name="per_app_mode_title">Preferált mód</string>
+    <string-array name="per_app_preferred_mode_entries">
+        <item>Általános</item>
+        <item>Teljesítmény</item>
+        <item>Akkumulátor</item>
+    </string-array>
     <string name="per_app_angle_title">ANGLE használata (kísérleti)</string>
     <string name="per_app_angle_summary">ANGLE renderelő használata a natív GLES illesztőprogramok helyett.\nFIGYELEM!!! Elronthatja a játék grafikáját, óvatosan használd!</string>
     <string name="cant_find_angle_pkg">ANGLE nem elérhető ezen a rendszeren</string>
     <string name="per_app_unregister">%1$s eltávolítása a könyvtáradból</string>
+    <string name="ram_usage">RAM használat: </string>
     <string name="game_mode_unsupported">Nem támogatott</string>
     <string name="game_mode_standard">Általános</string>
     <string name="game_mode_performance">Teljesítmény</string>
     <string name="game_mode_battery">Akkumulátor</string>
+    <string-array name="game_mode_names">
+        <item>Nem támogatott</item>
+        <item>Normál</item>
+        <item>Teljesítmény</item>
+        <item>Akkumulátor</item>
+    </string-array>
     <!-- Custom seekbar -->
     <string name="custom_seekbar_value">Érték: <xliff:g id="v">%s</xliff:g></string>
     <string name="custom_seekbar_default_value">alapértelmezés szerint</string>
@@ -83,6 +111,13 @@
     <!-- Danmaku Notification Mode -->
     <string name="danmaku_notification_mode_title">Danmaku Értesítő mód</string>
     <string name="danmaku_notification_mode_summary">Értesítések danmakuként mutatása, avagy kommentek kilövése játék mód közben</string>
+    <string name="bypass_charge_enabled_summary">Töltés megkerülése</string>
+    <string name="bypass_charge_enabled_title">Töltés megkerülésének engedélyezése játék közben</string>
+    <string name="gamespace_running">Játéktér fut</string>
+    <string name="app_locked_message">Ez az alkalmazás zárolva van. Először oldja fel.</string>
+    <string name="call_overlay_enabled_title">Hívás átfedés</string>
+    <string name="call_overlay_enabled_summary">Minimális hívás átfedés megjelenítése hívások fogadásához/elutasításához</string>
+    <string name="auto_brightness_disabled_summary">Fényerő állandó szinten tartása játék közben</string>
     
     <!-- UI Strings -->
     <string name="select_apps_to_launch">Válasszon alkalmazásokat a gyors indításhoz</string>

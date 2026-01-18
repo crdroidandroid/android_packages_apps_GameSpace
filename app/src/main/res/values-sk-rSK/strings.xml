@@ -16,17 +16,26 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="memory_boost">Zvýšiť pamäť</string>
+    <string name="memory_boost_summary">Optimalizovať pamäť</string>
+    <string name="boost_memory">Pamäť zvýšená</string>
+    <string name="quick_start_apps_title">Aplikácie na rýchle spustenie</string>
+    <string name="quick_start_apps_summary">Vyberte aplikácie na rýchle spustenie</string>
     <string name="settings_title">Herný priestor</string>
     <string name="settings_summary">Správa herných nastavení</string>
     <!-- Game options -->
     <string name="in_game_preferences_title">Možnosti v hre</string>
+    <string name="heads_up_disabled_summary">Zakázať heads-up oznámenia počas hry</string>
     <string name="suppress_fullscreen_intent_title">Blokovať udalosti na celej obrazovke</string>
     <string name="suppress_fullscreen_intent_summary">Nezobrazovať udalosti na celej obrazovke, napr. prichádzajúci hovor</string>
     <string name="stay_awake_title">Nevypínať obrazovku</string>
     <string name="lock_gesture_title">Gesto uzamknutia</string>
     <string name="auto_brightness_disabled_title">Zakázať automatický jas</string>
     <string name="three_screenshot_disabled_title">Zakázať gesto pre snímku obrazovky</string>
+    <string name="three_screenshot_disabled_summary">Dočasne zakázať gesto potiahnutia tromi prstami počas hry</string>
+    <string name="chaldea">chaldeaprjkt</string>
     <string name="adb_disabled_title">Zakázať ladenie USB</string>
+    <string name="adb_disabled_summary">Dočasne zakázať ladenie USB ADB počas hry</string>
     <string name="gamespace_menu_opacity_title">Priehľadnosť vrstvy menu</string>
     <!-- Notification Mode -->
     <string name="notification_mode_title">Režim upozornení</string>
@@ -36,6 +45,12 @@
     <string name="notification_mode_danmaku">Zobraziť Danmaku</string>
     <!-- Ringer Mode -->
     <string name="ringer_mode_title">Režim zvonenia</string>
+    <string-array name="ringer_mode_entries">
+        <item>Tichý</item>
+        <item>Vibrácie</item>
+        <item>Normálny</item>
+        <item>Nemeniť</item>
+    </string-array>
     <string name="ringer_mode_silent">Tichý</string>
     <string name="ringer_mode_vibrate">Vibrácie</string>
     <string name="ringer_mode_normal">Normálny</string>
@@ -49,14 +64,26 @@
     <!-- Configure game -->
     <string name="per_app_title">Nastaviť hru</string>
     <string name="per_app_mode_title">Preferovaný režim</string>
+    <string-array name="per_app_preferred_mode_entries">
+        <item>Štandardný</item>
+        <item>Výkon</item>
+        <item>Batéria</item>
+    </string-array>
     <string name="per_app_angle_title">Použiť ANGLE (experimentálne)</string>
     <string name="per_app_angle_summary">Namiesto natívnych ovládačov GELS sa používa renderer ANGLE.\nUPOZORNENIE!! Môže narušiť grafiku hry, používajte opatrne!</string>
     <string name="cant_find_angle_pkg">ANGLE nie je k dispozícii</string>
     <string name="per_app_unregister">Odstrániť %1$s z knižnice</string>
+    <string name="ram_usage">Využitie RAM: </string>
     <string name="game_mode_unsupported">Nepodporované</string>
     <string name="game_mode_standard">Štandardný</string>
     <string name="game_mode_performance">Výkon</string>
     <string name="game_mode_battery">Batéria</string>
+    <string-array name="game_mode_names">
+        <item>Nepodporované</item>
+        <item>Štandardný</item>
+        <item>Výkon</item>
+        <item>Batéria</item>
+    </string-array>
     <!-- Custom seekbar -->
     <string name="custom_seekbar_value">Hodnota: <xliff:g id="v">%s</xliff:g></string>
     <string name="custom_seekbar_default_value">predvolená</string>
@@ -83,6 +110,13 @@
     <!-- Danmaku Notification Mode -->
     <string name="danmaku_notification_mode_title">Režim notifikácií Danmaku</string>
     <string name="danmaku_notification_mode_summary">Počas aktívnej hry zobraziť upozornenia ako danmaku alias odrážky</string>
+    <string name="bypass_charge_enabled_summary">Obísť nabíjanie</string>
+    <string name="bypass_charge_enabled_title">Povoliť obídenie nabíjania počas hrania hier</string>
+    <string name="gamespace_running">Herný priestor beží</string>
+    <string name="app_locked_message">Táto aplikácia je uzamknutá. Najprv ju odomknite.</string>
+    <string name="call_overlay_enabled_title">Prekrytie hovoru</string>
+    <string name="call_overlay_enabled_summary">Zobraziť minimálne prekrytie hovoru na prijímanie/odmietanie hovorov</string>
+    <string name="auto_brightness_disabled_summary">Udržiavať jas pevný počas hry</string>
     
     <!-- UI Strings -->
     <string name="select_apps_to_launch">Vyberte aplikácie pre rýchle spustenie</string>

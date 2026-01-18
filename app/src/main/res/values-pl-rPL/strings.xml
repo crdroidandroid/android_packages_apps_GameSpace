@@ -16,17 +16,27 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="memory_boost">Przyspiesz pamięć</string>
+    <string name="memory_boost_summary">Optymalizuj pamięć</string>
+    <string name="boost_memory">Pamięć przyspieszona</string>
+    <string name="quick_start_apps_title">Szybkie uruchomienie aplikacji</string>
+    <string name="quick_start_apps_summary">Wybierz aplikacje do szybkiego uruchomienia</string>
     <string name="settings_title">Przestrzeń gier</string>
     <string name="settings_summary">Zarządzaj konfiguracją gier</string>
     <!-- Game options -->
     <string name="in_game_preferences_title">Opcje w grze</string>
+    <string name="heads_up_disabled_summary">Wyłącz powiadomienia heads-up podczas gry</string>
     <string name="suppress_fullscreen_intent_title">Zablokuj wydarzenie na pełnym ekranie</string>
     <string name="suppress_fullscreen_intent_summary">Zapobiegaj pojawianiu się wydarzeń na pełnym ekranie, takich jak połączenia przychodzące</string>
     <string name="stay_awake_title">Pozostaw włączony ekran</string>
+    <string name="stay_awake_summary">Utrzymuj ekran włączony podczas gry</string>
     <string name="lock_gesture_title">Gest blokady</string>
     <string name="auto_brightness_disabled_title">Wyłącz automatyczną jasność</string>
     <string name="three_screenshot_disabled_title">Wyłączenie funkcji przeciągnięcia palcem w celu wykonania zrzutu ekranu</string>
+    <string name="three_screenshot_disabled_summary">Tymczasowo wyłącz gest przesuwania trzema palcami podczas gry</string>
+    <string name="chaldea">chaldeaprjkt</string>
     <string name="adb_disabled_title">Wyłącz debugowanie USB</string>
+    <string name="adb_disabled_summary">Tymczasowo wyłącz debugowanie USB ADB podczas gry</string>
     <string name="gamespace_menu_opacity_title">Poziom przezroczystości nakładki menu</string>
     <!-- Notification Mode -->
     <string name="notification_mode_title">Opcje powiadomień</string>
@@ -36,6 +46,12 @@
     <string name="notification_mode_danmaku">Pokaż jako pasek danmaku</string>
     <!-- Ringer Mode -->
     <string name="ringer_mode_title">Tryb dzwonka</string>
+    <string-array name="ringer_mode_entries">
+        <item>Tryb cichy</item>
+        <item>Wibracje</item>
+        <item>Normalny</item>
+        <item>Nie zmieniaj</item>
+    </string-array>
     <string name="ringer_mode_silent">Tryb cichy</string>
     <string name="ringer_mode_vibrate">Wibracje</string>
     <string name="ringer_mode_normal">Normalny</string>
@@ -49,14 +65,26 @@
     <!-- Configure game -->
     <string name="per_app_title">Skonfiguruj grę</string>
     <string name="per_app_mode_title">Preferowany tryb</string>
+    <string-array name="per_app_preferred_mode_entries">
+        <item>Standardowy</item>
+        <item>Wydajność</item>
+        <item>Bateria</item>
+    </string-array>
     <string name="per_app_angle_title">Użyj ANGLE (eksperymentalne)</string>
     <string name="per_app_angle_summary">Używaj renderowania ANGLE zamiast natywnych sterowników GLES.\nOSTRZEŻENIE!! Może uszkodzić grafikę gry, używaj z ostrożnością!</string>
     <string name="cant_find_angle_pkg">ANGLE nie jest dostępne w Twoim systemie</string>
     <string name="per_app_unregister">Usuń %1$s z biblioteki</string>
+    <string name="ram_usage">Użycie RAM: </string>
     <string name="game_mode_unsupported">Nieobsługiwane</string>
     <string name="game_mode_standard">Standardowy</string>
     <string name="game_mode_performance">Wydajność</string>
     <string name="game_mode_battery">Bateria</string>
+    <string-array name="game_mode_names">
+        <item>Nieobsługiwane</item>
+        <item>Standardowy</item>
+        <item>Wydajność</item>
+        <item>Bateria</item>
+    </string-array>
     <!-- Custom seekbar -->
     <string name="custom_seekbar_value">Wartość: <xliff:g id="v">%s</xliff:g></string>
     <string name="custom_seekbar_default_value">domyślnie</string>
@@ -83,6 +111,13 @@
     <!-- Danmaku Notification Mode -->
     <string name="danmaku_notification_mode_title">Tryb powiadomień Danmaku</string>
     <string name="danmaku_notification_mode_summary">Wyświetlaj powiadomienie jako danmaku w postaci wypunktowanych komentarzy, gdy gra jest aktywna</string>
+    <string name="bypass_charge_enabled_summary">Omijanie ładowania</string>
+    <string name="bypass_charge_enabled_title">Włącz omijanie ładowania podczas grania</string>
+    <string name="gamespace_running">Przestrzeń gier jest uruchomiona</string>
+    <string name="app_locked_message">Ta aplikacja jest zablokowana. Najpierw ją odblokuj.</string>
+    <string name="call_overlay_enabled_title">Nakładka połączenia</string>
+    <string name="call_overlay_enabled_summary">Pokaż minimalną nakładkę połączenia, aby odbierać/odrzucać połączenia</string>
+    <string name="auto_brightness_disabled_summary">Utrzymuj ustaloną jasność podczas gry</string>
     
     <!-- UI Strings -->
     <string name="select_apps_to_launch">Wybierz aplikacje do szybkiego uruchamiania</string>
