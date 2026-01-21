@@ -88,6 +88,6 @@
     <string name="danmaku_notification_mode_summary">Tampilkan notifikasi sebagai danmaku alias komentar bullet saat permainan aktif</string>
     <string name="gamespace_running">Game Space sedang berjalan</string>
     <!-- Call overlay -->
-    <string name="call_overlay_enabled_title">Call overlay</string>
-    <string name="call_overlay_enabled_summary">Show minimal call overlay to answer/reject calls</string>
+    <string name="call_overlay_enabled_title">Overlay panggilan</string>
+    <string name="call_overlay_enabled_summary">Tampilkan overlay panggilan minimal untuk menjawab/menolak panggilan</string>
 </resources>

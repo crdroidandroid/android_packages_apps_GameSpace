@@ -86,8 +86,8 @@
     <!-- Danmaku Notification Mode -->
     <string name="danmaku_notification_mode_title">Режим сповіщень Danmaku</string>
     <string name="danmaku_notification_mode_summary">Показувати сповіщення як Danmaku aka bullet коментарями під час гри активними</string>
-    <string name="gamespace_running">Game Space is running</string>
+    <string name="gamespace_running">Game Space активний</string>
     <!-- Call overlay -->
-    <string name="call_overlay_enabled_title">Call overlay</string>
-    <string name="call_overlay_enabled_summary">Show minimal call overlay to answer/reject calls</string>
+    <string name="call_overlay_enabled_title">Накладання викликів</string>
+    <string name="call_overlay_enabled_summary">Показувати мінімальне накладення для відповіді/відхилення викликів</string>
 </resources>
