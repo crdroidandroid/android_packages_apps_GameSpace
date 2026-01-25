@@ -199,7 +199,9 @@ private fun GameHeader(
                     Icon(
                         painter = icon,
                         contentDescription = null,
-                        modifier = Modifier.size(56.dp),
+                        modifier = Modifier
+                            .clip(CircleShape)
+                            .size(56.dp),
                         tint = Color.Unspecified
                     )
                 } else {
