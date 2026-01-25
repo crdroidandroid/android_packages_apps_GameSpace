@@ -78,6 +78,7 @@ fun SettingsSwitch(
     val interactionSource = remember { MutableInteractionSource() }
 
     Card(
+        enabled = enabled,
         modifier = modifier
             .fillMaxWidth()
             .padding(horizontal = 16.dp, vertical = 4.dp),
