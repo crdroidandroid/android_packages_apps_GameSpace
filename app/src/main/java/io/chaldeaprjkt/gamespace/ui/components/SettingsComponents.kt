@@ -80,18 +80,13 @@ fun SettingsSwitch(
     Card(
         modifier = modifier
             .fillMaxWidth()
-            .padding(horizontal = 16.dp, vertical = 4.dp)
-            .clip(MaterialTheme.shapes.large)
-            .clickable(
-                interactionSource = interactionSource,
-                indication = ripple(bounded = true),
-                enabled = enabled,
-                onClick = { onCheckedChange(!checked) }
-            ),
+            .padding(horizontal = 16.dp, vertical = 4.dp),
         colors = CardDefaults.cardColors(
             containerColor = MaterialTheme.colorScheme.surfaceBright
         ),
-        shape = MaterialTheme.shapes.large
+        shape = MaterialTheme.shapes.large,
+        onClick = { onCheckedChange(!checked) },
+        interactionSource = interactionSource,
     ) {
         Row(
             modifier = Modifier
@@ -159,6 +154,7 @@ fun SettingsSwitch(
                 checked = checked,
                 onCheckedChange = if (enabled) onCheckedChange else null,
                 enabled = enabled,
+                interactionSource = interactionSource,
                 thumbContent = {
                     Crossfade(
                         targetState = checked,
