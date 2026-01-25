@@ -164,13 +164,13 @@ fun SettingsSwitch(
                             Icon(
                                 imageVector = Icons.Rounded.Check,
                                 contentDescription = null,
-                                modifier = Modifier.size(16.dp)
+                                modifier = Modifier.size(SwitchDefaults.IconSize)
                             )
                         } else {
                             Icon(
                                 imageVector = Icons.Rounded.Close,
                                 contentDescription = null,
-                                modifier = Modifier.size(16.dp)
+                                modifier = Modifier.size(SwitchDefaults.IconSize)
                             )
                         }
                     }
