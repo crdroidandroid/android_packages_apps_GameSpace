@@ -510,7 +510,9 @@ fun GameCard(
             Icon(
                 painter = icon,
                 contentDescription = null,
-                modifier = Modifier.size(48.dp),
+                modifier = Modifier
+                    .clip(CircleShape)
+                    .size(48.dp),
                 tint = Color.Unspecified
             )
             Column(modifier = Modifier.weight(1f)) {
