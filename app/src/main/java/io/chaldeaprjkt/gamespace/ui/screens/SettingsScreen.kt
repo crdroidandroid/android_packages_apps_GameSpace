@@ -33,6 +33,8 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ChatBubble
+import androidx.compose.material.icons.rounded.ThumbUp
+import androidx.compose.material.icons.rounded.BatteryChargingFull
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.OutlinedCard
 import androidx.compose.material3.CardDefaults
@@ -369,6 +371,21 @@ fun SettingsScreen(
                         valueLabel = "${viewModel.menuOpacity.toInt()}%",
                         icon = painterResource(R.drawable.materialsymbols_ic_opacity_rounded_filled)
                     )
+                }
+            }
+
+            item {
+                if (viewModel.isBypassSupported) {
+                    Spacer(modifier = Modifier.height(16.dp))
+                    SettingsSection(title = "Power") {
+                        SettingsSwitch(
+                            title = stringResource(R.string.bypass_charge_enabled_title),
+                            summary = stringResource(R.string.bypass_charge_enabled_summary),
+                            checked = viewModel.bypassChargeEnabled,
+                            onCheckedChange = { viewModel.updateBypassChargeEnabled(it) },
+                            icon = Icons.Rounded.BatteryChargingFull
+                        )
+                    }
                 }
             }
 
