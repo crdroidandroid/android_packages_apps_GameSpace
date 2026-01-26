@@ -89,5 +89,5 @@
     <string name="gamespace_running">Không gian trò chơi đang chạy</string>
     <!-- Call overlay -->
     <string name="call_overlay_enabled_title">Call overlay</string>
-    <string name="call_overlay_enabled_summary">Show minimal call overlay to answer/reject calls</string>
+    <string name="call_overlay_enabled_summary">Hiển thị lớp phủ tối giản để trả lời/từ chối cuộc gọi</string>
 </resources>
