@@ -88,6 +88,6 @@
     <string name="danmaku_notification_mode_summary">Hiển thị thông báo hiện đại hay còn gọi là nhận xét về dấu đầu dòng khi trò chơi đang hoạt động</string>
     <string name="gamespace_running">Không gian trò chơi đang chạy</string>
     <!-- Call overlay -->
-    <string name="call_overlay_enabled_title">Call overlay</string>
+    <string name="call_overlay_enabled_title">Lớp phủ cuộc gọi</string>
     <string name="call_overlay_enabled_summary">Hiển thị lớp phủ tối giản để trả lời/từ chối cuộc gọi</string>
 </resources>
