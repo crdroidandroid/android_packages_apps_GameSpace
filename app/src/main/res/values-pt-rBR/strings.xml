@@ -88,6 +88,6 @@
     <string name="danmaku_notification_mode_summary">Mostrar notificações como balões de comentários durante o jogo</string>
     <string name="gamespace_running">Espaço de jogo em execução</string>
     <!-- Call overlay -->
-    <string name="call_overlay_enabled_title">Call overlay</string>
-    <string name="call_overlay_enabled_summary">Show minimal call overlay to answer/reject calls</string>
+    <string name="call_overlay_enabled_title">Sobreposição de chamada</string>
+    <string name="call_overlay_enabled_summary">Mostrar sobreposição de chamada mínima para atender/rejeitar chamadas</string>
 </resources>
