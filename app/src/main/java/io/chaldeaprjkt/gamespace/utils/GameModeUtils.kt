@@ -23,7 +23,6 @@ import android.content.pm.PackageManager
 import android.os.IDeviceIdleController
 import android.os.RemoteException
 import android.os.ServiceManager
-import android.provider.DeviceConfig
 import android.provider.Settings
 import io.chaldeaprjkt.gamespace.R
 import io.chaldeaprjkt.gamespace.data.GameConfig
@@ -97,14 +96,65 @@ class GameModeUtils @Inject constructor(private val context: Context) {
         return info.firstOrNull()?.activityInfo
     }
 
-    fun isAngleUsed(packageName: String?) = packageName?.let {
-        DeviceConfig.getString(DeviceConfig.NAMESPACE_GAME_OVERLAY, it, null)
-            ?.contains("useAngle=true")
-    } ?: false
+    fun getAngleDriverChoice(packageName: String): String {
+        val resolver = context.contentResolver
+        val pkgsStr = Settings.Global.getString(resolver, DRIVER_SELECTION_PACKAGES)
+            ?: return DRIVER_CHOICE_DEFAULT
+        val valsStr = Settings.Global.getString(resolver, DRIVER_SELECTION_VALUES)
+            ?: return DRIVER_CHOICE_DEFAULT
+        val pkgs = pkgsStr.split(",")
+        val vals = valsStr.split(",")
+        val index = pkgs.indexOf(packageName)
+        if (index < 0 || index >= vals.size) return DRIVER_CHOICE_DEFAULT
+        return vals[index]
+    }
+
+    fun setAngleDriverChoice(packageName: String, choice: String) {
+        val resolver = context.contentResolver
+        val pkgsStr = Settings.Global.getString(resolver, DRIVER_SELECTION_PACKAGES) ?: ""
+        val valsStr = Settings.Global.getString(resolver, DRIVER_SELECTION_VALUES) ?: ""
+        val pkgs = if (pkgsStr.isEmpty()) mutableListOf()
+            else pkgsStr.split(",").toMutableList()
+        val vals = if (valsStr.isEmpty()) mutableListOf()
+            else valsStr.split(",").toMutableList()
+
+        val index = pkgs.indexOf(packageName)
+        if (choice == DRIVER_CHOICE_DEFAULT) {
+            if (index >= 0) {
+                pkgs.removeAt(index)
+                vals.removeAt(index)
+            }
+        } else {
+            if (index >= 0) {
+                vals[index] = choice
+            } else {
+                pkgs.add(packageName)
+                vals.add(choice)
+            }
+        }
+
+        Settings.Global.putString(
+            resolver, DRIVER_SELECTION_PACKAGES, pkgs.joinToString(",")
+        )
+        Settings.Global.putString(
+            resolver, DRIVER_SELECTION_VALUES, vals.joinToString(",")
+        )
+    }
+
+    fun isVulkanSupported(): Boolean =
+        context.packageManager.hasSystemFeature(
+            PackageManager.FEATURE_VULKAN_HARDWARE_VERSION, VULKAN_1_0
+        )
 
     companion object {
         const val defaultPreferredMode = GameManager.GAME_MODE_STANDARD
         const val ACTION_ANGLE_FOR_ANDROID = "android.app.action.ANGLE_FOR_ANDROID"
+        private const val DRIVER_SELECTION_PACKAGES = "angle_gl_driver_selection_pkgs"
+        private const val DRIVER_SELECTION_VALUES = "angle_gl_driver_selection_values"
+        const val DRIVER_CHOICE_DEFAULT = "default"
+        const val DRIVER_CHOICE_ANGLE = "angle"
+        const val DRIVER_CHOICE_NATIVE = "native"
+        private const val VULKAN_1_0 = 0x00400000
 
         fun Context.describeGameMode(mode: Int) =
             resources.getStringArray(R.array.game_mode_names)[mode] ?: "Unsupported"

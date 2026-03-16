@@ -46,13 +46,10 @@ class PerAppSettingsViewModel @Inject constructor(
     var preferredMode by mutableIntStateOf(1)
         private set
 
-    var useAngle by mutableStateOf(false)
+    var angleDriverChoice by mutableStateOf(GameModeUtils.DRIVER_CHOICE_DEFAULT)
         private set
 
-    var angleFeatureEnabled by mutableStateOf(false)
-        private set
-
-    var anglePackageAvailable by mutableStateOf(false)
+    var angleFeatureAvailable by mutableStateOf(false)
         private set
 
     val gameModeOptions = listOf(
@@ -78,9 +75,10 @@ class PerAppSettingsViewModel @Inject constructor(
         val userGame = systemSettings.userGames.firstOrNull { it.packageName == pkg }
         preferredMode = userGame?.mode ?: 1
 
-        angleFeatureEnabled = context.resources.getBoolean(R.bool.config_allow_per_app_angle_usage)
-        anglePackageAvailable = gameModeUtils.findAnglePackage()?.isEnabled == true
-        useAngle = gameModeUtils.isAngleUsed(pkg)
+        val hasAngle = gameModeUtils.findAnglePackage()?.isEnabled == true
+        val hasVulkan = gameModeUtils.isVulkanSupported()
+        angleFeatureAvailable = hasAngle && hasVulkan
+        angleDriverChoice = gameModeUtils.getAngleDriverChoice(pkg)
     }
 
     fun updatePreferredMode(mode: Int) {
@@ -88,15 +86,19 @@ class PerAppSettingsViewModel @Inject constructor(
         gameModeUtils.setGameModeFor(packageName, systemSettings, mode)
     }
 
-    fun updateUseAngle(enabled: Boolean) {
-        useAngle = enabled
-        val newModes = GameConfig.ModeBuilder.apply {
-            useAngle = enabled
-        }.build()
-        gameModeUtils.setIntervention(packageName, newModes)
+    val angleDriverOptions = listOf(
+        GameModeUtils.DRIVER_CHOICE_DEFAULT to "Default",
+        GameModeUtils.DRIVER_CHOICE_ANGLE to "ANGLE",
+        GameModeUtils.DRIVER_CHOICE_NATIVE to "Native"
+    )
+
+    fun updateAngleDriverChoice(choice: String) {
+        angleDriverChoice = choice
+        gameModeUtils.setAngleDriverChoice(packageName, choice)
     }
 
     fun unregisterGame() {
+        gameModeUtils.setAngleDriverChoice(packageName, GameModeUtils.DRIVER_CHOICE_DEFAULT)
         val games = systemSettings.userGames.toMutableList()
         games.removeIf { it.packageName == packageName }
         systemSettings.userGames = games

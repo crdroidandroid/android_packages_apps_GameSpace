@@ -131,19 +131,14 @@ fun PerAppSettingsScreen(
                 )
             }
 
-            if (viewModel.angleFeatureEnabled) {
+            if (viewModel.angleFeatureAvailable) {
                 SettingsSection(title = stringResource(R.string.graphics)) {
-                    SettingsSwitch(
+                    SettingsDropdown(
                         title = stringResource(R.string.per_app_angle_title),
-                        summary = if (viewModel.anglePackageAvailable) {
-                            stringResource(R.string.per_app_angle_summary)
-                        } else {
-                            stringResource(R.string.cant_find_angle_pkg)
-                        },
-                        checked = viewModel.useAngle,
-                        onCheckedChange = { viewModel.updateUseAngle(it) },
-                        icon = painterResource(R.drawable.materialsymbols_ic_view_in_ar_rounded_filled),
-                        enabled = viewModel.anglePackageAvailable
+                        selectedValue = viewModel.angleDriverChoice,
+                        options = viewModel.angleDriverOptions,
+                        onValueChange = { viewModel.updateAngleDriverChoice(it) },
+                        icon = painterResource(R.drawable.materialsymbols_ic_view_in_ar_rounded_filled)
                     )
                 }
             }
