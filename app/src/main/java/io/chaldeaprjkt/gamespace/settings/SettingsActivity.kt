@@ -1,6 +1,7 @@
 /*
  * Copyright (C) 2021 Chaldeaprjkt
  * Copyright (C) 2022-2024 crDroid Android Project
+ * Copyright (C) 2025-2026 AxionOS
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,17 +17,15 @@
  */
 package io.chaldeaprjkt.gamespace.settings
 
-import android.content.Intent
 import android.os.Bundle
+import android.view.WindowInsetsController
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
+import androidx.core.view.WindowCompat
 import dagger.hilt.android.AndroidEntryPoint
-import io.chaldeaprjkt.gamespace.preferences.AppListPreferences
-import io.chaldeaprjkt.gamespace.preferences.appselector.AppSelectorActivity
-import io.chaldeaprjkt.gamespace.ui.screens.SettingsScreen
+import io.chaldeaprjkt.gamespace.ui.screens.GameHubScreen
 import io.chaldeaprjkt.gamespace.ui.theme.GameSpaceTheme
 import io.chaldeaprjkt.gamespace.ui.viewmodel.SettingsViewModel
 
@@ -35,48 +34,33 @@ class SettingsActivity : Hilt_SettingsActivity() {
 
     private val viewModel: SettingsViewModel by viewModels()
 
-    private val selectorResult = registerForActivityResult(
-        ActivityResultContracts.StartActivityForResult()
-    ) { result ->
-        result.data?.getStringExtra(AppListPreferences.EXTRA_APP)?.let { packageName ->
-            viewModel.registerGame(packageName)
-        }
-    }
-
-    private val perAppResult = registerForActivityResult(
-        ActivityResultContracts.StartActivityForResult()
-    ) { result ->
-        result.data?.getStringExtra(PerAppSettingsActivity.PREF_UNREGISTER)?.let { packageName ->
-            viewModel.unregisterGame(packageName)
-        }
-        viewModel.loadRegisteredGames()
-    }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+        hideSystemBars()
 
         setContent {
-            GameSpaceTheme {
-                SettingsScreen(
-                    viewModel = viewModel,
-                    onAddGameClick = {
-                        selectorResult.launch(Intent(this, AppSelectorActivity::class.java))
-                    },
-                    onGameClick = { packageName ->
-                        perAppResult.launch(
-                            Intent(this, PerAppSettingsActivity::class.java).apply {
-                                putExtra(PerAppSettingsActivity.EXTRA_PACKAGE, packageName)
-                            }
-                        )
-                    }
-                )
+            GameSpaceTheme(darkTheme = true) {
+                GameHubScreen(viewModel = viewModel)
             }
+        }
+    }
+
+    private fun hideSystemBars() {
+        WindowCompat.setDecorFitsSystemWindows(window, false)
+        window.insetsController?.let { controller ->
+            controller.hide(
+                android.view.WindowInsets.Type.statusBars() or
+                android.view.WindowInsets.Type.navigationBars()
+            )
+            controller.systemBarsBehavior =
+                WindowInsetsController.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
         }
     }
 
     override fun onResume() {
         super.onResume()
+        hideSystemBars()
         viewModel.loadRegisteredGames()
     }
 }

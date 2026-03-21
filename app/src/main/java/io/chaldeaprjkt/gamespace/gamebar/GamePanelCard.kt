@@ -18,7 +18,6 @@
 package io.chaldeaprjkt.gamespace.gamebar
 
 import android.app.*
-import android.app.FreeformLauncher
 import android.content.*
 import android.content.res.Configuration
 import android.graphics.Point
@@ -35,12 +34,9 @@ import androidx.core.graphics.drawable.*
 import androidx.compose.*
 import androidx.compose.animation.*
 import androidx.compose.animation.core.*
-import androidx.compose.foundation.gestures.detectDragGesturesAfterLongPress
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.lazy.*
-import androidx.compose.foundation.lazy.grid.*
 import androidx.compose.foundation.*
 import androidx.compose.foundation.pager.*
 import androidx.compose.foundation.shape.*
@@ -50,6 +46,9 @@ import androidx.compose.material.icons.automirrored.rounded.ArrowBack
 import androidx.compose.material.icons.filled.ElectricBolt
 import androidx.compose.material.icons.filled.EnergySavingsLeaf
 import androidx.compose.material.icons.filled.SportsEsports
+import androidx.compose.material.icons.rounded.Add
+import androidx.compose.material.icons.rounded.Remove
+import androidx.compose.foundation.interaction.collectIsPressedAsState
 import androidx.compose.runtime.*
 import androidx.compose.ui.*
 import androidx.compose.ui.draw.*
@@ -199,23 +198,8 @@ fun PanelContent(
     onEditClick: () -> Unit,
     modifier: Modifier = Modifier
 ) {
-    DisposableEffect(Unit) {
-        val job = Job()
-        val scope = CoroutineScope(Dispatchers.Default + job)
-        val statesJob = scope.launch {
-            while (isActive) {
-                tileRepository.refreshStates()
-                delay(3000L)
-            }
-        }
-        onDispose {
-            statesJob.cancel()
-            job.cancel()
-        }
-    }
-
     val tiles = tileRepository.tiles
-    val tilesPerPage = 4
+    val tilesPerPage = 8
     val pages by remember {
         derivedStateOf { tiles.chunked(tilesPerPage) }
     }
@@ -247,26 +231,24 @@ fun PanelContent(
             Column(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(horizontal = 8.dp),
-                verticalArrangement = Arrangement.spacedBy(12.dp)
+                    .height(168.dp)
+                    .padding(horizontal = 4.dp),
+                verticalArrangement = Arrangement.spacedBy(8.dp, Alignment.Top)
             ) {
-                pageTiles.chunked(2).forEach { rowTiles ->
+                pageTiles.chunked(4).forEach { rowTiles ->
                     Row(
                         modifier = Modifier.fillMaxWidth(),
-                        horizontalArrangement = Arrangement.spacedBy(12.dp)
+                        horizontalArrangement = Arrangement.spacedBy(4.dp)
                     ) {
                         rowTiles.forEach { tile ->
                             key(tile.id) {
                                 TileButton(
                                     tile = tile,
-                                    modifier = Modifier
-                                        .weight(1f)
-                                        .height(56.dp)
-                                        .clip(RoundedTileShape)
+                                    modifier = Modifier.weight(1f)
                                 )
                             }
                         }
-                        if (rowTiles.size == 1) {
+                        repeat(4 - rowTiles.size) {
                             Spacer(modifier = Modifier.weight(1f))
                         }
                     }
@@ -498,18 +480,25 @@ fun TileEditPanel(
     tileRepository: TileRepository,
     onClose: () -> Unit
 ) {
-    val tileHeight = 56.dp
-    val tileCorner = 12.dp
-
     val allTiles = remember { tileRepository.allAvailableTiles }
-    val selectedTileIds = remember { mutableStateListOf(*tileRepository.tiles.map { it.id }.toTypedArray()) }
+    val dragDropState = remember { TileDragDropState(tileRepository.tiles, columns = 2) }
 
-    val selectedTiles = selectedTileIds.mapNotNull { id -> allTiles.find { it.id == id } }
-    val unselectedTiles = allTiles.filterNot { selectedTileIds.contains(it.id) }
+    val availableList = remember {
+        val activeIds = tileRepository.tiles.map { it.id }.toSet()
+        allTiles.filter { it.id !in activeIds }
+            .map { DragTileData(it.id, it.label, it.icon) }
+            .toMutableStateList()
+    }
+
+    var activeGridOffset by remember { mutableStateOf(Offset.Zero) }
+
+    val configuration = LocalConfiguration.current
+    val maxHeight = (configuration.screenHeightDp - 64).dp
 
     Column(
         modifier = Modifier
-            .fillMaxSize()
+            .fillMaxWidth()
+            .heightIn(max = maxHeight)
             .padding(top = 4.dp, start = 12.dp, end = 12.dp, bottom = 12.dp)
     ) {
         Row(
@@ -525,13 +514,20 @@ fun TileEditPanel(
             Spacer(modifier = Modifier.weight(1f))
             Button(
                 onClick = {
-                    tileRepository.updateTileSelection(selectedTileIds)
+                    tileRepository.updateTileSelection(dragDropState.tileIds())
                     onClose()
                 }
             ) {
                 Text(stringResource(R.string.save))
             }
         }
+
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .weight(1f)
+                .verticalScroll(rememberScrollState())
+        ) {
 
         Spacer(modifier = Modifier.height(8.dp))
 
@@ -556,37 +552,244 @@ fun TileEditPanel(
                 onCheckedChange = { tileRepository.setFpsGraphEnabled(it) }
             )
         }
-        
-        Spacer(modifier = Modifier.height(8.dp))
-
-        Text(stringResource(R.string.selected_tiles), style = MaterialTheme.typography.titleMedium)
 
         Spacer(modifier = Modifier.height(8.dp))
 
-        TileGroup(
-            tiles = selectedTiles,
-            onTileClick = { tile ->
-                selectedTileIds.remove(tile.id)
-            },
-            tileHeight = tileHeight,
-            tileCorner = tileCorner
-        )
-
-        Spacer(modifier = Modifier.height(24.dp))
-
-        Text(stringResource(R.string.available_tiles), style = MaterialTheme.typography.titleMedium)
-        Spacer(modifier = Modifier.height(8.dp))
-
-        TileGroup(
-            tiles = unselectedTiles,
-            onTileClick = { tile ->
-                selectedTileIds.add(tile.id)
-            },
-            tileHeight = tileHeight,
-            tileCorner = tileCorner
+        Text(
+            stringResource(R.string.selected_tiles),
+            style = MaterialTheme.typography.titleSmall,
+            color = MaterialTheme.colorScheme.primary,
         )
 
         Spacer(modifier = Modifier.height(8.dp))
+
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .onGloballyPositioned { coords ->
+                    activeGridOffset = coords.positionInRoot()
+                }
+                .dragAndDropActiveGrid(
+                    contentOffset = { activeGridOffset },
+                    dragDropState = dragDropState,
+                ) { ids ->
+                    dragDropState.draggedTile?.let { dragged ->
+                        if (dragDropState.dragType == DragType.Add) {
+                            availableList.removeAll { it.id == dragged.id }
+                        }
+                    }
+                    tileRepository.updateTileSelection(ids)
+                },
+            verticalArrangement = Arrangement.spacedBy(8.dp),
+        ) {
+            val tiles = dragDropState.tiles
+            val rows = tiles.chunked(4)
+            rows.forEachIndexed { rowIndex, rowTiles ->
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.spacedBy(8.dp),
+                ) {
+                    rowTiles.forEachIndexed { colIndex, tile ->
+                        val index = rowIndex * 4 + colIndex
+                        val isBeingDragged = dragDropState.isMoving(tile.id)
+
+                        Box(
+                            modifier = Modifier
+                                .weight(1f)
+                                .height(80.dp)
+                                .onGloballyPositioned { coords ->
+                                    val posInRoot = coords.positionInRoot()
+                                    val relativeOffset = posInRoot - activeGridOffset
+                                    dragDropState.updateItemPosition(
+                                        tile.id,
+                                        index,
+                                        IntOffset(relativeOffset.x.toInt(), relativeOffset.y.toInt()),
+                                        coords.size,
+                                    )
+                                }
+                        ) {
+                            if (isBeingDragged) {
+                                Box(
+                                    modifier = Modifier
+                                        .fillMaxSize()
+                                        .clip(RoundedCornerShape(12.dp))
+                                        .background(
+                                            MaterialTheme.colorScheme.secondary.copy(alpha = 0.3f)
+                                        )
+                                )
+                            } else {
+                                Box(
+                                    modifier = Modifier
+                                        .fillMaxSize()
+                                        .dragAndDropTileSource(tile, dragDropState, DragType.Move)
+                                ) {
+                                    EditorGameTile(
+                                        label = tile.label,
+                                        icon = tile.icon,
+                                        isAdded = true,
+                                        onAction = {
+                                            val removed = dragDropState.removeTile(tile.id)
+                                            if (removed != null) {
+                                                availableList.add(removed)
+                                                tileRepository.updateTileSelection(dragDropState.tileIds())
+                                            }
+                                        },
+                                    )
+                                }
+                            }
+                        }
+                    }
+                    repeat(4 - rowTiles.size) {
+                        Spacer(modifier = Modifier.weight(1f))
+                    }
+                }
+            }
+            if (tiles.isEmpty()) {
+                Box(
+                    modifier = Modifier.fillMaxWidth().height(80.dp),
+                    contentAlignment = Alignment.Center,
+                ) {
+                    Text(
+                        stringResource(R.string.drag_tiles_here),
+                        style = MaterialTheme.typography.bodyMedium,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    )
+                }
+            }
+        }
+
+        Spacer(modifier = Modifier.height(16.dp))
+
+        Text(
+            stringResource(R.string.available_tiles),
+            style = MaterialTheme.typography.titleSmall,
+            color = MaterialTheme.colorScheme.primary,
+        )
+
+        Spacer(modifier = Modifier.height(8.dp))
+
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .dragAndDropAvailableZone(dragDropState) { id ->
+                    val removed = dragDropState.removeTile(id)
+                    if (removed != null) {
+                        availableList.add(removed)
+                        tileRepository.updateTileSelection(dragDropState.tileIds())
+                    }
+                },
+            verticalArrangement = Arrangement.spacedBy(8.dp),
+        ) {
+            val rows = availableList.chunked(4)
+            rows.forEach { rowTiles ->
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.spacedBy(8.dp),
+                ) {
+                    rowTiles.forEach { tile ->
+                        val isBeingDragged = dragDropState.isMoving(tile.id)
+
+                        Box(
+                            modifier = Modifier
+                                .weight(1f)
+                                .height(80.dp)
+                                .graphicsLayer { alpha = if (isBeingDragged) 0.3f else 1f }
+                                .dragAndDropAvailableTileSource(tile, dragDropState)
+                        ) {
+                            EditorGameTile(
+                                label = tile.label,
+                                icon = tile.icon,
+                                isAdded = false,
+                                onAction = {
+                                    availableList.remove(tile)
+                                    dragDropState.addTile(tile)
+                                    tileRepository.updateTileSelection(dragDropState.tileIds())
+                                },
+                            )
+                        }
+                    }
+                    repeat(4 - rowTiles.size) {
+                        Spacer(modifier = Modifier.weight(1f))
+                    }
+                }
+            }
+            if (availableList.isEmpty()) {
+                Box(
+                    modifier = Modifier.fillMaxWidth().height(80.dp),
+                    contentAlignment = Alignment.Center,
+                ) {
+                    Text(
+                        stringResource(R.string.all_tiles_added),
+                        style = MaterialTheme.typography.bodyMedium,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    )
+                }
+            }
+        }
+        }
+    }
+}
+
+@Composable
+fun EditorGameTile(
+    label: String,
+    icon: Int,
+    isAdded: Boolean,
+    onAction: () -> Unit,
+) {
+    Column(
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.spacedBy(4.dp),
+        modifier = Modifier.fillMaxWidth(),
+    ) {
+        Box(modifier = Modifier.size(48.dp), contentAlignment = Alignment.Center) {
+            Box(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .clip(CircleShape)
+                    .background(MaterialTheme.colorScheme.surfaceBright)
+                    .clickable { onAction() },
+                contentAlignment = Alignment.Center,
+            ) {
+                Icon(
+                    painter = painterResource(icon),
+                    contentDescription = label,
+                    tint = MaterialTheme.colorScheme.onSurface,
+                    modifier = Modifier.size(22.dp),
+                )
+            }
+
+            Box(
+                modifier = Modifier
+                    .size(18.dp)
+                    .align(Alignment.TopEnd)
+                    .offset(x = 2.dp, y = (-2).dp)
+                    .clip(CircleShape)
+                    .background(
+                        if (isAdded) MaterialTheme.colorScheme.error
+                        else MaterialTheme.colorScheme.primary
+                    )
+                    .clickable { onAction() },
+                contentAlignment = Alignment.Center,
+            ) {
+                Icon(
+                    if (isAdded) Icons.Rounded.Remove else Icons.Rounded.Add,
+                    contentDescription = null,
+                    tint = if (isAdded) MaterialTheme.colorScheme.onError
+                    else MaterialTheme.colorScheme.onPrimary,
+                    modifier = Modifier.size(12.dp),
+                )
+            }
+        }
+
+        Text(
+            text = label,
+            color = MaterialTheme.colorScheme.onSurface,
+            style = MaterialTheme.typography.labelSmall,
+            modifier = Modifier.width(70.dp).basicMarquee(),
+            maxLines = 1,
+            textAlign = TextAlign.Center,
+        )
     }
 }
 
@@ -616,104 +819,57 @@ fun SettingToggleRow(
 }
 
 @Composable
-fun TileGroup(
-    tiles: List<TileAction>,
-    onTileClick: (TileAction) -> Unit,
-    tileHeight: Dp,
-    tileCorner: Dp
-) {
-    tiles.chunked(2).forEach { tilePair ->
-        Row(
-            modifier = Modifier
-                .fillMaxWidth()
-                .height(tileHeight),
-            horizontalArrangement = Arrangement.spacedBy(12.dp)
-        ) {
-            tilePair.forEach { tile ->
-                TileItem(
-                    tile = tile,
-                    onClick = { onTileClick(tile) },
-                    tileHeight = tileHeight,
-                    tileCorner = tileCorner,
-                    modifier = Modifier
-                        .weight(1f)
-                        .fillMaxHeight()
-                )
-            }
-            if (tilePair.size == 1) {
-                Spacer(modifier = Modifier.weight(1f))
-            }
-        }
-        Spacer(modifier = Modifier.height(12.dp))
-    }
-}
+fun TileButton(tile: TileAction, modifier: Modifier = Modifier) {
+    val isEnabled by tile.observeEnabled()
+    val bgColor = if (isEnabled) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.surfaceBright
+    val fgColor = if (isEnabled) MaterialTheme.colorScheme.onPrimary else MaterialTheme.colorScheme.onSurface
 
-@Composable
-fun TileItem(
-    tile: TileAction,
-    onClick: () -> Unit,
-    tileHeight: Dp,
-    tileCorner: Dp,
-    modifier: Modifier = Modifier
-) {
-    Surface(
+    val interactionSource = remember { MutableInteractionSource() }
+    val isPressed by interactionSource.collectIsPressedAsState()
+
+    val pressScale by animateFloatAsState(
+        targetValue = if (isPressed) 0.9f else 1f,
+        animationSpec = spring(dampingRatio = Spring.DampingRatioMediumBouncy),
+        label = "press_scale",
+    )
+
+    Column(
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.spacedBy(4.dp),
         modifier = modifier
-            .fillMaxSize()
-            .clip(RoundedCornerShape(tileCorner))
-            .clickable { onClick() },
-        color = MaterialTheme.colorScheme.surfaceVariant,
-        tonalElevation = 2.dp
+            .graphicsLayer {
+                scaleX = pressScale
+                scaleY = pressScale
+            }
+            .height(80.dp),
     ) {
-        Row(
+        Box(
             modifier = Modifier
-                .fillMaxSize()
-                .padding(horizontal = 12.dp),
-            verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.spacedBy(8.dp)
+                .size(48.dp)
+                .clip(CircleShape)
+                .background(bgColor)
+                .clickable(
+                    interactionSource = interactionSource,
+                    indication = null,
+                ) { tile.toggle() },
+            contentAlignment = Alignment.Center,
         ) {
             Icon(
                 painter = painterResource(tile.icon),
                 contentDescription = tile.label,
-                tint = MaterialTheme.colorScheme.onSurface
-            )
-            Text(
-                text = tile.label,
-                style = MaterialTheme.typography.bodyMedium,
-                maxLines = 1,
-                overflow = TextOverflow.Ellipsis
+                tint = fgColor,
+                modifier = Modifier.size(22.dp),
             )
         }
-    }
-}
-
-@Composable
-fun TileButton(tile: TileAction, modifier: Modifier = Modifier) {
-    val isEnabled by tile.observeEnabled()
-    val bgColor = if (isEnabled) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.surface
-    val fgColor = if (isEnabled) MaterialTheme.colorScheme.surface else MaterialTheme.colorScheme.primary
-
-    Row(
-        verticalAlignment = Alignment.CenterVertically,
-        modifier = modifier
-            .clip(RoundedTileShape)
-            .background(bgColor)
-            .clickable { tile.toggle() }
-            .padding(horizontal = 12.dp)
-    ) {
-        Icon(
-            painter = painterResource(tile.icon),
-            contentDescription = tile.label,
-            tint = fgColor,
-            modifier = Modifier.size(24.dp)
-        )
-        Spacer(modifier = Modifier.width(8.dp))
         Text(
             text = tile.label,
-            fontSize = 12.sp,
-            color = fgColor,
+            style = MaterialTheme.typography.labelSmall,
+            color = MaterialTheme.colorScheme.onSurface,
             maxLines = 1,
-            modifier = Modifier.weight(1f),
-            overflow = TextOverflow.Ellipsis
+            textAlign = TextAlign.Center,
+            modifier = Modifier
+                .width(64.dp)
+                .basicMarquee(),
         )
     }
 }
@@ -1094,7 +1250,11 @@ fun QuickStartAppIcon(
 }
 
 fun launchAppInFreeformMode(context: Context, packageName: String) {
-    FreeformLauncher.launch(packageName)
+    val intent = context.packageManager.getLaunchIntentForPackage(packageName) ?: return
+    val options = ActivityOptions.makeBasic()
+    options.launchWindowingMode = WindowConfiguration.WINDOWING_MODE_FREEFORM
+    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+    context.startActivity(intent, options.toBundle())
 }
 
 @Composable

@@ -87,6 +87,5 @@ object MainModule {
         @ApplicationContext context: Context,
         appSettings: AppSettings,
         systemSettings: SystemSettings,
-        screenUtils: ScreenUtils
-    ): TileRepository = TileRepository(context, appSettings, systemSettings, screenUtils)
+    ): TileRepository = TileRepository(context, appSettings, systemSettings)
 }

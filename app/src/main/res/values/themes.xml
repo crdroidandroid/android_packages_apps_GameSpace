@@ -24,17 +24,6 @@
         <item name="switchStyle">@style/SwitchCompat.SettingsLib</item>
     </style>
 
-    <style name="GameSpaceTheme.GameBar" parent="GameSpaceTheme">
-        <item name="android:buttonStyle">@style/GameSpaceTheme.FlatButton</item>
-        <item name="android:imageButtonStyle">@style/GameSpaceTheme.FlatButton</item>
-    </style>
-
-    <style name="GameSpaceTheme.FlatButton" parent="Widget.AppCompat.Button.Borderless">
-        <item name="android:gravity">center</item>
-        <item name="android:background">@drawable/ripple_circle</item>
-        <item name="android:tint">@color/onBarBackground</item>
-    </style>
-
     <style name="GameSpaceTheme.Panel" parent="GameSpaceTheme">
         <item name="cardBackgroundColor">@color/surface</item>
         <item name="android:textColor">?android:attr/textColorPrimaryInverse</item>

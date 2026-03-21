@@ -16,22 +16,11 @@
  */
 package io.chaldeaprjkt.gamespace.utils
 
-import android.app.Activity
 import android.app.ActivityManager
-import android.app.Service
 import android.content.Context
 import android.content.res.Resources.getSystem
-import android.graphics.Point
-import android.view.View
 import android.view.WindowManager
 import dagger.hilt.EntryPoints
-import io.chaldeaprjkt.gamespace.gamebar.DraggableTouchListener
-
-fun View.registerDraggableTouchListener(
-    initPoint: () -> Point,
-    listener: (x: Int, y: Int) -> Unit,
-    onComplete: () -> Unit
-) = DraggableTouchListener(context, this, initPoint, listener, onComplete)
 
 val Context.statusbarHeight
     get() =

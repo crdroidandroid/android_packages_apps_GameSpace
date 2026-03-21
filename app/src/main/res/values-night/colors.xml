@@ -12,7 +12,5 @@
     <color name="barBackgroundExpanded">@android:color/system_neutral1_900</color>
     <color name="barButtonAccent">@android:color/system_accent1_100</color>
     <color name="barButtonBackground">@android:color/system_accent1_100</color>
-    <color name="barButtonRipple">@android:color/system_accent2_50</color>
     <color name="onBarBackground">@android:color/system_neutral1_1000</color>
-    <color name="onBarBackgroundText">@android:color/system_neutral1_0</color>
 </resources>

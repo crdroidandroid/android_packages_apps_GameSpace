@@ -28,8 +28,8 @@ import android.os.IBinder
 import android.os.Looper
 import android.os.UserHandle
 import android.util.Log
-import android.view.LayoutInflater
 import android.view.WindowManager
+import com.android.axion.platform.AxPlatformClient
 import dagger.hilt.android.AndroidEntryPoint
 import io.chaldeaprjkt.gamespace.data.AppSettings
 import io.chaldeaprjkt.gamespace.data.GameSession
@@ -58,20 +58,25 @@ class SessionService : Hilt_SessionService() {
     private var currentPackage: String? = null
     private lateinit var gameManager: GameManager
     private lateinit var sidebar: GameSidebar
+    private lateinit var platform: AxPlatformClient
 
     @SuppressLint("WrongConstant")
     override fun onCreate() {
         super.onCreate()
         Log.d(TAG, "SessionService created")
-        
+
+        platform = AxPlatformClient.getInstance()
+        platform.init(this)
+
         gameManager = getSystemService(Context.GAME_SERVICE) as GameManager
         gameModeUtils.bind(gameManager)
-        
+
+        tileRepository.init(platform)
+
         sidebar = GameSidebar(
             context = this,
             wm = getSystemService(WINDOW_SERVICE) as WindowManager,
             handler = Handler(Looper.getMainLooper()),
-            inflater = LayoutInflater.from(this),
             appSettings = appSettings,
             screenUtils = screenUtils,
             danmakuService = danmakuService,
@@ -79,15 +84,10 @@ class SessionService : Hilt_SessionService() {
             fpsInteractor = fpsInteractor,
             gameModeUtils = gameModeUtils,
             settings = settings,
-            tileRepository = tileRepository
+            tileRepository = tileRepository,
+            platform = platform
         )
         sidebar.onCreate()
-        
-        runCatching {
-            screenUtils.bind()
-        }.onFailure {
-            Log.e(TAG, "Error binding ScreenUtils", it)
-        }
     }
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
@@ -143,7 +143,6 @@ class SessionService : Hilt_SessionService() {
         sidebar.onGameLeave()
         session.unregister()
         callListener.destroy()
-        screenUtils.unbind()
         
         currentPackage = null
     }
@@ -163,6 +162,7 @@ class SessionService : Hilt_SessionService() {
     override fun onDestroy() {
         Log.d(TAG, "SessionService destroyed")
         stopGameSession()
+        tileRepository.dispose()
         gameModeUtils.unbind()
         danmakuService.destroy()
         super.onDestroy()

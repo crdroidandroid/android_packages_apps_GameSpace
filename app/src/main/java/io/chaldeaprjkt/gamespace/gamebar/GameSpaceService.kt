@@ -32,8 +32,6 @@ class GameSpaceService : Service() {
     private var gameSpaceService: IGameSpaceService? = null
 
     private val callback = object : IGameSpaceCallback.Stub() {
-        override fun shouldSuppressFullScreenIntent(suppress: Boolean) {}
-
         override fun onGameStart(packageName: String) {
             Log.d(TAG, "Game started: $packageName")
             SessionService.start(applicationContext, packageName)

@@ -6,19 +6,7 @@ import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.drawable.Drawable
-import androidx.activity.compose.BackHandler
-import androidx.compose.animation.core.FastOutSlowInEasing
-import androidx.compose.animation.core.LinearEasing
-import androidx.compose.animation.core.RepeatMode
-import androidx.compose.animation.core.animateFloat
-import androidx.compose.animation.core.infiniteRepeatable
-import androidx.compose.animation.core.rememberInfiniteTransition
-import androidx.compose.animation.core.tween
-import androidx.compose.foundation.Canvas
-import androidx.compose.foundation.BorderStroke
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
@@ -32,17 +20,14 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.rounded.ArrowBack
 import androidx.compose.material.icons.filled.ChatBubble
-import androidx.compose.material.icons.rounded.ThumbUp
 import androidx.compose.material.icons.rounded.BatteryChargingFull
 import androidx.compose.material3.AlertDialog
-import androidx.compose.material3.OutlinedCard
-import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.ExperimentalMaterial3ExpressiveApi
-import androidx.compose.material3.FloatingActionButtonMenu
-import androidx.compose.material3.FloatingActionButtonMenuItem
 import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
@@ -50,65 +35,30 @@ import androidx.compose.material3.TextButton
 import androidx.compose.material3.ToggleButton
 import androidx.compose.material3.ToggleButtonDefaults
 import androidx.compose.material3.ToggleButtonShapes
-import androidx.compose.material3.ToggleFloatingActionButton
-import androidx.compose.material3.ToggleFloatingActionButtonDefaults.animateIcon
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
-import androidx.compose.material3.animateFloatingActionButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.derivedStateOf
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
-import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
-import androidx.compose.ui.focus.FocusRequester
-import androidx.compose.ui.focus.focusRequester
-import androidx.compose.ui.geometry.Offset
-import androidx.compose.ui.geometry.Size
-import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.Path
-import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.graphics.asImageBitmap
-import androidx.compose.ui.graphics.drawscope.Stroke
-import androidx.compose.ui.graphics.drawscope.rotate
 import androidx.compose.ui.graphics.painter.BitmapPainter
-import androidx.compose.ui.graphics.vector.ImageVector
-import androidx.compose.ui.graphics.vector.rememberVectorPainter
-import androidx.compose.ui.input.key.Key
-import androidx.compose.ui.input.key.KeyEventType
-import androidx.compose.ui.input.key.isShiftPressed
-import androidx.compose.ui.input.key.key
-import androidx.compose.ui.input.key.onKeyEvent
-import androidx.compose.ui.input.key.type
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.res.vectorResource
-import androidx.compose.ui.semantics.CustomAccessibilityAction
-import androidx.compose.ui.semantics.contentDescription
-import androidx.compose.ui.semantics.customActions
-import androidx.compose.ui.semantics.isTraversalGroup
-import androidx.compose.ui.semantics.semantics
-import androidx.compose.ui.semantics.stateDescription
-import androidx.compose.ui.semantics.traversalIndex
 import androidx.compose.ui.unit.dp
-import androidx.core.graphics.createBitmap
 import androidx.core.graphics.drawable.toBitmap
-import io.chaldeaprjkt.gamespace.utils.rememberDrawablePainter
 import io.chaldeaprjkt.gamespace.R
-import io.chaldeaprjkt.gamespace.ui.components.GameCard
 import io.chaldeaprjkt.gamespace.ui.components.SettingsDropdown
 import io.chaldeaprjkt.gamespace.ui.components.SettingsSection
 import io.chaldeaprjkt.gamespace.ui.components.SettingsSlider
 import io.chaldeaprjkt.gamespace.ui.components.SettingsSwitch
-import io.chaldeaprjkt.gamespace.ui.viewmodel.RegisteredGame
 import io.chaldeaprjkt.gamespace.ui.viewmodel.SettingsViewModel
 
 data class AppInfo(
@@ -120,44 +70,14 @@ data class AppInfo(
 @Composable
 fun SettingsScreen(
     viewModel: SettingsViewModel,
-    onAddGameClick: () -> Unit,
-    onGameClick: (String) -> Unit,
+    onBack: () -> Unit,
     modifier: Modifier = Modifier
 ) {
     val context = LocalContext.current
 
     val listState = rememberLazyListState()
-    val fabVisible by remember {
-        derivedStateOf {
-            listState.firstVisibleItemIndex == 0 || !listState.canScrollForward
-        }
-    }
-    val focusRequester = remember { FocusRequester() }
 
     var showQuickStartDialog by remember { mutableStateOf(false) }
-    var fabMenuExpanded by rememberSaveable { mutableStateOf(false) }
-
-    BackHandler(fabMenuExpanded) { fabMenuExpanded = false }
-
-    val iconClose = ImageVector.vectorResource(R.drawable.materialsymbols_ic_close_rounded_filled)
-    val iconAdd = ImageVector.vectorResource(R.drawable.materialsymbols_ic_add_rounded_filled)
-
-    val fabItems = listOf(
-        Triple(
-            R.drawable.materialsymbols_ic_app_registration_rounded_filled,
-            stringResource(R.string.select_apps_to_launch)
-        ) {
-            showQuickStartDialog = true
-            fabMenuExpanded = false
-        },
-        Triple(
-            R.drawable.materialsymbols_ic_sports_esports_rounded_filled,
-            stringResource(R.string.add_game)
-        ) {
-            onAddGameClick()
-            fabMenuExpanded = false
-        }
-    )
 
     var installedApps by remember { mutableStateOf<List<AppInfo>>(emptyList()) }
 
@@ -200,91 +120,19 @@ fun SettingsScreen(
                         style = MaterialTheme.typography.headlineMedium
                     )
                 },
+                navigationIcon = {
+                    IconButton(onClick = onBack) {
+                        Icon(
+                            Icons.AutoMirrored.Rounded.ArrowBack,
+                            contentDescription = stringResource(R.string.back)
+                        )
+                    }
+                },
                 colors = TopAppBarDefaults.topAppBarColors(
                     containerColor = Color.Transparent,
                     scrolledContainerColor = Color.Transparent
                 )
             )
-        },
-        floatingActionButton = {
-            FloatingActionButtonMenu(
-                expanded = fabMenuExpanded,
-                button = {
-                    ToggleFloatingActionButton(
-                        modifier =
-                            Modifier.semantics {
-                                    traversalIndex = -1f
-                                    stateDescription =
-                                        if (fabMenuExpanded) context.getString(R.string.expanded) else context.getString(R.string.collapsed)
-                                    contentDescription = context.getString(R.string.toggle_menu)
-                                }
-                                .animateFloatingActionButton(
-                                    visible = fabVisible || fabMenuExpanded,
-                                    alignment = Alignment.BottomEnd,
-                                )
-                                .focusRequester(focusRequester),
-                        checked = fabMenuExpanded,
-                        onCheckedChange = { fabMenuExpanded = !fabMenuExpanded },
-                    ) {
-                        val imageVector by remember {
-                            derivedStateOf {
-                                if (checkedProgress > 0.5f) iconClose else iconAdd
-                            }
-                        }
-                        Icon(
-                            painter = rememberVectorPainter(imageVector),
-                            contentDescription = null,
-                            modifier = Modifier.animateIcon({ checkedProgress }),
-                        )
-                    }
-                },
-            ) {
-                fabItems.forEachIndexed { i, item ->
-                    FloatingActionButtonMenuItem(
-                        modifier =
-                            Modifier.semantics {
-                                    isTraversalGroup = true
-                                    if (i == fabItems.size - 1) {
-                                        customActions =
-                                            listOf(
-                                                CustomAccessibilityAction(
-                                                    label = context.getString(R.string.close_menu),
-                                                    action = {
-                                                        fabMenuExpanded = false
-                                                        true
-                                                    },
-                                                )
-                                            )
-                                    }
-                                }
-                                .then(
-                                    if (i == 0) {
-                                        Modifier.onKeyEvent {
-                                            if (
-                                                it.type == KeyEventType.KeyDown &&
-                                                    (it.key == Key.DirectionUp ||
-                                                        (it.isShiftPressed && it.key == Key.Tab))
-                                            ) {
-                                                focusRequester.requestFocus()
-                                                return@onKeyEvent true
-                                            }
-                                            return@onKeyEvent false
-                                        }
-                                    } else {
-                                        Modifier
-                                    }
-                                ),
-                        onClick = item.third,
-                        icon = {
-                            Icon(
-                                painter = painterResource(item.first),
-                                contentDescription = null
-                            )
-                        },
-                        text = { Text(text = item.second) },
-                    )
-                }
-            }
         },
         containerColor = MaterialTheme.colorScheme.surfaceContainer
     ) { innerPadding ->
@@ -293,14 +141,9 @@ fun SettingsScreen(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(innerPadding),
-            contentPadding = PaddingValues(bottom = 96.dp)
+            contentPadding = PaddingValues(bottom = 32.dp)
         ) {
             item {
-                GameIllustration()
-            }
-
-            item {
-                Spacer(modifier = Modifier.height(16.dp))
                 SettingsSection(title = stringResource(R.string.notifications)) {
                     SettingsSwitch(
                         title = stringResource(R.string.call_overlay_enabled_title),
@@ -389,13 +232,6 @@ fun SettingsScreen(
                 }
             }
 
-            item {
-                Spacer(modifier = Modifier.height(16.dp))
-                GameLibrarySection(
-                    registeredGames = viewModel.registeredGames,
-                    onGameClick = onGameClick
-                )
-            }
         }
     }
 }
@@ -501,260 +337,4 @@ private fun loadInstalledApps(context: Context): List<AppInfo> {
             }
         }
         .sortedBy { it.label.lowercase() }
-}
-
-@Composable
-private fun GameIllustration(
-    modifier: Modifier = Modifier
-) {
-    val infiniteTransition = rememberInfiniteTransition(label = "illustration")
-
-    val rotation by infiniteTransition.animateFloat(
-        initialValue = 0f,
-        targetValue = 360f,
-        animationSpec = infiniteRepeatable(
-            animation = tween(20000, easing = LinearEasing),
-            repeatMode = RepeatMode.Restart
-        ),
-        label = "rotation"
-    )
-
-    val pulse by infiniteTransition.animateFloat(
-        initialValue = 0.8f,
-        targetValue = 1f,
-        animationSpec = infiniteRepeatable(
-            animation = tween(1500, easing = FastOutSlowInEasing),
-            repeatMode = RepeatMode.Reverse
-        ),
-        label = "pulse"
-    )
-
-    val primaryColor = MaterialTheme.colorScheme.primary
-    val secondaryColor = MaterialTheme.colorScheme.secondary
-    val tertiaryColor = MaterialTheme.colorScheme.tertiary
-    val onPrimaryContainer = MaterialTheme.colorScheme.onPrimaryContainer
-
-    Box(
-        modifier = modifier
-            .fillMaxWidth()
-            .height(180.dp)
-            .padding(horizontal = 16.dp)
-            .clip(MaterialTheme.shapes.extraLarge)
-            .background(
-                brush = Brush.linearGradient(
-                    colors = listOf(
-                        MaterialTheme.colorScheme.primaryContainer.copy(alpha = 0.6f),
-                        MaterialTheme.colorScheme.tertiaryContainer.copy(alpha = 0.6f)
-                    )
-                )
-            ),
-        contentAlignment = Alignment.Center
-    ) {
-        Canvas(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(24.dp)
-        ) {
-            val centerX = size.width / 2
-            val centerY = size.height / 2
-            val controllerWidth = size.width * 0.5f
-            val controllerHeight = size.height * 0.4f
-
-            rotate(rotation * 0.02f, pivot = Offset(centerX, centerY)) {
-                drawCircle(
-                    color = primaryColor.copy(alpha = 0.15f),
-                    radius = size.minDimension * 0.4f * pulse,
-                    center = Offset(centerX, centerY)
-                )
-            }
-
-            for (i in 0..5) {
-                val angle = rotation + i * 60
-                val orbitRadius = size.minDimension * 0.35f
-                val particleX = centerX + kotlin.math.cos(Math.toRadians(angle.toDouble())).toFloat() * orbitRadius
-                val particleY = centerY + kotlin.math.sin(Math.toRadians(angle.toDouble())).toFloat() * orbitRadius
-                drawCircle(
-                    color = tertiaryColor.copy(alpha = 0.4f),
-                    radius = 4.dp.toPx(),
-                    center = Offset(particleX, particleY)
-                )
-            }
-
-            val controllerLeft = centerX - controllerWidth / 2
-            val controllerTop = centerY - controllerHeight / 2
-
-            val controllerPath = Path().apply {
-                val cornerRadius = controllerHeight * 0.4f
-                moveTo(controllerLeft + cornerRadius, controllerTop)
-                lineTo(controllerLeft + controllerWidth - cornerRadius, controllerTop)
-                quadraticTo(
-                    controllerLeft + controllerWidth, controllerTop,
-                    controllerLeft + controllerWidth, controllerTop + controllerHeight * 0.3f
-                )
-                lineTo(controllerLeft + controllerWidth, controllerTop + controllerHeight * 0.7f)
-                quadraticTo(
-                    controllerLeft + controllerWidth, controllerTop + controllerHeight,
-                    controllerLeft + controllerWidth - cornerRadius, controllerTop + controllerHeight
-                )
-                lineTo(controllerLeft + cornerRadius, controllerTop + controllerHeight)
-                quadraticTo(
-                    controllerLeft, controllerTop + controllerHeight,
-                    controllerLeft, controllerTop + controllerHeight * 0.7f
-                )
-                lineTo(controllerLeft, controllerTop + controllerHeight * 0.3f)
-                quadraticTo(
-                    controllerLeft, controllerTop,
-                    controllerLeft + cornerRadius, controllerTop
-                )
-                close()
-            }
-
-            drawPath(
-                path = controllerPath,
-                color = primaryColor.copy(alpha = 0.3f)
-            )
-            drawPath(
-                path = controllerPath,
-                color = primaryColor,
-                style = Stroke(width = 3.dp.toPx(), cap = StrokeCap.Round)
-            )
-
-            val dpadCenterX = controllerLeft + controllerWidth * 0.25f
-            val dpadCenterY = centerY
-            val dpadSize = controllerHeight * 0.25f
-
-            drawRect(
-                color = secondaryColor,
-                topLeft = Offset(dpadCenterX - dpadSize * 0.3f, dpadCenterY - dpadSize),
-                size = Size(dpadSize * 0.6f, dpadSize * 2)
-            )
-            drawRect(
-                color = secondaryColor,
-                topLeft = Offset(dpadCenterX - dpadSize, dpadCenterY - dpadSize * 0.3f),
-                size = Size(dpadSize * 2, dpadSize * 0.6f)
-            )
-
-            val buttonCenterX = controllerLeft + controllerWidth * 0.75f
-            val buttonCenterY = centerY
-            val buttonRadius = controllerHeight * 0.12f
-            val buttonSpacing = buttonRadius * 2.2f
-
-            drawCircle(
-                color = tertiaryColor,
-                radius = buttonRadius,
-                center = Offset(buttonCenterX, buttonCenterY - buttonSpacing * 0.5f)
-            )
-            drawCircle(
-                color = primaryColor,
-                radius = buttonRadius,
-                center = Offset(buttonCenterX + buttonSpacing * 0.5f, buttonCenterY)
-            )
-            drawCircle(
-                color = secondaryColor,
-                radius = buttonRadius,
-                center = Offset(buttonCenterX, buttonCenterY + buttonSpacing * 0.5f)
-            )
-            drawCircle(
-                color = tertiaryColor.copy(alpha = 0.7f),
-                radius = buttonRadius,
-                center = Offset(buttonCenterX - buttonSpacing * 0.5f, buttonCenterY)
-            )
-
-            drawCircle(
-                color = onPrimaryContainer.copy(alpha = 0.3f),
-                radius = controllerHeight * 0.08f,
-                center = Offset(centerX - controllerWidth * 0.1f, centerY)
-            )
-            drawCircle(
-                color = onPrimaryContainer.copy(alpha = 0.3f),
-                radius = controllerHeight * 0.08f,
-                center = Offset(centerX + controllerWidth * 0.1f, centerY)
-            )
-        }
-
-        Text(
-            text = stringResource(R.string.game_space),
-            style = MaterialTheme.typography.titleLarge,
-            color = MaterialTheme.colorScheme.onPrimaryContainer,
-            modifier = Modifier
-                .align(Alignment.BottomCenter)
-                .padding(bottom = 12.dp)
-        )
-    }
-}
-
-@Composable
-private fun GameLibrarySection(
-    registeredGames: List<RegisteredGame>,
-    onGameClick: (String) -> Unit,
-    modifier: Modifier = Modifier
-) {
-    Column(modifier = modifier.fillMaxWidth()) {
-        Row(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(horizontal = 24.dp, vertical = 12.dp),
-            horizontalArrangement = Arrangement.SpaceBetween,
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            Text(
-                text = stringResource(R.string.game_list_title),
-                style = MaterialTheme.typography.titleMedium,
-                color = MaterialTheme.colorScheme.primary
-            )
-        }
-
-        if (registeredGames.isEmpty()) {
-            Box(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(32.dp),
-                contentAlignment = Alignment.Center
-            ) {
-                OutlinedCard(
-                    colors = CardDefaults.outlinedCardColors(
-                        containerColor = MaterialTheme.colorScheme.surfaceContainer,
-                        contentColor = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.6f)
-                    ),
-                    border = BorderStroke(
-                        width = 1.0.dp,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.6f)
-                    ),
-                    shape = MaterialTheme.shapes.small
-                ) {
-                    Text(
-                        text = stringResource(R.string.no_games_added),
-                        style = MaterialTheme.typography.bodyMedium,
-                        modifier = Modifier.padding(8.dp)
-                    )
-                }
-            }
-        } else {
-            Column(
-                verticalArrangement = Arrangement.spacedBy(8.dp),
-                modifier = Modifier.padding(horizontal = 16.dp)
-            ) {
-                registeredGames.forEach { game ->
-                    GameCard(
-                        title = game.label,
-                        subtitle = getGameModeLabel(game.mode),
-                        icon = rememberDrawablePainter(game.icon),
-                        onClick = { onGameClick(game.packageName) },
-                        modifier = Modifier.fillMaxWidth()
-                    )
-                }
-            }
-        }
-    }
-}
-
-
-@Composable
-private fun getGameModeLabel(mode: Int): String {
-    return when (mode) {
-        1 -> stringResource(R.string.game_mode_standard)
-        2 -> stringResource(R.string.game_mode_performance)
-        3 -> stringResource(R.string.game_mode_battery)
-        else -> stringResource(R.string.game_mode_standard)
-    }
 }

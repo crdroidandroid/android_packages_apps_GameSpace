@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 AxionOS
+ * Copyright (C) 2025-2026 AxionOS
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,18 +18,21 @@
 
 package io.chaldeaprjkt.gamespace.gamebar
 
+import android.annotation.SuppressLint
+import android.app.ActivityTaskManager
 import android.content.*
 import android.content.res.Configuration
-import android.content.res.Resources
 import android.graphics.PixelFormat
-import android.graphics.Point
+import android.graphics.drawable.GradientDrawable
+import android.os.Bundle
 import android.os.Handler
 import android.os.Process
-import android.util.TypedValue
 import android.view.*
 import android.widget.FrameLayout
-import android.widget.ImageButton
-import android.widget.LinearLayout
+import android.widget.ImageView
+import android.widget.TextView
+import android.window.TaskFpsCallback
+import androidx.compose.animation.core.*
 import androidx.compose.foundation.*
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.*
@@ -37,28 +40,30 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.unit.dp as composeDp
+import androidx.compose.ui.draw.drawBehind
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.platform.ComposeView
+import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.unit.dp
 import androidx.compose.ui.platform.ViewCompositionStrategy
-import androidx.core.view.*
 import androidx.lifecycle.*
-import com.android.systemui.screenrecord.IRecordingCallback
+import com.android.axion.compose.lifecycle.repeatWhenAttached
+import com.android.axion.platform.AxPlatformClient
 import io.chaldeaprjkt.gamespace.R
 import io.chaldeaprjkt.gamespace.data.AppSettings
 import io.chaldeaprjkt.gamespace.data.SystemSettings
-import io.chaldeaprjkt.gamespace.gamebar.fps.*
-import io.chaldeaprjkt.gamespace.settings.SettingsActivity
-import io.chaldeaprjkt.gamespace.widget.MenuSwitcher
 import io.chaldeaprjkt.gamespace.gamebar.brightness.*
-import io.chaldeaprjkt.gamespace.gamebar.lifecycle.repeatWhenAttached
+import io.chaldeaprjkt.gamespace.gamebar.fps.*
 import io.chaldeaprjkt.gamespace.gamebar.tiles.*
 import io.chaldeaprjkt.gamespace.utils.*
+import java.math.RoundingMode
+import java.text.DecimalFormat
 
 class GameSidebar(
     private val context: Context,
     private val wm: WindowManager,
     private val handler: Handler,
-    private val inflater: LayoutInflater,
     private val appSettings: AppSettings,
     private val screenUtils: ScreenUtils,
     private val danmakuService: DanmakuService,
@@ -66,374 +71,403 @@ class GameSidebar(
     private val fpsInteractor: FpsInteractor,
     private val gameModeUtils: GameModeUtils,
     private val settings: SystemSettings,
-    private val tileRepository: TileRepository
+    private val tileRepository: TileRepository,
+    private val platform: AxPlatformClient
 ) {
-    private val barLayoutParam = createBarLayoutParam()
+    private val circleLayoutParam = createCircleLayoutParam()
     private val panelLayoutParam = createPanelLayoutParam()
 
     private var halfWidth = 0
     private var safeHeight = 0
     private var safeArea = 0
     private var shouldClose = false
+    private var panelShowing = false
 
-    private lateinit var rootBarView: View
-    private lateinit var barView: LinearLayout
-    private lateinit var menuSwitcher: MenuSwitcher
-    private lateinit var panelView: View
+    private lateinit var circleView: FrameLayout
+    private var circleIcon: ImageView? = null
+    private var circleFpsText: TextView? = null
+    private var panelView: View? = null
 
     private val firstPaint = Runnable { initActions() }
 
-    private var barExpanded = false
-        set(value) {
-            field = value
-            menuSwitcher.updateIconState(value, barLayoutParam.x)
-            barView.children.forEach { if (it.id != R.id.action_menu_switcher) it.isVisible = value }
-            updateBackground()
-            updateContainerGaps()
-        }
+    private var circleOnLeft = false
+    private var showFps = false
+    private var circleIdleState = true
 
-    private var showPanel = false
-        set(value) {
-            field = value
-            if (value) {
-                setupPanelView()
-                fpsInteractor.start()
-                brightnessInteractor.start()
-                addViewSafely(panelView, panelLayoutParam)
-                panelView.fadeIn()
-            } else if (::panelView.isInitialized) {
-                panelView.fadeOut {
-                    brightnessInteractor.dispose()
-                    fpsInteractor.dispose()
-                    panelView.visibility = View.INVISIBLE
-                    handler.postDelayed({ runCatching { removeViewSafely(panelView) } }, 50)
+    private val panelDismissing = mutableStateOf(false)
+
+    private val taskManager by lazy { ActivityTaskManager.getService() }
+
+    private val taskFpsCallback = object : TaskFpsCallback() {
+        override fun onFpsReported(fps: Float) {
+            if (::circleView.isInitialized && circleView.isAttachedToWindow) {
+                val formatted = DecimalFormat("#").apply {
+                    roundingMode = RoundingMode.HALF_EVEN
+                }.format(fps)
+                handler.post {
+                    circleFpsText?.text = formatted
+                    updateCircleContent()
                 }
             }
         }
+    }
 
+    private val recordingListener = object : AxPlatformClient.Listener() {
+        override fun onStateChanged(key: String, state: Bundle) {}
+    }
 
+    @SuppressLint("ClickableViewAccessibility")
     fun onCreate() {
-        val frame = FrameLayout(context)
-        rootBarView = inflater.inflate(R.layout.window_util, frame, false)
-        barView = rootBarView.findViewById(R.id.container_bar)
-        menuSwitcher = rootBarView.findViewById(R.id.action_menu_switcher)
-        applyOpacity()
+        val sizePx = circleSizePx
+        val bg = GradientDrawable().apply {
+            shape = GradientDrawable.OVAL
+            setColor(0x99000000.toInt())
+        }
+
+        circleIcon = ImageView(context).apply {
+            setImageResource(R.drawable.materialsymbols_ic_sports_esports_rounded_filled)
+            setColorFilter(0xFFFFFFFF.toInt())
+            scaleType = ImageView.ScaleType.CENTER_INSIDE
+            val pad = (sizePx * 0.16f).toInt()
+            setPadding(pad, pad, pad, pad)
+        }
+
+        circleFpsText = TextView(context).apply {
+            setTextColor(0xFFFFFFFF.toInt())
+            textSize = 10f
+            gravity = Gravity.CENTER
+            visibility = View.GONE
+        }
+
+        circleView = FrameLayout(context).apply {
+            background = bg
+            layoutParams = ViewGroup.LayoutParams(sizePx, sizePx)
+            addView(circleIcon, FrameLayout.LayoutParams(
+                FrameLayout.LayoutParams.MATCH_PARENT,
+                FrameLayout.LayoutParams.MATCH_PARENT
+            ))
+            addView(circleFpsText, FrameLayout.LayoutParams(
+                FrameLayout.LayoutParams.MATCH_PARENT,
+                FrameLayout.LayoutParams.MATCH_PARENT,
+                Gravity.CENTER
+            ))
+
+            setOnClickListener {
+                circleIdleState = false
+                updateCircleAlpha()
+                showPanel()
+            }
+
+            setOnTouchListener(CircleDragTouchListener())
+        }
+
         updateScreenMetrics()
         danmakuService.init()
     }
 
     fun onGameStart() {
+        platform.addListener(recordingListener)
         handler.post {
-            if (!::rootBarView.isInitialized) return@post
+            if (!::circleView.isInitialized) return@post
             runCatching {
-                wm.addView(rootBarView, barLayoutParam)
-                rootBarView.isVisible = false
-                rootBarView.alpha = 0f
+                dockCircle()
+                wm.addView(circleView, circleLayoutParam)
+                circleView.visibility = View.INVISIBLE
+                circleView.alpha = 0f
                 handler.postDelayed(firstPaint, 500)
             }
         }
     }
 
     fun onGameLeave() {
+        platform.removeListener(recordingListener)
+        stopFpsTracking()
         shouldClose = true
         handler.removeCallbacksAndMessages(null)
-        runCatching { wm.removeViewImmediate(panelView) }
-        runCatching { wm.removeViewImmediate(rootBarView) }
+        forceRemovePanel()
+        runCatching { wm.removeViewImmediate(circleView) }
     }
 
     fun onConfigurationChanged(newConfig: Configuration) {
         updateScreenMetrics()
-        if (!rootBarView.isVisible) {
+        forceRemovePanel()
+        if (circleView.visibility != View.VISIBLE) {
             handler.removeCallbacks(firstPaint)
-            handler.postDelayed({
-                firstPaint.run()
-                dockCollapsedMenu()
-            }, 100)
+            handler.postDelayed({ firstPaint.run() }, 100)
         } else {
-            dockCollapsedMenu()
+            dockCircle()
+            runCatching { wm.updateViewLayout(circleView, circleLayoutParam) }
         }
         danmakuService.updateConfiguration(newConfig)
     }
 
-    private fun createBarLayoutParam() = WindowManager.LayoutParams(
-        WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY,
-        WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE or
-            WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL or
-            WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN,
-        PixelFormat.TRANSLUCENT
-    ).apply {
-        width = WindowManager.LayoutParams.WRAP_CONTENT
-        height = WindowManager.LayoutParams.WRAP_CONTENT
-        layoutInDisplayCutoutMode = WindowManager.LayoutParams.LAYOUT_IN_DISPLAY_CUTOUT_MODE_ALWAYS
-        preferMinimalPostProcessing = true
-        gravity = Gravity.TOP
-    }
+    private fun showPanel() {
+        if (panelShowing) return
+        panelShowing = true
+        panelDismissing.value = false
 
-    private fun createPanelLayoutParam() = WindowManager.LayoutParams(
-        WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY,
-        WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE or
-            WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL or
-            WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN,
-        PixelFormat.TRANSLUCENT
-    ).apply {
-        width = WindowManager.LayoutParams.MATCH_PARENT
-        height = WindowManager.LayoutParams.WRAP_CONTENT
-        layoutInDisplayCutoutMode = WindowManager.LayoutParams.LAYOUT_IN_DISPLAY_CUTOUT_MODE_ALWAYS
-        preferMinimalPostProcessing = true
-        gravity = Gravity.TOP
-    }
+        tileRepository.refreshPlatformStates()
+        fpsInteractor.start()
+        brightnessInteractor.start()
 
-    private fun updateScreenMetrics() {
-        val bounds = wm.maximumWindowMetrics.bounds
-        halfWidth = bounds.width() / 2
-        safeArea = context.statusbarHeight + 4.dp
-        safeHeight = bounds.height() - safeArea
-    }
+        runCatching { wm.removeViewImmediate(circleView) }
 
-    private fun applyOpacity() {
-        val alphaValue = appSettings.menuOpacity / 100f
-        barView.alpha = alphaValue
-        menuSwitcher.alpha = alphaValue
-    }
+        val pv = createPanelView()
+        panelView = pv
 
-    private fun updateLayout(update: WindowManager.LayoutParams.() -> Unit = {}) {
-        barLayoutParam.update()
-        runCatching { wm.updateViewLayout(rootBarView, barLayoutParam) }
-    }
-
-    private fun initActions() {
-        if (shouldClose) return
-        rootBarView.fadeIn()
-        barExpanded = false
-        barLayoutParam.x = appSettings.x
-        barLayoutParam.y = appSettings.y
-        dockCollapsedMenu()
-        setupButtons()
-    }
-
-    private fun updateBackground() {
-        val barDragged = !barExpanded && barView.translationX == 0f
-        val collapsedAtStart = !barDragged && barLayoutParam.x < 0
-        val collapsedAtEnd = !barDragged && barLayoutParam.x > 0
-        barView.setBackgroundResource(
-            when {
-                barExpanded -> R.drawable.bar_expanded
-                collapsedAtStart -> R.drawable.bar_collapsed_start
-                collapsedAtEnd -> R.drawable.bar_collapsed_end
-                else -> R.drawable.bar_dragged
-            }
-        )
-    }
-
-    private fun updateContainerGaps() {
-        val currentParams = barView.layoutParams as ViewGroup.MarginLayoutParams
-        val margin = if (barExpanded) 48 else 0
-        barView.updatePaddingRelative(
-            start = if (barExpanded) 8 else 0,
-            top = if (barExpanded) 8 else 0,
-            end = if (barExpanded) 8 else 0,
-            bottom = if (barExpanded) 8 else 0
-        )
-        currentParams.setMargins(margin, 0, margin, 0)
-        barView.layoutParams = currentParams
-    }
-
-    private fun dockCollapsedMenu() {
-        if (barLayoutParam.x < 0) {
-            barView.translationX = -22f
-            barLayoutParam.x = -halfWidth
-        } else {
-            barView.translationX = 22f
-            barLayoutParam.x = halfWidth
+        try {
+            Process.setThreadGroupAndCpuset(Process.myPid(), Process.THREAD_GROUP_TOP_APP)
+            Process.setProcessGroup(Process.myPid(), Process.THREAD_GROUP_TOP_APP)
+            wm.addView(pv, panelLayoutParam)
+        } catch (_: Exception) {
+            brightnessInteractor.dispose()
+            fpsInteractor.dispose()
+            panelShowing = false
         }
-        barLayoutParam.y = barLayoutParam.y.coerceIn(safeArea, safeHeight)
-        updateBackground()
-        updateContainerGaps()
-        menuSwitcher.showFps = if (barExpanded) false else appSettings.showFps
-        menuSwitcher.updateIconState(barExpanded, barLayoutParam.x)
-        runCatching { wm.updateViewLayout(rootBarView, barLayoutParam) }
     }
 
-    private fun setupPanelView() {
-        panelView = ComposeView(context).apply {
+    private fun requestDismissPanel() {
+        panelDismissing.value = true
+    }
+
+    private fun removePanelAndRestoreCircle() {
+        if (!panelShowing) return
+        panelShowing = false
+
+        brightnessInteractor.dispose()
+        fpsInteractor.dispose()
+
+        panelView?.let { pv ->
+            runCatching { wm.removeViewImmediate(pv) }
+            panelView = null
+        }
+        runCatching {
+            Process.setThreadGroupAndCpuset(Process.myPid(), 9)
+            Process.setProcessGroup(Process.myPid(), 9)
+        }
+
+        if (!shouldClose && ::circleView.isInitialized) {
+            runCatching {
+                if (!circleView.isAttachedToWindow) {
+                    wm.addView(circleView, circleLayoutParam)
+                }
+            }
+            circleView.alpha = 0f
+            circleView.animate().alpha(0.7f).setDuration(200).start()
+            scheduleIdle()
+        }
+    }
+
+    private fun forceRemovePanel() {
+        if (!panelShowing) return
+        panelShowing = false
+        panelDismissing.value = true
+
+        brightnessInteractor.dispose()
+        fpsInteractor.dispose()
+
+        panelView?.let { pv ->
+            runCatching { wm.removeViewImmediate(pv) }
+            panelView = null
+        }
+    }
+
+    private fun createPanelView(): ComposeView {
+        return ComposeView(context).apply {
             repeatWhenAttached {
                 repeatOnLifecycle(Lifecycle.State.STARTED) {
-                    setViewCompositionStrategy(
-                        ViewCompositionStrategy.DisposeOnViewTreeLifecycleDestroyed
-                    )
+                    setViewCompositionStrategy(ViewCompositionStrategy.DisposeOnViewTreeLifecycleDestroyed)
                     setContent {
-                        val isDark = isSystemInDarkTheme()
-                        val colorScheme = if (isDark) dynamicDarkColorScheme(context) else dynamicLightColorScheme(context)
-                        val panelOnLeft = barLayoutParam.x < halfWidth
-                        val apps = remember { getQuickStartApps(context) }
                         MaterialExpressiveTheme(
-                            colorScheme = colorScheme,
+                            colorScheme = dynamicDarkColorScheme(context),
                             motionScheme = MotionScheme.expressive(),
                         ) {
-                            Box(
-                                modifier = Modifier
-                                    .fillMaxWidth()
-                                    .wrapContentHeight()
-                                    .clickable(
-                                        interactionSource = remember { MutableInteractionSource() },
-                                        indication = null
-                                    ) { showPanel = false }
-                            ) {
-                                Box(
-                                    modifier = Modifier
-                                        .offset(x = if (panelOnLeft) 60.composeDp else (-60).composeDp)
-                                        .align(if (panelOnLeft) Alignment.CenterStart else Alignment.CenterEnd)
-                                ) {
-                                    GamePanelCard(
-                                        interactor = brightnessInteractor,
-                                        fpsInteractor = fpsInteractor,
-                                        apps = apps,
-                                        gameModeUtils = gameModeUtils,
-                                        systemSettings = settings,
-                                        tileRepository = tileRepository
-                                    )
-                                }
-                            }
+                            PanelContent()
                         }
                     }
                 }
             }
         }
-        panelLayoutParam.x = barLayoutParam.x
-        panelLayoutParam.y = appSettings.y
     }
 
-    private fun setupButtons() {
-        menuSwitcher.setOnClickListener { 
-            barExpanded = !barExpanded 
-            if (!barExpanded) {
-                showPanel = false
-            }
-        }
+    @Composable
+    private fun PanelContent() {
+        val apps = remember { getQuickStartApps(context) }
+        val dismissing by panelDismissing
 
-        menuSwitcher.registerDraggableTouchListener(
-            initPoint = { Point(barLayoutParam.x, barLayoutParam.y) },
-            listener = { x: Int, y: Int ->
-                if (!menuSwitcher.isDragged) {
-                    menuSwitcher.isDragged = true
-                    barView.translationX = 0f
-                }
-                updateLayout {
-                    this.x = x
-                    this.y = y
-                }
-                updateBackground()
+        var entered by remember { mutableStateOf(false) }
+        LaunchedEffect(Unit) { entered = true }
+
+        val show = entered && !dismissing
+        val slideSign = if (circleOnLeft) -1f else 1f
+
+        val slideOffset by animateFloatAsState(
+            targetValue = if (show) 0f else slideSign * 400f,
+            animationSpec = tween(
+                durationMillis = if (show) 350 else 250,
+                easing = if (show) FastOutSlowInEasing else FastOutLinearInEasing,
+            ),
+            label = "panel_slide",
+            finishedListener = {
+                if (dismissing) handler.post { removePanelAndRestoreCircle() }
             },
-            onComplete = {
-                menuSwitcher.isDragged = false
-                dockCollapsedMenu()
-                updateBackground()
-                appSettings.x = barLayoutParam.x
-                appSettings.y = barLayoutParam.y
-            }
         )
 
-        rootBarView.findViewById<ImageButton>(R.id.action_panel).apply {
-            alpha = appSettings.menuOpacity / 100f
-            setOnClickListener { showPanel = !showPanel }
-            setOnLongClickListener {
-                context.startActivity(Intent(context, SettingsActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK))
-                true
-            }
-        }
+        val scrimAlpha by animateFloatAsState(
+            targetValue = if (show) 0.45f else 0f,
+            animationSpec = tween(if (show) 300 else 200),
+            label = "scrim_alpha",
+        )
 
-        rootBarView.findViewById<ImageButton>(R.id.action_screenshot).apply {
-            alpha = appSettings.menuOpacity / 100f
-            setOnClickListener { takeShot() }
-        }
+        val panelAlpha by animateFloatAsState(
+            targetValue = if (show) 1f else 0f,
+            animationSpec = tween(if (show) 250 else 150),
+            label = "panel_alpha",
+        )
 
-        rootBarView.findViewById<ImageButton>(R.id.action_record).apply {
-            alpha = appSettings.menuOpacity / 100f
-            val recorder = screenUtils.recorder ?: run {
-                isVisible = false
-                return
-            }
-            screenUtils.addRecordingCallback(object : IRecordingCallback.Stub() {
-                override fun onRecordingStart() {
-                    this@apply.post { isSelected = true }
-                }
-                override fun onRecordingEnd() {
-                    this@apply.post { isSelected = false }
-                }
-            })
-            setOnClickListener {
-                if (!recorder.isStarting) {
-                    if (!recorder.isRecording) recorder.startRecording() else recorder.stopRecording()
-                    barExpanded = false
-                }
+        Box(
+            modifier = Modifier
+                .fillMaxSize()
+                .clickable(
+                    interactionSource = remember { MutableInteractionSource() },
+                    indication = null,
+                ) { if (!dismissing) requestDismissPanel() },
+            contentAlignment = if (circleOnLeft) Alignment.TopStart
+                               else Alignment.TopEnd,
+        ) {
+            val density = LocalDensity.current.density
+            val topOffsetDp = (circleLayoutParam.y / density).dp
+
+            Box(
+                modifier = Modifier
+                    .padding(start = 12.dp, top = topOffsetDp, end = 12.dp)
+                    .graphicsLayer {
+                        translationX = slideOffset
+                        alpha = panelAlpha
+                    }
+                    .clickable(
+                        interactionSource = remember { MutableInteractionSource() },
+                        indication = null,
+                    ) {}
+            ) {
+                GamePanelCard(
+                    interactor = brightnessInteractor,
+                    fpsInteractor = fpsInteractor,
+                    apps = apps,
+                    gameModeUtils = gameModeUtils,
+                    systemSettings = settings,
+                    tileRepository = tileRepository,
+                )
             }
         }
     }
 
-    private fun takeShot() {
-        val afterShot = {
-            barExpanded = false
-            handler.postDelayed({ updateLayout { alpha = 1f } }, 100)
-        }
-        updateLayout { alpha = 0f }
-        handler.postDelayed({
-            runCatching {
-                screenUtils.takeScreenshot { afterShot() }
-            }.onFailure {
-                it.printStackTrace()
-                afterShot()
+    private fun updateFpsTracking() {
+        if (showFps) {
+            taskManager?.focusedRootTaskInfo?.taskId?.let {
+                wm.registerTaskFpsCallback(it, Runnable::run, taskFpsCallback)
             }
-        }, 250)
+        } else {
+            stopFpsTracking()
+        }
+    }
+
+    private fun stopFpsTracking() {
+        runCatching { wm.unregisterTaskFpsCallback(taskFpsCallback) }
+    }
+
+    private fun updateCircleContent() {
+        if (showFps) {
+            circleIcon?.visibility = View.GONE
+            circleFpsText?.visibility = View.VISIBLE
+        } else {
+            circleIcon?.visibility = View.VISIBLE
+            circleFpsText?.visibility = View.GONE
+        }
+    }
+
+    private fun updateCircleAlpha() {
+        val target = if (circleIdleState) 0.25f else 0.7f
+        circleView.animate().cancel()
+        circleView.animate().alpha(target).setDuration(400).start()
+    }
+
+    private val circleSizePx get() = (CIRCLE_SIZE_DP * context.resources.displayMetrics.density).toInt()
+
+    private fun createCircleLayoutParam() = WindowManager.LayoutParams(
+        WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY,
+        WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE or
+            WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL or
+            WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN,
+        PixelFormat.TRANSLUCENT
+    ).apply {
+        width = circleSizePx
+        height = circleSizePx
+        layoutInDisplayCutoutMode = WindowManager.LayoutParams.LAYOUT_IN_DISPLAY_CUTOUT_MODE_ALWAYS
+        preferMinimalPostProcessing = true
+        gravity = Gravity.TOP or Gravity.END
+    }
+
+    private fun createPanelLayoutParam() = WindowManager.LayoutParams(
+        WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY,
+        WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE or
+            WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN,
+        PixelFormat.TRANSLUCENT
+    ).apply {
+        width = WindowManager.LayoutParams.MATCH_PARENT
+        height = WindowManager.LayoutParams.MATCH_PARENT
+        layoutInDisplayCutoutMode = WindowManager.LayoutParams.LAYOUT_IN_DISPLAY_CUTOUT_MODE_ALWAYS
+        preferMinimalPostProcessing = true
+    }
+
+    private fun updateScreenMetrics() {
+        val bounds = wm.maximumWindowMetrics.bounds
+        halfWidth = bounds.width() / 2
+        safeArea = context.statusbarHeight + (4 * context.resources.displayMetrics.density).toInt()
+        safeHeight = bounds.height() - safeArea
+    }
+
+    private fun initActions() {
+        if (shouldClose) return
+        circleView.visibility = View.VISIBLE
+        circleView.animate().alpha(0.7f).setDuration(300).start()
+        circleOnLeft = appSettings.x < 0
+        circleLayoutParam.y = appSettings.y
+        dockCircle()
+        runCatching { wm.updateViewLayout(circleView, circleLayoutParam) }
+        showFps = appSettings.showFps
+        updateCircleContent()
+        updateFpsTracking()
+        scheduleIdle()
+    }
+
+    private fun dockCircle() {
+        circleLayoutParam.gravity = Gravity.TOP or (if (circleOnLeft) Gravity.START else Gravity.END)
+        circleLayoutParam.x = 0
+        circleLayoutParam.y = circleLayoutParam.y.coerceIn(safeArea, safeHeight)
+    }
+
+    private val idleRunnable = Runnable {
+        circleIdleState = true
+        updateCircleAlpha()
+    }
+
+    private fun scheduleIdle() {
+        handler.removeCallbacks(idleRunnable)
+        circleIdleState = false
+        updateCircleAlpha()
+        handler.postDelayed(idleRunnable, IDLE_TIMEOUT_MS)
     }
 
     private fun View.fadeIn(duration: Long = 300L) {
         animate().cancel()
-        if (!isVisible || alpha < 1f) {
+        if (visibility != View.VISIBLE || alpha < 1f) {
             alpha = 0f
-            isVisible = true
+            visibility = View.VISIBLE
             animate().alpha(1f).setDuration(duration).start()
         }
     }
 
-    private fun View.fadeOut(duration: Long = 300L, endAction: () -> Unit = {}) {
-        animate().cancel()
-        if (isVisible && alpha > 0f) {
-            animate()
-                .alpha(0f)
-                .setDuration(duration)
-                .withEndAction {
-                    if (isAttachedToWindow) isVisible = false
-                    endAction()
-                }.start()
-        } else {
-            endAction()
-        }
-    }
-    
-    private fun addViewSafely(view: View, lp: WindowManager.LayoutParams) {
-        try {
-            Process.setThreadGroupAndCpuset(Process.myPid(), Process.THREAD_GROUP_TOP_APP)
-            Process.setProcessGroup(Process.myPid(), Process.THREAD_GROUP_TOP_APP)
-            wm.addView(view, lp)
-        } catch (e: Exception) {
-            brightnessInteractor.dispose()
-            fpsInteractor.dispose()
-        }
-    }
-
-    private fun removeViewSafely(view: View) {
-        try {
-            if (view.isAttachedToWindow) {
-                wm.removeViewImmediate(view)
-            }
-            Process.setThreadGroupAndCpuset(Process.myPid(), 9)
-            Process.setProcessGroup(Process.myPid(), 9)
-        } catch (e: Exception) {
-            brightnessInteractor.dispose()
-            fpsInteractor.dispose()
-        }
-    }
-    
     private fun getQuickStartApps(context: Context): List<AppInfo> {
         val appList = mutableListOf<AppInfo>()
         val packageManager = context.packageManager
@@ -444,16 +478,74 @@ class GameSidebar(
                     val appInfo = packageManager.getApplicationInfo(pkg, 0)
                     val appName = packageManager.getApplicationLabel(appInfo).toString()
                     val icon = packageManager.getApplicationIcon(appInfo)
-                    appList.add(
-                        AppInfo(
-                            name = appName,
-                            icon = icon,
-                            packageName = pkg
-                        )
-                    )
+                    appList.add(AppInfo(name = appName, icon = icon, packageName = pkg))
                 } catch (_: Exception) {}
             }
         }
         return appList
+    }
+
+    @SuppressLint("ClickableViewAccessibility")
+    private inner class CircleDragTouchListener : View.OnTouchListener {
+        private var startX = 0f
+        private var startY = 0f
+        private var startParamX = 0
+        private var startParamY = 0
+        private var isDragging = false
+        private val touchSlop = ViewConfiguration.get(context).scaledTouchSlop
+
+        override fun onTouch(v: View, event: MotionEvent): Boolean {
+            when (event.action) {
+                MotionEvent.ACTION_DOWN -> {
+                    startX = event.rawX
+                    startY = event.rawY
+                    isDragging = false
+                    circleIdleState = false
+                    updateCircleAlpha()
+                    return false
+                }
+                MotionEvent.ACTION_MOVE -> {
+                    val dx = event.rawX - startX
+                    val dy = event.rawY - startY
+                    if (!isDragging && (dx * dx + dy * dy) > touchSlop * touchSlop) {
+                        isDragging = true
+                        val loc = IntArray(2)
+                        circleView.getLocationOnScreen(loc)
+                        circleLayoutParam.gravity = Gravity.TOP or Gravity.START
+                        circleLayoutParam.x = loc[0]
+                        circleLayoutParam.y = loc[1]
+                        startParamX = loc[0]
+                        startParamY = loc[1]
+                        runCatching { wm.updateViewLayout(circleView, circleLayoutParam) }
+                    }
+                    if (isDragging) {
+                        circleLayoutParam.x = startParamX + dx.toInt()
+                        circleLayoutParam.y = startParamY + dy.toInt()
+                        runCatching { wm.updateViewLayout(circleView, circleLayoutParam) }
+                        return true
+                    }
+                    return false
+                }
+                MotionEvent.ACTION_UP, MotionEvent.ACTION_CANCEL -> {
+                    if (isDragging) {
+                        circleOnLeft = circleLayoutParam.x < 0
+                        appSettings.x = if (circleOnLeft) -1 else 1
+                        appSettings.y = circleLayoutParam.y
+                        dockCircle()
+                        runCatching { wm.updateViewLayout(circleView, circleLayoutParam) }
+                        scheduleIdle()
+                        return true
+                    }
+                    scheduleIdle()
+                    return false
+                }
+            }
+            return false
+        }
+    }
+
+    companion object {
+        private const val CIRCLE_SIZE_DP = 36
+        private const val IDLE_TIMEOUT_MS = 3000L
     }
 }

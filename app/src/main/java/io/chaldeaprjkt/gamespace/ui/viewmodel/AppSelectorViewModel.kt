@@ -16,6 +16,7 @@
 package io.chaldeaprjkt.gamespace.ui.viewmodel
 
 import android.app.Application
+import android.content.Intent
 import android.content.pm.ApplicationInfo
 import android.content.pm.PackageManager
 import android.graphics.drawable.Drawable
@@ -56,10 +57,18 @@ class AppSelectorViewModel @Inject constructor(
         viewModelScope.launch(Dispatchers.IO) {
             val pm = app.packageManager
             val flags = PackageManager.ApplicationInfoFlags.of(PackageManager.GET_META_DATA.toLong())
+            val launchIntent = Intent(Intent.ACTION_MAIN, null).apply {
+                addCategory(Intent.CATEGORY_LAUNCHER)
+            }
+            val resolveFlags = PackageManager.ResolveInfoFlags.of(0)
+            val launcherPackages = pm.queryIntentActivities(launchIntent, resolveFlags)
+                .map { it.activityInfo.packageName }
+                .toSet()
+
             val installedApps = pm.getInstalledApplications(flags)
                 .filter {
                     it.packageName != app.packageName &&
-                            it.flags and ApplicationInfo.FLAG_SYSTEM == 0 &&
+                            launcherPackages.contains(it.packageName) &&
                             !settings.userGames.any { game -> game.packageName == it.packageName }
                 }
                 .map {

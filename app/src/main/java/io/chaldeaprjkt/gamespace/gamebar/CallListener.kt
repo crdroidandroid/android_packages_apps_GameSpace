@@ -65,7 +65,7 @@ import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.android.scopes.ServiceScoped
 import io.chaldeaprjkt.gamespace.R
 import io.chaldeaprjkt.gamespace.data.AppSettings
-import io.chaldeaprjkt.gamespace.gamebar.lifecycle.repeatWhenAttached
+import com.android.axion.compose.lifecycle.repeatWhenAttached
 import io.chaldeaprjkt.gamespace.utils.dp as extDp
 import javax.inject.Inject
 import kotlinx.coroutines.*

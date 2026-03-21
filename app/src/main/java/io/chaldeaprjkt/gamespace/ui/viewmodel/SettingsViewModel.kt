@@ -16,6 +16,7 @@ import dagger.hilt.android.qualifiers.ApplicationContext
 import io.chaldeaprjkt.gamespace.data.AppSettings
 import io.chaldeaprjkt.gamespace.data.SystemSettings
 import io.chaldeaprjkt.gamespace.data.UserGame
+import io.chaldeaprjkt.gamespace.utils.GameModeUtils
 import javax.inject.Inject
 
 data class RegisteredGame(
@@ -29,7 +30,8 @@ data class RegisteredGame(
 class SettingsViewModel @Inject constructor(
     @ApplicationContext private val context: Context,
     private val appSettings: AppSettings,
-    private val systemSettings: SystemSettings
+    private val systemSettings: SystemSettings,
+    private val gameModeUtils: GameModeUtils
 ) : ViewModel() {
 
     var callOverlayEnabled by mutableStateOf(appSettings.callOverlayEnabled)
@@ -153,9 +155,32 @@ class SettingsViewModel @Inject constructor(
     }
 
     fun unregisterGame(packageName: String) {
+        gameModeUtils.setAngleDriverChoice(packageName, GameModeUtils.DRIVER_CHOICE_DEFAULT)
         val games = systemSettings.userGames.toMutableList()
         games.removeIf { it.packageName == packageName }
         systemSettings.userGames = games
         loadRegisteredGames()
     }
+
+    fun updateGameMode(packageName: String, mode: Int) {
+        gameModeUtils.setGameModeFor(packageName, systemSettings, mode)
+        loadRegisteredGames()
+    }
+
+    val gameModeOptions = listOf(1 to "Standard", 2 to "Performance", 3 to "Battery")
+
+    val angleFeatureAvailable: Boolean
+        get() = gameModeUtils.findAnglePackage()?.isEnabled == true && gameModeUtils.isVulkanSupported()
+
+    fun getAngleDriverChoice(packageName: String): String = gameModeUtils.getAngleDriverChoice(packageName)
+
+    fun updateAngleDriverChoice(packageName: String, choice: String) {
+        gameModeUtils.setAngleDriverChoice(packageName, choice)
+    }
+
+    val angleDriverOptions = listOf(
+        GameModeUtils.DRIVER_CHOICE_DEFAULT to "Default",
+        GameModeUtils.DRIVER_CHOICE_ANGLE to "ANGLE",
+        GameModeUtils.DRIVER_CHOICE_NATIVE to "Native"
+    )
 }

@@ -12,12 +12,9 @@ android_app {
     srcs: [
         "java/**/*.java",
         "java/**/*.kt",
-        "java/**/*.aidl",
     ],
-    aidl: {
-        local_include_dirs: ["java"],
-    },
     static_libs: [
+        "ax_compose",
         "androidx.core_core-ktx",
         "androidx.appcompat_appcompat",
         "androidx.preference_preference",
@@ -42,6 +39,8 @@ android_app {
         "androidx.lifecycle_lifecycle-runtime-compose",
         "kotlinx-coroutines-core",
         "com.composables_icons-material-symbols-rounded-filled-android",
+        "ax_platform_hooks",
+        "androidx.palette_palette",
     ],
 
     kotlincflags: [
