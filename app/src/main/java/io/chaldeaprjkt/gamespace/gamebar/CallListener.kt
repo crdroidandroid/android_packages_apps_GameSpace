@@ -86,9 +86,9 @@ class CallListener @Inject constructor(
     private var isOverlayShowing = false
 
     private val phoneStateListener = object: PhoneStateListener() {
-        override fun onCallStateChanged(state: Int, incomingNumber: String) {
+        override fun onCallStateChanged(state: Int, incomingNumber: String?) {
             if (state == TelephonyManager.CALL_STATE_RINGING && callOverlayEnabled) {
-                showRingerOverlay(incomingNumber)
+                showRingerOverlay(incomingNumber ?: "")
             }
         }
     }
