@@ -91,23 +91,23 @@
     <string name="call_overlay_enabled_title">Nakładka połączenia</string>
     <string name="call_overlay_enabled_summary">Pokazuj minimalną nakładkę podczas odbierania/odrzucania połączeń telefonicznych</string>
     <!-- Game Optimization -->
-    <string name="game_optimization_title">Launch Optimization</string>
-    <string name="game_launch_boost_title">Launch Boost</string>
-    <string name="game_launch_boost_summary">Optimize CPU and memory for faster game launch</string>
-    <string name="game_memory_management_title">Smart Memory Management</string>
-    <string name="game_memory_management_summary">Automatically clear background apps when launching games</string>
-    <string name="game_load_priority_title">Loading Priority</string>
-    <string name="game_load_priority_summary">Set resource priority during game launch</string>
-    <string name="game_cache_management_title">Cache Management</string>
-    <string name="game_cache_management_summary">Optimize game cache for faster loading times</string>
+    <string name="game_optimization_title">Uruchom optymalizację</string>
+    <string name="game_launch_boost_title">Uruchom przyspieszenie</string>
+    <string name="game_launch_boost_summary">Zoptymalizuj wykorzystanie procesora i pamięci, aby gra uruchamiała się szybciej</string>
+    <string name="game_memory_management_title">Inteligentne zarządzanie pamięcią</string>
+    <string name="game_memory_management_summary">Automatycznie zamykaj aplikacje działające w tle podczas uruchamiania gier</string>
+    <string name="game_load_priority_title">Ładowanie priorytetowe</string>
+    <string name="game_load_priority_summary">Ustaw priorytet zasobów podczas uruchamiania gry</string>
+    <string name="game_cache_management_title">Zarządzanie pamięcią podręczną</string>
+    <string name="game_cache_management_summary">Optymalizuj pamięć podręczną gry dla szybszego ładowania</string>
     <string-array name="game_load_priority_entries">
-        <item>Balanced (Recommended)</item>
-        <item>Maximum Performance</item>
-        <item>Power Saving</item>
+        <item>Zrównoważone (zalecane)</item>
+        <item>Maksymalna wydajność</item>
+        <item>Oszczędność baterii</item>
     </string-array>
     <string-array name="game_load_priority_values">
-        <item>balanced</item>
-        <item>performance</item>
-        <item>powersave</item>
+        <item>zrównoważone</item>
+        <item>wydajność</item>
+        <item>oszczędzanie energii</item>
     </string-array>
 </resources>
