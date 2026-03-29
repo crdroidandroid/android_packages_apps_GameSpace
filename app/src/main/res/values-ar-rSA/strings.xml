@@ -90,4 +90,24 @@
     <!-- Call overlay -->
     <string name="call_overlay_enabled_title">عرض المكالمة</string>
     <string name="call_overlay_enabled_summary">إظهار الحد الأدنى من تراكب المكالمات للإجابة / رفض المكالمات</string>
+    <!-- Game Optimization -->
+    <string name="game_optimization_title">Launch Optimization</string>
+    <string name="game_launch_boost_title">Launch Boost</string>
+    <string name="game_launch_boost_summary">Optimize CPU and memory for faster game launch</string>
+    <string name="game_memory_management_title">Smart Memory Management</string>
+    <string name="game_memory_management_summary">Automatically clear background apps when launching games</string>
+    <string name="game_load_priority_title">Loading Priority</string>
+    <string name="game_load_priority_summary">Set resource priority during game launch</string>
+    <string name="game_cache_management_title">Cache Management</string>
+    <string name="game_cache_management_summary">Optimize game cache for faster loading times</string>
+    <string-array name="game_load_priority_entries">
+        <item>Balanced (Recommended)</item>
+        <item>Maximum Performance</item>
+        <item>Power Saving</item>
+    </string-array>
+    <string-array name="game_load_priority_values">
+        <item>balanced</item>
+        <item>performance</item>
+        <item>powersave</item>
+    </string-array>
 </resources>
