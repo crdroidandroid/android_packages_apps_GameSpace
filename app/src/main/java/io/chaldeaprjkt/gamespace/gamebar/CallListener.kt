@@ -88,7 +88,7 @@ class CallListener @Inject constructor(
     private val phoneStateListener = object: PhoneStateListener() {
         override fun onCallStateChanged(state: Int, incomingNumber: String?) {
             if (state == TelephonyManager.CALL_STATE_RINGING && callOverlayEnabled) {
-                showRingerOverlay(incomingNumber ?: "")
+                showRingerOverlay(incomingNumber)
             }
         }
     }
@@ -172,7 +172,7 @@ class CallListener @Inject constructor(
         }
     }
 
-    private fun showRingerOverlay(incomingNumber: String) {
+    private fun showRingerOverlay(incomingNumber: String?) {
         if (isOverlayShowing) return
 
         val sidebarX = appSettings.x
@@ -195,7 +195,7 @@ class CallListener @Inject constructor(
             y = appSettings.y - 71.extDp
         }
 
-        val callerPhoto = loadContactPhoto(context, incomingNumber)
+        val callerPhoto = if (incomingNumber.isNullOrEmpty()) null else loadContactPhoto(context, incomingNumber)
 
         ringerOverlay = ComposeView(context).apply {
             repeatWhenAttached {
