@@ -91,23 +91,23 @@
     <string name="call_overlay_enabled_title">Lớp phủ cuộc gọi</string>
     <string name="call_overlay_enabled_summary">Hiển thị lớp phủ tối giản để trả lời/từ chối cuộc gọi</string>
     <!-- Game Optimization -->
-    <string name="game_optimization_title">Launch Optimization</string>
-    <string name="game_launch_boost_title">Launch Boost</string>
-    <string name="game_launch_boost_summary">Optimize CPU and memory for faster game launch</string>
-    <string name="game_memory_management_title">Smart Memory Management</string>
-    <string name="game_memory_management_summary">Automatically clear background apps when launching games</string>
-    <string name="game_load_priority_title">Loading Priority</string>
-    <string name="game_load_priority_summary">Set resource priority during game launch</string>
-    <string name="game_cache_management_title">Cache Management</string>
-    <string name="game_cache_management_summary">Optimize game cache for faster loading times</string>
+    <string name="game_optimization_title">Tối ưu khởi chạy</string>
+    <string name="game_launch_boost_title">Tăng tốc khởi chạy</string>
+    <string name="game_launch_boost_summary">Tối ưu CPU và bộ nhớ để khởi chạy game nhanh hơn</string>
+    <string name="game_memory_management_title">Quản lý bộ nhớ thông minh</string>
+    <string name="game_memory_management_summary">Tự động dọn sạch ứng dụng nền khi khởi chạy game</string>
+    <string name="game_load_priority_title">Ưu tiên tải</string>
+    <string name="game_load_priority_summary">Đặt mức độ ưu tiên tài nguyên khi khởi chạy game</string>
+    <string name="game_cache_management_title">Quản lý bộ nhớ đệm</string>
+    <string name="game_cache_management_summary">Tối ưu bộ nhớ đệm game để rút ngắn thời gian tải</string>
     <string-array name="game_load_priority_entries">
-        <item>Balanced (Recommended)</item>
-        <item>Maximum Performance</item>
-        <item>Power Saving</item>
+        <item>Cân bằng (Khuyến nghị)</item>
+        <item>Hiệu suất tối đa</item>
+        <item>Tiết kiệm điện</item>
     </string-array>
     <string-array name="game_load_priority_values">
-        <item>balanced</item>
-        <item>performance</item>
-        <item>powersave</item>
+        <item>cân bằng</item>
+        <item>hiệu suất</item>
+        <item>tiết kiệm điện</item>
     </string-array>
 </resources>
