@@ -91,23 +91,23 @@
     <string name="call_overlay_enabled_title">Apel suprapus</string>
     <string name="call_overlay_enabled_summary">Afișați suprapunerea minimă a apelurilor pentru a răspunde/respinge apelurile</string>
     <!-- Game Optimization -->
-    <string name="game_optimization_title">Launch Optimization</string>
-    <string name="game_launch_boost_title">Launch Boost</string>
-    <string name="game_launch_boost_summary">Optimize CPU and memory for faster game launch</string>
-    <string name="game_memory_management_title">Smart Memory Management</string>
-    <string name="game_memory_management_summary">Automatically clear background apps when launching games</string>
-    <string name="game_load_priority_title">Loading Priority</string>
-    <string name="game_load_priority_summary">Set resource priority during game launch</string>
-    <string name="game_cache_management_title">Cache Management</string>
-    <string name="game_cache_management_summary">Optimize game cache for faster loading times</string>
+    <string name="game_optimization_title">Lansare optimizare</string>
+    <string name="game_launch_boost_title">Accelerare de lansare</string>
+    <string name="game_launch_boost_summary">Optimizați CPU și memoria pentru lansarea mai rapidă a jocului</string>
+    <string name="game_memory_management_title">Managementul memoriei inteligente</string>
+    <string name="game_memory_management_summary">Șterge automat aplicațiile de fundal la lansarea jocurilor</string>
+    <string name="game_load_priority_title">Încărcare prioritate</string>
+    <string name="game_load_priority_summary">Setează prioritatea resurselor în timpul lansării jocului</string>
+    <string name="game_cache_management_title">Gestionare cache</string>
+    <string name="game_cache_management_summary">Optimizează cache-ul jocului pentru o încărcare mai rapidă</string>
     <string-array name="game_load_priority_entries">
-        <item>Balanced (Recommended)</item>
-        <item>Maximum Performance</item>
-        <item>Power Saving</item>
+        <item>Echilibru (Recomandat)</item>
+        <item>Performanță maximă</item>
+        <item>Economisire energie</item>
     </string-array>
     <string-array name="game_load_priority_values">
-        <item>balanced</item>
-        <item>performance</item>
-        <item>powersave</item>
+        <item>echilibrat</item>
+        <item>performanță</item>
+        <item>economisire</item>
     </string-array>
 </resources>
