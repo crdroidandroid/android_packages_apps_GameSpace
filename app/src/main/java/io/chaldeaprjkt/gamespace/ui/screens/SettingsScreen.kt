@@ -146,6 +146,14 @@ fun SettingsScreen(
             item {
                 SettingsSection(title = stringResource(R.string.notifications)) {
                     SettingsSwitch(
+                        title = stringResource(R.string.auto_dnd_title),
+                        summary = stringResource(R.string.auto_dnd_summary),
+                        checked = viewModel.autoDnd,
+                        onCheckedChange = { viewModel.updateAutoDnd(it) },
+                        icon = painterResource(R.drawable.materialsymbols_ic_do_not_disturb_on_rounded_filled)
+                    )
+
+                    SettingsSwitch(
                         title = stringResource(R.string.call_overlay_enabled_title),
                         summary = stringResource(R.string.call_overlay_enabled_summary),
                         checked = viewModel.callOverlayEnabled,
@@ -204,6 +212,15 @@ fun SettingsScreen(
                         checked = viewModel.stayAwake,
                         onCheckedChange = { viewModel.updateStayAwake(it) },
                         icon = painterResource(R.drawable.materialsymbols_ic_visibility_rounded_filled)
+                    )
+
+                    SettingsSlider(
+                        title = stringResource(R.string.icon_idle_alpha_title),
+                        value = viewModel.iconIdleAlpha,
+                        onValueChange = { viewModel.updateIconIdleAlpha(it) },
+                        valueRange = 5f..100f,
+                        valueLabel = "${viewModel.iconIdleAlpha.toInt()}%",
+                        icon = painterResource(R.drawable.materialsymbols_ic_opacity_rounded_filled)
                     )
 
                     SettingsSlider(

@@ -181,6 +181,7 @@
      <string name="tile_wifi">Wi-Fi</string>
      <string name="tile_dnd">DND</string>
      <string name="tile_fps_info">FPS Info</string>
+
      <string name="tile_auto_rotate">Auto Rotate</string>
      <string name="tile_boost_memory">Boost Memory</string>
      <string name="tile_settings">Settings</string>
@@ -218,6 +219,19 @@
      <string name="tile_screen_record">Screen Record</string>
      <string name="tile_screenshot">Screenshot</string>
      
+     <!-- Icon Idle Transparency -->
+     <string name="icon_idle_alpha_title">Icon idle transparency</string>
+
+     <!-- Auto DND -->
+     <string name="auto_dnd_title">Auto Do Not Disturb</string>
+     <string name="auto_dnd_summary">Automatically enable DND while in-game and restore when done</string>
+
+     <!-- Controller Mapper -->
+     <string name="mapper_press_button">Press a button on your controller or keyboard\u2026</string>
+     <string name="mapper_add_point">Add tap point</string>
+     <string name="mapper_delete_point">Delete tap point</string>
+     <string name="mapper_map_controls">Map controls</string>
+
      <!-- Content Descriptions (Accessibility) -->
      <string name="cd_reject">Reject</string>
      <string name="cd_accept">Accept</string>

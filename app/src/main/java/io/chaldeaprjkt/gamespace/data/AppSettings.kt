@@ -87,6 +87,14 @@ class AppSettings @Inject constructor(private val context: Context) {
         get() = db.getBoolean(KEY_CALL_OVERLAY_ENABLED, true)
         set(point) = db.edit().putBoolean(KEY_CALL_OVERLAY_ENABLED, point).apply()
 
+    var iconIdleAlpha: Int
+        get() = db.getInt(KEY_ICON_IDLE_ALPHA, 25)
+        set(value) = db.edit().putInt(KEY_ICON_IDLE_ALPHA, value).apply()
+
+    var autoDnd: Boolean
+        get() = db.getBoolean(KEY_AUTO_DND, false)
+        set(value) = db.edit().putBoolean(KEY_AUTO_DND, value).apply()
+
     companion object {
         const val KEY_AUTO_BRIGHTNESS_DISABLE = "gamespace_auto_brightness_disabled"
         const val KEY_3SCREENSHOT_DISABLE = "gamespace_tfgesture_disabled"
@@ -101,5 +109,7 @@ class AppSettings @Inject constructor(private val context: Context) {
         const val KEY_FPS_GRAPH_ENABLED = "fps_graph_enabled"
         const val KEY_QUICK_START_APPS = "quick_start_apps"
         const val KEY_CALL_OVERLAY_ENABLED = "call_overlay_enabled"
+        const val KEY_ICON_IDLE_ALPHA = "gamespace_icon_idle_alpha"
+        const val KEY_AUTO_DND = "gamespace_auto_dnd"
     }
 }

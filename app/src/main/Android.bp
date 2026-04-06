@@ -41,6 +41,7 @@ android_app {
         "com.composables_icons-material-symbols-rounded-filled-android",
         "ax_platform_hooks",
         "androidx.palette_palette",
+        "PlatformComposeSceneTransitionLayout",
     ],
 
     kotlincflags: [

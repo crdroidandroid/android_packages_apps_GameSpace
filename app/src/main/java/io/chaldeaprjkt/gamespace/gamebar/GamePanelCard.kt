@@ -92,7 +92,8 @@ fun GamePanelCard(
     apps: List<AppInfo>,
     gameModeUtils: GameModeUtils,
     systemSettings: SystemSettings,
-    tileRepository: TileRepository
+    tileRepository: TileRepository,
+    maxHeight: Dp = Dp.Unspecified,
 ) {
     val panelWidth = 300.dp
 
@@ -129,7 +130,8 @@ fun GamePanelCard(
             interactor = interactor,
             fpsInteractor = fpsInteractor,
             time = time,
-            tileRepository = tileRepository
+            tileRepository = tileRepository,
+            maxHeight = maxHeight,
         )
     }
 }
@@ -144,15 +146,21 @@ fun GamePanelContent(
     interactor: BrightnessInteractor,
     fpsInteractor: FpsInteractor,
     time: String,
-    tileRepository: TileRepository
+    tileRepository: TileRepository,
+    maxHeight: Dp = Dp.Unspecified,
 ) {
     var isEditing by remember { mutableStateOf(false) }
 
     val scrollState = rememberScrollState()
 
+    val resolvedMaxHeight = if (maxHeight != Dp.Unspecified) maxHeight else {
+        (LocalConfiguration.current.screenHeightDp - 64).dp
+    }
+
     Column(
         modifier = Modifier
             .fillMaxWidth()
+            .heightIn(max = resolvedMaxHeight)
             .verticalScroll(scrollState)
             .padding(top = if (isEditing) 4.dp else 12.dp, start = 12.dp, bottom = 12.dp, end = 12.dp),
         verticalArrangement = Arrangement.spacedBy(12.dp)
@@ -207,7 +215,7 @@ fun PanelContent(
 
     Column(
         modifier = modifier.padding(start = 4.dp, end = 4.dp, bottom = 0.dp),
-        verticalArrangement = Arrangement.spacedBy(12.dp)
+        verticalArrangement = Arrangement.spacedBy(8.dp)
     ) {
         if (tileRepository.isBrightnessVisible.value) {
             Row(
@@ -259,9 +267,8 @@ fun PanelContent(
         if (pages.size > 1) {
             Row(
                 modifier = Modifier
-                    .align(Alignment.CenterHorizontally)
-                    .padding(top = 8.dp),
-                horizontalArrangement = Arrangement.spacedBy(6.dp)
+                    .align(Alignment.CenterHorizontally),
+                horizontalArrangement = Arrangement.spacedBy(4.dp)
             ) {
                 repeat(pages.size) { index ->
                     val isSelected = index == pagerState.currentPage
@@ -492,13 +499,12 @@ fun TileEditPanel(
 
     var activeGridOffset by remember { mutableStateOf(Offset.Zero) }
 
-    val configuration = LocalConfiguration.current
-    val maxHeight = (configuration.screenHeightDp - 64).dp
+    val localMaxHeight = (LocalConfiguration.current.screenHeightDp - 64).dp
 
     Column(
         modifier = Modifier
             .fillMaxWidth()
-            .heightIn(max = maxHeight)
+            .heightIn(max = localMaxHeight)
             .padding(top = 4.dp, start = 12.dp, end = 12.dp, bottom = 12.dp)
     ) {
         Row(
@@ -1230,14 +1236,13 @@ fun QuickStartAppIcon(
     appInfo: AppInfo,
     modifier: Modifier = Modifier
 ) {
-    val context = LocalContext.current
     val painter = rememberDrawablePainter(appInfo.icon)
     Box(
         modifier = modifier
             .size(40.dp)
             .clip(CircleShape)
             .clickable {
-                launchAppInFreeformMode(context, appInfo.packageName)
+                launchAppInFreeformMode(appInfo.packageName)
             },
         contentAlignment = Alignment.Center
     ) {
@@ -1249,12 +1254,8 @@ fun QuickStartAppIcon(
     }
 }
 
-fun launchAppInFreeformMode(context: Context, packageName: String) {
-    val intent = context.packageManager.getLaunchIntentForPackage(packageName) ?: return
-    val options = ActivityOptions.makeBasic()
-    options.launchWindowingMode = WindowConfiguration.WINDOWING_MODE_FREEFORM
-    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-    context.startActivity(intent, options.toBundle())
+fun launchAppInFreeformMode(packageName: String) {
+    FreeformLauncher.launch(packageName)
 }
 
 @Composable
@@ -1343,3 +1344,4 @@ data class BatteryInfo(
     val level: Int = -1,
     val temperatureC: Float = 0f
 )
+

@@ -67,6 +67,8 @@ import androidx.compose.material.icons.rounded.Settings
 import androidx.compose.material.icons.rounded.SportsEsports
 import androidx.compose.material3.DropdownMenu
 import androidx.compose.material3.DropdownMenuItem
+import androidx.compose.material3.Slider
+import androidx.compose.material3.SliderDefaults
 import androidx.compose.material3.ExperimentalMaterial3ExpressiveApi
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
@@ -631,6 +633,11 @@ private fun GlobalSettingsPanel(
                         onCheckedChange = { viewModel.updateDanmakuNotification(it) },
                     )
                     HubToggle(
+                        label = stringResource(R.string.auto_dnd_title),
+                        checked = viewModel.autoDnd,
+                        onCheckedChange = { viewModel.updateAutoDnd(it) },
+                    )
+                    HubToggle(
                         label = stringResource(R.string.call_overlay_enabled_title),
                         checked = viewModel.callOverlayEnabled,
                         onCheckedChange = { viewModel.updateCallOverlay(it) },
@@ -647,6 +654,14 @@ private fun GlobalSettingsPanel(
                             onCheckedChange = { viewModel.updateBypassChargeEnabled(it) },
                         )
                     }
+
+                    HubSlider(
+                        label = stringResource(R.string.icon_idle_alpha_title),
+                        value = viewModel.iconIdleAlpha,
+                        onValueChange = { viewModel.updateIconIdleAlpha(it) },
+                        valueRange = 5f..100f,
+                        valueLabel = "${viewModel.iconIdleAlpha.toInt()}%",
+                    )
 
                     Spacer(modifier = Modifier.height(12.dp))
 
@@ -729,6 +744,49 @@ private fun HubButton(
             text = text,
             style = MaterialTheme.typography.labelLarge,
             color = color.copy(alpha = 0.9f),
+        )
+    }
+}
+
+@Composable
+private fun HubSlider(
+    label: String,
+    value: Float,
+    onValueChange: (Float) -> Unit,
+    valueRange: ClosedFloatingPointRange<Float> = 0f..100f,
+    valueLabel: String,
+) {
+    Column(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(horizontal = 4.dp, vertical = 4.dp),
+    ) {
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            verticalAlignment = Alignment.CenterVertically,
+        ) {
+            Text(
+                text = label,
+                style = MaterialTheme.typography.bodyMedium,
+                color = Color.White.copy(alpha = 0.85f),
+                modifier = Modifier.weight(1f),
+            )
+            Text(
+                text = valueLabel,
+                style = MaterialTheme.typography.labelMedium,
+                color = Color.White.copy(alpha = 0.5f),
+            )
+        }
+        Slider(
+            value = value,
+            onValueChange = onValueChange,
+            valueRange = valueRange,
+            modifier = Modifier.fillMaxWidth(),
+            colors = SliderDefaults.colors(
+                thumbColor = Color.White,
+                activeTrackColor = Color.White.copy(alpha = 0.6f),
+                inactiveTrackColor = Color.White.copy(alpha = 0.12f),
+            ),
         )
     }
 }

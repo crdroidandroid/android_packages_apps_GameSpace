@@ -19,6 +19,7 @@ package io.chaldeaprjkt.gamespace.gamebar
 
 import android.annotation.SuppressLint
 import android.app.GameManager
+import android.app.NotificationManager
 import android.app.Service
 import android.content.Context
 import android.content.Intent
@@ -31,11 +32,13 @@ import android.util.Log
 import android.view.WindowManager
 import com.android.axion.platform.AxPlatformClient
 import dagger.hilt.android.AndroidEntryPoint
+import com.google.gson.Gson
 import io.chaldeaprjkt.gamespace.data.AppSettings
 import io.chaldeaprjkt.gamespace.data.GameSession
 import io.chaldeaprjkt.gamespace.data.SystemSettings
 import io.chaldeaprjkt.gamespace.gamebar.brightness.BrightnessInteractor
 import io.chaldeaprjkt.gamespace.gamebar.fps.FpsInteractor
+import io.chaldeaprjkt.gamespace.gamebar.mapper.MapperController
 import io.chaldeaprjkt.gamespace.gamebar.tiles.TileRepository
 import io.chaldeaprjkt.gamespace.utils.GameModeUtils
 import io.chaldeaprjkt.gamespace.utils.ScreenUtils
@@ -54,11 +57,16 @@ class SessionService : Hilt_SessionService() {
     @Inject lateinit var brightnessInteractor: BrightnessInteractor
     @Inject lateinit var fpsInteractor: FpsInteractor
     @Inject lateinit var tileRepository: TileRepository
+    @Inject lateinit var gson: Gson
 
     private var currentPackage: String? = null
     private lateinit var gameManager: GameManager
     private lateinit var sidebar: GameSidebar
+    private lateinit var mapperController: MapperController
     private lateinit var platform: AxPlatformClient
+
+    private var dndEnabledByUs = false
+    private var previousDndFilter = NotificationManager.INTERRUPTION_FILTER_ALL
 
     @SuppressLint("WrongConstant")
     override fun onCreate() {
@@ -73,10 +81,20 @@ class SessionService : Hilt_SessionService() {
 
         tileRepository.init(platform)
 
+        val windowManager = getSystemService(WINDOW_SERVICE) as WindowManager
+        val mainHandler = Handler(Looper.getMainLooper())
+
+        mapperController = MapperController(
+            context = this,
+            wm = windowManager,
+            handler = mainHandler,
+            gson = gson,
+        )
+
         sidebar = GameSidebar(
             context = this,
-            wm = getSystemService(WINDOW_SERVICE) as WindowManager,
-            handler = Handler(Looper.getMainLooper()),
+            wm = windowManager,
+            handler = mainHandler,
             appSettings = appSettings,
             screenUtils = screenUtils,
             danmakuService = danmakuService,
@@ -85,7 +103,8 @@ class SessionService : Hilt_SessionService() {
             gameModeUtils = gameModeUtils,
             settings = settings,
             tileRepository = tileRepository,
-            platform = platform
+            platform = platform,
+            mapperController = mapperController,
         )
         sidebar.onCreate()
     }
@@ -132,19 +151,41 @@ class SessionService : Hilt_SessionService() {
         
         applyGameModeConfig(packageName)
         
-        sidebar.onGameStart()
-        
+        applyAutoDnd()
+
+        sidebar.onGameStart(packageName)
+
         callListener.init()
     }
 
     private fun stopGameSession() {
         Log.i(TAG, "Stopping game session")
-        
+
         sidebar.onGameLeave()
         session.unregister()
         callListener.destroy()
-        
+        restoreAutoDnd()
+
         currentPackage = null
+    }
+
+    private fun applyAutoDnd() {
+        if (!appSettings.autoDnd) return
+        val nm = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+        val currentFilter = nm.currentInterruptionFilter
+        if (currentFilter == NotificationManager.INTERRUPTION_FILTER_ALL ||
+            currentFilter == NotificationManager.INTERRUPTION_FILTER_UNKNOWN) {
+            previousDndFilter = currentFilter
+            nm.setInterruptionFilter(NotificationManager.INTERRUPTION_FILTER_PRIORITY)
+            dndEnabledByUs = true
+        }
+    }
+
+    private fun restoreAutoDnd() {
+        if (!dndEnabledByUs) return
+        dndEnabledByUs = false
+        val nm = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+        nm.setInterruptionFilter(previousDndFilter)
     }
 
     private fun applyGameModeConfig(app: String) {

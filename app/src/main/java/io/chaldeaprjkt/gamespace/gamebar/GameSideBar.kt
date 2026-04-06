@@ -23,15 +23,18 @@ import android.app.ActivityTaskManager
 import android.content.*
 import android.content.res.Configuration
 import android.graphics.PixelFormat
-import android.graphics.drawable.GradientDrawable
+import android.graphics.Rect
 import android.os.Bundle
 import android.os.Handler
 import android.os.Process
+import android.os.UserHandle
+import android.provider.Settings
 import android.view.*
-import android.widget.FrameLayout
-import android.widget.ImageView
-import android.widget.TextView
 import android.window.TaskFpsCallback
+import androidx.activity.OnBackPressedDispatcher
+import androidx.activity.OnBackPressedDispatcherOwner
+import androidx.activity.compose.LocalOnBackPressedDispatcherOwner
+import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.animation.core.*
 import androidx.compose.foundation.*
 import androidx.compose.foundation.interaction.MutableInteractionSource
@@ -42,19 +45,22 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.drawBehind
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.TransformOrigin
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.platform.ComposeView
 import androidx.compose.ui.platform.LocalDensity
-import androidx.compose.ui.unit.dp
 import androidx.compose.ui.platform.ViewCompositionStrategy
+import androidx.compose.ui.unit.dp
 import androidx.lifecycle.*
 import com.android.axion.compose.lifecycle.repeatWhenAttached
 import com.android.axion.platform.AxPlatformClient
+import io.chaldeaprjkt.gamespace.BuildFlags
 import io.chaldeaprjkt.gamespace.R
 import io.chaldeaprjkt.gamespace.data.AppSettings
 import io.chaldeaprjkt.gamespace.data.SystemSettings
 import io.chaldeaprjkt.gamespace.gamebar.brightness.*
 import io.chaldeaprjkt.gamespace.gamebar.fps.*
+import io.chaldeaprjkt.gamespace.gamebar.mapper.MapperController
 import io.chaldeaprjkt.gamespace.gamebar.tiles.*
 import io.chaldeaprjkt.gamespace.utils.*
 import java.math.RoundingMode
@@ -72,9 +78,10 @@ class GameSidebar(
     private val gameModeUtils: GameModeUtils,
     private val settings: SystemSettings,
     private val tileRepository: TileRepository,
-    private val platform: AxPlatformClient
+    private val platform: AxPlatformClient,
+    private val mapperController: MapperController,
 ) {
-    private val circleLayoutParam = createCircleLayoutParam()
+    private val gameBarLayoutParam = createGameBarLayoutParam()
     private val panelLayoutParam = createPanelLayoutParam()
 
     private var halfWidth = 0
@@ -83,31 +90,41 @@ class GameSidebar(
     private var shouldClose = false
     private var panelShowing = false
 
-    private lateinit var circleView: FrameLayout
-    private var circleIcon: ImageView? = null
-    private var circleFpsText: TextView? = null
+    private lateinit var gameBarView: ComposeView
     private var panelView: View? = null
 
     private val firstPaint = Runnable { initActions() }
 
     private var circleOnLeft = false
-    private var showFps = false
-    private var circleIdleState = true
+    private val dockedOnLeftState = mutableStateOf(false)
+
+    private val noOpBackDispatcherOwner = object : OnBackPressedDispatcherOwner {
+        override val onBackPressedDispatcher = OnBackPressedDispatcher()
+        private val reg = LifecycleRegistry(this).apply {
+            currentState = Lifecycle.State.RESUMED
+        }
+        override val lifecycle: Lifecycle get() = reg
+    }
 
     private val panelDismissing = mutableStateOf(false)
 
+    private val showFpsState = mutableStateOf(false)
+    private val fpsTextState = mutableStateOf("")
+    private val isLockedState = mutableStateOf(false)
+    private val isIdleState = mutableStateOf(true)
+    private val collapseRequestState = mutableIntStateOf(0)
+    private var pillExpanded = false
+    private val pillExpandedState = mutableStateOf(false)
+    private val barTopState = mutableIntStateOf(0)
     private val taskManager by lazy { ActivityTaskManager.getService() }
 
     private val taskFpsCallback = object : TaskFpsCallback() {
         override fun onFpsReported(fps: Float) {
-            if (::circleView.isInitialized && circleView.isAttachedToWindow) {
+            if (::gameBarView.isInitialized && gameBarView.isAttachedToWindow) {
                 val formatted = DecimalFormat("#").apply {
                     roundingMode = RoundingMode.HALF_EVEN
                 }.format(fps)
-                handler.post {
-                    circleFpsText?.text = formatted
-                    updateCircleContent()
-                }
+                handler.post { fpsTextState.value = formatted }
             }
         }
     }
@@ -116,87 +133,137 @@ class GameSidebar(
         override fun onStateChanged(key: String, state: Bundle) {}
     }
 
-    @SuppressLint("ClickableViewAccessibility")
     fun onCreate() {
-        val sizePx = circleSizePx
-        val bg = GradientDrawable().apply {
-            shape = GradientDrawable.OVAL
-            setColor(0x99000000.toInt())
-        }
-
-        circleIcon = ImageView(context).apply {
-            setImageResource(R.drawable.materialsymbols_ic_sports_esports_rounded_filled)
-            setColorFilter(0xFFFFFFFF.toInt())
-            scaleType = ImageView.ScaleType.CENTER_INSIDE
-            val pad = (sizePx * 0.16f).toInt()
-            setPadding(pad, pad, pad, pad)
-        }
-
-        circleFpsText = TextView(context).apply {
-            setTextColor(0xFFFFFFFF.toInt())
-            textSize = 10f
-            gravity = Gravity.CENTER
-            visibility = View.GONE
-        }
-
-        circleView = FrameLayout(context).apply {
-            background = bg
-            layoutParams = ViewGroup.LayoutParams(sizePx, sizePx)
-            addView(circleIcon, FrameLayout.LayoutParams(
-                FrameLayout.LayoutParams.MATCH_PARENT,
-                FrameLayout.LayoutParams.MATCH_PARENT
-            ))
-            addView(circleFpsText, FrameLayout.LayoutParams(
-                FrameLayout.LayoutParams.MATCH_PARENT,
-                FrameLayout.LayoutParams.MATCH_PARENT,
-                Gravity.CENTER
-            ))
-
-            setOnClickListener {
-                circleIdleState = false
-                updateCircleAlpha()
-                showPanel()
+        gameBarView = ComposeView(context).apply {
+            repeatWhenAttached {
+                repeatOnLifecycle(Lifecycle.State.STARTED) {
+                    setViewCompositionStrategy(ViewCompositionStrategy.DisposeOnViewTreeLifecycleDestroyed)
+                    setContent {
+                        CompositionLocalProvider(
+                            LocalOnBackPressedDispatcherOwner provides noOpBackDispatcherOwner,
+                        ) {
+                            MaterialExpressiveTheme(
+                            colorScheme = dynamicDarkColorScheme(context),
+                            motionScheme = MotionScheme.expressive(),
+                        ) {
+                            GameBarView(
+                                showFps = showFpsState.value,
+                                fpsText = fpsTextState.value,
+                                isLocked = isLockedState.value,
+                                isIdle = isIdleState.value,
+                                idleAlpha = (appSettings.iconIdleAlpha / 100f).coerceAtLeast(0.05f),
+                                dockedOnLeft = dockedOnLeftState.value,
+                                mapperEnabled = BuildFlags.MAPPER_ENABLED,
+                                onShowPanel = { handler.post { showPanel() } },
+                                onMapControls = { handler.post { enterMapperEdit() } },
+                                onToggleLock = {
+                                    isLockedState.value = !isLockedState.value
+                                    Settings.Secure.putIntForUser(
+                                        context.contentResolver,
+                                        "ax_gaming_gesture_lock",
+                                        if (isLockedState.value) 1 else 0,
+                                        UserHandle.USER_CURRENT
+                                    )
+                                    scheduleIdle()
+                                },
+                                onToggleFps = {
+                                    showFpsState.value = !showFpsState.value
+                                    appSettings.showFps = showFpsState.value
+                                    updateFpsTracking()
+                                    scheduleIdle()
+                                },
+                                pillExpanded = pillExpandedState.value,
+                                barTopPx = barTopState.intValue,
+                                onExpanded = { handler.post { setPillExpanded(true) } },
+                                onCollapsed = {
+                                    handler.post { setPillExpanded(false) }
+                                    scheduleIdle()
+                                },
+                                collapseRequestKey = collapseRequestState.intValue,
+                                onDragStart = {
+                                    val loc = IntArray(2)
+                                    gameBarView.getLocationOnScreen(loc)
+                                    gameBarLayoutParam.gravity = Gravity.TOP or Gravity.START
+                                    gameBarLayoutParam.x = loc[0]
+                                    gameBarLayoutParam.y = loc[1]
+                                    runCatching { wm.updateViewLayout(gameBarView, gameBarLayoutParam) }
+                                    Pair(loc[0], loc[1])
+                                },
+                                onDragUpdate = { x, y ->
+                                    gameBarLayoutParam.x = x
+                                    gameBarLayoutParam.y = y
+                                    runCatching { wm.updateViewLayout(gameBarView, gameBarLayoutParam) }
+                                },
+                                onDragEnd = { x, y ->
+                                    circleOnLeft = x < halfWidth
+                                    dockedOnLeftState.value = circleOnLeft
+                                    appSettings.x = if (circleOnLeft) -1 else 1
+                                    appSettings.y = y
+                                    dockGameBar()
+                                    runCatching { wm.updateViewLayout(gameBarView, gameBarLayoutParam) }
+                                    scheduleIdle()
+                                },
+                            )
+                        }
+                        }
+                    }
+                }
             }
-
-            setOnTouchListener(CircleDragTouchListener())
+            addOnLayoutChangeListener { v, _, _, _, _, _, _, _, _ ->
+                v.setSystemGestureExclusionRects(
+                    listOf(Rect(0, 0, v.width, v.height))
+                )
+            }
         }
 
         updateScreenMetrics()
         danmakuService.init()
     }
 
-    fun onGameStart() {
+    fun onGameStart(packageName: String) {
+        if (BuildFlags.MAPPER_ENABLED) {
+            mapperController.onGameStart(packageName)
+        }
         platform.addListener(recordingListener)
         handler.post {
-            if (!::circleView.isInitialized) return@post
+            if (!::gameBarView.isInitialized) return@post
             runCatching {
-                dockCircle()
-                wm.addView(circleView, circleLayoutParam)
-                circleView.visibility = View.INVISIBLE
-                circleView.alpha = 0f
+                dockGameBar()
+                wm.addView(gameBarView, gameBarLayoutParam)
+                gameBarView.visibility = View.INVISIBLE
+                gameBarView.alpha = 0f
                 handler.postDelayed(firstPaint, 500)
             }
         }
     }
 
     fun onGameLeave() {
+        mapperController.onGameLeave()
         platform.removeListener(recordingListener)
         stopFpsTracking()
         shouldClose = true
+        isLockedState.value = false
+        Settings.Secure.putIntForUser(
+            context.contentResolver,
+            "ax_gaming_gesture_lock",
+            0,
+            UserHandle.USER_CURRENT
+        )
         handler.removeCallbacksAndMessages(null)
         forceRemovePanel()
-        runCatching { wm.removeViewImmediate(circleView) }
+        runCatching { wm.removeViewImmediate(gameBarView) }
     }
 
     fun onConfigurationChanged(newConfig: Configuration) {
+        mapperController.onConfigurationChanged(newConfig)
         updateScreenMetrics()
         forceRemovePanel()
-        if (circleView.visibility != View.VISIBLE) {
+        if (gameBarView.visibility != View.VISIBLE) {
             handler.removeCallbacks(firstPaint)
             handler.postDelayed({ firstPaint.run() }, 100)
         } else {
-            dockCircle()
-            runCatching { wm.updateViewLayout(circleView, circleLayoutParam) }
+            dockGameBar()
+            runCatching { wm.updateViewLayout(gameBarView, gameBarLayoutParam) }
         }
         danmakuService.updateConfiguration(newConfig)
     }
@@ -205,12 +272,12 @@ class GameSidebar(
         if (panelShowing) return
         panelShowing = true
         panelDismissing.value = false
+        handler.removeCallbacks(idleRunnable)
+        isIdleState.value = false
 
         tileRepository.refreshPlatformStates()
         fpsInteractor.start()
         brightnessInteractor.start()
-
-        runCatching { wm.removeViewImmediate(circleView) }
 
         val pv = createPanelView()
         panelView = pv
@@ -219,6 +286,7 @@ class GameSidebar(
             Process.setThreadGroupAndCpuset(Process.myPid(), Process.THREAD_GROUP_TOP_APP)
             Process.setProcessGroup(Process.myPid(), Process.THREAD_GROUP_TOP_APP)
             wm.addView(pv, panelLayoutParam)
+            gameBarView.visibility = View.GONE
         } catch (_: Exception) {
             brightnessInteractor.dispose()
             fpsInteractor.dispose()
@@ -246,14 +314,8 @@ class GameSidebar(
             Process.setProcessGroup(Process.myPid(), 9)
         }
 
-        if (!shouldClose && ::circleView.isInitialized) {
-            runCatching {
-                if (!circleView.isAttachedToWindow) {
-                    wm.addView(circleView, circleLayoutParam)
-                }
-            }
-            circleView.alpha = 0f
-            circleView.animate().alpha(0.7f).setDuration(200).start()
+        if (!shouldClose) {
+            gameBarView.visibility = View.VISIBLE
             scheduleIdle()
         }
     }
@@ -270,6 +332,7 @@ class GameSidebar(
             runCatching { wm.removeViewImmediate(pv) }
             panelView = null
         }
+        if (::gameBarView.isInitialized) gameBarView.visibility = View.VISIBLE
     }
 
     private fun createPanelView(): ComposeView {
@@ -313,17 +376,42 @@ class GameSidebar(
             },
         )
 
-        val scrimAlpha by animateFloatAsState(
-            targetValue = if (show) 0.45f else 0f,
-            animationSpec = tween(if (show) 300 else 200),
-            label = "scrim_alpha",
-        )
-
         val panelAlpha by animateFloatAsState(
             targetValue = if (show) 1f else 0f,
-            animationSpec = tween(if (show) 250 else 150),
+            animationSpec = tween(if (show) 280 else 180),
             label = "panel_alpha",
         )
+
+        val panelScale by animateFloatAsState(
+            targetValue = if (show) 1f else 0.88f,
+            animationSpec = tween(
+                durationMillis = if (show) 350 else 220,
+                easing = if (show) FastOutSlowInEasing else FastOutLinearInEasing,
+            ),
+            label = "panel_scale",
+        )
+
+        val density = LocalDensity.current
+        val barTopPx = gameBarLayoutParam.y
+        val barTopDp = with(density) { barTopPx.toDp() }
+        val navBottomDp = with(density) {
+            context.resources.getDimensionPixelSize(
+                com.android.internal.R.dimen.navigation_bar_height
+            ).toDp()
+        }
+        val screenHeightDp = with(density) { safeHeight.toDp() }
+        val spaceBelow = (screenHeightDp - barTopDp - navBottomDp - 16.dp).coerceAtLeast(0.dp)
+        val spaceAbove = (barTopDp - navBottomDp - 16.dp).coerceAtLeast(0.dp)
+        val bottomAligned = spaceBelow < 240.dp && spaceAbove > spaceBelow
+        val panelMaxHeight = (if (bottomAligned) spaceAbove else spaceBelow).coerceIn(240.dp, 520.dp)
+        val alignment = when {
+            bottomAligned && circleOnLeft -> Alignment.BottomStart
+            bottomAligned && !circleOnLeft -> Alignment.BottomEnd
+            !bottomAligned && circleOnLeft -> Alignment.TopStart
+            else -> Alignment.TopEnd
+        }
+        val transformOriginX = if (circleOnLeft) 0f else 1f
+        val transformOriginY = if (bottomAligned) 1f else 0f
 
         Box(
             modifier = Modifier
@@ -332,18 +420,23 @@ class GameSidebar(
                     interactionSource = remember { MutableInteractionSource() },
                     indication = null,
                 ) { if (!dismissing) requestDismissPanel() },
-            contentAlignment = if (circleOnLeft) Alignment.TopStart
-                               else Alignment.TopEnd,
+            contentAlignment = alignment,
         ) {
-            val density = LocalDensity.current.density
-            val topOffsetDp = (circleLayoutParam.y / density).dp
-
+            val edgePadding = if (bottomAligned) navBottomDp + 8.dp else barTopDp
             Box(
                 modifier = Modifier
-                    .padding(start = 12.dp, top = topOffsetDp, end = 12.dp)
+                    .padding(
+                        start = 12.dp,
+                        end = 12.dp,
+                        top = if (!bottomAligned) edgePadding else 0.dp,
+                        bottom = if (bottomAligned) edgePadding else 0.dp,
+                    )
                     .graphicsLayer {
                         translationX = slideOffset
                         alpha = panelAlpha
+                        scaleX = panelScale
+                        scaleY = panelScale
+                        transformOrigin = TransformOrigin(transformOriginX, transformOriginY)
                     }
                     .clickable(
                         interactionSource = remember { MutableInteractionSource() },
@@ -357,13 +450,39 @@ class GameSidebar(
                     gameModeUtils = gameModeUtils,
                     systemSettings = settings,
                     tileRepository = tileRepository,
+                    maxHeight = panelMaxHeight,
                 )
             }
         }
     }
 
+    private fun setPillExpanded(expanded: Boolean) {
+        if (pillExpanded == expanded) return
+        pillExpanded = expanded
+        pillExpandedState.value = expanded
+        if (expanded) {
+            barTopState.intValue = gameBarLayoutParam.y
+            gameBarLayoutParam.width = WindowManager.LayoutParams.MATCH_PARENT
+            gameBarLayoutParam.height = WindowManager.LayoutParams.MATCH_PARENT
+            gameBarLayoutParam.flags = gameBarLayoutParam.flags and
+                WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL.inv()
+        } else {
+            gameBarLayoutParam.width = WindowManager.LayoutParams.WRAP_CONTENT
+            gameBarLayoutParam.height = WindowManager.LayoutParams.WRAP_CONTENT
+            gameBarLayoutParam.flags = gameBarLayoutParam.flags or
+                WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL
+            dockGameBar()
+        }
+        runCatching { wm.updateViewLayout(gameBarView, gameBarLayoutParam) }
+    }
+
+    private fun collapseVerticalPill() {
+        if (!pillExpanded) return
+        collapseRequestState.intValue = collapseRequestState.intValue + 1
+    }
+
     private fun updateFpsTracking() {
-        if (showFps) {
+        if (showFpsState.value) {
             taskManager?.focusedRootTaskInfo?.taskId?.let {
                 wm.registerTaskFpsCallback(it, Runnable::run, taskFpsCallback)
             }
@@ -376,50 +495,6 @@ class GameSidebar(
         runCatching { wm.unregisterTaskFpsCallback(taskFpsCallback) }
     }
 
-    private fun updateCircleContent() {
-        if (showFps) {
-            circleIcon?.visibility = View.GONE
-            circleFpsText?.visibility = View.VISIBLE
-        } else {
-            circleIcon?.visibility = View.VISIBLE
-            circleFpsText?.visibility = View.GONE
-        }
-    }
-
-    private fun updateCircleAlpha() {
-        val target = if (circleIdleState) 0.25f else 0.7f
-        circleView.animate().cancel()
-        circleView.animate().alpha(target).setDuration(400).start()
-    }
-
-    private val circleSizePx get() = (CIRCLE_SIZE_DP * context.resources.displayMetrics.density).toInt()
-
-    private fun createCircleLayoutParam() = WindowManager.LayoutParams(
-        WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY,
-        WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE or
-            WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL or
-            WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN,
-        PixelFormat.TRANSLUCENT
-    ).apply {
-        width = circleSizePx
-        height = circleSizePx
-        layoutInDisplayCutoutMode = WindowManager.LayoutParams.LAYOUT_IN_DISPLAY_CUTOUT_MODE_ALWAYS
-        preferMinimalPostProcessing = true
-        gravity = Gravity.TOP or Gravity.END
-    }
-
-    private fun createPanelLayoutParam() = WindowManager.LayoutParams(
-        WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY,
-        WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE or
-            WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN,
-        PixelFormat.TRANSLUCENT
-    ).apply {
-        width = WindowManager.LayoutParams.MATCH_PARENT
-        height = WindowManager.LayoutParams.MATCH_PARENT
-        layoutInDisplayCutoutMode = WindowManager.LayoutParams.LAYOUT_IN_DISPLAY_CUTOUT_MODE_ALWAYS
-        preferMinimalPostProcessing = true
-    }
-
     private fun updateScreenMetrics() {
         val bounds = wm.maximumWindowMetrics.bounds
         halfWidth = bounds.width() / 2
@@ -429,43 +504,48 @@ class GameSidebar(
 
     private fun initActions() {
         if (shouldClose) return
-        circleView.visibility = View.VISIBLE
-        circleView.animate().alpha(0.7f).setDuration(300).start()
+        gameBarView.visibility = View.VISIBLE
+        gameBarView.animate().alpha(1f).setDuration(300).start()
         circleOnLeft = appSettings.x < 0
-        circleLayoutParam.y = appSettings.y
-        dockCircle()
-        runCatching { wm.updateViewLayout(circleView, circleLayoutParam) }
-        showFps = appSettings.showFps
-        updateCircleContent()
+        dockedOnLeftState.value = circleOnLeft
+        gameBarLayoutParam.y = appSettings.y
+        dockGameBar()
+        runCatching { wm.updateViewLayout(gameBarView, gameBarLayoutParam) }
+        showFpsState.value = appSettings.showFps
         updateFpsTracking()
         scheduleIdle()
     }
 
-    private fun dockCircle() {
-        circleLayoutParam.gravity = Gravity.TOP or (if (circleOnLeft) Gravity.START else Gravity.END)
-        circleLayoutParam.x = 0
-        circleLayoutParam.y = circleLayoutParam.y.coerceIn(safeArea, safeHeight)
+    private fun dockGameBar() {
+        gameBarLayoutParam.gravity = Gravity.TOP or (if (circleOnLeft) Gravity.START else Gravity.END)
+        gameBarLayoutParam.x = 0
+        gameBarLayoutParam.y = gameBarLayoutParam.y.coerceIn(safeArea, safeHeight)
     }
 
     private val idleRunnable = Runnable {
-        circleIdleState = true
-        updateCircleAlpha()
+        isIdleState.value = true
+    }
+
+    private fun enterMapperEdit() {
+        forceRemovePanel()
+        gameBarView.animate().alpha(0f).setDuration(150).withEndAction {
+            gameBarView.visibility = View.GONE
+        }.start()
+        mapperController.onEditStarted = null
+        mapperController.onEditFinished = {
+            handler.post {
+                gameBarView.visibility = View.VISIBLE
+                gameBarView.animate().alpha(1f).setDuration(200).start()
+                scheduleIdle()
+            }
+        }
+        mapperController.enterEditMode()
     }
 
     private fun scheduleIdle() {
         handler.removeCallbacks(idleRunnable)
-        circleIdleState = false
-        updateCircleAlpha()
+        isIdleState.value = false
         handler.postDelayed(idleRunnable, IDLE_TIMEOUT_MS)
-    }
-
-    private fun View.fadeIn(duration: Long = 300L) {
-        animate().cancel()
-        if (visibility != View.VISIBLE || alpha < 1f) {
-            alpha = 0f
-            visibility = View.VISIBLE
-            animate().alpha(1f).setDuration(duration).start()
-        }
     }
 
     private fun getQuickStartApps(context: Context): List<AppInfo> {
@@ -485,67 +565,33 @@ class GameSidebar(
         return appList
     }
 
-    @SuppressLint("ClickableViewAccessibility")
-    private inner class CircleDragTouchListener : View.OnTouchListener {
-        private var startX = 0f
-        private var startY = 0f
-        private var startParamX = 0
-        private var startParamY = 0
-        private var isDragging = false
-        private val touchSlop = ViewConfiguration.get(context).scaledTouchSlop
+    private fun createGameBarLayoutParam() = WindowManager.LayoutParams(
+        WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY,
+        WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE or
+            WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL or
+            WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN,
+        PixelFormat.TRANSLUCENT
+    ).apply {
+        width = WindowManager.LayoutParams.WRAP_CONTENT
+        height = WindowManager.LayoutParams.WRAP_CONTENT
+        layoutInDisplayCutoutMode = WindowManager.LayoutParams.LAYOUT_IN_DISPLAY_CUTOUT_MODE_ALWAYS
+        preferMinimalPostProcessing = true
+        gravity = Gravity.TOP or Gravity.END
+    }
 
-        override fun onTouch(v: View, event: MotionEvent): Boolean {
-            when (event.action) {
-                MotionEvent.ACTION_DOWN -> {
-                    startX = event.rawX
-                    startY = event.rawY
-                    isDragging = false
-                    circleIdleState = false
-                    updateCircleAlpha()
-                    return false
-                }
-                MotionEvent.ACTION_MOVE -> {
-                    val dx = event.rawX - startX
-                    val dy = event.rawY - startY
-                    if (!isDragging && (dx * dx + dy * dy) > touchSlop * touchSlop) {
-                        isDragging = true
-                        val loc = IntArray(2)
-                        circleView.getLocationOnScreen(loc)
-                        circleLayoutParam.gravity = Gravity.TOP or Gravity.START
-                        circleLayoutParam.x = loc[0]
-                        circleLayoutParam.y = loc[1]
-                        startParamX = loc[0]
-                        startParamY = loc[1]
-                        runCatching { wm.updateViewLayout(circleView, circleLayoutParam) }
-                    }
-                    if (isDragging) {
-                        circleLayoutParam.x = startParamX + dx.toInt()
-                        circleLayoutParam.y = startParamY + dy.toInt()
-                        runCatching { wm.updateViewLayout(circleView, circleLayoutParam) }
-                        return true
-                    }
-                    return false
-                }
-                MotionEvent.ACTION_UP, MotionEvent.ACTION_CANCEL -> {
-                    if (isDragging) {
-                        circleOnLeft = circleLayoutParam.x < 0
-                        appSettings.x = if (circleOnLeft) -1 else 1
-                        appSettings.y = circleLayoutParam.y
-                        dockCircle()
-                        runCatching { wm.updateViewLayout(circleView, circleLayoutParam) }
-                        scheduleIdle()
-                        return true
-                    }
-                    scheduleIdle()
-                    return false
-                }
-            }
-            return false
-        }
+    private fun createPanelLayoutParam() = WindowManager.LayoutParams(
+        WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY,
+        WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE or
+            WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN,
+        PixelFormat.TRANSLUCENT
+    ).apply {
+        width = WindowManager.LayoutParams.MATCH_PARENT
+        height = WindowManager.LayoutParams.MATCH_PARENT
+        layoutInDisplayCutoutMode = WindowManager.LayoutParams.LAYOUT_IN_DISPLAY_CUTOUT_MODE_ALWAYS
+        preferMinimalPostProcessing = true
     }
 
     companion object {
-        private const val CIRCLE_SIZE_DP = 36
         private const val IDLE_TIMEOUT_MS = 3000L
     }
 }

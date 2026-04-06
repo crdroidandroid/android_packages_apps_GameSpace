@@ -67,6 +67,12 @@ class SettingsViewModel @Inject constructor(
     var bypassChargeEnabled by mutableStateOf(systemSettings.bypassChargeEnabled)
         private set
 
+    var iconIdleAlpha by mutableFloatStateOf(appSettings.iconIdleAlpha.toFloat())
+        private set
+
+    var autoDnd by mutableStateOf(appSettings.autoDnd)
+        private set
+
     val isBypassSupported = Build.MANUFACTURER.equals("Google", ignoreCase = true) 
             || SystemProperties.getBoolean("persist.sys.battery_bypass_supported", false)
 
@@ -122,6 +128,16 @@ class SettingsViewModel @Inject constructor(
     fun updateBypassChargeEnabled(enabled: Boolean) {
         bypassChargeEnabled = enabled
         systemSettings.bypassChargeEnabled = enabled
+    }
+
+    fun updateIconIdleAlpha(alpha: Float) {
+        iconIdleAlpha = alpha
+        appSettings.iconIdleAlpha = alpha.toInt()
+    }
+
+    fun updateAutoDnd(enabled: Boolean) {
+        autoDnd = enabled
+        appSettings.autoDnd = enabled
     }
 
     fun loadRegisteredGames() {
