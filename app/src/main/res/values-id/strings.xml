@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright (C) Chaldeaprjkt
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+         http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+  -->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="memory_boost">Tingkatkan memori</string>
+    <string name="memory_boost_summary">Optimalkan memori</string>
+    <string name="boost_memory">Memori ditingkatkan</string>
+    <string name="quick_start_apps_title">Aplikasi Mulai Cepat</string>
+    <string name="quick_start_apps_summary">Pilih aplikasi untuk diluncurkan dengan cepat</string>
+    <string name="settings_title">Ruang Game</string>
+    <string name="settings_summary">Kelola penyiapan game Anda</string>
+    <string name="app_selector_label">Pilih game Anda</string>
+    <string name="auto_brightness_disabled_title">Nonaktifkan kecerahan otomatis</string>
+    <string name="auto_brightness_disabled_summary">Jaga kecerahan tetap stabil saat di dalam game</string>
+    <string name="heads_up_disabled_summary">Nonaktifkan notifikasi mengambang saat di dalam game</string>
+    <string name="in_game_preferences_title">Pengaturan di-dalam game</string>
+    <string name="game_list_title">Perpustakaan</string>
+    <string name="game_remove_message">Apakah Anda yakin ingin menghapus %1$s dari pustaka Anda?</string>
+    <string name="app_search_title">Pencarian</string>
+    <string name="three_screenshot_disabled_summary">Nonaktifkan sementara gestur usap tiga jari saat di dalam game</string>
+    <string name="three_screenshot_disabled_title">Nonaktifkan gestur usap tiga jari</string>
+    <string name="chaldea">chaldeaprjkt</string>
+    <string name="state_enabled">Diaktifkan</string>
+    <string name="state_disabled">Dinonaktifkan</string>
+    <string name="state_default">Bawaan</string>
+    <!-- Game Mode Name - sorted by GameManager's enum, do not modify the sequence! -->
+    <string name="game_mode_title">Mode</string>
+    <string-array name="game_mode_names">
+        <item>Tidak didukung</item>
+        <item>Standar</item>
+        <item>Performa</item>
+        <item>Baterai</item>
+    </string-array>
+    <string name="fps_Info_title">Info FPS</string>
+    <string name="stay_awake_title">Tetap bangun</string>
+    <string name="stay_awake_summary">Tetapkan layar bangun saat didalam game</string>
+    <string name="lock_gesture_title">Kunci gestur</string>
+    <string name="ringer_mode_title">Mode dering di dalam game</string>
+    <string-array name="ringer_mode_entries">
+        <item>Senyap</item>
+        <item>Getaran</item>
+        <item>Normal</item>
+        <item>Jangan ubah</item>
+    </string-array>
+    <string name="suppress_fullscreen_intent_title">Blokir acara layar penuh</string>
+    <string name="suppress_fullscreen_intent_summary">Cegah acara layar penuh seperti panggilan masuk agar tidak muncul saat di dalam game</string>
+    <string name="per_app_title">Konfigurasi game</string>
+    <string name="per_app_mode_title">Mode pilihan</string>
+    <string-array name="per_app_preferred_mode_entries">
+        <item>Standar</item>
+        <item>Performa</item>
+        <item>Baterai</item>
+    </string-array>
+    <string name="per_app_angle_title">Graphics driver</string>
+    <string name="per_app_unregister">Hapus %1$s dari pustaka</string>
+    <string name="adb_disabled_summary">Nonaktifkan sementara proses debug USB ADB saat di dalam game</string>
+    <string name="adb_disabled_title">Nonaktifkan proses debug USB</string>
+    <string name="ram_usage">Pengunaan Ram </string>
+    <!-- Notification Mode -->
+    <string name="notification_mode_title">Mode notifikasi</string>
+    <string name="notification_mode_hide">Jangan tampilkan</string>
+    <string name="notification_mode_headsup">Tampilkan sebagai notifikasi mengambang</string>
+    <string name="notification_mode_reticker">Tampilkan sebagai reTicker</string>
+    <string name="notification_mode_danmaku">Tampilkan sebagai Danmaku</string>
+    <string name="notification_hide">Sembunyikan</string>
+    <string name="notification_headsup">Notifikasi Mengambang</string>
+    <string name="notification_reticker">reTicker</string>
+    <string name="notification_danmaku">Danmaku</string>
+    <!-- Ringer Mode -->
+    <string name="in_game_calls_title">Panggilan dalan game</string>
+    <string name="in_game_calls_no_action">No action</string>
+    <string name="in_game_calls_auto_answer">Otomatis jawab</string>
+    <string name="in_game_calls_auto_reject">Otomatis tolak</string>
+    <string name="in_game_calls_received_number">Menerima panggilan dari %1$s</string>
+    <string name="in_game_calls_rejected_number">Menolak panggilan dari %1$s</string>
+    <!-- Danmaku Notification Mode -->
+    <string name="danmaku_notification_mode_title">Mode Notifikasi Danmaku</string>
+    <string name="danmaku_notification_mode_summary">Tampilkan notifikasi sebagai danmaku alias komentar peluru saat game aktif</string>
+    <!-- Custom seekbar -->
+    <string name="custom_seekbar_value">Nilai: <xliff:g id="v">%s</xliff:g></string>
+    <string name="custom_seekbar_default_value">secara bawaan</string>
+    <string name="custom_seekbar_default_value_to_set">Nilai default: <xliff:g id="v">%s</xliff:g>\nTekan lama untuk menyetel</string>
+    <string name="custom_seekbar_default_value_is_set">Nilai bawaan telah disetel</string>
+    <string name="gamespace_menu_opacity_title">Tingkat opasitas menu hamparan</string>
+    <!-- Bypass charging -->
+    <string name="bypass_charge_enabled_summary">Bypass pengisian daya</string>
+    <string name="bypass_charge_enabled_title">Aktifkan bypass pengisian daya saat bermain game</string>
+    <string name="gamespace_running">Ruang Game sedang berjalan</string>
+    <string name="app_locked_message">Aplikasi ini terkunci. silahkan untuk membukanya terlebih dahulu.</string>
+    <string name="call_overlay_enabled_title">Overlay telpon</string>
+    <string name="call_overlay_enabled_summary">Tampilkan hamparan panggilan minimal untuk menjawab/menolak panggilan</string>
+    <!-- UI Strings -->
+    <string name="select_apps_to_launch">Pilih aplikasi untuk diluncurkan dengan cepat</string>
+    <string name="add_game">Tambahkan game</string>
+    <string name="expanded">Diperluas</string>
+    <string name="collapsed">Diciutkan</string>
+    <string name="toggle_menu">Alihkan menu</string>
+    <string name="close_menu">Tutup menu</string>
+    <string name="notifications">Notifikasi</string>
+    <string name="display_gestures">Tampilan &amp; Gestur</string>
+    <string name="no_games_added">Belum ada game yang ditambahkan</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Batal</string>
+    <string name="remove">Hapus</string>
+    <string name="back">Kembali</string>
+    <string name="game_mode">Mode Game</string>
+    <string name="graphics">Grafis</string>
+    <string name="remove_from_library">Hapus dari pustaka</string>
+    <string name="registered_game">Game Terdaftar</string>
+    <string name="game_space">Ruang Game</string>
+    <!-- Ringer Mode Options -->
+    <string name="ringer_mode_silent">Senyap</string>
+    <string name="ringer_mode_vibrate">Getaran</string>
+    <string name="ringer_mode_normal">Normal</string>
+    <string name="ringer_mode_no_change">Jangan ubah</string>
+    <!-- Game Mode Labels -->
+    <string name="game_mode_standard">Standar</string>
+    <string name="game_mode_performance">Performa</string>
+    <string name="game_mode_battery">Baterai</string>
+    <!-- Game Panel -->
+    <string name="save">Simpan</string>
+    <string name="panel_options">Opsi Panel</string>
+    <string name="brightness_slider">Kontrol Kecerahan</string>
+    <string name="fps_graph">Grafik FPS</string>
+    <string name="selected_tiles">Ubin Terpilih</string>
+    <string name="available_tiles">Ubin Tersedia</string>
+    <string name="drag_tiles_here">Drag tiles here</string>
+    <string name="all_tiles_added">All tiles added</string>
+    <string name="fps_stats">min %1$d | avg %2$d | max %3$d</string>
+    <string name="add">Tambah</string>
+    <string name="view_details">View Details</string>
+    <string name="launch_game">Launch Game</string>
+    <string name="remove_game">Remove Game</string>
+    <string name="empty_library">No games in your library</string>
+    <string name="add_first_game">Add Your First Game</string>
+    <string name="per_app_settings">Game Settings</string>
+    <string name="search_apps">Search apps\u2026</string>
+    <string name="about_github">GitHub</string>
+    <string name="about_translate">Translate</string>
+    <string name="about_donate">Donate</string>
+    <!-- Tile Labels -->
+    <string name="tile_danmaku">Danmaku</string>
+    <string name="tile_stay_awake">Tetap bangun</string>
+    <string name="tile_wifi">Wi-Fi</string>
+    <string name="tile_dnd">Jangan Ganggu</string>
+    <string name="tile_fps_info">Info FPS</string>
+    <string name="tile_auto_rotate">Putar Otomatis</string>
+    <string name="tile_boost_memory">Tingkatkan Memori</string>
+    <string name="tile_settings">Setelan</string>
+    <string name="tile_airplane_mode">Mode Pesawat</string>
+    <string name="tile_bluetooth">Bluetooth</string>
+    <string name="tile_mobile_data">Data Seluler</string>
+    <string name="tile_touch_boost">Boost Sentuhan</string>
+    <string name="tile_flashlight">Senter</string>
+    <string name="tile_dark_mode">Dark Mode</string>
+    <string name="tile_location">Location</string>
+    <string name="tile_battery_saver">Battery Saver</string>
+    <string name="tile_hotspot">Hotspot</string>
+    <string name="tile_nfc">NFC</string>
+    <string name="tile_night_light">Night Light</string>
+    <string name="tile_aod">Always On Display</string>
+    <string name="tile_data_saver">Data Saver</string>
+    <string name="tile_color_inversion">Color Inversion</string>
+    <string name="tile_color_correction">Color Correction</string>
+    <string name="tile_reduce_brightness">Reduce Brightness</string>
+    <string name="tile_one_handed">One Handed</string>
+    <string name="tile_heads_up">Notifikasi Mengambang</string>
+    <string name="tile_auto_sync">Auto Sync</string>
+    <string name="tile_camera_privacy">Kamera</string>
+    <string name="tile_mic_privacy">Microphone</string>
+    <string name="tile_work_profile">Work Profile</string>
+    <string name="tile_usb_tether">USB Tethering</string>
+    <string name="tile_dream">Screen Saver</string>
+    <string name="tile_reading_mode">Reading Mode</string>
+    <string name="tile_power_share">Power Share</string>
+    <string name="tile_caffeine">Caffeine</string>
+    <string name="tile_vpn">VPN</string>
+    <string name="tile_cast">Cast</string>
+    <string name="tile_profiles">Profiles</string>
+    <string name="tile_smart_pixels">Smart Pixels</string>
+    <string name="tile_screen_record">Screen Record</string>
+    <string name="tile_screenshot">Tangkapan layar</string>
+    <!-- Icon Idle Transparency -->
+    <string name="icon_idle_alpha_title">Icon idle transparency</string>
+    <!-- Auto DND -->
+    <string name="auto_dnd_title">Auto Do Not Disturb</string>
+    <string name="auto_dnd_summary">Automatically enable DND while in-game and restore when done</string>
+    <!-- Controller Mapper -->
+    <string name="mapper_press_button">Press a button on your controller or keyboard\u2026</string>
+    <string name="mapper_add_point">Add tap point</string>
+    <string name="mapper_delete_point">Delete tap point</string>
+    <string name="mapper_map_controls">Map controls</string>
+    <!-- Content Descriptions (Accessibility) -->
+    <string name="cd_reject">Tolak</string>
+    <string name="cd_accept">Terima</string>
+    <string name="cd_caller_photo">Foto penelepon</string>
+    <string name="cd_dismiss">Abaikan</string>
+    <string name="cd_edit_tiles">Edit ubin</string>
+    <string name="cd_collapse">Runtuh</string>
+    <string name="cd_expand">Perluas</string>
+</resources>

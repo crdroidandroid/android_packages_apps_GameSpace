@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright (C) Chaldeaprjkt
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+         http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+  -->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="memory_boost">Belleği güçlendir</string>
+    <string name="memory_boost_summary">Belleği optimize et</string>
+    <string name="boost_memory">Bellek güçlendirildi</string>
+    <string name="quick_start_apps_title">Hızlı Başlangıç Uygulamaları</string>
+    <string name="quick_start_apps_summary">Hızlı başlatmak için uygulamaları seçin</string>
+    <string name="settings_title">Oyun Sahası</string>
+    <string name="settings_summary">Oyun kurulumunu yönetin</string>
+    <string name="app_selector_label">Oyunu seçin</string>
+    <string name="auto_brightness_disabled_title">Otomatik parlaklığı devre dışı bırakın</string>
+    <string name="auto_brightness_disabled_summary">Oyun içindeyken parlaklığı sabit tutun</string>
+    <string name="heads_up_disabled_summary">Oyun sırasında açılır bildirimleri devre dışı bırak</string>
+    <string name="in_game_preferences_title">Oyun içi seçenekleri</string>
+    <string name="game_list_title">Kütüphane</string>
+    <string name="game_remove_message">%1$s arşivden kaldırmak istediğinizden emin misiniz?</string>
+    <string name="app_search_title">Ara</string>
+    <string name="three_screenshot_disabled_summary">Oyundayken üç parmakla kaydırma hareketini geçici olarak devre dışı bırakın</string>
+    <string name="three_screenshot_disabled_title">Üç parmakla kaydırma hareketini devre dışı bırakın</string>
+    <string name="chaldea">chaldeaprjkt</string>
+    <string name="state_enabled">Etkinleştirildi</string>
+    <string name="state_disabled">Devre Dışı</string>
+    <string name="state_default">Varsayılan</string>
+    <!-- Game Mode Name - sorted by GameManager's enum, do not modify the sequence! -->
+    <string name="game_mode_title">Mod</string>
+    <string-array name="game_mode_names">
+        <item>Desteklenmiyor</item>
+        <item>Standart</item>
+        <item>Performans</item>
+        <item>Pil</item>
+    </string-array>
+    <string name="fps_Info_title">FPS Bilgisi</string>
+    <string name="stay_awake_title">Uyanık Kal</string>
+    <string name="stay_awake_summary">Oyundayken ekranı uyanık tutun</string>
+    <string name="lock_gesture_title">Kilitleme hareketi</string>
+    <string name="ringer_mode_title">Oyun içi zil modu</string>
+    <string-array name="ringer_mode_entries">
+        <item>Sessiz</item>
+        <item>Titreşim</item>
+        <item>Normal</item>
+        <item>Değiştirme</item>
+    </string-array>
+    <string name="suppress_fullscreen_intent_title">Tam ekran etkinliğini engelle</string>
+    <string name="suppress_fullscreen_intent_summary">Oyun içindeyken gelen aramalar gibi tam ekran etkinliklerinin görünmesini engelleyin</string>
+    <string name="per_app_title">Oyunu Yapılandır</string>
+    <string name="per_app_mode_title">Tercih Edilen Mod</string>
+    <string-array name="per_app_preferred_mode_entries">
+        <item>Standart</item>
+        <item>Performans</item>
+        <item>Pil</item>
+    </string-array>
+    <string name="per_app_angle_title">Graphics driver</string>
+    <string name="per_app_unregister">%1$s kütüphaneden kaldır</string>
+    <string name="adb_disabled_summary">Oyun sırasında USB ADB hata ayıklamasını geçici olarak devre dışı bırakın</string>
+    <string name="adb_disabled_title">USB hata ayıklamasını devre dışı bırak</string>
+    <string name="ram_usage">Bellek kullanımı: </string>
+    <!-- Notification Mode -->
+    <string name="notification_mode_title">Bildirim modu</string>
+    <string name="notification_mode_hide">Gösterme</string>
+    <string name="notification_mode_headsup">Açılır bildirim olarak göster</string>
+    <string name="notification_mode_reticker">ReTicker olarak göster</string>
+    <string name="notification_mode_danmaku">Danmaku olarak göster</string>
+    <string name="notification_hide">Gizle</string>
+    <string name="notification_headsup">Açılır Bildirimler</string>
+    <string name="notification_reticker">reTicker</string>
+    <string name="notification_danmaku">Danmaku</string>
+    <!-- Ringer Mode -->
+    <string name="in_game_calls_title">Oyun içi çağrı</string>
+    <string name="in_game_calls_no_action">Eylem yok</string>
+    <string name="in_game_calls_auto_answer">Otomatik yanıtla</string>
+    <string name="in_game_calls_auto_reject">Otomatik reddet</string>
+    <string name="in_game_calls_received_number">%1$s kullanıcısından gelen arama</string>
+    <string name="in_game_calls_rejected_number">%1$s kullanıcısının araması reddedildi</string>
+    <!-- Danmaku Notification Mode -->
+    <string name="danmaku_notification_mode_title">Danmaku Bildirim modu</string>
+    <string name="danmaku_notification_mode_summary">Oyun etkinken bildirimleri danmaku namıdiğer uçan yorumlar olarak göster</string>
+    <!-- Custom seekbar -->
+    <string name="custom_seekbar_value">Değer: <xliff:g id="v">%s</xliff:g></string>
+    <string name="custom_seekbar_default_value">varsayılan olarak</string>
+    <string name="custom_seekbar_default_value_to_set">Varsayılan değer: <xliff:g id="v">%s</xliff:g>\nAyarlamak için uzun basın</string>
+    <string name="custom_seekbar_default_value_is_set">Varsayılan değer ayarlandı</string>
+    <string name="gamespace_menu_opacity_title">Arayüz menüsü şeffaflık seviyesi</string>
+    <!-- Bypass charging -->
+    <string name="bypass_charge_enabled_summary">Şarjı engelle</string>
+    <string name="bypass_charge_enabled_title">Oyun oynarken şarj engellemeyi etkinleştir</string>
+    <string name="gamespace_running">Oyun Alanı çalışıyor</string>
+    <string name="app_locked_message">Bu uygulama kilitli. Önce kilidini açın.</string>
+    <string name="call_overlay_enabled_title">Arama penceresi</string>
+    <string name="call_overlay_enabled_summary">Aramaları yanıtlamak veya reddetmek için minimal arama arayüzünü göster</string>
+    <!-- UI Strings -->
+    <string name="select_apps_to_launch">Hızlı başlatmak için uygulamaları seçin</string>
+    <string name="add_game">Oyun ekle</string>
+    <string name="expanded">Genişletildi</string>
+    <string name="collapsed">Daraltıldı</string>
+    <string name="toggle_menu">Menüyü Aç/Kapat</string>
+    <string name="close_menu">Menüyü kapat</string>
+    <string name="notifications">Bildirimler</string>
+    <string name="display_gestures">Ekran &amp; Hareketler</string>
+    <string name="no_games_added">Henüz oyun eklenmedi</string>
+    <string name="ok">Tamam</string>
+    <string name="cancel">Vazgeç</string>
+    <string name="remove">Sil</string>
+    <string name="back">Geri</string>
+    <string name="game_mode">Oyun Modu</string>
+    <string name="graphics">Grafikler</string>
+    <string name="remove_from_library">Kütüphaneden sil</string>
+    <string name="registered_game">Kayıtlı Oyun</string>
+    <string name="game_space">Oyun Sahası</string>
+    <!-- Ringer Mode Options -->
+    <string name="ringer_mode_silent">Sessiz</string>
+    <string name="ringer_mode_vibrate">Titreşim</string>
+    <string name="ringer_mode_normal">Normal</string>
+    <string name="ringer_mode_no_change">Değiştirme</string>
+    <!-- Game Mode Labels -->
+    <string name="game_mode_standard">Standart</string>
+    <string name="game_mode_performance">Performans</string>
+    <string name="game_mode_battery">Pil</string>
+    <!-- Game Panel -->
+    <string name="save">Kaydet</string>
+    <string name="panel_options">Panel Seçenekleri</string>
+    <string name="brightness_slider">Parlaklık Kaydırıcısı</string>
+    <string name="fps_graph">FPS Grafiği</string>
+    <string name="selected_tiles">Seçili Karolar</string>
+    <string name="available_tiles">Mevcut Karolar</string>
+    <string name="drag_tiles_here">Drag tiles here</string>
+    <string name="all_tiles_added">All tiles added</string>
+    <string name="fps_stats">en az %1$d | ort %2$d | en çok %3$d</string>
+    <string name="add">Ekle</string>
+    <string name="view_details">View Details</string>
+    <string name="launch_game">Launch Game</string>
+    <string name="remove_game">Remove Game</string>
+    <string name="empty_library">No games in your library</string>
+    <string name="add_first_game">Add Your First Game</string>
+    <string name="per_app_settings">Game Settings</string>
+    <string name="search_apps">Search apps\u2026</string>
+    <string name="about_github">GitHub</string>
+    <string name="about_translate">Translate</string>
+    <string name="about_donate">Donate</string>
+    <!-- Tile Labels -->
+    <string name="tile_danmaku">Danmaku</string>
+    <string name="tile_stay_awake">Uyanık Kal</string>
+    <string name="tile_wifi">Kablosuz Ağ</string>
+    <string name="tile_dnd">Zen</string>
+    <string name="tile_fps_info">FPS Bilgisi</string>
+    <string name="tile_auto_rotate">Otomatik Döndür</string>
+    <string name="tile_boost_memory">Belleği Güçlendir</string>
+    <string name="tile_settings">Ayarlar</string>
+    <string name="tile_airplane_mode">Uçak Modu</string>
+    <string name="tile_bluetooth">Bluetooth</string>
+    <string name="tile_mobile_data">Mobil Veri</string>
+    <string name="tile_touch_boost">Dokunmatik ivmesi</string>
+    <string name="tile_flashlight">El feneri</string>
+    <string name="tile_dark_mode">Dark Mode</string>
+    <string name="tile_location">Location</string>
+    <string name="tile_battery_saver">Battery Saver</string>
+    <string name="tile_hotspot">Erişim Noktası</string>
+    <string name="tile_nfc">NFC</string>
+    <string name="tile_night_light">Night Light</string>
+    <string name="tile_aod">Her Zaman Açık Ekran</string>
+    <string name="tile_data_saver">Data Saver</string>
+    <string name="tile_color_inversion">Color Inversion</string>
+    <string name="tile_color_correction">Color Correction</string>
+    <string name="tile_reduce_brightness">Reduce Brightness</string>
+    <string name="tile_one_handed">One Handed</string>
+    <string name="tile_heads_up">Açılır Bildirimler</string>
+    <string name="tile_auto_sync">Auto Sync</string>
+    <string name="tile_camera_privacy">Kamera</string>
+    <string name="tile_mic_privacy">Microphone</string>
+    <string name="tile_work_profile">Work Profile</string>
+    <string name="tile_usb_tether">USB Tethering</string>
+    <string name="tile_dream">Screen Saver</string>
+    <string name="tile_reading_mode">Reading Mode</string>
+    <string name="tile_power_share">Power Share</string>
+    <string name="tile_caffeine">Caffeine</string>
+    <string name="tile_vpn">VPN</string>
+    <string name="tile_cast">Cast</string>
+    <string name="tile_profiles">Profiles</string>
+    <string name="tile_smart_pixels">Smart Pixels</string>
+    <string name="tile_screen_record">Screen Record</string>
+    <string name="tile_screenshot">Ekran görüntüsü</string>
+    <!-- Icon Idle Transparency -->
+    <string name="icon_idle_alpha_title">Icon idle transparency</string>
+    <!-- Auto DND -->
+    <string name="auto_dnd_title">Auto Do Not Disturb</string>
+    <string name="auto_dnd_summary">Automatically enable DND while in-game and restore when done</string>
+    <!-- Controller Mapper -->
+    <string name="mapper_press_button">Press a button on your controller or keyboard\u2026</string>
+    <string name="mapper_add_point">Add tap point</string>
+    <string name="mapper_delete_point">Delete tap point</string>
+    <string name="mapper_map_controls">Map controls</string>
+    <!-- Content Descriptions (Accessibility) -->
+    <string name="cd_reject">Reddet</string>
+    <string name="cd_accept">Kabul et</string>
+    <string name="cd_caller_photo">Arayan Fotoğrafı</string>
+    <string name="cd_dismiss">Kapat</string>
+    <string name="cd_edit_tiles">Karoları Düzenle</string>
+    <string name="cd_collapse">Daralt</string>
+    <string name="cd_expand">Genişlet</string>
+</resources>

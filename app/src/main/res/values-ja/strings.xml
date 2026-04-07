@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright (C) Chaldeaprjkt
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+         http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+  -->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="memory_boost">メモリをブースト</string>
+    <string name="memory_boost_summary">メモリを最適化</string>
+    <string name="boost_memory">メモリをブーストしました</string>
+    <string name="quick_start_apps_title">クイックスタートアプリ</string>
+    <string name="quick_start_apps_summary">Select apps to launch quickly</string>
+    <string name="settings_title">ゲームスペース</string>
+    <string name="settings_summary">ゲーム環境を管理します</string>
+    <string name="app_selector_label">ゲームを選択</string>
+    <string name="auto_brightness_disabled_title">画面の自動明るさ調整を無効化する</string>
+    <string name="auto_brightness_disabled_summary">Keep brightness settled while in-game</string>
+    <string name="heads_up_disabled_summary">Disable Notification heads-up while in-game</string>
+    <string name="in_game_preferences_title">ゲーム中のオプション</string>
+    <string name="game_list_title">ライブラリ</string>
+    <string name="game_remove_message">Are you sure you want to remove %1$s from your library ?</string>
+    <string name="app_search_title">検索</string>
+    <string name="three_screenshot_disabled_summary">Temporary disable three-fingers-swipe gesture while in-game</string>
+    <string name="three_screenshot_disabled_title">Disable three fingers swipe gesture</string>
+    <string name="chaldea">chaldeaprjkt</string>
+    <string name="state_enabled">有効</string>
+    <string name="state_disabled">無効化</string>
+    <string name="state_default">デフォルト</string>
+    <!-- Game Mode Name - sorted by GameManager's enum, do not modify the sequence! -->
+    <string name="game_mode_title">モード</string>
+    <string-array name="game_mode_names">
+        <item>非対応</item>
+        <item>標準</item>
+        <item>パフォーマンス</item>
+        <item>バッテリー</item>
+    </string-array>
+    <string name="fps_Info_title">FPS 情報</string>
+    <string name="stay_awake_title">Stay Awake</string>
+    <string name="stay_awake_summary">Keep screen awake while in the game</string>
+    <string name="lock_gesture_title">ロックジェスチャー</string>
+    <string name="ringer_mode_title">ゲーム中の着信モード</string>
+    <string-array name="ringer_mode_entries">
+        <item>サイレント</item>
+        <item>バイブレーション</item>
+        <item>通常</item>
+        <item>変更しない</item>
+    </string-array>
+    <string name="suppress_fullscreen_intent_title">フルスクリーンイベントをブロック</string>
+    <string name="suppress_fullscreen_intent_summary">Prevent fullscreen events like incoming calls from appearing while in-game</string>
+    <string name="per_app_title">ゲームの構成</string>
+    <string name="per_app_mode_title">優先モード</string>
+    <string-array name="per_app_preferred_mode_entries">
+        <item>標準</item>
+        <item>パフォーマンス</item>
+        <item>バッテリー</item>
+    </string-array>
+    <string name="per_app_angle_title">Graphics driver</string>
+    <string name="per_app_unregister">%1$s をライブラリから削除</string>
+    <string name="adb_disabled_summary">ゲーム中に USB ADB デバッグを一時的に無効化</string>
+    <string name="adb_disabled_title">USB デバッグを無効化</string>
+    <string name="ram_usage">RAM 使用量: </string>
+    <!-- Notification Mode -->
+    <string name="notification_mode_title">通知モード</string>
+    <string name="notification_mode_hide">表示しない</string>
+    <string name="notification_mode_headsup">ヘッドアップを表示</string>
+    <string name="notification_mode_reticker">reTicker を表示</string>
+    <string name="notification_mode_danmaku">Danmaku を表示</string>
+    <string name="notification_hide">非表示</string>
+    <string name="notification_headsup">ヘッドアップ</string>
+    <string name="notification_reticker">reTicker</string>
+    <string name="notification_danmaku">Danmaku</string>
+    <!-- Ringer Mode -->
+    <string name="in_game_calls_title">ゲーム中の通話</string>
+    <string name="in_game_calls_no_action">アクションなし</string>
+    <string name="in_game_calls_auto_answer">自動で応答</string>
+    <string name="in_game_calls_auto_reject">自動で拒否</string>
+    <string name="in_game_calls_received_number">Received call from %1$s</string>
+    <string name="in_game_calls_rejected_number">Rejected call from %1$s</string>
+    <!-- Danmaku Notification Mode -->
+    <string name="danmaku_notification_mode_title">Danmaku 通知モード</string>
+    <string name="danmaku_notification_mode_summary">Show notification as danmaku aka bullet comments while game is active</string>
+    <!-- Custom seekbar -->
+    <string name="custom_seekbar_value">値: <xliff:g id="v">%s</xliff:g></string>
+    <string name="custom_seekbar_default_value">by default</string>
+    <string name="custom_seekbar_default_value_to_set">Default value: <xliff:g id="v">%s</xliff:g>\nLong tap to set</string>
+    <string name="custom_seekbar_default_value_is_set">デフォルト値が設定されています</string>
+    <string name="gamespace_menu_opacity_title">オーバーレイメニュー透過レベル</string>
+    <!-- Bypass charging -->
+    <string name="bypass_charge_enabled_summary">バイパス充電</string>
+    <string name="bypass_charge_enabled_title">Enable bypass charging while playing games</string>
+    <string name="gamespace_running">ゲームスペースは実行中です</string>
+    <string name="app_locked_message">This app is locked. Please unlock it first.</string>
+    <string name="call_overlay_enabled_title">通話オーバーレイ</string>
+    <string name="call_overlay_enabled_summary">Show minimal call overlay to answer/reject calls</string>
+    <!-- UI Strings -->
+    <string name="select_apps_to_launch">Select apps to launch quickly</string>
+    <string name="add_game">ゲームを追加</string>
+    <string name="expanded">展開</string>
+    <string name="collapsed">折りたたむ</string>
+    <string name="toggle_menu">メニューを切り替え</string>
+    <string name="close_menu">メニューを閉じる</string>
+    <string name="notifications">通知</string>
+    <string name="display_gestures">画面とジェスチャー</string>
+    <string name="no_games_added">No games added yet</string>
+    <string name="ok">OK</string>
+    <string name="cancel">キャンセル</string>
+    <string name="remove">削除</string>
+    <string name="back">戻る</string>
+    <string name="game_mode">ゲームモード</string>
+    <string name="graphics">グラフィック</string>
+    <string name="remove_from_library">ライブラリから削除</string>
+    <string name="registered_game">登録したゲーム</string>
+    <string name="game_space">ゲームスペース</string>
+    <!-- Ringer Mode Options -->
+    <string name="ringer_mode_silent">サイレント</string>
+    <string name="ringer_mode_vibrate">バイブレーション</string>
+    <string name="ringer_mode_normal">通常</string>
+    <string name="ringer_mode_no_change">変更しない</string>
+    <!-- Game Mode Labels -->
+    <string name="game_mode_standard">標準</string>
+    <string name="game_mode_performance">パフォーマンス</string>
+    <string name="game_mode_battery">バッテリー</string>
+    <!-- Game Panel -->
+    <string name="save">保存</string>
+    <string name="panel_options">パネルのオプション</string>
+    <string name="brightness_slider">明るさスライダー</string>
+    <string name="fps_graph">FPS グラフ</string>
+    <string name="selected_tiles">選択したタイル</string>
+    <string name="available_tiles">利用可能なタイル</string>
+    <string name="drag_tiles_here">Drag tiles here</string>
+    <string name="all_tiles_added">All tiles added</string>
+    <string name="fps_stats">分 %1$d | 平均 %2$d | 最大 %3$d</string>
+    <string name="add">追加</string>
+    <string name="view_details">View Details</string>
+    <string name="launch_game">Launch Game</string>
+    <string name="remove_game">Remove Game</string>
+    <string name="empty_library">No games in your library</string>
+    <string name="add_first_game">Add Your First Game</string>
+    <string name="per_app_settings">Game Settings</string>
+    <string name="search_apps">Search apps\u2026</string>
+    <string name="about_github">GitHub</string>
+    <string name="about_translate">Translate</string>
+    <string name="about_donate">Donate</string>
+    <!-- Tile Labels -->
+    <string name="tile_danmaku">Danmaku</string>
+    <string name="tile_stay_awake">Stay Awake</string>
+    <string name="tile_wifi">Wi-Fi</string>
+    <string name="tile_dnd">サイレントモード</string>
+    <string name="tile_fps_info">FPS 情報</string>
+    <string name="tile_auto_rotate">自動回転</string>
+    <string name="tile_boost_memory">メモリをブースト</string>
+    <string name="tile_settings">設定</string>
+    <string name="tile_airplane_mode">機内モード</string>
+    <string name="tile_bluetooth">Bluetooth</string>
+    <string name="tile_mobile_data">モバイルデータ</string>
+    <string name="tile_touch_boost">タッチブースト</string>
+    <string name="tile_flashlight">フラッシュライト</string>
+    <string name="tile_dark_mode">Dark Mode</string>
+    <string name="tile_location">Location</string>
+    <string name="tile_battery_saver">Battery Saver</string>
+    <string name="tile_hotspot">ホットスポット</string>
+    <string name="tile_nfc">NFC</string>
+    <string name="tile_night_light">Night Light</string>
+    <string name="tile_aod">常時表示ディスプレイ</string>
+    <string name="tile_data_saver">Data Saver</string>
+    <string name="tile_color_inversion">Color Inversion</string>
+    <string name="tile_color_correction">Color Correction</string>
+    <string name="tile_reduce_brightness">Reduce Brightness</string>
+    <string name="tile_one_handed">One Handed</string>
+    <string name="tile_heads_up">ヘッドアップ</string>
+    <string name="tile_auto_sync">Auto Sync</string>
+    <string name="tile_camera_privacy">カメラ</string>
+    <string name="tile_mic_privacy">Microphone</string>
+    <string name="tile_work_profile">Work Profile</string>
+    <string name="tile_usb_tether">USB Tethering</string>
+    <string name="tile_dream">Screen Saver</string>
+    <string name="tile_reading_mode">Reading Mode</string>
+    <string name="tile_power_share">Power Share</string>
+    <string name="tile_caffeine">Caffeine</string>
+    <string name="tile_vpn">VPN</string>
+    <string name="tile_cast">Cast</string>
+    <string name="tile_profiles">Profiles</string>
+    <string name="tile_smart_pixels">Smart Pixels</string>
+    <string name="tile_screen_record">Screen Record</string>
+    <string name="tile_screenshot">スクリーンショット</string>
+    <!-- Icon Idle Transparency -->
+    <string name="icon_idle_alpha_title">Icon idle transparency</string>
+    <!-- Auto DND -->
+    <string name="auto_dnd_title">Auto Do Not Disturb</string>
+    <string name="auto_dnd_summary">Automatically enable DND while in-game and restore when done</string>
+    <!-- Controller Mapper -->
+    <string name="mapper_press_button">Press a button on your controller or keyboard\u2026</string>
+    <string name="mapper_add_point">Add tap point</string>
+    <string name="mapper_delete_point">Delete tap point</string>
+    <string name="mapper_map_controls">Map controls</string>
+    <!-- Content Descriptions (Accessibility) -->
+    <string name="cd_reject">拒否</string>
+    <string name="cd_accept">承認</string>
+    <string name="cd_caller_photo">発信者の写真</string>
+    <string name="cd_dismiss">表示しない</string>
+    <string name="cd_edit_tiles">タイルを編集</string>
+    <string name="cd_collapse">折りたたむ</string>
+    <string name="cd_expand">展開</string>
+</resources>
