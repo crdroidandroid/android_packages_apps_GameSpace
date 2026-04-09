@@ -91,23 +91,23 @@
     <string name="call_overlay_enabled_title">電話疊加層</string>
     <string name="call_overlay_enabled_summary">顯示最少的通話疊加層以接聽/拒接電話</string>
     <!-- Game Optimization -->
-    <string name="game_optimization_title">Launch Optimization</string>
-    <string name="game_launch_boost_title">Launch Boost</string>
-    <string name="game_launch_boost_summary">Optimize CPU and memory for faster game launch</string>
-    <string name="game_memory_management_title">Smart Memory Management</string>
-    <string name="game_memory_management_summary">Automatically clear background apps when launching games</string>
-    <string name="game_load_priority_title">Loading Priority</string>
-    <string name="game_load_priority_summary">Set resource priority during game launch</string>
-    <string name="game_cache_management_title">Cache Management</string>
-    <string name="game_cache_management_summary">Optimize game cache for faster loading times</string>
+    <string name="game_optimization_title">遊戲啟動優化</string>
+    <string name="game_launch_boost_title">啟動加速</string>
+    <string name="game_launch_boost_summary">優化處理器與記憶體以加快遊戲啟動速度</string>
+    <string name="game_memory_management_title">智慧記憶體管理</string>
+    <string name="game_memory_management_summary">啟動遊戲時自動清理背景應用程式</string>
+    <string name="game_load_priority_title">載入優先權</string>
+    <string name="game_load_priority_summary">在遊戲啟動期間設定資源優先權</string>
+    <string name="game_cache_management_title">快取管理</string>
+    <string name="game_cache_management_summary">優化遊戲快取以縮短載入時間</string>
     <string-array name="game_load_priority_entries">
-        <item>Balanced (Recommended)</item>
-        <item>Maximum Performance</item>
-        <item>Power Saving</item>
+        <item>平衡 (建議)</item>
+        <item>最高效能</item>
+        <item>省電優先</item>
     </string-array>
     <string-array name="game_load_priority_values">
-        <item>balanced</item>
-        <item>performance</item>
-        <item>powersave</item>
+        <item>平衡</item>
+        <item>性能</item>
+        <item>省電</item>
     </string-array>
 </resources>
