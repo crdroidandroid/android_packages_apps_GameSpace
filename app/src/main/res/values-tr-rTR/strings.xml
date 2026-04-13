@@ -88,26 +88,26 @@
     <string name="danmaku_notification_mode_summary">Oyun aktifken danmaku bullet yorumları olarak bildirim göster</string>
     <string name="gamespace_running">Oyun Alanı çalışıyor</string>
     <!-- Call overlay -->
-    <string name="call_overlay_enabled_title">Arama penceresi</string>
-    <string name="call_overlay_enabled_summary">Aramaları yanıtlamak veya reddetmek için minimal arama arayüzünü göster</string>
+    <string name="call_overlay_enabled_title">Arama penceresiArama katmanı</string>
+    <string name="call_overlay_enabled_summary">Aramaları yanıtlamak/reddetmek için minimal arama katmanını göster</string>
     <!-- Game Optimization -->
-    <string name="game_optimization_title">Launch Optimization</string>
-    <string name="game_launch_boost_title">Launch Boost</string>
-    <string name="game_launch_boost_summary">Optimize CPU and memory for faster game launch</string>
-    <string name="game_memory_management_title">Smart Memory Management</string>
-    <string name="game_memory_management_summary">Automatically clear background apps when launching games</string>
-    <string name="game_load_priority_title">Loading Priority</string>
-    <string name="game_load_priority_summary">Set resource priority during game launch</string>
-    <string name="game_cache_management_title">Cache Management</string>
-    <string name="game_cache_management_summary">Optimize game cache for faster loading times</string>
+    <string name="game_optimization_title">Başlatma Optimizasyonu</string>
+    <string name="game_launch_boost_title">Başlatma Hızlandırıcı</string>
+    <string name="game_launch_boost_summary">Oyunun daha hızlı başlatılması için işlemci ve belleği optimize eder</string>
+    <string name="game_memory_management_title">Akıllı Bellek Yönetimi</string>
+    <string name="game_memory_management_summary">Oyunlar başlatılırken arka plan uygulamalarını otomatik olarak temizler</string>
+    <string name="game_load_priority_title">Yükleme Önceliği</string>
+    <string name="game_load_priority_summary">Oyun başlatma sırasında kaynak önceliğini ayarlar</string>
+    <string name="game_cache_management_title">Önbellek Yönetimi</string>
+    <string name="game_cache_management_summary">Daha hızlı yükleme süreleri için oyun önbelleğini optimize eder</string>
     <string-array name="game_load_priority_entries">
-        <item>Balanced (Recommended)</item>
-        <item>Maximum Performance</item>
-        <item>Power Saving</item>
+        <item>Dengeli (Önerilen)</item>
+        <item>Maksimum Performans</item>
+        <item>Güç Tasarrufu</item>
     </string-array>
     <string-array name="game_load_priority_values">
-        <item>balanced</item>
-        <item>performance</item>
-        <item>powersave</item>
+        <item>dengeli</item>
+        <item>performans</item>
+        <item>güç tasarrufu</item>
     </string-array>
 </resources>
