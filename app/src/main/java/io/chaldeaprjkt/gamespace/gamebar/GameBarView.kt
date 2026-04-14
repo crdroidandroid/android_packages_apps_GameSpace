@@ -67,10 +67,11 @@ import io.chaldeaprjkt.gamespace.R
 
 private const val PILL_WIDTH_DP = 36
 private const val PILL_BUTTON_SIZE_DP = 40
-private const val PILL_IDLE_WIDTH_DP = 4
-private const val PILL_IDLE_HEIGHT_DP = 64
-private const val PILL_IDLE_TOUCH_WIDTH_DP = 24
-private const val SWIPE_THRESHOLD_DP = 20
+private const val NOTCH_WIDTH_DP = 14
+private const val NOTCH_HEIGHT_DP = 36
+private const val NOTCH_CHEVRON_SIZE_DP = 10
+private const val NOTCH_TOUCH_WIDTH_DP = 28
+private const val DRAG_THRESHOLD_DP = 12
 
 @Composable
 fun GameBarView(
@@ -125,7 +126,7 @@ fun GameBarView(
 
     val pointerModifier = Modifier
         .pointerInput(dockedOnLeft) {
-            val swipeThresholdPx = SWIPE_THRESHOLD_DP.dp.toPx()
+            val dragThresholdPx = DRAG_THRESHOLD_DP.dp.toPx()
             detectDragGestures(
                 onDragStart = { _ ->
                     val pos = onDragStart()
@@ -139,11 +140,10 @@ fun GameBarView(
                     change.consume()
                     accDragX += dragAmount.x
                     accDragY += dragAmount.y
-                    if (!repositioning) {
-                        val inward = if (dockedOnLeft) accDragX else -accDragX
-                        if (abs(accDragY) > swipeThresholdPx || inward < -swipeThresholdPx) {
-                            repositioning = true
-                        }
+                    if (!repositioning &&
+                        (abs(accDragY) > dragThresholdPx || abs(accDragX) > dragThresholdPx)
+                    ) {
+                        repositioning = true
                     }
                     if (repositioning) {
                         onDragUpdate(
@@ -159,13 +159,7 @@ fun GameBarView(
                             startWindowY + accDragY.toInt(),
                         )
                     } else {
-                        val inward = if (dockedOnLeft) accDragX else -accDragX
-                        if (inward > swipeThresholdPx && abs(accDragX) > abs(accDragY)) {
-                            state.setTargetScene(GameBarScenes.VerticalPill, scope)
-                            onExpanded()
-                        } else {
-                            onDragEnd(startWindowX, startWindowY)
-                        }
+                        onDragEnd(startWindowX, startWindowY)
                     }
                 },
                 onDragCancel = {
@@ -271,23 +265,39 @@ private fun PillTab(
             )
         }
     } else {
+        val notchShape = if (dockedOnLeft) {
+            RoundedCornerShape(topEndPercent = 100, bottomEndPercent = 100)
+        } else {
+            RoundedCornerShape(topStartPercent = 100, bottomStartPercent = 100)
+        }
         Box(
             modifier = modifier
-                .width(PILL_IDLE_TOUCH_WIDTH_DP.dp)
-                .height(PILL_IDLE_HEIGHT_DP.dp)
-                .then(pointerModifier),
+                .width(NOTCH_TOUCH_WIDTH_DP.dp)
+                .height(NOTCH_HEIGHT_DP.dp)
+                .then(pointerModifier)
+                .pointerInput(onTap) { detectTapGestures(onTap = { onTap() }) },
             contentAlignment = if (dockedOnLeft) Alignment.CenterStart else Alignment.CenterEnd,
         ) {
-            val pillIdleShape = RoundedCornerShape((PILL_IDLE_WIDTH_DP / 2).dp)
             Box(
                 modifier = Modifier
-                    .width(PILL_IDLE_WIDTH_DP.dp)
-                    .height(PILL_IDLE_HEIGHT_DP.dp)
+                    .width(NOTCH_WIDTH_DP.dp)
+                    .height(NOTCH_HEIGHT_DP.dp)
                     .alpha(idleAlpha)
-                    .border(0.5.dp, Color.White.copy(alpha = 0.4f), pillIdleShape)
-                    .clip(pillIdleShape)
-                    .background(Color(0xFFBFBFBF))
-            )
+                    .border(0.5.dp, Color.White.copy(alpha = 0.35f), notchShape)
+                    .clip(notchShape)
+                    .background(Color(0xCC1A1A1A)),
+                contentAlignment = Alignment.Center,
+            ) {
+                Icon(
+                    painter = painterResource(
+                        if (dockedOnLeft) R.drawable.ic_arrow_left
+                        else R.drawable.ic_arrow_right
+                    ),
+                    contentDescription = null,
+                    tint = Color.White.copy(alpha = 0.85f),
+                    modifier = Modifier.size(NOTCH_CHEVRON_SIZE_DP.dp),
+                )
+            }
         }
     }
 }
