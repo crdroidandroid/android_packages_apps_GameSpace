@@ -15,200 +15,200 @@
     limitations under the License.
   -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="memory_boost">增强内存</string>
-    <string name="memory_boost_summary">优化内存</string>
-    <string name="boost_memory">内存已增强</string>
-    <string name="quick_start_apps_title">快速启动应用</string>
-    <string name="quick_start_apps_summary">选择要快速启动的应用</string>
-    <string name="settings_title">游戏空间</string>
-    <string name="settings_summary">管理您的游戏设置</string>
-    <string name="app_selector_label">选择游戏</string>
-    <string name="auto_brightness_disabled_title">禁用自动亮度</string>
-    <string name="auto_brightness_disabled_summary">游戏中保持亮度恒定</string>
-    <string name="heads_up_disabled_summary">游戏中禁用通知</string>
-    <string name="in_game_preferences_title">游戏内选项</string>
-    <string name="game_list_title">媒体库</string>
-    <string name="game_remove_message">您确定要将 %1$s 从您的游戏列表中移除吗？</string>
-    <string name="app_search_title">搜索</string>
-    <string name="three_screenshot_disabled_summary">游戏中临时禁用三指滑动手势</string>
-    <string name="three_screenshot_disabled_title">禁用三指滑动</string>
-    <string name="chaldea">迦勒底项目</string>
-    <string name="state_enabled">已启用</string>
-    <string name="state_disabled">已禁用</string>
-    <string name="state_default">默认</string>
+    <string name="memory_boost">記憶體加速</string>
+    <string name="memory_boost_summary">優化記憶體</string>
+    <string name="boost_memory">記憶體已加速</string>
+    <string name="quick_start_apps_title">快速啟動應用程式</string>
+    <string name="quick_start_apps_summary">選擇要快速啟動的應用程式</string>
+    <string name="settings_title">Game Space</string>
+    <string name="settings_summary">管理你的遊戲設定</string>
+    <string name="app_selector_label">選擇遊戲</string>
+    <string name="auto_brightness_disabled_title">停用自動亮度</string>
+    <string name="auto_brightness_disabled_summary">在遊戲期間保持亮度固定</string>
+    <string name="heads_up_disabled_summary">在遊戲期間停用浮動通知</string>
+    <string name="in_game_preferences_title">遊戲內選項</string>
+    <string name="game_list_title">遊戲庫</string>
+    <string name="game_remove_message">確定要將 %1$s 從遊戲庫移除嗎？</string>
+    <string name="app_search_title">搜尋</string>
+    <string name="three_screenshot_disabled_summary">在遊戲期間暫時停用三指滑動手勢</string>
+    <string name="three_screenshot_disabled_title">停用三指滑動手勢</string>
+    <string name="chaldea">chaldeaprjkt</string>
+    <string name="state_enabled">已啟用</string>
+    <string name="state_disabled">已停用</string>
+    <string name="state_default">預設</string>
     <!-- Game Mode Name - sorted by GameManager's enum, do not modify the sequence! -->
     <string name="game_mode_title">模式</string>
     <string-array name="game_mode_names">
-        <item>未支持</item>
-        <item>标准</item>
-        <item>性能</item>
-        <item>省电</item>
+        <item>不支援</item>
+        <item>標準</item>
+        <item>效能</item>
+        <item>省電</item>
     </string-array>
-    <string name="fps_Info_title">FPS 信息</string>
-    <string name="stay_awake_title">保持亮屏</string>
-    <string name="stay_awake_summary">游戏中保持亮屏</string>
-    <string name="lock_gesture_title">禁用手势</string>
-    <string name="ringer_mode_title">游戏内响铃模式</string>
+    <string name="fps_Info_title">FPS 資訊</string>
+    <string name="stay_awake_title">螢幕保持開啟</string>
+    <string name="stay_awake_summary">在遊戲期間保持螢幕開啟</string>
+    <string name="lock_gesture_title">鎖定手勢</string>
+    <string name="ringer_mode_title">響鈴模式</string>
     <string-array name="ringer_mode_entries">
-        <item>静音</item>
-        <item>振动</item>
-        <item>标准</item>
-        <item>不变</item>
+        <item>靜音</item>
+        <item>震動</item>
+        <item>標準</item>
+        <item>不變更</item>
     </string-array>
-    <string name="suppress_fullscreen_intent_title">屏蔽全屏事件</string>
-    <string name="suppress_fullscreen_intent_summary">避免在游戏中出现来电等全屏事件</string>
-    <string name="per_app_title">配置游戏</string>
-    <string name="per_app_mode_title">首选模式</string>
+    <string name="suppress_fullscreen_intent_title">封鎖全螢幕活動</string>
+    <string name="suppress_fullscreen_intent_summary">防止如電話等的應用程式彈出全螢幕畫面</string>
+    <string name="per_app_title">遊戲選項</string>
+    <string name="per_app_mode_title">偏好模式</string>
     <string-array name="per_app_preferred_mode_entries">
-        <item>标准</item>
-        <item>性能</item>
-        <item>省电</item>
+        <item>標準</item>
+        <item>效能</item>
+        <item>省電</item>
     </string-array>
-    <string name="per_app_angle_title">图像驱动</string>
-    <string name="per_app_unregister">从库中移除 %1$s</string>
-    <string name="adb_disabled_summary">游戏中暂时禁用 USB ADB 调试</string>
-    <string name="adb_disabled_title">禁用 USB 调试</string>
-    <string name="ram_usage">内存: </string>
+    <string name="per_app_angle_title">圖形驅動程式</string>
+    <string name="per_app_unregister">從遊戲庫中移除 %1$s</string>
+    <string name="adb_disabled_summary">在遊戲期間暫時停用 USB ADB 偵錯</string>
+    <string name="adb_disabled_title">停用 USB 偵錯</string>
+    <string name="ram_usage">RAM 使用量： </string>
     <!-- Notification Mode -->
     <string name="notification_mode_title">通知模式</string>
-    <string name="notification_mode_hide">不显示</string>
-    <string name="notification_mode_headsup">显示为浮动通知</string>
-    <string name="notification_mode_reticker">显示为 reTicker</string>
-    <string name="notification_mode_danmaku">显示为弹幕通知</string>
-    <string name="notification_hide">隐藏</string>
-    <string name="notification_headsup">浮动通知</string>
+    <string name="notification_mode_hide">不顯示</string>
+    <string name="notification_mode_headsup">浮動通知</string>
+    <string name="notification_mode_reticker">reTicker</string>
+    <string name="notification_mode_danmaku">彈幕式通知</string>
+    <string name="notification_hide">隱藏</string>
+    <string name="notification_headsup">浮動通知</string>
     <string name="notification_reticker">reTicker</string>
-    <string name="notification_danmaku">弹幕</string>
+    <string name="notification_danmaku">彈幕式通知</string>
     <!-- Ringer Mode -->
-    <string name="in_game_calls_title">游戏内通话</string>
-    <string name="in_game_calls_no_action">无动作</string>
-    <string name="in_game_calls_auto_answer">自动接听</string>
-    <string name="in_game_calls_auto_reject">自动挂断</string>
-    <string name="in_game_calls_received_number">收到 %1$s 的来电</string>
-    <string name="in_game_calls_rejected_number">拒绝 %1$s 的来电</string>
+    <string name="in_game_calls_title">通話模式</string>
+    <string name="in_game_calls_no_action">不採取動作</string>
+    <string name="in_game_calls_auto_answer">自動接聽</string>
+    <string name="in_game_calls_auto_reject">自動拒接</string>
+    <string name="in_game_calls_received_number">接聽 %1$s 的來電</string>
+    <string name="in_game_calls_rejected_number">錯過 %1$s 的來電</string>
     <!-- Danmaku Notification Mode -->
-    <string name="danmaku_notification_mode_title">弹幕通知模式</string>
-    <string name="danmaku_notification_mode_summary">游戏中以弹幕的形式显示通知</string>
+    <string name="danmaku_notification_mode_title">彈幕通知模式</string>
+    <string name="danmaku_notification_mode_summary">遊戲中以彈幕形式顯示通知</string>
     <!-- Custom seekbar -->
-    <string name="custom_seekbar_value">值： <xliff:g id="v">%s</xliff:g></string>
-    <string name="custom_seekbar_default_value">默认</string>
-    <string name="custom_seekbar_default_value_to_set">默认值: <xliff:g id="v">%s</xliff:g>\n长按以设置</string>
-    <string name="custom_seekbar_default_value_is_set">已设为默认值</string>
-    <string name="gamespace_menu_opacity_title">覆盖菜单不透明度</string>
+    <string name="custom_seekbar_value">數值： <xliff:g id="v">%s</xliff:g></string>
+    <string name="custom_seekbar_default_value">預設</string>
+    <string name="custom_seekbar_default_value_to_set">預設值：<xliff:g id="v">%s</xliff:g>\n長按以設定</string>
+    <string name="custom_seekbar_default_value_is_set">已設定為預設值</string>
+    <string name="gamespace_menu_opacity_title">不透明度</string>
     <!-- Bypass charging -->
-    <string name="bypass_charge_enabled_summary">旁路充电</string>
-    <string name="bypass_charge_enabled_title">游戏中启用旁路充电</string>
-    <string name="gamespace_running">游戏空间正在运行</string>
-    <string name="app_locked_message">此应用已锁定。请先解锁。</string>
-    <string name="call_overlay_enabled_title">通话叠加层</string>
-    <string name="call_overlay_enabled_summary">显示最小呼叫叠加层以接听/拒接电话</string>
+    <string name="bypass_charge_enabled_summary">旁路充電</string>
+    <string name="bypass_charge_enabled_title">遊戲時啟用旁路充電</string>
+    <string name="gamespace_running">Game Space 運行中</string>
+    <string name="app_locked_message">此應用程式已鎖定。請先解鎖。</string>
+    <string name="call_overlay_enabled_title">來電覆蓋</string>
+    <string name="call_overlay_enabled_summary">顯示最小來電覆蓋以接聽/拒接來電</string>
     <!-- UI Strings -->
-    <string name="select_apps_to_launch">选择要快速启动的应用</string>
-    <string name="add_game">添加游戏</string>
-    <string name="expanded">展开</string>
-    <string name="collapsed">收起</string>
-    <string name="toggle_menu">切换菜单</string>
-    <string name="close_menu">关闭菜单</string>
+    <string name="select_apps_to_launch">選擇要快速啟動的應用程式</string>
+    <string name="add_game">新增遊戲</string>
+    <string name="expanded">已展開</string>
+    <string name="collapsed">已收起</string>
+    <string name="toggle_menu">切換選單</string>
+    <string name="close_menu">關閉選單</string>
     <string name="notifications">通知</string>
-    <string name="display_gestures">显示 &amp; 手势</string>
-    <string name="no_games_added">尚未添加游戏</string>
-    <string name="ok">确定</string>
+    <string name="display_gestures">顯示及手勢</string>
+    <string name="no_games_added">尚未新增任何遊戲</string>
+    <string name="ok">確定</string>
     <string name="cancel">取消</string>
     <string name="remove">移除</string>
     <string name="back">返回</string>
-    <string name="game_mode">游戏模式</string>
-    <string name="graphics">图形</string>
-    <string name="remove_from_library">从库中删除</string>
-    <string name="registered_game">注册游戏</string>
-    <string name="game_space">游戏空间</string>
+    <string name="game_mode">遊戲模式</string>
+    <string name="graphics">圖形</string>
+    <string name="remove_from_library">從遊戲庫移除</string>
+    <string name="registered_game">已註冊的遊戲</string>
+    <string name="game_space">Game Space</string>
     <!-- Ringer Mode Options -->
-    <string name="ringer_mode_silent">静音</string>
-    <string name="ringer_mode_vibrate">振动</string>
-    <string name="ringer_mode_normal">标准</string>
-    <string name="ringer_mode_no_change">不变</string>
+    <string name="ringer_mode_silent">靜音</string>
+    <string name="ringer_mode_vibrate">震動</string>
+    <string name="ringer_mode_normal">標準</string>
+    <string name="ringer_mode_no_change">不變更</string>
     <!-- Game Mode Labels -->
-    <string name="game_mode_standard">标准</string>
-    <string name="game_mode_performance">性能</string>
-    <string name="game_mode_battery">省电</string>
+    <string name="game_mode_standard">標準</string>
+    <string name="game_mode_performance">效能</string>
+    <string name="game_mode_battery">省電</string>
     <!-- Game Panel -->
-    <string name="save">保存</string>
-    <string name="panel_options">面板选项</string>
-    <string name="brightness_slider">亮度滑块</string>
-    <string name="fps_graph">FPS 帧率</string>
-    <string name="selected_tiles">已选磁贴</string>
-    <string name="available_tiles">可用磁贴</string>
-    <string name="drag_tiles_here">拖动磁贴到此处</string>
-    <string name="all_tiles_added">已添加所有磁贴</string>
+    <string name="save">儲存</string>
+    <string name="panel_options">面板選項</string>
+    <string name="brightness_slider">亮度滑桿</string>
+    <string name="fps_graph">FPS 圖表</string>
+    <string name="selected_tiles">已選的快捷按鈕</string>
+    <string name="available_tiles">可用的快捷按鈕</string>
+    <string name="drag_tiles_here">拖曳快捷按鈕到此處</string>
+    <string name="all_tiles_added">已新增所有快捷按鈕</string>
     <string name="fps_stats">最小 %1$d | 平均 %2$d | 最大 %3$d</string>
-    <string name="add">添加</string>
-    <string name="view_details">查看详情</string>
-    <string name="launch_game">启动游戏</string>
-    <string name="remove_game">移除游戏</string>
-    <string name="empty_library">您的库中没有游戏</string>
-    <string name="add_first_game">添加您的第一个游戏</string>
-    <string name="per_app_settings">游戏设置</string>
-    <string name="search_apps">搜索应用\u2026</string>
+    <string name="add">新增</string>
+    <string name="view_details">查看詳細資料</string>
+    <string name="launch_game">啟動遊戲</string>
+    <string name="remove_game">移除遊戲</string>
+    <string name="empty_library">你的遊戲庫中沒有遊戲</string>
+    <string name="add_first_game">新增你的第一款遊戲</string>
+    <string name="per_app_settings">遊戲設定</string>
+    <string name="search_apps">搜尋應用程式\u2026</string>
     <string name="about_github">GitHub</string>
-    <string name="about_translate">翻译</string>
-    <string name="about_donate">捐赠</string>
+    <string name="about_translate">翻譯</string>
+    <string name="about_donate">贊助</string>
     <!-- Tile Labels -->
-    <string name="tile_danmaku">弹幕</string>
-    <string name="tile_stay_awake">保持亮屏</string>
+    <string name="tile_danmaku">彈幕式通知</string>
+    <string name="tile_stay_awake">螢幕保持開啟</string>
     <string name="tile_wifi">Wi-Fi</string>
-    <string name="tile_dnd">勿扰模式</string>
-    <string name="tile_fps_info">FPS 信息</string>
-    <string name="tile_auto_rotate">自动旋转</string>
-    <string name="tile_boost_memory">增强内存</string>
-    <string name="tile_settings">设置</string>
-    <string name="tile_airplane_mode">飞行模式</string>
-    <string name="tile_bluetooth">蓝牙</string>
-    <string name="tile_mobile_data">移动数据</string>
-    <string name="tile_touch_boost">触摸加速</string>
-    <string name="tile_flashlight">闪光灯</string>
-    <string name="tile_dark_mode">夜间模式</string>
+    <string name="tile_dnd">勿擾模式</string>
+    <string name="tile_fps_info">FPS 資訊</string>
+    <string name="tile_auto_rotate">自動旋轉</string>
+    <string name="tile_boost_memory">記憶體加速</string>
+    <string name="tile_settings">設定</string>
+    <string name="tile_airplane_mode">飛航模式</string>
+    <string name="tile_bluetooth">藍牙</string>
+    <string name="tile_mobile_data">行動數據</string>
+    <string name="tile_touch_boost">觸控加速</string>
+    <string name="tile_flashlight">手電筒</string>
+    <string name="tile_dark_mode">深色模式</string>
     <string name="tile_location">位置</string>
-    <string name="tile_battery_saver">省电模式</string>
-    <string name="tile_hotspot">热点</string>
+    <string name="tile_battery_saver">省電模式</string>
+    <string name="tile_hotspot">熱點</string>
     <string name="tile_nfc">NFC</string>
-    <string name="tile_night_light">夜灯</string>
-    <string name="tile_aod">息屏显示</string>
-    <string name="tile_data_saver">省流模式</string>
-    <string name="tile_color_inversion">颜色反转</string>
+    <string name="tile_night_light">夜間模式</string>
+    <string name="tile_aod">螢幕長亮模式</string>
+    <string name="tile_data_saver">數據節省工具</string>
+    <string name="tile_color_inversion">色彩反轉</string>
     <string name="tile_color_correction">色彩校正</string>
     <string name="tile_reduce_brightness">降低亮度</string>
-    <string name="tile_one_handed">单手模式</string>
-    <string name="tile_heads_up">浮动通知</string>
-    <string name="tile_auto_sync">自动同步</string>
-    <string name="tile_camera_privacy">相机</string>
-    <string name="tile_mic_privacy">麦克风</string>
-    <string name="tile_work_profile">工作资料</string>
-    <string name="tile_usb_tether">USB 数据共享</string>
-    <string name="tile_dream">屏幕保护</string>
-    <string name="tile_reading_mode">阅读模式</string>
-    <string name="tile_power_share">电源共享</string>
-    <string name="tile_caffeine">屏幕常亮</string>
+    <string name="tile_one_handed">單手模式</string>
+    <string name="tile_heads_up">浮動通知</string>
+    <string name="tile_auto_sync">自動同步處理</string>
+    <string name="tile_camera_privacy">相機</string>
+    <string name="tile_mic_privacy">麥克風</string>
+    <string name="tile_work_profile">工作設定檔</string>
+    <string name="tile_usb_tether">USB 網路共用</string>
+    <string name="tile_dream">螢幕保護程式</string>
+    <string name="tile_reading_mode">閱讀模式</string>
+    <string name="tile_power_share">電源分享</string>
+    <string name="tile_caffeine">暫停休眠</string>
     <string name="tile_vpn">VPN</string>
-    <string name="tile_cast">投屏</string>
-    <string name="tile_profiles">资料</string>
-    <string name="tile_smart_pixels">智能像素</string>
-    <string name="tile_screen_record">屏幕录制</string>
-    <string name="tile_screenshot">截图</string>
+    <string name="tile_cast">投放</string>
+    <string name="tile_profiles">設定檔</string>
+    <string name="tile_smart_pixels">Smart Pixels</string>
+    <string name="tile_screen_record">螢幕錄影</string>
+    <string name="tile_screenshot">螢幕截圖</string>
     <!-- Icon Idle Transparency -->
-    <string name="icon_idle_alpha_title">图标闲置透明度</string>
+    <string name="icon_idle_alpha_title">圖示閒置透明度</string>
     <!-- Auto DND -->
-    <string name="auto_dnd_title">自动勿扰模式</string>
-    <string name="auto_dnd_summary">在游戏中自动启用 DND 并在完成后恢复</string>
+    <string name="auto_dnd_title">自動勿擾模式</string>
+    <string name="auto_dnd_summary">遊戲期間自動啟用勿擾模式，結束後自動恢復</string>
     <!-- Controller Mapper -->
-    <string name="mapper_press_button">点击控制器上的按钮或按键\u2026</string>
-    <string name="mapper_add_point">添加触摸点</string>
-    <string name="mapper_delete_point">删除触摸点</string>
-    <string name="mapper_map_controls">地图控制</string>
+    <string name="mapper_press_button">請按下控制器或鍵盤上的按鈕\u2026</string>
+    <string name="mapper_add_point">新增觸控點</string>
+    <string name="mapper_delete_point">刪除觸控點</string>
+    <string name="mapper_map_controls">對應控制項</string>
     <!-- Content Descriptions (Accessibility) -->
-    <string name="cd_reject">拒绝</string>
+    <string name="cd_reject">拒絕</string>
     <string name="cd_accept">接受</string>
-    <string name="cd_caller_photo">呼叫者照片</string>
-    <string name="cd_dismiss">忽略</string>
-    <string name="cd_edit_tiles">编辑磁贴</string>
-    <string name="cd_collapse">收起</string>
-    <string name="cd_expand">展开</string>
+    <string name="cd_caller_photo">來電者相片</string>
+    <string name="cd_dismiss">關閉</string>
+    <string name="cd_edit_tiles">編輯快捷按鈕</string>
+    <string name="cd_collapse">收合</string>
+    <string name="cd_expand">展開</string>
 </resources>

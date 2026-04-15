@@ -64,7 +64,7 @@
         <item>Performans</item>
         <item>Pil</item>
     </string-array>
-    <string name="per_app_angle_title">Graphics driver</string>
+    <string name="per_app_angle_title">Grafik sürücüsü</string>
     <string name="per_app_unregister">%1$s kütüphaneden kaldır</string>
     <string name="adb_disabled_summary">Oyun sırasında USB ADB hata ayıklamasını geçici olarak devre dışı bırakın</string>
     <string name="adb_disabled_title">USB hata ayıklamasını devre dışı bırak</string>
@@ -137,20 +137,20 @@
     <string name="fps_graph">FPS Grafiği</string>
     <string name="selected_tiles">Seçili Karolar</string>
     <string name="available_tiles">Mevcut Karolar</string>
-    <string name="drag_tiles_here">Drag tiles here</string>
-    <string name="all_tiles_added">All tiles added</string>
+    <string name="drag_tiles_here">Kutucukları buraya sürükleyin</string>
+    <string name="all_tiles_added">Tüm kutucuklar eklendi</string>
     <string name="fps_stats">en az %1$d | ort %2$d | en çok %3$d</string>
     <string name="add">Ekle</string>
-    <string name="view_details">View Details</string>
-    <string name="launch_game">Launch Game</string>
-    <string name="remove_game">Remove Game</string>
-    <string name="empty_library">No games in your library</string>
-    <string name="add_first_game">Add Your First Game</string>
-    <string name="per_app_settings">Game Settings</string>
-    <string name="search_apps">Search apps\u2026</string>
+    <string name="view_details">Ayrıntıları Görüntüle</string>
+    <string name="launch_game">Oyunu Başlat</string>
+    <string name="remove_game">Oyunu Kaldır</string>
+    <string name="empty_library">Kitaplığınızda oyun yok</string>
+    <string name="add_first_game">İlk Oyununuzu Ekleyin</string>
+    <string name="per_app_settings">Oyun Ayarları</string>
+    <string name="search_apps">Uygulamalarda ara\u2026</string>
     <string name="about_github">GitHub</string>
-    <string name="about_translate">Translate</string>
-    <string name="about_donate">Donate</string>
+    <string name="about_translate">Çevir</string>
+    <string name="about_donate">Bağış Yap</string>
     <!-- Tile Labels -->
     <string name="tile_danmaku">Danmaku</string>
     <string name="tile_stay_awake">Uyanık Kal</string>
@@ -165,44 +165,44 @@
     <string name="tile_mobile_data">Mobil Veri</string>
     <string name="tile_touch_boost">Dokunmatik ivmesi</string>
     <string name="tile_flashlight">El feneri</string>
-    <string name="tile_dark_mode">Dark Mode</string>
-    <string name="tile_location">Location</string>
-    <string name="tile_battery_saver">Battery Saver</string>
+    <string name="tile_dark_mode">Koyu Mod</string>
+    <string name="tile_location">Konum</string>
+    <string name="tile_battery_saver">Pil Tasarrufu</string>
     <string name="tile_hotspot">Erişim Noktası</string>
     <string name="tile_nfc">NFC</string>
-    <string name="tile_night_light">Night Light</string>
+    <string name="tile_night_light">Gece Işığı</string>
     <string name="tile_aod">Her Zaman Açık Ekran</string>
-    <string name="tile_data_saver">Data Saver</string>
-    <string name="tile_color_inversion">Color Inversion</string>
-    <string name="tile_color_correction">Color Correction</string>
-    <string name="tile_reduce_brightness">Reduce Brightness</string>
-    <string name="tile_one_handed">One Handed</string>
+    <string name="tile_data_saver">Veri Tasarrufu</string>
+    <string name="tile_color_inversion">Rengi Ters Çevirme</string>
+    <string name="tile_color_correction">Renk Düzenleme</string>
+    <string name="tile_reduce_brightness">Parlaklığı Azalt</string>
+    <string name="tile_one_handed">Tek El Modu</string>
     <string name="tile_heads_up">Açılır Bildirimler</string>
-    <string name="tile_auto_sync">Auto Sync</string>
+    <string name="tile_auto_sync">Otomatik Senkronizasyon</string>
     <string name="tile_camera_privacy">Kamera</string>
-    <string name="tile_mic_privacy">Microphone</string>
-    <string name="tile_work_profile">Work Profile</string>
-    <string name="tile_usb_tether">USB Tethering</string>
-    <string name="tile_dream">Screen Saver</string>
-    <string name="tile_reading_mode">Reading Mode</string>
-    <string name="tile_power_share">Power Share</string>
-    <string name="tile_caffeine">Caffeine</string>
+    <string name="tile_mic_privacy">Mikrofon</string>
+    <string name="tile_work_profile">İş Profili</string>
+    <string name="tile_usb_tether">USB İnternet Paylaşımı</string>
+    <string name="tile_dream">Ekran Koruyucu</string>
+    <string name="tile_reading_mode">Okuma Modu</string>
+    <string name="tile_power_share">Güç Paylaşımı</string>
+    <string name="tile_caffeine">Kafein</string>
     <string name="tile_vpn">VPN</string>
-    <string name="tile_cast">Cast</string>
-    <string name="tile_profiles">Profiles</string>
-    <string name="tile_smart_pixels">Smart Pixels</string>
-    <string name="tile_screen_record">Screen Record</string>
+    <string name="tile_cast">Ekran Yansıtma</string>
+    <string name="tile_profiles">Profiller</string>
+    <string name="tile_smart_pixels">Akıllı Pikseller</string>
+    <string name="tile_screen_record">Ekran Kaydı</string>
     <string name="tile_screenshot">Ekran görüntüsü</string>
     <!-- Icon Idle Transparency -->
-    <string name="icon_idle_alpha_title">Icon idle transparency</string>
+    <string name="icon_idle_alpha_title">Simge boşta şeffaflığı</string>
     <!-- Auto DND -->
-    <string name="auto_dnd_title">Auto Do Not Disturb</string>
-    <string name="auto_dnd_summary">Automatically enable DND while in-game and restore when done</string>
+    <string name="auto_dnd_title">Otomatik Rahatsız Etme Modu</string>
+    <string name="auto_dnd_summary">Oyun sırasında otomatik olarak Rahatsız Etme modunu etkinleştir ve çıkınca geri yükle</string>
     <!-- Controller Mapper -->
-    <string name="mapper_press_button">Press a button on your controller or keyboard\u2026</string>
-    <string name="mapper_add_point">Add tap point</string>
-    <string name="mapper_delete_point">Delete tap point</string>
-    <string name="mapper_map_controls">Map controls</string>
+    <string name="mapper_press_button">Oyun kumandanızda veya klavyenizde bir tuşa basın\u2026</string>
+    <string name="mapper_add_point">Dokunma noktası ekle</string>
+    <string name="mapper_delete_point">Dokunma noktasını sil</string>
+    <string name="mapper_map_controls">Kontrolleri eşle</string>
     <!-- Content Descriptions (Accessibility) -->
     <string name="cd_reject">Reddet</string>
     <string name="cd_accept">Kabul et</string>
