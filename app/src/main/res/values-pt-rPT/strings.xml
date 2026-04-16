@@ -92,8 +92,8 @@
     <string name="call_overlay_enabled_summary">Show minimal call overlay to answer/reject calls</string>
     <!-- Game Optimization -->
     <string name="game_optimization_title">Launch Optimization</string>
-    <string name="game_launch_boost_title">Launch Boost</string>
-    <string name="game_launch_boost_summary">Optimize CPU and memory for faster game launch</string>
+    <string name="game_launch_boost_title">Impulsionamento de Lançamento</string>
+    <string name="game_launch_boost_summary">Otimizar CPU e Memoria para um lançamento mais rápido do jogo</string>
     <string name="game_memory_management_title">Smart Memory Management</string>
     <string name="game_memory_management_summary">Automatically clear background apps when launching games</string>
     <string name="game_load_priority_title">Loading Priority</string>
@@ -106,7 +106,7 @@
         <item>Power Saving</item>
     </string-array>
     <string-array name="game_load_priority_values">
-        <item>balanced</item>
+        <item>equilibrado</item>
         <item>performance</item>
         <item>powersave</item>
     </string-array>
