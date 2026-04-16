@@ -88,7 +88,7 @@
     <string name="danmaku_notification_mode_summary">Oyun aktifken danmaku bullet yorumları olarak bildirim göster</string>
     <string name="gamespace_running">Oyun Alanı çalışıyor</string>
     <!-- Call overlay -->
-    <string name="call_overlay_enabled_title">Arama penceresiArama katmanı</string>
+    <string name="call_overlay_enabled_title">Arama katmanı</string>
     <string name="call_overlay_enabled_summary">Aramaları yanıtlamak/reddetmek için minimal arama katmanını göster</string>
     <!-- Game Optimization -->
     <string name="game_optimization_title">Başlatma Optimizasyonu</string>
