@@ -17,7 +17,7 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="quick_start_apps_title">Quick Start Apps</string>
-    <string name="quick_start_apps_summary">Select apps to launch quickly</string>
+    <string name="quick_start_apps_summary">빠르게 실행할 앱을 선택하세요</string>
     <string name="settings_title">게임 스페이스</string>
     <string name="settings_summary">게임용 설정 관리</string>
     <!-- Game options -->
@@ -86,7 +86,7 @@
     <!-- Danmaku Notification Mode -->
     <string name="danmaku_notification_mode_title">탄막 알림 모드</string>
     <string name="danmaku_notification_mode_summary">게임 중일 때 알림을 탄막처럼 작게 표시</string>
-    <string name="gamespace_running">Game Space is running</string>
+    <string name="gamespace_running">Game Space가 실행 중입니다</string>
     <!-- Call overlay -->
     <string name="call_overlay_enabled_title">Call overlay</string>
     <string name="call_overlay_enabled_summary">Show minimal call overlay to answer/reject calls</string>
@@ -96,7 +96,7 @@
     <string name="game_launch_boost_summary">Optimize CPU and memory for faster game launch</string>
     <string name="game_memory_management_title">스마트 메모리 관리</string>
     <string name="game_memory_management_summary">Automatically clear background apps when launching games</string>
-    <string name="game_load_priority_title">Loading Priority</string>
+    <string name="game_load_priority_title">로딩 우선순위</string>
     <string name="game_load_priority_summary">Set resource priority during game launch</string>
     <string name="game_cache_management_title">캐시 관리</string>
     <string name="game_cache_management_summary">Optimize game cache for faster loading times</string>
