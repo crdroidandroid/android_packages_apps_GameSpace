@@ -16,7 +16,7 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="quick_start_apps_title">Quick Start Apps</string>
+    <string name="quick_start_apps_title">빠른 시작 앱</string>
     <string name="quick_start_apps_summary">빠르게 실행할 앱을 선택하세요</string>
     <string name="settings_title">게임 스페이스</string>
     <string name="settings_summary">게임용 설정 관리</string>
@@ -88,26 +88,26 @@
     <string name="danmaku_notification_mode_summary">게임 중일 때 알림을 탄막처럼 작게 표시</string>
     <string name="gamespace_running">Game Space가 실행 중입니다</string>
     <!-- Call overlay -->
-    <string name="call_overlay_enabled_title">Call overlay</string>
-    <string name="call_overlay_enabled_summary">Show minimal call overlay to answer/reject calls</string>
+    <string name="call_overlay_enabled_title">통화 오버레이</string>
+    <string name="call_overlay_enabled_summary">통화 수신/거절 시 최소한의 통화 오버레이만 표시합니다</string>
     <!-- Game Optimization -->
     <string name="game_optimization_title">최적화 실행</string>
     <string name="game_launch_boost_title">부스트 실행</string>
-    <string name="game_launch_boost_summary">Optimize CPU and memory for faster game launch</string>
+    <string name="game_launch_boost_summary">게임 실행 속도를 높이기 위해 CPU와 메모리를 최적화하세요</string>
     <string name="game_memory_management_title">스마트 메모리 관리</string>
-    <string name="game_memory_management_summary">Automatically clear background apps when launching games</string>
+    <string name="game_memory_management_summary">게임 실행 시 백그라운드 앱을 자동으로 종료합니다</string>
     <string name="game_load_priority_title">로딩 우선순위</string>
-    <string name="game_load_priority_summary">Set resource priority during game launch</string>
+    <string name="game_load_priority_summary">게임 실행 시 리소스 우선 순위 설정</string>
     <string name="game_cache_management_title">캐시 관리</string>
-    <string name="game_cache_management_summary">Optimize game cache for faster loading times</string>
+    <string name="game_cache_management_summary">게임 캐시를 최적화하여 로딩 속도를 향상시키세요</string>
     <string-array name="game_load_priority_entries">
-        <item>Balanced (Recommended)</item>
-        <item>Maximum Performance</item>
-        <item>Power Saving</item>
+        <item>균형 잡힌 (추천)</item>
+        <item>최대 성능</item>
+        <item>배터리 절약</item>
     </string-array>
     <string-array name="game_load_priority_values">
-        <item>balanced</item>
-        <item>performance</item>
-        <item>powersave</item>
+        <item>균형 잡힌</item>
+        <item>성능</item>
+        <item>배터리 절약</item>
     </string-array>
 </resources>
