@@ -16,27 +16,19 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="memory_boost">Tehosta muistia</string>
-    <string name="memory_boost_summary">Optimoi muisti</string>
-    <string name="boost_memory">Muisti tehostettu</string>
-    <string name="quick_start_apps_title">Pikakäynnistyssovellukset</string>
-    <string name="quick_start_apps_summary">Valitse sovellukset pikakäynnistykseen</string>
+    <string name="quick_start_apps_title">Quick Start Apps</string>
+    <string name="quick_start_apps_summary">Select apps to launch quickly</string>
     <string name="settings_title">Game Space</string>
     <string name="settings_summary">Hallitse peliasetuksiasi</string>
     <!-- Game options -->
     <string name="in_game_preferences_title">Pelin sisäiset asetukset</string>
-    <string name="heads_up_disabled_summary">Poista heads-up-ilmoitukset käytöstä pelin aikana</string>
     <string name="suppress_fullscreen_intent_title">Estä koko näytön tapahtuma</string>
     <string name="suppress_fullscreen_intent_summary">Estää koko näytön tapahtumien, kuten saapuvien puhelujen näkymisen</string>
     <string name="stay_awake_title">Pysy hereillä</string>
-    <string name="stay_awake_summary">Pidä näyttö päällä pelin aikana</string>
     <string name="lock_gesture_title">Lukitusele</string>
     <string name="auto_brightness_disabled_title">Poista automaattinen kirkkaus käytöstä</string>
-    <string name="three_screenshot_disabled_title">Poista kuvakaappausten pyyhkäisyele käytöstä</string>
-    <string name="three_screenshot_disabled_summary">Poista väliaikaisesti kolmen sormen pyyhkäisyele käytöstä pelin aikana</string>
-    <string name="chaldea">chaldeaprjkt</string>
+    <string name="three_screenshot_disabled_title">Disable three fingers swipe gesture</string>
     <string name="adb_disabled_title">Poista USB-vianetsintä käytöstä</string>
-    <string name="adb_disabled_summary">Poista väliaikaisesti USB ADB -virheenkorjaus käytöstä pelin aikana</string>
     <string name="gamespace_menu_opacity_title">Peittokuvavalikon läpinäkyvyystaso</string>
     <!-- Notification Mode -->
     <string name="notification_mode_title">Ilmoitustila</string>
@@ -46,12 +38,6 @@
     <string name="notification_mode_danmaku">Näytä Danmaku</string>
     <!-- Ringer Mode -->
     <string name="ringer_mode_title">Soittotila</string>
-    <string-array name="ringer_mode_entries">
-        <item>Äänetön</item>
-        <item>Värinä</item>
-        <item>Normaali</item>
-        <item>Älä muuta</item>
-    </string-array>
     <string name="ringer_mode_silent">Äänetön</string>
     <string name="ringer_mode_vibrate">Värinä</string>
     <string name="ringer_mode_normal">Normaali</string>
@@ -65,32 +51,21 @@
     <!-- Configure game -->
     <string name="per_app_title">Määritä peli</string>
     <string name="per_app_mode_title">Ensisijainen tila</string>
-    <string-array name="per_app_preferred_mode_entries">
-        <item>Standardi</item>
-        <item>Suorituskyky</item>
-        <item>Akku</item>
-    </string-array>
     <string name="per_app_angle_title">Käytä ANGLE (kokeellinen)</string>
     <string name="per_app_angle_summary">ANGLE-renderöijän käyttäminen natiivien GLES-ajurien sijaan.\nVAROITUS!!! Saattaa rikkoa pelin grafiikkaa, käytä varoen!</string>
     <string name="cant_find_angle_pkg">ANGLE ei ole käytettävissä järjestelmässäsi</string>
     <string name="per_app_unregister">Poista %1$s peliluettelosta</string>
-    <string name="ram_usage">RAM-käyttö: </string>
     <string name="game_mode_unsupported">Ei tuettu</string>
     <string name="game_mode_standard">Vakio</string>
     <string name="game_mode_performance">Suorituskyky</string>
     <string name="game_mode_battery">Akku</string>
-    <string-array name="game_mode_names">
-        <item>Ei tuettu</item>
-        <item>Standardi</item>
-        <item>Suorituskyky</item>
-        <item>Akku</item>
-    </string-array>
     <!-- Custom seekbar -->
     <string name="custom_seekbar_value">Arvo: <xliff:g id="v">%s</xliff:g></string>
     <string name="custom_seekbar_default_value">oletuksena</string>
     <string name="custom_seekbar_default_value_to_set">Oletusarvo: <xliff:g id="v">%s</xliff:g>\nAseta napauttamalla pitkään</string>
     <string name="custom_seekbar_default_value_is_set">Oletusarvo asetettu</string>
     <!-- Game overlay -->
+    <string name="battery_format">Akku: <xliff:g id="percentage" example="100">%1$d%%</xliff:g></string>
     <string name="memory_format">Käytettävissä oleva muisti: <xliff:g id="availmemory" example="1000">%1$d</xliff:g>\/<xliff:g id="totalmemory" example="5000">%2$d</xliff:g> MB</string>
     <!-- Tiles -->
     <string name="game_mode_title">Tila</string>
@@ -109,66 +84,30 @@
     <string name="in_game_calls_received_number">Received call from %1$s</string>
     <string name="in_game_calls_rejected_number">Rejected call from %1$s</string>
     <!-- Danmaku Notification Mode -->
-    <string name="danmaku_notification_mode_title">Danmaku-ilmoitustila</string>
-    <string name="danmaku_notification_mode_summary">Näytä ilmoitus danmakuna eli luettikommentteina, kun peli on aktiivinen</string>
-    <string name="bypass_charge_enabled_summary">Ohita lataus</string>
-    <string name="bypass_charge_enabled_title">Ota käyttöön latauksen ohitus pelaamisen aikana</string>
-    <string name="gamespace_running">Game Space käynnissä</string>
-    <string name="app_locked_message">Tämä sovellus on lukittu. Avaa se ensin.</string>
-    <string name="call_overlay_enabled_title">Puhelun peite</string>
-    <string name="call_overlay_enabled_summary">Näytä minimaalinen puhelun peite puheluiden vastaamiseen/hylkäämiseen</string>
-    <string name="auto_brightness_disabled_summary">Pidä kirkkaus kiinteänä pelin aikana</string>
-    
-    <!-- UI Strings -->
-    <string name="select_apps_to_launch">Valitse sovellukset nopeaa käynnistystä varten</string>
-    <string name="add_game">Lisää peli</string>
-    <string name="expanded">Laajennettu</string>
-    <string name="collapsed">Kutistettu</string>
-    <string name="toggle_menu">Vaihda valikkoa</string>
-    <string name="close_menu">Sulje valikko</string>
-    <string name="notifications">Ilmoitukset</string>
-    <string name="display_gestures">Näyttö ja eleet</string>
-    <string name="no_games_added">Pelejä ei vielä lisätty</string>
-    <string name="ok">OK</string>
-    <string name="cancel">Peruuta</string>
-    <string name="remove">Poista</string>
-    <string name="back">Takaisin</string>
-    <string name="game_mode">Pelitila</string>
-    <string name="graphics">Grafiikka</string>
-    <string name="remove_from_library">Poista kirjastosta</string>
-    <string name="registered_game">Rekisteröity peli</string>
-    <string name="game_space">Game Space</string>
-    
-    <!-- Game Panel -->
-    <string name="save">Tallenna</string>
-    <string name="panel_options">Paneelin asetukset</string>
-    <string name="brightness_slider">Kirkkauden liukusäädin</string>
-    <string name="fps_graph">FPS-kaavio</string>
-    <string name="selected_tiles">Valitut ruudut</string>
-    <string name="available_tiles">Käytettävissä olevat ruudut</string>
-    <string name="fps_stats">min %1$d | keskim %2$d | maks %3$d</string>
-    <string name="add">Lisää</string>
-    
-    <!-- Tile Labels -->
-    <string name="tile_danmaku">Danmaku</string>
-    <string name="tile_stay_awake">Pysy hereillä</string>
-    <string name="tile_wifi">Wi-Fi</string>
-    <string name="tile_dnd">Älä häiritse</string>
-    <string name="tile_fps_info">FPS-tiedot</string>
-    <string name="tile_auto_rotate">Automaattinen kierto</string>
-    <string name="tile_boost_memory">Muistin tehostus</string>
-    <string name="tile_settings">Asetukset</string>
-    <string name="tile_airplane_mode">Lentokonetila</string>
-    <string name="tile_bluetooth">Bluetooth</string>
-    <string name="tile_mobile_data">Mobiilidata</string>
-    <string name="tile_touch_boost">Kosketuksen tehostus</string>
-    
-    <!-- Content Descriptions (Accessibility) -->
-    <string name="cd_reject">Hylkää</string>
-    <string name="cd_accept">Hyväksy</string>
-    <string name="cd_caller_photo">Soittajan kuva</string>
-    <string name="cd_dismiss">Hylkää</string>
-    <string name="cd_edit_tiles">Muokkaa ruutuja</string>
-    <string name="cd_collapse">Kutista</string>
-    <string name="cd_expand">Laajenna</string>
+    <string name="danmaku_notification_mode_title">Danmaku Notification mode</string>
+    <string name="danmaku_notification_mode_summary">Show notification as danmaku aka bullet comments while game is active</string>
+    <string name="gamespace_running">Game Space is running</string>
+    <!-- Call overlay -->
+    <string name="call_overlay_enabled_title">Call overlay</string>
+    <string name="call_overlay_enabled_summary">Show minimal call overlay to answer/reject calls</string>
+    <!-- Game Optimization -->
+    <string name="game_optimization_title">Launch Optimization</string>
+    <string name="game_launch_boost_title">Launch Boost</string>
+    <string name="game_launch_boost_summary">Optimize CPU and memory for faster game launch</string>
+    <string name="game_memory_management_title">Smart Memory Management</string>
+    <string name="game_memory_management_summary">Automatically clear background apps when launching games</string>
+    <string name="game_load_priority_title">Loading Priority</string>
+    <string name="game_load_priority_summary">Set resource priority during game launch</string>
+    <string name="game_cache_management_title">Cache Management</string>
+    <string name="game_cache_management_summary">Optimize game cache for faster loading times</string>
+    <string-array name="game_load_priority_entries">
+        <item>Balanced (Recommended)</item>
+        <item>Maximum Performance</item>
+        <item>Power Saving</item>
+    </string-array>
+    <string-array name="game_load_priority_values">
+        <item>balanced</item>
+        <item>performance</item>
+        <item>powersave</item>
+    </string-array>
 </resources>

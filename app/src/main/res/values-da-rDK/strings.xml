@@ -16,159 +16,98 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="memory_boost">Boost hukommelse</string>
-    <string name="memory_boost_summary">Optimer hukommelse</string>
-    <string name="boost_memory">Hukommelse boostet</string>
-    <string name="quick_start_apps_title">Hurtigstart apps</string>
-    <string name="quick_start_apps_summary">Vælg apps til hurtig start</string>
-    <string name="settings_title">Game Space</string>
-    <string name="settings_summary">Manage your gaming setup</string>
+    <string name="quick_start_apps_title">Quick Start Apps</string>
+    <string name="quick_start_apps_summary">Select apps to launch quickly</string>
+    <string name="settings_title">Spil Rum</string>
+    <string name="settings_summary">Administrer dit spilopsætning</string>
     <!-- Game options -->
-    <string name="in_game_preferences_title">In-game options</string>
-    <string name="heads_up_disabled_summary">Deaktiver heads-up notifikationer under spil</string>
-    <string name="suppress_fullscreen_intent_title">Block fullscreen event</string>
-    <string name="suppress_fullscreen_intent_summary">Prevent fullscreen events like incoming calls from appearing</string>
-    <string name="stay_awake_title">Stay awake</string>
-    <string name="stay_awake_summary">Hold skærmen tændt under spillet</string>
-    <string name="lock_gesture_title">Lock gesture</string>
-    <string name="auto_brightness_disabled_title">Disable auto-brightness</string>
-    <string name="three_screenshot_disabled_title">Disable swipe to screenshot</string>
-    <string name="three_screenshot_disabled_summary">Midlertidigt deaktiver tre-finger swipe gestus under spil</string>
-    <string name="chaldea">chaldeaprjkt</string>
-    <string name="adb_disabled_title">Disable USB debugging</string>
-    <string name="adb_disabled_summary">Midlertidigt deaktiver USB ADB debugging under spil</string>
-    <string name="gamespace_menu_opacity_title">Overlay menu opacity level</string>
+    <string name="in_game_preferences_title">Indstillinger for spil</string>
+    <string name="suppress_fullscreen_intent_title">Bloker begivenhed i fuldskærm</string>
+    <string name="suppress_fullscreen_intent_summary">Forhindr fuldskærms-begivenheder som indgående opkald i at blive vist</string>
+    <string name="stay_awake_title">Forbliv vågen</string>
+    <string name="lock_gesture_title">Lås gestus</string>
+    <string name="auto_brightness_disabled_title">Deaktiver auto-lysstyrke</string>
+    <string name="three_screenshot_disabled_title">Disable three fingers swipe gesture</string>
+    <string name="adb_disabled_title">Deaktiver USB-fejlretning</string>
+    <string name="gamespace_menu_opacity_title">Overlay menu opacitet niveau</string>
     <!-- Notification Mode -->
-    <string name="notification_mode_title">Notification mode</string>
-    <string name="notification_mode_hide">Do not show</string>
-    <string name="notification_mode_headsup">Show as Heads Up</string>
-    <string name="notification_mode_reticker">Show as reTicker</string>
-    <string name="notification_mode_danmaku">Show as Danmaku</string>
+    <string name="notification_mode_title">Notifikations tilstand</string>
+    <string name="notification_mode_hide">Vis ikke</string>
+    <string name="notification_mode_headsup">Vis som Heads Up</string>
+    <string name="notification_mode_reticker">Vis som reTicker</string>
+    <string name="notification_mode_danmaku">Vis som Danmaku</string>
     <!-- Ringer Mode -->
-    <string name="ringer_mode_title">Ringer mode</string>
-    <string-array name="ringer_mode_entries">
-        <item>Silent</item>
-        <item>Vibration</item>
-        <item>Normal</item>
-        <item>Må ikke ændres</item>
-    </string-array>
-    <string name="ringer_mode_silent">Silent</string>
-    <string name="ringer_mode_vibrate">Vibrate</string>
+    <string name="ringer_mode_title">Ringetilstand</string>
+    <string name="ringer_mode_silent">Stille</string>
+    <string name="ringer_mode_vibrate">Vibrere</string>
     <string name="ringer_mode_normal">Normal</string>
-    <string name="ringer_mode_no_change">Do not change</string>
+    <string name="ringer_mode_no_change">Ikke skift</string>
     <!-- Game picker -->
-    <string name="game_list_title">Library</string>
-    <string name="game_list_add_title">Add</string>
-    <string name="app_selector_label">Pick your game</string>
-    <string name="app_search_title">Search</string>
-    <string name="game_remove_message">Are you sure you want to remove %1$s from your game list?</string>
+    <string name="game_list_title">Bibliotek</string>
+    <string name="game_list_add_title">Tilføj</string>
+    <string name="app_selector_label">Vælg dit spil</string>
+    <string name="app_search_title">Søg</string>
+    <string name="game_remove_message">Er du sikker på, at du vil fjerne %1$s fra din spilliste?</string>
     <!-- Configure game -->
-    <string name="per_app_title">Configure game</string>
-    <string name="per_app_mode_title">Preferred mode</string>
-    <string-array name="per_app_preferred_mode_entries">
-        <item>Standard</item>
-        <item>Ydeevne</item>
-        <item>Batteri</item>
-    </string-array>
-    <string name="per_app_angle_title">Use ANGLE (experimental)</string>
-    <string name="per_app_angle_summary">Using ANGLE renderer instead of native GLES drivers.\nWARNING!! May breaks game graphics, use with caution!</string>
-    <string name="cant_find_angle_pkg">ANGLE is not available on your system</string>
-    <string name="per_app_unregister">Remove %1$s from library</string>
-    <string name="ram_usage">RAM-forbrug: </string>
-    <string name="game_mode_unsupported">Unsupported</string>
+    <string name="per_app_title">Konfigurer spil</string>
+    <string name="per_app_mode_title">Foretrukken tilstand</string>
+    <string name="per_app_angle_title">Brug ANGLE (eksperimentel)</string>
+    <string name="per_app_angle_summary">Brug ANGLE renderer i stedet for indfødte GLES drivere.\nADVARSEL!!! Kan ødelægge spilgrafik, brug med forsigtighed!</string>
+    <string name="cant_find_angle_pkg">ANGLE er ikke tilgængelig på dit system</string>
+    <string name="per_app_unregister">Fjern %1$s fra bibliotek</string>
+    <string name="game_mode_unsupported">Uunderstøttet</string>
     <string name="game_mode_standard">Standard</string>
-    <string name="game_mode_performance">Performance</string>
-    <string name="game_mode_battery">Battery</string>
-    <string-array name="game_mode_names">
-        <item>Unsupported</item>
-        <item>Standard</item>
-        <item>Ydeevne</item>
-        <item>Batteri</item>
-    </string-array>
+    <string name="game_mode_performance">Ydeevne</string>
+    <string name="game_mode_battery">Batteri</string>
     <!-- Custom seekbar -->
-    <string name="custom_seekbar_value">Value: <xliff:g id="v">%s</xliff:g></string>
-    <string name="custom_seekbar_default_value">by default</string>
-    <string name="custom_seekbar_default_value_to_set">Default value: <xliff:g id="v">%s</xliff:g>\nLong tap to set</string>
-    <string name="custom_seekbar_default_value_is_set">Default value is set</string>
+    <string name="custom_seekbar_value">Værdi: <xliff:g id="v">%s</xliff:g></string>
+    <string name="custom_seekbar_default_value">som standard</string>
+    <string name="custom_seekbar_default_value_to_set">Standardværdi: <xliff:g id="v">%s</xliff:g>\nLangt tryk for at indstille</string>
+    <string name="custom_seekbar_default_value_is_set">Standard værdi er sat</string>
     <!-- Game overlay -->
-    <string name="memory_format">Memory available: <xliff:g id="availmemory" example="1000">%1$d</xliff:g>\/<xliff:g id="totalmemory" example="5000">%2$d</xliff:g> MB</string>
+    <string name="battery_format">Batteri: <xliff:g id="percentage" example="100">%1$d%%</xliff:g></string>
+    <string name="memory_format">Tilgængelig hukommelse: <xliff:g id="availmemory" example="1000">%1$d</xliff:g>\/<xliff:g id="totalmemory" example="5000">%2$d</xliff:g> MB</string>
     <!-- Tiles -->
-    <string name="game_mode_title">Mode</string>
+    <string name="game_mode_title">Tilstand</string>
     <string name="fps_Info_title">FPS info</string>
-    <string name="notification_hide">Hide</string>
-    <string name="notification_headsup">Heads Up</string>
+    <string name="notification_hide">Skjul</string>
+    <string name="notification_headsup">Banner Opad</string>
     <string name="notification_reticker">reTicker</string>
     <string name="notification_danmaku">Danmaku</string>
-    <string name="state_enabled">Enabled</string>
-    <string name="state_disabled">Disabled</string>
-    <string name="state_default">Default</string>
-    <string name="in_game_calls_title">Call mode</string>
-    <string name="in_game_calls_no_action">No action</string>
-    <string name="in_game_calls_auto_answer">Auto answer</string>
-    <string name="in_game_calls_auto_reject">Auto reject</string>
-    <string name="in_game_calls_received_number">Received call from %1$s</string>
-    <string name="in_game_calls_rejected_number">Rejected call from %1$s</string>
+    <string name="state_enabled">Aktiveret</string>
+    <string name="state_disabled">Deaktiveret</string>
+    <string name="state_default">Standard</string>
+    <string name="in_game_calls_title">Opkaldstilstand</string>
+    <string name="in_game_calls_no_action">Ingen handling</string>
+    <string name="in_game_calls_auto_answer">Automatisk svar</string>
+    <string name="in_game_calls_auto_reject">Automatisk afvisning</string>
+    <string name="in_game_calls_received_number">Modtaget opkald fra %1$s</string>
+    <string name="in_game_calls_rejected_number">Afviste opkald fra %1$s</string>
     <!-- Danmaku Notification Mode -->
-    <string name="danmaku_notification_mode_title">Danmaku notifikationstilstand</string>
-    <string name="danmaku_notification_mode_summary">Vis notifikationer som danmaku, også kendt som bullet-kommentarer, mens spillet er aktivt</string>
-    <string name="bypass_charge_enabled_summary">Omgå opladning</string>
-    <string name="bypass_charge_enabled_title">Aktiver omgåelse af opladning under spil</string>
-    <string name="gamespace_running">Game Space kører</string>
-    <string name="app_locked_message">Denne app er låst. Lås den op først.</string>
-    <string name="call_overlay_enabled_title">Opkalds-overlay</string>
-    <string name="call_overlay_enabled_summary">Vis minimal opkalds-overlay for at besvare/afvise opkald</string>
-    <string name="auto_brightness_disabled_summary">Hold lysstyrke fast under spil</string>
-    
-    <!-- UI Strings -->
-    <string name="select_apps_to_launch">Vælg apps til hurtig start</string>
-    <string name="add_game">Tilføj spil</string>
-    <string name="expanded">Udvidet</string>
-    <string name="collapsed">Sammenfoldet</string>
-    <string name="toggle_menu">Skift menu</string>
-    <string name="close_menu">Luk menu</string>
-    <string name="notifications">Notifikationer</string>
-    <string name="display_gestures">Skærm og bevægelser</string>
-    <string name="no_games_added">Ingen spil tilføjet endnu</string>
-    <string name="ok">OK</string>
-    <string name="cancel">Annuller</string>
-    <string name="remove">Fjern</string>
-    <string name="back">Tilbage</string>
-    <string name="game_mode">Spiltilstand</string>
-    <string name="graphics">Grafik</string>
-    <string name="remove_from_library">Fjern fra bibliotek</string>
-    <string name="registered_game">Registreret spil</string>
-    <string name="game_space">Game Space</string>
-    
-    <!-- Game Panel -->
-    <string name="save">Gem</string>
-    <string name="panel_options">Panelindstillinger</string>
-    <string name="brightness_slider">Lysstyrke-skyderen</string>
-    <string name="fps_graph">FPS-graf</string>
-    <string name="selected_tiles">Valgte fliser</string>
-    <string name="available_tiles">Tilgængelige fliser</string>
-    <string name="fps_stats">min %1$d | gns %2$d | maks %3$d</string>
-    <string name="add">Tilføj</string>
-    
-    <!-- Tile Labels -->
-    <string name="tile_danmaku">Danmaku</string>
-    <string name="tile_stay_awake">Forbliv vågen</string>
-    <string name="tile_wifi">Wi-Fi</string>
-    <string name="tile_dnd">Forstyr ikke</string>
-    <string name="tile_fps_info">FPS-info</string>
-    <string name="tile_auto_rotate">Automatisk rotation</string>
-    <string name="tile_boost_memory">Boost hukommelse</string>
-    <string name="tile_settings">Indstillinger</string>
-    <string name="tile_airplane_mode">Flytilstand</string>
-    <string name="tile_bluetooth">Bluetooth</string>
-    <string name="tile_mobile_data">Mobildata</string>
-    <string name="tile_touch_boost">Berøringsboost</string>
-    
-    <!-- Content Descriptions (Accessibility) -->
-    <string name="cd_reject">Afvis</string>
-    <string name="cd_accept">Accepter</string>
-    <string name="cd_caller_photo">Opkalderfoto</string>
-    <string name="cd_dismiss">Afvis</string>
-    <string name="cd_edit_tiles">Rediger fliser</string>
-    <string name="cd_collapse">Sammenfold</string>
-    <string name="cd_expand">Udvid</string>
+    <string name="danmaku_notification_mode_title">Danmaku-meddelelsestilstand</string>
+    <string name="danmaku_notification_mode_summary">Show notification as danmaku aka bullet comments while game is active</string>
+    <string name="gamespace_running">Game Space is running</string>
+    <!-- Call overlay -->
+    <string name="call_overlay_enabled_title">Call overlay</string>
+    <string name="call_overlay_enabled_summary">Show minimal call overlay to answer/reject calls</string>
+    <!-- Game Optimization -->
+    <string name="game_optimization_title">Launch Optimization</string>
+    <string name="game_launch_boost_title">Launch Boost</string>
+    <string name="game_launch_boost_summary">Optimize CPU and memory for faster game launch</string>
+    <string name="game_memory_management_title">Smart Memory Management</string>
+    <string name="game_memory_management_summary">Automatically clear background apps when launching games</string>
+    <string name="game_load_priority_title">Loading Priority</string>
+    <string name="game_load_priority_summary">Set resource priority during game launch</string>
+    <string name="game_cache_management_title">Cache Management</string>
+    <string name="game_cache_management_summary">Optimize game cache for faster loading times</string>
+    <string-array name="game_load_priority_entries">
+        <item>Balanced (Recommended)</item>
+        <item>Maximum Performance</item>
+        <item>Power Saving</item>
+    </string-array>
+    <string-array name="game_load_priority_values">
+        <item>balanced</item>
+        <item>performance</item>
+        <item>powersave</item>
+    </string-array>
 </resources>

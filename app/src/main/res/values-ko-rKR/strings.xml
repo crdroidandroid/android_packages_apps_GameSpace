@@ -16,159 +16,98 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="memory_boost">메모리 부스트</string>
-    <string name="memory_boost_summary">메모리 최적화</string>
-    <string name="boost_memory">메모리가 부스트되었습니다</string>
     <string name="quick_start_apps_title">빠른 시작 앱</string>
-    <string name="quick_start_apps_summary">빠르게 시작할 앱 선택</string>
-    <string name="settings_title">게임 공간</string>
-    <string name="settings_summary">게이밍 설정을 관리하기</string>
+    <string name="quick_start_apps_summary">빠르게 실행할 앱을 선택하세요</string>
+    <string name="settings_title">게임 스페이스</string>
+    <string name="settings_summary">게임용 설정 관리</string>
     <!-- Game options -->
     <string name="in_game_preferences_title">인게임 옵션</string>
-    <string name="heads_up_disabled_summary">게임 중 헤드업 알림 비활성화</string>
-    <string name="suppress_fullscreen_intent_title">전체화면 이벤트 막기</string>
-    <string name="suppress_fullscreen_intent_summary">전화를 수신할 때와 같은 전체화면 이벤트를 방지합니다</string>
-    <string name="stay_awake_title">화면 켜짐 상태 유지</string>
-    <string name="stay_awake_summary">게임 중 화면을 계속 켜둡니다</string>
-    <string name="lock_gesture_title">잠금 제스처</string>
-    <string name="auto_brightness_disabled_title">자동 밝기조절 해제</string>
-    <string name="three_screenshot_disabled_title">스와이프로 스크린샷 찍기 해제</string>
-    <string name="three_screenshot_disabled_summary">게임 중 세 손가락 스와이프 제스처 일시적으로 비활성화</string>
-    <string name="chaldea">chaldeaprjkt</string>
-    <string name="adb_disabled_title">USB 디버깅 비활성화</string>
-    <string name="adb_disabled_summary">게임 중 USB ADB 디버깅 일시적으로 비활성화</string>
-    <string name="gamespace_menu_opacity_title">오버레이 메뉴 투명도 레벨</string>
+    <string name="suppress_fullscreen_intent_title">전체 화면 이벤트 방지</string>
+    <string name="suppress_fullscreen_intent_summary">걸려오는 전화 등 전체 화면 이벤트가 열리는 것을 방지합니다.</string>
+    <string name="stay_awake_title">화면 계속 켜 두기</string>
+    <string name="lock_gesture_title">제스처 잠금</string>
+    <string name="auto_brightness_disabled_title">자동 밝기 사용 안함</string>
+    <string name="three_screenshot_disabled_title">세 손가락 쓸기 제스처 사용 안함</string>
+    <string name="adb_disabled_title">USB 디버깅 사용 안함</string>
+    <string name="gamespace_menu_opacity_title">오버레이 메뉴 불투명도</string>
     <!-- Notification Mode -->
     <string name="notification_mode_title">알림 모드</string>
-    <string name="notification_mode_hide">표시 안 함</string>
-    <string name="notification_mode_headsup">헤드업으로 보기</string>
-    <string name="notification_mode_reticker">reTicker로 보기</string>
-    <string name="notification_mode_danmaku">Danmaku로 보기</string>
+    <string name="notification_mode_hide">표시 안함</string>
+    <string name="notification_mode_headsup">헤드업으로 표시</string>
+    <string name="notification_mode_reticker">reTicker로 표시</string>
+    <string name="notification_mode_danmaku">탄막으로 표시</string>
     <!-- Ringer Mode -->
     <string name="ringer_mode_title">벨소리 모드</string>
-    <string-array name="ringer_mode_entries">
-        <item>무음</item>
-        <item>진동</item>
-        <item>기본</item>
-        <item>변경 안함</item>
-    </string-array>
     <string name="ringer_mode_silent">무음</string>
     <string name="ringer_mode_vibrate">진동</string>
-    <string name="ringer_mode_normal">기본</string>
-    <string name="ringer_mode_no_change">변경 안함</string>
+    <string name="ringer_mode_normal">소리</string>
+    <string name="ringer_mode_no_change">바꾸지 않음</string>
     <!-- Game picker -->
     <string name="game_list_title">라이브러리</string>
     <string name="game_list_add_title">추가</string>
-    <string name="app_selector_label">게임을 선택하기</string>
+    <string name="app_selector_label">게임 선택</string>
     <string name="app_search_title">검색</string>
-    <string name="game_remove_message">정말 게임리스트에서 %1$s을(를) 삭제하겠습니까?</string>
+    <string name="game_remove_message">정말 게임 목록에서 %1$s 앱을 제거하시겠습니까?</string>
     <!-- Configure game -->
-    <string name="per_app_title">게임 설정</string>
+    <string name="per_app_title">게임 구성 설정</string>
     <string name="per_app_mode_title">선호 모드</string>
-    <string-array name="per_app_preferred_mode_entries">
-        <item>일반</item>
-        <item>성능</item>
-        <item>배터리</item>
-    </string-array>
-    <string name="per_app_angle_title">ANGLE 사용 (실험적)</string>
-    <string name="per_app_angle_summary">기본 GLES 드라이버 대신 ANGLE 렌더러를 사용합니다.\n경고!! 게임 그래픽이 깨질 수 있으니 주의하여 사용하세요!</string>
-    <string name="cant_find_angle_pkg">ANGLE을 이 시스템에서 사용할 수 없습니다</string>
-    <string name="per_app_unregister">%1$s 을(를) 라이브러리에서 제거</string>
-    <string name="ram_usage">RAM 사용량: </string>
-    <string name="game_mode_unsupported">미지원</string>
-    <string name="game_mode_standard">일반</string>
+    <string name="per_app_angle_title">ANGLE 사용(실험적)</string>
+    <string name="per_app_angle_summary">기본 GLES 드라이버 대신 ANGLE 렌더러를 사용합니다.\n경고! 게임 그래픽이 깨질 수 있습니다. 주의해서 사용하세요!</string>
+    <string name="cant_find_angle_pkg">이 시스템에서 ANGLE 드라이버를 사용할 수 없습니다.</string>
+    <string name="per_app_unregister">라이브러리에서 %1$s 제거</string>
+    <string name="game_mode_unsupported">지원 안함</string>
+    <string name="game_mode_standard">기본</string>
     <string name="game_mode_performance">성능</string>
     <string name="game_mode_battery">배터리</string>
-    <string-array name="game_mode_names">
-        <item>미지원</item>
-        <item>일반</item>
-        <item>성능</item>
-        <item>배터리</item>
-    </string-array>
     <!-- Custom seekbar -->
     <string name="custom_seekbar_value">값: <xliff:g id="v">%s</xliff:g></string>
-    <string name="custom_seekbar_default_value">기본값으로 설정</string>
-    <string name="custom_seekbar_default_value_to_set">기본값: <xliff:g id="v">%s</xliff:g>\n길게 눌러서 설정</string>
-    <string name="custom_seekbar_default_value_is_set">기본값으로 설정됨</string>
+    <string name="custom_seekbar_default_value">기본값</string>
+    <string name="custom_seekbar_default_value_to_set">기본값: <xliff:g id="v">%s</xliff:g>\n길게 누르면 기본값으로 초기화합니다.</string>
+    <string name="custom_seekbar_default_value_is_set">기본값으로 초기화했습니다.</string>
     <!-- Game overlay -->
-    <string name="memory_format">메모리 사용가능량: <xliff:g id="availmemory" example="1000">%1$d</xliff:g>\/<xliff:g id="totalmemory" example="5000">%2$d</xliff:g> MB</string>
+    <string name="battery_format">배터리: <xliff:g id="percentage" example="100">%1$d%%</xliff:g></string>
+    <string name="memory_format">가용 메모리: <xliff:g id="availmemory" example="1000">%1$d</xliff:g>\/<xliff:g id="totalmemory" example="5000">%2$d</xliff:g>MB</string>
     <!-- Tiles -->
     <string name="game_mode_title">모드</string>
     <string name="fps_Info_title">FPS 정보</string>
     <string name="notification_hide">숨기기</string>
     <string name="notification_headsup">헤드업</string>
     <string name="notification_reticker">reTicker</string>
-    <string name="notification_danmaku">Danmaku</string>
-    <string name="state_enabled">활성화됨</string>
-    <string name="state_disabled">사용 안 함</string>
+    <string name="notification_danmaku">탄막</string>
+    <string name="state_enabled">켜짐</string>
+    <string name="state_disabled">꺼짐</string>
     <string name="state_default">기본값</string>
     <string name="in_game_calls_title">전화 모드</string>
-    <string name="in_game_calls_no_action">동작 없음</string>
-    <string name="in_game_calls_auto_answer">자동 응답</string>
-    <string name="in_game_calls_auto_reject">자동 거부</string>
-    <string name="in_game_calls_received_number">%1$s 에서 전화 받음</string>
-    <string name="in_game_calls_rejected_number">%1$s 에서 전화 거부함</string>
+    <string name="in_game_calls_no_action">작업 없음</string>
+    <string name="in_game_calls_auto_answer">자동으로 받기</string>
+    <string name="in_game_calls_auto_reject">자동으로 거부</string>
+    <string name="in_game_calls_received_number">%1$s 번호에서 오는 전화 받기</string>
+    <string name="in_game_calls_rejected_number">%1$s 번호에서 오는 전화 거부</string>
     <!-- Danmaku Notification Mode -->
-    <string name="danmaku_notification_mode_title">Danmaku 알림 모드</string>
-    <string name="danmaku_notification_mode_summary">게임이 활성화 중일 때  bullet comments, 일명 danmaku로 알림 표시</string>
-    <string name="bypass_charge_enabled_summary">충전 우회</string>
-    <string name="bypass_charge_enabled_title">게임 중 충전 우회 활성화</string>
-    <string name="gamespace_running">게임 공간이 실행 중입니다</string>
-    <string name="app_locked_message">이 앱은 잠겨 있습니다. 먼저 잠금을 해제하세요.</string>
+    <string name="danmaku_notification_mode_title">탄막 알림 모드</string>
+    <string name="danmaku_notification_mode_summary">게임 중일 때 알림을 탄막처럼 작게 표시</string>
+    <string name="gamespace_running">Game Space가 실행 중입니다</string>
+    <!-- Call overlay -->
     <string name="call_overlay_enabled_title">통화 오버레이</string>
-    <string name="call_overlay_enabled_summary">최소 통화 오버레이를 표시하여 전화 수락/거부</string>
-    <string name="auto_brightness_disabled_summary">게임 중 밝기를 고정으로 유지</string>
-    
-    <!-- UI Strings -->
-    <string name="select_apps_to_launch">빠른 실행을 위한 앱 선택</string>
-    <string name="add_game">게임 추가</string>
-    <string name="expanded">확장됨</string>
-    <string name="collapsed">축소됨</string>
-    <string name="toggle_menu">메뉴 전환</string>
-    <string name="close_menu">메뉴 닫기</string>
-    <string name="notifications">알림</string>
-    <string name="display_gestures">디스플레이 및 제스처</string>
-    <string name="no_games_added">아직 추가된 게임이 없습니다</string>
-    <string name="ok">확인</string>
-    <string name="cancel">취소</string>
-    <string name="remove">제거</string>
-    <string name="back">뒤로</string>
-    <string name="game_mode">게임 모드</string>
-    <string name="graphics">그래픽</string>
-    <string name="remove_from_library">라이브러리에서 제거</string>
-    <string name="registered_game">등록된 게임</string>
-    <string name="game_space">게임 공간</string>
-    
-    <!-- Game Panel -->
-    <string name="save">저장</string>
-    <string name="panel_options">패널 옵션</string>
-    <string name="brightness_slider">밝기 슬라이더</string>
-    <string name="fps_graph">FPS 그래프</string>
-    <string name="selected_tiles">선택된 타일</string>
-    <string name="available_tiles">사용 가능한 타일</string>
-    <string name="fps_stats">최소 %1$d | 평균 %2$d | 최대 %3$d</string>
-    <string name="add">추가</string>
-    
-    <!-- Tile Labels -->
-    <string name="tile_danmaku">Danmaku</string>
-    <string name="tile_stay_awake">화면 켜짐 상태 유지</string>
-    <string name="tile_wifi">Wi-Fi</string>
-    <string name="tile_dnd">방해 금지</string>
-    <string name="tile_fps_info">FPS 정보</string>
-    <string name="tile_auto_rotate">자동 회전</string>
-    <string name="tile_boost_memory">메모리 부스트</string>
-    <string name="tile_settings">설정</string>
-    <string name="tile_airplane_mode">비행기 모드</string>
-    <string name="tile_bluetooth">블루투스</string>
-    <string name="tile_mobile_data">모바일 데이터</string>
-    <string name="tile_touch_boost">터치 부스트</string>
-    
-    <!-- Content Descriptions (Accessibility) -->
-    <string name="cd_reject">거부</string>
-    <string name="cd_accept">수락</string>
-    <string name="cd_caller_photo">발신자 사진</string>
-    <string name="cd_dismiss">닫기</string>
-    <string name="cd_edit_tiles">타일 편집</string>
-    <string name="cd_collapse">축소</string>
-    <string name="cd_expand">확장</string>
+    <string name="call_overlay_enabled_summary">통화 수신/거절 시 최소한의 통화 오버레이만 표시합니다</string>
+    <!-- Game Optimization -->
+    <string name="game_optimization_title">최적화 실행</string>
+    <string name="game_launch_boost_title">부스트 실행</string>
+    <string name="game_launch_boost_summary">게임 실행 속도를 높이기 위해 CPU와 메모리를 최적화하세요</string>
+    <string name="game_memory_management_title">스마트 메모리 관리</string>
+    <string name="game_memory_management_summary">게임 실행 시 백그라운드 앱을 자동으로 종료합니다</string>
+    <string name="game_load_priority_title">로딩 우선순위</string>
+    <string name="game_load_priority_summary">게임 실행 시 리소스 우선 순위 설정</string>
+    <string name="game_cache_management_title">캐시 관리</string>
+    <string name="game_cache_management_summary">게임 캐시를 최적화하여 로딩 속도를 향상시키세요</string>
+    <string-array name="game_load_priority_entries">
+        <item>균형 잡힌 (추천)</item>
+        <item>최대 성능</item>
+        <item>배터리 절약</item>
+    </string-array>
+    <string-array name="game_load_priority_values">
+        <item>균형 잡힌</item>
+        <item>성능</item>
+        <item>배터리 절약</item>
+    </string-array>
 </resources>

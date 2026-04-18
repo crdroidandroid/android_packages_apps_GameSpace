@@ -16,27 +16,19 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="memory_boost">تقویت حافظه</string>
-    <string name="memory_boost_summary">بهینه‌سازی حافظه</string>
-    <string name="boost_memory">حافظه تقویت شد</string>
     <string name="quick_start_apps_title">برنامه‌های شروع سریع</string>
-    <string name="quick_start_apps_summary">برنامه‌های شروع سریع را انتخاب کنید</string>
+    <string name="quick_start_apps_summary">برنامه‌ها را برای راه‌اندازی سریع انتخاب کنید</string>
     <string name="settings_title">فضای بازی</string>
     <string name="settings_summary">تنظیمات بازی خود را مدیریت کنید</string>
     <!-- Game options -->
     <string name="in_game_preferences_title">گزینه های درون بازی</string>
-    <string name="heads_up_disabled_summary">غیرفعال کردن اعلان‌های heads-up در حین بازی</string>
     <string name="suppress_fullscreen_intent_title">مسدود کردن رویداد تمام صفحه</string>
     <string name="suppress_fullscreen_intent_summary">از نمایش رویدادهای تمام صفحه مانند تماس های دریافتی جلوگیری کنید</string>
     <string name="stay_awake_title">بیدار بمان</string>
-    <string name="stay_awake_summary">صفحه را در حین بازی روشن نگه دارید</string>
     <string name="lock_gesture_title">قفل کردن ژست</string>
     <string name="auto_brightness_disabled_title">غیرفعالسازی روشنایی خودکار</string>
-    <string name="three_screenshot_disabled_title">غیرفعالسازی گرفتن اسکرین شات با کشیدن انگشت</string>
-    <string name="three_screenshot_disabled_summary">موقتاً غیرفعال کردن حرکت سه انگشتی در حین بازی</string>
-    <string name="chaldea">chaldeaprjkt</string>
+    <string name="three_screenshot_disabled_title">حرکت تند کشیدن سه انگشت را غیرفعال کنید</string>
     <string name="adb_disabled_title">غیرفعال کردن اشکال زدایی USB</string>
-    <string name="adb_disabled_summary">موقتاً غیرفعال کردن اشکال‌زدایی USB ADB در حین بازی</string>
     <string name="gamespace_menu_opacity_title">سطح شفافیت منوی همپوشانی</string>
     <!-- Notification Mode -->
     <string name="notification_mode_title">حالت اعلان‌ها</string>
@@ -46,12 +38,6 @@
     <string name="notification_mode_danmaku">نمایش به صورت Danmaku</string>
     <!-- Ringer Mode -->
     <string name="ringer_mode_title">حالت با صدا</string>
-    <string-array name="ringer_mode_entries">
-        <item>سکوت</item>
-        <item>لرزش</item>
-        <item>معمولی</item>
-        <item>بدون تغییر</item>
-    </string-array>
     <string name="ringer_mode_silent">سکوت</string>
     <string name="ringer_mode_vibrate">لرزش</string>
     <string name="ringer_mode_normal">معمولی</string>
@@ -65,32 +51,21 @@
     <!-- Configure game -->
     <string name="per_app_title">پیکربندی بازی</string>
     <string name="per_app_mode_title">حالت ترجیحی</string>
-    <string-array name="per_app_preferred_mode_entries">
-        <item>استاندارد</item>
-        <item>عملکرد</item>
-        <item>باتری</item>
-    </string-array>
     <string name="per_app_angle_title">استفاده از ANGLE (آزمایشی)</string>
     <string name="per_app_angle_summary">استفاده از رندر ANGLE به جای درایورهای GLES بومی، اگر دستگاه از آن پشتیبانی کند.\nهشدار!! ممکن است گرافیک بازی را خراب کند، با احتیاط استفاده کنید!</string>
     <string name="cant_find_angle_pkg">ANGLE در سیستم شما در دسترس نیست</string>
     <string name="per_app_unregister">%1$s را از مجموعه حذف کنید</string>
-    <string name="ram_usage">مصرف RAM: </string>
     <string name="game_mode_unsupported">پشتیبانی نشده</string>
     <string name="game_mode_standard">استاندارد</string>
     <string name="game_mode_performance">کارایی</string>
     <string name="game_mode_battery">باتری</string>
-    <string-array name="game_mode_names">
-        <item>پشتیبانی نمی‌شود</item>
-        <item>استاندارد</item>
-        <item>عملکرد</item>
-        <item>باتری</item>
-    </string-array>
     <!-- Custom seekbar -->
     <string name="custom_seekbar_value">ارزش: <xliff:g id="v">%s</xliff:g></string>
     <string name="custom_seekbar_default_value">به طور پیش فرض</string>
     <string name="custom_seekbar_default_value_to_set">ارزش پیش‌فرض: <xliff:g id="v">%s</xliff:g>\n برای تنظیم نگه دارید</string>
     <string name="custom_seekbar_default_value_is_set">مقدار پیش‌فرض تعیین شده است</string>
     <!-- Game overlay -->
+    <string name="battery_format">باتری: <xliff:g id="percentage" example="100">%1$d%%</xliff:g></string>
     <string name="memory_format">حافظه موجود است: <xliff:g id="availmemory" example="1000">%1$d</xliff:g>\/<xliff:g id="totalmemory" example="5000">%2$d</xliff:g> مگابایت</string>
     <!-- Tiles -->
     <string name="game_mode_title">حالت</string>
@@ -109,66 +84,30 @@
     <string name="in_game_calls_received_number">تماس دریافت شده از %1$s</string>
     <string name="in_game_calls_rejected_number">تماس رد شده از %1$s</string>
     <!-- Danmaku Notification Mode -->
-    <string name="danmaku_notification_mode_title">حالت اعلان Danmaku</string>
-    <string name="danmaku_notification_mode_summary">نمایش اعلان به عنوان danmaku یعنی نظرات گلوله‌ای در حین فعال بودن بازی</string>
-    <string name="bypass_charge_enabled_summary">رد کردن شارژ</string>
-    <string name="bypass_charge_enabled_title">فعال کردن رد کردن شارژ هنگام بازی</string>
+    <string name="danmaku_notification_mode_title">حالت اعلان گلوله جهنمی</string>
+    <string name="danmaku_notification_mode_summary">در حالی که بازی فعال است، اعلان را به حالت اعلان گلوله جهنمی نشان دهید</string>
     <string name="gamespace_running">فضای بازی در حال اجراست</string>
-    <string name="app_locked_message">این برنامه قفل است. لطفاً ابتدا آن را باز کنید.</string>
-    <string name="call_overlay_enabled_title">پوشش تماس</string>
-    <string name="call_overlay_enabled_summary">نمایش پوشش تماس حداقلی برای پاسخ/رد تماس‌ها</string>
-    <string name="auto_brightness_disabled_summary">نگه داشتن روشنایی ثابت در حین بازی</string>
-    
-    <!-- UI Strings -->
-    <string name="select_apps_to_launch">برنامه‌ها را برای راه‌اندازی سریع انتخاب کنید</string>
-    <string name="add_game">افزودن بازی</string>
-    <string name="expanded">گسترش یافته</string>
-    <string name="collapsed">جمع شده</string>
-    <string name="toggle_menu">تغییر وضعیت منو</string>
-    <string name="close_menu">بستن منو</string>
-    <string name="notifications">اعلان‌ها</string>
-    <string name="display_gestures">نمایش و حرکات</string>
-    <string name="no_games_added">هنوز بازی اضافه نشده است</string>
-    <string name="ok">تایید</string>
-    <string name="cancel">لغو</string>
-    <string name="remove">حذف</string>
-    <string name="back">بازگشت</string>
-    <string name="game_mode">حالت بازی</string>
-    <string name="graphics">گرافیک</string>
-    <string name="remove_from_library">حذف از مجموعه</string>
-    <string name="registered_game">بازی ثبت شده</string>
-    <string name="game_space">فضای بازی</string>
-    
-    <!-- Game Panel -->
-    <string name="save">ذخیره</string>
-    <string name="panel_options">گزینه‌های پنل</string>
-    <string name="brightness_slider">نوار لغزنده روشنایی</string>
-    <string name="fps_graph">نمودار FPS</string>
-    <string name="selected_tiles">کاشی‌های انتخاب شده</string>
-    <string name="available_tiles">کاشی‌های موجود</string>
-    <string name="fps_stats">حداقل %1$d | میانگین %2$d | حداکثر %3$d</string>
-    <string name="add">افزودن</string>
-    
-    <!-- Tile Labels -->
-    <string name="tile_danmaku">Danmaku</string>
-    <string name="tile_stay_awake">بیدار بمان</string>
-    <string name="tile_wifi">Wi-Fi</string>
-    <string name="tile_dnd">مزاحم نشوید</string>
-    <string name="tile_fps_info">اطلاعات FPS</string>
-    <string name="tile_auto_rotate">چرخش خودکار</string>
-    <string name="tile_boost_memory">تقویت حافظه</string>
-    <string name="tile_settings">تنظیمات</string>
-    <string name="tile_airplane_mode">حالت هواپیما</string>
-    <string name="tile_bluetooth">بلوتوث</string>
-    <string name="tile_mobile_data">داده موبایل</string>
-    <string name="tile_touch_boost">تقویت لمس</string>
-    
-    <!-- Content Descriptions (Accessibility) -->
-    <string name="cd_reject">رد کردن</string>
-    <string name="cd_accept">پذیرفتن</string>
-    <string name="cd_caller_photo">عکس تماس گیرنده</string>
-    <string name="cd_dismiss">نادیده گرفتن</string>
-    <string name="cd_edit_tiles">ویرایش کاشی‌ها</string>
-    <string name="cd_collapse">جمع کردن</string>
-    <string name="cd_expand">گسترش دادن</string>
+    <!-- Call overlay -->
+    <string name="call_overlay_enabled_title">Call overlay</string>
+    <string name="call_overlay_enabled_summary">Show minimal call overlay to answer/reject calls</string>
+    <!-- Game Optimization -->
+    <string name="game_optimization_title">Launch Optimization</string>
+    <string name="game_launch_boost_title">Launch Boost</string>
+    <string name="game_launch_boost_summary">Optimize CPU and memory for faster game launch</string>
+    <string name="game_memory_management_title">Smart Memory Management</string>
+    <string name="game_memory_management_summary">Automatically clear background apps when launching games</string>
+    <string name="game_load_priority_title">Loading Priority</string>
+    <string name="game_load_priority_summary">Set resource priority during game launch</string>
+    <string name="game_cache_management_title">Cache Management</string>
+    <string name="game_cache_management_summary">Optimize game cache for faster loading times</string>
+    <string-array name="game_load_priority_entries">
+        <item>Balanced (Recommended)</item>
+        <item>Maximum Performance</item>
+        <item>Power Saving</item>
+    </string-array>
+    <string-array name="game_load_priority_values">
+        <item>balanced</item>
+        <item>performance</item>
+        <item>powersave</item>
+    </string-array>
 </resources>

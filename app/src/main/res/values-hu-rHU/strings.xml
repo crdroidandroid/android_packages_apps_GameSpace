@@ -16,27 +16,19 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="memory_boost">Memória növelése</string>
-    <string name="memory_boost_summary">Memória optimalizálása</string>
-    <string name="boost_memory">Memória megnövelve</string>
-    <string name="quick_start_apps_title">Gyorsindítás alkalmazások</string>
-    <string name="quick_start_apps_summary">Alkalmazások kiválasztása gyorsindításhoz</string>
+    <string name="quick_start_apps_title">Gyorsindítási alkalmazások</string>
+    <string name="quick_start_apps_summary">Válassza ki a gyorsan indítandó alkalmazásokat</string>
     <string name="settings_title">Játéktér</string>
     <string name="settings_summary">Játékbeállítások kezelése</string>
     <!-- Game options -->
     <string name="in_game_preferences_title">Játékon belüli lehetőségek</string>
-    <string name="heads_up_disabled_summary">Heads-up értesítések letiltása játék közben</string>
     <string name="suppress_fullscreen_intent_title">Teljes képernyős mód blokkolása</string>
     <string name="suppress_fullscreen_intent_summary">Teljes képernyős események, mint például a bejövő hívás megjelenítésének megakadályozása</string>
     <string name="stay_awake_title">Ne zárja le a képernyőt</string>
-    <string name="stay_awake_summary">Képernyő bekapcsolva tartása játék közben</string>
     <string name="lock_gesture_title">Gesztusok gátlása</string>
     <string name="auto_brightness_disabled_title">Az automatikus fényerőszabályzás tiltása</string>
-    <string name="three_screenshot_disabled_title">Képernyőfotóhoz való húzás letiltása</string>
-    <string name="three_screenshot_disabled_summary">Három ujjas csúsztatás ideiglenesen letiltása játék közben</string>
-    <string name="chaldea">chaldeaprjkt</string>
+    <string name="three_screenshot_disabled_title">Három ujjas húzási gesztus letiltása</string>
     <string name="adb_disabled_title">Az USB-hibakeresés tiltása</string>
-    <string name="adb_disabled_summary">USB ADB hibakeresés ideiglenesen letiltása játék közben</string>
     <string name="gamespace_menu_opacity_title">Átfedés menü átlátszósági szintje</string>
     <!-- Notification Mode -->
     <string name="notification_mode_title">Értesítési mód</string>
@@ -46,12 +38,6 @@
     <string name="notification_mode_danmaku">Mutasd mint Danmaku</string>
     <!-- Ringer Mode -->
     <string name="ringer_mode_title">Csengés mód</string>
-    <string-array name="ringer_mode_entries">
-        <item>Néma</item>
-        <item>Rezgő</item>
-        <item>Normál</item>
-        <item>Ne változtassa meg</item>
-    </string-array>
     <string name="ringer_mode_silent">Néma</string>
     <string name="ringer_mode_vibrate">Rezgő</string>
     <string name="ringer_mode_normal">Normál</string>
@@ -65,32 +51,21 @@
     <!-- Configure game -->
     <string name="per_app_title">Játék konfigurálása</string>
     <string name="per_app_mode_title">Preferált mód</string>
-    <string-array name="per_app_preferred_mode_entries">
-        <item>Általános</item>
-        <item>Teljesítmény</item>
-        <item>Akkumulátor</item>
-    </string-array>
     <string name="per_app_angle_title">ANGLE használata (kísérleti)</string>
     <string name="per_app_angle_summary">ANGLE renderelő használata a natív GLES illesztőprogramok helyett.\nFIGYELEM!!! Elronthatja a játék grafikáját, óvatosan használd!</string>
     <string name="cant_find_angle_pkg">ANGLE nem elérhető ezen a rendszeren</string>
     <string name="per_app_unregister">%1$s eltávolítása a könyvtáradból</string>
-    <string name="ram_usage">RAM használat: </string>
     <string name="game_mode_unsupported">Nem támogatott</string>
     <string name="game_mode_standard">Általános</string>
     <string name="game_mode_performance">Teljesítmény</string>
     <string name="game_mode_battery">Akkumulátor</string>
-    <string-array name="game_mode_names">
-        <item>Nem támogatott</item>
-        <item>Normál</item>
-        <item>Teljesítmény</item>
-        <item>Akkumulátor</item>
-    </string-array>
     <!-- Custom seekbar -->
     <string name="custom_seekbar_value">Érték: <xliff:g id="v">%s</xliff:g></string>
     <string name="custom_seekbar_default_value">alapértelmezés szerint</string>
     <string name="custom_seekbar_default_value_to_set">Alapértelmezett érték: <xliff:g id="v">%s</xliff:g>\nHosszú koppintás a beállításhoz</string>
     <string name="custom_seekbar_default_value_is_set">Az alapértelmezett érték beállítva</string>
     <!-- Game overlay -->
+    <string name="battery_format">Akkumulátor: <xliff:g id="percentage" example="100">%1$d%%</xliff:g></string>
     <string name="memory_format">Elérhető memória: <xliff:g id="availmemory" example="1000">%1$d</xliff:g>\/<xliff:g id="totalmemory" example="5000">%2$d</xliff:g> MB</string>
     <!-- Tiles -->
     <string name="game_mode_title">Mód</string>
@@ -111,64 +86,28 @@
     <!-- Danmaku Notification Mode -->
     <string name="danmaku_notification_mode_title">Danmaku Értesítő mód</string>
     <string name="danmaku_notification_mode_summary">Értesítések danmakuként mutatása, avagy kommentek kilövése játék mód közben</string>
-    <string name="bypass_charge_enabled_summary">Töltés megkerülése</string>
-    <string name="bypass_charge_enabled_title">Töltés megkerülésének engedélyezése játék közben</string>
-    <string name="gamespace_running">Játéktér fut</string>
-    <string name="app_locked_message">Ez az alkalmazás zárolva van. Először oldja fel.</string>
+    <string name="gamespace_running">A Játéktér fut</string>
+    <!-- Call overlay -->
     <string name="call_overlay_enabled_title">Hívás átfedés</string>
-    <string name="call_overlay_enabled_summary">Minimális hívás átfedés megjelenítése hívások fogadásához/elutasításához</string>
-    <string name="auto_brightness_disabled_summary">Fényerő állandó szinten tartása játék közben</string>
-    
-    <!-- UI Strings -->
-    <string name="select_apps_to_launch">Válasszon alkalmazásokat a gyors indításhoz</string>
-    <string name="add_game">Játék hozzáadása</string>
-    <string name="expanded">Kibontva</string>
-    <string name="collapsed">Összecsukva</string>
-    <string name="toggle_menu">Menü váltása</string>
-    <string name="close_menu">Menü bezárása</string>
-    <string name="notifications">Értesítések</string>
-    <string name="display_gestures">Kijelző és mozdulatok</string>
-    <string name="no_games_added">Még nincsenek hozzáadott játékok</string>
-    <string name="ok">OK</string>
-    <string name="cancel">Mégse</string>
-    <string name="remove">Eltávolítás</string>
-    <string name="back">Vissza</string>
-    <string name="game_mode">Játék mód</string>
-    <string name="graphics">Grafika</string>
-    <string name="remove_from_library">Eltávolítás a könyvtárból</string>
-    <string name="registered_game">Regisztrált játék</string>
-    <string name="game_space">Játéktér</string>
-    
-    <!-- Game Panel -->
-    <string name="save">Mentés</string>
-    <string name="panel_options">Panel beállítások</string>
-    <string name="brightness_slider">Fényerő csúszka</string>
-    <string name="fps_graph">FPS grafikon</string>
-    <string name="selected_tiles">Kiválasztott csempék</string>
-    <string name="available_tiles">Elérhető csempék</string>
-    <string name="fps_stats">min %1$d | átlag %2$d | max %3$d</string>
-    <string name="add">Hozzáadás</string>
-    
-    <!-- Tile Labels -->
-    <string name="tile_danmaku">Danmaku</string>
-    <string name="tile_stay_awake">Ne zárja le a képernyőt</string>
-    <string name="tile_wifi">Wi-Fi</string>
-    <string name="tile_dnd">Ne zavarjanak</string>
-    <string name="tile_fps_info">FPS-adatok</string>
-    <string name="tile_auto_rotate">Automatikus forgatás</string>
-    <string name="tile_boost_memory">Memória gyorsítás</string>
-    <string name="tile_settings">Beállítások</string>
-    <string name="tile_airplane_mode">Repülő mód</string>
-    <string name="tile_bluetooth">Bluetooth</string>
-    <string name="tile_mobile_data">Mobiladat</string>
-    <string name="tile_touch_boost">Érintés gyorsítás</string>
-    
-    <!-- Content Descriptions (Accessibility) -->
-    <string name="cd_reject">Elutasítás</string>
-    <string name="cd_accept">Elfogadás</string>
-    <string name="cd_caller_photo">Hívó fényképe</string>
-    <string name="cd_dismiss">Elvetés</string>
-    <string name="cd_edit_tiles">Csempék szerkesztése</string>
-    <string name="cd_collapse">Összecsukás</string>
-    <string name="cd_expand">Kibontás</string>
+    <string name="call_overlay_enabled_summary">Minimális hívásfelületet jelenít meg a hívások fogadásához/elutasításához</string>
+    <!-- Game Optimization -->
+    <string name="game_optimization_title">Launch Optimization</string>
+    <string name="game_launch_boost_title">Launch Boost</string>
+    <string name="game_launch_boost_summary">Optimize CPU and memory for faster game launch</string>
+    <string name="game_memory_management_title">Smart Memory Management</string>
+    <string name="game_memory_management_summary">Automatically clear background apps when launching games</string>
+    <string name="game_load_priority_title">Loading Priority</string>
+    <string name="game_load_priority_summary">Set resource priority during game launch</string>
+    <string name="game_cache_management_title">Cache Management</string>
+    <string name="game_cache_management_summary">Optimize game cache for faster loading times</string>
+    <string-array name="game_load_priority_entries">
+        <item>Balanced (Recommended)</item>
+        <item>Maximum Performance</item>
+        <item>Power Saving</item>
+    </string-array>
+    <string-array name="game_load_priority_values">
+        <item>balanced</item>
+        <item>performance</item>
+        <item>powersave</item>
+    </string-array>
 </resources>

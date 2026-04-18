@@ -16,27 +16,17 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="memory_boost">Повећај меморију</string>
-    <string name="memory_boost_summary">Оптимизуј меморију</string>
-    <string name="boost_memory">Меморија повећана</string>
-    <string name="quick_start_apps_title">Апликације за брзо покретање</string>
-    <string name="quick_start_apps_summary">Изаберите апликације за брзо покретање</string>
     <string name="settings_title">Game Space</string>
     <string name="settings_summary">Manage your gaming setup</string>
     <!-- Game options -->
     <string name="in_game_preferences_title">In-game options</string>
-    <string name="heads_up_disabled_summary">Онемогући heads-up обавештења током игре</string>
     <string name="suppress_fullscreen_intent_title">Block fullscreen event</string>
     <string name="suppress_fullscreen_intent_summary">Prevent fullscreen events like incoming calls from appearing</string>
     <string name="stay_awake_title">Stay awake</string>
-    <string name="stay_awake_summary">Држи екран укљученим током игре</string>
     <string name="lock_gesture_title">Lock gesture</string>
     <string name="auto_brightness_disabled_title">Disable auto-brightness</string>
     <string name="three_screenshot_disabled_title">Disable swipe to screenshot</string>
-    <string name="three_screenshot_disabled_summary">Привремено онемогући гест превлачења са три прста током игре</string>
-    <string name="chaldea">chaldeaprjkt</string>
     <string name="adb_disabled_title">Disable USB debugging</string>
-    <string name="adb_disabled_summary">Привремено онемогући USB ADB отклањање грешака током игре</string>
     <string name="gamespace_menu_opacity_title">Overlay menu opacity level</string>
     <!-- Notification Mode -->
     <string name="notification_mode_title">Notification mode</string>
@@ -46,12 +36,6 @@
     <string name="notification_mode_danmaku">Show as Danmaku</string>
     <!-- Ringer Mode -->
     <string name="ringer_mode_title">Ringer mode</string>
-    <string-array name="ringer_mode_entries">
-        <item>Silent</item>
-        <item>Vibrate</item>
-        <item>Normal</item>
-        <item>Do not change</item>
-    </string-array>
     <string name="ringer_mode_silent">Silent</string>
     <string name="ringer_mode_vibrate">Vibrate</string>
     <string name="ringer_mode_normal">Normal</string>
@@ -65,32 +49,21 @@
     <!-- Configure game -->
     <string name="per_app_title">Configure game</string>
     <string name="per_app_mode_title">Preferred mode</string>
-    <string-array name="per_app_preferred_mode_entries">
-        <item>Standard</item>
-        <item>Performance</item>
-        <item>Battery</item>
-    </string-array>
     <string name="per_app_angle_title">Use ANGLE (experimental)</string>
     <string name="per_app_angle_summary">Using ANGLE renderer instead of native GLES drivers.\nWARNING!! May breaks game graphics, use with caution!</string>
     <string name="cant_find_angle_pkg">ANGLE is not available on your system</string>
     <string name="per_app_unregister">Remove %1$s from library</string>
-    <string name="ram_usage">Употреба RAM-а: </string>
     <string name="game_mode_unsupported">Unsupported</string>
     <string name="game_mode_standard">Standard</string>
     <string name="game_mode_performance">Performance</string>
     <string name="game_mode_battery">Battery</string>
-    <string-array name="game_mode_names">
-        <item>Unsupported</item>
-        <item>Standard</item>
-        <item>Performance</item>
-        <item>Battery</item>
-    </string-array>
     <!-- Custom seekbar -->
     <string name="custom_seekbar_value">Value: <xliff:g id="v">%s</xliff:g></string>
     <string name="custom_seekbar_default_value">by default</string>
     <string name="custom_seekbar_default_value_to_set">Default value: <xliff:g id="v">%s</xliff:g>\nLong tap to set</string>
     <string name="custom_seekbar_default_value_is_set">Default value is set</string>
     <!-- Game overlay -->
+    <string name="battery_format">Battery: <xliff:g id="percentage" example="100">%1$d%%</xliff:g></string>
     <string name="memory_format">Memory available: <xliff:g id="availmemory" example="1000">%1$d</xliff:g>\/<xliff:g id="totalmemory" example="5000">%2$d</xliff:g> MB</string>
     <!-- Tiles -->
     <string name="game_mode_title">Mode</string>
@@ -109,66 +82,6 @@
     <string name="in_game_calls_received_number">Received call from %1$s</string>
     <string name="in_game_calls_rejected_number">Rejected call from %1$s</string>
     <!-- Danmaku Notification Mode -->
-    <string name="danmaku_notification_mode_title">Danmaku режим обавештења</string>
-    <string name="danmaku_notification_mode_summary">Прикажи обавештења као danmaku, односно коментаре у облику метака док је игра активна</string>
-    <string name="bypass_charge_enabled_summary">Заобиђи пуњење</string>
-    <string name="bypass_charge_enabled_title">Омогући заобилажење пуњења током игре</string>
-    <string name="gamespace_running">Game Space ради</string>
-    <string name="app_locked_message">Ова апликација је закључана. Прво је откључајте.</string>
-    <string name="call_overlay_enabled_title">Преклапање позива</string>
-    <string name="call_overlay_enabled_summary">Прикажи минимално преклапање позива за одговарање/одбијање позива</string>
-    <string name="auto_brightness_disabled_summary">Држи осветљеност фиксном током игре</string>
-    
-    <!-- UI Strings -->
-    <string name="select_apps_to_launch">Изаберите апликације за брзо покретање</string>
-    <string name="add_game">Додај игру</string>
-    <string name="expanded">Проширено</string>
-    <string name="collapsed">Сакривено</string>
-    <string name="toggle_menu">Пребаци мени</string>
-    <string name="close_menu">Затвори мени</string>
-    <string name="notifications">Обавештења</string>
-    <string name="display_gestures">Екран и гестови</string>
-    <string name="no_games_added">Још нема додатих игара</string>
-    <string name="ok">У реду</string>
-    <string name="cancel">Откажи</string>
-    <string name="remove">Уклони</string>
-    <string name="back">Назад</string>
-    <string name="game_mode">Режим игре</string>
-    <string name="graphics">Графика</string>
-    <string name="remove_from_library">Уклони из библиотеке</string>
-    <string name="registered_game">Регистрована игра</string>
-    <string name="game_space">Game Space</string>
-    
-    <!-- Game Panel -->
-    <string name="save">Сачувај</string>
-    <string name="panel_options">Опције панела</string>
-    <string name="brightness_slider">Клизач осветљења</string>
-    <string name="fps_graph">FPS графикон</string>
-    <string name="selected_tiles">Изабране плочице</string>
-    <string name="available_tiles">Доступне плочице</string>
-    <string name="fps_stats">мин %1$d | просек %2$d | макс %3$d</string>
-    <string name="add">Додај</string>
-    
-    <!-- Tile Labels -->
-    <string name="tile_danmaku">Danmaku</string>
-    <string name="tile_stay_awake">Остани будан</string>
-    <string name="tile_wifi">Wi-Fi</string>
-    <string name="tile_dnd">Не узнемиравај</string>
-    <string name="tile_fps_info">FPS информације</string>
-    <string name="tile_auto_rotate">Аутоматска ротација</string>
-    <string name="tile_boost_memory">Убрзање меморије</string>
-    <string name="tile_settings">Подешавања</string>
-    <string name="tile_airplane_mode">Режим лета</string>
-    <string name="tile_bluetooth">Bluetooth</string>
-    <string name="tile_mobile_data">Мобилни подаци</string>
-    <string name="tile_touch_boost">Убрзање додира</string>
-    
-    <!-- Content Descriptions (Accessibility) -->
-    <string name="cd_reject">Одбиј</string>
-    <string name="cd_accept">Прихвати</string>
-    <string name="cd_caller_photo">Фотографија позиваоца</string>
-    <string name="cd_dismiss">Одбаци</string>
-    <string name="cd_edit_tiles">Уреди плочице</string>
-    <string name="cd_collapse">Сакриј</string>
-    <string name="cd_expand">Прошири</string>
+    <string name="danmaku_notification_mode_title">Danmaku Notification mode</string>
+    <string name="danmaku_notification_mode_summary">Show notification as danmaku aka bullet comments while game is active</string>
 </resources>

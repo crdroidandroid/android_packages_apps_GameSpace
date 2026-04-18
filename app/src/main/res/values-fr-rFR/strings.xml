@@ -16,27 +16,19 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="memory_boost">Accélérer la mémoire</string>
-    <string name="memory_boost_summary">Optimiser la mémoire</string>
-    <string name="boost_memory">Mémoire accélérée</string>
-    <string name="quick_start_apps_title">Applications Démarrage Rapide</string>
+    <string name="quick_start_apps_title">Applications de démarrage rapide</string>
     <string name="quick_start_apps_summary">Sélectionnez les applications à lancer rapidement</string>
     <string name="settings_title">Espace Jeux</string>
     <string name="settings_summary">Gérez votre configuration de jeu</string>
     <!-- Game options -->
     <string name="in_game_preferences_title">Options en jeu</string>
-    <string name="heads_up_disabled_summary">Désactiver les notifications flottantes pendant le jeu</string>
     <string name="suppress_fullscreen_intent_title">Bloquer les évènements plein écran</string>
     <string name="suppress_fullscreen_intent_summary">Empêcher les événements plein écran comme montrer les appels entrants</string>
     <string name="stay_awake_title">Rester éveillé</string>
-    <string name="stay_awake_summary">Garder l\'écran allumé pendant le jeu</string>
     <string name="lock_gesture_title">Gestes de verrouillage</string>
     <string name="auto_brightness_disabled_title">Désactiver la luminosité automatique</string>
-    <string name="three_screenshot_disabled_title">Désactiver le glissement pour faire une capture d\'écran</string>
-    <string name="three_screenshot_disabled_summary">Désactiver temporairement le geste de glissement à trois doigts pendant le jeu</string>
-    <string name="chaldea">chaldeaprjkt</string>
+    <string name="three_screenshot_disabled_title">Désactiver le geste de balayage à trois doigts</string>
     <string name="adb_disabled_title">Désactiver le débogage USB</string>
-    <string name="adb_disabled_summary">Désactiver temporairement le débogage USB ADB pendant le jeu</string>
     <string name="gamespace_menu_opacity_title">Niveau d\'opacité du menu de superposition</string>
     <!-- Notification Mode -->
     <string name="notification_mode_title">Mode notification</string>
@@ -46,12 +38,6 @@
     <string name="notification_mode_danmaku">Afficher comme Danmaku</string>
     <!-- Ringer Mode -->
     <string name="ringer_mode_title">Mode sonnerie</string>
-    <string-array name="ringer_mode_entries">
-        <item>Silencieux</item>
-        <item>Vibreur</item>
-        <item>Normal</item>
-        <item>Ne pas changer</item>
-    </string-array>
     <string name="ringer_mode_silent">Silencieux</string>
     <string name="ringer_mode_vibrate">Vibreur</string>
     <string name="ringer_mode_normal">Normal</string>
@@ -65,32 +51,21 @@
     <!-- Configure game -->
     <string name="per_app_title">Configurer le jeu</string>
     <string name="per_app_mode_title">Mode préféré</string>
-    <string-array name="per_app_preferred_mode_entries">
-        <item>Standard</item>
-        <item>Performance</item>
-        <item>Batterie</item>
-    </string-array>
     <string name="per_app_angle_title">Utiliser ANGLE (expérimental)</string>
     <string name="per_app_angle_summary">Utiliser le moteur de rendu ANGLE au lieu des pilotes GLES natifs.\nATTENTION!! Peut casser le rendu graphique des jeux, à utiliser avec précaution !</string>
     <string name="cant_find_angle_pkg">ANGLE n\'est pas disponible pour votre système</string>
     <string name="per_app_unregister">Retirer %1$s de la bibliothèque</string>
-    <string name="ram_usage">Utilisation RAM : </string>
     <string name="game_mode_unsupported">Non-supporté</string>
     <string name="game_mode_standard">Standard</string>
     <string name="game_mode_performance">Performance</string>
     <string name="game_mode_battery">Batterie</string>
-    <string-array name="game_mode_names">
-        <item>Non-supporté</item>
-        <item>Standard</item>
-        <item>Performance</item>
-        <item>Batterie</item>
-    </string-array>
     <!-- Custom seekbar -->
     <string name="custom_seekbar_value">Valeur : <xliff:g id="v">%s</xliff:g></string>
     <string name="custom_seekbar_default_value">par défaut</string>
     <string name="custom_seekbar_default_value_to_set">Valeur par défaut : <xliff:g id="v">%s</xliff:g>\nRester appuyé pour définir</string>
     <string name="custom_seekbar_default_value_is_set">Valeur par défaut définie</string>
     <!-- Game overlay -->
+    <string name="battery_format">Batterie : <xliff:g id="percentage" example="100">%1$d%%</xliff:g></string>
     <string name="memory_format">Mémoire disponible : <xliff:g id="availmemory" example="1000">%1$d</xliff:g>\/<xliff:g id="totalmemory" example="5000">%2$d</xliff:g> Mo</string>
     <!-- Tiles -->
     <string name="game_mode_title">Mode</string>
@@ -111,64 +86,28 @@
     <!-- Danmaku Notification Mode -->
     <string name="danmaku_notification_mode_title">Mode de notification Danmaku</string>
     <string name="danmaku_notification_mode_summary">Afficher une notification en tant que danmaku (les commentaires flottants) lorsque le jeu est actif</string>
-    <string name="bypass_charge_enabled_summary">Contournement de charge</string>
-    <string name="bypass_charge_enabled_title">Activer le contournement de charge pendant le jeu</string>
-    <string name="gamespace_running">Espace Jeux est en cours d\'exécution</string>
-    <string name="app_locked_message">Cette application est verrouillée. Veuillez la déverrouiller d\'abord.</string>
-    <string name="call_overlay_enabled_title">Superposition d\'appel</string>
-    <string name="call_overlay_enabled_summary">Afficher une superposition d\'appel minimale pour répondre/rejeter les appels</string>
-    <string name="auto_brightness_disabled_summary">Maintenir la luminosité fixe pendant le jeu</string>
-    
-    <!-- UI Strings -->
-    <string name="select_apps_to_launch">Sélectionnez les applications à lancer rapidement</string>
-    <string name="add_game">Ajouter un jeu</string>
-    <string name="expanded">Développé</string>
-    <string name="collapsed">Réduit</string>
-    <string name="toggle_menu">Basculer le menu</string>
-    <string name="close_menu">Fermer le menu</string>
-    <string name="notifications">Notifications</string>
-    <string name="display_gestures">Affichage et gestes</string>
-    <string name="no_games_added">Aucun jeu ajouté pour le moment</string>
-    <string name="ok">OK</string>
-    <string name="cancel">Annuler</string>
-    <string name="remove">Supprimer</string>
-    <string name="back">Retour</string>
-    <string name="game_mode">Mode de jeu</string>
-    <string name="graphics">Graphiques</string>
-    <string name="remove_from_library">Retirer de la bibliothèque</string>
-    <string name="registered_game">Jeu enregistré</string>
-    <string name="game_space">Espace Jeux</string>
-    
-    <!-- Game Panel -->
-    <string name="save">Enregistrer</string>
-    <string name="panel_options">Options du panneau</string>
-    <string name="brightness_slider">Curseur de luminosité</string>
-    <string name="fps_graph">Graphique FPS</string>
-    <string name="selected_tiles">Tuiles sélectionnées</string>
-    <string name="available_tiles">Tuiles disponibles</string>
-    <string name="fps_stats">min %1$d | moy %2$d | max %3$d</string>
-    <string name="add">Ajouter</string>
-    
-    <!-- Tile Labels -->
-    <string name="tile_danmaku">Danmaku</string>
-    <string name="tile_stay_awake">Rester éveillé</string>
-    <string name="tile_wifi">Wi-Fi</string>
-    <string name="tile_dnd">Ne pas déranger</string>
-    <string name="tile_fps_info">Infos FPS</string>
-    <string name="tile_auto_rotate">Rotation automatique</string>
-    <string name="tile_boost_memory">Booster la mémoire</string>
-    <string name="tile_settings">Paramètres</string>
-    <string name="tile_airplane_mode">Mode avion</string>
-    <string name="tile_bluetooth">Bluetooth</string>
-    <string name="tile_mobile_data">Données mobiles</string>
-    <string name="tile_touch_boost">Boost tactile</string>
-    
-    <!-- Content Descriptions (Accessibility) -->
-    <string name="cd_reject">Rejeter</string>
-    <string name="cd_accept">Accepter</string>
-    <string name="cd_caller_photo">Photo de l\'appelant</string>
-    <string name="cd_dismiss">Ignorer</string>
-    <string name="cd_edit_tiles">Modifier les tuiles</string>
-    <string name="cd_collapse">Réduire</string>
-    <string name="cd_expand">Développer</string>
+    <string name="gamespace_running">Espace de Jeux en cours de fonctionnement</string>
+    <!-- Call overlay -->
+    <string name="call_overlay_enabled_title">Superposition d\'appels</string>
+    <string name="call_overlay_enabled_summary">Afficher la surcouche d\'appel minimale pour répondre/rejeter les appels</string>
+    <!-- Game Optimization -->
+    <string name="game_optimization_title">Launch Optimization</string>
+    <string name="game_launch_boost_title">Launch Boost</string>
+    <string name="game_launch_boost_summary">Optimize CPU and memory for faster game launch</string>
+    <string name="game_memory_management_title">Smart Memory Management</string>
+    <string name="game_memory_management_summary">Automatically clear background apps when launching games</string>
+    <string name="game_load_priority_title">Loading Priority</string>
+    <string name="game_load_priority_summary">Set resource priority during game launch</string>
+    <string name="game_cache_management_title">Cache Management</string>
+    <string name="game_cache_management_summary">Optimize game cache for faster loading times</string>
+    <string-array name="game_load_priority_entries">
+        <item>Balanced (Recommended)</item>
+        <item>Maximum Performance</item>
+        <item>Power Saving</item>
+    </string-array>
+    <string-array name="game_load_priority_values">
+        <item>balanced</item>
+        <item>performance</item>
+        <item>powersave</item>
+    </string-array>
 </resources>

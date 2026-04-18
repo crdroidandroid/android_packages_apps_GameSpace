@@ -16,27 +16,19 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="memory_boost">增強記憶體</string>
-    <string name="memory_boost_summary">優化記憶體</string>
-    <string name="boost_memory">記憶體已增強</string>
     <string name="quick_start_apps_title">快速啟動應用程式</string>
     <string name="quick_start_apps_summary">選擇要快速啟動的應用程式</string>
     <string name="settings_title">遊戲空間</string>
     <string name="settings_summary">管理您的遊戲設定</string>
     <!-- Game options -->
     <string name="in_game_preferences_title">遊戲中選項</string>
-    <string name="heads_up_disabled_summary">在遊戲期間禁用抬頭通知</string>
     <string name="suppress_fullscreen_intent_title">封鎖全螢幕活動</string>
     <string name="suppress_fullscreen_intent_summary">防止如電話等的應用程式彈出全螢幕畫面</string>
     <string name="stay_awake_title">螢幕保持開啟</string>
-    <string name="stay_awake_summary">在遊戲期間保持螢幕開啟</string>
     <string name="lock_gesture_title">鎖定手勢</string>
     <string name="auto_brightness_disabled_title">停用自動亮度</string>
-    <string name="three_screenshot_disabled_title">停用滑動截圖手勢</string>
-    <string name="three_screenshot_disabled_summary">在遊戲期間暫時禁用三指滑動手勢</string>
-    <string name="chaldea">chaldeaprjkt</string>
+    <string name="three_screenshot_disabled_title">停用三指滑動手勢</string>
     <string name="adb_disabled_title">停用 USB 偵錯</string>
-    <string name="adb_disabled_summary">在遊戲期間暫時禁用 USB ADB 偵錯</string>
     <string name="gamespace_menu_opacity_title">不透明度</string>
     <!-- Notification Mode -->
     <string name="notification_mode_title">通知模式</string>
@@ -46,12 +38,6 @@
     <string name="notification_mode_danmaku">彈幕式通知</string>
     <!-- Ringer Mode -->
     <string name="ringer_mode_title">鈴聲模式</string>
-    <string-array name="ringer_mode_entries">
-        <item>靜音</item>
-        <item>震動</item>
-        <item>一般</item>
-        <item>不變更</item>
-    </string-array>
     <string name="ringer_mode_silent">靜音</string>
     <string name="ringer_mode_vibrate">震動</string>
     <string name="ringer_mode_normal">正常</string>
@@ -65,32 +51,21 @@
     <!-- Configure game -->
     <string name="per_app_title">遊戲選項</string>
     <string name="per_app_mode_title">偏好模式</string>
-    <string-array name="per_app_preferred_mode_entries">
-        <item>標準</item>
-        <item>效能</item>
-        <item>省電</item>
-    </string-array>
     <string name="per_app_angle_title">使用 ANGLE （實驗性功能）</string>
     <string name="per_app_angle_summary">使用 ANGLE 渲染畫面而非原生的 GLES 驅動。\n警告！遊戲畫面可能出現破圖等現象，請謹慎使用。</string>
     <string name="cant_find_angle_pkg">您的系統不支援 ANGLE</string>
     <string name="per_app_unregister">從遊戲庫中移除 %1$s</string>
-    <string name="ram_usage">RAM 使用量：</string>
     <string name="game_mode_unsupported">不支援</string>
     <string name="game_mode_standard">一般</string>
     <string name="game_mode_performance">高效能</string>
     <string name="game_mode_battery">省電</string>
-    <string-array name="game_mode_names">
-        <item>不支援</item>
-        <item>標準</item>
-        <item>效能</item>
-        <item>省電</item>
-    </string-array>
     <!-- Custom seekbar -->
     <string name="custom_seekbar_value">數值： <xliff:g id="v">%s</xliff:g></string>
     <string name="custom_seekbar_default_value">預設</string>
     <string name="custom_seekbar_default_value_to_set">預設值：<xliff:g id="v">%s</xliff:g>\n長按以設定</string>
     <string name="custom_seekbar_default_value_is_set">已設定為預設值</string>
     <!-- Game overlay -->
+    <string name="battery_format">電量： <xliff:g id="percentage" example="100">%1$d%%</xliff:g></string>
     <string name="memory_format">可用記憶體：<xliff:g id="availmemory" example="1000">%1$d</xliff:g>\/<xliff:g id="totalmemory" example="5000">%2$d</xliff:g> MB</string>
     <!-- Tiles -->
     <string name="game_mode_title">模式</string>
@@ -111,64 +86,28 @@
     <!-- Danmaku Notification Mode -->
     <string name="danmaku_notification_mode_title">彈幕通知模式</string>
     <string name="danmaku_notification_mode_summary">遊戲中以彈幕形式顯示通知。</string>
-    <string name="bypass_charge_enabled_summary">繞過充電</string>
-    <string name="bypass_charge_enabled_title">啟用遊戲時繞過充電</string>
-    <string name="gamespace_running">遊戲空間運行中</string>
-    <string name="app_locked_message">此應用程式已鎖定。請先解鎖。</string>
-    <string name="call_overlay_enabled_title">來電覆蓋</string>
-    <string name="call_overlay_enabled_summary">顯示最小來電覆蓋以接聽/拒接來電</string>
-    <string name="auto_brightness_disabled_summary">在遊戲期間保持亮度固定</string>
-    
-    <!-- UI Strings -->
-    <string name="select_apps_to_launch">選擇要快速啟動的應用程式</string>
-    <string name="add_game">新增遊戲</string>
-    <string name="expanded">已展開</string>
-    <string name="collapsed">已收起</string>
-    <string name="toggle_menu">切換選單</string>
-    <string name="close_menu">關閉選單</string>
-    <string name="notifications">通知</string>
-    <string name="display_gestures">顯示與手勢</string>
-    <string name="no_games_added">尚未新增任何遊戲</string>
-    <string name="ok">確定</string>
-    <string name="cancel">取消</string>
-    <string name="remove">移除</string>
-    <string name="back">返回</string>
-    <string name="game_mode">遊戲模式</string>
-    <string name="graphics">圖形</string>
-    <string name="remove_from_library">從遊戲庫移除</string>
-    <string name="registered_game">已註冊的遊戲</string>
-    <string name="game_space">遊戲空間</string>
-    
-    <!-- Game Panel -->
-    <string name="save">儲存</string>
-    <string name="panel_options">面板選項</string>
-    <string name="brightness_slider">亮度滑桿</string>
-    <string name="fps_graph">FPS 圖表</string>
-    <string name="selected_tiles">已選擇的磚塊</string>
-    <string name="available_tiles">可用的磚塊</string>
-    <string name="fps_stats">最小 %1$d | 平均 %2$d | 最大 %3$d</string>
-    <string name="add">新增</string>
-    
-    <!-- Tile Labels -->
-    <string name="tile_danmaku">彈幕</string>
-    <string name="tile_stay_awake">螢幕保持開啟</string>
-    <string name="tile_wifi">Wi-Fi</string>
-    <string name="tile_dnd">勿擾</string>
-    <string name="tile_fps_info">幀數</string>
-    <string name="tile_auto_rotate">自動旋轉</string>
-    <string name="tile_boost_memory">記憶體加速</string>
-    <string name="tile_settings">設定</string>
-    <string name="tile_airplane_mode">飛航模式</string>
-    <string name="tile_bluetooth">藍牙</string>
-    <string name="tile_mobile_data">行動數據</string>
-    <string name="tile_touch_boost">觸控加速</string>
-    
-    <!-- Content Descriptions (Accessibility) -->
-    <string name="cd_reject">拒絕</string>
-    <string name="cd_accept">接受</string>
-    <string name="cd_caller_photo">來電者相片</string>
-    <string name="cd_dismiss">關閉</string>
-    <string name="cd_edit_tiles">編輯磚塊</string>
-    <string name="cd_collapse">收起</string>
-    <string name="cd_expand">展開</string>
+    <string name="gamespace_running">游戲空間正在運行</string>
+    <!-- Call overlay -->
+    <string name="call_overlay_enabled_title">電話疊加層</string>
+    <string name="call_overlay_enabled_summary">顯示最少的通話疊加層以接聽/拒接電話</string>
+    <!-- Game Optimization -->
+    <string name="game_optimization_title">遊戲啟動優化</string>
+    <string name="game_launch_boost_title">啟動加速</string>
+    <string name="game_launch_boost_summary">優化處理器與記憶體以加快遊戲啟動速度</string>
+    <string name="game_memory_management_title">智慧記憶體管理</string>
+    <string name="game_memory_management_summary">啟動遊戲時自動清理背景應用程式</string>
+    <string name="game_load_priority_title">載入優先權</string>
+    <string name="game_load_priority_summary">在遊戲啟動期間設定資源優先權</string>
+    <string name="game_cache_management_title">快取管理</string>
+    <string name="game_cache_management_summary">優化遊戲快取以縮短載入時間</string>
+    <string-array name="game_load_priority_entries">
+        <item>平衡 (建議)</item>
+        <item>最高效能</item>
+        <item>省電優先</item>
+    </string-array>
+    <string-array name="game_load_priority_values">
+        <item>平衡</item>
+        <item>性能</item>
+        <item>省電</item>
+    </string-array>
 </resources>

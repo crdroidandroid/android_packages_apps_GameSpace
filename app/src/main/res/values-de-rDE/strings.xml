@@ -16,27 +16,19 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="memory_boost">Speicher beschleunigen</string>
-    <string name="memory_boost_summary">Speicher optimieren</string>
-    <string name="boost_memory">Speicher beschleunigt</string>
     <string name="quick_start_apps_title">Schnellstart-Apps</string>
-    <string name="quick_start_apps_summary">Apps zum schnellen Starten auswählen</string>
+    <string name="quick_start_apps_summary">Apps für Schnellstart auswählen</string>
     <string name="settings_title">Spielmodus</string>
     <string name="settings_summary">Spieleinrichtung verwalten</string>
     <!-- Game options -->
     <string name="in_game_preferences_title">In-Game-Optionen</string>
-    <string name="heads_up_disabled_summary">Heads-Up-Benachrichtigungen während des Spiels deaktivieren</string>
     <string name="suppress_fullscreen_intent_title">Vollbild-Ereignis blockieren</string>
     <string name="suppress_fullscreen_intent_summary">Deaktivieren von Vollbildbenachrichtigungen (z. B. eingehende Anrufe)</string>
     <string name="stay_awake_title">Display eingeschaltet lassen</string>
-    <string name="stay_awake_summary">Bildschirm während des Spiels eingeschaltet halten</string>
     <string name="lock_gesture_title">Gesten deaktivieren</string>
     <string name="auto_brightness_disabled_title">Auto-Helligkeit deaktivieren</string>
-    <string name="three_screenshot_disabled_title">Wischen für Screenshot deaktivieren</string>
-    <string name="three_screenshot_disabled_summary">Drei-Finger-Wischgeste während des Spiels vorübergehend deaktivieren</string>
-    <string name="chaldea">chaldeaprjkt</string>
+    <string name="three_screenshot_disabled_title">Geste „Streichen mit drei Fingern“ deaktivieren</string>
     <string name="adb_disabled_title">USB-Debugging deaktivieren</string>
-    <string name="adb_disabled_summary">USB ADB-Debugging während des Spiels vorübergehend deaktivieren</string>
     <string name="gamespace_menu_opacity_title">Transparenz des Overlay-Menüs</string>
     <!-- Notification Mode -->
     <string name="notification_mode_title">Benachrichtigungsmodus</string>
@@ -46,12 +38,6 @@
     <string name="notification_mode_danmaku">Als Danmaku anzeigen</string>
     <!-- Ringer Mode -->
     <string name="ringer_mode_title">Klingelmodus</string>
-    <string-array name="ringer_mode_entries">
-        <item>Stumm</item>
-        <item>Vibration</item>
-        <item>Normal</item>
-        <item>Nicht ändern</item>
-    </string-array>
     <string name="ringer_mode_silent">Stumm</string>
     <string name="ringer_mode_vibrate">Vibration</string>
     <string name="ringer_mode_normal">Normal</string>
@@ -65,32 +51,21 @@
     <!-- Configure game -->
     <string name="per_app_title">Spiel konfigurieren</string>
     <string name="per_app_mode_title">Bevorzugter Modus</string>
-    <string-array name="per_app_preferred_mode_entries">
-        <item>Standard</item>
-        <item>Leistung</item>
-        <item>Akku</item>
-    </string-array>
     <string name="per_app_angle_title">ANGLE benutzen (experimentell)</string>
     <string name="per_app_angle_summary">Verwendung von ANGLE Renderer statt nativer GLES Treiber.\nWARNUNG!! Kann Spielgrafiken falsch darstellen!</string>
     <string name="cant_find_angle_pkg">ANGLE ist auf Ihrem System nicht verfügbar</string>
     <string name="per_app_unregister">%1$s aus der Bibliothek entfernen</string>
-    <string name="ram_usage">RAM-Nutzung: </string>
     <string name="game_mode_unsupported">Nicht unterstützt</string>
     <string name="game_mode_standard">Standard</string>
     <string name="game_mode_performance">Leistung</string>
     <string name="game_mode_battery">Akku</string>
-    <string-array name="game_mode_names">
-        <item>Nicht unterstützt</item>
-        <item>Standard</item>
-        <item>Leistung</item>
-        <item>Akku</item>
-    </string-array>
     <!-- Custom seekbar -->
     <string name="custom_seekbar_value">Wert: <xliff:g id="v">%s</xliff:g></string>
     <string name="custom_seekbar_default_value">Standardmäßig</string>
     <string name="custom_seekbar_default_value_to_set">Standardwert: <xliff:g id="v">%s</xliff:g>\nZum Einstellen gedrückt halten</string>
     <string name="custom_seekbar_default_value_is_set">Standardwert ist eingestellt</string>
     <!-- Game overlay -->
+    <string name="battery_format">Akku: <xliff:g id="percentage" example="100"> %1$d%% </xliff:g></string>
     <string name="memory_format">Freier Arbeitsspeicher: <xliff:g id="availmemory" example="1000">%1$d</xliff:g>\/<xliff:g id="totalmemory" example="5000">%2$d</xliff:g> MB</string>
     <!-- Tiles -->
     <string name="game_mode_title">Modus</string>
@@ -109,66 +84,30 @@
     <string name="in_game_calls_received_number">Empfangener Anruf von %1$s</string>
     <string name="in_game_calls_rejected_number">Abgelehnter Anruf von %1$s</string>
     <!-- Danmaku Notification Mode -->
-    <string name="danmaku_notification_mode_title">Benachrichtigungsmodus „Danmaku"</string>
-    <string name="danmaku_notification_mode_summary">Bei aktivem Spiel Benachrichtigungen als „Bullet-Kommentare" aka „Danmaku" anzeigen</string>
-    <string name="bypass_charge_enabled_summary">Ladeumgehung</string>
-    <string name="bypass_charge_enabled_title">Ladeumgehung beim Spielen aktivieren</string>
+    <string name="danmaku_notification_mode_title">Benachrichtigungsmodus „Danmaku“</string>
+    <string name="danmaku_notification_mode_summary">Bei aktivem Spiel Benachrichtigungen als „Bullet-Kommentare“ aka „Danmaku“ anzeigen</string>
     <string name="gamespace_running">Spielmodus läuft</string>
-    <string name="app_locked_message">Diese App ist gesperrt. Bitte entsperren Sie sie zuerst.</string>
-    <string name="call_overlay_enabled_title">Anruf-Overlay</string>
-    <string name="call_overlay_enabled_summary">Minimales Anruf-Overlay anzeigen, um Anrufe anzunehmen/abzulehnen</string>
-    <string name="auto_brightness_disabled_summary">Helligkeit während des Spiels fest halten</string>
-    
-    <!-- UI Strings -->
-    <string name="select_apps_to_launch">Apps zum schnellen Starten auswählen</string>
-    <string name="add_game">Spiel hinzufügen</string>
-    <string name="expanded">Erweitert</string>
-    <string name="collapsed">Eingeklappt</string>
-    <string name="toggle_menu">Menü umschalten</string>
-    <string name="close_menu">Menü schließen</string>
-    <string name="notifications">Benachrichtigungen</string>
-    <string name="display_gestures">Anzeige und Gesten</string>
-    <string name="no_games_added">Noch keine Spiele hinzugefügt</string>
-    <string name="ok">OK</string>
-    <string name="cancel">Abbrechen</string>
-    <string name="remove">Entfernen</string>
-    <string name="back">Zurück</string>
-    <string name="game_mode">Spielmodus</string>
-    <string name="graphics">Grafik</string>
-    <string name="remove_from_library">Aus Bibliothek entfernen</string>
-    <string name="registered_game">Registriertes Spiel</string>
-    <string name="game_space">Spielmodus</string>
-    
-    <!-- Game Panel -->
-    <string name="save">Speichern</string>
-    <string name="panel_options">Panel-Optionen</string>
-    <string name="brightness_slider">Helligkeitsregler</string>
-    <string name="fps_graph">FPS-Diagramm</string>
-    <string name="selected_tiles">Ausgewählte Kacheln</string>
-    <string name="available_tiles">Verfügbare Kacheln</string>
-    <string name="fps_stats">min %1$d | Ø %2$d | max %3$d</string>
-    <string name="add">Hinzufügen</string>
-    
-    <!-- Tile Labels -->
-    <string name="tile_danmaku">Danmaku</string>
-    <string name="tile_stay_awake">Display eingeschaltet lassen</string>
-    <string name="tile_wifi">WLAN</string>
-    <string name="tile_dnd">Nicht stören</string>
-    <string name="tile_fps_info">FPS-Info</string>
-    <string name="tile_auto_rotate">Auto-Drehung</string>
-    <string name="tile_boost_memory">Speicher beschleunigen</string>
-    <string name="tile_settings">Einstellungen</string>
-    <string name="tile_airplane_mode">Flugmodus</string>
-    <string name="tile_bluetooth">Bluetooth</string>
-    <string name="tile_mobile_data">Mobile Daten</string>
-    <string name="tile_touch_boost">Touch-Beschleunigung</string>
-    
-    <!-- Content Descriptions (Accessibility) -->
-    <string name="cd_reject">Ablehnen</string>
-    <string name="cd_accept">Annehmen</string>
-    <string name="cd_caller_photo">Anruferfoto</string>
-    <string name="cd_dismiss">Schließen</string>
-    <string name="cd_edit_tiles">Kacheln bearbeiten</string>
-    <string name="cd_collapse">Einklappen</string>
-    <string name="cd_expand">Erweitern</string>
+    <!-- Call overlay -->
+    <string name="call_overlay_enabled_title">Zeige Overlay</string>
+    <string name="call_overlay_enabled_summary">Show minimal call overlay to answer/reject calls</string>
+    <!-- Game Optimization -->
+    <string name="game_optimization_title">Launch Optimization</string>
+    <string name="game_launch_boost_title">Launch Boost</string>
+    <string name="game_launch_boost_summary">Optimize CPU and memory for faster game launch</string>
+    <string name="game_memory_management_title">Smart Memory Management</string>
+    <string name="game_memory_management_summary">Automatically clear background apps when launching games</string>
+    <string name="game_load_priority_title">Loading Priority</string>
+    <string name="game_load_priority_summary">Set resource priority during game launch</string>
+    <string name="game_cache_management_title">Cache Management</string>
+    <string name="game_cache_management_summary">Optimize game cache for faster loading times</string>
+    <string-array name="game_load_priority_entries">
+        <item>Balanced (Recommended)</item>
+        <item>Maximum Performance</item>
+        <item>Power Saving</item>
+    </string-array>
+    <string-array name="game_load_priority_values">
+        <item>balanced</item>
+        <item>performance</item>
+        <item>powersave</item>
+    </string-array>
 </resources>
