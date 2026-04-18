@@ -88,26 +88,26 @@
     <string name="danmaku_notification_mode_summary">Mostrar notificações enquanto o jogo estiver aberto</string>
     <string name="gamespace_running">Espaço de Jogo a ser executado</string>
     <!-- Call overlay -->
-    <string name="call_overlay_enabled_title">Call overlay</string>
-    <string name="call_overlay_enabled_summary">Show minimal call overlay to answer/reject calls</string>
+    <string name="call_overlay_enabled_title">Sobreposição de chamada</string>
+    <string name="call_overlay_enabled_summary">Mostrar uma sobreposição de chamada mínimo para responder/rejeitar chamadas</string>
     <!-- Game Optimization -->
-    <string name="game_optimization_title">Launch Optimization</string>
-    <string name="game_launch_boost_title">Launch Boost</string>
-    <string name="game_launch_boost_summary">Optimize CPU and memory for faster game launch</string>
-    <string name="game_memory_management_title">Smart Memory Management</string>
-    <string name="game_memory_management_summary">Automatically clear background apps when launching games</string>
-    <string name="game_load_priority_title">Loading Priority</string>
-    <string name="game_load_priority_summary">Set resource priority during game launch</string>
-    <string name="game_cache_management_title">Cache Management</string>
-    <string name="game_cache_management_summary">Optimize game cache for faster loading times</string>
+    <string name="game_optimization_title">Lançar Otimização</string>
+    <string name="game_launch_boost_title">Impulsionamento de Lançamento</string>
+    <string name="game_launch_boost_summary">Otimizar CPU e Memoria para um lançamento mais rápido do jogo</string>
+    <string name="game_memory_management_title">Gestão Inteligente de Memória</string>
+    <string name="game_memory_management_summary">Limpar automaticamente ‘apps’ em segundo plano ao lançar jogos</string>
+    <string name="game_load_priority_title">Prioridade de Carregamento</string>
+    <string name="game_load_priority_summary">Definir prioridade de recursos durante o lançamento do jogo</string>
+    <string name="game_cache_management_title">Gestão de Cache</string>
+    <string name="game_cache_management_summary">Otimizar a cache do jogo para tempos de carregamento mais rápidos</string>
     <string-array name="game_load_priority_entries">
-        <item>Balanced (Recommended)</item>
-        <item>Maximum Performance</item>
-        <item>Power Saving</item>
+        <item>Equilibrado (Recomendado)</item>
+        <item>Desempenho Máximo</item>
+        <item>Poupança de Bateria</item>
     </string-array>
     <string-array name="game_load_priority_values">
-        <item>balanced</item>
-        <item>performance</item>
-        <item>powersave</item>
+        <item>equilibrado</item>
+        <item>desempenho</item>
+        <item>poupança de bateria</item>
     </string-array>
 </resources>
