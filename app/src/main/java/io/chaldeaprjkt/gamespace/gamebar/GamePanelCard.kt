@@ -25,7 +25,9 @@ import android.graphics.Rect
 import android.graphics.drawable.*
 import android.net.Uri
 import android.os.BatteryManager
+import android.os.UserHandle
 import android.provider.Settings
+import android.util.Log
 import android.view.WindowManager
 import android.widget.Toast
 import com.android.settingslib.display.BrightnessUtils.*
@@ -85,6 +87,8 @@ import java.util.Locale
 
 private val RoundedTileShape = RoundedCornerShape(100f)
 
+private val TAG = "GamePanelCard"
+
 @Composable
 fun GamePanelCard(
     interactor: BrightnessInteractor,
@@ -95,6 +99,7 @@ fun GamePanelCard(
     tileRepository: TileRepository,
     maxHeight: Dp = Dp.Unspecified,
 ) {
+
     val panelWidth = 300.dp
 
     val initialMode = remember {
@@ -1236,13 +1241,14 @@ fun QuickStartAppIcon(
     appInfo: AppInfo,
     modifier: Modifier = Modifier
 ) {
+    val context = LocalContext.current
     val painter = rememberDrawablePainter(appInfo.icon)
     Box(
         modifier = modifier
             .size(40.dp)
             .clip(CircleShape)
             .clickable {
-                launchAppInFreeformMode(appInfo.packageName)
+                launchAppInFreeformMode(context, appInfo.packageName)
             },
         contentAlignment = Alignment.Center
     ) {
@@ -1254,8 +1260,26 @@ fun QuickStartAppIcon(
     }
 }
 
-fun launchAppInFreeformMode(packageName: String) {
-    FreeformLauncher.launch(packageName)
+fun launchAppInFreeformMode(context: Context, packageName: String) {
+    try {
+        val packageManager = context.packageManager
+        val launchIntent = packageManager.getLaunchIntentForPackage(packageName)
+
+        if (launchIntent != null) {
+            val activityName = launchIntent.component?.className
+
+            val freeformIntent = Intent("com.libremobileos.freeform.START_FREEFORM").apply {
+                setPackage("com.libremobileos.freeform")
+                putExtra("packageName", packageName)
+                putExtra("activityName", activityName)
+                putExtra("userId", UserHandle.myUserId())
+            }
+
+            context.sendBroadcast(freeformIntent)
+        }
+    } catch (e: Exception) {
+        Log.e(TAG, "Failed to launch in freeform", e)
+    }
 }
 
 @Composable
