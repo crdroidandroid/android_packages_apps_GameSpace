@@ -35,15 +35,17 @@ class GameSpaceService : Service() {
         override fun onGameStart(packageName: String) {
             Log.d(TAG, "Game started: $packageName")
             SessionService.start(applicationContext, packageName)
-            Process.setThreadAffinity(Process.myPid(), 2)
+            Process.setThreadPriority(Process.THREAD_PRIORITY_DISPLAY)
+            Process.setThreadGroupAndCpuset(Process.myTid(), Process.THREAD_GROUP_SYSTEM)
+            Process.setProcessGroup(Process.myPid(), Process.THREAD_GROUP_SYSTEM)
         }
 
         override fun onGameLeave() {
             Log.d(TAG, "Game left")
             SessionService.stop(applicationContext)
-            Process.setThreadAffinity(Process.myPid(), 1)
-            Process.setThreadGroupAndCpuset(Process.myPid(), 9)
-            Process.setProcessGroup(Process.myPid(), 9)
+            Process.setThreadPriority(Process.THREAD_PRIORITY_BACKGROUND)
+            Process.setThreadGroupAndCpuset(Process.myTid(), Process.THREAD_GROUP_BACKGROUND)
+            Process.setProcessGroup(Process.myPid(), Process.THREAD_GROUP_BACKGROUND)
         }
     }
 
@@ -51,9 +53,9 @@ class GameSpaceService : Service() {
         super.onCreate()
         Log.d(TAG, "Service created, registering callback...")
         registerCallback()
-        Process.setThreadAffinity(Process.myPid(), 1)
-        Process.setThreadGroupAndCpuset(Process.myPid(), 9)
-        Process.setProcessGroup(Process.myPid(), 9)
+        Process.setThreadPriority(Process.THREAD_PRIORITY_BACKGROUND)
+        Process.setThreadGroupAndCpuset(Process.myTid(), Process.THREAD_GROUP_BACKGROUND)
+        Process.setProcessGroup(Process.myPid(), Process.THREAD_GROUP_BACKGROUND)
     }
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
