@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
      Copyright (C) 2021 Chaldeaprjkt
-                   2022-2024 crDroid Android Project
+                   2022-2026 crDroid Android Project
                    2023 risingOS Android Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
@@ -29,81 +29,87 @@
         android:title="@string/in_game_preferences_title">
 
         <SwitchPreferenceCompat
-            android:defaultValue="true"
-            android:key="call_overlay_enabled"
-            android:summary="@string/call_overlay_enabled_summary"
-            android:title="@string/call_overlay_enabled_title" />
-
-        <SwitchPreferenceCompat
-            android:defaultValue="true"
-            android:key="gamespace_danmaku_notification_mode"
-            android:summary="@string/danmaku_notification_mode_summary"
-            android:title="@string/danmaku_notification_mode_title" />
-
-        <ListPreference
-            android:defaultValue="0"
-            android:entries="@array/in_game_calls_entries"
-            android:entryValues="@array/in_game_calls_values"
-            android:key="gamespace_calls_mode"
-            android:summary="%s"
-            android:title="@string/in_game_calls_title" />
-
-        <ListPreference
-            android:defaultValue="3"
-            android:entries="@array/ringer_mode_entries"
-            android:entryValues="@array/ringer_mode_values"
-            android:key="gamespace_ringer_mode"
-            android:summary="%s"
-            android:title="@string/ringer_mode_title" />
+            android:key="gamespace_auto_brightness_disabled"
+            android:title="@string/auto_brightness_disabled_title"
+            android:summary="@string/auto_brightness_disabled_summary"
+            android:defaultValue="true" />
 
         <com.crdroid.settings.preferences.SystemSettingSwitchPreference
-            android:key="gamespace_suppress_fullscreen_intent"
-            android:summary="@string/suppress_fullscreen_intent_summary"
-            android:title="@string/suppress_fullscreen_intent_title" />
-
-        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
-            android:key="bypass_charge_enabled"
-            android:summary="@string/bypass_charge_enabled_title"
-            android:title="@string/bypass_charge_enabled_summary"
+            android:key="gamespace_stay_awake"
+            android:title="@string/stay_awake_title"
+            android:summary="@string/stay_awake_summary"
             android:defaultValue="false" />
 
         <SwitchPreferenceCompat
-            android:defaultValue="true"
-            android:key="gamespace_auto_brightness_disabled"
-            android:summary="@string/auto_brightness_disabled_summary"
-            android:title="@string/auto_brightness_disabled_title" />
+            android:key="gamespace_danmaku_notification_mode"
+            android:title="@string/danmaku_notification_mode_title"
+            android:summary="@string/danmaku_notification_mode_summary"
+            android:defaultValue="true" />
 
         <SwitchPreferenceCompat
-            android:defaultValue="false"
+            android:key="gamespace_auto_dnd"
+            android:title="@string/auto_dnd_title"
+            android:summary="@string/auto_dnd_summary"
+            android:defaultValue="false" />
+
+        <SwitchPreferenceCompat
+            android:key="call_overlay_enabled"
+            android:title="@string/call_overlay_enabled_title"
+            android:summary="@string/call_overlay_enabled_summary"
+            android:defaultValue="true" />
+
+        <ListPreference
+            android:key="gamespace_calls_mode"
+            android:title="@string/in_game_calls_title"
+            android:summary="%s"
+            android:entries="@array/in_game_calls_entries"
+            android:entryValues="@array/in_game_calls_values"
+            android:defaultValue="0" />
+
+        <ListPreference
+            android:key="gamespace_ringer_mode"
+            android:title="@string/ringer_mode_title"
+            android:summary="%s"
+            android:entries="@array/ringer_mode_entries"
+            android:entryValues="@array/ringer_mode_values"
+            android:defaultValue="3" />
+
+        <SwitchPreferenceCompat
             android:key="gamespace_tfgesture_disabled"
+            android:title="@string/three_screenshot_disabled_title"
             android:summary="@string/three_screenshot_disabled_summary"
-            android:title="@string/three_screenshot_disabled_title" />
+            android:defaultValue="false" />
 
         <com.crdroid.settings.preferences.SystemSettingSwitchPreference
-            android:defaultValue="false"
-            android:key="gamespace_stay_awake"
-            android:summary="@string/stay_awake_summary"
-            android:title="@string/stay_awake_title" />
-
-        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
-            android:defaultValue="false"
             android:key="gamespace_lock_gesture"
-            android:title="@string/lock_gesture_title" />
-            
+            android:title="@string/lock_gesture_title"
+            android:defaultValue="false" />
+
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+            android:key="bypass_charge_enabled"
+            android:title="@string/bypass_charge_enabled_title"
+            android:summary="@string/bypass_charge_enabled_summary"
+            android:defaultValue="false" />
+
         <com.crdroid.settings.preferences.CustomSeekBarPreference
-            android:key="gamespace_menu_opacity"
-            android:title="@string/gamespace_menu_opacity_title"
-            android:defaultValue="100"
+            android:key="gamespace_icon_idle_alpha"
+            android:title="@string/icon_idle_alpha_title"
+            android:defaultValue="25"
             android:max="100"
-            app:min="0"
+            app:min="5"
             app:units="%" />
 
     </PreferenceCategory>
 
-    <io.chaldeaprjkt.gamespace.preferences.QuickStartAppPreference
-        android:key="quick_start_apps"
-        android:title="@string/quick_start_apps_title"
-        android:summary="@string/quick_start_apps_summary" />
+    <PreferenceCategory
+        android:key="quick_start_apps_category">
+
+        <io.chaldeaprjkt.gamespace.preferences.QuickStartAppPreference
+            android:key="quick_start_apps"
+            android:title="@string/quick_start_apps_title"
+            android:summary="@string/quick_start_apps_summary" />
+
+    </PreferenceCategory>
 
     <io.chaldeaprjkt.gamespace.preferences.AppListPreferences
         android:key="gamespace_game_list"

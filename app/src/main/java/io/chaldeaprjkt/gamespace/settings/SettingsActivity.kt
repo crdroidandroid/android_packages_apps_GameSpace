@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 2021 Chaldeaprjkt
- * Copyright (C) 2022-2024 crDroid Android Project
+ * Copyright (C) 2022-2026 crDroid Android Project
  * Copyright (C) 2025-2026 AxionOS
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,49 +18,22 @@
 package io.chaldeaprjkt.gamespace.settings
 
 import android.os.Bundle
-import android.view.WindowInsetsController
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
-import androidx.activity.viewModels
-import androidx.core.view.WindowCompat
+import com.android.settingslib.collapsingtoolbar.CollapsingToolbarBaseActivity
 import dagger.hilt.android.AndroidEntryPoint
-import io.chaldeaprjkt.gamespace.ui.screens.GameHubScreen
-import io.chaldeaprjkt.gamespace.ui.theme.GameSpaceTheme
-import io.chaldeaprjkt.gamespace.ui.viewmodel.SettingsViewModel
 
-@AndroidEntryPoint(ComponentActivity::class)
+@AndroidEntryPoint(CollapsingToolbarBaseActivity::class)
 class SettingsActivity : Hilt_SettingsActivity() {
-
-    private val viewModel: SettingsViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        hideSystemBars()
-
-        setContent {
-            GameSpaceTheme(darkTheme = true) {
-                GameHubScreen(viewModel = viewModel)
-            }
+        if (savedInstanceState == null) {
+            supportFragmentManager
+                .beginTransaction()
+                .replace(
+                    com.android.settingslib.collapsingtoolbar.R.id.content_frame,
+                    SettingsFragment()
+                )
+                .commit()
         }
-    }
-
-    private fun hideSystemBars() {
-        WindowCompat.setDecorFitsSystemWindows(window, false)
-        window.insetsController?.let { controller ->
-            controller.hide(
-                android.view.WindowInsets.Type.statusBars() or
-                android.view.WindowInsets.Type.navigationBars()
-            )
-            controller.systemBarsBehavior =
-                WindowInsetsController.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
-        }
-    }
-
-    override fun onResume() {
-        super.onResume()
-        hideSystemBars()
-        viewModel.loadRegisteredGames()
     }
 }

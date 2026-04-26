@@ -1,6 +1,7 @@
 /*
  * Copyright (C) 2021 Chaldeaprjkt
  * Copyright (C) 2025 AxionOS
+ * Copyright (C) 2026 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,40 +17,25 @@
  */
 package io.chaldeaprjkt.gamespace.preferences.appselector
 
-import android.app.Activity
-import android.content.Intent
 import android.os.Bundle
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
-import androidx.activity.viewModels
+import com.android.settingslib.collapsingtoolbar.CollapsingToolbarBaseActivity
 import dagger.hilt.android.AndroidEntryPoint
-import io.chaldeaprjkt.gamespace.preferences.AppListPreferences
-import io.chaldeaprjkt.gamespace.ui.screens.AppSelectorScreen
-import io.chaldeaprjkt.gamespace.ui.theme.GameSpaceTheme
-import io.chaldeaprjkt.gamespace.ui.viewmodel.AppSelectorViewModel
+import io.chaldeaprjkt.gamespace.R
 
-@AndroidEntryPoint(ComponentActivity::class)
+@AndroidEntryPoint(CollapsingToolbarBaseActivity::class)
 class AppSelectorActivity : Hilt_AppSelectorActivity() {
-
-    private val viewModel by viewModels<AppSelectorViewModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContent {
-            GameSpaceTheme {
-                AppSelectorScreen(
-                    viewModel = viewModel,
-                    onBack = { finish() },
-                    onAppSelected = { packageName ->
-                        setResult(Activity.RESULT_OK, Intent().apply {
-                            putExtra(AppListPreferences.EXTRA_APP, packageName)
-                        })
-                        finish()
-                    }
+        setTitle(R.string.app_selector_label)
+        if (savedInstanceState == null) {
+            supportFragmentManager
+                .beginTransaction()
+                .replace(
+                    com.android.settingslib.collapsingtoolbar.R.id.content_frame,
+                    AppSelectorFragment()
                 )
-            }
+                .commit()
         }
     }
 }

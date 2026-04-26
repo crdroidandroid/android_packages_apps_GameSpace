@@ -57,6 +57,14 @@ public class QuickStartAppPreferenceDialogFragment extends PreferenceDialogFragm
     }
 
     @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        if (listener == null && getTargetFragment() instanceof QuickStartAppListener) {
+            listener = (QuickStartAppListener) getTargetFragment();
+        }
+    }
+
+    @Override
     protected void onPrepareDialogBuilder(@NonNull AlertDialog.Builder builder) {
         QuickStartAppPreference preference = (QuickStartAppPreference) getPreference();
         Context context = getContext();
