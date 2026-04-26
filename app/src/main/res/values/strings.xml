@@ -113,8 +113,8 @@
     <string name="gamespace_menu_opacity_title">Overlay menu opacity level</string>
     
     <!-- Bypass charging -->
-    <string name="bypass_charge_enabled_summary">Bypass charging</string>
-    <string name="bypass_charge_enabled_title">Enable bypass charging while playing games</string>
+    <string name="bypass_charge_enabled_title">Bypass charging</string>
+    <string name="bypass_charge_enabled_summary">Enable bypass charging while playing games</string>
     
      <string name="gamespace_running">Game Space is running</string>
      <string name="app_locked_message">This app is locked. Please unlock it first.</string>
