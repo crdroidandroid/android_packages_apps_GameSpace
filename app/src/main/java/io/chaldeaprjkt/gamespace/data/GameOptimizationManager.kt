@@ -1,5 +1,6 @@
 /*
  * SPDX-FileCopyrightText: 2025 DerpFest AOSP
+ * SPDX-FileCopyrightText: 2026 crDroid Android Project
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -9,9 +10,11 @@ import android.app.ActivityManager
 import android.content.Context
 import android.content.ComponentCallbacks2
 import android.content.SharedPreferences
+import android.content.pm.PackageManager
 import android.os.Process
 import dagger.hilt.android.qualifiers.ApplicationContext
 import io.chaldeaprjkt.gamespace.R
+import java.io.File
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -80,21 +83,28 @@ class GameOptimizationManager @Inject constructor(
 
     private fun optimizeGameCache(packageName: String) {
         try {
-            // Clear package cache if it's too large
-            val packageInfo = context.packageManager.getPackageInfo(packageName, 0)
-            packageInfo.applicationInfo?.dataDir?.let { dataDir ->
-                val dir = java.io.File(dataDir)
-                if (dir.exists()) {
-                    val cacheSize = dir.walkTopDown()
-                        .filter { it.isFile }
-                        .map { it.length() }
-                        .sum()
+            val pm = context.packageManager
+            val packageInfo = pm.getPackageInfo(packageName, 0)
+            val appInfo = packageInfo.applicationInfo ?: return
 
-                    if (cacheSize > CACHE_THRESHOLD) {
-                        context.packageManager.clearPackagePreferredActivities(packageName)
-                    }
-                }
-            }
+            val cacheSize = listOfNotNull(
+                appInfo.dataDir?.let { File(it, "cache") },
+                appInfo.dataDir?.let { File(it, "code_cache") },
+                appInfo.deviceProtectedDataDir?.let { File(it, "cache") },
+                appInfo.deviceProtectedDataDir?.let { File(it, "code_cache") }
+            )
+                .filter { it.exists() && it.isDirectory }
+                .sumOf { dir -> dir.walkTopDown().filter { it.isFile }.sumOf { it.length() } }
+
+            if (cacheSize <= CACHE_THRESHOLD) return
+
+            val observerClass = Class.forName("android.content.pm.IPackageDataObserver")
+            val deleteCache = PackageManager::class.java.getMethod(
+                "deleteApplicationCacheFiles",
+                String::class.java,
+                observerClass
+            )
+            deleteCache.invoke(pm, packageName, null)
         } catch (e: Exception) {
             e.printStackTrace()
         }

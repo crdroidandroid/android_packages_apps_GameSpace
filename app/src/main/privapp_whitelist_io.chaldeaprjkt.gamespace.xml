@@ -37,5 +37,6 @@
         <permission name="android.permission.BLUETOOTH" />
         <permission name="android.permission.BLUETOOTH_ADMIN" />
         <permission name="android.permission.MODIFY_PHONE_STATE" />
+        <permission name="android.permission.DELETE_CACHE_FILES" />
     </privapp-permissions>
 </permissions>
