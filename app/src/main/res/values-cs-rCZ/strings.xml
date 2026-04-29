@@ -1,82 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2021 Chaldeaprjkt
-                   2022 crDroid Android Project
-
-     Licensed under the Apache License, Version 2.0 (the "License");
-     you may not use this file except in compliance with the License.
-     You may obtain a copy of the License at
-
-          http://www.apache.org/licenses/LICENSE-2.0
-
-     Unless required by applicable law or agreed to in writing, software
-     distributed under the License is distributed on an "AS IS" BASIS,
-     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-     See the License for the specific language governing permissions and
-     limitations under the License.
+     SPDX-FileCopyrightText: crDroid Android Project
+     SPDX-FileCopyrightText: Chaldeaprjkt
+     SPDX-License-Identifier: Apache-2.0
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Game Space -->
+    <string name="settings_title">Herní prostor</string>
+    <string name="app_selector_label">Výběr hry</string>
+    <string name="in_game_preferences_title">Možnosti ve hře</string>
+    <string name="game_list_title">Knihovna</string>
+    <string name="app_search_title">Hledat</string>
+    <string name="add">Přidat</string>
+    <!-- Quick start apps -->
     <string name="quick_start_apps_title">Rychlé spuštění aplikací</string>
     <string name="quick_start_apps_summary">Vyberte aplikace pro rychlé spuštění</string>
-    <string name="settings_title">Herní prostor</string>
-    <string name="settings_summary">Spravovat herního nastavení</string>
-    <!-- Game options -->
-    <string name="in_game_preferences_title">Možnosti ve hře</string>
-    <string name="suppress_fullscreen_intent_title">Blokovat událost na celou obrazovku</string>
-    <string name="suppress_fullscreen_intent_summary">Zakázat zobrazení celoobrazovkových události, např. příchozí volání</string>
-    <string name="stay_awake_title">Nevypínat obrazovku</string>
-    <string name="lock_gesture_title">Zakázat gesta</string>
+    <!-- Auto brightness -->
     <string name="auto_brightness_disabled_title">Zakázat automatický jas</string>
+    <string name="auto_brightness_disabled_summary">Zachovat nastavení jasu ve hře</string>
+    <!-- Three finger swipe -->
+    <string name="three_screenshot_disabled_summary">Temporary disable three-fingers-swipe gesture while in-game</string>
     <string name="three_screenshot_disabled_title">Zakázat gesto přejetím třemi prsty</string>
-    <string name="adb_disabled_title">Zakázat ladění USB</string>
-    <string name="gamespace_menu_opacity_title">Úroveň průhlednosti překrytí menu</string>
-    <!-- Notification Mode -->
-    <string name="notification_mode_title">Režim upozornění</string>
-    <string name="notification_mode_hide">Nezobrazovat</string>
-    <string name="notification_mode_headsup">Zobrazit jako plovoucí oznámení</string>
-    <string name="notification_mode_reticker">Zobrazit jako reTicker</string>
-    <string name="notification_mode_danmaku">Zobrazit jako Danmaku</string>
-    <!-- Ringer Mode -->
-    <string name="ringer_mode_title">Režim vyzvánění</string>
-    <string name="ringer_mode_silent">Tichý</string>
-    <string name="ringer_mode_vibrate">Vibrace</string>
-    <string name="ringer_mode_normal">Normální</string>
-    <string name="ringer_mode_no_change">Neměnit</string>
-    <!-- Game picker -->
-    <string name="game_list_title">Knihovna</string>
-    <string name="game_list_add_title">Přidat</string>
-    <string name="app_selector_label">Výběr hry</string>
-    <string name="app_search_title">Hledat</string>
-    <string name="game_remove_message">Opravdu chcete odstranit %1$s z vaší herní knihovny?</string>
-    <!-- Configure game -->
+    <!-- Stay awake -->
+    <string name="stay_awake_title">Nevypínat obrazovku</string>
+    <string name="stay_awake_summary">Keep screen awake while in-game</string>
+    <!-- Lock gesture -->
+    <string name="lock_gesture_title">Zakázat gesta</string>
+    <string name="lock_gesture_summary">Disable screen gestures while in-game</string>
+    <!-- Suppress full screen intent -->
+    <string name="suppress_fullscreen_intent_title">Blokovat událost na celou obrazovku</string>
+    <string name="suppress_fullscreen_intent_summary">Zabránit zobrazení příchozích hovorů v režimu celé obrazovky během hry</string>
+    <!-- Per app settings -->
     <string name="per_app_title">Konfigurace hry</string>
     <string name="per_app_mode_title">Preferovaný režim</string>
     <string name="per_app_angle_title">Použít ANGLE (experimentální)</string>
-    <string name="per_app_angle_summary">Používá ANGLE renderer místo nativních ovladačů GLA.\nVAROVÁNÍ!! Může se rozbít herní grafiku, používejte opatrně!</string>
-    <string name="cant_find_angle_pkg">ANGLE není k dispozici ve vašem systému</string>
     <string name="per_app_unregister">Odebrat %1$s z knihovny</string>
-    <string name="game_mode_unsupported">Nepodporováno</string>
-    <string name="game_mode_standard">Standardní</string>
-    <string name="game_mode_performance">Výkon</string>
-    <string name="game_mode_battery">Baterie</string>
-    <!-- Custom seekbar -->
-    <string name="custom_seekbar_value">Hodnota: <xliff:g id="v">%s</xliff:g></string>
-    <string name="custom_seekbar_default_value">výchozí hodnota</string>
-    <string name="custom_seekbar_default_value_to_set">Výchozí hodnota: <xliff:g id="v">%s</xliff:g>\nDlouze klepněte pro její nastavení</string>
-    <string name="custom_seekbar_default_value_is_set">Výchozí hodnota je nastavena</string>
-    <!-- Game overlay -->
-    <string name="battery_format">Baterie: <xliff:g id="percentage" example="100">%1$d%%</xliff:g></string>
-    <string name="memory_format">Dostupná paměť: <xliff:g id="availmemory" example="1000">%1$d</xliff:g>\/<xliff:g id="totalmemory" example="5000">%2$d</xliff:g> MB</string>
-    <!-- Tiles -->
-    <string name="game_mode_title">Režim</string>
-    <string name="fps_Info_title">Informace o FPS</string>
-    <string name="notification_hide">Skrýt</string>
-    <string name="notification_headsup">Plovoucí oznámení</string>
-    <string name="notification_reticker">reTicker</string>
-    <string name="notification_danmaku">Danmaku</string>
-    <string name="state_enabled">Povoleno</string>
-    <string name="state_disabled">Zakázáno</string>
-    <string name="state_default">Výchozí</string>
+    <!-- Disable ADB debugging -->
+    <string name="adb_disabled_title">Zakázat ladění USB</string>
+    <string name="adb_disabled_summary">Dočasné vypnutí ladění USB ADB během hry</string>
+    <!-- Ringer Mode -->
     <string name="in_game_calls_title">Režim volání</string>
     <string name="in_game_calls_no_action">Žádná akce</string>
     <string name="in_game_calls_auto_answer">Automatická odpověď</string>
@@ -86,28 +48,102 @@
     <!-- Danmaku Notification Mode -->
     <string name="danmaku_notification_mode_title">Režim upozornění Danmaku</string>
     <string name="danmaku_notification_mode_summary">Zobrazit oznámení jako odrážku pro danmaku akci, pokud je hra aktivní</string>
-    <string name="gamespace_running">Herní prostředí běží</string>
+    <!-- Gamespace opacity -->
+    <string name="gamespace_menu_opacity_title">Úroveň průhlednosti překrytí menu</string>
+    <!-- Bypass charging -->
+    <string name="bypass_charge_enabled_title">Bypass charging</string>
+    <string name="bypass_charge_enabled_summary">Enable bypass charging while playing games</string>
     <!-- Call overlay -->
     <string name="call_overlay_enabled_title">Překrytí hovoru</string>
     <string name="call_overlay_enabled_summary">Zobrazit minimální překrytí hovorů pro odpověď/odmítnutí hovorů</string>
+    <!-- Ringer Mode Options -->
+    <string name="ringer_mode_title">Režim vyzvánění</string>
+    <string name="ringer_mode_silent">Tichý</string>
+    <string name="ringer_mode_vibrate">Vibrace</string>
+    <string name="ringer_mode_normal">Normální</string>
+    <string name="ringer_mode_no_change">Neměnit</string>
+    <!-- Game Mode Labels -->
+    <string name="game_mode_unsupported">Nepodporováno</string>
+    <string name="game_mode_balanced">Balanced</string>
+    <string name="game_mode_performance">Výkon</string>
+    <string name="game_mode_battery">Baterie</string>
+    <!-- Game Panel -->
+    <string name="save">Save</string>
+    <string name="panel_options">Panel Options</string>
+    <string name="brightness_slider">Brightness Slider</string>
+    <string name="fps_graph">FPS Graph</string>
+    <string name="selected_tiles">Selected Tiles</string>
+    <string name="available_tiles">Available Tiles</string>
+    <string name="drag_tiles_here">Drag tiles here</string>
+    <string name="all_tiles_added">All tiles added</string>
+    <string name="fps_stats">min %1$d | avg %2$d | max %3$d</string>
+    <!-- Tile Labels -->
+    <string name="tile_danmaku">Danmaku</string>
+    <string name="tile_stay_awake">Nevypínat obrazovku</string>
+    <string name="tile_wifi">Wi-Fi</string>
+    <string name="tile_dnd">DND</string>
+    <string name="tile_fps_info">FPS Info</string>
+    <string name="tile_auto_rotate">Auto Rotate</string>
+    <string name="tile_boost_memory">Boost Memory</string>
+    <string name="tile_settings">Settings</string>
+    <string name="tile_airplane_mode">Airplane Mode</string>
+    <string name="tile_bluetooth">Bluetooth</string>
+    <string name="tile_mobile_data">Mobile Data</string>
+    <string name="tile_touch_boost">Touch Boost</string>
+    <string name="tile_flashlight">Flashlight</string>
+    <string name="tile_dark_mode">Dark Mode</string>
+    <string name="tile_location">Location</string>
+    <string name="tile_battery_saver">Battery Saver</string>
+    <string name="tile_hotspot">Hotspot</string>
+    <string name="tile_nfc">NFC</string>
+    <string name="tile_night_light">Night Light</string>
+    <string name="tile_aod">Always On Display</string>
+    <string name="tile_data_saver">Data Saver</string>
+    <string name="tile_color_inversion">Color Inversion</string>
+    <string name="tile_color_correction">Color Correction</string>
+    <string name="tile_reduce_brightness">Reduce Brightness</string>
+    <string name="tile_one_handed">One Handed</string>
+    <string name="tile_heads_up">Plovoucí oznámení</string>
+    <string name="tile_auto_sync">Auto Sync</string>
+    <string name="tile_camera_privacy">Camera</string>
+    <string name="tile_mic_privacy">Microphone</string>
+    <string name="tile_work_profile">Work Profile</string>
+    <string name="tile_usb_tether">USB Tethering</string>
+    <string name="tile_dream">Screen Saver</string>
+    <string name="tile_reading_mode">Reading Mode</string>
+    <string name="tile_power_share">Power Share</string>
+    <string name="tile_caffeine">Caffeine</string>
+    <string name="tile_vpn">VPN</string>
+    <string name="tile_cast">Cast</string>
+    <string name="tile_profiles">Profiles</string>
+    <string name="tile_smart_pixels">Smart Pixels</string>
+    <string name="tile_screen_record">Screen Record</string>
+    <string name="tile_screenshot">Screenshot</string>
+    <!-- Icon Idle Opacity -->
+    <string name="icon_idle_opacity_title">Icon idle opacity</string>
+    <!-- Auto DND -->
+    <string name="auto_dnd_title">Auto Do Not Disturb</string>
+    <string name="auto_dnd_summary">Automatically enable DND while in-game and restore when done</string>
+    <!-- Controller Mapper -->
+    <string name="mapper_press_button">Press a button on your controller or keyboard\u2026</string>
+    <string name="mapper_add_point">Add tap point</string>
+    <string name="mapper_delete_point">Delete tap point</string>
+    <string name="mapper_map_controls">Map controls</string>
+    <!-- Content Descriptions (Accessibility) -->
+    <string name="cd_reject">Reject</string>
+    <string name="cd_accept">Accept</string>
+    <string name="cd_caller_photo">Caller photo</string>
+    <string name="cd_dismiss">Dismiss</string>
+    <string name="cd_edit_tiles">Edit Tiles</string>
+    <string name="cd_collapse">Collapse</string>
+    <string name="cd_expand">Expand</string>
     <!-- Game Optimization -->
     <string name="game_optimization_title">Launch Optimization</string>
-    <string name="game_launch_boost_title">Launch Boost</string>
-    <string name="game_launch_boost_summary">Optimize CPU and memory for faster game launch</string>
     <string name="game_memory_management_title">Smart Memory Management</string>
     <string name="game_memory_management_summary">Automatically clear background apps when launching games</string>
     <string name="game_load_priority_title">Loading Priority</string>
     <string name="game_load_priority_summary">Set resource priority during game launch</string>
     <string name="game_cache_management_title">Cache Management</string>
     <string name="game_cache_management_summary">Optimize game cache for faster loading times</string>
-    <string-array name="game_load_priority_entries">
-        <item>Balanced (Recommended)</item>
-        <item>Maximum Performance</item>
-        <item>Power Saving</item>
-    </string-array>
-    <string-array name="game_load_priority_values">
-        <item>balanced</item>
-        <item>performance</item>
-        <item>powersave</item>
-    </string-array>
+    <string name="game_memory_boosted">Memory boosted</string>
 </resources>
