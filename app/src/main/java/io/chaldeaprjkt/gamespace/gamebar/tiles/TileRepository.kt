@@ -191,7 +191,7 @@ class TileRepository @Inject constructor(
             }
         }
         if (memoryBoosted)
-            Toast.makeText(context, context.getString(R.string.boost_memory), Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, context.getString(R.string.game_memory_boosted), Toast.LENGTH_SHORT).show()
     }
 
     fun updateTileSelection(selectedIds: List<String>) {

@@ -109,6 +109,7 @@
         <com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="gamespace_lock_gesture"
             android:title="@string/lock_gesture_title"
+            android:summary="@string/lock_gesture_summary"
             android:defaultValue="false" />
 
         <com.crdroid.settings.preferences.SystemSettingSwitchPreference
@@ -119,7 +120,7 @@
 
         <com.crdroid.settings.preferences.CustomSeekBarPreference
             android:key="gamespace_icon_idle_alpha"
-            android:title="@string/icon_idle_alpha_title"
+            android:title="@string/icon_idle_opacity_title"
             android:defaultValue="25"
             android:max="100"
             app:min="5"

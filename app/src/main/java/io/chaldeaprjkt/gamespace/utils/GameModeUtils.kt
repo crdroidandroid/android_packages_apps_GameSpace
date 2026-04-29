@@ -157,6 +157,6 @@ class GameModeUtils @Inject constructor(private val context: Context) {
         private const val VULKAN_1_0 = 0x00400000
 
         fun Context.describeGameMode(mode: Int) =
-            resources.getStringArray(R.array.game_mode_names)[mode] ?: "Unsupported"
+            resources.getStringArray(R.array.game_mode_names)[mode] ?: resources.getString(R.string.game_mode_unsupported)
     }
 }
