@@ -180,6 +180,20 @@ class TileRepository @Inject constructor(
         }
     }
 
+    private fun clearBackgroundProcesses() {
+        val activityManager: ActivityManager = context.getSystemService(ActivityManager::class.java)
+        val runningApps = activityManager.runningAppProcesses ?: return
+        var memoryBoosted = false
+        runningApps.forEach { processInfo ->
+            if (processInfo.importance > ActivityManager.RunningAppProcessInfo.IMPORTANCE_FOREGROUND) {
+                activityManager.killBackgroundProcesses(processInfo.processName)
+                memoryBoosted = true
+            }
+        }
+        if (memoryBoosted)
+            Toast.makeText(context, context.getString(R.string.boost_memory), Toast.LENGTH_SHORT).show()
+    }
+
     fun updateTileSelection(selectedIds: List<String>) {
         _tiles.clear()
         _tiles.addAll(selectedIds.mapNotNull { id ->
@@ -420,10 +434,7 @@ class TileRepository @Inject constructor(
                 label = context.getString(R.string.tile_boost_memory),
                 icon = R.drawable.materialsymbols_ic_speed_rounded_filled,
                 action = {
-                    try {
-                        ActivityManager.getService().releaseMemory(606, 60, false, false)
-                    } catch (_: Exception) {}
-                    Toast.makeText(context, context.getString(R.string.boost_memory), Toast.LENGTH_SHORT).show()
+                    clearBackgroundProcesses()
                 }
             )
         )
