@@ -146,4 +146,7 @@
     <string name="game_cache_management_title">Gestão de Cache</string>
     <string name="game_cache_management_summary">Otimizar a cache do jogo para tempos de carregamento mais rápidos</string>
     <string name="game_memory_boosted">Memory boosted</string>
+    <!-- Game auto-detect -->
+    <string name="auto_game_detect_title">Auto game detection</string>
+    <string name="auto_game_detect_summary">Automatically add apps marked as games by their developer</string>
 </resources>
