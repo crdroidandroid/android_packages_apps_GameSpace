@@ -64,39 +64,39 @@
     <string name="ringer_mode_no_change">바꾸지 않음</string>
     <!-- Game Mode Labels -->
     <string name="game_mode_unsupported">지원 안함</string>
-    <string name="game_mode_balanced">Balanced</string>
+    <string name="game_mode_balanced">균형 잡힌</string>
     <string name="game_mode_performance">성능</string>
     <string name="game_mode_battery">배터리</string>
     <!-- Game Panel -->
-    <string name="save">Save</string>
-    <string name="panel_options">Panel Options</string>
-    <string name="brightness_slider">Brightness Slider</string>
-    <string name="fps_graph">FPS Graph</string>
-    <string name="selected_tiles">Selected Tiles</string>
-    <string name="available_tiles">Available Tiles</string>
-    <string name="drag_tiles_here">Drag tiles here</string>
-    <string name="all_tiles_added">All tiles added</string>
-    <string name="fps_stats">min %1$d | avg %2$d | max %3$d</string>
+    <string name="save">저장</string>
+    <string name="panel_options">패널 옵션</string>
+    <string name="brightness_slider">밝기 조절 슬라이더</string>
+    <string name="fps_graph">FPS 그래프</string>
+    <string name="selected_tiles">선택된 타일</string>
+    <string name="available_tiles">사용 가능한 타일</string>
+    <string name="drag_tiles_here">타일을 여기에 드래그하세요</string>
+    <string name="all_tiles_added">모든 타일이 추가되었습니다</string>
+    <string name="fps_stats">최소 %1$d | 평균 %2$d | 최대 %3$d</string>
     <!-- Tile Labels -->
     <string name="tile_danmaku">탄막</string>
     <string name="tile_stay_awake">화면 계속 켜 두기</string>
-    <string name="tile_wifi">Wi-Fi</string>
+    <string name="tile_wifi">와이파이</string>
     <string name="tile_dnd">DND</string>
-    <string name="tile_fps_info">FPS Info</string>
-    <string name="tile_auto_rotate">Auto Rotate</string>
+    <string name="tile_fps_info">FPS 정보</string>
+    <string name="tile_auto_rotate">자동회전</string>
     <string name="tile_boost_memory">Boost Memory</string>
-    <string name="tile_settings">Settings</string>
-    <string name="tile_airplane_mode">Airplane Mode</string>
-    <string name="tile_bluetooth">Bluetooth</string>
-    <string name="tile_mobile_data">Mobile Data</string>
-    <string name="tile_touch_boost">Touch Boost</string>
-    <string name="tile_flashlight">Flashlight</string>
-    <string name="tile_dark_mode">Dark Mode</string>
-    <string name="tile_location">Location</string>
+    <string name="tile_settings">설정</string>
+    <string name="tile_airplane_mode">비행기 모드</string>
+    <string name="tile_bluetooth">블루투스</string>
+    <string name="tile_mobile_data">모바일 데이터</string>
+    <string name="tile_touch_boost">터치 부스트</string>
+    <string name="tile_flashlight">손전등</string>
+    <string name="tile_dark_mode">다크 모드</string>
+    <string name="tile_location">위치</string>
     <string name="tile_battery_saver">Battery Saver</string>
-    <string name="tile_hotspot">Hotspot</string>
+    <string name="tile_hotspot">핫스팟</string>
     <string name="tile_nfc">NFC</string>
-    <string name="tile_night_light">Night Light</string>
+    <string name="tile_night_light">야간 조명</string>
     <string name="tile_aod">Always On Display</string>
     <string name="tile_data_saver">Data Saver</string>
     <string name="tile_color_inversion">Color Inversion</string>
@@ -104,21 +104,21 @@
     <string name="tile_reduce_brightness">Reduce Brightness</string>
     <string name="tile_one_handed">One Handed</string>
     <string name="tile_heads_up">헤드업</string>
-    <string name="tile_auto_sync">Auto Sync</string>
-    <string name="tile_camera_privacy">Camera</string>
-    <string name="tile_mic_privacy">Microphone</string>
-    <string name="tile_work_profile">Work Profile</string>
-    <string name="tile_usb_tether">USB Tethering</string>
-    <string name="tile_dream">Screen Saver</string>
+    <string name="tile_auto_sync">자동 동기화</string>
+    <string name="tile_camera_privacy">카메라</string>
+    <string name="tile_mic_privacy">마이크로폰</string>
+    <string name="tile_work_profile">직장 프로필</string>
+    <string name="tile_usb_tether">USB 테더링</string>
+    <string name="tile_dream">화면 보호기</string>
     <string name="tile_reading_mode">Reading Mode</string>
     <string name="tile_power_share">Power Share</string>
     <string name="tile_caffeine">Caffeine</string>
     <string name="tile_vpn">VPN</string>
     <string name="tile_cast">Cast</string>
-    <string name="tile_profiles">Profiles</string>
-    <string name="tile_smart_pixels">Smart Pixels</string>
-    <string name="tile_screen_record">Screen Record</string>
-    <string name="tile_screenshot">Screenshot</string>
+    <string name="tile_profiles">프로필</string>
+    <string name="tile_smart_pixels">스미트 픽셀</string>
+    <string name="tile_screen_record">화면 녹화</string>
+    <string name="tile_screenshot">스크린샷</string>
     <!-- Icon Idle Opacity -->
     <string name="icon_idle_opacity_title">Icon idle opacity</string>
     <!-- Auto DND -->
@@ -130,13 +130,13 @@
     <string name="mapper_delete_point">Delete tap point</string>
     <string name="mapper_map_controls">Map controls</string>
     <!-- Content Descriptions (Accessibility) -->
-    <string name="cd_reject">Reject</string>
-    <string name="cd_accept">Accept</string>
+    <string name="cd_reject">거절</string>
+    <string name="cd_accept">승인</string>
     <string name="cd_caller_photo">Caller photo</string>
-    <string name="cd_dismiss">Dismiss</string>
-    <string name="cd_edit_tiles">Edit Tiles</string>
-    <string name="cd_collapse">Collapse</string>
-    <string name="cd_expand">Expand</string>
+    <string name="cd_dismiss">무시</string>
+    <string name="cd_edit_tiles">타일 편집</string>
+    <string name="cd_collapse">접기</string>
+    <string name="cd_expand">펼치기</string>
     <!-- Game Optimization -->
     <string name="game_optimization_title">최적화 실행</string>
     <string name="game_memory_management_title">스마트 메모리 관리</string>
@@ -146,4 +146,7 @@
     <string name="game_cache_management_title">캐시 관리</string>
     <string name="game_cache_management_summary">게임 캐시를 최적화하여 로딩 속도를 향상시키세요</string>
     <string name="game_memory_boosted">Memory boosted</string>
+    <!-- Game auto-detect -->
+    <string name="auto_game_detect_title">Auto game detection</string>
+    <string name="auto_game_detect_summary">Automatically add apps marked as games by their developer</string>
 </resources>
