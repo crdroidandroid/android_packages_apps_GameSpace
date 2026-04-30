@@ -156,13 +156,7 @@ class GameSidebar(
                                 onShowPanel = { handler.post { showPanel() } },
                                 onMapControls = { handler.post { enterMapperEdit() } },
                                 onToggleLock = {
-                                    isLockedState.value = !isLockedState.value
-                                    Settings.Secure.putIntForUser(
-                                        context.contentResolver,
-                                        "ax_gaming_gesture_lock",
-                                        if (isLockedState.value) 1 else 0,
-                                        UserHandle.USER_CURRENT
-                                    )
+                                    setGestureLock(!isLockedState.value)
                                     scheduleIdle()
                                 },
                                 onToggleFps = {
@@ -232,6 +226,7 @@ class GameSidebar(
                 gameBarView.visibility = View.INVISIBLE
                 gameBarView.alpha = 0f
                 handler.postDelayed(firstPaint, 500)
+                setGestureLock(appSettings.lockGesture)
             }
         }
     }
@@ -241,16 +236,20 @@ class GameSidebar(
         platform.removeListener(recordingListener)
         stopFpsTracking()
         shouldClose = true
-        isLockedState.value = false
-        Settings.Secure.putIntForUser(
-            context.contentResolver,
-            "ax_gaming_gesture_lock",
-            0,
-            UserHandle.USER_CURRENT
-        )
+        setGestureLock(false)
         handler.removeCallbacksAndMessages(null)
         forceRemovePanel()
         runCatching { wm.removeViewImmediate(gameBarView) }
+    }
+
+    fun setGestureLock(value: Boolean) {
+        isLockedState.value = value
+        Settings.Secure.putIntForUser(
+            context.contentResolver,
+            "ax_gaming_gesture_lock",
+            if (value) 1 else 0,
+            UserHandle.USER_CURRENT
+        )
     }
 
     fun onConfigurationChanged(newConfig: Configuration) {

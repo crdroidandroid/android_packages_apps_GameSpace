@@ -106,7 +106,7 @@
             android:summary="@string/three_screenshot_disabled_summary"
             android:defaultValue="false" />
 
-        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+        <SwitchPreferenceCompat
             android:key="gamespace_lock_gesture"
             android:title="@string/lock_gesture_title"
             android:summary="@string/lock_gesture_summary"
