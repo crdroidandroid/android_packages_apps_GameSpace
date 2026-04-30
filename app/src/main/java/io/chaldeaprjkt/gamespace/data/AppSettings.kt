@@ -99,6 +99,10 @@ class AppSettings @Inject constructor(private val context: Context) {
         get() = db.getBoolean(KEY_LOCK_GESTURE, false)
         set(value) = db.edit().putBoolean(KEY_LOCK_GESTURE, value).apply()
 
+    var stayAwake
+        get() = db.getBoolean(KEY_STAY_AWAKE, false)
+        set(value) = db.edit().putBoolean(KEY_STAY_AWAKE, value).apply()
+
     companion object {
         const val KEY_AUTO_BRIGHTNESS_DISABLE = "gamespace_auto_brightness_disabled"
         const val KEY_3SCREENSHOT_DISABLE = "gamespace_tfgesture_disabled"

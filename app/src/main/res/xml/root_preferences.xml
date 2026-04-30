@@ -60,7 +60,7 @@
             android:summary="@string/auto_brightness_disabled_summary"
             android:defaultValue="true" />
 
-        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+        <SwitchPreferenceCompat
             android:key="gamespace_stay_awake"
             android:title="@string/stay_awake_title"
             android:summary="@string/stay_awake_summary"

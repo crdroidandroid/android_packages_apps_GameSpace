@@ -74,6 +74,9 @@ class GameSession @Inject constructor(
         if (appSettings.ringerMode != 3) {
             audioManager.ringerModeInternal = appSettings.ringerMode
         }
+        if (appSettings.stayAwake) {
+            systemSettings.stayAwake = true
+        }
     }
 
     fun unregister() {
@@ -90,6 +93,7 @@ class GameSession @Inject constructor(
         if (appSettings.ringerMode != 3) {
             audioManager.ringerModeInternal = orig.ringerMode
         }
+        systemSettings.stayAwake = false
         state = null
     }
 
