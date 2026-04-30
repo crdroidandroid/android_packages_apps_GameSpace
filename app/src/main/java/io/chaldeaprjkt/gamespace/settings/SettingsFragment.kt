@@ -16,10 +16,13 @@
 package io.chaldeaprjkt.gamespace.settings
 
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
+import android.os.SystemProperties
 import android.view.View
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.preference.Preference
+import androidx.preference.PreferenceCategory
 import androidx.preference.SwitchPreferenceCompat
 import androidx.preference.ListPreference
 
@@ -62,6 +65,18 @@ class SettingsFragment : Hilt_SettingsFragment(),
 
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
         setPreferencesFromResource(R.xml.root_preferences, rootKey)
+        updateBypassPreference()
+    }
+
+    private fun updateBypassPreference() {
+        val isBypassSupported =
+            Build.MANUFACTURER.equals("Google", ignoreCase = true) ||
+            SystemProperties.getBoolean("persist.sys.battery_bypass_supported", false)
+
+        if (!isBypassSupported) {
+            findPreference<PreferenceCategory>("in_game_preferences")
+                ?.removePreference(findPreference("bypass_charge_enabled")!!)
+        }
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
