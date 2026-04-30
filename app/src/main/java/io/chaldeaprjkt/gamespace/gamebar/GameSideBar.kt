@@ -226,7 +226,6 @@ class GameSidebar(
                 gameBarView.visibility = View.INVISIBLE
                 gameBarView.alpha = 0f
                 handler.postDelayed(firstPaint, 500)
-                setGestureLock(appSettings.lockGesture)
             }
         }
     }
@@ -505,6 +504,7 @@ class GameSidebar(
         runCatching { wm.updateViewLayout(gameBarView, gameBarLayoutParam) }
         showFpsState.value = appSettings.showFps
         updateFpsTracking()
+        setGestureLock(appSettings.lockGesture)
         scheduleIdle()
     }
 
