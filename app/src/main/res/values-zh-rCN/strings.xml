@@ -116,13 +116,13 @@
     <string name="tile_vpn">VPN</string>
     <string name="tile_cast">Cast</string>
     <string name="tile_profiles">Profiles</string>
-    <string name="tile_smart_pixels">Smart Pixels</string>
-    <string name="tile_screen_record">Screen Record</string>
-    <string name="tile_screenshot">Screenshot</string>
+    <string name="tile_smart_pixels">智能像素</string>
+    <string name="tile_screen_record">屏幕录制</string>
+    <string name="tile_screenshot">屏幕截图</string>
     <!-- Icon Idle Opacity -->
     <string name="icon_idle_opacity_title">Icon idle opacity</string>
     <!-- Auto DND -->
-    <string name="auto_dnd_title">Auto Do Not Disturb</string>
+    <string name="auto_dnd_title">自动勿扰模式</string>
     <string name="auto_dnd_summary">Automatically enable DND while in-game and restore when done</string>
     <!-- Controller Mapper -->
     <string name="mapper_press_button">Press a button on your controller or keyboard\u2026</string>
