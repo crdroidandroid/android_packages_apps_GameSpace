@@ -146,4 +146,7 @@
     <string name="game_cache_management_title">缓存管理</string>
     <string name="game_cache_management_summary">优化游戏缓存以加快加载时间</string>
     <string name="game_memory_boosted">Memory boosted</string>
+    <!-- Game auto-detect -->
+    <string name="auto_game_detect_title">Auto game detection</string>
+    <string name="auto_game_detect_summary">Automatically add apps marked as games by their developer</string>
 </resources>
