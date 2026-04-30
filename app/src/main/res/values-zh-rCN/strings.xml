@@ -69,14 +69,14 @@
     <string name="game_mode_battery">省电</string>
     <!-- Game Panel -->
     <string name="save">Save</string>
-    <string name="panel_options">Panel Options</string>
+    <string name="panel_options">面板选项</string>
     <string name="brightness_slider">Brightness Slider</string>
     <string name="fps_graph">FPS Graph</string>
     <string name="selected_tiles">Selected Tiles</string>
     <string name="available_tiles">Available Tiles</string>
     <string name="drag_tiles_here">Drag tiles here</string>
     <string name="all_tiles_added">All tiles added</string>
-    <string name="fps_stats">min %1$d | avg %2$d | max %3$d</string>
+    <string name="fps_stats">最小 %1$d | 平均 %2$d | 最大 %3$d</string>
     <!-- Tile Labels -->
     <string name="tile_danmaku">弹幕</string>
     <string name="tile_stay_awake">保持唤醒</string>
