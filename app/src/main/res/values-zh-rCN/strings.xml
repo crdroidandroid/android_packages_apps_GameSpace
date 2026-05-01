@@ -141,8 +141,6 @@
     <string name="game_optimization_title">启动优化</string>
     <string name="game_memory_management_title">智能内存管理</string>
     <string name="game_memory_management_summary">启动游戏时自动清除后台应用</string>
-    <string name="game_load_priority_title">加载优先级</string>
-    <string name="game_load_priority_summary">设置游戏启动时的资源优先级</string>
     <string name="game_cache_management_title">缓存管理</string>
     <string name="game_cache_management_summary">优化游戏缓存以加快加载时间</string>
     <string name="game_memory_boosted">Memory boosted</string>
