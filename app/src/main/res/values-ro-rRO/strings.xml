@@ -141,8 +141,6 @@
     <string name="game_optimization_title">Lansare optimizare</string>
     <string name="game_memory_management_title">Managementul memoriei inteligente</string>
     <string name="game_memory_management_summary">Șterge automat aplicațiile de fundal la lansarea jocurilor</string>
-    <string name="game_load_priority_title">Încărcare prioritate</string>
-    <string name="game_load_priority_summary">Setează prioritatea resurselor în timpul lansării jocului</string>
     <string name="game_cache_management_title">Gestionare cache</string>
     <string name="game_cache_management_summary">Optimizează cache-ul jocului pentru o încărcare mai rapidă</string>
     <string name="game_memory_boosted">Memory boosted</string>
