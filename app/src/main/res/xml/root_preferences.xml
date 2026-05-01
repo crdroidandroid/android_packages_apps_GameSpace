@@ -34,14 +34,6 @@
             android:summary="@string/game_memory_management_summary"
             android:defaultValue="false" />
 
-        <ListPreference
-            android:key="game_load_priority"
-            android:title="@string/game_load_priority_title"
-            android:summary="%s"
-            android:entries="@array/game_load_priority_entries"
-            android:entryValues="@array/game_load_priority_values"
-            android:defaultValue="balanced" />
-
         <SwitchPreferenceCompat
             android:key="game_cache_management"
             android:title="@string/game_cache_management_title"

@@ -56,16 +56,4 @@
         <item>@string/game_mode_performance</item>
         <item>@string/game_mode_battery</item>
     </string-array>
-
-    <string-array name="game_load_priority_entries" translatable="false">
-        <item>@string/game_mode_balanced</item>
-        <item>@string/game_mode_performance</item>
-        <item>@string/game_mode_battery</item>
-    </string-array>
-
-    <string-array name="game_load_priority_values" translatable="false">
-        <item>balanced</item>
-        <item>performance</item>
-        <item>powersave</item>
-    </string-array>
 </resources>

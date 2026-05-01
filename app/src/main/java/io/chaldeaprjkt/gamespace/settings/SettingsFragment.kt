@@ -103,11 +103,6 @@ class SettingsFragment : Hilt_SettingsFragment(),
             onPreferenceChangeListener = this@SettingsFragment
         }
 
-        findPreference<ListPreference>("game_load_priority")?.apply {
-            value = gameOptimization.loadPriority
-            onPreferenceChangeListener = this@SettingsFragment
-        }
-
         findPreference<SwitchPreferenceCompat>("game_cache_management")?.apply {
             isChecked = gameOptimization.isCacheManagementEnabled
             onPreferenceChangeListener = this@SettingsFragment
@@ -142,10 +137,6 @@ class SettingsFragment : Hilt_SettingsFragment(),
         when (preference.key) {
             "game_memory_management" -> {
                 gameOptimization.isMemoryManagementEnabled = newValue as Boolean
-                return true
-            }
-            "game_load_priority" -> {
-                gameOptimization.loadPriority = newValue as String
                 return true
             }
             "game_cache_management" -> {
