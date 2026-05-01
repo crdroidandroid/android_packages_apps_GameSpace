@@ -141,8 +141,6 @@
     <string name="game_optimization_title">최적화 실행</string>
     <string name="game_memory_management_title">스마트 메모리 관리</string>
     <string name="game_memory_management_summary">게임 실행 시 백그라운드 앱을 자동으로 종료합니다</string>
-    <string name="game_load_priority_title">로딩 우선순위</string>
-    <string name="game_load_priority_summary">게임 실행 시 리소스 우선 순위 설정</string>
     <string name="game_cache_management_title">캐시 관리</string>
     <string name="game_cache_management_summary">게임 캐시를 최적화하여 로딩 속도를 향상시키세요</string>
     <string name="game_memory_boosted">Memory boosted</string>
