@@ -38,5 +38,6 @@
         <permission name="android.permission.BLUETOOTH_ADMIN" />
         <permission name="android.permission.MODIFY_PHONE_STATE" />
         <permission name="android.permission.DELETE_CACHE_FILES" />
+        <permission name="android.permission.MODIFY_AUDIO_ROUTING"/>
     </privapp-permissions>
 </permissions>

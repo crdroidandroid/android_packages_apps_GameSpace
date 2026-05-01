@@ -17,11 +17,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 @file:OptIn(ExperimentalMaterial3ExpressiveApi::class)
 
 package io.chaldeaprjkt.gamespace.gamebar
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.BitmapFactory
 import android.graphics.PixelFormat
@@ -31,12 +31,9 @@ import android.media.AudioSystem
 import android.net.Uri
 import android.provider.ContactsContract
 import android.telecom.TelecomManager
-import android.telephony.PhoneStateListener
-import android.telephony.TelephonyCallback
+import android.telephony.PhoneStateListener 
 import android.telephony.TelephonyManager
-import android.util.TypedValue
 import android.view.Gravity
-import android.view.View
 import android.view.WindowManager
 import android.widget.Toast
 import androidx.compose.animation.*
@@ -61,46 +58,39 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.repeatOnLifecycle
+import com.android.axion.compose.lifecycle.repeatWhenAttached
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.android.scopes.ServiceScoped
 import io.chaldeaprjkt.gamespace.R
 import io.chaldeaprjkt.gamespace.data.AppSettings
-import com.android.axion.compose.lifecycle.repeatWhenAttached
 import io.chaldeaprjkt.gamespace.utils.dp as extDp
 import javax.inject.Inject
-import kotlinx.coroutines.*
+import kotlinx.coroutines.delay
 
 @ServiceScoped
 class CallListener @Inject constructor(
     @ApplicationContext private val context: Context,
-    private val appSettings: AppSettings
+    private val appSettings: AppSettings,
 ) {
     private val audioManager = context.getSystemService(AudioManager::class.java)!!
     private val telephonyManager = context.getSystemService(TelephonyManager::class.java)!!
     private val telecomManager = context.getSystemService(TelecomManager::class.java)!!
     private val windowManager = context.getSystemService(WindowManager::class.java)!!
 
-    private val callsMode = appSettings.callsMode
-    private val callOverlayEnabled = appSettings.callOverlayEnabled
+    private val callsMode get() = appSettings.callsMode
+    private val callOverlayEnabled get() = appSettings.callOverlayEnabled
+
     private var previousAudioMode = audioManager.mode
 
     private var ringerOverlay: ComposeView? = null
     private var isOverlayShowing = false
 
-    private val phoneStateListener = object: PhoneStateListener() {
+    @Suppress("DEPRECATION")
+    private val phoneStateListener = object : PhoneStateListener() {
         override fun onCallStateChanged(state: Int, incomingNumber: String?) {
-            if (state == TelephonyManager.CALL_STATE_RINGING && callOverlayEnabled) {
-                showRingerOverlay(incomingNumber ?: "")
-            }
-        }
-    }
-
-    private val telephonyCallback = object : TelephonyCallback(), TelephonyCallback.CallStateListener {
-        override fun onCallStateChanged(state: Int) {
+            val number = incomingNumber.orEmpty()
             when (state) {
-                TelephonyManager.CALL_STATE_RINGING -> {
-                    handleIncomingCall()
-                }
+                TelephonyManager.CALL_STATE_RINGING -> handleIncomingCall(number)
                 TelephonyManager.CALL_STATE_OFFHOOK -> handleOffhookState()
                 TelephonyManager.CALL_STATE_IDLE -> handleIdleState()
             }
@@ -108,36 +98,49 @@ class CallListener @Inject constructor(
     }
 
     fun init() {
-        telephonyManager.registerTelephonyCallback(context.mainExecutor, telephonyCallback)
-        telephonyManager.listen(phoneStateListener, PhoneStateListener.LISTEN_CALL_STATE)
+        previousAudioMode = audioManager.mode
+        @Suppress("DEPRECATION")
+        telephonyManager.listen(
+            phoneStateListener,
+            PhoneStateListener.LISTEN_CALL_STATE
+        )
     }
 
     fun destroy() {
-        telephonyManager.unregisterTelephonyCallback(telephonyCallback)
+        @Suppress("DEPRECATION")
+        telephonyManager.listen(
+            phoneStateListener,
+            PhoneStateListener.LISTEN_NONE
+        )
         dismissRingerOverlay(immediate = true)
-        telephonyManager.listen(phoneStateListener, PhoneStateListener.LISTEN_NONE)
     }
 
-    private fun handleIncomingCall() {
-        if (callsMode == 0) return
+    private fun handleIncomingCall(incomingNumber: String) {
+        val displayName = lookupContactName(incomingNumber).ifEmpty { incomingNumber }
 
         when (callsMode) {
             1 -> {
                 telecomManager.acceptRingingCall()
                 Toast.makeText(
                     context,
-                    context.getString(R.string.in_game_calls_received_number, ""),
+                    context.getString(R.string.in_game_calls_received_number, displayName),
                     Toast.LENGTH_SHORT
                 ).show()
+                return
             }
             2 -> {
                 telecomManager.endCall()
                 Toast.makeText(
                     context,
-                    context.getString(R.string.in_game_calls_rejected_number, ""),
+                    context.getString(R.string.in_game_calls_rejected_number, displayName),
                     Toast.LENGTH_SHORT
                 ).show()
+                return
             }
+        }
+
+        if (callOverlayEnabled) {
+            showRingerOverlay(incomingNumber)
         }
     }
 
@@ -146,6 +149,7 @@ class CallListener @Inject constructor(
 
         if (callsMode == 0 || callsMode == 2) return
 
+        audioManager.mode = AudioManager.MODE_IN_COMMUNICATION
         if (isHeadsetPluggedIn()) {
             audioManager.isSpeakerphoneOn = false
             AudioSystem.setForceUse(AudioSystem.FOR_COMMUNICATION, AudioSystem.FORCE_NONE)
@@ -153,7 +157,6 @@ class CallListener @Inject constructor(
             audioManager.isSpeakerphoneOn = true
             AudioSystem.setForceUse(AudioSystem.FOR_COMMUNICATION, AudioSystem.FORCE_SPEAKER)
         }
-        audioManager.mode = AudioManager.MODE_IN_COMMUNICATION
     }
 
     private fun handleIdleState() {
@@ -166,11 +169,30 @@ class CallListener @Inject constructor(
     }
 
     private fun isHeadsetPluggedIn(): Boolean {
-        val devices = audioManager.getDevices(AudioManager.GET_DEVICES_OUTPUTS)!!
+        val devices = audioManager.getDevices(AudioManager.GET_DEVICES_OUTPUTS)
         return devices.any {
             it.type == AudioDeviceInfo.TYPE_WIRED_HEADPHONES ||
                     it.type == AudioDeviceInfo.TYPE_WIRED_HEADSET ||
                     it.type == AudioDeviceInfo.TYPE_USB_HEADSET
+        }
+    }
+
+    private fun lookupContactName(phoneNumber: String): String {
+        if (phoneNumber.isBlank()) return ""
+        val uri = Uri.withAppendedPath(
+            ContactsContract.PhoneLookup.CONTENT_FILTER_URI,
+            Uri.encode(phoneNumber)
+        )
+        return try {
+            context.contentResolver.query(
+                uri,
+                arrayOf(ContactsContract.PhoneLookup.DISPLAY_NAME),
+                null, null, null
+            )?.use { cursor ->
+                if (cursor.moveToFirst()) cursor.getString(0).orEmpty() else ""
+            } ?: ""
+        } catch (_: SecurityException) {
+            ""
         }
     }
 
@@ -192,11 +214,10 @@ class CallListener @Inject constructor(
                 Gravity.TOP or Gravity.END
             else
                 Gravity.TOP or Gravity.START
-
             x = 1
             y = appSettings.y - 71.extDp
         }
-        
+
         val callerPhoto = loadContactPhoto(context, incomingNumber)
 
         ringerOverlay = ComposeView(context).apply {
@@ -207,7 +228,8 @@ class CallListener @Inject constructor(
                     )
                     setContent {
                         val isDark = isSystemInDarkTheme()
-                        val scheme = if (isDark) dynamicDarkColorScheme(context) else dynamicLightColorScheme(context)
+                        val scheme = if (isDark) dynamicDarkColorScheme(context)
+                                     else dynamicLightColorScheme(context)
                         MaterialExpressiveTheme(
                             colorScheme = scheme,
                             motionScheme = MotionScheme.expressive(),
@@ -224,63 +246,50 @@ class CallListener @Inject constructor(
                                 },
                                 onDismiss = { dismissRingerOverlay() },
                                 alignRight = sidebarX < 0,
-                                onDismissAnimation = { dismissRingerOverlay() },
-                                callerPhoto = callerPhoto
+                                onDismissAnimation = {
+                                    delay(0)
+                                },
+                                callerPhoto = callerPhoto,
                             )
                         }
                     }
                 }
             }
         }
-
-        try {
-            windowManager.addView(ringerOverlay, layoutParams)
-            isOverlayShowing = true
-        } catch (e: Exception) {
-            e.printStackTrace()
-            isOverlayShowing = false
-        }
+        windowManager.addView(ringerOverlay, layoutParams)
+        isOverlayShowing = true
     }
 
     private fun dismissRingerOverlay(immediate: Boolean = false) {
-        ringerOverlay?.let { overlay ->
-            try {
-                if (overlay.isAttachedToWindow) {
-                    if (immediate) {
-                        windowManager.removeViewImmediate(overlay)
-                    } else {
-                        overlay.postDelayed({
-                            try {
-                                windowManager.removeViewImmediate(overlay)
-                            } catch (_: Exception) { }
-                        }, 300)
-                    }
-                }
-            } catch (e: Exception) {
-                e.printStackTrace()
-            } finally {
-                ringerOverlay = null
-                isOverlayShowing = false
-            }
+        val overlay = ringerOverlay ?: return
+        try {
+            windowManager.removeView(overlay)
+        } catch (_: IllegalArgumentException) {
+
         }
+        ringerOverlay = null
+        isOverlayShowing = false
     }
-    
-    fun loadContactPhoto(context: Context, phoneNumber: String): ImageBitmap? {
+
+    private fun loadContactPhoto(context: Context, phoneNumber: String): ImageBitmap? {
+        if (phoneNumber.isBlank()) return null
         val resolver = context.contentResolver
         val uri = Uri.withAppendedPath(
             ContactsContract.PhoneLookup.CONTENT_FILTER_URI,
             Uri.encode(phoneNumber)
         )
-
-        resolver.query(uri, arrayOf(ContactsContract.PhoneLookup.PHOTO_URI), null, null, null)?.use { cursor ->
-            if (cursor.moveToFirst()) {
-                val photoUri = cursor.getString(0) ?: return null
-                resolver.openInputStream(Uri.parse(photoUri))?.use { stream ->
-                    return BitmapFactory.decodeStream(stream)?.asImageBitmap()
+        return try {
+            resolver.query(uri, arrayOf(ContactsContract.PhoneLookup.PHOTO_URI), null, null, null)
+                ?.use { cursor ->
+                    if (!cursor.moveToFirst()) return null
+                    val photoUri = cursor.getString(0) ?: return null
+                    resolver.openInputStream(Uri.parse(photoUri))?.use { stream ->
+                        BitmapFactory.decodeStream(stream)?.asImageBitmap()
+                    }
                 }
-            }
+        } catch (_: SecurityException) {
+            null
         }
-        return null
     }
 }
 
