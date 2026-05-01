@@ -12,7 +12,8 @@
     <string name="in_game_preferences_title">In-game options</string>
     <string name="game_list_title">Library</string>
     <string name="app_search_title">Search</string>
-    <string name="add">Add</string>
+    <string name="add_game">Add game</string>
+    <string name="launch_game">Launch game</string>
 
     <!-- Quick start apps -->
     <string name="quick_start_apps_title">Quick Start Apps</string>
