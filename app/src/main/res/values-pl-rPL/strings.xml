@@ -141,8 +141,6 @@
     <string name="game_optimization_title">Uruchom optymalizację</string>
     <string name="game_memory_management_title">Inteligentne zarządzanie pamięcią</string>
     <string name="game_memory_management_summary">Automatycznie zamykaj aplikacje działające w tle podczas uruchamiania gier</string>
-    <string name="game_load_priority_title">Ładowanie priorytetowe</string>
-    <string name="game_load_priority_summary">Ustaw priorytet zasobów podczas uruchamiania gry</string>
     <string name="game_cache_management_title">Zarządzanie pamięcią podręczną</string>
     <string name="game_cache_management_summary">Optymalizuj pamięć podręczną gry dla szybszego ładowania</string>
     <string name="game_memory_boosted">Polepszono pamięć</string>
