@@ -141,8 +141,6 @@
     <string name="game_optimization_title">Launch Optimization</string>
     <string name="game_memory_management_title">Smart Memory Management</string>
     <string name="game_memory_management_summary">Automatically clear background apps when launching games</string>
-    <string name="game_load_priority_title">Loading Priority</string>
-    <string name="game_load_priority_summary">Set resource priority during game launch</string>
     <string name="game_cache_management_title">Cache Management</string>
     <string name="game_cache_management_summary">Optimize game cache for faster loading times</string>
     <string name="game_memory_boosted">Memory boosted</string>
