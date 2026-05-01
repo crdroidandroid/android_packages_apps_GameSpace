@@ -141,8 +141,6 @@
     <string name="game_optimization_title">Lançar Otimização</string>
     <string name="game_memory_management_title">Gestão Inteligente de Memória</string>
     <string name="game_memory_management_summary">Limpar automaticamente ‘apps’ em segundo plano ao lançar jogos</string>
-    <string name="game_load_priority_title">Prioridade de Carregamento</string>
-    <string name="game_load_priority_summary">Definir prioridade de recursos durante o lançamento do jogo</string>
     <string name="game_cache_management_title">Gestão de Cache</string>
     <string name="game_cache_management_summary">Otimizar a cache do jogo para tempos de carregamento mais rápidos</string>
     <string name="game_memory_boosted">Memory boosted</string>
