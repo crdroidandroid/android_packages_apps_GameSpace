@@ -141,8 +141,6 @@
     <string name="game_optimization_title">Başlatma Optimizasyonu</string>
     <string name="game_memory_management_title">Akıllı Bellek Yönetimi</string>
     <string name="game_memory_management_summary">Oyunlar başlatılırken arka plan uygulamalarını otomatik olarak temizler</string>
-    <string name="game_load_priority_title">Yükleme Önceliği</string>
-    <string name="game_load_priority_summary">Oyun başlatma sırasında kaynak önceliğini ayarlar</string>
     <string name="game_cache_management_title">Önbellek Yönetimi</string>
     <string name="game_cache_management_summary">Daha hızlı yükleme süreleri için oyun önbelleğini optimize eder</string>
     <string name="game_memory_boosted">Memory boosted</string>
