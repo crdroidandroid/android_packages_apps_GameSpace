@@ -17,16 +17,16 @@
     <string name="quick_start_apps_summary">빠르게 실행할 앱을 선택하세요</string>
     <!-- Auto brightness -->
     <string name="auto_brightness_disabled_title">자동 밝기 사용 안함</string>
-    <string name="auto_brightness_disabled_summary">Keep brightness settled while in-game</string>
+    <string name="auto_brightness_disabled_summary">게임 중 화면 밝기 고정</string>
     <!-- Three finger swipe -->
-    <string name="three_screenshot_disabled_summary">Temporary disable three-fingers-swipe gesture while in-game</string>
+    <string name="three_screenshot_disabled_summary">게임 중 세 손가락 제스처 일시 비활성화</string>
     <string name="three_screenshot_disabled_title">세 손가락 쓸기 제스처 사용 안함</string>
     <!-- Stay awake -->
     <string name="stay_awake_title">화면 계속 켜 두기</string>
-    <string name="stay_awake_summary">Keep screen awake while in-game</string>
+    <string name="stay_awake_summary">게임 중 화면 켜짐 유지</string>
     <!-- Lock gesture -->
     <string name="lock_gesture_title">제스처 잠금</string>
-    <string name="lock_gesture_summary">Disable screen gestures while in-game</string>
+    <string name="lock_gesture_summary">게임 중 화면 제스처 비활성화</string>
     <!-- Suppress full screen intent -->
     <string name="suppress_fullscreen_intent_title">전체 화면 이벤트 방지</string>
     <string name="suppress_fullscreen_intent_summary">걸려오는 전화 등 전체 화면 이벤트가 열리는 것을 방지합니다.</string>
@@ -37,7 +37,7 @@
     <string name="per_app_unregister">라이브러리에서 %1$s 제거</string>
     <!-- Disable ADB debugging -->
     <string name="adb_disabled_title">USB 디버깅 사용 안함</string>
-    <string name="adb_disabled_summary">Temporary disable USB ADB debugging while in-game</string>
+    <string name="adb_disabled_summary">게임 중 USB ADB 디버깅 일시 비활성화</string>
     <!-- Ringer Mode -->
     <string name="in_game_calls_title">전화 모드</string>
     <string name="in_game_calls_no_action">작업 없음</string>
@@ -51,8 +51,8 @@
     <!-- Gamespace opacity -->
     <string name="gamespace_menu_opacity_title">오버레이 메뉴 불투명도</string>
     <!-- Bypass charging -->
-    <string name="bypass_charge_enabled_title">Bypass charging</string>
-    <string name="bypass_charge_enabled_summary">Enable bypass charging while playing games</string>
+    <string name="bypass_charge_enabled_title">바이패스 충전</string>
+    <string name="bypass_charge_enabled_summary">게임 플레이 중 바이패스 충전 활성화</string>
     <!-- Call overlay -->
     <string name="call_overlay_enabled_title">통화 오버레이</string>
     <string name="call_overlay_enabled_summary">통화 수신/거절 시 최소한의 통화 오버레이만 표시합니다</string>
@@ -81,10 +81,10 @@
     <string name="tile_danmaku">탄막</string>
     <string name="tile_stay_awake">화면 계속 켜 두기</string>
     <string name="tile_wifi">와이파이</string>
-    <string name="tile_dnd">DND</string>
+    <string name="tile_dnd">방해 금지 모드</string>
     <string name="tile_fps_info">FPS 정보</string>
     <string name="tile_auto_rotate">자동회전</string>
-    <string name="tile_boost_memory">Boost Memory</string>
+    <string name="tile_boost_memory">메모리 부스트</string>
     <string name="tile_settings">설정</string>
     <string name="tile_airplane_mode">비행기 모드</string>
     <string name="tile_bluetooth">블루투스</string>
@@ -93,16 +93,16 @@
     <string name="tile_flashlight">손전등</string>
     <string name="tile_dark_mode">다크 모드</string>
     <string name="tile_location">위치</string>
-    <string name="tile_battery_saver">Battery Saver</string>
+    <string name="tile_battery_saver">배터리 절약 모드</string>
     <string name="tile_hotspot">핫스팟</string>
     <string name="tile_nfc">NFC</string>
     <string name="tile_night_light">야간 조명</string>
     <string name="tile_aod">Always On Display</string>
-    <string name="tile_data_saver">Data Saver</string>
-    <string name="tile_color_inversion">Color Inversion</string>
-    <string name="tile_color_correction">Color Correction</string>
-    <string name="tile_reduce_brightness">Reduce Brightness</string>
-    <string name="tile_one_handed">One Handed</string>
+    <string name="tile_data_saver">데이터 절약 모드</string>
+    <string name="tile_color_inversion">색상 반전</string>
+    <string name="tile_color_correction">색상 보정</string>
+    <string name="tile_reduce_brightness">밝기 감소</string>
+    <string name="tile_one_handed">한 손 조작 모드</string>
     <string name="tile_heads_up">헤드업</string>
     <string name="tile_auto_sync">자동 동기화</string>
     <string name="tile_camera_privacy">카메라</string>
@@ -110,29 +110,29 @@
     <string name="tile_work_profile">직장 프로필</string>
     <string name="tile_usb_tether">USB 테더링</string>
     <string name="tile_dream">화면 보호기</string>
-    <string name="tile_reading_mode">Reading Mode</string>
-    <string name="tile_power_share">Power Share</string>
-    <string name="tile_caffeine">Caffeine</string>
+    <string name="tile_reading_mode">읽기 모드</string>
+    <string name="tile_power_share">무선 배터리 공유</string>
+    <string name="tile_caffeine">화면 꺼짐 방지</string>
     <string name="tile_vpn">VPN</string>
-    <string name="tile_cast">Cast</string>
+    <string name="tile_cast">화면 전송</string>
     <string name="tile_profiles">프로필</string>
     <string name="tile_smart_pixels">스미트 픽셀</string>
     <string name="tile_screen_record">화면 녹화</string>
     <string name="tile_screenshot">스크린샷</string>
     <!-- Icon Idle Opacity -->
-    <string name="icon_idle_opacity_title">Icon idle opacity</string>
+    <string name="icon_idle_opacity_title">아이콘 유휴 투명도</string>
     <!-- Auto DND -->
-    <string name="auto_dnd_title">Auto Do Not Disturb</string>
-    <string name="auto_dnd_summary">Automatically enable DND while in-game and restore when done</string>
+    <string name="auto_dnd_title">자동 방해 금지 모드</string>
+    <string name="auto_dnd_summary">게임 실행 시 방해 금지 모드를 자동으로 켜고 종료 시 복원</string>
     <!-- Controller Mapper -->
-    <string name="mapper_press_button">Press a button on your controller or keyboard\u2026</string>
-    <string name="mapper_add_point">Add tap point</string>
-    <string name="mapper_delete_point">Delete tap point</string>
-    <string name="mapper_map_controls">Map controls</string>
+    <string name="mapper_press_button">컨트롤러나 키보드의 버튼을 누르세요\u2026</string>
+    <string name="mapper_add_point">터치 지점 추가</string>
+    <string name="mapper_delete_point">터치 지점 삭제</string>
+    <string name="mapper_map_controls">컨트롤 매핑</string>
     <!-- Content Descriptions (Accessibility) -->
     <string name="cd_reject">거절</string>
     <string name="cd_accept">승인</string>
-    <string name="cd_caller_photo">Caller photo</string>
+    <string name="cd_caller_photo">발신자 사진</string>
     <string name="cd_dismiss">무시</string>
     <string name="cd_edit_tiles">타일 편집</string>
     <string name="cd_collapse">접기</string>
@@ -143,8 +143,8 @@
     <string name="game_memory_management_summary">게임 실행 시 백그라운드 앱을 자동으로 종료합니다</string>
     <string name="game_cache_management_title">캐시 관리</string>
     <string name="game_cache_management_summary">게임 캐시를 최적화하여 로딩 속도를 향상시키세요</string>
-    <string name="game_memory_boosted">Memory boosted</string>
+    <string name="game_memory_boosted">메모리 최적화됨</string>
     <!-- Game auto-detect -->
-    <string name="auto_game_detect_title">Auto game detection</string>
-    <string name="auto_game_detect_summary">Automatically add apps marked as games by their developer</string>
+    <string name="auto_game_detect_title">게임 자동 감지</string>
+    <string name="auto_game_detect_summary">개발자가 게임으로 분류한 앱을 자동으로 추가</string>
 </resources>
