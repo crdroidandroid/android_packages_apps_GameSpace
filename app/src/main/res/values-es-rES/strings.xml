@@ -19,14 +19,14 @@
     <string name="auto_brightness_disabled_title">Desactivar brillo automático</string>
     <string name="auto_brightness_disabled_summary">Mantener el brillo establecido durante el juego</string>
     <!-- Three finger swipe -->
-    <string name="three_screenshot_disabled_summary">Temporary disable three-fingers-swipe gesture while in-game</string>
+    <string name="three_screenshot_disabled_summary">Desactivar temporalmente el gesto de deslizar con tres dedos mientras se está en el juego</string>
     <string name="three_screenshot_disabled_title">Desactivar gesto de deslizar con tres dedos</string>
     <!-- Stay awake -->
     <string name="stay_awake_title">Permanecer encendido</string>
-    <string name="stay_awake_summary">Keep screen awake while in-game</string>
+    <string name="stay_awake_summary">Mantener la pantalla encendida durante el juego</string>
     <!-- Lock gesture -->
     <string name="lock_gesture_title">Gesto de bloqueo</string>
-    <string name="lock_gesture_summary">Disable screen gestures while in-game</string>
+    <string name="lock_gesture_summary">Desactivar gestos de pantalla durante el juego</string>
     <!-- Suppress full screen intent -->
     <string name="suppress_fullscreen_intent_title">Bloquear eventos en pantalla completa</string>
     <string name="suppress_fullscreen_intent_summary">Evitar que eventos de pantalla completa como llamadas entrantes aparezcan en el juego</string>
@@ -51,8 +51,8 @@
     <!-- Gamespace opacity -->
     <string name="gamespace_menu_opacity_title">Nivel de opacidad del menú de superposición</string>
     <!-- Bypass charging -->
-    <string name="bypass_charge_enabled_title">Bypass charging</string>
-    <string name="bypass_charge_enabled_summary">Enable bypass charging while playing games</string>
+    <string name="bypass_charge_enabled_title">Bypass de carga</string>
+    <string name="bypass_charge_enabled_summary">Activar omisión de carga mientras juegas</string>
     <!-- Call overlay -->
     <string name="call_overlay_enabled_title">Llamada en ventana flotante</string>
     <string name="call_overlay_enabled_summary">Usar ventana flotante compacta para responder o rechazar llamadas</string>
@@ -64,13 +64,13 @@
     <string name="ringer_mode_no_change">No cambiar</string>
     <!-- Game Mode Labels -->
     <string name="game_mode_unsupported">No soportado</string>
-    <string name="game_mode_balanced">Balanced</string>
+    <string name="game_mode_balanced">Equilibrado</string>
     <string name="game_mode_performance">Rendimiento</string>
     <string name="game_mode_battery">Batería</string>
     <!-- Game Panel -->
-    <string name="save">Save</string>
-    <string name="panel_options">Panel Options</string>
-    <string name="brightness_slider">Brightness Slider</string>
+    <string name="save">Guardar</string>
+    <string name="panel_options">Opciones del Panel</string>
+    <string name="brightness_slider">Control deslizante de brillo</string>
     <string name="fps_graph">FPS Graph</string>
     <string name="selected_tiles">Selected Tiles</string>
     <string name="available_tiles">Available Tiles</string>
