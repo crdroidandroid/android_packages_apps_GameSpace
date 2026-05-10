@@ -104,7 +104,7 @@
     <string name="tile_reduce_brightness">Reduce Brightness</string>
     <string name="tile_one_handed">One Handed</string>
     <string name="tile_heads_up">Всплывающее уведомление</string>
-    <string name="tile_auto_sync">Auto Sync</string>
+    <string name="tile_auto_sync">Автоматическая синхронизация</string>
     <string name="tile_camera_privacy">Camera</string>
     <string name="tile_mic_privacy">Microphone</string>
     <string name="tile_work_profile">Work Profile</string>
@@ -115,7 +115,7 @@
     <string name="tile_caffeine">Caffeine</string>
     <string name="tile_vpn">VPN</string>
     <string name="tile_cast">Cast</string>
-    <string name="tile_profiles">Profiles</string>
+    <string name="tile_profiles">Профили</string>
     <string name="tile_smart_pixels">Smart Pixels</string>
     <string name="tile_screen_record">Screen Record</string>
     <string name="tile_screenshot">Screenshot</string>
