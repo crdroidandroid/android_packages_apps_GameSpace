@@ -19,14 +19,14 @@
     <string name="auto_brightness_disabled_title">Отключить автояркость</string>
     <string name="auto_brightness_disabled_summary">Не менять яркость во время игры</string>
     <!-- Three finger swipe -->
-    <string name="three_screenshot_disabled_summary">Temporary disable three-fingers-swipe gesture while in-game</string>
+    <string name="three_screenshot_disabled_summary">Отключить жесты тремя пальцами во время игры</string>
     <string name="three_screenshot_disabled_title">Отключить жест тремя пальцами</string>
     <!-- Stay awake -->
     <string name="stay_awake_title">Не засыпать</string>
     <string name="stay_awake_summary">Не выключать экран во время игры</string>
     <!-- Lock gesture -->
     <string name="lock_gesture_title">Блокировать жесты</string>
-    <string name="lock_gesture_summary">Disable screen gestures while in-game</string>
+    <string name="lock_gesture_summary">Отключить экранные жесты во время игры</string>
     <!-- Suppress full screen intent -->
     <string name="suppress_fullscreen_intent_title">Блокировать полноэкранные события</string>
     <string name="suppress_fullscreen_intent_summary">Предотвращать появление полноэкранных уведомлений, таких как входящие вызовы, во время игры</string>
@@ -51,8 +51,8 @@
     <!-- Gamespace opacity -->
     <string name="gamespace_menu_opacity_title">Уровень прозрачности панели</string>
     <!-- Bypass charging -->
-    <string name="bypass_charge_enabled_title">Bypass charging</string>
-    <string name="bypass_charge_enabled_summary">Enable bypass charging while playing games</string>
+    <string name="bypass_charge_enabled_title">Обходная зарядка</string>
+    <string name="bypass_charge_enabled_summary">Включить обходную зарядку во время игры</string>
     <!-- Call overlay -->
     <string name="call_overlay_enabled_title">Уведомление о вызове</string>
     <string name="call_overlay_enabled_summary">Показывать минимальное уведомление о звонке для ответа/отклонения вызова</string>
@@ -64,14 +64,14 @@
     <string name="ringer_mode_no_change">Не изменять</string>
     <!-- Game Mode Labels -->
     <string name="game_mode_unsupported">Не поддерживается</string>
-    <string name="game_mode_balanced">Balanced</string>
+    <string name="game_mode_balanced">Сбалансированный режим</string>
     <string name="game_mode_performance">Производительный</string>
     <string name="game_mode_battery">Батарея</string>
     <!-- Game Panel -->
-    <string name="save">Save</string>
-    <string name="panel_options">Panel Options</string>
-    <string name="brightness_slider">Brightness Slider</string>
-    <string name="fps_graph">FPS Graph</string>
+    <string name="save">Сохранить</string>
+    <string name="panel_options">Опции панели</string>
+    <string name="brightness_slider">Слайдер яркости</string>
+    <string name="fps_graph">График FPS</string>
     <string name="selected_tiles">Selected Tiles</string>
     <string name="available_tiles">Available Tiles</string>
     <string name="drag_tiles_here">Drag tiles here</string>
