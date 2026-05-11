@@ -23,7 +23,7 @@
     <string name="three_screenshot_disabled_title">Отключить жест тремя пальцами</string>
     <!-- Stay awake -->
     <string name="stay_awake_title">Не засыпать</string>
-    <string name="stay_awake_summary">Keep screen awake while in-game</string>
+    <string name="stay_awake_summary">Не выключать экран во время игры</string>
     <!-- Lock gesture -->
     <string name="lock_gesture_title">Блокировать жесты</string>
     <string name="lock_gesture_summary">Disable screen gestures while in-game</string>
