@@ -51,7 +51,7 @@
     <!-- Configure game -->
     <string name="per_app_title">Skonfiguruj grę</string>
     <string name="per_app_mode_title">Preferowany tryb</string>
-    <string name="per_app_angle_title">Użyj ANGLE (eksperymentalne)</string>
+    <string name="per_app_angle_title">Używaj ANGLE (eksperymentalnie)</string>
     <string name="per_app_angle_summary">Używaj renderowania ANGLE zamiast natywnych sterowników GLES.\nOSTRZEŻENIE!! Może uszkodzić grafikę gry, używaj z ostrożnością!</string>
     <string name="cant_find_angle_pkg">ANGLE nie jest dostępne w twoim systemie</string>
     <string name="per_app_unregister">Usuń %1$s z biblioteki</string>
