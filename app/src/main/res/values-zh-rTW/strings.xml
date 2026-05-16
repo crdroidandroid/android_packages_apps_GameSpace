@@ -141,9 +141,10 @@
     <string name="game_optimization_title">遊戲啟動優化</string>
     <string name="game_memory_management_title">智慧記憶體管理</string>
     <string name="game_memory_management_summary">啟動遊戲時自動清理背景應用程式</string>
-    <string name="game_load_priority_title">載入優先權</string>
-    <string name="game_load_priority_summary">在遊戲啟動期間設定資源優先權</string>
     <string name="game_cache_management_title">快取管理</string>
     <string name="game_cache_management_summary">優化遊戲快取以縮短載入時間</string>
     <string name="game_memory_boosted">Memory boosted</string>
+    <!-- Game auto-detect -->
+    <string name="auto_game_detect_title">Auto game detection</string>
+    <string name="auto_game_detect_summary">Automatically add apps marked as games by their developer</string>
 </resources>
