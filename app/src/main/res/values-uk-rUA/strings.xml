@@ -19,14 +19,14 @@
     <string name="auto_brightness_disabled_title">Вимкнути автояскравість</string>
     <string name="auto_brightness_disabled_summary">Не змінювати яскравість під час гри</string>
     <!-- Three finger swipe -->
-    <string name="three_screenshot_disabled_summary">Temporary disable three-fingers-swipe gesture while in-game</string>
+    <string name="three_screenshot_disabled_summary">Тимчасово вимкнути жест знімка екрана трьома пальцями під час гри</string>
     <string name="three_screenshot_disabled_title">Вимкнути жест руху трьома пальцями</string>
     <!-- Stay awake -->
     <string name="stay_awake_title">Залишати активним</string>
-    <string name="stay_awake_summary">Keep screen awake while in-game</string>
+    <string name="stay_awake_summary">Тримати екран увімкненим під час гри</string>
     <!-- Lock gesture -->
     <string name="lock_gesture_title">Жест блокування</string>
-    <string name="lock_gesture_summary">Disable screen gestures while in-game</string>
+    <string name="lock_gesture_summary">Вимкнути жести в грі</string>
     <!-- Suppress full screen intent -->
     <string name="suppress_fullscreen_intent_title">Блокувати повноекранні сповіщення</string>
     <string name="suppress_fullscreen_intent_summary">Запобігає появі повноекранних сповіщень, таких як вхідні дзвінки, під час гри</string>
@@ -51,8 +51,8 @@
     <!-- Gamespace opacity -->
     <string name="gamespace_menu_opacity_title">Рівень непрозорості меню ігрового режиму</string>
     <!-- Bypass charging -->
-    <string name="bypass_charge_enabled_title">Bypass charging</string>
-    <string name="bypass_charge_enabled_summary">Enable bypass charging while playing games</string>
+    <string name="bypass_charge_enabled_title">Пряме живлення телефону</string>
+    <string name="bypass_charge_enabled_summary">Увімкнути обхід зарядки під час гри</string>
     <!-- Call overlay -->
     <string name="call_overlay_enabled_title">Накладання викликів</string>
     <string name="call_overlay_enabled_summary">Показувати мінімальне накладення для відповіді/відхилення викликів</string>
@@ -64,87 +64,87 @@
     <string name="ringer_mode_no_change">Не змінювати</string>
     <!-- Game Mode Labels -->
     <string name="game_mode_unsupported">Не підтримується</string>
-    <string name="game_mode_balanced">Balanced</string>
+    <string name="game_mode_balanced">Збалансований</string>
     <string name="game_mode_performance">Продуктивний</string>
     <string name="game_mode_battery">Батарея</string>
     <!-- Game Panel -->
-    <string name="save">Save</string>
-    <string name="panel_options">Panel Options</string>
-    <string name="brightness_slider">Brightness Slider</string>
-    <string name="fps_graph">FPS Graph</string>
-    <string name="selected_tiles">Selected Tiles</string>
-    <string name="available_tiles">Available Tiles</string>
-    <string name="drag_tiles_here">Drag tiles here</string>
-    <string name="all_tiles_added">All tiles added</string>
-    <string name="fps_stats">min %1$d | avg %2$d | max %3$d</string>
+    <string name="save">Зберегти</string>
+    <string name="panel_options">Параметри панелі</string>
+    <string name="brightness_slider">Повзунок яскравості</string>
+    <string name="fps_graph">Графік FPS</string>
+    <string name="selected_tiles">Вибрані плитки</string>
+    <string name="available_tiles">Доступні плитки</string>
+    <string name="drag_tiles_here">Перетягніть плитки сюди</string>
+    <string name="all_tiles_added">Усі плитки додано</string>
+    <string name="fps_stats">мінімальне %1$d | середнє %2$d | максимальне %3$d</string>
     <!-- Tile Labels -->
     <string name="tile_danmaku">Данмаку</string>
     <string name="tile_stay_awake">Залишати активним</string>
     <string name="tile_wifi">Wi-Fi</string>
-    <string name="tile_dnd">DND</string>
-    <string name="tile_fps_info">FPS Info</string>
-    <string name="tile_auto_rotate">Auto Rotate</string>
-    <string name="tile_boost_memory">Boost Memory</string>
-    <string name="tile_settings">Settings</string>
-    <string name="tile_airplane_mode">Airplane Mode</string>
-    <string name="tile_bluetooth">Bluetooth</string>
-    <string name="tile_mobile_data">Mobile Data</string>
-    <string name="tile_touch_boost">Touch Boost</string>
-    <string name="tile_flashlight">Flashlight</string>
-    <string name="tile_dark_mode">Dark Mode</string>
-    <string name="tile_location">Location</string>
-    <string name="tile_battery_saver">Battery Saver</string>
-    <string name="tile_hotspot">Hotspot</string>
+    <string name="tile_dnd">Не турбувати</string>
+    <string name="tile_fps_info">Інформація про FPS</string>
+    <string name="tile_auto_rotate">Автообертання</string>
+    <string name="tile_boost_memory">Прискорити пам\'ять</string>
+    <string name="tile_settings">Налаштування</string>
+    <string name="tile_airplane_mode">Режим польоту</string>
+    <string name="tile_bluetooth">Пристрій Bluetooth</string>
+    <string name="tile_mobile_data">Мобільні дані</string>
+    <string name="tile_touch_boost">Підсилення сенсорного керування</string>
+    <string name="tile_flashlight">Ліхтарик</string>
+    <string name="tile_dark_mode">Темний режим</string>
+    <string name="tile_location">Геодані</string>
+    <string name="tile_battery_saver">Режим економії заряду акумулятора</string>
+    <string name="tile_hotspot">Точка доступу</string>
     <string name="tile_nfc">NFC</string>
-    <string name="tile_night_light">Night Light</string>
-    <string name="tile_aod">Always On Display</string>
-    <string name="tile_data_saver">Data Saver</string>
-    <string name="tile_color_inversion">Color Inversion</string>
-    <string name="tile_color_correction">Color Correction</string>
-    <string name="tile_reduce_brightness">Reduce Brightness</string>
-    <string name="tile_one_handed">One Handed</string>
+    <string name="tile_night_light">Нічник</string>
+    <string name="tile_aod">Завжди Активний Дисплей (AOD)</string>
+    <string name="tile_data_saver">Заощадження трафіку</string>
+    <string name="tile_color_inversion">Інверсія кольорів</string>
+    <string name="tile_color_correction">Корекція кольорів</string>
+    <string name="tile_reduce_brightness">Зменшити яскравість</string>
+    <string name="tile_one_handed">Однією рукою</string>
     <string name="tile_heads_up">Спливаючі сповіщення</string>
-    <string name="tile_auto_sync">Auto Sync</string>
-    <string name="tile_camera_privacy">Camera</string>
-    <string name="tile_mic_privacy">Microphone</string>
-    <string name="tile_work_profile">Work Profile</string>
-    <string name="tile_usb_tether">USB Tethering</string>
-    <string name="tile_dream">Screen Saver</string>
-    <string name="tile_reading_mode">Reading Mode</string>
-    <string name="tile_power_share">Power Share</string>
-    <string name="tile_caffeine">Caffeine</string>
-    <string name="tile_vpn">VPN</string>
-    <string name="tile_cast">Cast</string>
-    <string name="tile_profiles">Profiles</string>
-    <string name="tile_smart_pixels">Smart Pixels</string>
-    <string name="tile_screen_record">Screen Record</string>
-    <string name="tile_screenshot">Screenshot</string>
+    <string name="tile_auto_sync">Автоматична синхронізація</string>
+    <string name="tile_camera_privacy">Камера</string>
+    <string name="tile_mic_privacy">Мікрофон</string>
+    <string name="tile_work_profile">Робочий профіль</string>
+    <string name="tile_usb_tether">USB-модем</string>
+    <string name="tile_dream">Заставка</string>
+    <string name="tile_reading_mode">Режим читання</string>
+    <string name="tile_power_share">Розповсюдження Сили</string>
+    <string name="tile_caffeine">Кофеїн</string>
+    <string name="tile_vpn">Увімкнути VPN</string>
+    <string name="tile_cast">Транслювати</string>
+    <string name="tile_profiles">Профіль</string>
+    <string name="tile_smart_pixels">Смарт Пікселі</string>
+    <string name="tile_screen_record">Запис екрану</string>
+    <string name="tile_screenshot">Знімок екрану</string>
     <!-- Icon Idle Opacity -->
-    <string name="icon_idle_opacity_title">Icon idle opacity</string>
+    <string name="icon_idle_opacity_title">Непрозорість значка в режимі очікування</string>
     <!-- Auto DND -->
-    <string name="auto_dnd_title">Auto Do Not Disturb</string>
-    <string name="auto_dnd_summary">Automatically enable DND while in-game and restore when done</string>
+    <string name="auto_dnd_title">Автоматичний режим «Не турбувати»</string>
+    <string name="auto_dnd_summary">Автоматично вмикати режим «Не турбувати» під час гри та відновлювати його після завершення</string>
     <!-- Controller Mapper -->
-    <string name="mapper_press_button">Press a button on your controller or keyboard\u2026</string>
-    <string name="mapper_add_point">Add tap point</string>
-    <string name="mapper_delete_point">Delete tap point</string>
-    <string name="mapper_map_controls">Map controls</string>
+    <string name="mapper_press_button">Натисніть кнопку на контролері або клавіатурі\u2026</string>
+    <string name="mapper_add_point">Додати точку дотику</string>
+    <string name="mapper_delete_point">Видалити точку дотику</string>
+    <string name="mapper_map_controls">Елементи керування картою</string>
     <!-- Content Descriptions (Accessibility) -->
-    <string name="cd_reject">Reject</string>
-    <string name="cd_accept">Accept</string>
-    <string name="cd_caller_photo">Caller photo</string>
-    <string name="cd_dismiss">Dismiss</string>
-    <string name="cd_edit_tiles">Edit Tiles</string>
-    <string name="cd_collapse">Collapse</string>
-    <string name="cd_expand">Expand</string>
+    <string name="cd_reject">Відхилити</string>
+    <string name="cd_accept">Прийняти</string>
+    <string name="cd_caller_photo">Фото абонента</string>
+    <string name="cd_dismiss">Відхилити</string>
+    <string name="cd_edit_tiles">Редагувати плитки</string>
+    <string name="cd_collapse">Згорнути</string>
+    <string name="cd_expand">Розгорнути</string>
     <!-- Game Optimization -->
-    <string name="game_optimization_title">Launch Optimization</string>
-    <string name="game_memory_management_title">Smart Memory Management</string>
-    <string name="game_memory_management_summary">Automatically clear background apps when launching games</string>
-    <string name="game_cache_management_title">Cache Management</string>
-    <string name="game_cache_management_summary">Optimize game cache for faster loading times</string>
-    <string name="game_memory_boosted">Memory boosted</string>
+    <string name="game_optimization_title">Оптимізація запуску</string>
+    <string name="game_memory_management_title">Інтелектуальне управління пам\'яттю</string>
+    <string name="game_memory_management_summary">Автоматично очищати фонові програми під час запуску ігор</string>
+    <string name="game_cache_management_title">Керування кешем</string>
+    <string name="game_cache_management_summary">Оптимізуйте кеш гри для швидкого завантаження часу</string>
+    <string name="game_memory_boosted">Пам\'ять прискорено</string>
     <!-- Game auto-detect -->
-    <string name="auto_game_detect_title">Auto game detection</string>
-    <string name="auto_game_detect_summary">Automatically add apps marked as games by their developer</string>
+    <string name="auto_game_detect_title">Автовизначення гри</string>
+    <string name="auto_game_detect_summary">Автоматично додавати додатки, позначені як ігри їх розробником</string>
 </resources>
