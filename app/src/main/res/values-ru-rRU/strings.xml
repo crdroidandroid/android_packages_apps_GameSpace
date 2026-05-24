@@ -76,7 +76,7 @@
     <string name="available_tiles">Available Tiles</string>
     <string name="drag_tiles_here">Drag tiles here</string>
     <string name="all_tiles_added">All tiles added</string>
-    <string name="fps_stats">min %1$d | avg %2$d | max %3$d</string>
+    <string name="fps_stats">мин %1$d | сред %2$d | макс %3$d</string>
     <!-- Tile Labels -->
     <string name="tile_danmaku">Прозрачные без фона</string>
     <string name="tile_stay_awake">Не засыпать</string>
