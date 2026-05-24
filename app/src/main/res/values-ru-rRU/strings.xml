@@ -105,9 +105,9 @@
     <string name="tile_one_handed">One Handed</string>
     <string name="tile_heads_up">Всплывающее уведомление</string>
     <string name="tile_auto_sync">Автоматическая синхронизация</string>
-    <string name="tile_camera_privacy">Camera</string>
-    <string name="tile_mic_privacy">Microphone</string>
-    <string name="tile_work_profile">Work Profile</string>
+    <string name="tile_camera_privacy">Камера</string>
+    <string name="tile_mic_privacy">Микрофон</string>
+    <string name="tile_work_profile">Рабочий профиль</string>
     <string name="tile_usb_tether">USB Tethering</string>
     <string name="tile_dream">Screen Saver</string>
     <string name="tile_reading_mode">Reading Mode</string>
