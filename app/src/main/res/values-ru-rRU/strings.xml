@@ -86,7 +86,7 @@
     <string name="tile_auto_rotate">Auto Rotate</string>
     <string name="tile_boost_memory">Boost Memory</string>
     <string name="tile_settings">Settings</string>
-    <string name="tile_airplane_mode">Airplane Mode</string>
+    <string name="tile_airplane_mode">Авиарежим</string>
     <string name="tile_bluetooth">Bluetooth</string>
     <string name="tile_mobile_data">Mobile Data</string>
     <string name="tile_touch_boost">Touch Boost</string>
