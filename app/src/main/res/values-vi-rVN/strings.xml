@@ -19,14 +19,14 @@
     <string name="auto_brightness_disabled_title">Tắt độ sáng tự động</string>
     <string name="auto_brightness_disabled_summary">Giữ độ sáng ổn định khi ở trong trò chơi </string>
     <!-- Three finger swipe -->
-    <string name="three_screenshot_disabled_summary">Temporary disable three-fingers-swipe gesture while in-game</string>
+    <string name="three_screenshot_disabled_summary">Tạm thời tắt cử chỉ vuốt ba ngón tay khi đang trong trò chơi</string>
     <string name="three_screenshot_disabled_title">Tắt cử chỉ vuốt ba ngón tay</string>
     <!-- Stay awake -->
     <string name="stay_awake_title">Không khóa màn hình</string>
-    <string name="stay_awake_summary">Keep screen awake while in-game</string>
+    <string name="stay_awake_summary">Giữ màn hình bật khi đang trong trò chơi</string>
     <!-- Lock gesture -->
     <string name="lock_gesture_title">Khóa cử chỉ</string>
-    <string name="lock_gesture_summary">Disable screen gestures while in-game</string>
+    <string name="lock_gesture_summary">Tắt cử chỉ màn hình khi đang trong trò chơi </string>
     <!-- Suppress full screen intent -->
     <string name="suppress_fullscreen_intent_title">Chặn sự kiện toàn màn hình</string>
     <string name="suppress_fullscreen_intent_summary">Ngăn các sự kiện toàn màn hình như cuộc gọi đến xuất hiện khi ở trong trò chơi</string>
@@ -51,8 +51,8 @@
     <!-- Gamespace opacity -->
     <string name="gamespace_menu_opacity_title">Độ mờ bảng điều khiển nổi</string>
     <!-- Bypass charging -->
-    <string name="bypass_charge_enabled_title">Bypass charging</string>
-    <string name="bypass_charge_enabled_summary">Enable bypass charging while playing games</string>
+    <string name="bypass_charge_enabled_title">Bỏ qua sạc</string>
+    <string name="bypass_charge_enabled_summary">Bật chế độ ngắt sạc khi đang chơi</string>
     <!-- Call overlay -->
     <string name="call_overlay_enabled_title">Lớp phủ cuộc gọi</string>
     <string name="call_overlay_enabled_summary">Hiển thị lớp phủ tối giản để trả lời/từ chối cuộc gọi</string>
@@ -64,24 +64,24 @@
     <string name="ringer_mode_no_change">Không thay đổi</string>
     <!-- Game Mode Labels -->
     <string name="game_mode_unsupported">Không hỗ trợ</string>
-    <string name="game_mode_balanced">Balanced</string>
+    <string name="game_mode_balanced">Cân bằng</string>
     <string name="game_mode_performance">Hiệu suất cao</string>
     <string name="game_mode_battery">Tiết kiệm pin</string>
     <!-- Game Panel -->
-    <string name="save">Save</string>
-    <string name="panel_options">Panel Options</string>
-    <string name="brightness_slider">Brightness Slider</string>
-    <string name="fps_graph">FPS Graph</string>
-    <string name="selected_tiles">Selected Tiles</string>
-    <string name="available_tiles">Available Tiles</string>
-    <string name="drag_tiles_here">Drag tiles here</string>
-    <string name="all_tiles_added">All tiles added</string>
-    <string name="fps_stats">min %1$d | avg %2$d | max %3$d</string>
+    <string name="save">Lưu</string>
+    <string name="panel_options">Tùy chọn bảng</string>
+    <string name="brightness_slider">Thanh trượt độ sáng</string>
+    <string name="fps_graph">Đồ thị FPS</string>
+    <string name="selected_tiles">Ô đã chọn</string>
+    <string name="available_tiles">Ô có sẵn</string>
+    <string name="drag_tiles_here">Kéo thả ở đây</string>
+    <string name="all_tiles_added">Đã thêm tất cả các ô</string>
+    <string name="fps_stats">tối thiểu %1$d | trung bình %2$d | tối đa %3$d</string>
     <!-- Tile Labels -->
     <string name="tile_danmaku">Kiểu hiện đại</string>
     <string name="tile_stay_awake">Không khóa màn hình</string>
     <string name="tile_wifi">Wi-Fi</string>
-    <string name="tile_dnd">DND</string>
+    <string name="tile_dnd">Không làm phiền</string>
     <string name="tile_fps_info">FPS Info</string>
     <string name="tile_auto_rotate">Auto Rotate</string>
     <string name="tile_boost_memory">Boost Memory</string>
