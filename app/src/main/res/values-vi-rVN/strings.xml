@@ -136,15 +136,15 @@
     <string name="cd_dismiss">Bỏ qua</string>
     <string name="cd_edit_tiles">Chỉnh sửa các mục</string>
     <string name="cd_collapse">Thu gọn</string>
-    <string name="cd_expand">Expand</string>
+    <string name="cd_expand">Mở rộng</string>
     <!-- Game Optimization -->
     <string name="game_optimization_title">Tối ưu khởi chạy</string>
     <string name="game_memory_management_title">Quản lý bộ nhớ thông minh</string>
     <string name="game_memory_management_summary">Tự động dọn sạch ứng dụng nền khi khởi chạy trò chơi</string>
     <string name="game_cache_management_title">Quản lý bộ nhớ đệm</string>
     <string name="game_cache_management_summary">Tối ưu bộ nhớ đệm trò chơi để rút ngắn thời gian tải</string>
-    <string name="game_memory_boosted">Memory boosted</string>
+    <string name="game_memory_boosted">Bộ nhớ được tăng cường</string>
     <!-- Game auto-detect -->
-    <string name="auto_game_detect_title">Auto game detection</string>
-    <string name="auto_game_detect_summary">Automatically add apps marked as games by their developer</string>
+    <string name="auto_game_detect_title">Tự động phát hiện trò chơi</string>
+    <string name="auto_game_detect_summary">Tự động thêm các ứng dụng được chỉ định trò chơi</string>
 </resources>
