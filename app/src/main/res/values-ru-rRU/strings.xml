@@ -19,7 +19,7 @@
     <string name="auto_brightness_disabled_title">Отключить автояркость</string>
     <string name="auto_brightness_disabled_summary">Не менять яркость во время игры</string>
     <!-- Three finger swipe -->
-    <string name="three_screenshot_disabled_summary">Отключить жесты тремя пальцами во время игры</string>
+    <string name="three_screenshot_disabled_summary">Временно отключать жест снимка экрана тремя пальцами во время игры</string>
     <string name="three_screenshot_disabled_title">Отключить жест тремя пальцами</string>
     <!-- Stay awake -->
     <string name="stay_awake_title">Не засыпать</string>
@@ -33,20 +33,20 @@
     <!-- Per app settings -->
     <string name="per_app_title">Настроить игру</string>
     <string name="per_app_mode_title">Предпочтительный режим</string>
-    <string name="per_app_angle_title">Использовать ANGLE (эксперементально)</string>
+    <string name="per_app_angle_title">Графический драйвер</string>
     <string name="per_app_unregister">Удалить %1$s из библиотеки</string>
     <!-- Disable ADB debugging -->
     <string name="adb_disabled_title">Отключить отладку по USB</string>
     <string name="adb_disabled_summary">Временно отключить отладку USB ADB во время игры</string>
     <!-- Ringer Mode -->
-    <string name="in_game_calls_title">Режим вызова</string>
+    <string name="in_game_calls_title">Внутриигровые звонки</string>
     <string name="in_game_calls_no_action">Без действия</string>
     <string name="in_game_calls_auto_answer">Автоответ</string>
     <string name="in_game_calls_auto_reject">Автосброс</string>
     <string name="in_game_calls_received_number">Поступил звонок от %1$s</string>
     <string name="in_game_calls_rejected_number">Отклонён вызов от %1$s</string>
     <!-- Danmaku Notification Mode -->
-    <string name="danmaku_notification_mode_title">Режим прозрачных уведомлений</string>
+    <string name="danmaku_notification_mode_title">Режим бегущих уведомлений Danmaku</string>
     <string name="danmaku_notification_mode_summary">Показывать уведомление в виде прозрачных комментариев, пока игра активна</string>
     <!-- Gamespace opacity -->
     <string name="gamespace_menu_opacity_title">Уровень прозрачности панели</string>
@@ -68,83 +68,83 @@
     <string name="game_mode_performance">Производительный</string>
     <string name="game_mode_battery">Батарея</string>
     <!-- Game Panel -->
-    <string name="save">Сохранить</string>
+    <string name="save">Экономия</string>
     <string name="panel_options">Опции панели</string>
     <string name="brightness_slider">Слайдер яркости</string>
     <string name="fps_graph">График FPS</string>
-    <string name="selected_tiles">Selected Tiles</string>
-    <string name="available_tiles">Available Tiles</string>
-    <string name="drag_tiles_here">Drag tiles here</string>
-    <string name="all_tiles_added">All tiles added</string>
-    <string name="fps_stats">min %1$d | avg %2$d | max %3$d</string>
+    <string name="selected_tiles">Выбранные плитки</string>
+    <string name="available_tiles">Доступные плитки</string>
+    <string name="drag_tiles_here">Перетащите плитки сюда</string>
+    <string name="all_tiles_added">Все плитки добавлены</string>
+    <string name="fps_stats">мин. %1$d | сред. %2$d | макс. %3$d</string>
     <!-- Tile Labels -->
-    <string name="tile_danmaku">Прозрачные без фона</string>
-    <string name="tile_stay_awake">Не засыпать</string>
+    <string name="tile_danmaku">Режим Danmaku</string>
+    <string name="tile_stay_awake">Экран всегда включен</string>
     <string name="tile_wifi">Wi-Fi</string>
-    <string name="tile_dnd">DND</string>
-    <string name="tile_fps_info">FPS Info</string>
-    <string name="tile_auto_rotate">Auto Rotate</string>
-    <string name="tile_boost_memory">Boost Memory</string>
-    <string name="tile_settings">Settings</string>
-    <string name="tile_airplane_mode">Airplane Mode</string>
+    <string name="tile_dnd">Не беспокоить</string>
+    <string name="tile_fps_info">Информация о FPS</string>
+    <string name="tile_auto_rotate">Автоматический поворот</string>
+    <string name="tile_boost_memory">Очистка памяти</string>
+    <string name="tile_settings">Настройки</string>
+    <string name="tile_airplane_mode">Авиарежим</string>
     <string name="tile_bluetooth">Bluetooth</string>
-    <string name="tile_mobile_data">Mobile Data</string>
-    <string name="tile_touch_boost">Touch Boost</string>
-    <string name="tile_flashlight">Flashlight</string>
-    <string name="tile_dark_mode">Dark Mode</string>
-    <string name="tile_location">Location</string>
-    <string name="tile_battery_saver">Battery Saver</string>
-    <string name="tile_hotspot">Hotspot</string>
+    <string name="tile_mobile_data">Мобильные данные</string>
+    <string name="tile_touch_boost">Быстрый отклик</string>
+    <string name="tile_flashlight">Фонарик</string>
+    <string name="tile_dark_mode">Тёмная тема</string>
+    <string name="tile_location">Расположение</string>
+    <string name="tile_battery_saver">Экономия заряда</string>
+    <string name="tile_hotspot">Точка доступа</string>
     <string name="tile_nfc">NFC</string>
-    <string name="tile_night_light">Night Light</string>
-    <string name="tile_aod">Always On Display</string>
-    <string name="tile_data_saver">Data Saver</string>
-    <string name="tile_color_inversion">Color Inversion</string>
-    <string name="tile_color_correction">Color Correction</string>
-    <string name="tile_reduce_brightness">Reduce Brightness</string>
-    <string name="tile_one_handed">One Handed</string>
-    <string name="tile_heads_up">Всплывающее уведомление</string>
+    <string name="tile_night_light">Ночной свет</string>
+    <string name="tile_aod">Постоянно активный дисплей</string>
+    <string name="tile_data_saver">Экономия данных</string>
+    <string name="tile_color_inversion">Инверсия цвета</string>
+    <string name="tile_color_correction">Цветокоррекция</string>
+    <string name="tile_reduce_brightness">Уменьшить яркость</string>
+    <string name="tile_one_handed">Управление одной рукой</string>
+    <string name="tile_heads_up">Краткие уведомления</string>
     <string name="tile_auto_sync">Автоматическая синхронизация</string>
-    <string name="tile_camera_privacy">Camera</string>
-    <string name="tile_mic_privacy">Microphone</string>
-    <string name="tile_work_profile">Work Profile</string>
-    <string name="tile_usb_tether">USB Tethering</string>
-    <string name="tile_dream">Screen Saver</string>
-    <string name="tile_reading_mode">Reading Mode</string>
-    <string name="tile_power_share">Power Share</string>
-    <string name="tile_caffeine">Caffeine</string>
+    <string name="tile_camera_privacy">Камера</string>
+    <string name="tile_mic_privacy">Микрофон</string>
+    <string name="tile_work_profile">Рабочий профиль</string>
+    <string name="tile_usb_tether">Подключение по USB</string>
+    <string name="tile_dream">Заставка</string>
+    <string name="tile_reading_mode">Режим чтения</string>
+    <string name="tile_power_share">Реверсивная зарядка</string>
+    <string name="tile_caffeine">Не гасить экран</string>
     <string name="tile_vpn">VPN</string>
-    <string name="tile_cast">Cast</string>
+    <string name="tile_cast">Трансляция</string>
     <string name="tile_profiles">Профили</string>
-    <string name="tile_smart_pixels">Smart Pixels</string>
-    <string name="tile_screen_record">Screen Record</string>
-    <string name="tile_screenshot">Screenshot</string>
+    <string name="tile_smart_pixels">Умные пиксели</string>
+    <string name="tile_screen_record">Запись экрана</string>
+    <string name="tile_screenshot">Скриншот</string>
     <!-- Icon Idle Opacity -->
-    <string name="icon_idle_opacity_title">Icon idle opacity</string>
+    <string name="icon_idle_opacity_title">Прозрачность значка при бездействии</string>
     <!-- Auto DND -->
-    <string name="auto_dnd_title">Auto Do Not Disturb</string>
-    <string name="auto_dnd_summary">Automatically enable DND while in-game and restore when done</string>
+    <string name="auto_dnd_title">Автоматическое «Не беспокоить»</string>
+    <string name="auto_dnd_summary">Автоматически включать режим «Не беспокоить» во время игры и отключать после её закрытия</string>
     <!-- Controller Mapper -->
-    <string name="mapper_press_button">Press a button on your controller or keyboard\u2026</string>
-    <string name="mapper_add_point">Add tap point</string>
-    <string name="mapper_delete_point">Delete tap point</string>
-    <string name="mapper_map_controls">Map controls</string>
+    <string name="mapper_press_button">Нажмите кнопку на контроллере или клавиатуре\u2026</string>
+    <string name="mapper_add_point">Добавить точку нажатия</string>
+    <string name="mapper_delete_point">Удалить точку нажатия</string>
+    <string name="mapper_map_controls">Управление картой</string>
     <!-- Content Descriptions (Accessibility) -->
-    <string name="cd_reject">Reject</string>
-    <string name="cd_accept">Accept</string>
-    <string name="cd_caller_photo">Caller photo</string>
-    <string name="cd_dismiss">Dismiss</string>
-    <string name="cd_edit_tiles">Edit Tiles</string>
-    <string name="cd_collapse">Collapse</string>
-    <string name="cd_expand">Expand</string>
+    <string name="cd_reject">Отклонить</string>
+    <string name="cd_accept">Принять</string>
+    <string name="cd_caller_photo">Фото абонента</string>
+    <string name="cd_dismiss">Сбросить</string>
+    <string name="cd_edit_tiles">Редактировать плитки</string>
+    <string name="cd_collapse">Свернуть</string>
+    <string name="cd_expand">Развернуть</string>
     <!-- Game Optimization -->
-    <string name="game_optimization_title">Launch Optimization</string>
-    <string name="game_memory_management_title">Smart Memory Management</string>
-    <string name="game_memory_management_summary">Automatically clear background apps when launching games</string>
-    <string name="game_cache_management_title">Cache Management</string>
-    <string name="game_cache_management_summary">Optimize game cache for faster loading times</string>
-    <string name="game_memory_boosted">Memory boosted</string>
+    <string name="game_optimization_title">Оптимизация запуска</string>
+    <string name="game_memory_management_title">Умное управление памятью</string>
+    <string name="game_memory_management_summary">Автоматически очищать фоновые приложения при запуске игр</string>
+    <string name="game_cache_management_title">Управление кэшем</string>
+    <string name="game_cache_management_summary">Оптимизировать кэш игры для ускорения запуска</string>
+    <string name="game_memory_boosted">Память ускорена</string>
     <!-- Game auto-detect -->
-    <string name="auto_game_detect_title">Auto game detection</string>
-    <string name="auto_game_detect_summary">Automatically add apps marked as games by their developer</string>
+    <string name="auto_game_detect_title">Автоопределение игры</string>
+    <string name="auto_game_detect_summary">Автоматически добавлять приложения, отмеченные разработчиками как игры</string>
 </resources>
