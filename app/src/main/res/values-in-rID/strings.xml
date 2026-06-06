@@ -11,23 +11,23 @@
     <string name="in_game_preferences_title">Opsi dalam game</string>
     <string name="game_list_title">Pustaka</string>
     <string name="app_search_title">Telusuri</string>
-    <string name="add_game">Add game</string>
-    <string name="launch_game">Launch game</string>
+    <string name="add_game">Tambahkan game</string>
+    <string name="launch_game">Luncurkan game</string>
     <!-- Quick start apps -->
     <string name="quick_start_apps_title">Aplikasi Mulai Cepat</string>
     <string name="quick_start_apps_summary">Pilih aplikasi untuk diluncurkan dengan cepat</string>
     <!-- Auto brightness -->
     <string name="auto_brightness_disabled_title">Nonaktifkan kecerahan otomatis</string>
-    <string name="auto_brightness_disabled_summary">Keep brightness settled while in-game</string>
+    <string name="auto_brightness_disabled_summary">Pertahankan kecerahan tetap saat dalam game</string>
     <!-- Three finger swipe -->
-    <string name="three_screenshot_disabled_summary">Temporary disable three-fingers-swipe gesture while in-game</string>
+    <string name="three_screenshot_disabled_summary">Nonaktifkan sementara gestur usap tiga jari saat di dalam game</string>
     <string name="three_screenshot_disabled_title">Matikan gerakan geser tiga jari</string>
     <!-- Stay awake -->
     <string name="stay_awake_title">Tetap terjaga</string>
-    <string name="stay_awake_summary">Keep screen awake while in-game</string>
+    <string name="stay_awake_summary">Jaga agar layar tetap aktif saat bermain game</string>
     <!-- Lock gesture -->
     <string name="lock_gesture_title">Kunci gestur</string>
-    <string name="lock_gesture_summary">Disable screen gestures while in-game</string>
+    <string name="lock_gesture_summary">Nonaktifkan gestur layar saat bermain game</string>
     <!-- Suppress full screen intent -->
     <string name="suppress_fullscreen_intent_title">Blokir acara layar penuh</string>
     <string name="suppress_fullscreen_intent_summary">Cegah acara layar penuh seperti panggilan masuk muncul saat dalam game</string>
@@ -38,7 +38,7 @@
     <string name="per_app_unregister">Hapus %1$s dari pustaka</string>
     <!-- Disable ADB debugging -->
     <string name="adb_disabled_title">Nonaktifkan USB debugging</string>
-    <string name="adb_disabled_summary">Temporary disable USB ADB debugging while in-game</string>
+    <string name="adb_disabled_summary">Nonaktifkan sementara proses debug USB ADB saat di dalam game</string>
     <!-- Ringer Mode -->
     <string name="in_game_calls_title">Mode panggilan</string>
     <string name="in_game_calls_no_action">Tidak ada tindakan</string>
@@ -52,8 +52,8 @@
     <!-- Gamespace opacity -->
     <string name="gamespace_menu_opacity_title">Tingkat opasitas hamparan menu</string>
     <!-- Bypass charging -->
-    <string name="bypass_charge_enabled_title">Bypass charging</string>
-    <string name="bypass_charge_enabled_summary">Enable bypass charging while playing games</string>
+    <string name="bypass_charge_enabled_title">Pengisian Bypass</string>
+    <string name="bypass_charge_enabled_summary">Aktifkan pengisian daya bypass saat bermain game</string>
     <!-- Call overlay -->
     <string name="call_overlay_enabled_title">Overlay panggilan</string>
     <string name="call_overlay_enabled_summary">Tampilkan overlay panggilan minimal untuk menjawab/menolak panggilan</string>
@@ -65,86 +65,86 @@
     <string name="ringer_mode_no_change">Jangan diubah</string>
     <!-- Game Mode Labels -->
     <string name="game_mode_unsupported">Tidak didukung</string>
-    <string name="game_mode_balanced">Balanced</string>
+    <string name="game_mode_balanced">Seimbang</string>
     <string name="game_mode_performance">Kinerja</string>
     <string name="game_mode_battery">Baterai</string>
     <!-- Game Panel -->
-    <string name="save">Save</string>
-    <string name="panel_options">Panel Options</string>
-    <string name="brightness_slider">Brightness Slider</string>
-    <string name="fps_graph">FPS Graph</string>
-    <string name="selected_tiles">Selected Tiles</string>
-    <string name="available_tiles">Available Tiles</string>
-    <string name="drag_tiles_here">Drag tiles here</string>
-    <string name="all_tiles_added">All tiles added</string>
-    <string name="fps_stats">min %1$d | avg %2$d | max %3$d</string>
+    <string name="save">Simpan</string>
+    <string name="panel_options">Opsi Panel</string>
+    <string name="brightness_slider">Penggeser Kecerahan</string>
+    <string name="fps_graph">Grafik FPS</string>
+    <string name="selected_tiles">Ubin Terpilih</string>
+    <string name="available_tiles">Ubin Tersedia</string>
+    <string name="drag_tiles_here">Seret ubin di sini</string>
+    <string name="all_tiles_added">Semua ubin telah ditambahkan</string>
+    <string name="fps_stats">min %1$d | rata-rata %2$d | maks %3$d</string>
     <!-- Tile Labels -->
     <string name="tile_danmaku">Danmaku</string>
     <string name="tile_stay_awake">Tetap terjaga</string>
     <string name="tile_wifi">Wi-Fi</string>
-    <string name="tile_dnd">DND</string>
-    <string name="tile_fps_info">FPS Info</string>
-    <string name="tile_auto_rotate">Auto Rotate</string>
-    <string name="tile_boost_memory">Boost Memory</string>
-    <string name="tile_settings">Settings</string>
-    <string name="tile_airplane_mode">Airplane Mode</string>
+    <string name="tile_dnd">Jangan Ganggu</string>
+    <string name="tile_fps_info">Info FPS</string>
+    <string name="tile_auto_rotate">Rotasi otomatis</string>
+    <string name="tile_boost_memory">Tingkatkan Memori</string>
+    <string name="tile_settings">Setelan</string>
+    <string name="tile_airplane_mode">Mode Pesawat</string>
     <string name="tile_bluetooth">Bluetooth</string>
-    <string name="tile_mobile_data">Mobile Data</string>
-    <string name="tile_touch_boost">Touch Boost</string>
-    <string name="tile_flashlight">Flashlight</string>
-    <string name="tile_dark_mode">Dark Mode</string>
-    <string name="tile_location">Location</string>
-    <string name="tile_battery_saver">Battery Saver</string>
+    <string name="tile_mobile_data">Data Seluler</string>
+    <string name="tile_touch_boost">Peningkat Sentuh</string>
+    <string name="tile_flashlight">Senter</string>
+    <string name="tile_dark_mode">Mode Gelap</string>
+    <string name="tile_location">Lokasi</string>
+    <string name="tile_battery_saver">Penghemat Baterai</string>
     <string name="tile_hotspot">Hotspot</string>
     <string name="tile_nfc">NFC</string>
-    <string name="tile_night_light">Night Light</string>
-    <string name="tile_aod">Always On Display</string>
-    <string name="tile_data_saver">Data Saver</string>
-    <string name="tile_color_inversion">Color Inversion</string>
-    <string name="tile_color_correction">Color Correction</string>
-    <string name="tile_reduce_brightness">Reduce Brightness</string>
-    <string name="tile_one_handed">One Handed</string>
+    <string name="tile_night_light">Cahaya Malam</string>
+    <string name="tile_aod">Layar Selalu Hidup</string>
+    <string name="tile_data_saver">Penghemat Data</string>
+    <string name="tile_color_inversion">Inversi Warna</string>
+    <string name="tile_color_correction">Koreksi Warna</string>
+    <string name="tile_reduce_brightness">Kurangi Kecerahan</string>
+    <string name="tile_one_handed">Satu Tangan</string>
     <string name="tile_heads_up">Notifikasi mengambang</string>
-    <string name="tile_auto_sync">Auto Sync</string>
-    <string name="tile_camera_privacy">Camera</string>
-    <string name="tile_mic_privacy">Microphone</string>
-    <string name="tile_work_profile">Work Profile</string>
-    <string name="tile_usb_tether">USB Tethering</string>
-    <string name="tile_dream">Screen Saver</string>
-    <string name="tile_reading_mode">Reading Mode</string>
-    <string name="tile_power_share">Power Share</string>
-    <string name="tile_caffeine">Caffeine</string>
+    <string name="tile_auto_sync">Sinkronisasi Otomatis</string>
+    <string name="tile_camera_privacy">Kamera</string>
+    <string name="tile_mic_privacy">Mikrofon</string>
+    <string name="tile_work_profile">Profil Kerja</string>
+    <string name="tile_usb_tether">Penambatan USB</string>
+    <string name="tile_dream">Penghemat Layar</string>
+    <string name="tile_reading_mode">Mode Membaca</string>
+    <string name="tile_power_share">Pembagian Daya</string>
+    <string name="tile_caffeine">Mode Kafein</string>
     <string name="tile_vpn">VPN</string>
-    <string name="tile_cast">Cast</string>
-    <string name="tile_profiles">Profiles</string>
-    <string name="tile_smart_pixels">Smart Pixels</string>
-    <string name="tile_screen_record">Screen Record</string>
-    <string name="tile_screenshot">Screenshot</string>
+    <string name="tile_cast">Transmisi</string>
+    <string name="tile_profiles">Profil</string>
+    <string name="tile_smart_pixels">Piksel Cerdas</string>
+    <string name="tile_screen_record">Rekam Layar</string>
+    <string name="tile_screenshot">Tangkapan Layar</string>
     <!-- Icon Idle Opacity -->
-    <string name="icon_idle_opacity_title">Icon idle opacity</string>
+    <string name="icon_idle_opacity_title">Opasitas ikon saat tidak aktif</string>
     <!-- Auto DND -->
-    <string name="auto_dnd_title">Auto Do Not Disturb</string>
-    <string name="auto_dnd_summary">Automatically enable DND while in-game and restore when done</string>
+    <string name="auto_dnd_title">Mode Jangan Ganggu Otomatis</string>
+    <string name="auto_dnd_summary">Secara otomatis mengaktifkan mode Jangan Ganggu (DND) saat bermain game dan menonaktifkannya kembali setelah selesai</string>
     <!-- Controller Mapper -->
-    <string name="mapper_press_button">Press a button on your controller or keyboard\u2026</string>
-    <string name="mapper_add_point">Add tap point</string>
+    <string name="mapper_press_button">Tekan tombol pada kontroler atau keyboard Anda\u2026</string>
+    <string name="mapper_add_point">Tambahkan titik ketuk</string>
     <string name="mapper_delete_point">Delete tap point</string>
-    <string name="mapper_map_controls">Map controls</string>
+    <string name="mapper_map_controls">Kontrol peta</string>
     <!-- Content Descriptions (Accessibility) -->
-    <string name="cd_reject">Reject</string>
-    <string name="cd_accept">Accept</string>
-    <string name="cd_caller_photo">Caller photo</string>
-    <string name="cd_dismiss">Dismiss</string>
-    <string name="cd_edit_tiles">Edit Tiles</string>
-    <string name="cd_collapse">Collapse</string>
-    <string name="cd_expand">Expand</string>
+    <string name="cd_reject">Tolak</string>
+    <string name="cd_accept">Terima</string>
+    <string name="cd_caller_photo">Foto penelepon</string>
+    <string name="cd_dismiss">Abaikan</string>
+    <string name="cd_edit_tiles">Edit ubin</string>
+    <string name="cd_collapse">Ciutkan</string>
+    <string name="cd_expand">Luaskan</string>
     <!-- Game Optimization -->
-    <string name="game_optimization_title">Launch Optimization</string>
-    <string name="game_memory_management_title">Smart Memory Management</string>
-    <string name="game_memory_management_summary">Automatically clear background apps when launching games</string>
-    <string name="game_cache_management_title">Cache Management</string>
-    <string name="game_cache_management_summary">Optimize game cache for faster loading times</string>
-    <string name="game_memory_boosted">Memory boosted</string>
+    <string name="game_optimization_title">Optimalisasi Peluncuran</string>
+    <string name="game_memory_management_title">Manajemen Memori Cerdas</string>
+    <string name="game_memory_management_summary">Secara otomatis menghapus aplikasi latar belakang saat meluncurkan game</string>
+    <string name="game_cache_management_title">Manajemen Cache</string>
+    <string name="game_cache_management_summary">Optimalkan cache game untuk waktu pemuatan yang lebih cepat</string>
+    <string name="game_memory_boosted">Memori ditingkatkan</string>
     <!-- Game auto-detect -->
     <string name="auto_game_detect_title">Auto game detection</string>
     <string name="auto_game_detect_summary">Automatically add apps marked as games by their developer</string>
