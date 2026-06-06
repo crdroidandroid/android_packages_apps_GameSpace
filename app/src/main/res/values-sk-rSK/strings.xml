@@ -11,7 +11,8 @@
     <string name="in_game_preferences_title">Možnosti v hre</string>
     <string name="game_list_title">Knižnica</string>
     <string name="app_search_title">Hľadať</string>
-    <string name="add">Pridať</string>
+    <string name="add_game">Add game</string>
+    <string name="launch_game">Launch game</string>
     <!-- Quick start apps -->
     <string name="quick_start_apps_title">Rýchly štart aplikácií</string>
     <string name="quick_start_apps_summary">Vybrať aplikácie pre rýchly štart</string>
@@ -147,4 +148,7 @@
     <!-- Game auto-detect -->
     <string name="auto_game_detect_title">Auto game detection</string>
     <string name="auto_game_detect_summary">Automatically add apps marked as games by their developer</string>
+    <!-- Pulse bass haptics -->
+    <string name="pulse_bass_haptics_disabled_title">Disable pulse bass haptics</string>
+    <string name="pulse_bass_haptics_disabled_summary">Automatically disable pulse bass haptics if enabled</string>
 </resources>
