@@ -65,6 +65,12 @@
             android:defaultValue="true" />
 
         <SwitchPreferenceCompat
+            android:key="gamespace_pulse_bass_haptics_disabled"
+            android:title="@string/pulse_bass_haptics_disabled_title"
+            android:summary="@string/pulse_bass_haptics_disabled_summary"
+            android:defaultValue="true" />
+
+        <SwitchPreferenceCompat
             android:key="gamespace_auto_dnd"
             android:title="@string/auto_dnd_title"
             android:summary="@string/auto_dnd_summary"

@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 2021 Chaldeaprjkt
- *               2022 crDroid Android Project
+ *               2022-2026 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -144,6 +144,19 @@ class SystemSettings @Inject constructor(
             Settings.System.putIntForUser(
                 resolver, "gamespace_auto_game_detect",
                 if (value) 1 else 0, UserHandle.USER_CURRENT
+            )
+        }
+
+    var pulseBassHaptics
+        get() =
+            Settings.Secure.getIntForUser(
+                resolver, Settings.Secure.PULSE_BASS_HAPTICS, 0,
+                UserHandle.USER_CURRENT
+            )
+        set(value) {
+            Settings.Secure.putIntForUser(
+                resolver, Settings.Secure.PULSE_BASS_HAPTICS,
+                value, UserHandle.USER_CURRENT
             )
         }
 

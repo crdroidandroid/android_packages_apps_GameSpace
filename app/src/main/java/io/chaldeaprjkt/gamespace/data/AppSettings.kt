@@ -1,7 +1,7 @@
 /*
  * Copyright (C) 2021 Chaldeaprjkt
  * Copyright (C) 2023 risingOS Android Project
- *               2022 crDroid Android Project
+ *               2022-2026 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -103,6 +103,10 @@ class AppSettings @Inject constructor(private val context: Context) {
         get() = db.getBoolean(KEY_STAY_AWAKE, false)
         set(value) = db.edit().putBoolean(KEY_STAY_AWAKE, value).apply()
 
+    var noPulseBassHaptics
+        get() = db.getBoolean(KEY_PULSE_BASS_DISABLE, true)
+        set(it) = db.edit().putBoolean(KEY_PULSE_BASS_DISABLE, it).apply()
+
     companion object {
         const val KEY_AUTO_BRIGHTNESS_DISABLE = "gamespace_auto_brightness_disabled"
         const val KEY_3SCREENSHOT_DISABLE = "gamespace_tfgesture_disabled"
@@ -119,5 +123,6 @@ class AppSettings @Inject constructor(private val context: Context) {
         const val KEY_CALL_OVERLAY_ENABLED = "call_overlay_enabled"
         const val KEY_ICON_IDLE_ALPHA = "gamespace_icon_idle_alpha"
         const val KEY_AUTO_DND = "gamespace_auto_dnd"
+        const val KEY_PULSE_BASS_DISABLE = "gamespace_pulse_bass_haptics_disabled"
     }
 }
