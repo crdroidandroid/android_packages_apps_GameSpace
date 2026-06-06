@@ -128,7 +128,7 @@
     <!-- Controller Mapper -->
     <string name="mapper_press_button">Tekan tombol pada kontroler atau keyboard Anda\u2026</string>
     <string name="mapper_add_point">Tambahkan titik ketuk</string>
-    <string name="mapper_delete_point">Delete tap point</string>
+    <string name="mapper_delete_point">Hapus titik ketuk</string>
     <string name="mapper_map_controls">Kontrol peta</string>
     <!-- Content Descriptions (Accessibility) -->
     <string name="cd_reject">Tolak</string>
@@ -146,9 +146,9 @@
     <string name="game_cache_management_summary">Optimalkan cache game untuk waktu pemuatan yang lebih cepat</string>
     <string name="game_memory_boosted">Memori ditingkatkan</string>
     <!-- Game auto-detect -->
-    <string name="auto_game_detect_title">Auto game detection</string>
-    <string name="auto_game_detect_summary">Automatically add apps marked as games by their developer</string>
+    <string name="auto_game_detect_title">Deteksi game otomatis</string>
+    <string name="auto_game_detect_summary">Secara otomatis menambahkan aplikasi yang ditandai sebagai game oleh pengembangnya</string>
     <!-- Pulse bass haptics -->
-    <string name="pulse_bass_haptics_disabled_title">Disable pulse bass haptics</string>
-    <string name="pulse_bass_haptics_disabled_summary">Automatically disable pulse bass haptics if enabled</string>
+    <string name="pulse_bass_haptics_disabled_title">Nonaktifkan denyut haptik bass</string>
+    <string name="pulse_bass_haptics_disabled_summary">Secara otomatis menonaktifkan denyut haptik bass jika diaktifkan</string>
 </resources>
