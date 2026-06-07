@@ -149,6 +149,6 @@
     <string name="auto_game_detect_title">自动检测游戏</string>
     <string name="auto_game_detect_summary">自动添加被开发者标记为游戏的应用</string>
     <!-- Pulse bass haptics -->
-    <string name="pulse_bass_haptics_disabled_title">Disable pulse bass haptics</string>
-    <string name="pulse_bass_haptics_disabled_summary">Automatically disable pulse bass haptics if enabled</string>
+    <string name="pulse_bass_haptics_disabled_title">禁用脉冲低音触觉</string>
+    <string name="pulse_bass_haptics_disabled_summary">如果启用，则自动禁用脉冲低音触觉反馈</string>
 </resources>
