@@ -11,7 +11,8 @@
     <string name="in_game_preferences_title">인게임 옵션</string>
     <string name="game_list_title">라이브러리</string>
     <string name="app_search_title">검색</string>
-    <string name="add">추가</string>
+    <string name="add_game">Add game</string>
+    <string name="launch_game">Launch game</string>
     <!-- Quick start apps -->
     <string name="quick_start_apps_title">빠른 시작 앱</string>
     <string name="quick_start_apps_summary">빠르게 실행할 앱을 선택하세요</string>
@@ -147,4 +148,7 @@
     <!-- Game auto-detect -->
     <string name="auto_game_detect_title">게임 자동 감지</string>
     <string name="auto_game_detect_summary">개발자가 게임으로 분류한 앱을 자동으로 추가</string>
+    <!-- Pulse bass haptics -->
+    <string name="pulse_bass_haptics_disabled_title">Disable pulse bass haptics</string>
+    <string name="pulse_bass_haptics_disabled_summary">Automatically disable pulse bass haptics if enabled</string>
 </resources>

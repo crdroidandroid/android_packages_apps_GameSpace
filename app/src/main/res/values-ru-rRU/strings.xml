@@ -11,7 +11,8 @@
     <string name="in_game_preferences_title">Настройки игры</string>
     <string name="game_list_title">Библиотека</string>
     <string name="app_search_title">Поиск</string>
-    <string name="add">Добавить</string>
+    <string name="add_game">Add game</string>
+    <string name="launch_game">Launch game</string>
     <!-- Quick start apps -->
     <string name="quick_start_apps_title">Быстрый запуск приложений</string>
     <string name="quick_start_apps_summary">Выберите приложения для быстрого запуска</string>
@@ -147,4 +148,7 @@
     <!-- Game auto-detect -->
     <string name="auto_game_detect_title">Автоопределение игры</string>
     <string name="auto_game_detect_summary">Автоматически добавлять приложения, отмеченные разработчиками как игры</string>
+    <!-- Pulse bass haptics -->
+    <string name="pulse_bass_haptics_disabled_title">Disable pulse bass haptics</string>
+    <string name="pulse_bass_haptics_disabled_summary">Automatically disable pulse bass haptics if enabled</string>
 </resources>

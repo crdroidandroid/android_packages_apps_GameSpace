@@ -11,7 +11,8 @@
     <string name="in_game_preferences_title">游戏中选项</string>
     <string name="game_list_title">游戏列表</string>
     <string name="app_search_title">搜索</string>
-    <string name="add">添加</string>
+    <string name="add_game">添加游戏</string>
+    <string name="launch_game">启动游戏</string>
     <!-- Quick start apps -->
     <string name="quick_start_apps_title">快速启动应用程序</string>
     <string name="quick_start_apps_summary">选择要快速启动的应用</string>
@@ -147,4 +148,7 @@
     <!-- Game auto-detect -->
     <string name="auto_game_detect_title">自动检测游戏</string>
     <string name="auto_game_detect_summary">自动添加被开发者标记为游戏的应用</string>
+    <!-- Pulse bass haptics -->
+    <string name="pulse_bass_haptics_disabled_title">禁用脉冲低音触觉</string>
+    <string name="pulse_bass_haptics_disabled_summary">如果启用，则自动禁用脉冲低音触觉反馈</string>
 </resources>
