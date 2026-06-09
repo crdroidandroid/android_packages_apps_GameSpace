@@ -150,5 +150,5 @@
     <string name="auto_game_detect_summary">Añadir automáticamente aplicaciones marcadas como juegos por su desarrollador</string>
     <!-- Pulse bass haptics -->
     <string name="pulse_bass_haptics_disabled_title">Desactivar háptica de pulso con graves</string>
-    <string name="pulse_bass_haptics_disabled_summary">Automatically disable pulse bass haptics if enabled</string>
+    <string name="pulse_bass_haptics_disabled_summary">Desactivar automáticamente la háptica de pulso con graves si está activada</string>
 </resources>
