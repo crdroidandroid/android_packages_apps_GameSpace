@@ -11,8 +11,8 @@
     <string name="in_game_preferences_title">خيارات داخل اللعبة</string>
     <string name="game_list_title">المكتبة</string>
     <string name="app_search_title">بحث</string>
-    <string name="add_game">Add game</string>
-    <string name="launch_game">Launch game</string>
+    <string name="add_game">إضافة لُعبة</string>
+    <string name="launch_game">تشغيل اللعبة</string>
     <!-- Quick start apps -->
     <string name="quick_start_apps_title">تطبيقات البداية السريعة</string>
     <string name="quick_start_apps_summary">حدد التطبيقات للتشغيل السريع</string>
@@ -20,14 +20,14 @@
     <string name="auto_brightness_disabled_title">تعطيل السطوع التلقائي</string>
     <string name="auto_brightness_disabled_summary">حافظ على السطوع ثابتًا أثناء اللعب</string>
     <!-- Three finger swipe -->
-    <string name="three_screenshot_disabled_summary">Temporary disable three-fingers-swipe gesture while in-game</string>
+    <string name="three_screenshot_disabled_summary">تعطيل مؤقت إيماءة التمرير بثلاثة أصابع أثناء اللعبة</string>
     <string name="three_screenshot_disabled_title">تعطيل السحب بثلاثة أصابع لأخذ لقطة الشاشة</string>
     <!-- Stay awake -->
     <string name="stay_awake_title">البقاء في الوضع النشط</string>
-    <string name="stay_awake_summary">Keep screen awake while in-game</string>
+    <string name="stay_awake_summary">إبقاء الشاشة مضاءة أثناء اللعب</string>
     <!-- Lock gesture -->
     <string name="lock_gesture_title">قفل الايماءات</string>
-    <string name="lock_gesture_summary">Disable screen gestures while in-game</string>
+    <string name="lock_gesture_summary">تعطيل إيماءات الشاشة أثناء اللعب</string>
     <!-- Suppress full screen intent -->
     <string name="suppress_fullscreen_intent_title">منع أحداث الشاشة الكاملة</string>
     <string name="suppress_fullscreen_intent_summary">منع أحداث ملء الشاشة مثل المكالمات الواردة من الظهور أثناء اللعب</string>
@@ -52,8 +52,8 @@
     <!-- Gamespace opacity -->
     <string name="gamespace_menu_opacity_title">مستوى شفافية القائمة العائمة</string>
     <!-- Bypass charging -->
-    <string name="bypass_charge_enabled_title">Bypass charging</string>
-    <string name="bypass_charge_enabled_summary">Enable bypass charging while playing games</string>
+    <string name="bypass_charge_enabled_title">تجاوز الشحن</string>
+    <string name="bypass_charge_enabled_summary">تفعيل تجاوز الشحن أثناء لعب الألعاب</string>
     <!-- Call overlay -->
     <string name="call_overlay_enabled_title">عرض المكالمة</string>
     <string name="call_overlay_enabled_summary">إظهار الحد الأدنى من تراكب المكالمات للإجابة / رفض المكالمات</string>
@@ -65,26 +65,26 @@
     <string name="ringer_mode_no_change">لا تقم بالتغيير</string>
     <!-- Game Mode Labels -->
     <string name="game_mode_unsupported">غير مدعوم</string>
-    <string name="game_mode_balanced">Balanced</string>
+    <string name="game_mode_balanced">متوازن</string>
     <string name="game_mode_performance">نمط الاداء</string>
     <string name="game_mode_battery">توفير البطارية</string>
     <!-- Game Panel -->
-    <string name="save">Save</string>
-    <string name="panel_options">Panel Options</string>
-    <string name="brightness_slider">Brightness Slider</string>
-    <string name="fps_graph">FPS Graph</string>
-    <string name="selected_tiles">Selected Tiles</string>
-    <string name="available_tiles">Available Tiles</string>
-    <string name="drag_tiles_here">Drag tiles here</string>
-    <string name="all_tiles_added">All tiles added</string>
-    <string name="fps_stats">min %1$d | avg %2$d | max %3$d</string>
+    <string name="save">حفظ</string>
+    <string name="panel_options">خيارات اللوحة</string>
+    <string name="brightness_slider">شريط السطوع</string>
+    <string name="fps_graph">مخطط الـFPS</string>
+    <string name="selected_tiles">المربعات المختارة</string>
+    <string name="available_tiles">المربعات المتاحة</string>
+    <string name="drag_tiles_here">اسحب المربعات هنا</string>
+    <string name="all_tiles_added">تم إضافة جميع المربعات</string>
+    <string name="fps_stats">صغرى %1$d | متوسط %2$d | عظمى %3$d</string>
     <!-- Tile Labels -->
     <string name="tile_danmaku">Danmaku</string>
     <string name="tile_stay_awake">البقاء في الوضع النشط</string>
-    <string name="tile_wifi">Wi-Fi</string>
-    <string name="tile_dnd">DND</string>
-    <string name="tile_fps_info">FPS Info</string>
-    <string name="tile_auto_rotate">Auto Rotate</string>
+    <string name="tile_wifi">واي فاي</string>
+    <string name="tile_dnd">وضع عدم الإزعاج</string>
+    <string name="tile_fps_info">معلومات FPS</string>
+    <string name="tile_auto_rotate">تدوير تلقائي</string>
     <string name="tile_boost_memory">Boost Memory</string>
     <string name="tile_settings">Settings</string>
     <string name="tile_airplane_mode">Airplane Mode</string>
