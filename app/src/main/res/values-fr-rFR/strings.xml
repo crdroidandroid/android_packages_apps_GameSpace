@@ -12,7 +12,7 @@
     <string name="game_list_title">Bibliothèque</string>
     <string name="app_search_title">Rechercher</string>
     <string name="add_game">Add game</string>
-    <string name="launch_game">Launch game</string>
+    <string name="launch_game">Lancer le jeu</string>
     <!-- Quick start apps -->
     <string name="quick_start_apps_title">Applications de démarrage rapide</string>
     <string name="quick_start_apps_summary">Sélectionnez les applications à lancer rapidement</string>
@@ -71,20 +71,20 @@
     <!-- Game Panel -->
     <string name="save">Save</string>
     <string name="panel_options">Panel Options</string>
-    <string name="brightness_slider">Brightness Slider</string>
+    <string name="brightness_slider">Curseur de luminosité</string>
     <string name="fps_graph">FPS Graph</string>
     <string name="selected_tiles">Selected Tiles</string>
     <string name="available_tiles">Available Tiles</string>
     <string name="drag_tiles_here">Drag tiles here</string>
     <string name="all_tiles_added">All tiles added</string>
-    <string name="fps_stats">min %1$d | avg %2$d | max %3$d</string>
+    <string name="fps_stats">min %1$d | moy %2$d | max %3$d</string>
     <!-- Tile Labels -->
     <string name="tile_danmaku">Danmaku</string>
     <string name="tile_stay_awake">Rester éveillé</string>
     <string name="tile_wifi">Wi-Fi</string>
     <string name="tile_dnd">DND</string>
     <string name="tile_fps_info">FPS Info</string>
-    <string name="tile_auto_rotate">Auto Rotate</string>
+    <string name="tile_auto_rotate">Rotation automatique</string>
     <string name="tile_boost_memory">Boost Memory</string>
     <string name="tile_settings">Settings</string>
     <string name="tile_airplane_mode">Airplane Mode</string>
@@ -112,7 +112,7 @@
     <string name="tile_usb_tether">USB Tethering</string>
     <string name="tile_dream">Screen Saver</string>
     <string name="tile_reading_mode">Reading Mode</string>
-    <string name="tile_power_share">Power Share</string>
+    <string name="tile_power_share"></string>
     <string name="tile_caffeine">Caffeine</string>
     <string name="tile_vpn">VPN</string>
     <string name="tile_cast">Cast</string>
