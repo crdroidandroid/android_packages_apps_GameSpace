@@ -17,11 +17,8 @@
 package io.chaldeaprjkt.gamespace
 
 import android.app.Application
-import android.content.Intent
-import android.os.UserHandle
 import android.util.Log
 import dagger.hilt.android.HiltAndroidApp
-import io.chaldeaprjkt.gamespace.gamebar.GameSpaceService
 
 @HiltAndroidApp(Application::class)
 class GameSpace : Hilt_GameSpace() {
@@ -31,16 +28,5 @@ class GameSpace : Hilt_GameSpace() {
     override fun onCreate() {
         super.onCreate()
         Log.d(TAG, "Application created")
-        startGameSpaceService()
-    }
-
-    private fun startGameSpaceService() {
-        try {
-            val intent = Intent(this, GameSpaceService::class.java)
-            startServiceAsUser(intent, UserHandle.CURRENT)
-            Log.i(TAG, "GameSpaceService started")
-        } catch (e: Exception) {
-            Log.e(TAG, "Failed to start GameSpaceService", e)
-        }
     }
 }

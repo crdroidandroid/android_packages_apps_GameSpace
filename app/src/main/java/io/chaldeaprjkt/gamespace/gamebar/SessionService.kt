@@ -27,7 +27,6 @@ import android.content.res.Configuration
 import android.os.Handler
 import android.os.IBinder
 import android.os.Looper
-import android.os.UserHandle
 import android.util.Log
 import android.view.WindowManager
 import com.android.axion.platform.AxPlatformClient
@@ -42,7 +41,6 @@ import io.chaldeaprjkt.gamespace.gamebar.mapper.MapperController
 import io.chaldeaprjkt.gamespace.gamebar.tiles.TileRepository
 import io.chaldeaprjkt.gamespace.utils.GameModeUtils
 import io.chaldeaprjkt.gamespace.utils.ScreenUtils
-import io.chaldeaprjkt.gamespace.utils.isServiceRunning
 import javax.inject.Inject
 
 @AndroidEntryPoint(Service::class)
@@ -110,18 +108,12 @@ class SessionService : Hilt_SessionService() {
     }
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
-        when (intent?.action) {
-            ACTION_START -> {
-                val packageName = intent.getStringExtra(EXTRA_PACKAGE_NAME)
-                if (packageName != null) {
-                    startGameSession(packageName)
-                } else {
-                    Log.e(TAG, "No package name provided, stopping")
-                    stopSelf()
-                }
-            }
-            ACTION_STOP -> {
-                stopGameSession()
+        if (intent?.action == ACTION_START) {
+            val packageName = intent.getStringExtra(EXTRA_PACKAGE_NAME)
+            if (packageName != null) {
+                startGameSession(packageName)
+            } else {
+                Log.e(TAG, "No package name provided, stopping")
                 stopSelf()
             }
         }
@@ -214,28 +206,6 @@ class SessionService : Hilt_SessionService() {
     companion object {
         const val TAG = "SessionService"
         const val ACTION_START = "game_start"
-        const val ACTION_STOP = "game_stop"
         const val EXTRA_PACKAGE_NAME = "package_name"
-
-        fun start(context: Context, app: String) {
-            if (!context.isServiceRunning(SessionService::class.java)) {
-                Intent(context, SessionService::class.java).apply {
-                    action = ACTION_START
-                    putExtra(EXTRA_PACKAGE_NAME, app)
-                }.let {
-                    context.startServiceAsUser(it, UserHandle.CURRENT)
-                }
-            }
-        }
-
-        fun stop(context: Context) {
-            if (context.isServiceRunning(SessionService::class.java)) {
-                Intent(context, SessionService::class.java).apply {
-                    action = ACTION_STOP
-                }.let {
-                    context.startServiceAsUser(it, UserHandle.CURRENT)
-                }
-            }
-        }
     }
 }
