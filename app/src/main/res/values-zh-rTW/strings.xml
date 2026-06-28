@@ -11,23 +11,23 @@
     <string name="in_game_preferences_title">遊戲中選項</string>
     <string name="game_list_title">遊戲庫</string>
     <string name="app_search_title">搜尋</string>
-    <string name="add_game">Add game</string>
-    <string name="launch_game">Launch game</string>
+    <string name="add_game">添加遊戲</string>
+    <string name="launch_game">啟動遊戲</string>
     <!-- Quick start apps -->
     <string name="quick_start_apps_title">快速啟動應用程式</string>
     <string name="quick_start_apps_summary">選擇要快速啟動的應用程式</string>
     <!-- Auto brightness -->
     <string name="auto_brightness_disabled_title">停用自動亮度</string>
-    <string name="auto_brightness_disabled_summary">Keep brightness settled while in-game</string>
+    <string name="auto_brightness_disabled_summary">在遊戲中保持亮度穩定</string>
     <!-- Three finger swipe -->
-    <string name="three_screenshot_disabled_summary">Temporary disable three-fingers-swipe gesture while in-game</string>
+    <string name="three_screenshot_disabled_summary">在遊戲期間暫時停用三指滑動手勢</string>
     <string name="three_screenshot_disabled_title">停用三指滑動手勢</string>
     <!-- Stay awake -->
     <string name="stay_awake_title">螢幕保持開啟</string>
-    <string name="stay_awake_summary">Keep screen awake while in-game</string>
+    <string name="stay_awake_summary">遊戲時保持螢幕開啟</string>
     <!-- Lock gesture -->
     <string name="lock_gesture_title">鎖定手勢</string>
-    <string name="lock_gesture_summary">Disable screen gestures while in-game</string>
+    <string name="lock_gesture_summary">遊戲時停用螢幕手勢</string>
     <!-- Suppress full screen intent -->
     <string name="suppress_fullscreen_intent_title">封鎖全螢幕活動</string>
     <string name="suppress_fullscreen_intent_summary">防止如電話等的應用程式彈出全螢幕畫面</string>
@@ -38,7 +38,7 @@
     <string name="per_app_unregister">從遊戲庫中移除 %1$s</string>
     <!-- Disable ADB debugging -->
     <string name="adb_disabled_title">停用 USB 偵錯</string>
-    <string name="adb_disabled_summary">Temporary disable USB ADB debugging while in-game</string>
+    <string name="adb_disabled_summary">在遊戲中暫時停用 USB ADB 偵錯</string>
     <!-- Ringer Mode -->
     <string name="in_game_calls_title">通話模式</string>
     <string name="in_game_calls_no_action">不採取動作</string>
@@ -52,8 +52,8 @@
     <!-- Gamespace opacity -->
     <string name="gamespace_menu_opacity_title">不透明度</string>
     <!-- Bypass charging -->
-    <string name="bypass_charge_enabled_title">Bypass charging</string>
-    <string name="bypass_charge_enabled_summary">Enable bypass charging while playing games</string>
+    <string name="bypass_charge_enabled_title">旁路充電</string>
+    <string name="bypass_charge_enabled_summary">遊戲時啟用旁路充電</string>
     <!-- Call overlay -->
     <string name="call_overlay_enabled_title">電話疊加層</string>
     <string name="call_overlay_enabled_summary">顯示最少的通話疊加層以接聽/拒接電話</string>
@@ -65,90 +65,90 @@
     <string name="ringer_mode_no_change">不變更</string>
     <!-- Game Mode Labels -->
     <string name="game_mode_unsupported">不支援</string>
-    <string name="game_mode_balanced">Balanced</string>
+    <string name="game_mode_balanced">平衡</string>
     <string name="game_mode_performance">高效能</string>
     <string name="game_mode_battery">省電</string>
     <!-- Game Panel -->
-    <string name="save">Save</string>
-    <string name="panel_options">Panel Options</string>
-    <string name="brightness_slider">Brightness Slider</string>
-    <string name="fps_graph">FPS Graph</string>
-    <string name="selected_tiles">Selected Tiles</string>
-    <string name="available_tiles">Available Tiles</string>
-    <string name="drag_tiles_here">Drag tiles here</string>
-    <string name="all_tiles_added">All tiles added</string>
-    <string name="fps_stats">min %1$d | avg %2$d | max %3$d</string>
+    <string name="save">儲存</string>
+    <string name="panel_options">面板選項</string>
+    <string name="brightness_slider">亮度滑桿</string>
+    <string name="fps_graph">FPS 圖表</string>
+    <string name="selected_tiles">已選取圖塊</string>
+    <string name="available_tiles">可用圖塊</string>
+    <string name="drag_tiles_here">拖曳圖塊到此處</string>
+    <string name="all_tiles_added">已新增所有圖塊</string>
+    <string name="fps_stats">最小 %1$d | 平均 %2$d | 最大 %3$d</string>
     <!-- Tile Labels -->
     <string name="tile_danmaku">彈幕式通知</string>
     <string name="tile_stay_awake">螢幕保持開啟</string>
     <string name="tile_wifi">Wi-Fi</string>
-    <string name="tile_dnd">DND</string>
-    <string name="tile_fps_info">FPS Info</string>
-    <string name="tile_auto_rotate">Auto Rotate</string>
-    <string name="tile_boost_memory">Boost Memory</string>
-    <string name="tile_settings">Settings</string>
-    <string name="tile_airplane_mode">Airplane Mode</string>
-    <string name="tile_bluetooth">Bluetooth</string>
-    <string name="tile_mobile_data">Mobile Data</string>
-    <string name="tile_touch_boost">Touch Boost</string>
-    <string name="tile_flashlight">Flashlight</string>
-    <string name="tile_dark_mode">Dark Mode</string>
-    <string name="tile_location">Location</string>
-    <string name="tile_battery_saver">Battery Saver</string>
-    <string name="tile_hotspot">Hotspot</string>
+    <string name="tile_dnd">零打擾</string>
+    <string name="tile_fps_info">幀數</string>
+    <string name="tile_auto_rotate">自動旋轉</string>
+    <string name="tile_boost_memory">記憶體加速</string>
+    <string name="tile_settings">設定</string>
+    <string name="tile_airplane_mode">飛航模式</string>
+    <string name="tile_bluetooth">藍牙</string>
+    <string name="tile_mobile_data">行動網路</string>
+    <string name="tile_touch_boost">觸控加速</string>
+    <string name="tile_flashlight">手電筒</string>
+    <string name="tile_dark_mode">深色模式</string>
+    <string name="tile_location">位置</string>
+    <string name="tile_battery_saver">省電模式</string>
+    <string name="tile_hotspot">無線基地台</string>
     <string name="tile_nfc">NFC</string>
-    <string name="tile_night_light">Night Light</string>
+    <string name="tile_night_light">小夜燈</string>
     <string name="tile_aod">Always On Display</string>
-    <string name="tile_data_saver">Data Saver</string>
-    <string name="tile_color_inversion">Color Inversion</string>
-    <string name="tile_color_correction">Color Correction</string>
-    <string name="tile_reduce_brightness">Reduce Brightness</string>
-    <string name="tile_one_handed">One Handed</string>
+    <string name="tile_data_saver">數據節省模式</string>
+    <string name="tile_color_inversion">色彩反轉</string>
+    <string name="tile_color_correction">色彩校正</string>
+    <string name="tile_reduce_brightness">降低亮度</string>
+    <string name="tile_one_handed">單手模式</string>
     <string name="tile_heads_up">彈出通知</string>
-    <string name="tile_auto_sync">Auto Sync</string>
-    <string name="tile_camera_privacy">Camera</string>
-    <string name="tile_mic_privacy">Microphone</string>
-    <string name="tile_work_profile">Work Profile</string>
-    <string name="tile_usb_tether">USB Tethering</string>
-    <string name="tile_dream">Screen Saver</string>
-    <string name="tile_reading_mode">Reading Mode</string>
-    <string name="tile_power_share">Power Share</string>
-    <string name="tile_caffeine">Caffeine</string>
+    <string name="tile_auto_sync">自動同步</string>
+    <string name="tile_camera_privacy">相機</string>
+    <string name="tile_mic_privacy">麥克風</string>
+    <string name="tile_work_profile">工作資料夾</string>
+    <string name="tile_usb_tether">USB 網路共用</string>
+    <string name="tile_dream">*Pseudo-*丝西伊伊 丝维伊</string>
+    <string name="tile_reading_mode">阅读模式</string>
+    <string name="tile_power_share">省電</string>
+    <string name="tile_caffeine">屏幕常亮</string>
     <string name="tile_vpn">VPN</string>
-    <string name="tile_cast">Cast</string>
-    <string name="tile_profiles">Profiles</string>
-    <string name="tile_smart_pixels">Smart Pixels</string>
-    <string name="tile_screen_record">Screen Record</string>
-    <string name="tile_screenshot">Screenshot</string>
+    <string name="tile_cast">投射</string>
+    <string name="tile_profiles">設定檔</string>
+    <string name="tile_smart_pixels">智慧像素</string>
+    <string name="tile_screen_record">螢幕錄影</string>
+    <string name="tile_screenshot">螢幕截圖</string>
     <!-- Icon Idle Opacity -->
-    <string name="icon_idle_opacity_title">Icon idle opacity</string>
+    <string name="icon_idle_opacity_title">圖標閒置不透明度</string>
     <!-- Auto DND -->
-    <string name="auto_dnd_title">Auto Do Not Disturb</string>
-    <string name="auto_dnd_summary">Automatically enable DND while in-game and restore when done</string>
+    <string name="auto_dnd_title">自動勿擾模式</string>
+    <string name="auto_dnd_summary">遊戲期間自動啟用勿擾模式，結束後自動恢復</string>
     <!-- Controller Mapper -->
-    <string name="mapper_press_button">Press a button on your controller or keyboard\u2026</string>
-    <string name="mapper_add_point">Add tap point</string>
-    <string name="mapper_delete_point">Delete tap point</string>
-    <string name="mapper_map_controls">Map controls</string>
+    <string name="mapper_press_button">請按下控制器或鍵盤上的按鈕\u2026</string>
+    <string name="mapper_add_point">新增觸控點</string>
+    <string name="mapper_delete_point">刪除觸控點</string>
+    <string name="mapper_map_controls">控制地圖</string>
     <!-- Content Descriptions (Accessibility) -->
-    <string name="cd_reject">Reject</string>
-    <string name="cd_accept">Accept</string>
-    <string name="cd_caller_photo">Caller photo</string>
-    <string name="cd_dismiss">Dismiss</string>
-    <string name="cd_edit_tiles">Edit Tiles</string>
-    <string name="cd_collapse">Collapse</string>
-    <string name="cd_expand">Expand</string>
+    <string name="cd_reject">拒絕</string>
+    <string name="cd_accept">接受</string>
+    <string name="cd_caller_photo">來電者相片</string>
+    <string name="cd_dismiss">關閉</string>
+    <string name="cd_edit_tiles">編輯快捷按鈕</string>
+    <string name="cd_collapse">收合</string>
+    <string name="cd_expand">展開</string>
     <!-- Game Optimization -->
     <string name="game_optimization_title">遊戲啟動優化</string>
     <string name="game_memory_management_title">智慧記憶體管理</string>
     <string name="game_memory_management_summary">啟動遊戲時自動清理背景應用程式</string>
     <string name="game_cache_management_title">快取管理</string>
     <string name="game_cache_management_summary">優化遊戲快取以縮短載入時間</string>
-    <string name="game_memory_boosted">Memory boosted</string>
+    <string name="game_memory_boosted">記憶體已加速</string>
     <!-- Game auto-detect -->
-    <string name="auto_game_detect_title">Auto game detection</string>
-    <string name="auto_game_detect_summary">Automatically add apps marked as games by their developer</string>
+    <string name="auto_game_detect_title">遊戲自動偵測</string>
+    <string name="auto_game_detect_summary">自動新增開發者標記為遊戲的應用程式</string>
     <!-- Pulse bass haptics -->
-    <string name="pulse_bass_haptics_disabled_title">Disable pulse bass haptics</string>
-    <string name="pulse_bass_haptics_disabled_summary">Automatically disable pulse bass haptics if enabled</string>
+    <string name="pulse_bass_haptics_disabled_title">停用重低音脈衝觸覺回饋</string>
+    <string name="pulse_bass_haptics_disabled_summary">若已啟用，則自動停用重低音震動回饋</string>
 </resources>
