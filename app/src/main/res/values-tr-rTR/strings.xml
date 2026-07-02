@@ -109,11 +109,11 @@
     <string name="tile_camera_privacy">Kamera</string>
     <string name="tile_mic_privacy">Mikrofon</string>
     <string name="tile_work_profile">İş Profili</string>
-    <string name="tile_usb_tether">USB Tethering</string>
-    <string name="tile_dream">Screen Saver</string>
-    <string name="tile_reading_mode">Reading Mode</string>
-    <string name="tile_power_share">Power Share</string>
-    <string name="tile_caffeine">Caffeine</string>
+    <string name="tile_usb_tether">USB İnternet Paylaşımı</string>
+    <string name="tile_dream">Ekran Koruyucu</string>
+    <string name="tile_reading_mode">Okuma Modu</string>
+    <string name="tile_power_share">Güç Paylaşımı</string>
+    <string name="tile_caffeine">Kafein</string>
     <string name="tile_vpn">VPN</string>
     <string name="tile_cast">Cast</string>
     <string name="tile_profiles">Profiles</string>
