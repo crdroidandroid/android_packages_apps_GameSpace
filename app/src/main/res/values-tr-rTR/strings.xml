@@ -11,8 +11,8 @@
     <string name="in_game_preferences_title">Oyun içi seçenekleri</string>
     <string name="game_list_title">Arşiv</string>
     <string name="app_search_title">Ara</string>
-    <string name="add_game">Add game</string>
-    <string name="launch_game">Launch game</string>
+    <string name="add_game">Oyun ekle</string>
+    <string name="launch_game">Oyunu başlat</string>
     <!-- Quick start apps -->
     <string name="quick_start_apps_title">Hızlı Başlangıç Uygulamaları</string>
     <string name="quick_start_apps_summary">Hızlı başlatmak için uygulamaları seçin</string>
@@ -20,14 +20,14 @@
     <string name="auto_brightness_disabled_title">Otomatik parlaklığı devre dışı bırak</string>
     <string name="auto_brightness_disabled_summary">Oyun içindeyken parlaklığı sabit tutun</string>
     <!-- Three finger swipe -->
-    <string name="three_screenshot_disabled_summary">Temporary disable three-fingers-swipe gesture while in-game</string>
+    <string name="three_screenshot_disabled_summary">Oyundayken üç parmakla kaydırma hareketini geçici olarak devre dışı bırakın</string>
     <string name="three_screenshot_disabled_title">Üç parmakla kaydırma hareketini devre dışı bırak</string>
     <!-- Stay awake -->
     <string name="stay_awake_title">Uyanık kal</string>
-    <string name="stay_awake_summary">Keep screen awake while in-game</string>
+    <string name="stay_awake_summary">Oyundayken ekranı uyanık tutun</string>
     <!-- Lock gesture -->
     <string name="lock_gesture_title">Hareketi kilitle</string>
-    <string name="lock_gesture_summary">Disable screen gestures while in-game</string>
+    <string name="lock_gesture_summary">Oyun içindeyken ekran hareketlerini devre dışı bırak</string>
     <!-- Suppress full screen intent -->
     <string name="suppress_fullscreen_intent_title">Tam ekran etkinliğini engelle</string>
     <string name="suppress_fullscreen_intent_summary">Oyun içindeyken gelen aramalar gibi tam ekran etkinliklerinin görünmesini engelleyin</string>
@@ -52,8 +52,8 @@
     <!-- Gamespace opacity -->
     <string name="gamespace_menu_opacity_title">Arayüz menüsü şeffaflığı</string>
     <!-- Bypass charging -->
-    <string name="bypass_charge_enabled_title">Bypass charging</string>
-    <string name="bypass_charge_enabled_summary">Enable bypass charging while playing games</string>
+    <string name="bypass_charge_enabled_title">Baypas şarj</string>
+    <string name="bypass_charge_enabled_summary">Oyun oynarken baypas şarjı etkinleştir</string>
     <!-- Call overlay -->
     <string name="call_overlay_enabled_title">Arama katmanı</string>
     <string name="call_overlay_enabled_summary">Aramaları yanıtlamak/reddetmek için minimal arama katmanını göster</string>
@@ -65,50 +65,50 @@
     <string name="ringer_mode_no_change">Değiştirme</string>
     <!-- Game Mode Labels -->
     <string name="game_mode_unsupported">Desteklenmiyor</string>
-    <string name="game_mode_balanced">Balanced</string>
+    <string name="game_mode_balanced">Dengeli</string>
     <string name="game_mode_performance">Performans</string>
     <string name="game_mode_battery">Pil</string>
     <!-- Game Panel -->
-    <string name="save">Save</string>
-    <string name="panel_options">Panel Options</string>
-    <string name="brightness_slider">Brightness Slider</string>
-    <string name="fps_graph">FPS Graph</string>
-    <string name="selected_tiles">Selected Tiles</string>
-    <string name="available_tiles">Available Tiles</string>
-    <string name="drag_tiles_here">Drag tiles here</string>
-    <string name="all_tiles_added">All tiles added</string>
-    <string name="fps_stats">min %1$d | avg %2$d | max %3$d</string>
+    <string name="save">Kaydet</string>
+    <string name="panel_options">Panel seçenekleri</string>
+    <string name="brightness_slider">Parlaklık kaydırıcısı</string>
+    <string name="fps_graph">FPS Grafiği</string>
+    <string name="selected_tiles">Seçili Karolar</string>
+    <string name="available_tiles">Mevcut Karolar</string>
+    <string name="drag_tiles_here">Kutucukları buraya sürükleyin</string>
+    <string name="all_tiles_added">Tüm kutucuklar eklendi</string>
+    <string name="fps_stats">en az %1$d | ort %2$d | en çok %3$d</string>
     <!-- Tile Labels -->
     <string name="tile_danmaku">Danmaku</string>
     <string name="tile_stay_awake">Uyanık kal</string>
     <string name="tile_wifi">Wi-Fi</string>
     <string name="tile_dnd">DND</string>
-    <string name="tile_fps_info">FPS Info</string>
-    <string name="tile_auto_rotate">Auto Rotate</string>
-    <string name="tile_boost_memory">Boost Memory</string>
-    <string name="tile_settings">Settings</string>
-    <string name="tile_airplane_mode">Airplane Mode</string>
+    <string name="tile_fps_info">FPS bilgisi</string>
+    <string name="tile_auto_rotate">Otomatik Döndür</string>
+    <string name="tile_boost_memory">Belleği Güçlendir</string>
+    <string name="tile_settings">Ayarlar</string>
+    <string name="tile_airplane_mode">Uçak Modu</string>
     <string name="tile_bluetooth">Bluetooth</string>
-    <string name="tile_mobile_data">Mobile Data</string>
-    <string name="tile_touch_boost">Touch Boost</string>
-    <string name="tile_flashlight">Flashlight</string>
-    <string name="tile_dark_mode">Dark Mode</string>
-    <string name="tile_location">Location</string>
-    <string name="tile_battery_saver">Battery Saver</string>
-    <string name="tile_hotspot">Hotspot</string>
+    <string name="tile_mobile_data">Mobil veri</string>
+    <string name="tile_touch_boost">Dokunmatik Hızlandırma</string>
+    <string name="tile_flashlight">El feneri</string>
+    <string name="tile_dark_mode">Koyu Mod</string>
+    <string name="tile_location">Konum</string>
+    <string name="tile_battery_saver">Pil Tasarrufu</string>
+    <string name="tile_hotspot">Erişim noktası</string>
     <string name="tile_nfc">NFC</string>
-    <string name="tile_night_light">Night Light</string>
-    <string name="tile_aod">Always On Display</string>
-    <string name="tile_data_saver">Data Saver</string>
-    <string name="tile_color_inversion">Color Inversion</string>
-    <string name="tile_color_correction">Color Correction</string>
-    <string name="tile_reduce_brightness">Reduce Brightness</string>
-    <string name="tile_one_handed">One Handed</string>
+    <string name="tile_night_light">Gece Işığı</string>
+    <string name="tile_aod">Her zaman açık ekran</string>
+    <string name="tile_data_saver">Veri tasarrufu</string>
+    <string name="tile_color_inversion">Renkleri Tersine Çevir</string>
+    <string name="tile_color_correction">Renk Düzeltme</string>
+    <string name="tile_reduce_brightness">Parlaklığı Azalt</string>
+    <string name="tile_one_handed">Tek el modu</string>
     <string name="tile_heads_up">Bildirim pencereleri</string>
-    <string name="tile_auto_sync">Auto Sync</string>
-    <string name="tile_camera_privacy">Camera</string>
-    <string name="tile_mic_privacy">Microphone</string>
-    <string name="tile_work_profile">Work Profile</string>
+    <string name="tile_auto_sync">Otomatik Senkronizasyon</string>
+    <string name="tile_camera_privacy">Kamera</string>
+    <string name="tile_mic_privacy">Mikrofon</string>
+    <string name="tile_work_profile">İş Profili</string>
     <string name="tile_usb_tether">USB Tethering</string>
     <string name="tile_dream">Screen Saver</string>
     <string name="tile_reading_mode">Reading Mode</string>
