@@ -11,8 +11,8 @@
     <string name="in_game_preferences_title">Настройки игры</string>
     <string name="game_list_title">Библиотека</string>
     <string name="app_search_title">Поиск</string>
-    <string name="add_game">Add game</string>
-    <string name="launch_game">Launch game</string>
+    <string name="add_game">Добавить игру</string>
+    <string name="launch_game">Запустить игру</string>
     <!-- Quick start apps -->
     <string name="quick_start_apps_title">Быстрый запуск приложений</string>
     <string name="quick_start_apps_summary">Выберите приложения для быстрого запуска</string>
@@ -87,7 +87,7 @@
     <string name="tile_auto_rotate">Автоматический поворот</string>
     <string name="tile_boost_memory">Очистка памяти</string>
     <string name="tile_settings">Настройки</string>
-    <string name="tile_airplane_mode">Авиарежим</string>
+    <string name="tile_airplane_mode">Режим Полёта</string>
     <string name="tile_bluetooth">Bluetooth</string>
     <string name="tile_mobile_data">Мобильные данные</string>
     <string name="tile_touch_boost">Быстрый отклик</string>
@@ -149,6 +149,6 @@
     <string name="auto_game_detect_title">Автоопределение игры</string>
     <string name="auto_game_detect_summary">Автоматически добавлять приложения, отмеченные разработчиками как игры</string>
     <!-- Pulse bass haptics -->
-    <string name="pulse_bass_haptics_disabled_title">Disable pulse bass haptics</string>
-    <string name="pulse_bass_haptics_disabled_summary">Automatically disable pulse bass haptics if enabled</string>
+    <string name="pulse_bass_haptics_disabled_title">Отключить пульсирующую басовую вибрацию</string>
+    <string name="pulse_bass_haptics_disabled_summary">Автоматически отключать пульсирующую басовую вибрацию, если включена</string>
 </resources>
