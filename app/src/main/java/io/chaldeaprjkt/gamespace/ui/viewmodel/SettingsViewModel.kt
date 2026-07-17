@@ -74,7 +74,7 @@ class SettingsViewModel @Inject constructor(
         private set
 
     val isBypassSupported = Build.MANUFACTURER.equals("Google", ignoreCase = true) 
-            || SystemProperties.getBoolean("persist.sys.battery_bypass_supported", false)
+            || SystemProperties.getBoolean("persist.sys.ax_chg_bypass", false)
 
     init {
         loadRegisteredGames()

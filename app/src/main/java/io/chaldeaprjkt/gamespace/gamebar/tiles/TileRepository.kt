@@ -456,7 +456,7 @@ class TileRepository @Inject constructor(
             )
         )
 
-        if (SystemProperties.getBoolean("persist.sys.target_supports_touch_boost", false)) {
+        if (SystemProperties.getBoolean("persist.sys.ax_touch_boost", false)) {
             val touchBoostState = mutableStateOf(
                 SystemProperties.getInt("persist.sys.touchboost_enable", 0) == 1
             )
