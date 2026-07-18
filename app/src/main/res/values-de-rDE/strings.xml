@@ -11,7 +11,7 @@
     <string name="in_game_preferences_title">In-Game-Optionen</string>
     <string name="game_list_title">Bibliothek</string>
     <string name="app_search_title">Suchen</string>
-    <string name="add_game">Partie hinzufügen</string>
+    <string name="add_game">Spiel hinzufügen</string>
     <string name="launch_game">Spiel Starten</string>
     <!-- Quick start apps -->
     <string name="quick_start_apps_title">Schnellstart-Apps</string>
@@ -102,37 +102,37 @@
     <string name="tile_data_saver">Datensparmodus</string>
     <string name="tile_color_inversion">Farbumkehr</string>
     <string name="tile_color_correction">Farbkorrektur</string>
-    <string name="tile_reduce_brightness">Reduce Brightness</string>
-    <string name="tile_one_handed">One Handed</string>
+    <string name="tile_reduce_brightness">Helligkeit verringern</string>
+    <string name="tile_one_handed">Einhändig</string>
     <string name="tile_heads_up">Pop-up</string>
     <string name="tile_auto_sync">Auto Sync</string>
-    <string name="tile_camera_privacy">Camera</string>
-    <string name="tile_mic_privacy">Microphone</string>
+    <string name="tile_camera_privacy">Kamera</string>
+    <string name="tile_mic_privacy">Mikrofon</string>
     <string name="tile_work_profile">Work Profile</string>
     <string name="tile_usb_tether">USB Tethering</string>
     <string name="tile_dream">Screen Saver</string>
-    <string name="tile_reading_mode">Reading Mode</string>
-    <string name="tile_power_share">Power Share</string>
+    <string name="tile_reading_mode">Lesemodus</string>
+    <string name="tile_power_share">Akku teilen</string>
     <string name="tile_caffeine">Caffeine</string>
     <string name="tile_vpn">VPN</string>
     <string name="tile_cast">Cast</string>
-    <string name="tile_profiles">Profiles</string>
+    <string name="tile_profiles">Profile</string>
     <string name="tile_smart_pixels">Smart Pixels</string>
-    <string name="tile_screen_record">Screen Record</string>
+    <string name="tile_screen_record">Bildschirm aufnehmen</string>
     <string name="tile_screenshot">Screenshot</string>
     <!-- Icon Idle Opacity -->
     <string name="icon_idle_opacity_title">Icon idle opacity</string>
     <!-- Auto DND -->
     <string name="auto_dnd_title">Auto Do Not Disturb</string>
-    <string name="auto_dnd_summary">Automatically enable DND while in-game and restore when done</string>
+    <string name="auto_dnd_summary">Bitte-Nicht-Stören automatisch während des Spiels aktivieren und danach zum ursprünglichen Zustand zurückführen</string>
     <!-- Controller Mapper -->
-    <string name="mapper_press_button">Press a button on your controller or keyboard\u2026</string>
+    <string name="mapper_press_button">Drücken Sie einen Knopf auf ihrem Controller oder auf Ihrer Tastatur</string>
     <string name="mapper_add_point">Add tap point</string>
     <string name="mapper_delete_point">Delete tap point</string>
     <string name="mapper_map_controls">Map controls</string>
     <!-- Content Descriptions (Accessibility) -->
-    <string name="cd_reject">Reject</string>
-    <string name="cd_accept">Accept</string>
+    <string name="cd_reject">Ablehnen</string>
+    <string name="cd_accept">Annehmen</string>
     <string name="cd_caller_photo">Caller photo</string>
     <string name="cd_dismiss">Dismiss</string>
     <string name="cd_edit_tiles">Edit Tiles</string>
@@ -141,7 +141,7 @@
     <!-- Game Optimization -->
     <string name="game_optimization_title">Launch Optimization</string>
     <string name="game_memory_management_title">Smart Memory Management</string>
-    <string name="game_memory_management_summary">Automatically clear background apps when launching games</string>
+    <string name="game_memory_management_summary">Beim Start eines Spiels Apps im Hintergrund automatisch schließen</string>
     <string name="game_cache_management_title">Cache Management</string>
     <string name="game_cache_management_summary">Optimize game cache for faster loading times</string>
     <string name="game_memory_boosted">Memory boosted</string>
