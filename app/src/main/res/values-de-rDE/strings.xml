@@ -139,7 +139,7 @@
     <string name="cd_collapse">Collapse</string>
     <string name="cd_expand">Expand</string>
     <!-- Game Optimization -->
-    <string name="game_optimization_title">Launch Optimization</string>
+    <string name="game_optimization_title">Startoptimierung</string>
     <string name="game_memory_management_title">Smart Memory Management</string>
     <string name="game_memory_management_summary">Beim Start eines Spiels Apps im Hintergrund automatisch schließen</string>
     <string name="game_cache_management_title">Cache Management</string>
