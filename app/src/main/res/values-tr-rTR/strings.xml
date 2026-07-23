@@ -115,39 +115,39 @@
     <string name="tile_power_share">Güç Paylaşımı</string>
     <string name="tile_caffeine">Kafein</string>
     <string name="tile_vpn">VPN</string>
-    <string name="tile_cast">Cast</string>
-    <string name="tile_profiles">Profiles</string>
-    <string name="tile_smart_pixels">Smart Pixels</string>
-    <string name="tile_screen_record">Screen Record</string>
-    <string name="tile_screenshot">Screenshot</string>
+    <string name="tile_cast">Yansıt</string>
+    <string name="tile_profiles">Profiller</string>
+    <string name="tile_smart_pixels">Akıllı Pikseller</string>
+    <string name="tile_screen_record">Ekran Kaydı</string>
+    <string name="tile_screenshot">Ekran görüntüsü</string>
     <!-- Icon Idle Opacity -->
-    <string name="icon_idle_opacity_title">Icon idle opacity</string>
+    <string name="icon_idle_opacity_title">Boşta görsel opaklığı</string>
     <!-- Auto DND -->
-    <string name="auto_dnd_title">Auto Do Not Disturb</string>
-    <string name="auto_dnd_summary">Automatically enable DND while in-game and restore when done</string>
+    <string name="auto_dnd_title">Otomatik Rahatsız Etme Modu</string>
+    <string name="auto_dnd_summary">Oyun sırasında otomatik olarak Rahatsız Etme modunu etkinleştir ve çıkınca geri yükle</string>
     <!-- Controller Mapper -->
-    <string name="mapper_press_button">Press a button on your controller or keyboard\u2026</string>
-    <string name="mapper_add_point">Add tap point</string>
-    <string name="mapper_delete_point">Delete tap point</string>
-    <string name="mapper_map_controls">Map controls</string>
+    <string name="mapper_press_button">Oyun kumandanızda veya klavyenizde bir tuşa basın\u2026</string>
+    <string name="mapper_add_point">Dokunma noktası ekle</string>
+    <string name="mapper_delete_point">Dokunma noktasını sil</string>
+    <string name="mapper_map_controls">Kontrolleri eşle</string>
     <!-- Content Descriptions (Accessibility) -->
-    <string name="cd_reject">Reject</string>
-    <string name="cd_accept">Accept</string>
-    <string name="cd_caller_photo">Caller photo</string>
-    <string name="cd_dismiss">Dismiss</string>
-    <string name="cd_edit_tiles">Edit Tiles</string>
-    <string name="cd_collapse">Collapse</string>
-    <string name="cd_expand">Expand</string>
+    <string name="cd_reject">Reddet</string>
+    <string name="cd_accept">Kabul et</string>
+    <string name="cd_caller_photo">Arayan Fotoğrafı</string>
+    <string name="cd_dismiss">Kapat</string>
+    <string name="cd_edit_tiles">Karoları Düzenle</string>
+    <string name="cd_collapse">Daralt</string>
+    <string name="cd_expand">Genişlet</string>
     <!-- Game Optimization -->
     <string name="game_optimization_title">Başlatma Optimizasyonu</string>
     <string name="game_memory_management_title">Akıllı Bellek Yönetimi</string>
     <string name="game_memory_management_summary">Oyunlar başlatılırken arka plan uygulamalarını otomatik olarak temizler</string>
     <string name="game_cache_management_title">Önbellek Yönetimi</string>
     <string name="game_cache_management_summary">Daha hızlı yükleme süreleri için oyun önbelleğini optimize eder</string>
-    <string name="game_memory_boosted">Memory boosted</string>
+    <string name="game_memory_boosted">Bellek artırıldı</string>
     <!-- Game auto-detect -->
-    <string name="auto_game_detect_title">Auto game detection</string>
-    <string name="auto_game_detect_summary">Automatically add apps marked as games by their developer</string>
+    <string name="auto_game_detect_title">Otomatik oyun algılama</string>
+    <string name="auto_game_detect_summary">Geliştiricisi tarafından oyun olarak işaretlenmiş uygulamaları otomatik olarak ekle</string>
     <!-- Pulse bass haptics -->
     <string name="pulse_bass_haptics_disabled_title">Disable pulse bass haptics</string>
     <string name="pulse_bass_haptics_disabled_summary">Automatically disable pulse bass haptics if enabled</string>
