@@ -121,7 +121,7 @@
     <string name="tile_screen_record">Ekran Kaydı</string>
     <string name="tile_screenshot">Ekran görüntüsü</string>
     <!-- Icon Idle Opacity -->
-    <string name="icon_idle_opacity_title">Boşta görsel opaklığı</string>
+    <string name="icon_idle_opacity_title">Boşta simge opaklığı</string>
     <!-- Auto DND -->
     <string name="auto_dnd_title">Otomatik Rahatsız Etme Modu</string>
     <string name="auto_dnd_summary">Oyun sırasında otomatik olarak Rahatsız Etme modunu etkinleştir ve çıkınca geri yükle</string>
@@ -149,6 +149,6 @@
     <string name="auto_game_detect_title">Otomatik oyun algılama</string>
     <string name="auto_game_detect_summary">Geliştiricisi tarafından oyun olarak işaretlenmiş uygulamaları otomatik olarak ekle</string>
     <!-- Pulse bass haptics -->
-    <string name="pulse_bass_haptics_disabled_title">Disable pulse bass haptics</string>
-    <string name="pulse_bass_haptics_disabled_summary">Automatically disable pulse bass haptics if enabled</string>
+    <string name="pulse_bass_haptics_disabled_title">Nabız bas titreşimlerini devre dışı bırak</string>
+    <string name="pulse_bass_haptics_disabled_summary">Etkinse nabız bas titreşimlerini otomatik olarak devre dışı bırak</string>
 </resources>
