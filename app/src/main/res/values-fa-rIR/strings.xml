@@ -74,7 +74,7 @@
     <string name="brightness_slider">Brightness Slider</string>
     <string name="fps_graph">FPS Graph</string>
     <string name="selected_tiles">Selected Tiles</string>
-    <string name="available_tiles">Available Tiles</string>
+    <string name="available_tiles">کاشی‌های در دسترس</string>
     <string name="drag_tiles_here">Drag tiles here</string>
     <string name="all_tiles_added">All tiles added</string>
     <string name="fps_stats">min %1$d | avg %2$d | max %3$d</string>
