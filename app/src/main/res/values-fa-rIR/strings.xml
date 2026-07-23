@@ -11,34 +11,34 @@
     <string name="in_game_preferences_title">گزینه های درون بازی</string>
     <string name="game_list_title">مجموعه</string>
     <string name="app_search_title">جستجو</string>
-    <string name="add_game">Add game</string>
-    <string name="launch_game">Launch game</string>
+    <string name="add_game">اضافه کردن بازی</string>
+    <string name="launch_game">اجرای بازی</string>
     <!-- Quick start apps -->
     <string name="quick_start_apps_title">برنامه‌های شروع سریع</string>
     <string name="quick_start_apps_summary">برنامه‌ها را برای راه‌اندازی سریع انتخاب کنید</string>
     <!-- Auto brightness -->
     <string name="auto_brightness_disabled_title">غیرفعالسازی روشنایی خودکار</string>
-    <string name="auto_brightness_disabled_summary">Keep brightness settled while in-game</string>
+    <string name="auto_brightness_disabled_summary">ثابت نگه داشتن روشنایی هنگام بازی کردن</string>
     <!-- Three finger swipe -->
-    <string name="three_screenshot_disabled_summary">Temporary disable three-fingers-swipe gesture while in-game</string>
+    <string name="three_screenshot_disabled_summary">غیرفعال کردن موقت حرکت سه انگشتی در حین بازی</string>
     <string name="three_screenshot_disabled_title">حرکت تند کشیدن سه انگشت را غیرفعال کنید</string>
     <!-- Stay awake -->
     <string name="stay_awake_title">بیدار بمان</string>
-    <string name="stay_awake_summary">Keep screen awake while in-game</string>
+    <string name="stay_awake_summary">روشن نگه داشتن صفحه نمایش هنگام بازی کردن</string>
     <!-- Lock gesture -->
     <string name="lock_gesture_title">قفل کردن ژست</string>
-    <string name="lock_gesture_summary">Disable screen gestures while in-game</string>
+    <string name="lock_gesture_summary">غیرفعال کردن ژست‌های حرکتی صفحه هنگام بازی</string>
     <!-- Suppress full screen intent -->
     <string name="suppress_fullscreen_intent_title">مسدود کردن رویداد تمام صفحه</string>
     <string name="suppress_fullscreen_intent_summary">از نمایش رویدادهای تمام صفحه مانند تماس های دریافتی جلوگیری کنید</string>
     <!-- Per app settings -->
     <string name="per_app_title">پیکربندی بازی</string>
     <string name="per_app_mode_title">حالت ترجیحی</string>
-    <string name="per_app_angle_title">استفاده از ANGLE (آزمایشی)</string>
+    <string name="per_app_angle_title">درایور گرافیک</string>
     <string name="per_app_unregister">%1$s را از مجموعه حذف کنید</string>
     <!-- Disable ADB debugging -->
     <string name="adb_disabled_title">غیرفعال کردن اشکال زدایی USB</string>
-    <string name="adb_disabled_summary">Temporary disable USB ADB debugging while in-game</string>
+    <string name="adb_disabled_summary">اشکال‌زدایی USB ADB را هنگام بازی موقتاً غیرفعال کنید</string>
     <!-- Ringer Mode -->
     <string name="in_game_calls_title">حالت تماس</string>
     <string name="in_game_calls_no_action">هیچ کاری انجام نده</string>
@@ -47,108 +47,108 @@
     <string name="in_game_calls_received_number">تماس دریافت شده از %1$s</string>
     <string name="in_game_calls_rejected_number">تماس رد شده از %1$s</string>
     <!-- Danmaku Notification Mode -->
-    <string name="danmaku_notification_mode_title">حالت اعلان گلوله جهنمی</string>
+    <string name="danmaku_notification_mode_title">اعلان‌های شناور متحرک</string>
     <string name="danmaku_notification_mode_summary">در حالی که بازی فعال است، اعلان را به حالت اعلان گلوله جهنمی نشان دهید</string>
     <!-- Gamespace opacity -->
     <string name="gamespace_menu_opacity_title">سطح شفافیت منوی همپوشانی</string>
     <!-- Bypass charging -->
-    <string name="bypass_charge_enabled_title">Bypass charging</string>
-    <string name="bypass_charge_enabled_summary">Enable bypass charging while playing games</string>
+    <string name="bypass_charge_enabled_title">شارژ مستقیم</string>
+    <string name="bypass_charge_enabled_summary">فعال‌سازی شارژ مستقیم هنگام بازی کردن</string>
     <!-- Call overlay -->
-    <string name="call_overlay_enabled_title">Call overlay</string>
-    <string name="call_overlay_enabled_summary">Show minimal call overlay to answer/reject calls</string>
+    <string name="call_overlay_enabled_title">پنجره شناور تماس</string>
+    <string name="call_overlay_enabled_summary">نمایش حداقلی پوشش تماس برای پاسخ دادن/رد کردن تماس‌ها</string>
     <!-- Ringer Mode Options -->
-    <string name="ringer_mode_title">حالت با صدا</string>
+    <string name="ringer_mode_title">حالت زنگ درون‌بازی</string>
     <string name="ringer_mode_silent">سکوت</string>
     <string name="ringer_mode_vibrate">لرزش</string>
     <string name="ringer_mode_normal">معمولی</string>
     <string name="ringer_mode_no_change">بدون تغییر</string>
     <!-- Game Mode Labels -->
     <string name="game_mode_unsupported">پشتیبانی نشده</string>
-    <string name="game_mode_balanced">Balanced</string>
+    <string name="game_mode_balanced">متعادل</string>
     <string name="game_mode_performance">کارایی</string>
     <string name="game_mode_battery">باتری</string>
     <!-- Game Panel -->
-    <string name="save">Save</string>
-    <string name="panel_options">Panel Options</string>
-    <string name="brightness_slider">Brightness Slider</string>
-    <string name="fps_graph">FPS Graph</string>
-    <string name="selected_tiles">Selected Tiles</string>
-    <string name="available_tiles">کاشی‌های در دسترس</string>
-    <string name="drag_tiles_here">Drag tiles here</string>
-    <string name="all_tiles_added">All tiles added</string>
-    <string name="fps_stats">min %1$d | avg %2$d | max %3$d</string>
+    <string name="save">ذخیره</string>
+    <string name="panel_options">گزینه های پنل</string>
+    <string name="brightness_slider">نوار روشنایی</string>
+    <string name="fps_graph">نمودار فریم‌بر ثانیه</string>
+    <string name="selected_tiles">آیتم های انتخاب‌شده</string>
+    <string name="available_tiles">آیتم های در دسترس</string>
+    <string name="drag_tiles_here">آیتم هارا به اینجا بکشید</string>
+    <string name="all_tiles_added">همه آیتم ها اضافه شدند</string>
+    <string name="fps_stats">کمترین %1$d | میانگین %2$d | حداکثر %3$d</string>
     <!-- Tile Labels -->
-    <string name="tile_danmaku">Danmaku</string>
+    <string name="tile_danmaku">اعلان های شفاف متحرک</string>
     <string name="tile_stay_awake">بیدار بمان</string>
-    <string name="tile_wifi">Wi-Fi</string>
-    <string name="tile_dnd">DND</string>
-    <string name="tile_fps_info">FPS Info</string>
-    <string name="tile_auto_rotate">Auto Rotate</string>
-    <string name="tile_boost_memory">Boost Memory</string>
-    <string name="tile_settings">Settings</string>
-    <string name="tile_airplane_mode">Airplane Mode</string>
-    <string name="tile_bluetooth">Bluetooth</string>
-    <string name="tile_mobile_data">Mobile Data</string>
-    <string name="tile_touch_boost">Touch Boost</string>
-    <string name="tile_flashlight">Flashlight</string>
-    <string name="tile_dark_mode">Dark Mode</string>
-    <string name="tile_location">Location</string>
-    <string name="tile_battery_saver">Battery Saver</string>
-    <string name="tile_hotspot">Hotspot</string>
+    <string name="tile_wifi">وای فای</string>
+    <string name="tile_dnd">مزاحم‌نشوید</string>
+    <string name="tile_fps_info">اطلاعات فریم بر ثانیه</string>
+    <string name="tile_auto_rotate">چرخش خودکار</string>
+    <string name="tile_boost_memory">افزایش سرعت حافظه</string>
+    <string name="tile_settings">تنظیمات</string>
+    <string name="tile_airplane_mode">حالت هواپیما</string>
+    <string name="tile_bluetooth">بلوتوث</string>
+    <string name="tile_mobile_data">داده‌ تلفن همراه</string>
+    <string name="tile_touch_boost">تقویت لمس</string>
+    <string name="tile_flashlight">چراغ قوه</string>
+    <string name="tile_dark_mode">حالت تاریک</string>
+    <string name="tile_location">موقعیت مکانی</string>
+    <string name="tile_battery_saver">صرفه‌جویی در باتری</string>
+    <string name="tile_hotspot">نقطه اتصال</string>
     <string name="tile_nfc">NFC</string>
-    <string name="tile_night_light">Night Light</string>
-    <string name="tile_aod">Always On Display</string>
-    <string name="tile_data_saver">Data Saver</string>
-    <string name="tile_color_inversion">Color Inversion</string>
-    <string name="tile_color_correction">Color Correction</string>
-    <string name="tile_reduce_brightness">Reduce Brightness</string>
-    <string name="tile_one_handed">One Handed</string>
-    <string name="tile_heads_up">اعلان فوری</string>
-    <string name="tile_auto_sync">Auto Sync</string>
-    <string name="tile_camera_privacy">Camera</string>
-    <string name="tile_mic_privacy">Microphone</string>
-    <string name="tile_work_profile">Work Profile</string>
-    <string name="tile_usb_tether">USB Tethering</string>
-    <string name="tile_dream">Screen Saver</string>
-    <string name="tile_reading_mode">Reading Mode</string>
-    <string name="tile_power_share">Power Share</string>
-    <string name="tile_caffeine">Caffeine</string>
+    <string name="tile_night_light">نور شب</string>
+    <string name="tile_aod">صفحه نمایش همیشه روشن</string>
+    <string name="tile_data_saver">صرفه‌جویی داده</string>
+    <string name="tile_color_inversion">وارونگی رنگ</string>
+    <string name="tile_color_correction">اصلاح رنگ</string>
+    <string name="tile_reduce_brightness">کاهش روشنایی</string>
+    <string name="tile_one_handed">حالت یک‌دستی</string>
+    <string name="tile_heads_up">اعلان شناور</string>
+    <string name="tile_auto_sync">همگام‌سازی خودکار</string>
+    <string name="tile_camera_privacy">دوربین</string>
+    <string name="tile_mic_privacy">میکروفون</string>
+    <string name="tile_work_profile">نمایه کاری</string>
+    <string name="tile_usb_tether">اشتراک‌گذاری اینترنت از طریق USB</string>
+    <string name="tile_dream">محافظ نمایشگر</string>
+    <string name="tile_reading_mode">حالت مطالعه</string>
+    <string name="tile_power_share">شارژ معکوس</string>
+    <string name="tile_caffeine">کافئین</string>
     <string name="tile_vpn">VPN</string>
-    <string name="tile_cast">Cast</string>
-    <string name="tile_profiles">Profiles</string>
-    <string name="tile_smart_pixels">Smart Pixels</string>
-    <string name="tile_screen_record">Screen Record</string>
-    <string name="tile_screenshot">Screenshot</string>
+    <string name="tile_cast">انتقال تصویر</string>
+    <string name="tile_profiles">نمایه‌ ها</string>
+    <string name="tile_smart_pixels">پیکسل هوشمند برای صرفه جویی در مصرف باتری</string>
+    <string name="tile_screen_record">ضبط صفحه نمایش</string>
+    <string name="tile_screenshot">عکس گرفتن از صفحه</string>
     <!-- Icon Idle Opacity -->
-    <string name="icon_idle_opacity_title">Icon idle opacity</string>
+    <string name="icon_idle_opacity_title">شفافیت آیکون در حالت بیکاری</string>
     <!-- Auto DND -->
-    <string name="auto_dnd_title">Auto Do Not Disturb</string>
-    <string name="auto_dnd_summary">Automatically enable DND while in-game and restore when done</string>
+    <string name="auto_dnd_title">مزاحم نشوید خودکار</string>
+    <string name="auto_dnd_summary">فعال‌سازی خودکار حالت مزاحم نشوید هنگام ورود به بازی و بازیابی حالت قبلی پس از خروج</string>
     <!-- Controller Mapper -->
-    <string name="mapper_press_button">Press a button on your controller or keyboard\u2026</string>
-    <string name="mapper_add_point">Add tap point</string>
-    <string name="mapper_delete_point">Delete tap point</string>
-    <string name="mapper_map_controls">Map controls</string>
+    <string name="mapper_press_button">یک دکمه روی دسته بازی یا کیبورد خود فشار دهید\u2026</string>
+    <string name="mapper_add_point">افزودن نقطه لمس</string>
+    <string name="mapper_delete_point">حذف نقطه لمس</string>
+    <string name="mapper_map_controls">شخصی‌سازی کنترل‌ها / مپ کردن کنترل‌ها</string>
     <!-- Content Descriptions (Accessibility) -->
-    <string name="cd_reject">Reject</string>
-    <string name="cd_accept">Accept</string>
-    <string name="cd_caller_photo">Caller photo</string>
-    <string name="cd_dismiss">Dismiss</string>
-    <string name="cd_edit_tiles">Edit Tiles</string>
-    <string name="cd_collapse">Collapse</string>
-    <string name="cd_expand">Expand</string>
+    <string name="cd_reject">رد کردن</string>
+    <string name="cd_accept">پذیرفتن</string>
+    <string name="cd_caller_photo">تصویر مخاطب</string>
+    <string name="cd_dismiss">نادیده گرفتن</string>
+    <string name="cd_edit_tiles">ویرایش آیتم‌ها</string>
+    <string name="cd_collapse">بستن</string>
+    <string name="cd_expand">باز کردن</string>
     <!-- Game Optimization -->
-    <string name="game_optimization_title">Launch Optimization</string>
-    <string name="game_memory_management_title">Smart Memory Management</string>
-    <string name="game_memory_management_summary">Automatically clear background apps when launching games</string>
-    <string name="game_cache_management_title">Cache Management</string>
-    <string name="game_cache_management_summary">Optimize game cache for faster loading times</string>
-    <string name="game_memory_boosted">Memory boosted</string>
+    <string name="game_optimization_title">راه‌اندازی بهینه‌سازی</string>
+    <string name="game_memory_management_title">مدیریت هوشمند حافظه</string>
+    <string name="game_memory_management_summary">پاکسازی خودکار برنامه‌های پس‌زمینه هنگام اجرای بازی‌ها</string>
+    <string name="game_cache_management_title">مدیریت حافظه پنهان</string>
+    <string name="game_cache_management_summary">بهینه‌سازی کش بازی برای زمان بارگذاری سریع‌تر</string>
+    <string name="game_memory_boosted">حافظه تقویت شد</string>
     <!-- Game auto-detect -->
-    <string name="auto_game_detect_title">Auto game detection</string>
-    <string name="auto_game_detect_summary">Automatically add apps marked as games by their developer</string>
+    <string name="auto_game_detect_title">شناسایی خودکار بازی</string>
+    <string name="auto_game_detect_summary">افزودن خودکار برنامه‌هایی که توسط توسعه‌دهنده به عنوان بازی علامت‌گذاری شده‌اند</string>
     <!-- Pulse bass haptics -->
-    <string name="pulse_bass_haptics_disabled_title">Disable pulse bass haptics</string>
-    <string name="pulse_bass_haptics_disabled_summary">Automatically disable pulse bass haptics if enabled</string>
+    <string name="pulse_bass_haptics_disabled_title">غیرفعال‌سازی لرزش بیس پالس</string>
+    <string name="pulse_bass_haptics_disabled_summary">غیرفعال‌سازی خودکار لرزش بیس پالس در صورت روشن بودن</string>
 </resources>
