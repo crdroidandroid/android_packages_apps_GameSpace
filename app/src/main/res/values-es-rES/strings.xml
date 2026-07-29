@@ -34,7 +34,7 @@
     <!-- Per app settings -->
     <string name="per_app_title">Configurar juego</string>
     <string name="per_app_mode_title">Modo preferido</string>
-    <string name="per_app_angle_title">Usar nueva interfaz de usuario (experimental)</string>
+    <string name="per_app_angle_title">Controlador de gráficos</string>
     <string name="per_app_unregister">Eliminar %1$s de la biblioteca</string>
     <!-- Disable ADB debugging -->
     <string name="adb_disabled_title">Desactivar depuración USB</string>
@@ -52,7 +52,7 @@
     <!-- Gamespace opacity -->
     <string name="gamespace_menu_opacity_title">Nivel de opacidad del menú de superposición</string>
     <!-- Bypass charging -->
-    <string name="bypass_charge_enabled_title">Bypass de carga</string>
+    <string name="bypass_charge_enabled_title">Omitir carga</string>
     <string name="bypass_charge_enabled_summary">Activar omisión de carga mientras juegas</string>
     <!-- Call overlay -->
     <string name="call_overlay_enabled_title">Llamada en ventana flotante</string>
@@ -77,7 +77,7 @@
     <string name="available_tiles">Mosaicos disponibles</string>
     <string name="drag_tiles_here">Arrastra los mosaicos aquí</string>
     <string name="all_tiles_added">Todos los mosaicos agregados</string>
-    <string name="fps_stats">min %1$d | avg %2$d | max %3$d</string>
+    <string name="fps_stats">min %1$d | media %2$d | máx %3$d</string>
     <!-- Tile Labels -->
     <string name="tile_danmaku">Danmaku</string>
     <string name="tile_stay_awake">Permanecer encendido</string>
@@ -85,7 +85,7 @@
     <string name="tile_dnd">No molestar</string>
     <string name="tile_fps_info">Información de FPS</string>
     <string name="tile_auto_rotate">Rotación automática</string>
-    <string name="tile_boost_memory">Optimizar memoria</string>
+    <string name="tile_boost_memory">Aumentar memoria disponible</string>
     <string name="tile_settings">Ajustes</string>
     <string name="tile_airplane_mode">Modo Avión</string>
     <string name="tile_bluetooth">Bluetooth</string>
