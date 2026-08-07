@@ -34,7 +34,7 @@
     <!-- Per app settings -->
     <string name="per_app_title">Configurer le jeu</string>
     <string name="per_app_mode_title">Mode préféré</string>
-    <string name="per_app_angle_title">Utiliser ANGLE (expérimental)</string>
+    <string name="per_app_angle_title">Pilote graphique</string>
     <string name="per_app_unregister">Retirer %1$s de la bibliothèque</string>
     <!-- Disable ADB debugging -->
     <string name="adb_disabled_title">Désactiver le débogage USB</string>
@@ -65,7 +65,7 @@
     <string name="ringer_mode_no_change">Ne pas changer</string>
     <!-- Game Mode Labels -->
     <string name="game_mode_unsupported">Non-supporté</string>
-    <string name="game_mode_balanced">Equilibré</string>
+    <string name="game_mode_balanced">Équilibré</string>
     <string name="game_mode_performance">Performance</string>
     <string name="game_mode_battery">Batterie</string>
     <!-- Game Panel -->
@@ -104,7 +104,7 @@
     <string name="tile_color_correction">Correction des couleurs</string>
     <string name="tile_reduce_brightness">Réduire la luminosité</string>
     <string name="tile_one_handed">À une main</string>
-    <string name="tile_heads_up">Notification flotante</string>
+    <string name="tile_heads_up">Notification flottante</string>
     <string name="tile_auto_sync">Synchronisation automatique</string>
     <string name="tile_camera_privacy">Appareil photo</string>
     <string name="tile_mic_privacy">Microphone</string>
@@ -112,7 +112,7 @@
     <string name="tile_usb_tether">Partage de connexion USB</string>
     <string name="tile_dream">Écran de veille</string>
     <string name="tile_reading_mode">Mode lecture</string>
-    <string name="tile_power_share"></string>
+    <string name="tile_power_share">Partage de puissance</string>
     <string name="tile_caffeine">Caféine</string>
     <string name="tile_vpn">VPN</string>
     <string name="tile_cast">Diffuser</string>
