@@ -11,8 +11,8 @@
     <string name="in_game_preferences_title">Opțiuni în joc</string>
     <string name="game_list_title">Bibliotecă</string>
     <string name="app_search_title">Căutare</string>
-    <string name="add_game">Add game</string>
-    <string name="launch_game">Launch game</string>
+    <string name="add_game">Adaugă joc</string>
+    <string name="launch_game">Lansează jocul</string>
     <!-- Quick start apps -->
     <string name="quick_start_apps_title">Pornire rapidă a aplicațiilor</string>
     <string name="quick_start_apps_summary">Selectați aplicațiile pentru lansare rapidă</string>
@@ -20,14 +20,14 @@
     <string name="auto_brightness_disabled_title">Dezactivează luminozitatea automată</string>
     <string name="auto_brightness_disabled_summary">Păstrează luminozitatea setată în timpul jocului</string>
     <!-- Three finger swipe -->
-    <string name="three_screenshot_disabled_summary">Temporary disable three-fingers-swipe gesture while in-game</string>
+    <string name="three_screenshot_disabled_summary">Dezactivare temporară a gestului cu trei degete-glisare în joc</string>
     <string name="three_screenshot_disabled_title">Dezactivează gestul de trei degete</string>
     <!-- Stay awake -->
     <string name="stay_awake_title">Menține ecranul activ</string>
-    <string name="stay_awake_summary">Keep screen awake while in-game</string>
+    <string name="stay_awake_summary">Păstrează ecranul treaz în joc</string>
     <!-- Lock gesture -->
     <string name="lock_gesture_title">Blochează gesturile</string>
-    <string name="lock_gesture_summary">Disable screen gestures while in-game</string>
+    <string name="lock_gesture_summary">Dezactivează gesturile ecranului în timpul jocului</string>
     <!-- Suppress full screen intent -->
     <string name="suppress_fullscreen_intent_title">Blocare eveniment pe tot ecranul</string>
     <string name="suppress_fullscreen_intent_summary">Împiedică apariția evenimentelor pe tot ecranul, cum ar fi apelurile primite în timpul jocului</string>
@@ -52,8 +52,8 @@
     <!-- Gamespace opacity -->
     <string name="gamespace_menu_opacity_title">Opacitate pentru meniul suprapus</string>
     <!-- Bypass charging -->
-    <string name="bypass_charge_enabled_title">Bypass charging</string>
-    <string name="bypass_charge_enabled_summary">Enable bypass charging while playing games</string>
+    <string name="bypass_charge_enabled_title">Ignoră încărcarea</string>
+    <string name="bypass_charge_enabled_summary">Activare încărcare bypass în timpul jocului</string>
     <!-- Call overlay -->
     <string name="call_overlay_enabled_title">Apel suprapus</string>
     <string name="call_overlay_enabled_summary">Afișați suprapunerea minimă a apelurilor pentru a răspunde/respinge apelurile</string>
@@ -65,90 +65,90 @@
     <string name="ringer_mode_no_change">Nu schimba</string>
     <!-- Game Mode Labels -->
     <string name="game_mode_unsupported">Necompatibil</string>
-    <string name="game_mode_balanced">Balanced</string>
+    <string name="game_mode_balanced">Echilibru</string>
     <string name="game_mode_performance">Performanță</string>
     <string name="game_mode_battery">Baterie</string>
     <!-- Game Panel -->
-    <string name="save">Save</string>
-    <string name="panel_options">Panel Options</string>
-    <string name="brightness_slider">Brightness Slider</string>
-    <string name="fps_graph">FPS Graph</string>
-    <string name="selected_tiles">Selected Tiles</string>
-    <string name="available_tiles">Available Tiles</string>
-    <string name="drag_tiles_here">Drag tiles here</string>
-    <string name="all_tiles_added">All tiles added</string>
-    <string name="fps_stats">min %1$d | avg %2$d | max %3$d</string>
+    <string name="save">Salvează</string>
+    <string name="panel_options">Opțiuni panou</string>
+    <string name="brightness_slider">Glisor Luminozitate</string>
+    <string name="fps_graph">Grafic FPS</string>
+    <string name="selected_tiles">Tilele selectate</string>
+    <string name="available_tiles">Parcele disponibile</string>
+    <string name="drag_tiles_here">Trage dalele aici</string>
+    <string name="all_tiles_added">Toate piesele adăugate</string>
+    <string name="fps_stats">min %1$d %2$d Amax %3$d</string>
     <!-- Tile Labels -->
     <string name="tile_danmaku">Danmaku</string>
     <string name="tile_stay_awake">Menține ecranul activ</string>
     <string name="tile_wifi">Wi-Fi</string>
     <string name="tile_dnd">DND</string>
-    <string name="tile_fps_info">FPS Info</string>
-    <string name="tile_auto_rotate">Auto Rotate</string>
-    <string name="tile_boost_memory">Boost Memory</string>
-    <string name="tile_settings">Settings</string>
-    <string name="tile_airplane_mode">Airplane Mode</string>
+    <string name="tile_fps_info">Info FPS</string>
+    <string name="tile_auto_rotate">Rotire automată</string>
+    <string name="tile_boost_memory">Impulsionează memoria</string>
+    <string name="tile_settings">Setări</string>
+    <string name="tile_airplane_mode">Mod avion</string>
     <string name="tile_bluetooth">Bluetooth</string>
-    <string name="tile_mobile_data">Mobile Data</string>
-    <string name="tile_touch_boost">Touch Boost</string>
-    <string name="tile_flashlight">Flashlight</string>
-    <string name="tile_dark_mode">Dark Mode</string>
-    <string name="tile_location">Location</string>
-    <string name="tile_battery_saver">Battery Saver</string>
-    <string name="tile_hotspot">Hotspot</string>
+    <string name="tile_mobile_data">Date mobile</string>
+    <string name="tile_touch_boost">Accelerare la atingere</string>
+    <string name="tile_flashlight">Lanternă</string>
+    <string name="tile_dark_mode">Mod întunecat</string>
+    <string name="tile_location">Locaţie</string>
+    <string name="tile_battery_saver">Economisire baterie</string>
+    <string name="tile_hotspot">Punct de acces</string>
     <string name="tile_nfc">NFC</string>
-    <string name="tile_night_light">Night Light</string>
-    <string name="tile_aod">Always On Display</string>
-    <string name="tile_data_saver">Data Saver</string>
-    <string name="tile_color_inversion">Color Inversion</string>
-    <string name="tile_color_correction">Color Correction</string>
-    <string name="tile_reduce_brightness">Reduce Brightness</string>
-    <string name="tile_one_handed">One Handed</string>
+    <string name="tile_night_light">Lumină de noapte</string>
+    <string name="tile_aod">Afișare permanentă</string>
+    <string name="tile_data_saver">Economizor de date</string>
+    <string name="tile_color_inversion">Inversare culoare</string>
+    <string name="tile_color_correction">Corecție culoare</string>
+    <string name="tile_reduce_brightness">Reduce luminozitatea</string>
+    <string name="tile_one_handed">O singură mână</string>
     <string name="tile_heads_up">Atenționări</string>
-    <string name="tile_auto_sync">Auto Sync</string>
-    <string name="tile_camera_privacy">Camera</string>
-    <string name="tile_mic_privacy">Microphone</string>
-    <string name="tile_work_profile">Work Profile</string>
+    <string name="tile_auto_sync">Sincronizare automată</string>
+    <string name="tile_camera_privacy">Cameră</string>
+    <string name="tile_mic_privacy">Microfon</string>
+    <string name="tile_work_profile">Profil de serviciu</string>
     <string name="tile_usb_tether">USB Tethering</string>
-    <string name="tile_dream">Screen Saver</string>
-    <string name="tile_reading_mode">Reading Mode</string>
-    <string name="tile_power_share">Power Share</string>
+    <string name="tile_dream">Economizor de ecran</string>
+    <string name="tile_reading_mode">Mod lectură</string>
+    <string name="tile_power_share">Distribuire energie</string>
     <string name="tile_caffeine">Caffeine</string>
     <string name="tile_vpn">VPN</string>
-    <string name="tile_cast">Cast</string>
-    <string name="tile_profiles">Profiles</string>
-    <string name="tile_smart_pixels">Smart Pixels</string>
-    <string name="tile_screen_record">Screen Record</string>
-    <string name="tile_screenshot">Screenshot</string>
+    <string name="tile_cast">Transmite</string>
+    <string name="tile_profiles">Profiluri</string>
+    <string name="tile_smart_pixels">Pixeli inteligenți</string>
+    <string name="tile_screen_record">Înregistrare ecran</string>
+    <string name="tile_screenshot">Captură ecran</string>
     <!-- Icon Idle Opacity -->
-    <string name="icon_idle_opacity_title">Icon idle opacity</string>
+    <string name="icon_idle_opacity_title">Opacitate pictogramă inactivă</string>
     <!-- Auto DND -->
-    <string name="auto_dnd_title">Auto Do Not Disturb</string>
-    <string name="auto_dnd_summary">Automatically enable DND while in-game and restore when done</string>
+    <string name="auto_dnd_title">Auto Nu deranja</string>
+    <string name="auto_dnd_summary">Activează automat DND în timpul jocului și restaurează când este terminat</string>
     <!-- Controller Mapper -->
-    <string name="mapper_press_button">Press a button on your controller or keyboard\u2026</string>
-    <string name="mapper_add_point">Add tap point</string>
-    <string name="mapper_delete_point">Delete tap point</string>
-    <string name="mapper_map_controls">Map controls</string>
+    <string name="mapper_press_button">Apăsați un buton de pe controlerul sau tastatura\u2026</string>
+    <string name="mapper_add_point">Adaugă punct apăsare</string>
+    <string name="mapper_delete_point">Șterge punctul de atingere</string>
+    <string name="mapper_map_controls">Comenzi hartă</string>
     <!-- Content Descriptions (Accessibility) -->
-    <string name="cd_reject">Reject</string>
-    <string name="cd_accept">Accept</string>
-    <string name="cd_caller_photo">Caller photo</string>
-    <string name="cd_dismiss">Dismiss</string>
-    <string name="cd_edit_tiles">Edit Tiles</string>
-    <string name="cd_collapse">Collapse</string>
-    <string name="cd_expand">Expand</string>
+    <string name="cd_reject">Respinge</string>
+    <string name="cd_accept">Acceptă</string>
+    <string name="cd_caller_photo">Fotografie apelant</string>
+    <string name="cd_dismiss">Renunţaţi</string>
+    <string name="cd_edit_tiles">Editare dale</string>
+    <string name="cd_collapse">Restrânge</string>
+    <string name="cd_expand">Extinde</string>
     <!-- Game Optimization -->
     <string name="game_optimization_title">Lansare optimizare</string>
     <string name="game_memory_management_title">Managementul memoriei inteligente</string>
     <string name="game_memory_management_summary">Șterge automat aplicațiile de fundal la lansarea jocurilor</string>
     <string name="game_cache_management_title">Gestionare cache</string>
     <string name="game_cache_management_summary">Optimizează cache-ul jocului pentru o încărcare mai rapidă</string>
-    <string name="game_memory_boosted">Memory boosted</string>
+    <string name="game_memory_boosted">Memorie amplificată</string>
     <!-- Game auto-detect -->
-    <string name="auto_game_detect_title">Auto game detection</string>
-    <string name="auto_game_detect_summary">Automatically add apps marked as games by their developer</string>
+    <string name="auto_game_detect_title">Detectare automată a jocurilor</string>
+    <string name="auto_game_detect_summary">Adaugă automat aplicațiile marcate ca jocuri de către dezvoltatorul lor</string>
     <!-- Pulse bass haptics -->
-    <string name="pulse_bass_haptics_disabled_title">Disable pulse bass haptics</string>
-    <string name="pulse_bass_haptics_disabled_summary">Automatically disable pulse bass haptics if enabled</string>
+    <string name="pulse_bass_haptics_disabled_title">Dezactivare haptics puls bas</string>
+    <string name="pulse_bass_haptics_disabled_summary">Dezactivează automat bass haptics dacă este activat</string>
 </resources>
