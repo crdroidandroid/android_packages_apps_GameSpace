@@ -16,8 +16,8 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="quick_start_apps_title">Quick Start Apps</string>
-    <string name="quick_start_apps_summary">Select apps to launch quickly</string>
+    <string name="quick_start_apps_title">빠른 시작 앱</string>
+    <string name="quick_start_apps_summary">빠르게 실행할 앱을 선택하세요</string>
     <string name="settings_title">게임 스페이스</string>
     <string name="settings_summary">게임용 설정 관리</string>
     <!-- Game options -->
@@ -86,5 +86,5 @@
     <!-- Danmaku Notification Mode -->
     <string name="danmaku_notification_mode_title">탄막 알림 모드</string>
     <string name="danmaku_notification_mode_summary">게임 중일 때 알림을 탄막처럼 작게 표시</string>
-    <string name="gamespace_running">Game Space is running</string>
+    <string name="gamespace_running">Game Space가 실행 중입니다</string>
 </resources>
