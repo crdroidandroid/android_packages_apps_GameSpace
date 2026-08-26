@@ -11,8 +11,8 @@
     <string name="in_game_preferences_title">Játékon belüli lehetőségek</string>
     <string name="game_list_title">Könyvtár</string>
     <string name="app_search_title">Keresés</string>
-    <string name="add_game">Add game</string>
-    <string name="launch_game">Launch game</string>
+    <string name="add_game">Játék hozzáadása</string>
+    <string name="launch_game">Játék indítása</string>
     <!-- Quick start apps -->
     <string name="quick_start_apps_title">Gyorsindítási alkalmazások</string>
     <string name="quick_start_apps_summary">Válassza ki a gyorsan indítandó alkalmazásokat</string>
@@ -20,14 +20,14 @@
     <string name="auto_brightness_disabled_title">Az automatikus fényerőszabályzás tiltása</string>
     <string name="auto_brightness_disabled_summary">Tartsa a beállított fényerőt játék közben</string>
     <!-- Three finger swipe -->
-    <string name="three_screenshot_disabled_summary">Temporary disable three-fingers-swipe gesture while in-game</string>
+    <string name="three_screenshot_disabled_summary">A háromujjas képernyőfotó időleges letiltása, amíg játékban van</string>
     <string name="three_screenshot_disabled_title">Három ujjas húzási gesztus letiltása</string>
     <!-- Stay awake -->
     <string name="stay_awake_title">Ne zárja le a képernyőt</string>
-    <string name="stay_awake_summary">Keep screen awake while in-game</string>
+    <string name="stay_awake_summary">Tartsa ébren a képernyőt játék közben</string>
     <!-- Lock gesture -->
     <string name="lock_gesture_title">Gesztusok gátlása</string>
-    <string name="lock_gesture_summary">Disable screen gestures while in-game</string>
+    <string name="lock_gesture_summary">A képernyőgesztusok letiltása játék közben</string>
     <!-- Suppress full screen intent -->
     <string name="suppress_fullscreen_intent_title">Teljes képernyős mód blokkolása</string>
     <string name="suppress_fullscreen_intent_summary">Teljes képernyős események, mint például a bejövő hívás megjelenítésének megakadályozása</string>
@@ -38,7 +38,7 @@
     <string name="per_app_unregister">%1$s eltávolítása a könyvtáradból</string>
     <!-- Disable ADB debugging -->
     <string name="adb_disabled_title">Az USB-hibakeresés tiltása</string>
-    <string name="adb_disabled_summary">Temporary disable USB ADB debugging while in-game</string>
+    <string name="adb_disabled_summary">Ideiglenesen kikapcsolja az USB ABD debugging-ot játék közben</string>
     <!-- Ringer Mode -->
     <string name="in_game_calls_title">Hívás mód</string>
     <string name="in_game_calls_no_action">Nincs művelet</string>
@@ -52,8 +52,8 @@
     <!-- Gamespace opacity -->
     <string name="gamespace_menu_opacity_title">Átfedés menü átlátszósági szintje</string>
     <!-- Bypass charging -->
-    <string name="bypass_charge_enabled_title">Bypass charging</string>
-    <string name="bypass_charge_enabled_summary">Enable bypass charging while playing games</string>
+    <string name="bypass_charge_enabled_title">Bypass-töltés</string>
+    <string name="bypass_charge_enabled_summary">Játék közben engedélyezi a Bypass-töltést</string>
     <!-- Call overlay -->
     <string name="call_overlay_enabled_title">Hívás átfedés</string>
     <string name="call_overlay_enabled_summary">Minimális hívásfelületet jelenít meg a hívások fogadásához/elutasításához</string>
@@ -65,39 +65,39 @@
     <string name="ringer_mode_no_change">Ne változtassa meg</string>
     <!-- Game Mode Labels -->
     <string name="game_mode_unsupported">Nem támogatott</string>
-    <string name="game_mode_balanced">Balanced</string>
+    <string name="game_mode_balanced">Kiegyensúlyozott</string>
     <string name="game_mode_performance">Teljesítmény</string>
     <string name="game_mode_battery">Akkumulátor</string>
     <!-- Game Panel -->
-    <string name="save">Save</string>
-    <string name="panel_options">Panel Options</string>
-    <string name="brightness_slider">Brightness Slider</string>
-    <string name="fps_graph">FPS Graph</string>
-    <string name="selected_tiles">Selected Tiles</string>
-    <string name="available_tiles">Available Tiles</string>
-    <string name="drag_tiles_here">Drag tiles here</string>
-    <string name="all_tiles_added">All tiles added</string>
-    <string name="fps_stats">min %1$d | avg %2$d | max %3$d</string>
+    <string name="save">Mentés</string>
+    <string name="panel_options">Panel beállításai</string>
+    <string name="brightness_slider">Fényerőcsúszka</string>
+    <string name="fps_graph">FPS grafikon</string>
+    <string name="selected_tiles">Kiválasztott csempék</string>
+    <string name="available_tiles">Elérhető csempék</string>
+    <string name="drag_tiles_here">Húzd ide a csempéket</string>
+    <string name="all_tiles_added">Minden csempe hozzáadva</string>
+    <string name="fps_stats">min %1$d | átl %2$d | max %3$d</string>
     <!-- Tile Labels -->
     <string name="tile_danmaku">Danmaku</string>
     <string name="tile_stay_awake">Ne zárja le a képernyőt</string>
     <string name="tile_wifi">Wi-Fi</string>
-    <string name="tile_dnd">DND</string>
-    <string name="tile_fps_info">FPS Info</string>
-    <string name="tile_auto_rotate">Auto Rotate</string>
-    <string name="tile_boost_memory">Boost Memory</string>
-    <string name="tile_settings">Settings</string>
-    <string name="tile_airplane_mode">Airplane Mode</string>
+    <string name="tile_dnd">Ne zavarjanak</string>
+    <string name="tile_fps_info">FPS-adatok</string>
+    <string name="tile_auto_rotate">Automatikus forgatás</string>
+    <string name="tile_boost_memory">Memórianövelés</string>
+    <string name="tile_settings">Beállítások</string>
+    <string name="tile_airplane_mode">Repülő üzemmód</string>
     <string name="tile_bluetooth">Bluetooth</string>
-    <string name="tile_mobile_data">Mobile Data</string>
-    <string name="tile_touch_boost">Touch Boost</string>
-    <string name="tile_flashlight">Flashlight</string>
-    <string name="tile_dark_mode">Dark Mode</string>
-    <string name="tile_location">Location</string>
-    <string name="tile_battery_saver">Battery Saver</string>
+    <string name="tile_mobile_data">Mobiladatok</string>
+    <string name="tile_touch_boost">Érintés gyorsítás</string>
+    <string name="tile_flashlight">Zseblámpa</string>
+    <string name="tile_dark_mode">Sötét Mód</string>
+    <string name="tile_location">Tartózkodási hely</string>
+    <string name="tile_battery_saver">Akkumulátorkímélő</string>
     <string name="tile_hotspot">Hotspot</string>
     <string name="tile_nfc">NFC</string>
-    <string name="tile_night_light">Night Light</string>
+    <string name="tile_night_light">Éjszakai fény</string>
     <string name="tile_aod">Always On Display</string>
     <string name="tile_data_saver">Data Saver</string>
     <string name="tile_color_inversion">Color Inversion</string>
