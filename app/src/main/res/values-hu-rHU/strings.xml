@@ -99,9 +99,9 @@
     <string name="tile_nfc">NFC</string>
     <string name="tile_night_light">Éjszakai fény</string>
     <string name="tile_aod">Mindig bekapcsolt kijelző</string>
-    <string name="tile_data_saver">Data Saver</string>
-    <string name="tile_color_inversion">Color Inversion</string>
-    <string name="tile_color_correction">Color Correction</string>
+    <string name="tile_data_saver">Adatforgalom-csökkentő</string>
+    <string name="tile_color_inversion">Színek invertálása</string>
+    <string name="tile_color_correction">Színkorrekció</string>
     <string name="tile_reduce_brightness">Reduce Brightness</string>
     <string name="tile_one_handed">One Handed</string>
     <string name="tile_heads_up">Lebegő értesítés</string>
