@@ -46,6 +46,7 @@ class DanmakuServiceListener : NotificationListenerService() {
     override fun onNotificationPosted(sbn: StatusBarNotification) {
         val notificationMode = danmakuServiceInterface?.danmakuNotificationMode ?: return
         if (!notificationMode || !sbn.isClearable || sbn.isOngoing) return
+        if (!isAllowedByInterruptionFilter(sbn)) return
 
         val danmakuText = extractDanmakuText(sbn)
 
@@ -62,6 +63,13 @@ class DanmakuServiceListener : NotificationListenerService() {
         if (danmakuText.isNotBlank()) {
             postedNotifications.remove(danmakuText)
         }
+    }
+
+    private fun isAllowedByInterruptionFilter(sbn: StatusBarNotification): Boolean {
+        val ranking = Ranking()
+        val rankingMap = currentRanking ?: return true
+        if (!rankingMap.getRanking(sbn.key, ranking)) return true
+        return ranking.matchesInterruptionFilter()
     }
 
     private fun extractDanmakuText(sbn: StatusBarNotification): String {
