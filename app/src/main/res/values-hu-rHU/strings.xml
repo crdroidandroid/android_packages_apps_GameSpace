@@ -102,7 +102,7 @@
     <string name="tile_data_saver">Adatforgalom-csökkentő</string>
     <string name="tile_color_inversion">Színek invertálása</string>
     <string name="tile_color_correction">Színkorrekció</string>
-    <string name="tile_reduce_brightness">Reduce Brightness</string>
+    <string name="tile_reduce_brightness">Fényerő csökkentése</string>
     <string name="tile_one_handed">Egykezes</string>
     <string name="tile_heads_up">Lebegő értesítés</string>
     <string name="tile_auto_sync">Automatikus szinkronizálás</string>
@@ -127,28 +127,28 @@
     <string name="auto_dnd_summary">Automatikusan engedélyezi a ne zavarjanak módot játék közben, és visszaállíja ha befejezted</string>
     <!-- Controller Mapper -->
     <string name="mapper_press_button">Nyomj meg egy gombot a kontrolleren vagy a billentyűzeten\u2026</string>
-    <string name="mapper_add_point">Add tap point</string>
-    <string name="mapper_delete_point">Delete tap point</string>
-    <string name="mapper_map_controls">Map controls</string>
+    <string name="mapper_add_point">Érintési pont hozzáadása</string>
+    <string name="mapper_delete_point">Érintési pont törlése</string>
+    <string name="mapper_map_controls">Térkép vezérlők</string>
     <!-- Content Descriptions (Accessibility) -->
-    <string name="cd_reject">Reject</string>
-    <string name="cd_accept">Accept</string>
-    <string name="cd_caller_photo">Caller photo</string>
-    <string name="cd_dismiss">Dismiss</string>
-    <string name="cd_edit_tiles">Edit Tiles</string>
-    <string name="cd_collapse">Collapse</string>
-    <string name="cd_expand">Expand</string>
+    <string name="cd_reject">Elutasít</string>
+    <string name="cd_accept">Elfogad</string>
+    <string name="cd_caller_photo">Hívó fotója</string>
+    <string name="cd_dismiss">Elvet</string>
+    <string name="cd_edit_tiles">Csempék szerkesztése</string>
+    <string name="cd_collapse">Összecsukás</string>
+    <string name="cd_expand">Kibontás</string>
     <!-- Game Optimization -->
-    <string name="game_optimization_title">Launch Optimization</string>
-    <string name="game_memory_management_title">Smart Memory Management</string>
-    <string name="game_memory_management_summary">Automatically clear background apps when launching games</string>
-    <string name="game_cache_management_title">Cache Management</string>
-    <string name="game_cache_management_summary">Optimize game cache for faster loading times</string>
-    <string name="game_memory_boosted">Memory boosted</string>
+    <string name="game_optimization_title">Optimalizálás indítása</string>
+    <string name="game_memory_management_title">Okos memóriakezelő</string>
+    <string name="game_memory_management_summary">Játék indításakor automatikusan leállítja a háttérben futó alkalmazásokat</string>
+    <string name="game_cache_management_title">Gyorsítótár kezelő</string>
+    <string name="game_cache_management_summary">Optimalizálja a játék gyorsítótárát a gyorsabb betöltésért</string>
+    <string name="game_memory_boosted">Memóriagyorsítás</string>
     <!-- Game auto-detect -->
-    <string name="auto_game_detect_title">Auto game detection</string>
-    <string name="auto_game_detect_summary">Automatically add apps marked as games by their developer</string>
+    <string name="auto_game_detect_title">Automatikus játékészlelés</string>
+    <string name="auto_game_detect_summary">A fejlesztő által játékként megjelölt alkalmazások automatikus hozzáadása</string>
     <!-- Pulse bass haptics -->
-    <string name="pulse_bass_haptics_disabled_title">Disable pulse bass haptics</string>
-    <string name="pulse_bass_haptics_disabled_summary">Automatically disable pulse bass haptics if enabled</string>
+    <string name="pulse_bass_haptics_disabled_title">Pulzáló basszus haptikus jelzések letiltása</string>
+    <string name="pulse_bass_haptics_disabled_summary">A pulzáló basszus haptikus hangjának automatikus letiltása, ha engedélyezve van</string>
 </resources>
