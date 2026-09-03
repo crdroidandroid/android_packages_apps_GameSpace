@@ -85,7 +85,7 @@
     <string name="tile_dnd">Bitte nicht stören</string>
     <string name="tile_fps_info">FPS-Info</string>
     <string name="tile_auto_rotate">Autom. drehen</string>
-    <string name="tile_boost_memory">Ram-Speicher optimieren</string>
+    <string name="tile_boost_memory">RAM-Speicher optimieren</string>
     <string name="tile_settings">Einstellungen</string>
     <string name="tile_airplane_mode">Flugmodus</string>
     <string name="tile_bluetooth">Bluetooth</string>
@@ -113,7 +113,7 @@
     <string name="tile_dream">Bildschirmschoner</string>
     <string name="tile_reading_mode">Lesemodus</string>
     <string name="tile_power_share">Akku teilen</string>
-    <string name="tile_caffeine">Caffeine</string>
+    <string name="tile_caffeine">Koffein</string>
     <string name="tile_vpn">VPN</string>
     <string name="tile_cast">Übertragen</string>
     <string name="tile_profiles">Profile</string>
