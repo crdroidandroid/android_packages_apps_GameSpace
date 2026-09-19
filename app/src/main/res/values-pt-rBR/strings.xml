@@ -11,8 +11,8 @@
     <string name="in_game_preferences_title">Opções do jogo</string>
     <string name="game_list_title">Biblioteca</string>
     <string name="app_search_title">Pesquisa</string>
-    <string name="add_game">Add game</string>
-    <string name="launch_game">Launch game</string>
+    <string name="add_game">Adicionar Jogo</string>
+    <string name="launch_game">Abrir Jogo</string>
     <!-- Quick start apps -->
     <string name="quick_start_apps_title">Aplicativos de início rápido</string>
     <string name="quick_start_apps_summary">Selecione Aplicativos para o Início Rápido</string>
