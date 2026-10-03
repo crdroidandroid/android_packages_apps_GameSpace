@@ -11,8 +11,8 @@
     <string name="in_game_preferences_title">Tùy chọn trong trò chơi</string>
     <string name="game_list_title">Thư viện</string>
     <string name="app_search_title">Tìm kiếm</string>
-    <string name="add_game">Add game</string>
-    <string name="launch_game">Launch game</string>
+    <string name="add_game">Thêm trò chơi</string>
+    <string name="launch_game">Khởi chạy trò chơi</string>
     <!-- Quick start apps -->
     <string name="quick_start_apps_title">Mở nhanh ứng dụng</string>
     <string name="quick_start_apps_summary">Chọn ứng dụng để mở nhanh</string>
