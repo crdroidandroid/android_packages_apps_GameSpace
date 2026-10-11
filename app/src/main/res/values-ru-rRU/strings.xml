@@ -6,7 +6,7 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Game Space -->
-    <string name="settings_title">Поиграем?</string>
+    <string name="settings_title">Игровое пространство</string>
     <string name="app_selector_label">Выберите игру</string>
     <string name="in_game_preferences_title">Настройки игры</string>
     <string name="game_list_title">Библиотека</string>
