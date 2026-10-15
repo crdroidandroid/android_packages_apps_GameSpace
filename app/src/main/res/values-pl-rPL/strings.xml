@@ -92,7 +92,7 @@
     <string name="tile_mobile_data">Dane komórkowe</string>
     <string name="tile_touch_boost">Polepszaj dotyk</string>
     <string name="tile_flashlight">Latarka</string>
-    <string name="tile_dark_mode">Tryb Ciemny</string>
+    <string name="tile_dark_mode">Tryb ciemny</string>
     <string name="tile_location">Lokalizacja</string>
     <string name="tile_battery_saver">Oszczędzanie baterii</string>
     <string name="tile_hotspot">Punkt dostępu</string>
