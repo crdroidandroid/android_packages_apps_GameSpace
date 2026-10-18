@@ -6,7 +6,7 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Game Space -->
-    <string name="settings_title">Spațiu de jocuri</string>
+    <string name="settings_title">Spațiul de jocuri</string>
     <string name="app_selector_label">Alege-ți numele</string>
     <string name="in_game_preferences_title">Opțiuni în joc</string>
     <string name="game_list_title">Bibliotecă</string>
