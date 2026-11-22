@@ -1,0 +1,70 @@
+# R8 rules for GameSpace (Soong build).
+# Manifest components and classes referenced from XML resources are kept by the
+# aapt2-generated rules; the rules below cover reflection the build can't see.
+
+-keepattributes Signature,InnerClasses,EnclosingMethod
+-keepattributes RuntimeVisibleAnnotations,RuntimeVisibleParameterAnnotations,AnnotationDefault
+
+# ---------------------------------------------------------------------------
+# androidx.annotation.Keep (no consumer rules are pulled in by Soong)
+# ---------------------------------------------------------------------------
+-keep,allowobfuscation @interface androidx.annotation.Keep
+-keep @androidx.annotation.Keep class * { *; }
+-keepclasseswithmembers class * { @androidx.annotation.Keep <methods>; }
+-keepclasseswithmembers class * { @androidx.annotation.Keep <fields>; }
+-keepclasseswithmembers class * { @androidx.annotation.Keep <init>(...); }
+
+# ---------------------------------------------------------------------------
+# Gson: models serialized to Settings / SharedPreferences.
+# Field names are the persisted JSON keys, so they must never change.
+# ---------------------------------------------------------------------------
+-keep class io.chaldeaprjkt.gamespace.data.SessionState { *; }
+-keep class io.chaldeaprjkt.gamespace.gamebar.mapper.TapMapping { *; }
+
+# TypeToken anonymous subclasses need their generic signature at runtime.
+-keep,allowobfuscation,allowshrinking class com.google.gson.reflect.TypeToken
+-keep,allowobfuscation,allowshrinking class * extends com.google.gson.reflect.TypeToken
+-keepclassmembers,allowobfuscation class * {
+    @com.google.gson.annotations.SerializedName <fields>;
+}
+-dontwarn sun.misc.**
+
+# ---------------------------------------------------------------------------
+# Hilt / Dagger
+# ---------------------------------------------------------------------------
+# HiltViewModelFactory looks view models up by class name.
+-keepnames @dagger.hilt.android.lifecycle.HiltViewModel class * extends androidx.lifecycle.ViewModel
+# Entry points are obtained by casting the generated component.
+-keep,allowobfuscation @dagger.hilt.EntryPoint interface *
+-keep,allowobfuscation @dagger.hilt.InstallIn interface *
+
+# ---------------------------------------------------------------------------
+# Preferences inflated from res/xml (constructor looked up reflectively).
+# ---------------------------------------------------------------------------
+-keep public class * extends androidx.preference.Preference {
+    public <init>(android.content.Context);
+    public <init>(android.content.Context, android.util.AttributeSet);
+    public <init>(android.content.Context, android.util.AttributeSet, int);
+    public <init>(android.content.Context, android.util.AttributeSet, int, int);
+}
+-keep class com.crdroid.settings.preferences.** { *; }
+
+# Fragments can be re-instantiated by FragmentManager by class name.
+-keep public class * extends androidx.fragment.app.Fragment {
+    public <init>();
+}
+
+# ---------------------------------------------------------------------------
+# Kotlin coroutines: dispatchers loaded via ServiceLoader.
+# ---------------------------------------------------------------------------
+-keepnames class kotlinx.coroutines.internal.MainDispatcherFactory {}
+-keepnames class kotlinx.coroutines.CoroutineExceptionHandler {}
+-keep class kotlinx.coroutines.android.AndroidDispatcherFactory { *; }
+-keep class kotlinx.coroutines.android.AndroidExceptionPreHandler { *; }
+-keepclassmembers class kotlinx.coroutines.** {
+    volatile <fields>;
+}
+-keepclassmembers class kotlin.coroutines.SafeContinuation {
+    volatile <fields>;
+}
+-dontwarn kotlinx.coroutines.debug.**

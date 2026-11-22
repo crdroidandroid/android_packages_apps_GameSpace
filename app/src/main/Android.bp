@@ -27,20 +27,15 @@ android_app {
         "LineagePreferenceLib",
         "androidx.activity_activity-compose",
         "androidx.compose.animation_animation-core",
-        "androidx.compose.animation_animation-graphics",
         "androidx.compose.foundation_foundation",
         "ax.androidx.compose.material3_material3",
-        "androidx.compose.material3_material3-window-size-class",
         "androidx.compose.material_material-icons-core",
         "androidx.compose.material_material-icons-extended",
         "androidx.compose.runtime_runtime",
         "androidx.compose.ui_ui",
-        "androidx.lifecycle_lifecycle-viewmodel-compose",
-        "androidx.lifecycle_lifecycle-runtime-compose",
         "kotlinx-coroutines-core",
         "com.composables_icons-material-symbols-rounded-filled-android",
         "ax_platform_hooks",
-        "androidx.palette_palette",
         "PlatformComposeSceneTransitionLayout",
     ],
 
@@ -53,8 +48,14 @@ android_app {
 
     plugins: [
         "dagger2-compiler",
-        "androidx.room_room-compiler-plugin",
     ],
+
+    optimize: {
+        enabled: true,
+        optimize: true,
+        shrink: true,
+        proguard_flags_files: ["proguard.flags"],
+    },
 
     required: [
         "privapp_whitelist_io.chaldeaprjkt.gamespace.xml"
