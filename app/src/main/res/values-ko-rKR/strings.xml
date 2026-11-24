@@ -63,6 +63,10 @@
     <string name="ringer_mode_vibrate">진동</string>
     <string name="ringer_mode_normal">소리</string>
     <string name="ringer_mode_no_change">바꾸지 않음</string>
+    <!-- Refresh rate lock -->
+    <string name="refresh_rate_lock_title">Refresh rate lock</string>
+    <string name="refresh_rate_lock_none">No lock</string>
+    <string name="refresh_rate_lock_entry"><xliff:g id="rate" example="120">%1$d</xliff:g> Hz</string>
     <!-- Game Mode Labels -->
     <string name="game_mode_unsupported">지원 안함</string>
     <string name="game_mode_balanced">균형 잡힌</string>
@@ -120,6 +124,7 @@
     <string name="tile_smart_pixels">스미트 픽셀</string>
     <string name="tile_screen_record">화면 녹화</string>
     <string name="tile_screenshot">스크린샷</string>
+    <string name="tile_refresh_rate_lock">Refresh rate</string>
     <!-- Icon Idle Opacity -->
     <string name="icon_idle_opacity_title">아이콘 유휴 투명도</string>
     <!-- Auto DND -->
