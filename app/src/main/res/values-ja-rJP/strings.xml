@@ -65,8 +65,8 @@
     <string name="ringer_mode_normal">標準</string>
     <string name="ringer_mode_no_change">変更しない</string>
     <!-- Refresh rate lock -->
-    <string name="refresh_rate_lock_title">Refresh rate lock</string>
-    <string name="refresh_rate_lock_none">No lock</string>
+    <string name="refresh_rate_lock_title">リフレッシュレートの固定</string>
+    <string name="refresh_rate_lock_none">ロックしない</string>
     <string name="refresh_rate_lock_entry"><xliff:g id="rate" example="120">%1$d</xliff:g> Hz</string>
     <!-- Game Mode Labels -->
     <string name="game_mode_unsupported">非対応</string>
@@ -125,7 +125,7 @@
     <string name="tile_smart_pixels">スマートピクセル</string>
     <string name="tile_screen_record">画面録画</string>
     <string name="tile_screenshot">スクリーンショット</string>
-    <string name="tile_refresh_rate_lock">Refresh rate</string>
+    <string name="tile_refresh_rate_lock">リフレッシュレート</string>
     <!-- Icon Idle Opacity -->
     <string name="icon_idle_opacity_title">アイコンの不透明度</string>
     <!-- Auto DND -->
