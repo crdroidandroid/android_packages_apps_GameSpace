@@ -75,7 +75,7 @@
     <!-- Game Panel -->
     <string name="save">Экономия</string>
     <string name="panel_options">Опции панели</string>
-    <string name="brightness_slider">Слайдер яркости</string>
+    <string name="brightness_slider">Регулятор яркости</string>
     <string name="fps_graph">График FPS</string>
     <string name="selected_tiles">Выбранные плитки</string>
     <string name="available_tiles">Доступные плитки</string>
