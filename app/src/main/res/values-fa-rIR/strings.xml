@@ -63,6 +63,10 @@
     <string name="ringer_mode_vibrate">لرزش</string>
     <string name="ringer_mode_normal">معمولی</string>
     <string name="ringer_mode_no_change">بدون تغییر</string>
+    <!-- Refresh rate lock -->
+    <string name="refresh_rate_lock_title">Refresh rate lock</string>
+    <string name="refresh_rate_lock_none">No lock</string>
+    <string name="refresh_rate_lock_entry"><xliff:g id="rate" example="120">%1$d</xliff:g> Hz</string>
     <!-- Game Mode Labels -->
     <string name="game_mode_unsupported">پشتیبانی نشده</string>
     <string name="game_mode_balanced">متعادل</string>
@@ -120,6 +124,7 @@
     <string name="tile_smart_pixels">پیکسل هوشمند برای صرفه جویی در مصرف باتری</string>
     <string name="tile_screen_record">ضبط صفحه نمایش</string>
     <string name="tile_screenshot">عکس گرفتن از صفحه</string>
+    <string name="tile_refresh_rate_lock">Refresh rate</string>
     <!-- Icon Idle Opacity -->
     <string name="icon_idle_opacity_title">شفافیت آیکون در حالت بیکاری</string>
     <!-- Auto DND -->

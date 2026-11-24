@@ -63,6 +63,10 @@
     <string name="ringer_mode_vibrate">Вібрація</string>
     <string name="ringer_mode_normal">Звичайний</string>
     <string name="ringer_mode_no_change">Не змінювати</string>
+    <!-- Refresh rate lock -->
+    <string name="refresh_rate_lock_title">Refresh rate lock</string>
+    <string name="refresh_rate_lock_none">No lock</string>
+    <string name="refresh_rate_lock_entry"><xliff:g id="rate" example="120">%1$d</xliff:g> Hz</string>
     <!-- Game Mode Labels -->
     <string name="game_mode_unsupported">Не підтримується</string>
     <string name="game_mode_balanced">Збалансований</string>
@@ -120,6 +124,7 @@
     <string name="tile_smart_pixels">Смарт Пікселі</string>
     <string name="tile_screen_record">Запис екрану</string>
     <string name="tile_screenshot">Знімок екрану</string>
+    <string name="tile_refresh_rate_lock">Refresh rate</string>
     <!-- Icon Idle Opacity -->
     <string name="icon_idle_opacity_title">Непрозорість значка в режимі очікування</string>
     <!-- Auto DND -->
