@@ -79,6 +79,11 @@
     <string name="ringer_mode_normal">Normal</string>
     <string name="ringer_mode_no_change">Do not change</string>
 
+    <!-- Refresh rate lock -->
+    <string name="refresh_rate_lock_title">Refresh rate lock</string>
+    <string name="refresh_rate_lock_none">No lock</string>
+    <string name="refresh_rate_lock_entry"><xliff:g id="rate" example="120">%1$d</xliff:g> Hz</string>
+
     <!-- Game Mode Labels -->
     <string name="game_mode_unsupported">Unsupported</string>
     <string name="game_mode_balanced">Balanced</string>

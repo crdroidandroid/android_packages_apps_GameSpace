@@ -98,6 +98,12 @@
             android:entryValues="@array/ringer_mode_values"
             android:defaultValue="3" />
 
+        <ListPreference
+            android:key="gamespace_refresh_rate_lock"
+            android:title="@string/refresh_rate_lock_title"
+            android:summary="%s"
+            android:defaultValue="0" />
+
         <SwitchPreferenceCompat
             android:key="gamespace_tfgesture_disabled"
             android:title="@string/three_screenshot_disabled_title"
