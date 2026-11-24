@@ -33,6 +33,7 @@ import com.android.axion.platform.AxPlatformClient
 import io.chaldeaprjkt.gamespace.R
 import io.chaldeaprjkt.gamespace.data.AppSettings
 import io.chaldeaprjkt.gamespace.data.SystemSettings
+import io.chaldeaprjkt.gamespace.gamebar.RefreshRateLock
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -95,6 +96,28 @@ class PlatformTile(
     }
 }
 
+class RefreshRateTile(
+    override val id: String,
+    override val icon: Int,
+    private val rates: List<Int>,
+    private val labelFor: (Int) -> String,
+    initial: Int,
+    private val setter: (Int) -> Unit,
+) : TileAction {
+    private val rateState = mutableStateOf(if (initial in rates) initial else 0)
+
+    override val label: String get() = labelFor(rateState.value)
+    override val isEnabled: Boolean get() = rateState.value != 0
+    @Composable override fun observeEnabled(): State<Boolean> = rememberUpdatedState(rateState.value != 0)
+
+    override fun toggle() {
+        val cycle = listOf(0) + rates
+        val next = cycle[(cycle.indexOf(rateState.value) + 1) % cycle.size]
+        rateState.value = next
+        setter(next)
+    }
+}
+
 @Singleton
 class TileRepository @Inject constructor(
     private val context: Context,
@@ -115,6 +138,8 @@ class TileRepository @Inject constructor(
             platformTiles.find { it.id == key }?.updateFromState(state)
         }
     }
+
+    var onRefreshRateLockChanged: ((Int) -> Unit)? = null
 
     private val _tileOrder = mutableStateListOf<String>()
 
@@ -455,6 +480,26 @@ class TileRepository @Inject constructor(
                 }
             )
         )
+
+        val rates = RefreshRateLock.availableRates(context)
+        if (rates.size > 1) {
+            add(
+                RefreshRateTile(
+                    id = "refresh_rate_lock",
+                    icon = R.drawable.materialsymbols_ic_60fps_select_rounded_filled,
+                    rates = rates,
+                    labelFor = {
+                        if (it == 0) context.getString(R.string.tile_refresh_rate_lock)
+                        else context.getString(R.string.refresh_rate_lock_entry, it)
+                    },
+                    initial = appSettings.refreshRateLock,
+                    setter = {
+                        appSettings.refreshRateLock = it
+                        onRefreshRateLockChanged?.invoke(it)
+                    }
+                )
+            )
+        }
 
         if (SystemProperties.getBoolean("persist.sys.ax_touch_boost", false)) {
             val touchBoostState = mutableStateOf(

@@ -143,6 +143,7 @@
     <string name="tile_smart_pixels">Smart Pixels</string>
     <string name="tile_screen_record">Screen Record</string>
     <string name="tile_screenshot">Screenshot</string>
+    <string name="tile_refresh_rate_lock">Refresh rate</string>
 
     <!-- Icon Idle Opacity -->
     <string name="icon_idle_opacity_title">Icon idle opacity</string>
