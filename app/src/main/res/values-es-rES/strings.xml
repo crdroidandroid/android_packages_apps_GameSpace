@@ -64,9 +64,9 @@
     <string name="ringer_mode_normal">Normal</string>
     <string name="ringer_mode_no_change">No cambiar</string>
     <!-- Refresh rate lock -->
-    <string name="refresh_rate_lock_title">Refresh rate lock</string>
-    <string name="refresh_rate_lock_none">No lock</string>
-    <string name="refresh_rate_lock_entry"><xliff:g id="rate" example="120">%1$d</xliff:g> Hz</string>
+    <string name="refresh_rate_lock_title">Bloqueo de la frecuencia de actualización</string>
+    <string name="refresh_rate_lock_none">Sin bloqueo</string>
+    <string name="refresh_rate_lock_entry"><xliff:g id="rate" ejemplo="120">%1$d</xliff:g> Hz</string>
     <!-- Game Mode Labels -->
     <string name="game_mode_unsupported">No soportado</string>
     <string name="game_mode_balanced">Equilibrado</string>
@@ -124,7 +124,7 @@
     <string name="tile_smart_pixels">Píxeles inteligentes</string>
     <string name="tile_screen_record">Grabación de pantalla</string>
     <string name="tile_screenshot">Captura de pantalla</string>
-    <string name="tile_refresh_rate_lock">Refresh rate</string>
+    <string name="tile_refresh_rate_lock">Frecuencia de actualización</string>
     <!-- Icon Idle Opacity -->
     <string name="icon_idle_opacity_title">Opacidad de iconos inactivos</string>
     <!-- Auto DND -->
